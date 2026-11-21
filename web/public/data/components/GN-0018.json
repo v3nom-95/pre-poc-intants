@@ -1,0 +1,112 @@
+{
+  "serial": "GN-0018",
+  "part_number": "24-2110-01",
+  "name": "Main generator",
+  "ata": "24",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "FX-311",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 444.3,
+  "fh_to_tau": 247.5,
+  "fh_to_tau_p10": 132.0,
+  "fh_to_tau_p90": 355.4,
+  "prob_fail_before_next_phase": 0.052,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 19,
+  "fleet_confirmed_failures": 3,
+  "install_history": [
+    {
+      "tail": "FX-311",
+      "event_type": "Install",
+      "date": "2024-06-14",
+      "reason": null,
+      "serial": "GN-0018"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 140.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 380.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 444.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 450.6,
+      "survival": 0.9375
+    },
+    {
+      "fh": 487.1,
+      "survival": 0.875
+    },
+    {
+      "fh": 646.0,
+      "survival": 0.875
+    },
+    {
+      "fh": 696.7,
+      "survival": 0.875
+    },
+    {
+      "fh": 698.1,
+      "survival": 0.875
+    },
+    {
+      "fh": 701.3,
+      "survival": 0.875
+    },
+    {
+      "fh": 702.2,
+      "survival": 0.875
+    },
+    {
+      "fh": 728.2,
+      "survival": 0.875
+    },
+    {
+      "fh": 744.9,
+      "survival": 0.7656
+    },
+    {
+      "fh": 745.3,
+      "survival": 0.7656
+    },
+    {
+      "fh": 746.6,
+      "survival": 0.7656
+    },
+    {
+      "fh": 764.0,
+      "survival": 0.7656
+    },
+    {
+      "fh": 807.0,
+      "survival": 0.7656
+    },
+    {
+      "fh": 916.4,
+      "survival": 0.7656
+    },
+    {
+      "fh": 937.3,
+      "survival": 0.7656
+    },
+    {
+      "fh": 939.4,
+      "survival": 0.7656
+    }
+  ]
+}

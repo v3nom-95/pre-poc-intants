@@ -1,0 +1,116 @@
+{
+  "serial": "RA-0005",
+  "part_number": "34-4410-02",
+  "name": "Radar altimeter",
+  "ata": "34",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "mission",
+  "current_tail": "FX-305",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 701.3,
+  "fh_to_tau": 502.9,
+  "fh_to_tau_p10": 63.3,
+  "fh_to_tau_p90": 1336.6,
+  "prob_fail_before_next_phase": 0.052,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 20,
+  "fleet_confirmed_failures": 2,
+  "install_history": [
+    {
+      "tail": "FX-305",
+      "event_type": "Install",
+      "date": "2016-10-11",
+      "reason": null,
+      "serial": "RA-0005"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 24.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 51.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 325.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 418.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 421.4,
+      "survival": 0.9375
+    },
+    {
+      "fh": 499.2,
+      "survival": 0.875
+    },
+    {
+      "fh": 629.2,
+      "survival": 0.875
+    },
+    {
+      "fh": 646.0,
+      "survival": 0.875
+    },
+    {
+      "fh": 696.7,
+      "survival": 0.875
+    },
+    {
+      "fh": 698.1,
+      "survival": 0.875
+    },
+    {
+      "fh": 701.3,
+      "survival": 0.875
+    },
+    {
+      "fh": 728.2,
+      "survival": 0.875
+    },
+    {
+      "fh": 746.6,
+      "survival": 0.875
+    },
+    {
+      "fh": 764.0,
+      "survival": 0.875
+    },
+    {
+      "fh": 807.0,
+      "survival": 0.875
+    },
+    {
+      "fh": 828.6,
+      "survival": 0.875
+    },
+    {
+      "fh": 884.1,
+      "survival": 0.875
+    },
+    {
+      "fh": 929.9,
+      "survival": 0.875
+    },
+    {
+      "fh": 937.3,
+      "survival": 0.875
+    },
+    {
+      "fh": 939.4,
+      "survival": 0.875
+    }
+  ]
+}

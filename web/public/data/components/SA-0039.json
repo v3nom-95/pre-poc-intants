@@ -1,0 +1,156 @@
+{
+  "serial": "SA-0039",
+  "part_number": "27-3310-04",
+  "name": "Horizontal stabilator actuator",
+  "ata": "27",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "FX-309",
+  "current_position": "R",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 47.3,
+  "fh_to_tau": 122.8,
+  "fh_to_tau_p10": 36.7,
+  "fh_to_tau_p90": 454.5,
+  "prob_fail_before_next_phase": 0.131,
+  "explanation": "Expected life x1.77 (hot-climate share 33%); Expected life x0.07 (ACM share 50%)",
+  "fleet_units": 39,
+  "fleet_confirmed_failures": 6,
+  "install_history": [
+    {
+      "tail": "FX-309",
+      "event_type": "Install",
+      "date": "2026-06-07",
+      "reason": null,
+      "serial": "SA-0039"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 47.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 77.5,
+      "survival": 0.9737
+    },
+    {
+      "fh": 129.6,
+      "survival": 0.9737
+    },
+    {
+      "fh": 196.9,
+      "survival": 0.9737
+    },
+    {
+      "fh": 253.6,
+      "survival": 0.9737
+    },
+    {
+      "fh": 359.1,
+      "survival": 0.9737
+    },
+    {
+      "fh": 393.8,
+      "survival": 0.9442
+    },
+    {
+      "fh": 407.3,
+      "survival": 0.9442
+    },
+    {
+      "fh": 531.9,
+      "survival": 0.9137
+    },
+    {
+      "fh": 582.0,
+      "survival": 0.9137
+    },
+    {
+      "fh": 633.6,
+      "survival": 0.8822
+    },
+    {
+      "fh": 635.5,
+      "survival": 0.8507
+    },
+    {
+      "fh": 646.0,
+      "survival": 0.8507
+    },
+    {
+      "fh": 670.6,
+      "survival": 0.8507
+    },
+    {
+      "fh": 682.0,
+      "survival": 0.8167
+    },
+    {
+      "fh": 696.7,
+      "survival": 0.8167
+    },
+    {
+      "fh": 698.1,
+      "survival": 0.8167
+    },
+    {
+      "fh": 701.3,
+      "survival": 0.8167
+    },
+    {
+      "fh": 702.2,
+      "survival": 0.8167
+    },
+    {
+      "fh": 728.2,
+      "survival": 0.8167
+    },
+    {
+      "fh": 745.3,
+      "survival": 0.8167
+    },
+    {
+      "fh": 746.6,
+      "survival": 0.8167
+    },
+    {
+      "fh": 764.0,
+      "survival": 0.8167
+    },
+    {
+      "fh": 807.0,
+      "survival": 0.8167
+    },
+    {
+      "fh": 828.6,
+      "survival": 0.8167
+    },
+    {
+      "fh": 884.1,
+      "survival": 0.8167
+    },
+    {
+      "fh": 916.4,
+      "survival": 0.8167
+    },
+    {
+      "fh": 929.9,
+      "survival": 0.8167
+    },
+    {
+      "fh": 937.3,
+      "survival": 0.8167
+    },
+    {
+      "fh": 939.4,
+      "survival": 0.8167
+    }
+  ]
+}

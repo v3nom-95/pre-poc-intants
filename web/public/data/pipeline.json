@@ -1,0 +1,64 @@
+{
+  "data_quality": [
+    {
+      "check": "Sortie hours reconcile with takeoff/landing times (tol 0.1 FH)",
+      "pass": true,
+      "detail": "No independent airframe-hours ledger exists in bronze; checked duration_h against landing_time-takeoff_time for every sortie instead.",
+      "count": 0
+    },
+    {
+      "check": "No serial installed on two aircraft at once",
+      "pass": true,
+      "detail": "Checked install/removal ordering per serial for overlapping tails.",
+      "count": 0
+    },
+    {
+      "check": "No position with two serials installed at once",
+      "pass": true,
+      "detail": "Checked install/removal ordering per (tail, position, part_number).",
+      "count": 0
+    },
+    {
+      "check": "Every removal is after its matching installation",
+      "pass": true,
+      "detail": "Checked per-serial event ordering.",
+      "count": 0
+    },
+    {
+      "check": "No hard-time item ever exceeds its limit",
+      "pass": true,
+      "detail": "All HT removals occurred at or before their governing limit.",
+      "count": 0
+    },
+    {
+      "check": "No sortie occurs on a logged scheduled-maintenance start date",
+      "pass": true,
+      "detail": "maintenance_records.csv has no downtime-duration field, so this checks the conservative case of a sortie falling on the same day a phase inspection or periodic servicing began for that tail.",
+      "count": 0
+    },
+    {
+      "check": "Every snag references a valid tail and ATA chapter",
+      "pass": true,
+      "detail": "0 invalid tails, 0 invalid ATA chapters.",
+      "count": 0
+    },
+    {
+      "check": "No duplicate sortie IDs",
+      "pass": true,
+      "detail": "Checked post-dedup silver table.",
+      "count": 0
+    },
+    {
+      "check": "Engine EFH increments equal the sortie hours flown while installed (tol 0.1 FH)",
+      "pass": true,
+      "detail": "Compared consecutive engine_trend readings per serial against the matching sortie's duration_h.",
+      "count": 0
+    }
+  ],
+  "ingestion_issues": {
+    "dates_normalised": 113,
+    "duplicate_sorties_removed": 45,
+    "durations_imputed": 23,
+    "ata_inferred": 1
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "serial": "BR-0064",
+  "part_number": "32-4210-02",
+  "name": "Main wheel brake",
+  "ata": "32",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "FX-309",
+  "current_position": "R",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 341.0,
+  "fh_to_tau": 27.8,
+  "fh_to_tau_p10": 18.4,
+  "fh_to_tau_p90": 47.7,
+  "prob_fail_before_next_phase": 0.47,
+  "explanation": "Expected life x1.65 (hot-climate share 17%); Expected life x1.34 (ACM share 37%)",
+  "fleet_units": 80,
+  "fleet_confirmed_failures": 45,
+  "install_history": [
+    {
+      "tail": "FX-309",
+      "event_type": "Install",
+      "date": "2024-08-09",
+      "reason": null,
+      "serial": "BR-0064"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 24.4,
+      "survival": 0.9875
+    },
+    {
+      "fh": 31.1,
+      "survival": 0.975
+    },
+    {
+      "fh": 32.0,
+      "survival": 0.975
+    },
+    {
+      "fh": 51.4,
+      "survival": 0.975
+    },
+    {
+      "fh": 61.5,
+      "survival": 0.9622
+    },
+    {
+      "fh": 72.2,
+      "survival": 0.9493
+    },
+    {
+      "fh": 75.3,
+      "survival": 0.9493
+    },
+    {
+      "fh": 76.4,
+      "survival": 0.9493
+    },
+    {
+      "fh": 88.5,
+      "survival": 0.9362
+    },
+    {
+      "fh": 89.5,
+      "survival": 0.923
+    },
+    {
+      "fh": 93.1,
+      "survival": 0.9098
+    },
+    {
+      "fh": 102.6,
+      "survival": 0.9098
+    },
+    {
+      "fh": 108.4,
+      "survival": 0.9098
+    },
+    {
+      "fh": 116.6,
+      "survival": 0.9098
+    },
+    {
+      "fh": 122.1,
+      "survival": 0.9098
+    },
+    {
+      "fh": 132.5,
+      "survival": 0.8958
+    },
+    {
+      "fh": 133.0,
+      "survival": 0.8958
+    },
+    {
+      "fh": 138.7,
+      "survival": 0.8816
+    },
+    {
+      "fh": 171.7,
+      "survival": 0.8674
+    },
+    {
+      "fh": 172.3,
+      "survival": 0.8674
+    },
+    {
+      "fh": 180.0,
+      "survival": 0.8529
+    },
+    {
+      "fh": 191.6,
+      "survival": 0.8529
+    },
+    {
+      "fh": 196.5,
+      "survival": 0.8529
+    },
+    {
+      "fh": 201.2,
+      "survival": 0.8379
+    },
+    {
+      "fh": 202.2,
+      "survival": 0.823
+    },
+    {
+      "fh": 216.9,
+      "survival": 0.808
+    },
+    {
+      "fh": 222.1,
+      "survival": 0.793
+    },
+    {
+      "fh": 230.3,
+      "survival": 0.7781
+    },
+    {
+      "fh": 231.2,
+      "survival": 0.7631
+    },
+    {
+      "fh": 234.1,
+      "survival": 0.7631
+    },
+    {
+      "fh": 247.6,
+      "survival": 0.7479
+    },
+    {
+      "fh": 258.2,
+      "survival": 0.7326
+    },
+    {
+      "fh": 258.8,
+      "survival": 0.7173
+    },
+    {
+      "fh": 263.7,
+      "survival": 0.7173
+    },
+    {
+      "fh": 263.9,
+      "survival": 0.7173
+    },
+    {
+      "fh": 264.5,
+      "survival": 0.7173
+    },
+    {
+      "fh": 272.9,
+      "survival": 0.701
+    },
+    {
+      "fh": 273.9,
+      "survival": 0.6847
+    },
+    {
+      "fh": 284.3,
+      "survival": 0.6684
+    },
+    {
+      "fh": 285.1,
+      "survival": 0.6684
+    },
+    {
+      "fh": 286.4,
+      "survival": 0.6517
+    },
+    {
+      "fh": 296.7,
+      "survival": 0.635
+    },
+    {
+      "fh": 312.4,
+      "survival": 0.6183
+    },
+    {
+      "fh": 322.1,
+      "survival": 0.6016
+    },
+    {
+      "fh": 324.7,
+      "survival": 0.5849
+    },
+    {
+      "fh": 331.6,
+      "survival": 0.5682
+    },
+    {
+      "fh": 333.2,
+      "survival": 0.5682
+    },
+    {
+      "fh": 341.0,
+      "survival": 0.5682
+    },
+    {
+      "fh": 341.4,
+      "survival": 0.5504
+    },
+    {
+      "fh": 352.3,
+      "survival": 0.5326
+    },
+    {
+      "fh": 354.1,
+      "survival": 0.5326
+    },
+    {
+      "fh": 366.1,
+      "survival": 0.5143
+    },
+    {
+      "fh": 369.9,
+      "survival": 0.5143
+    },
+    {
+      "fh": 388.1,
+      "survival": 0.4952
+    },
+    {
+      "fh": 397.3,
+      "survival": 0.4762
+    },
+    {
+      "fh": 398.7,
+      "survival": 0.4762
+    },
+    {
+      "fh": 415.8,
+      "survival": 0.4762
+    },
+    {
+      "fh": 426.1,
+      "survival": 0.4555
+    },
+    {
+      "fh": 433.7,
+      "survival": 0.4348
+    },
+    {
+      "fh": 434.1,
+      "survival": 0.4141
+    },
+    {
+      "fh": 434.5,
+      "survival": 0.4141
+    },
+    {
+      "fh": 443.7,
+      "survival": 0.3923
+    },
+    {
+      "fh": 470.9,
+      "survival": 0.3705
+    },
+    {
+      "fh": 476.3,
+      "survival": 0.3705
+    },
+    {
+      "fh": 483.7,
+      "survival": 0.3473
+    },
+    {
+      "fh": 498.1,
+      "survival": 0.3473
+    },
+    {
+      "fh": 500.1,
+      "survival": 0.3473
+    },
+    {
+      "fh": 531.3,
+      "survival": 0.3206
+    },
+    {
+      "fh": 552.1,
+      "survival": 0.3206
+    },
+    {
+      "fh": 554.4,
+      "survival": 0.2915
+    },
+    {
+      "fh": 560.1,
+      "survival": 0.2915
+    },
+    {
+      "fh": 580.3,
+      "survival": 0.2591
+    },
+    {
+      "fh": 586.5,
+      "survival": 0.2267
+    },
+    {
+      "fh": 625.9,
+      "survival": 0.2267
+    },
+    {
+      "fh": 637.0,
+      "survival": 0.2267
+    },
+    {
+      "fh": 646.0,
+      "survival": 0.2267
+    },
+    {
+      "fh": 698.1,
+      "survival": 0.2267
+    },
+    {
+      "fh": 721.5,
+      "survival": 0.1511
+    },
+    {
+      "fh": 728.2,
+      "survival": 0.1511
+    },
+    {
+      "fh": 768.7,
+      "survival": 0.1511
+    }
+  ]
+}

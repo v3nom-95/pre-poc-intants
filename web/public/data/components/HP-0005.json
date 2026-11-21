@@ -1,0 +1,210 @@
+{
+  "serial": "HP-0005",
+  "part_number": "29-1140-03",
+  "name": "Engine-driven hydraulic pump",
+  "ata": "29",
+  "lot": "L-2207",
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "FX-309",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 355.3,
+  "fh_to_tau": 16.1,
+  "fh_to_tau_p10": 8.5,
+  "fh_to_tau_p90": 29.8,
+  "prob_fail_before_next_phase": 0.674,
+  "explanation": "Expected life x2.26 (hot-climate share 18%); Expected life x0.88 (ACM share 38%); Expected life x0.66 (lot L-2207, vs best-performing lot in this part number)",
+  "fleet_units": 40,
+  "fleet_confirmed_failures": 23,
+  "install_history": [
+    {
+      "tail": "FX-305",
+      "event_type": "Install",
+      "date": "2015-11-07",
+      "reason": null,
+      "serial": "HP-0005"
+    },
+    {
+      "tail": "FX-305",
+      "event_type": "Removal",
+      "date": "2023-04-03",
+      "reason": "Unscheduled: confirmed failure",
+      "serial": "HP-0005"
+    },
+    {
+      "tail": "FX-309",
+      "event_type": "Install",
+      "date": "2024-05-30",
+      "reason": null,
+      "serial": "HP-0005"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 35.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 84.1,
+      "survival": 0.9744
+    },
+    {
+      "fh": 87.2,
+      "survival": 0.9487
+    },
+    {
+      "fh": 95.0,
+      "survival": 0.9487
+    },
+    {
+      "fh": 95.8,
+      "survival": 0.9224
+    },
+    {
+      "fh": 100.9,
+      "survival": 0.896
+    },
+    {
+      "fh": 101.0,
+      "survival": 0.8697
+    },
+    {
+      "fh": 116.9,
+      "survival": 0.8433
+    },
+    {
+      "fh": 118.5,
+      "survival": 0.817
+    },
+    {
+      "fh": 173.3,
+      "survival": 0.7906
+    },
+    {
+      "fh": 185.5,
+      "survival": 0.7642
+    },
+    {
+      "fh": 187.2,
+      "survival": 0.7379
+    },
+    {
+      "fh": 190.3,
+      "survival": 0.7115
+    },
+    {
+      "fh": 191.1,
+      "survival": 0.6852
+    },
+    {
+      "fh": 203.7,
+      "survival": 0.6852
+    },
+    {
+      "fh": 203.8,
+      "survival": 0.6578
+    },
+    {
+      "fh": 212.9,
+      "survival": 0.6578
+    },
+    {
+      "fh": 225.8,
+      "survival": 0.6578
+    },
+    {
+      "fh": 227.1,
+      "survival": 0.6578
+    },
+    {
+      "fh": 236.8,
+      "survival": 0.6578
+    },
+    {
+      "fh": 242.3,
+      "survival": 0.6249
+    },
+    {
+      "fh": 269.1,
+      "survival": 0.592
+    },
+    {
+      "fh": 304.7,
+      "survival": 0.592
+    },
+    {
+      "fh": 323.8,
+      "survival": 0.592
+    },
+    {
+      "fh": 344.1,
+      "survival": 0.592
+    },
+    {
+      "fh": 355.3,
+      "survival": 0.592
+    },
+    {
+      "fh": 368.1,
+      "survival": 0.5497
+    },
+    {
+      "fh": 372.3,
+      "survival": 0.5074
+    },
+    {
+      "fh": 391.8,
+      "survival": 0.4651
+    },
+    {
+      "fh": 402.4,
+      "survival": 0.4229
+    },
+    {
+      "fh": 405.2,
+      "survival": 0.3806
+    },
+    {
+      "fh": 477.2,
+      "survival": 0.3383
+    },
+    {
+      "fh": 494.4,
+      "survival": 0.296
+    },
+    {
+      "fh": 539.9,
+      "survival": 0.2537
+    },
+    {
+      "fh": 580.2,
+      "survival": 0.2537
+    },
+    {
+      "fh": 646.0,
+      "survival": 0.2537
+    },
+    {
+      "fh": 664.8,
+      "survival": 0.2537
+    },
+    {
+      "fh": 730.0,
+      "survival": 0.2537
+    },
+    {
+      "fh": 834.9,
+      "survival": 0.2537
+    },
+    {
+      "fh": 884.1,
+      "survival": 0.2537
+    }
+  ]
+}

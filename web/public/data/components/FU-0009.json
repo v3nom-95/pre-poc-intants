@@ -1,0 +1,108 @@
+{
+  "serial": "FU-0009",
+  "part_number": "73-2110-01",
+  "name": "Engine fuel control unit",
+  "ata": "73",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "flight_safety",
+  "current_tail": "FX-309",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 728.2,
+  "fh_to_tau": 1291.5,
+  "fh_to_tau_p10": 172.3,
+  "fh_to_tau_p90": 4428.7,
+  "prob_fail_before_next_phase": 0.015,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 18,
+  "fleet_confirmed_failures": 2,
+  "install_history": [
+    {
+      "tail": "FX-309",
+      "event_type": "Install",
+      "date": "2004-09-25",
+      "reason": null,
+      "serial": "FU-0009"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 5.8,
+      "survival": 0.9444
+    },
+    {
+      "fh": 101.3,
+      "survival": 0.9444
+    },
+    {
+      "fh": 646.0,
+      "survival": 0.9444
+    },
+    {
+      "fh": 696.7,
+      "survival": 0.9444
+    },
+    {
+      "fh": 698.1,
+      "survival": 0.9444
+    },
+    {
+      "fh": 701.3,
+      "survival": 0.9444
+    },
+    {
+      "fh": 702.2,
+      "survival": 0.9444
+    },
+    {
+      "fh": 728.2,
+      "survival": 0.9444
+    },
+    {
+      "fh": 745.3,
+      "survival": 0.9444
+    },
+    {
+      "fh": 746.6,
+      "survival": 0.9444
+    },
+    {
+      "fh": 759.3,
+      "survival": 0.9444
+    },
+    {
+      "fh": 807.0,
+      "survival": 0.9444
+    },
+    {
+      "fh": 828.6,
+      "survival": 0.9444
+    },
+    {
+      "fh": 829.8,
+      "survival": 0.7556
+    },
+    {
+      "fh": 884.1,
+      "survival": 0.7556
+    },
+    {
+      "fh": 916.4,
+      "survival": 0.7556
+    },
+    {
+      "fh": 937.3,
+      "survival": 0.7556
+    },
+    {
+      "fh": 939.4,
+      "survival": 0.7556
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+part_number,component,concept,task,interval_value,interval_unit,notes
+21-1005-01,ECS cooling turbine,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+24-2110-01,Main generator,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+24-2240-02,Main battery,HT,Hard time replacement,24.0,Calendar months,
+25-6410-01,Ejection seat CAD/PAD set,HT,Hard time replacement,36.0,Calendar months,
+27-3310-04,Horizontal stabilator actuator,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+27-3550-01,Flight control computer,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+28-2210-02,Fuel boost pump,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+29-1140-03,Engine-driven hydraulic pump,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+32-1120-05,Main landing gear assembly,HT,Hard time replacement,4000.0,Landings,
+32-1120-05,Main landing gear assembly,HT,Hard time replacement,144.0,Calendar months,
+32-4210-02,Main wheel brake,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+32-4310-01,Main wheel tyre,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+34-4410-02,Radar altimeter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+34-1810-01,Inertial navigation unit,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+49-1210-01,Jet fuel starter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+72-0001-10,Engine,HT,Hard time replacement,1200.0,EFH,
+72-0001-10,Engine,HT,Hard time replacement,2400.0,Cycles,
+72-5120-01,HPT module (turbine disc LLP),HT,Hard time replacement,3000.0,Cycles,
+73-2110-01,Engine fuel control unit,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+79-1310-02,Engine lube oil pump,OC,On-condition inspection,150.0,FH,Checked at phase inspection

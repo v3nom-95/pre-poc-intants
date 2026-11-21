@@ -1,0 +1,108 @@
+{
+  "serial": "FC-0003",
+  "part_number": "27-3550-01",
+  "name": "Flight control computer",
+  "ata": "27",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "flight_safety",
+  "current_tail": "FX-303",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 764.0,
+  "fh_to_tau": 878.3,
+  "fh_to_tau_p10": 84.2,
+  "fh_to_tau_p90": 2541.3,
+  "prob_fail_before_next_phase": 0.019,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 18,
+  "fleet_confirmed_failures": 2,
+  "install_history": [
+    {
+      "tail": "FX-303",
+      "event_type": "Install",
+      "date": "2016-07-30",
+      "reason": null,
+      "serial": "FC-0003"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 141.9,
+      "survival": 0.9444
+    },
+    {
+      "fh": 152.5,
+      "survival": 0.8889
+    },
+    {
+      "fh": 556.4,
+      "survival": 0.8889
+    },
+    {
+      "fh": 646.0,
+      "survival": 0.8889
+    },
+    {
+      "fh": 698.1,
+      "survival": 0.8889
+    },
+    {
+      "fh": 701.3,
+      "survival": 0.8889
+    },
+    {
+      "fh": 702.2,
+      "survival": 0.8889
+    },
+    {
+      "fh": 728.2,
+      "survival": 0.8889
+    },
+    {
+      "fh": 745.3,
+      "survival": 0.8889
+    },
+    {
+      "fh": 746.6,
+      "survival": 0.8889
+    },
+    {
+      "fh": 764.0,
+      "survival": 0.8889
+    },
+    {
+      "fh": 788.1,
+      "survival": 0.8889
+    },
+    {
+      "fh": 807.0,
+      "survival": 0.8889
+    },
+    {
+      "fh": 828.6,
+      "survival": 0.8889
+    },
+    {
+      "fh": 884.1,
+      "survival": 0.8889
+    },
+    {
+      "fh": 916.4,
+      "survival": 0.8889
+    },
+    {
+      "fh": 929.9,
+      "survival": 0.8889
+    },
+    {
+      "fh": 937.3,
+      "survival": 0.8889
+    }
+  ]
+}

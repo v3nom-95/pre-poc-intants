@@ -1,0 +1,31 @@
+{
+  "serial": "EN-0017",
+  "part_number": "72-0001-10",
+  "name": "Engine",
+  "ata": "72",
+  "lot": null,
+  "concept": "HT",
+  "criticality": "flight_safety",
+  "current_tail": "FX-306",
+  "current_position": "1",
+  "governing_limit": "Cycles",
+  "remaining": 1010.0,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 31,
+  "fleet_confirmed_failures": 0,
+  "install_history": [
+    {
+      "tail": "FX-306",
+      "event_type": "Install",
+      "date": "2023-01-16",
+      "reason": null,
+      "serial": "EN-0017"
+    }
+  ],
+  "survival_curve": []
+}

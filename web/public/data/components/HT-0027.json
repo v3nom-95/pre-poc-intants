@@ -1,0 +1,31 @@
+{
+  "serial": "HT-0027",
+  "part_number": "72-5120-01",
+  "name": "HPT module (turbine disc LLP)",
+  "ata": "72",
+  "lot": null,
+  "concept": "HT",
+  "criticality": "flight_safety",
+  "current_tail": "FX-307",
+  "current_position": "1",
+  "governing_limit": "Cycles",
+  "remaining": 2803.0,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 28,
+  "fleet_confirmed_failures": 0,
+  "install_history": [
+    {
+      "tail": "FX-307",
+      "event_type": "Install",
+      "date": "2026-04-16",
+      "reason": null,
+      "serial": "HT-0027"
+    }
+  ],
+  "survival_curve": []
+}

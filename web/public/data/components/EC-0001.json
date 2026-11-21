@@ -1,0 +1,148 @@
+{
+  "serial": "EC-0001",
+  "part_number": "21-1005-01",
+  "name": "ECS cooling turbine",
+  "ata": "21",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "mission",
+  "current_tail": "FX-301",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 937.3,
+  "fh_to_tau": 131.3,
+  "fh_to_tau_p10": 51.8,
+  "fh_to_tau_p90": 271.8,
+  "prob_fail_before_next_phase": 0.226,
+  "explanation": "Expected life x0.80 (hot-climate share 22%); Expected life x1.18 (ACM share 18%)",
+  "fleet_units": 28,
+  "fleet_confirmed_failures": 11,
+  "install_history": [
+    {
+      "tail": "FX-301",
+      "event_type": "Install",
+      "date": "2019-12-29",
+      "reason": null,
+      "serial": "EC-0001"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 120.5,
+      "survival": 0.9643
+    },
+    {
+      "fh": 134.5,
+      "survival": 0.9286
+    },
+    {
+      "fh": 145.1,
+      "survival": 0.9286
+    },
+    {
+      "fh": 151.7,
+      "survival": 0.8914
+    },
+    {
+      "fh": 184.5,
+      "survival": 0.8914
+    },
+    {
+      "fh": 222.7,
+      "survival": 0.8914
+    },
+    {
+      "fh": 232.0,
+      "survival": 0.8914
+    },
+    {
+      "fh": 248.0,
+      "survival": 0.849
+    },
+    {
+      "fh": 285.6,
+      "survival": 0.849
+    },
+    {
+      "fh": 321.3,
+      "survival": 0.849
+    },
+    {
+      "fh": 329.3,
+      "survival": 0.849
+    },
+    {
+      "fh": 338.3,
+      "survival": 0.799
+    },
+    {
+      "fh": 352.1,
+      "survival": 0.7491
+    },
+    {
+      "fh": 400.0,
+      "survival": 0.6992
+    },
+    {
+      "fh": 417.9,
+      "survival": 0.6492
+    },
+    {
+      "fh": 454.6,
+      "survival": 0.6492
+    },
+    {
+      "fh": 513.3,
+      "survival": 0.5951
+    },
+    {
+      "fh": 547.5,
+      "survival": 0.5951
+    },
+    {
+      "fh": 597.7,
+      "survival": 0.5951
+    },
+    {
+      "fh": 610.1,
+      "survival": 0.529
+    },
+    {
+      "fh": 611.8,
+      "survival": 0.529
+    },
+    {
+      "fh": 687.5,
+      "survival": 0.529
+    },
+    {
+      "fh": 698.1,
+      "survival": 0.529
+    },
+    {
+      "fh": 717.7,
+      "survival": 0.4232
+    },
+    {
+      "fh": 746.6,
+      "survival": 0.4232
+    },
+    {
+      "fh": 764.0,
+      "survival": 0.4232
+    },
+    {
+      "fh": 916.4,
+      "survival": 0.4232
+    },
+    {
+      "fh": 937.3,
+      "survival": 0.4232
+    }
+  ]
+}

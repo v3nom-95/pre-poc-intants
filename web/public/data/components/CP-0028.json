@@ -1,0 +1,31 @@
+{
+  "serial": "CP-0028",
+  "part_number": "25-6410-01",
+  "name": "Ejection seat CAD/PAD set",
+  "ata": "25",
+  "lot": null,
+  "concept": "HT",
+  "criticality": "flight_safety",
+  "current_tail": "FX-315",
+  "current_position": "1",
+  "governing_limit": "Calendar",
+  "remaining": 1.1,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 42,
+  "fleet_confirmed_failures": 0,
+  "install_history": [
+    {
+      "tail": "FX-315",
+      "event_type": "Install",
+      "date": "2024-01-03",
+      "reason": null,
+      "serial": "CP-0028"
+    }
+  ],
+  "survival_curve": []
+}

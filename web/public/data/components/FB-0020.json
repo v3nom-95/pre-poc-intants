@@ -1,0 +1,132 @@
+{
+  "serial": "FB-0020",
+  "part_number": "28-2210-02",
+  "name": "Fuel boost pump",
+  "ata": "28",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "FX-314",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 241.6,
+  "fh_to_tau": 235.9,
+  "fh_to_tau_p10": 78.4,
+  "fh_to_tau_p90": 451.3,
+  "prob_fail_before_next_phase": 0.049,
+  "explanation": "Expected life x1.19 (hot-climate share 57%); Expected life x1.08 (ACM share 17%)",
+  "fleet_units": 24,
+  "fleet_confirmed_failures": 8,
+  "install_history": [
+    {
+      "tail": "FX-314",
+      "event_type": "Install",
+      "date": "2025-04-04",
+      "reason": null,
+      "serial": "FB-0020"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 30.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 77.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 213.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 232.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 241.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 307.8,
+      "survival": 1.0
+    },
+    {
+      "fh": 337.8,
+      "survival": 0.9444
+    },
+    {
+      "fh": 368.6,
+      "survival": 0.8889
+    },
+    {
+      "fh": 391.9,
+      "survival": 0.8889
+    },
+    {
+      "fh": 489.5,
+      "survival": 0.8296
+    },
+    {
+      "fh": 500.9,
+      "survival": 0.7704
+    },
+    {
+      "fh": 562.4,
+      "survival": 0.7704
+    },
+    {
+      "fh": 643.6,
+      "survival": 0.7062
+    },
+    {
+      "fh": 646.0,
+      "survival": 0.7062
+    },
+    {
+      "fh": 667.5,
+      "survival": 0.6356
+    },
+    {
+      "fh": 669.4,
+      "survival": 0.5649
+    },
+    {
+      "fh": 698.1,
+      "survival": 0.5649
+    },
+    {
+      "fh": 701.3,
+      "survival": 0.5649
+    },
+    {
+      "fh": 709.3,
+      "survival": 0.4708
+    },
+    {
+      "fh": 746.6,
+      "survival": 0.4708
+    },
+    {
+      "fh": 764.0,
+      "survival": 0.4708
+    },
+    {
+      "fh": 828.6,
+      "survival": 0.4708
+    },
+    {
+      "fh": 916.4,
+      "survival": 0.4708
+    },
+    {
+      "fh": 937.3,
+      "survival": 0.4708
+    }
+  ]
+}

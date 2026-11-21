@@ -1,0 +1,465 @@
+{
+  "as_of": "2026-11-15",
+  "aircraft": [
+    {
+      "tail": "FX-301",
+      "base": "Base A",
+      "status": "Critical",
+      "airframe_fh": 3421.8,
+      "fi": 42.5,
+      "induction_date": "2013-07-04",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 2
+    },
+    {
+      "tail": "FX-302",
+      "base": "Base A",
+      "status": "Action due",
+      "airframe_fh": 3542.7,
+      "fi": 46.9,
+      "induction_date": "2012-09-21",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 2
+    },
+    {
+      "tail": "FX-303",
+      "base": "Base A",
+      "status": "Action due",
+      "airframe_fh": 3397.6,
+      "fi": 40.9,
+      "induction_date": "2009-08-21",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 3
+    },
+    {
+      "tail": "FX-304",
+      "base": "Base A",
+      "status": "Action due",
+      "airframe_fh": 1800.8,
+      "fi": 54.3,
+      "induction_date": "2018-01-19",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 2
+    },
+    {
+      "tail": "FX-305",
+      "base": "Base A",
+      "status": "Action due",
+      "airframe_fh": 1915.3,
+      "fi": 42.6,
+      "induction_date": "2009-08-11",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 3
+    },
+    {
+      "tail": "FX-306",
+      "base": "Base A",
+      "status": "Serviceable",
+      "airframe_fh": 2116.9,
+      "fi": 47.6,
+      "induction_date": "2010-06-05",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 0
+    },
+    {
+      "tail": "FX-307",
+      "base": "Base A",
+      "status": "Action due",
+      "airframe_fh": 2322.0,
+      "fi": 46.0,
+      "induction_date": "2014-11-15",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 2
+    },
+    {
+      "tail": "FX-308",
+      "base": "Base A",
+      "status": "Action due",
+      "airframe_fh": 3783.7,
+      "fi": 30.8,
+      "induction_date": "2010-02-04",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 2
+    },
+    {
+      "tail": "FX-309",
+      "base": "Base A",
+      "status": "Critical",
+      "airframe_fh": 2540.5,
+      "fi": 73.8,
+      "induction_date": "2009-10-26",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 4
+    },
+    {
+      "tail": "FX-310",
+      "base": "Base A",
+      "status": "Action due",
+      "airframe_fh": 3338.8,
+      "fi": 59.7,
+      "induction_date": "2013-08-10",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 3
+    },
+    {
+      "tail": "FX-311",
+      "base": "Base B",
+      "status": "Action due",
+      "airframe_fh": 3032.1,
+      "fi": 66.7,
+      "induction_date": "2017-12-18",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 2
+    },
+    {
+      "tail": "FX-312",
+      "base": "Base B",
+      "status": "Action due",
+      "airframe_fh": 4058.2,
+      "fi": 37.4,
+      "induction_date": "2011-11-27",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 2
+    },
+    {
+      "tail": "FX-313",
+      "base": "Base B",
+      "status": "Action due",
+      "airframe_fh": 2467.2,
+      "fi": 29.9,
+      "induction_date": "2015-05-07",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 1
+    },
+    {
+      "tail": "FX-314",
+      "base": "Base B",
+      "status": "Action due",
+      "airframe_fh": 3747.7,
+      "fi": 69.5,
+      "induction_date": "2009-08-17",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 4
+    },
+    {
+      "tail": "FX-315",
+      "base": "Base B",
+      "status": "Action due",
+      "airframe_fh": 4134.4,
+      "fi": 41.0,
+      "induction_date": "2009-10-15",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 2
+    },
+    {
+      "tail": "FX-316",
+      "base": "Base B",
+      "status": "Action due",
+      "airframe_fh": 2366.5,
+      "fi": 42.4,
+      "induction_date": "2013-01-26",
+      "planned_withdrawal_year": 2036,
+      "open_recs_count": 1
+    }
+  ],
+  "kpis": {
+    "fleet_fh_12mo": 2505.0,
+    "serviceability_pct": 87.5,
+    "open_recs_by_priority": {
+      "Critical": 3,
+      "High": 26,
+      "Medium": 6,
+      "Low": 0
+    },
+    "due_30_days_count": 5,
+    "unscheduled_removal_rate_per_1000fh": 4.79,
+    "unscheduled_removal_rate_delta": -2.79
+  },
+  "utilisation_monthly": [
+    {
+      "month": "2024-12",
+      "base_a_fh": 133.7,
+      "base_b_fh": 81.3
+    },
+    {
+      "month": "2025-01",
+      "base_a_fh": 143.7,
+      "base_b_fh": 85.1
+    },
+    {
+      "month": "2025-02",
+      "base_a_fh": 132.7,
+      "base_b_fh": 82.0
+    },
+    {
+      "month": "2025-03",
+      "base_a_fh": 134.8,
+      "base_b_fh": 91.7
+    },
+    {
+      "month": "2025-04",
+      "base_a_fh": 121.1,
+      "base_b_fh": 52.8
+    },
+    {
+      "month": "2025-05",
+      "base_a_fh": 108.6,
+      "base_b_fh": 75.1
+    },
+    {
+      "month": "2025-06",
+      "base_a_fh": 164.1,
+      "base_b_fh": 97.9
+    },
+    {
+      "month": "2025-07",
+      "base_a_fh": 112.4,
+      "base_b_fh": 74.1
+    },
+    {
+      "month": "2025-08",
+      "base_a_fh": 108.6,
+      "base_b_fh": 68.0
+    },
+    {
+      "month": "2025-09",
+      "base_a_fh": 120.8,
+      "base_b_fh": 57.5
+    },
+    {
+      "month": "2025-10",
+      "base_a_fh": 151.5,
+      "base_b_fh": 81.7
+    },
+    {
+      "month": "2025-11",
+      "base_a_fh": 140.6,
+      "base_b_fh": 81.8
+    },
+    {
+      "month": "2025-12",
+      "base_a_fh": 140.6,
+      "base_b_fh": 79.6
+    },
+    {
+      "month": "2026-01",
+      "base_a_fh": 135.8,
+      "base_b_fh": 89.8
+    },
+    {
+      "month": "2026-02",
+      "base_a_fh": 139.2,
+      "base_b_fh": 87.3
+    },
+    {
+      "month": "2026-03",
+      "base_a_fh": 143.6,
+      "base_b_fh": 94.9
+    },
+    {
+      "month": "2026-04",
+      "base_a_fh": 116.5,
+      "base_b_fh": 75.6
+    },
+    {
+      "month": "2026-05",
+      "base_a_fh": 139.9,
+      "base_b_fh": 84.8
+    },
+    {
+      "month": "2026-06",
+      "base_a_fh": 136.1,
+      "base_b_fh": 90.2
+    },
+    {
+      "month": "2026-07",
+      "base_a_fh": 113.0,
+      "base_b_fh": 82.4
+    },
+    {
+      "month": "2026-08",
+      "base_a_fh": 99.9,
+      "base_b_fh": 72.3
+    },
+    {
+      "month": "2026-09",
+      "base_a_fh": 119.0,
+      "base_b_fh": 59.4
+    },
+    {
+      "month": "2026-10",
+      "base_a_fh": 122.3,
+      "base_b_fh": 82.3
+    },
+    {
+      "month": "2026-11",
+      "base_a_fh": 55.3,
+      "base_b_fh": 36.7
+    }
+  ],
+  "due_90_days": [
+    {
+      "tail": "FX-312",
+      "item": "Main battery",
+      "date": "2026-12-01",
+      "days_to_due": 16.0
+    },
+    {
+      "tail": "FX-305",
+      "item": "Ejection seat CAD/PAD set",
+      "date": "2026-12-05",
+      "days_to_due": 20.0
+    },
+    {
+      "tail": "FX-310",
+      "item": "Engine",
+      "date": "2026-12-07",
+      "days_to_due": 22.0
+    },
+    {
+      "tail": "FX-311",
+      "item": "Ejection seat CAD/PAD set",
+      "date": "2026-12-10",
+      "days_to_due": 25.0
+    },
+    {
+      "tail": "FX-314",
+      "item": "HPT module (turbine disc LLP)",
+      "date": "2026-12-10",
+      "days_to_due": 26.0
+    },
+    {
+      "tail": "FX-315",
+      "item": "Ejection seat CAD/PAD set",
+      "date": "2026-12-18",
+      "days_to_due": 33.0
+    },
+    {
+      "tail": "FX-309",
+      "item": "Main landing gear assembly",
+      "date": "2026-12-29",
+      "days_to_due": 44.0
+    },
+    {
+      "tail": "FX-314",
+      "item": "Main battery",
+      "date": "2027-01-15",
+      "days_to_due": 61.0
+    },
+    {
+      "tail": "FX-314",
+      "item": "Ejection seat CAD/PAD set",
+      "date": "2027-02-01",
+      "days_to_due": 78.0
+    },
+    {
+      "tail": "FX-301",
+      "item": "ECS cooling turbine",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 131.0
+    },
+    {
+      "tail": "FX-308",
+      "item": "ECS cooling turbine",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 144.0
+    },
+    {
+      "tail": "FX-311",
+      "item": "ECS cooling turbine",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 147.0
+    },
+    {
+      "tail": "FX-312",
+      "item": "ECS cooling turbine",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 136.0
+    },
+    {
+      "tail": "FX-314",
+      "item": "ECS cooling turbine",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 123.0
+    },
+    {
+      "tail": "FX-315",
+      "item": "ECS cooling turbine",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 104.0
+    },
+    {
+      "tail": "FX-316",
+      "item": "ECS cooling turbine",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 95.0
+    },
+    {
+      "tail": "FX-301",
+      "item": "Main generator",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 87.0
+    },
+    {
+      "tail": "FX-302",
+      "item": "Main generator",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 87.0
+    },
+    {
+      "tail": "FX-303",
+      "item": "Main generator",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 122.0
+    },
+    {
+      "tail": "FX-305",
+      "item": "Main generator",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 139.0
+    }
+  ],
+  "top_recommendations": [
+    {
+      "id": "REC-2026-0011",
+      "title": "Replace Engine-driven hydraulic pump HP-0001 on FX-301 (manufacturing lot L-2207, elevated failure rate and already due soon)",
+      "priority": "Critical",
+      "tail": "FX-301"
+    },
+    {
+      "id": "REC-2026-0017",
+      "title": "Replace Engine-driven hydraulic pump HP-0005 on FX-309 (manufacturing lot L-2207, elevated failure rate and already due soon)",
+      "priority": "Critical",
+      "tail": "FX-309"
+    },
+    {
+      "id": "REC-2026-0021",
+      "title": "Replace Fuel boost pump FB-0001 on FX-301 (failure risk 52% before next phase inspection)",
+      "priority": "Critical",
+      "tail": "FX-301"
+    },
+    {
+      "id": "REC-2026-0001",
+      "title": "Replace Main landing gear assembly MG-0017 on FX-309 before Calendar limit (44 days remaining)",
+      "priority": "High",
+      "tail": "FX-309"
+    },
+    {
+      "id": "REC-2026-0002",
+      "title": "Replace HPT module (turbine disc LLP) HT-0014 on FX-314 before Cycles limit (24 cycles remaining)",
+      "priority": "High",
+      "tail": "FX-314"
+    }
+  ]
+}

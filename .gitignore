@@ -1,0 +1,15 @@
+engine/data/bronze/*
+engine/data/silver/*
+engine/data/gold/*
+!engine/data/bronze/.gitkeep
+!engine/data/silver/.gitkeep
+!engine/data/gold/.gitkeep
+engine/.venv/
+engine/__pycache__/
+**/__pycache__/
+*.pyc
+node_modules/
+web/.next/
+web/out/
+web/tests/screenshots/
+.DS_Store

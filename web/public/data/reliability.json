@@ -1,0 +1,644 @@
+{
+  "snags_by_ata": [
+    {
+      "ata": 29,
+      "count": 24,
+      "cumulative_share": 0.279
+    },
+    {
+      "ata": 34,
+      "count": 15,
+      "cumulative_share": 0.453
+    },
+    {
+      "ata": 21,
+      "count": 12,
+      "cumulative_share": 0.593
+    },
+    {
+      "ata": 49,
+      "count": 11,
+      "cumulative_share": 0.721
+    },
+    {
+      "ata": 27,
+      "count": 9,
+      "cumulative_share": 0.826
+    },
+    {
+      "ata": 28,
+      "count": 8,
+      "cumulative_share": 0.919
+    },
+    {
+      "ata": 24,
+      "count": 3,
+      "cumulative_share": 0.953
+    },
+    {
+      "ata": 73,
+      "count": 2,
+      "cumulative_share": 0.977
+    },
+    {
+      "ata": 79,
+      "count": 2,
+      "cumulative_share": 1.0
+    }
+  ],
+  "mtbf_mtbur": [
+    {
+      "part_number": "21-1005-01",
+      "name": "ECS cooling turbine",
+      "mtbf_fh": 1153.0,
+      "mtbur_fh": 1057.0,
+      "nff_rate": 0.083
+    },
+    {
+      "part_number": "24-2110-01",
+      "name": "Main generator",
+      "mtbf_fh": 4225.0,
+      "mtbur_fh": 4225.0,
+      "nff_rate": 0.0
+    },
+    {
+      "part_number": "24-2240-02",
+      "name": "Main battery",
+      "mtbf_fh": null,
+      "mtbur_fh": null,
+      "nff_rate": 0
+    },
+    {
+      "part_number": "25-6410-01",
+      "name": "Ejection seat CAD/PAD set",
+      "mtbf_fh": null,
+      "mtbur_fh": null,
+      "nff_rate": 0
+    },
+    {
+      "part_number": "27-3310-04",
+      "name": "Horizontal stabilator actuator",
+      "mtbf_fh": 4225.0,
+      "mtbur_fh": 3622.0,
+      "nff_rate": 0.143
+    },
+    {
+      "part_number": "27-3550-01",
+      "name": "Flight control computer",
+      "mtbf_fh": 6337.0,
+      "mtbur_fh": 6337.0,
+      "nff_rate": 0.0
+    },
+    {
+      "part_number": "28-2210-02",
+      "name": "Fuel boost pump",
+      "mtbf_fh": 1585.0,
+      "mtbur_fh": 1585.0,
+      "nff_rate": 0.0
+    },
+    {
+      "part_number": "29-1140-03",
+      "name": "Engine-driven hydraulic pump",
+      "mtbf_fh": 552.0,
+      "mtbur_fh": 529.0,
+      "nff_rate": 0.042
+    },
+    {
+      "part_number": "32-1120-05",
+      "name": "Main landing gear assembly",
+      "mtbf_fh": null,
+      "mtbur_fh": null,
+      "nff_rate": 0
+    },
+    {
+      "part_number": "32-4210-02",
+      "name": "Main wheel brake",
+      "mtbf_fh": 564.0,
+      "mtbur_fh": 529.0,
+      "nff_rate": 0.062
+    },
+    {
+      "part_number": "32-4310-01",
+      "name": "Main wheel tyre",
+      "mtbf_fh": 97.0,
+      "mtbur_fh": 89.0,
+      "nff_rate": 0.08
+    },
+    {
+      "part_number": "34-1810-01",
+      "name": "Inertial navigation unit",
+      "mtbf_fh": 3169.0,
+      "mtbur_fh": 3169.0,
+      "nff_rate": 0.0
+    },
+    {
+      "part_number": "34-4410-02",
+      "name": "Radar altimeter",
+      "mtbf_fh": 6338.0,
+      "mtbur_fh": 3169.0,
+      "nff_rate": 0.5
+    },
+    {
+      "part_number": "49-1210-01",
+      "name": "Jet fuel starter",
+      "mtbf_fh": 1268.0,
+      "mtbur_fh": 1153.0,
+      "nff_rate": 0.091
+    },
+    {
+      "part_number": "72-0001-10",
+      "name": "Engine",
+      "mtbf_fh": null,
+      "mtbur_fh": null,
+      "nff_rate": 0
+    },
+    {
+      "part_number": "72-5120-01",
+      "name": "HPT module (turbine disc LLP)",
+      "mtbf_fh": null,
+      "mtbur_fh": null,
+      "nff_rate": 0
+    },
+    {
+      "part_number": "73-2110-01",
+      "name": "Engine fuel control unit",
+      "mtbf_fh": 6337.0,
+      "mtbur_fh": 6337.0,
+      "nff_rate": 0.0
+    },
+    {
+      "part_number": "79-1310-02",
+      "name": "Engine lube oil pump",
+      "mtbf_fh": 6337.0,
+      "mtbur_fh": 6337.0,
+      "nff_rate": 0.0
+    }
+  ],
+  "removal_rate_monthly": [
+    {
+      "month": "2021-11",
+      "rate_per_1000fh": 7.78
+    },
+    {
+      "month": "2021-12",
+      "rate_per_1000fh": 4.57
+    },
+    {
+      "month": "2022-01",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2022-02",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2022-03",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2022-04",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2022-05",
+      "rate_per_1000fh": 13.47
+    },
+    {
+      "month": "2022-06",
+      "rate_per_1000fh": 9.24
+    },
+    {
+      "month": "2022-07",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2022-08",
+      "rate_per_1000fh": 10.59
+    },
+    {
+      "month": "2022-09",
+      "rate_per_1000fh": 5.51
+    },
+    {
+      "month": "2022-10",
+      "rate_per_1000fh": 4.59
+    },
+    {
+      "month": "2022-11",
+      "rate_per_1000fh": 4.49
+    },
+    {
+      "month": "2022-12",
+      "rate_per_1000fh": 4.36
+    },
+    {
+      "month": "2023-01",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2023-02",
+      "rate_per_1000fh": 4.42
+    },
+    {
+      "month": "2023-03",
+      "rate_per_1000fh": 4.5
+    },
+    {
+      "month": "2023-04",
+      "rate_per_1000fh": 13.31
+    },
+    {
+      "month": "2023-05",
+      "rate_per_1000fh": 4.34
+    },
+    {
+      "month": "2023-06",
+      "rate_per_1000fh": 4.99
+    },
+    {
+      "month": "2023-07",
+      "rate_per_1000fh": 10.32
+    },
+    {
+      "month": "2023-08",
+      "rate_per_1000fh": 11.04
+    },
+    {
+      "month": "2023-09",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2023-10",
+      "rate_per_1000fh": 4.29
+    },
+    {
+      "month": "2023-11",
+      "rate_per_1000fh": 9.74
+    },
+    {
+      "month": "2023-12",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2024-01",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2024-02",
+      "rate_per_1000fh": 4.52
+    },
+    {
+      "month": "2024-03",
+      "rate_per_1000fh": 4.63
+    },
+    {
+      "month": "2024-04",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2024-05",
+      "rate_per_1000fh": 14.3
+    },
+    {
+      "month": "2024-06",
+      "rate_per_1000fh": 18.56
+    },
+    {
+      "month": "2024-07",
+      "rate_per_1000fh": 13.67
+    },
+    {
+      "month": "2024-08",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2024-09",
+      "rate_per_1000fh": 9.02
+    },
+    {
+      "month": "2024-10",
+      "rate_per_1000fh": 4.18
+    },
+    {
+      "month": "2024-11",
+      "rate_per_1000fh": 9.49
+    },
+    {
+      "month": "2024-12",
+      "rate_per_1000fh": 4.65
+    },
+    {
+      "month": "2025-01",
+      "rate_per_1000fh": 4.37
+    },
+    {
+      "month": "2025-02",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2025-03",
+      "rate_per_1000fh": 17.65
+    },
+    {
+      "month": "2025-04",
+      "rate_per_1000fh": 23.01
+    },
+    {
+      "month": "2025-05",
+      "rate_per_1000fh": 16.33
+    },
+    {
+      "month": "2025-06",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2025-07",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2025-08",
+      "rate_per_1000fh": 5.66
+    },
+    {
+      "month": "2025-09",
+      "rate_per_1000fh": 11.22
+    },
+    {
+      "month": "2025-10",
+      "rate_per_1000fh": 8.58
+    },
+    {
+      "month": "2025-11",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2025-12",
+      "rate_per_1000fh": 9.08
+    },
+    {
+      "month": "2026-01",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2026-02",
+      "rate_per_1000fh": 4.41
+    },
+    {
+      "month": "2026-03",
+      "rate_per_1000fh": 0.0
+    },
+    {
+      "month": "2026-04",
+      "rate_per_1000fh": 5.21
+    },
+    {
+      "month": "2026-05",
+      "rate_per_1000fh": 8.9
+    },
+    {
+      "month": "2026-06",
+      "rate_per_1000fh": 8.84
+    },
+    {
+      "month": "2026-07",
+      "rate_per_1000fh": 5.12
+    },
+    {
+      "month": "2026-08",
+      "rate_per_1000fh": 5.81
+    },
+    {
+      "month": "2026-09",
+      "rate_per_1000fh": 5.61
+    },
+    {
+      "month": "2026-10",
+      "rate_per_1000fh": 4.89
+    },
+    {
+      "month": "2026-11",
+      "rate_per_1000fh": 0.0
+    }
+  ],
+  "removal_rate_per_part": [
+    {
+      "part_number": "21-1005-01",
+      "confirmed_failures": 11,
+      "fh_exposure": 12686.0,
+      "removal_rate_per_1000fh": 0.867
+    },
+    {
+      "part_number": "24-2110-01",
+      "confirmed_failures": 3,
+      "fh_exposure": 12676.1,
+      "removal_rate_per_1000fh": 0.237
+    },
+    {
+      "part_number": "24-2240-02",
+      "confirmed_failures": 0,
+      "fh_exposure": 12684.9,
+      "removal_rate_per_1000fh": 0.0
+    },
+    {
+      "part_number": "25-6410-01",
+      "confirmed_failures": 0,
+      "fh_exposure": 12681.6,
+      "removal_rate_per_1000fh": 0.0
+    },
+    {
+      "part_number": "27-3310-04",
+      "confirmed_failures": 6,
+      "fh_exposure": 25352.9,
+      "removal_rate_per_1000fh": 0.237
+    },
+    {
+      "part_number": "27-3550-01",
+      "confirmed_failures": 2,
+      "fh_exposure": 12673.8,
+      "removal_rate_per_1000fh": 0.158
+    },
+    {
+      "part_number": "28-2210-02",
+      "confirmed_failures": 8,
+      "fh_exposure": 12682.4,
+      "removal_rate_per_1000fh": 0.631
+    },
+    {
+      "part_number": "29-1140-03",
+      "confirmed_failures": 23,
+      "fh_exposure": 12703.0,
+      "removal_rate_per_1000fh": 1.811
+    },
+    {
+      "part_number": "32-1120-05",
+      "confirmed_failures": 0,
+      "fh_exposure": 25352.5,
+      "removal_rate_per_1000fh": 0.0
+    },
+    {
+      "part_number": "32-4210-02",
+      "confirmed_failures": 45,
+      "fh_exposure": 25395.2,
+      "removal_rate_per_1000fh": 1.772
+    },
+    {
+      "part_number": "32-4310-01",
+      "confirmed_failures": 265,
+      "fh_exposure": 25651.0,
+      "removal_rate_per_1000fh": 10.331
+    },
+    {
+      "part_number": "34-1810-01",
+      "confirmed_failures": 4,
+      "fh_exposure": 12675.0,
+      "removal_rate_per_1000fh": 0.316
+    },
+    {
+      "part_number": "34-4410-02",
+      "confirmed_failures": 2,
+      "fh_exposure": 12675.8,
+      "removal_rate_per_1000fh": 0.158
+    },
+    {
+      "part_number": "49-1210-01",
+      "confirmed_failures": 10,
+      "fh_exposure": 12684.7,
+      "removal_rate_per_1000fh": 0.788
+    },
+    {
+      "part_number": "72-0001-10",
+      "confirmed_failures": 0,
+      "fh_exposure": 12687.1,
+      "removal_rate_per_1000fh": 0.0
+    },
+    {
+      "part_number": "72-5120-01",
+      "confirmed_failures": 0,
+      "fh_exposure": 12682.9,
+      "removal_rate_per_1000fh": 0.0
+    },
+    {
+      "part_number": "73-2110-01",
+      "confirmed_failures": 2,
+      "fh_exposure": 12673.3,
+      "removal_rate_per_1000fh": 0.158
+    },
+    {
+      "part_number": "79-1310-02",
+      "confirmed_failures": 2,
+      "fh_exposure": 12674.2,
+      "removal_rate_per_1000fh": 0.158
+    }
+  ],
+  "lot_comparison": [
+    {
+      "part_number": "29-1140-03",
+      "lot": "L-2207",
+      "n_units": 28,
+      "events": 19,
+      "exposure_fh": 6903.3,
+      "rate_per_1000fh": 2.75,
+      "rest_of_fleet_rate_per_1000fh": 0.69,
+      "p_value_bonferroni": 0.01834,
+      "flagged": true
+    },
+    {
+      "part_number": "29-1140-03",
+      "lot": "L-2301",
+      "n_units": 5,
+      "events": 1,
+      "exposure_fh": 2391.7,
+      "rate_per_1000fh": 0.42,
+      "rest_of_fleet_rate_per_1000fh": 2.13,
+      "p_value_bonferroni": 1.0,
+      "flagged": false
+    },
+    {
+      "part_number": "29-1140-03",
+      "lot": "L-2312",
+      "n_units": 5,
+      "events": 2,
+      "exposure_fh": 2803.3,
+      "rate_per_1000fh": 0.71,
+      "rest_of_fleet_rate_per_1000fh": 2.12,
+      "p_value_bonferroni": 1.0,
+      "flagged": false
+    },
+    {
+      "part_number": "29-1140-03",
+      "lot": "L-2105",
+      "n_units": 2,
+      "events": 1,
+      "exposure_fh": 604.6,
+      "rate_per_1000fh": 1.65,
+      "rest_of_fleet_rate_per_1000fh": 1.82,
+      "p_value_bonferroni": 1.0,
+      "flagged": false
+    }
+  ],
+  "environmental_effects": [
+    {
+      "part_number": "21-1005-01",
+      "name": "ECS cooling turbine",
+      "time_ratio_full_hot_exposure": 0.35,
+      "p_value": 0.54494,
+      "flagged": false
+    },
+    {
+      "part_number": "27-3310-04",
+      "name": "Horizontal stabilator actuator",
+      "time_ratio_full_hot_exposure": 5.743,
+      "p_value": 0.48313,
+      "flagged": false
+    },
+    {
+      "part_number": "28-2210-02",
+      "name": "Fuel boost pump",
+      "time_ratio_full_hot_exposure": 1.349,
+      "p_value": 0.80001,
+      "flagged": false
+    },
+    {
+      "part_number": "29-1140-03",
+      "name": "Engine-driven hydraulic pump",
+      "time_ratio_full_hot_exposure": 83.787,
+      "p_value": 0.01222,
+      "flagged": false
+    },
+    {
+      "part_number": "32-4210-02",
+      "name": "Main wheel brake",
+      "time_ratio_full_hot_exposure": 20.414,
+      "p_value": 0.00122,
+      "flagged": false
+    },
+    {
+      "part_number": "32-4310-01",
+      "name": "Main wheel tyre",
+      "time_ratio_full_hot_exposure": 1.364,
+      "p_value": 0.01513,
+      "flagged": false
+    },
+    {
+      "part_number": "49-1210-01",
+      "name": "Jet fuel starter",
+      "time_ratio_full_hot_exposure": 13.988,
+      "p_value": 0.14555,
+      "flagged": false
+    }
+  ],
+  "repeat_nff": [
+    {
+      "tail": "FX-307",
+      "ata": null,
+      "detector": "repeat_nff",
+      "count": 2,
+      "window_days": 120,
+      "first_in_window": "2026-04-20",
+      "last_in_window": "2026-06-25",
+      "still_open": null,
+      "part_number": "34-4410-02",
+      "position": "1"
+    }
+  ]
+}

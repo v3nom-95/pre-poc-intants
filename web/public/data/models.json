@@ -1,0 +1,192 @@
+{
+  "model_cards": [
+    {
+      "name": "Hard-time rules engine",
+      "purpose": "Remaining life for fixed-limit (HT) components",
+      "inputs": "Component history, maintenance schedule",
+      "method": "Minimum remaining across applicable FH/EFH/cycles/landings/calendar limits",
+      "outputs": "Due date, governing limit",
+      "limits": "No uncertainty interval (deterministic rule, not a statistical model)."
+    },
+    {
+      "name": "Survival model (Weibull AFT)",
+      "purpose": "Failure risk for on-condition and condition-monitored components",
+      "inputs": "Unit-level exposure (FH, hot-climate share, ACM share, lot)",
+      "method": "lifelines WeibullAFTFitter per part number, parametric bootstrap for intervals",
+      "outputs": "Conditional failure probability, FH to threshold with interval, covariate time ratios",
+      "limits": "Covariates only fit with enough events; small fleet-wide event counts limit statistical power for some part numbers."
+    },
+    {
+      "name": "Engine trend monitor",
+      "purpose": "EGT margin deterioration tracking",
+      "inputs": "Per-sortie EGT margin readings",
+      "method": "Theil-Sen robust slope over trailing 150 EFH, fleet-percentile comparison",
+      "outputs": "Projected EFH to margin limit",
+      "limits": "Needs at least 50 EFH and 20 readings to produce a stable slope."
+    },
+    {
+      "name": "Fatigue projection",
+      "purpose": "Airframe fatigue index (FI) limit forecasting",
+      "inputs": "Sortie mission mix, FI consumption",
+      "method": "Trailing 12-month consumption rate, linear projection to FI 100",
+      "outputs": "Projected date, life-gain estimate for reduced ACM share",
+      "limits": "Linear projection; does not model future mission-mix changes beyond the simple what-if shift."
+    },
+    {
+      "name": "Pattern detectors",
+      "purpose": "Lot defects, environmental effects, repeat snags, oil precursor",
+      "inputs": "Unit exposure, snag register, maintenance records",
+      "method": "Binomial rate comparison (Bonferroni-corrected), AFT covariate significance, rolling-window snag/NFF counts",
+      "outputs": "Flagged lots, environmental time ratios, repeat-snag list, precursor correlation",
+      "limits": "Statistical power is limited by this fleet's size (16 aircraft); some planted effects are weak at this scale even when real."
+    }
+  ],
+  "validation": {
+    "note": "Simplified validation: in-sample model fit quality shown below, not a held-out temporal backtest (descoped for time, see docs/model-notes.md). The pattern-recovery table is the validated evidence and is computed honestly against ground_truth.json.",
+    "pattern_recovery": [
+      {
+        "id": "P1",
+        "title": "Defective hydraulic pump lot",
+        "detector": "Binomial rate test (Bonferroni-corrected)",
+        "statistic": "p=0.0183, rate 2.75 vs 0.69/1,000 FH",
+        "detected": true
+      },
+      {
+        "id": "P2",
+        "title": "Hot-climate acceleration",
+        "detector": "AFT hot_share covariate (lifelines summary p-value)",
+        "statistic": "ECS cooling turbine: ratio=0.35, p=0.5449; Fuel boost pump: ratio=1.35, p=0.8000",
+        "detected": false
+      },
+      {
+        "id": "P3",
+        "title": "Mission-mix fatigue",
+        "detector": "Trailing-12mo FI consumption rate projection",
+        "statistic": "projected FI 100 by 2034-01-29, withdrawal 2036",
+        "detected": true
+      },
+      {
+        "id": "P4",
+        "title": "Recurring snag with a wrong fix",
+        "detector": "Repeat-snag rolling window (same tail+ATA)",
+        "statistic": "9 snags, window 2026-03-10 to 2026-04-20, still open=True",
+        "detected": true
+      },
+      {
+        "id": "P5",
+        "title": "Engine deterioration",
+        "detector": "Theil-Sen trend + fleet-percentile comparison",
+        "statistic": "slope=-0.114 C/EFH, projected crossing in 70 EFH (planted target 40-80 EFH)",
+        "detected": true
+      },
+      {
+        "id": "P6",
+        "title": "Oil system precursor",
+        "detector": "Chip-detector-to-failure window correlation",
+        "statistic": "fleet co-occurrence rate=0.50 (planted target 0.7); FX-302 active precursor found=True",
+        "detected": true
+      },
+      {
+        "id": "P7",
+        "title": "Hard-time items approaching",
+        "detector": "Hard-time rules engine (min over limits)",
+        "statistic": "CAD/PAD due=True, engine EFH due=True, MLG landings due=True",
+        "detected": true
+      }
+    ],
+    "patterns_detected": "6/7",
+    "model_fit_summary": [
+      {
+        "part_number": "21-1005-01",
+        "name": "ECS cooling turbine",
+        "n_events": 11,
+        "n_units": 28,
+        "in_sample_concordance": 0.59
+      },
+      {
+        "part_number": "24-2110-01",
+        "name": "Main generator",
+        "n_events": 3,
+        "n_units": 19,
+        "in_sample_concordance": 0.5
+      },
+      {
+        "part_number": "27-3310-04",
+        "name": "Horizontal stabilator actuator",
+        "n_events": 6,
+        "n_units": 39,
+        "in_sample_concordance": 0.674
+      },
+      {
+        "part_number": "27-3550-01",
+        "name": "Flight control computer",
+        "n_events": 2,
+        "n_units": 18,
+        "in_sample_concordance": 0.5
+      },
+      {
+        "part_number": "28-2210-02",
+        "name": "Fuel boost pump",
+        "n_events": 8,
+        "n_units": 24,
+        "in_sample_concordance": 0.462
+      },
+      {
+        "part_number": "29-1140-03",
+        "name": "Engine-driven hydraulic pump",
+        "n_events": 23,
+        "n_units": 40,
+        "in_sample_concordance": 0.718
+      },
+      {
+        "part_number": "32-4210-02",
+        "name": "Main wheel brake",
+        "n_events": 45,
+        "n_units": 80,
+        "in_sample_concordance": 0.719
+      },
+      {
+        "part_number": "32-4310-01",
+        "name": "Main wheel tyre",
+        "n_events": 265,
+        "n_units": 320,
+        "in_sample_concordance": 0.579
+      },
+      {
+        "part_number": "34-4410-02",
+        "name": "Radar altimeter",
+        "n_events": 2,
+        "n_units": 20,
+        "in_sample_concordance": 0.5
+      },
+      {
+        "part_number": "34-1810-01",
+        "name": "Inertial navigation unit",
+        "n_events": 4,
+        "n_units": 20,
+        "in_sample_concordance": 0.5
+      },
+      {
+        "part_number": "49-1210-01",
+        "name": "Jet fuel starter",
+        "n_events": 10,
+        "n_units": 27,
+        "in_sample_concordance": 0.695
+      },
+      {
+        "part_number": "73-2110-01",
+        "name": "Engine fuel control unit",
+        "n_events": 2,
+        "n_units": 18,
+        "in_sample_concordance": 0.5
+      },
+      {
+        "part_number": "79-1310-02",
+        "name": "Engine lube oil pump",
+        "n_events": 2,
+        "n_units": 18,
+        "in_sample_concordance": 0.5
+      }
+    ]
+  }
+}

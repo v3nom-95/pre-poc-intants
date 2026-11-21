@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/archivo/standard.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-archivo);
+  --font-heading: var(--font-archivo);
+  --color-ring: var(--accent);
+  --color-input: var(--rule);
+  --color-border: var(--rule);
+  --color-destructive: var(--status-critical);
+  --color-accent-foreground: var(--paper);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--ink-2);
+  --color-muted: var(--sheet);
+  --color-secondary-foreground: var(--ink);
+  --color-secondary: var(--sheet);
+  --color-primary-foreground: var(--paper);
+  --color-primary: var(--accent);
+  --color-popover-foreground: var(--ink);
+  --color-popover: var(--sheet);
+  --color-card-foreground: var(--ink);
+  --color-card: var(--sheet);
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+}
+
+:root {
+  --font-archivo: "Archivo Variable", "Archivo", ui-sans-serif, system-ui, sans-serif;
+
+  /* core surfaces */
+  --paper: #eef1f3;
+  --sheet: #fafbfb;
+  --ink: #16202a;
+  --ink-2: #4e5a66;
+  --ink-3: #7d8893;
+  --rule: #d3d9df;
+  --accent: #2d4fd6;
+
+  /* status palette - reserved, always paired with icon + label */
+  --status-serviceable: #0ca30c;
+  --status-monitor: #fab219;
+  --status-action-due: #ec835a;
+  --status-critical: #d03b3b;
+
+  /* chart categorical palette - fixed order, never reorder */
+  --chart-cat-1: #2a78d6;
+  --chart-cat-2: #eb6834;
+  --chart-cat-3: #1baf7a;
+  --chart-cat-4: #eda100;
+  --chart-cat-5: #e87ba4;
+  --chart-cat-6: #008300;
+
+  /* sequential ramp (heatmaps), low to high */
+  --chart-seq-1: #cde2fb;
+  --chart-seq-2: #9ec5f4;
+  --chart-seq-3: #6da7ec;
+  --chart-seq-4: #3987e5;
+  --chart-seq-5: #256abf;
+  --chart-seq-6: #184f95;
+  --chart-seq-7: #0d366b;
+
+  --radius: 6px;
+}
+
+.dark {
+  --paper: #101418;
+  --sheet: #171c21;
+  --ink: #e8ecef;
+  --ink-2: #aeb8c1;
+  --ink-3: #7d8893;
+  --rule: #2a3138;
+  --accent: #7c93f2;
+
+  --status-serviceable: #0ca30c;
+  --status-monitor: #fab219;
+  --status-action-due: #ec835a;
+  --status-critical: #d03b3b;
+
+  --chart-cat-1: #3987e5;
+  --chart-cat-2: #d95926;
+  --chart-cat-3: #199e70;
+  --chart-cat-4: #c98500;
+  --chart-cat-5: #d55181;
+  --chart-cat-6: #0ca30c;
+
+  --chart-seq-1: #cde2fb;
+  --chart-seq-2: #9ec5f4;
+  --chart-seq-3: #6da7ec;
+  --chart-seq-4: #3987e5;
+  --chart-seq-5: #256abf;
+  --chart-seq-6: #184f95;
+  --chart-seq-7: #0d366b;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(900px circle at 8% -10%, color-mix(in oklch, var(--accent) 7%, transparent), transparent 60%),
+      radial-gradient(700px circle at 100% 0%, color-mix(in oklch, var(--accent) 5%, transparent), transparent 55%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  html {
+    @apply font-sans;
+    font-variation-settings: "wdth" 100, "wght" 400;
+  }
+  table,
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .tail-number {
+    font-variation-settings: "wdth" 112, "wght" 700;
+    letter-spacing: 0.02em;
+  }
+  /* Plain weight-based hierarchy. An earlier pass used the variable font's
+     width axis here too, but mixing "wdth" values across adjacent text
+     made the UI feel like it was randomly resizing. Weight alone is
+     stable and still reads as considered. */
+  .figure-display {
+    font-variation-settings: "wdth" 100, "wght" 700;
+    letter-spacing: -0.01em;
+  }
+  .page-title {
+    font-variation-settings: "wdth" 100, "wght" 650;
+    letter-spacing: -0.006em;
+  }
+  .no-motion {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes pre-draw-in {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media print {
+  nav[aria-label="Primary"],
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 14mm;
+  }
+}

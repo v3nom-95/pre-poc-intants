@@ -1,0 +1,5300 @@
+{
+  "open": [
+    {
+      "id": "REC-2026-0001",
+      "created": "2026-11-15",
+      "tail": "FX-309",
+      "position": "L",
+      "serial": "MG-0017",
+      "part_number": "32-1120-05",
+      "ata": "32",
+      "action": "Replace",
+      "title": "Replace Main landing gear assembly MG-0017 on FX-309 before Calendar limit (44 days remaining)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-12-29",
+        "governing": "Calendar"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: Calendar governs, 44 days remaining, due 2026-12-29"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0002",
+      "created": "2026-11-15",
+      "tail": "FX-314",
+      "position": "1",
+      "serial": "HT-0014",
+      "part_number": "72-5120-01",
+      "ata": "72",
+      "action": "Replace",
+      "title": "Replace HPT module (turbine disc LLP) HT-0014 on FX-314 before Cycles limit (24 cycles remaining)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-12-10",
+        "governing": "Cycles"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: Cycles governs, 24 cycles remaining, due 2026-12-10"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0003",
+      "created": "2026-11-15",
+      "tail": "FX-310",
+      "position": "1",
+      "serial": "EN-0010",
+      "part_number": "72-0001-10",
+      "ata": "72",
+      "action": "Remove for overhaul",
+      "title": "Remove for overhaul Engine EN-0010 on FX-310 before Cycles limit (31 cycles remaining)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-12-07",
+        "governing": "Cycles"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: Cycles governs, 31 cycles remaining, due 2026-12-07"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0004",
+      "created": "2026-11-15",
+      "tail": "FX-314",
+      "position": "1",
+      "serial": "EN-0024",
+      "part_number": "72-0001-10",
+      "ata": "72",
+      "action": "Remove for overhaul",
+      "title": "Remove for overhaul Engine EN-0024 on FX-314 before EFH limit (40 EFH remaining)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 40.0,
+        "date": "2027-03-02",
+        "governing": "EFH"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: EFH governs, 40 EFH remaining, due 2027-03-02"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0005",
+      "created": "2026-11-15",
+      "tail": "FX-305",
+      "position": "1",
+      "serial": "CP-0030",
+      "part_number": "25-6410-01",
+      "ata": "25",
+      "action": "Replace",
+      "title": "Replace Ejection seat CAD/PAD set CP-0030 on FX-305 before Calendar limit (20 days remaining)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-12-05",
+        "governing": "Calendar"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: Calendar governs, 20 days remaining, due 2026-12-05"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0006",
+      "created": "2026-11-15",
+      "tail": "FX-311",
+      "position": "1",
+      "serial": "CP-0027",
+      "part_number": "25-6410-01",
+      "ata": "25",
+      "action": "Replace",
+      "title": "Replace Ejection seat CAD/PAD set CP-0027 on FX-311 before Calendar limit (25 days remaining)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-12-10",
+        "governing": "Calendar"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: Calendar governs, 25 days remaining, due 2026-12-10"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0007",
+      "created": "2026-11-15",
+      "tail": "FX-315",
+      "position": "1",
+      "serial": "CP-0028",
+      "part_number": "25-6410-01",
+      "ata": "25",
+      "action": "Replace",
+      "title": "Replace Ejection seat CAD/PAD set CP-0028 on FX-315 before Calendar limit (33 days remaining)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-12-18",
+        "governing": "Calendar"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: Calendar governs, 33 days remaining, due 2026-12-18"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0008",
+      "created": "2026-11-15",
+      "tail": "FX-314",
+      "position": "1",
+      "serial": "CP-0029",
+      "part_number": "25-6410-01",
+      "ata": "25",
+      "action": "Replace",
+      "title": "Replace Ejection seat CAD/PAD set CP-0029 on FX-314 before Calendar limit (78 days remaining)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2027-02-01",
+        "governing": "Calendar"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: Calendar governs, 78 days remaining, due 2027-02-01"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0009",
+      "created": "2026-11-15",
+      "tail": "FX-312",
+      "position": "1",
+      "serial": "BT-0040",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0040 on FX-312 before Calendar limit (16 days remaining)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-12-01",
+        "governing": "Calendar"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: Calendar governs, 16 days remaining, due 2026-12-01"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0010",
+      "created": "2026-11-15",
+      "tail": "FX-314",
+      "position": "1",
+      "serial": "BT-0041",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0041 on FX-314 before Calendar limit (61 days remaining)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2027-01-15",
+        "governing": "Calendar"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "rule_trigger",
+          "text": "Hard-time limit: Calendar governs, 61 days remaining, due 2027-01-15"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0011",
+      "created": "2026-11-15",
+      "tail": "FX-301",
+      "position": "1",
+      "serial": "HP-0001",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Replace",
+      "title": "Replace Engine-driven hydraulic pump HP-0001 on FX-301 (manufacturing lot L-2207, elevated failure rate and already due soon)",
+      "priority": "Critical",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Lot analysis: L-2207 failure rate 2.75/1,000 FH vs 0.69/1,000 FH fleet rest (p=0.018, Bonferroni-corrected)"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0012",
+      "created": "2026-11-15",
+      "tail": "FX-302",
+      "position": "1",
+      "serial": "HP-0006",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Replace",
+      "title": "Replace Engine-driven hydraulic pump HP-0006 on FX-302 (manufacturing lot L-2207, elevated failure rate and already due soon)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Lot analysis: L-2207 failure rate 2.75/1,000 FH vs 0.69/1,000 FH fleet rest (p=0.018, Bonferroni-corrected)"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0013",
+      "created": "2026-11-15",
+      "tail": "FX-303",
+      "position": "1",
+      "serial": "HP-0004",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Inspect",
+      "title": "Inspect Engine-driven hydraulic pump HP-0004 on FX-303 (manufacturing lot L-2207, failing 4.0x the fleet rate for this part)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Lot analysis: L-2207 failure rate 2.75/1,000 FH vs 0.69/1,000 FH fleet rest (p=0.018, Bonferroni-corrected)"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0014",
+      "created": "2026-11-15",
+      "tail": "FX-305",
+      "position": "1",
+      "serial": "HP-0003",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Replace",
+      "title": "Replace Engine-driven hydraulic pump HP-0003 on FX-305 (manufacturing lot L-2207, elevated failure rate and already due soon)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Lot analysis: L-2207 failure rate 2.75/1,000 FH vs 0.69/1,000 FH fleet rest (p=0.018, Bonferroni-corrected)"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0015",
+      "created": "2026-11-15",
+      "tail": "FX-307",
+      "position": "1",
+      "serial": "HP-0007",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Replace",
+      "title": "Replace Engine-driven hydraulic pump HP-0007 on FX-307 (manufacturing lot L-2207, elevated failure rate and already due soon)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Lot analysis: L-2207 failure rate 2.75/1,000 FH vs 0.69/1,000 FH fleet rest (p=0.018, Bonferroni-corrected)"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0016",
+      "created": "2026-11-15",
+      "tail": "FX-308",
+      "position": "1",
+      "serial": "HP-0008",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Inspect",
+      "title": "Inspect Engine-driven hydraulic pump HP-0008 on FX-308 (manufacturing lot L-2207, failing 4.0x the fleet rate for this part)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Lot analysis: L-2207 failure rate 2.75/1,000 FH vs 0.69/1,000 FH fleet rest (p=0.018, Bonferroni-corrected)"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0017",
+      "created": "2026-11-15",
+      "tail": "FX-309",
+      "position": "1",
+      "serial": "HP-0005",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Replace",
+      "title": "Replace Engine-driven hydraulic pump HP-0005 on FX-309 (manufacturing lot L-2207, elevated failure rate and already due soon)",
+      "priority": "Critical",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Lot analysis: L-2207 failure rate 2.75/1,000 FH vs 0.69/1,000 FH fleet rest (p=0.018, Bonferroni-corrected)"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0018",
+      "created": "2026-11-15",
+      "tail": "FX-315",
+      "position": "1",
+      "serial": "HP-0002",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Inspect",
+      "title": "Inspect Engine-driven hydraulic pump HP-0002 on FX-315 (manufacturing lot L-2207, failing 4.0x the fleet rate for this part)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Lot analysis: L-2207 failure rate 2.75/1,000 FH vs 0.69/1,000 FH fleet rest (p=0.018, Bonferroni-corrected)"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0019",
+      "created": "2026-11-15",
+      "tail": "FX-304",
+      "position": "L",
+      "serial": "SA-0007",
+      "part_number": "27-3310-04",
+      "ata": "27",
+      "action": "Inspect",
+      "title": "Inspect Horizontal stabilator actuator SA-0007 on FX-304 (failure risk 25% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 58.3,
+        "date": "2027-05-13",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 58 FH to 10% failure probability (80% interval 20 to 150 FH). Expected life x1.44 (hot-climate share 21%); Expected life x0.14 (ACM share 37%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.2455,
+        "interval": [
+          20.2,
+          150.3
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0020",
+      "created": "2026-11-15",
+      "tail": "FX-309",
+      "position": "L",
+      "serial": "SA-0017",
+      "part_number": "27-3310-04",
+      "ata": "27",
+      "action": "Inspect",
+      "title": "Inspect Horizontal stabilator actuator SA-0017 on FX-309 (failure risk 24% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 59.3,
+        "date": "2027-05-10",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 59 FH to 10% failure probability (80% interval 21 to 143 FH). Expected life x1.38 (hot-climate share 19%); Expected life x0.14 (ACM share 37%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.2429,
+        "interval": [
+          21.0,
+          142.8
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0021",
+      "created": "2026-11-15",
+      "tail": "FX-301",
+      "position": "1",
+      "serial": "FB-0001",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Replace",
+      "title": "Replace Fuel boost pump FB-0001 on FX-301 (failure risk 52% before next phase inspection)",
+      "priority": "Critical",
+      "due": {
+        "fh_remaining": 24.5,
+        "date": "2027-01-05",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 24 FH to 10% failure probability (80% interval 10 to 55 FH). Expected life x1.07 (hot-climate share 22%); Expected life x1.09 (ACM share 18%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.5216,
+        "interval": [
+          9.5,
+          55.1
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0022",
+      "created": "2026-11-15",
+      "tail": "FX-303",
+      "position": "1",
+      "serial": "FB-0003",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0003 on FX-303 (failure risk 39% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 36.4,
+        "date": "2027-03-01",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 36 FH to 10% failure probability (80% interval 17 to 76 FH). Expected life x1.06 (hot-climate share 20%); Expected life x1.09 (ACM share 19%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.3948,
+        "interval": [
+          16.6,
+          75.9
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0023",
+      "created": "2026-11-15",
+      "tail": "FX-304",
+      "position": "1",
+      "serial": "FB-0004",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0004 on FX-304 (failure risk 36% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 40.0,
+        "date": "2027-03-18",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 40 FH to 10% failure probability (80% interval 10 to 131 FH). Expected life x1.06 (hot-climate share 21%); Expected life x1.19 (ACM share 37%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.3628,
+        "interval": [
+          10.3,
+          130.9
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0024",
+      "created": "2026-11-15",
+      "tail": "FX-305",
+      "position": "1",
+      "serial": "FB-0005",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0005 on FX-305 (failure risk 35% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 43.0,
+        "date": "2027-04-07",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 43 FH to 10% failure probability (80% interval 21 to 86 FH). Expected life x1.07 (hot-climate share 24%); Expected life x1.08 (ACM share 17%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.3473,
+        "interval": [
+          20.8,
+          86.3
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0025",
+      "created": "2026-11-15",
+      "tail": "FX-308",
+      "position": "1",
+      "serial": "FB-0008",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0008 on FX-308 (failure risk 34% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 44.6,
+        "date": "2027-03-16",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 45 FH to 10% failure probability (80% interval 23 to 83 FH). Expected life x1.08 (hot-climate share 25%); Expected life x1.09 (ACM share 18%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.3371,
+        "interval": [
+          22.7,
+          83.3
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0026",
+      "created": "2026-11-15",
+      "tail": "FX-312",
+      "position": "1",
+      "serial": "FB-0012",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0012 on FX-312 (failure risk 27% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 57.0,
+        "date": "2027-03-21",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 57 FH to 10% failure probability (80% interval 15 to 162 FH). Expected life x1.13 (hot-climate share 42%); Expected life x1.18 (ACM share 36%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.269,
+        "interval": [
+          15.0,
+          161.5
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0027",
+      "created": "2026-11-15",
+      "tail": "FX-313",
+      "position": "1",
+      "serial": "FB-0013",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0013 on FX-313 (failure risk 25% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 63.1,
+        "date": "2027-07-09",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 63 FH to 10% failure probability (80% interval 24 to 121 FH). Expected life x1.14 (hot-climate share 43%); Expected life x1.11 (ACM share 22%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.2483,
+        "interval": [
+          24.0,
+          120.9
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0028",
+      "created": "2026-11-15",
+      "tail": "FX-316",
+      "position": "1",
+      "serial": "FB-0016",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0016 on FX-316 (failure risk 44% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 30.7,
+        "date": "2027-01-13",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 31 FH to 10% failure probability (80% interval 8 to 70 FH). Expected life x1.14 (hot-climate share 43%); Expected life x1.09 (ACM share 18%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.4431,
+        "interval": [
+          7.7,
+          70.0
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0034",
+      "created": "2026-11-15",
+      "tail": "FX-310",
+      "position": "1",
+      "serial": "HP-0018",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Inspect",
+      "title": "Inspect Engine-driven hydraulic pump HP-0018 on FX-310 (failure risk 34% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 44.8,
+        "date": "2027-02-27",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 45 FH to 10% failure probability (80% interval 12 to 129 FH). Expected life x2.74 (hot-climate share 23%); Expected life x0.94 (ACM share 19%); Expected life x0.74 (lot L-2105, vs best-performing lot in this part number)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.3388,
+        "interval": [
+          12.5,
+          129.4
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0035",
+      "created": "2026-11-15",
+      "tail": "FX-303",
+      "position": "1",
+      "serial": "JF-0003",
+      "part_number": "49-1210-01",
+      "ata": "49",
+      "action": "Inspect",
+      "title": "Inspect Jet fuel starter JF-0003 on FX-303 (failure risk 43% before next phase inspection)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": 62.7,
+        "date": "2027-05-17",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 63 FH to 20% failure probability (80% interval 26 to 114 FH). Expected life x1.70 (hot-climate share 20%); Expected life x1.35 (ACM share 19%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.432,
+        "interval": [
+          26.0,
+          114.3
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0036",
+      "created": "2026-11-15",
+      "tail": "FX-310",
+      "position": "1",
+      "serial": "JF-0010",
+      "part_number": "49-1210-01",
+      "ata": "49",
+      "action": "Inspect",
+      "title": "Inspect Jet fuel starter JF-0010 on FX-310 (failure risk 45% before next phase inspection)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": 58.5,
+        "date": "2027-04-01",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 58 FH to 20% failure probability (80% interval 23 to 109 FH). Expected life x1.72 (hot-climate share 20%); Expected life x1.33 (ACM share 18%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.4547,
+        "interval": [
+          22.7,
+          109.0
+        ]
+      },
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0037",
+      "created": "2026-11-15",
+      "tail": "FX-307",
+      "position": "1",
+      "serial": "RA-0020",
+      "part_number": "34-4410-02",
+      "ata": "34",
+      "action": "Troubleshoot",
+      "title": "Troubleshoot Radar altimeter wiring and connectors on FX-307 instead of a further replacement (9 snags in the last 60 days, repeat NFF removals on this position)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Hybrid",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "9 snags between 2026-03-10 and 2026-04-20, with repeat 'no fault found' removals of this position: the LRU keeps testing serviceable, pointing to wiring or connector chafe rather than the component itself"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0038",
+      "created": "2026-11-15",
+      "tail": "FX-311",
+      "position": "1",
+      "serial": "EN-0021",
+      "part_number": "72-0001-10",
+      "ata": "72",
+      "action": "Monitor",
+      "title": "Borescope inspection of FX-311 engine hot section (EGT margin trending at -0.114 \u00b0C/EFH, projected to cross the 10 \u00b0C limit in 70 EFH)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 69.7,
+        "date": null,
+        "governing": "Model"
+      },
+      "basis": "Trend",
+      "evidence": [
+        {
+          "type": "trend",
+          "text": "Robust trend (Theil-Sen) over the last 150 EFH: -0.114 \u00b0C/EFH (80% CI -0.119 to -0.109), current margin 18.0 \u00b0C at 660 EFH since install"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0039",
+      "created": "2026-11-15",
+      "tail": "FX-302",
+      "position": "1",
+      "serial": "OP-0002",
+      "part_number": "79-1310-02",
+      "ata": "79",
+      "action": "Inspect",
+      "title": "Inspect oil filter and chip detector, take SOAP sample (FX-302 lube oil pump: chip detector event 17 FH ago, no failure yet)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-15",
+        "governing": "Model"
+      },
+      "basis": "Hybrid",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Chip detector event on 2026-10-16, 17 FH before the as-of date; across the fleet, chip detector events precede confirmed oil pump failures within 50 FH in a meaningful share of cases"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0040",
+      "created": "2026-11-15",
+      "tail": "FX-309",
+      "position": null,
+      "serial": null,
+      "part_number": null,
+      "ata": null,
+      "action": "Review allocation",
+      "title": "Review mission allocation for FX-309 (rotate away from ACM-heavy tasking): projected to reach fatigue index 100 by 2034-01-29, before the planned withdrawal year 2036",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2034-01-29",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Fatigue projection: FI 73.8 now, 0.0266/FH over trailing 12 months (42% ACM share). Shifting 15 points of ACM share to general flying is estimated to extend life by about 261 days"
+        }
+      ],
+      "confidence": null,
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    }
+  ],
+  "history": [
+    {
+      "id": "REC-2026-0041",
+      "created": "2025-11-23",
+      "tail": "FX-309",
+      "position": "L",
+      "serial": "TY-0249",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0249 on FX-309 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-03",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2025-12-03 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2025-11-23",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-11-27",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0001 raised"
+        }
+      ],
+      "work_order": "WO-2026-0001"
+    },
+    {
+      "id": "REC-2026-0042",
+      "created": "2025-11-05",
+      "tail": "FX-305",
+      "position": "R",
+      "serial": "BR-0010",
+      "part_number": "32-4210-02",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel brake BR-0010 on FX-305 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-04",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2025-12-04 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2025-11-05",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-11-06",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0002 raised"
+        }
+      ],
+      "work_order": "WO-2026-0002"
+    },
+    {
+      "id": "REC-2026-0043",
+      "created": "2025-11-16",
+      "tail": "FX-313",
+      "position": "L",
+      "serial": "MG-0025",
+      "part_number": "32-1120-05",
+      "ata": "32",
+      "action": "Replace",
+      "title": "Replace Main landing gear assembly MG-0025 on FX-313 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-06",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2025-12-06 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2025-11-16",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-11-19",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Within tolerance at inspection, monitored instead"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0044",
+      "created": "2025-11-28",
+      "tail": "FX-303",
+      "position": "R",
+      "serial": "SA-0006",
+      "part_number": "27-3310-04",
+      "ata": "27",
+      "action": "Inspect",
+      "title": "Inspect Horizontal stabilator actuator SA-0006 on FX-303 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2025-12-15 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2025-11-28",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-12-01",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2025-12-15"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0045",
+      "created": "2025-11-30",
+      "tail": "FX-302",
+      "position": "L",
+      "serial": "TY-0244",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0244 on FX-302 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-17",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2025-12-17 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2025-11-30",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-12-03",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2025-12-16"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0046",
+      "created": "2025-11-19",
+      "tail": "FX-314",
+      "position": "1",
+      "serial": "GN-0014",
+      "part_number": "24-2110-01",
+      "ata": "24",
+      "action": "Inspect",
+      "title": "Inspect Main generator GN-0014 on FX-314 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-17",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2025-12-17 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2025-11-19",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-11-22",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0003 raised"
+        }
+      ],
+      "work_order": "WO-2026-0003"
+    },
+    {
+      "id": "REC-2026-0047",
+      "created": "2025-11-24",
+      "tail": "FX-302",
+      "position": "R",
+      "serial": "MG-0004",
+      "part_number": "32-1120-05",
+      "ata": "32",
+      "action": "Replace",
+      "title": "Replace Main landing gear assembly MG-0004 on FX-302 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-18",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2025-12-18 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2025-11-24",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-11-26",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2025-12-12"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0048",
+      "created": "2025-12-13",
+      "tail": "FX-306",
+      "position": "1",
+      "serial": "CP-0023",
+      "part_number": "25-6410-01",
+      "ata": "25",
+      "action": "Replace",
+      "title": "Replace Ejection seat CAD/PAD set CP-0023 on FX-306 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-19",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2025-12-19 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2025-12-13",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-12-14",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0004 raised"
+        }
+      ],
+      "work_order": "WO-2026-0004"
+    },
+    {
+      "id": "REC-2026-0049",
+      "created": "2025-12-10",
+      "tail": "FX-310",
+      "position": "R",
+      "serial": "TY-0263",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0263 on FX-310 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-24",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2025-12-24 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2025-12-10",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-12-11",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0005 raised"
+        }
+      ],
+      "work_order": "WO-2026-0005"
+    },
+    {
+      "id": "REC-2026-0050",
+      "created": "2025-12-16",
+      "tail": "FX-315",
+      "position": "L",
+      "serial": "TY-0242",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0242 on FX-315 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2025-12-31",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2025-12-31 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2025-12-16",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-12-19",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0006 raised"
+        }
+      ],
+      "work_order": "WO-2026-0006"
+    },
+    {
+      "id": "REC-2026-0051",
+      "created": "2026-01-07",
+      "tail": "FX-304",
+      "position": "R",
+      "serial": "TY-0227",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0227 on FX-304 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-01-18",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-01-18 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-07",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-10",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0007 raised"
+        }
+      ],
+      "work_order": "WO-2026-0007"
+    },
+    {
+      "id": "REC-2026-0052",
+      "created": "2026-01-10",
+      "tail": "FX-308",
+      "position": "1",
+      "serial": "CP-0024",
+      "part_number": "25-6410-01",
+      "ata": "25",
+      "action": "Replace",
+      "title": "Replace Ejection seat CAD/PAD set CP-0024 on FX-308 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-01-18",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-01-18 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-10",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-13",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0008 raised"
+        }
+      ],
+      "work_order": "WO-2026-0008"
+    },
+    {
+      "id": "REC-2026-0053",
+      "created": "2026-01-08",
+      "tail": "FX-314",
+      "position": "R",
+      "serial": "TY-0260",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0260 on FX-314 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-01-18",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-01-18 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-08",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-10",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0009 raised"
+        }
+      ],
+      "work_order": "WO-2026-0009"
+    },
+    {
+      "id": "REC-2026-0054",
+      "created": "2026-01-15",
+      "tail": "FX-310",
+      "position": "L",
+      "serial": "MG-0019",
+      "part_number": "32-1120-05",
+      "ata": "32",
+      "action": "Replace",
+      "title": "Replace Main landing gear assembly MG-0019 on FX-310 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-01-21",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-01-21 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-18",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0010 raised"
+        }
+      ],
+      "work_order": "WO-2026-0010"
+    },
+    {
+      "id": "REC-2026-0055",
+      "created": "2026-01-17",
+      "tail": "FX-311",
+      "position": "R",
+      "serial": "TY-0253",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0253 on FX-311 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-01-22",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-01-22 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-17",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-18",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0011 raised"
+        }
+      ],
+      "work_order": "WO-2026-0011"
+    },
+    {
+      "id": "REC-2026-0056",
+      "created": "2025-12-25",
+      "tail": "FX-316",
+      "position": "R",
+      "serial": "TY-0255",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0255 on FX-316 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-01-23",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-01-23 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2025-12-25",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2025-12-27",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0012 raised"
+        }
+      ],
+      "work_order": "WO-2026-0012"
+    },
+    {
+      "id": "REC-2026-0057",
+      "created": "2026-01-07",
+      "tail": "FX-307",
+      "position": "L",
+      "serial": "BR-0013",
+      "part_number": "32-4210-02",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel brake BR-0013 on FX-307 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-01-26",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-01-26 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-01-07",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-11",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-02-01"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0058",
+      "created": "2026-01-23",
+      "tail": "FX-304",
+      "position": "L",
+      "serial": "TY-0256",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0256 on FX-304 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-01-28",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-01-28 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-23",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-27",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0013 raised"
+        }
+      ],
+      "work_order": "WO-2026-0013"
+    },
+    {
+      "id": "REC-2026-0059",
+      "created": "2026-01-22",
+      "tail": "FX-305",
+      "position": "1",
+      "serial": "HP-0016",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Inspect",
+      "title": "Inspect Engine-driven hydraulic pump HP-0016 on FX-305 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-02-03",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-02-03 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-01-22",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-26",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Within tolerance at inspection, monitored instead"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0060",
+      "created": "2026-01-26",
+      "tail": "FX-305",
+      "position": "R",
+      "serial": "TY-0233",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0233 on FX-305 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-02-03",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-02-03 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-26",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-27",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0014 raised"
+        }
+      ],
+      "work_order": "WO-2026-0014"
+    },
+    {
+      "id": "REC-2026-0061",
+      "created": "2026-01-23",
+      "tail": "FX-307",
+      "position": "R",
+      "serial": "TY-0245",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0245 on FX-307 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-02-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-02-15 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-23",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-27",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0015 raised"
+        }
+      ],
+      "work_order": "WO-2026-0015"
+    },
+    {
+      "id": "REC-2026-0062",
+      "created": "2026-01-27",
+      "tail": "FX-308",
+      "position": "R",
+      "serial": "TY-0231",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0231 on FX-308 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-02-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-02-15 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-27",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-29",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0016 raised"
+        }
+      ],
+      "work_order": "WO-2026-0016"
+    },
+    {
+      "id": "REC-2026-0063",
+      "created": "2026-01-20",
+      "tail": "FX-309",
+      "position": "R",
+      "serial": "TY-0259",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0259 on FX-309 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-02-17",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-02-17 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-01-20",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-21",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Within tolerance at inspection, monitored instead"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0064",
+      "created": "2026-01-22",
+      "tail": "FX-302",
+      "position": "1",
+      "serial": "BT-0033",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0033 on FX-302 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-02-19",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-02-19 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-01-22",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-01-26",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0017 raised"
+        }
+      ],
+      "work_order": "WO-2026-0017"
+    },
+    {
+      "id": "REC-2026-0065",
+      "created": "2026-02-01",
+      "tail": "FX-312",
+      "position": "R",
+      "serial": "TY-0257",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0257 on FX-312 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-02-19",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-02-19 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-02-01",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-02-03",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0018 raised"
+        }
+      ],
+      "work_order": "WO-2026-0018"
+    },
+    {
+      "id": "REC-2026-0066",
+      "created": "2026-02-16",
+      "tail": "FX-314",
+      "position": "L",
+      "serial": "TY-0248",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0248 on FX-314 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-02-21",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-02-21 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-02-16",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-02-18",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0019 raised"
+        }
+      ],
+      "work_order": "WO-2026-0019"
+    },
+    {
+      "id": "REC-2026-0067",
+      "created": "2026-02-04",
+      "tail": "FX-316",
+      "position": "L",
+      "serial": "TY-0238",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0238 on FX-316 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-03-01",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-03-01 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-02-04",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-02-05",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0020 raised"
+        }
+      ],
+      "work_order": "WO-2026-0020"
+    },
+    {
+      "id": "REC-2026-0068",
+      "created": "2026-02-19",
+      "tail": "FX-312",
+      "position": "L",
+      "serial": "TY-0261",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0261 on FX-312 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-03-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-03-15 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-02-19",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-02-23",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Within tolerance at inspection, monitored instead"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0069",
+      "created": "2026-02-17",
+      "tail": "FX-313",
+      "position": "R",
+      "serial": "TY-0235",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0235 on FX-313 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-03-17",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-03-17 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-02-17",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-02-20",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-03-15"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0070",
+      "created": "2026-02-22",
+      "tail": "FX-302",
+      "position": "R",
+      "serial": "TY-0246",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0246 on FX-302 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-03-20",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-03-20 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-02-22",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-02-23",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-03-10"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0071",
+      "created": "2026-03-07",
+      "tail": "FX-316",
+      "position": "L",
+      "serial": "TY-0288",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0288 on FX-316 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-03-24",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-03-24 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-03-07",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-03-08",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0021 raised"
+        }
+      ],
+      "work_order": "WO-2026-0021"
+    },
+    {
+      "id": "REC-2026-0072",
+      "created": "2026-02-26",
+      "tail": "FX-302",
+      "position": "L",
+      "serial": "TY-0271",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0271 on FX-302 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-03-25",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-03-25 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-02-26",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-03-01",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0022 raised"
+        }
+      ],
+      "work_order": "WO-2026-0022"
+    },
+    {
+      "id": "REC-2026-0073",
+      "created": "2026-03-14",
+      "tail": "FX-311",
+      "position": "R",
+      "serial": "BR-0062",
+      "part_number": "32-4210-02",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel brake BR-0062 on FX-311 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-04-03",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-04-03 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-03-14",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-03-15",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0023 raised"
+        }
+      ],
+      "work_order": "WO-2026-0023"
+    },
+    {
+      "id": "REC-2026-0074",
+      "created": "2026-03-15",
+      "tail": "FX-311",
+      "position": "L",
+      "serial": "TY-0269",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0269 on FX-311 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-04-10",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-04-10 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-03-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-03-19",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0024 raised"
+        }
+      ],
+      "work_order": "WO-2026-0024"
+    },
+    {
+      "id": "REC-2026-0075",
+      "created": "2026-03-27",
+      "tail": "FX-316",
+      "position": "R",
+      "serial": "TY-0280",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0280 on FX-316 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-04-12",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-04-12 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-03-27",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-03-29",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0025 raised"
+        }
+      ],
+      "work_order": "WO-2026-0025"
+    },
+    {
+      "id": "REC-2026-0076",
+      "created": "2026-03-19",
+      "tail": "FX-307",
+      "position": "R",
+      "serial": "BR-0060",
+      "part_number": "32-4210-02",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel brake BR-0060 on FX-307 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-04-14",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-04-14 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-03-19",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-03-22",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Inspected at phase, no findings"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0077",
+      "created": "2026-03-24",
+      "tail": "FX-311",
+      "position": "1",
+      "serial": "FU-0011",
+      "part_number": "73-2110-01",
+      "ata": "73",
+      "action": "Inspect",
+      "title": "Inspect Engine fuel control unit FU-0011 on FX-311 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-04-14",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-04-14 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-03-24",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-03-28",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-04-16"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0078",
+      "created": "2026-03-20",
+      "tail": "FX-307",
+      "position": "1",
+      "serial": "HT-0007",
+      "part_number": "72-5120-01",
+      "ata": "72",
+      "action": "Replace",
+      "title": "Replace HPT module (turbine disc LLP) HT-0007 on FX-307 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-04-16",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-04-16 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-03-20",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-03-23",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0026 raised"
+        }
+      ],
+      "work_order": "WO-2026-0026"
+    },
+    {
+      "id": "REC-2026-0079",
+      "created": "2026-04-03",
+      "tail": "FX-302",
+      "position": "R",
+      "serial": "BR-0081",
+      "part_number": "32-4210-02",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel brake BR-0081 on FX-302 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-04-19",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-04-19 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-04-03",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-04-07",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Inspected at phase, no findings"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0080",
+      "created": "2026-04-09",
+      "tail": "FX-303",
+      "position": "L",
+      "serial": "BR-0067",
+      "part_number": "32-4210-02",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel brake BR-0067 on FX-303 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-04-22",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-04-22 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-04-09",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-04-12",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Inspected at phase, no findings"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0081",
+      "created": "2026-03-28",
+      "tail": "FX-315",
+      "position": "R",
+      "serial": "MG-0030",
+      "part_number": "32-1120-05",
+      "ata": "32",
+      "action": "Replace",
+      "title": "Replace Main landing gear assembly MG-0030 on FX-315 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-04-22",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-04-22 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-03-28",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-03-31",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Within tolerance at inspection, monitored instead"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0082",
+      "created": "2026-04-29",
+      "tail": "FX-306",
+      "position": "1",
+      "serial": "OP-0006",
+      "part_number": "79-1310-02",
+      "ata": "79",
+      "action": "Inspect",
+      "title": "Inspect Engine lube oil pump OP-0006 on FX-306 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-05-05",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-05-05 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-04-29",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-05-02",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-05-15"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0083",
+      "created": "2026-04-09",
+      "tail": "FX-315",
+      "position": "1",
+      "serial": "BT-0034",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0034 on FX-315 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-05-06",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-05-06 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-04-09",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-04-13",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0027 raised"
+        }
+      ],
+      "work_order": "WO-2026-0027"
+    },
+    {
+      "id": "REC-2026-0084",
+      "created": "2026-04-27",
+      "tail": "FX-305",
+      "position": "L",
+      "serial": "TY-0262",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0262 on FX-305 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-05-13",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-05-13 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-04-27",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-04-28",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0028 raised"
+        }
+      ],
+      "work_order": "WO-2026-0028"
+    },
+    {
+      "id": "REC-2026-0085",
+      "created": "2026-05-02",
+      "tail": "FX-301",
+      "position": "L",
+      "serial": "TY-0278",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0278 on FX-301 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-05-14",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-05-14 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-05-02",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-05-06",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0029 raised"
+        }
+      ],
+      "work_order": "WO-2026-0029"
+    },
+    {
+      "id": "REC-2026-0086",
+      "created": "2026-04-26",
+      "tail": "FX-315",
+      "position": "1",
+      "serial": "FB-0015",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0015 on FX-315 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-05-20",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-05-20 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-04-26",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-04-27",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-05-14"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0087",
+      "created": "2026-04-24",
+      "tail": "FX-314",
+      "position": "R",
+      "serial": "TY-0277",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0277 on FX-314 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-05-21",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-05-21 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-04-24",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-04-28",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0030 raised"
+        }
+      ],
+      "work_order": "WO-2026-0030"
+    },
+    {
+      "id": "REC-2026-0088",
+      "created": "2026-05-19",
+      "tail": "FX-303",
+      "position": "L",
+      "serial": "TY-0250",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0250 on FX-303 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-05-25",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-05-25 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-05-19",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-05-21",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0031 raised"
+        }
+      ],
+      "work_order": "WO-2026-0031"
+    },
+    {
+      "id": "REC-2026-0089",
+      "created": "2026-05-13",
+      "tail": "FX-309",
+      "position": "R",
+      "serial": "SA-0018",
+      "part_number": "27-3310-04",
+      "ata": "27",
+      "action": "Inspect",
+      "title": "Inspect Horizontal stabilator actuator SA-0018 on FX-309 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-06-07",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-06-07 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-05-13",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-05-16",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0032 raised"
+        }
+      ],
+      "work_order": "WO-2026-0032"
+    },
+    {
+      "id": "REC-2026-0090",
+      "created": "2026-05-26",
+      "tail": "FX-307",
+      "position": "1",
+      "serial": "JF-0009",
+      "part_number": "49-1210-01",
+      "ata": "49",
+      "action": "Inspect",
+      "title": "Inspect Jet fuel starter JF-0009 on FX-307 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-06-08",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-06-08 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-05-26",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-05-30",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-06-26"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0091",
+      "created": "2026-05-19",
+      "tail": "FX-310",
+      "position": "R",
+      "serial": "TY-0273",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0273 on FX-310 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-06-12",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-06-12 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-05-19",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-05-23",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0033 raised"
+        }
+      ],
+      "work_order": "WO-2026-0033"
+    },
+    {
+      "id": "REC-2026-0092",
+      "created": "2026-05-26",
+      "tail": "FX-308",
+      "position": "R",
+      "serial": "TY-0284",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0284 on FX-308 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-06-16",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-06-16 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-05-26",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-05-30",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0034 raised"
+        }
+      ],
+      "work_order": "WO-2026-0034"
+    },
+    {
+      "id": "REC-2026-0093",
+      "created": "2026-06-03",
+      "tail": "FX-307",
+      "position": "L",
+      "serial": "TY-0265",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0265 on FX-307 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-06-17",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-06-17 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-06-03",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-07",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0035 raised"
+        }
+      ],
+      "work_order": "WO-2026-0035"
+    },
+    {
+      "id": "REC-2026-0094",
+      "created": "2026-06-09",
+      "tail": "FX-311",
+      "position": "R",
+      "serial": "MG-0022",
+      "part_number": "32-1120-05",
+      "ata": "32",
+      "action": "Replace",
+      "title": "Replace Main landing gear assembly MG-0022 on FX-311 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-06-21",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-06-21 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-06-09",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-10",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0036 raised"
+        }
+      ],
+      "work_order": "WO-2026-0036"
+    },
+    {
+      "id": "REC-2026-0095",
+      "created": "2026-06-07",
+      "tail": "FX-315",
+      "position": "R",
+      "serial": "TY-0264",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0264 on FX-315 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-02",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-02 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-06-07",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-08",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0037 raised"
+        }
+      ],
+      "work_order": "WO-2026-0037"
+    },
+    {
+      "id": "REC-2026-0096",
+      "created": "2026-06-20",
+      "tail": "FX-304",
+      "position": "L",
+      "serial": "BR-0077",
+      "part_number": "32-4210-02",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel brake BR-0077 on FX-304 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-05",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-05 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-06-20",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-21",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0038 raised"
+        }
+      ],
+      "work_order": "WO-2026-0038"
+    },
+    {
+      "id": "REC-2026-0097",
+      "created": "2026-06-21",
+      "tail": "FX-306",
+      "position": "R",
+      "serial": "TY-0275",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0275 on FX-306 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-12",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-12 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-06-21",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-23",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0039 raised"
+        }
+      ],
+      "work_order": "WO-2026-0039"
+    },
+    {
+      "id": "REC-2026-0098",
+      "created": "2026-06-24",
+      "tail": "FX-316",
+      "position": "1",
+      "serial": "HT-0016",
+      "part_number": "72-5120-01",
+      "ata": "72",
+      "action": "Replace",
+      "title": "Replace HPT module (turbine disc LLP) HT-0016 on FX-316 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-13",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-07-13 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-06-24",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-26",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0040 raised"
+        }
+      ],
+      "work_order": "WO-2026-0040"
+    },
+    {
+      "id": "REC-2026-0099",
+      "created": "2026-06-26",
+      "tail": "FX-304",
+      "position": "R",
+      "serial": "TY-0276",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0276 on FX-304 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-15",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-15 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-06-26",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-28",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0041 raised"
+        }
+      ],
+      "work_order": "WO-2026-0041"
+    },
+    {
+      "id": "REC-2026-0100",
+      "created": "2026-06-20",
+      "tail": "FX-304",
+      "position": "L",
+      "serial": "TY-0281",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0281 on FX-304 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-16",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-16 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-06-20",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-21",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-07-17"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0101",
+      "created": "2026-06-25",
+      "tail": "FX-306",
+      "position": "1",
+      "serial": "FB-0006",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0006 on FX-306 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-23",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-23 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-06-25",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-29",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0042 raised"
+        }
+      ],
+      "work_order": "WO-2026-0042"
+    },
+    {
+      "id": "REC-2026-0102",
+      "created": "2026-07-14",
+      "tail": "FX-316",
+      "position": "1",
+      "serial": "BT-0035",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0035 on FX-316 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-23",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-07-23 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-07-14",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-07-16",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0043 raised"
+        }
+      ],
+      "work_order": "WO-2026-0043"
+    },
+    {
+      "id": "REC-2026-0103",
+      "created": "2026-07-09",
+      "tail": "FX-311",
+      "position": "R",
+      "serial": "TY-0279",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0279 on FX-311 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-24",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-24 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-07-09",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-07-10",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0044 raised"
+        }
+      ],
+      "work_order": "WO-2026-0044"
+    },
+    {
+      "id": "REC-2026-0104",
+      "created": "2026-07-19",
+      "tail": "FX-309",
+      "position": "L",
+      "serial": "TY-0270",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0270 on FX-309 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-28",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-28 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-07-19",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-07-23",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0045 raised"
+        }
+      ],
+      "work_order": "WO-2026-0045"
+    },
+    {
+      "id": "REC-2026-0105",
+      "created": "2026-07-08",
+      "tail": "FX-308",
+      "position": "L",
+      "serial": "TY-0266",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0266 on FX-308 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-31",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-31 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-07-08",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-07-11",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Inspected at phase, no findings"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0106",
+      "created": "2026-07-13",
+      "tail": "FX-304",
+      "position": "R",
+      "serial": "MG-0008",
+      "part_number": "32-1120-05",
+      "ata": "32",
+      "action": "Replace",
+      "title": "Replace Main landing gear assembly MG-0008 on FX-304 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-06",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-08-06 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-07-13",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-07-14",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0046 raised"
+        }
+      ],
+      "work_order": "WO-2026-0046"
+    },
+    {
+      "id": "REC-2026-0107",
+      "created": "2026-07-10",
+      "tail": "FX-311",
+      "position": "1",
+      "serial": "BT-0036",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0036 on FX-311 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-06",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-08-06 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-07-10",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-07-13",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0047 raised"
+        }
+      ],
+      "work_order": "WO-2026-0047"
+    },
+    {
+      "id": "REC-2026-0108",
+      "created": "2026-07-13",
+      "tail": "FX-314",
+      "position": "L",
+      "serial": "TY-0287",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0287 on FX-314 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-09",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-08-09 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-07-13",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-07-17",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Within tolerance at inspection, monitored instead"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0109",
+      "created": "2026-08-02",
+      "tail": "FX-301",
+      "position": "1",
+      "serial": "BT-0037",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0037 on FX-301 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-10",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-08-10 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-08-02",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-05",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0048 raised"
+        }
+      ],
+      "work_order": "WO-2026-0048"
+    },
+    {
+      "id": "REC-2026-0110",
+      "created": "2026-08-03",
+      "tail": "FX-307",
+      "position": "1",
+      "serial": "HP-0011",
+      "part_number": "29-1140-03",
+      "ata": "29",
+      "action": "Inspect",
+      "title": "Inspect Engine-driven hydraulic pump HP-0011 on FX-307 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-13",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-08-13 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-08-03",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-04",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-08-31"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0111",
+      "created": "2026-07-31",
+      "tail": "FX-311",
+      "position": "L",
+      "serial": "TY-0296",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0296 on FX-311 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-18",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-08-18 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-07-31",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-03",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0049 raised"
+        }
+      ],
+      "work_order": "WO-2026-0049"
+    },
+    {
+      "id": "REC-2026-0112",
+      "created": "2026-07-30",
+      "tail": "FX-305",
+      "position": "1",
+      "serial": "BT-0038",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0038 on FX-305 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-21",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-08-21 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-07-30",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-03",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0050 raised"
+        }
+      ],
+      "work_order": "WO-2026-0050"
+    },
+    {
+      "id": "REC-2026-0113",
+      "created": "2026-08-05",
+      "tail": "FX-313",
+      "position": "L",
+      "serial": "TY-0272",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0272 on FX-313 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-22",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-08-22 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-08-05",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-07",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0051 raised"
+        }
+      ],
+      "work_order": "WO-2026-0051"
+    },
+    {
+      "id": "REC-2026-0114",
+      "created": "2026-08-04",
+      "tail": "FX-304",
+      "position": "1",
+      "serial": "CP-0025",
+      "part_number": "25-6410-01",
+      "ata": "25",
+      "action": "Replace",
+      "title": "Replace Ejection seat CAD/PAD set CP-0025 on FX-304 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-24",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-08-24 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-08-04",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-05",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Within tolerance at inspection, monitored instead"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0115",
+      "created": "2026-08-06",
+      "tail": "FX-311",
+      "position": "L",
+      "serial": "TY-0316",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0316 on FX-311 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-30",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-08-30 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-08-06",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-09",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-09-03"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0116",
+      "created": "2026-08-05",
+      "tail": "FX-306",
+      "position": "1",
+      "serial": "JF-0006",
+      "part_number": "49-1210-01",
+      "ata": "49",
+      "action": "Inspect",
+      "title": "Inspect Jet fuel starter JF-0006 on FX-306 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-09-02",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-09-02 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-08-05",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-08",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0052 raised"
+        }
+      ],
+      "work_order": "WO-2026-0052"
+    },
+    {
+      "id": "REC-2026-0117",
+      "created": "2026-08-31",
+      "tail": "FX-303",
+      "position": "1",
+      "serial": "BT-0039",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0039 on FX-303 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-09-08",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-09-08 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-08-31",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-09-02",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0053 raised"
+        }
+      ],
+      "work_order": "WO-2026-0053"
+    },
+    {
+      "id": "REC-2026-0118",
+      "created": "2026-08-13",
+      "tail": "FX-312",
+      "position": "L",
+      "serial": "BR-0054",
+      "part_number": "32-4210-02",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel brake BR-0054 on FX-312 (elevated failure risk flagged)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-09-11",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-09-11 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-08-13",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-17",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0054 raised"
+        }
+      ],
+      "work_order": "WO-2026-0054"
+    },
+    {
+      "id": "REC-2026-0119",
+      "created": "2026-08-28",
+      "tail": "FX-309",
+      "position": "1",
+      "serial": "CP-0026",
+      "part_number": "25-6410-01",
+      "ata": "25",
+      "action": "Replace",
+      "title": "Replace Ejection seat CAD/PAD set CP-0026 on FX-309 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-09-24",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-09-24 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-08-28",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-08-29",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0055 raised"
+        }
+      ],
+      "work_order": "WO-2026-0055"
+    },
+    {
+      "id": "REC-2026-0120",
+      "created": "2026-09-17",
+      "tail": "FX-301",
+      "position": "L",
+      "serial": "TY-0299",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0299 on FX-301 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-01",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-10-01 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-09-17",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-09-20",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0056 raised"
+        }
+      ],
+      "work_order": "WO-2026-0056"
+    },
+    {
+      "id": "REC-2026-0121",
+      "created": "2026-09-05",
+      "tail": "FX-310",
+      "position": "L",
+      "serial": "TY-0267",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0267 on FX-310 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-02",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-10-02 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-09-05",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-09-08",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0057 raised"
+        }
+      ],
+      "work_order": "WO-2026-0057"
+    },
+    {
+      "id": "REC-2026-0122",
+      "created": "2026-09-13",
+      "tail": "FX-313",
+      "position": "1",
+      "serial": "EN-0013",
+      "part_number": "72-0001-10",
+      "ata": "72",
+      "action": "Remove for overhaul",
+      "title": "Remove for overhaul Engine EN-0013 on FX-313 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-02",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-10-02 removal (Scheduled (engine change))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-09-13",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-09-17",
+          "by": "K. Rao",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0058 raised"
+        }
+      ],
+      "work_order": "WO-2026-0058"
+    },
+    {
+      "id": "REC-2026-0123",
+      "created": "2026-09-29",
+      "tail": "FX-302",
+      "position": "R",
+      "serial": "TY-0293",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0293 on FX-302 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-08",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-10-08 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-09-29",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-10-02",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0059 raised"
+        }
+      ],
+      "work_order": "WO-2026-0059"
+    },
+    {
+      "id": "REC-2026-0124",
+      "created": "2026-09-24",
+      "tail": "FX-303",
+      "position": "R",
+      "serial": "TY-0289",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0289 on FX-303 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-08",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-10-08 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-09-24",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-09-27",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0060 raised"
+        }
+      ],
+      "work_order": "WO-2026-0060"
+    },
+    {
+      "id": "REC-2026-0125",
+      "created": "2026-09-19",
+      "tail": "FX-303",
+      "position": "L",
+      "serial": "TY-0301",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0301 on FX-303 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-17",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-10-17 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-09-19",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-09-21",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0061 raised"
+        }
+      ],
+      "work_order": "WO-2026-0061"
+    },
+    {
+      "id": "REC-2026-0126",
+      "created": "2026-10-09",
+      "tail": "FX-310",
+      "position": "R",
+      "serial": "TY-0303",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0303 on FX-310 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-19",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-10-19 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-10-09",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-10-13",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0062 raised"
+        }
+      ],
+      "work_order": "WO-2026-0062"
+    },
+    {
+      "id": "REC-2026-0127",
+      "created": "2026-10-02",
+      "tail": "FX-315",
+      "position": "1",
+      "serial": "IN-0015",
+      "part_number": "34-1810-01",
+      "ata": "34",
+      "action": "Inspect",
+      "title": "Inspect Inertial navigation unit IN-0015 on FX-315 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-19",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-10-19 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-10-02",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-10-03",
+          "by": "T. Bhatt",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0063 raised"
+        }
+      ],
+      "work_order": "WO-2026-0063"
+    },
+    {
+      "id": "REC-2026-0128",
+      "created": "2026-10-10",
+      "tail": "FX-305",
+      "position": "R",
+      "serial": "TY-0282",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0282 on FX-305 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-27",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-10-27 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Deferred",
+      "audit": [
+        {
+          "at": "2026-10-10",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-10-11",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Deferred",
+          "remarks": "Re-review by 2026-10-30"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0129",
+      "created": "2026-10-14",
+      "tail": "FX-307",
+      "position": "R",
+      "serial": "TY-0283",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0283 on FX-307 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-10-31",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-10-31 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-10-14",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-10-16",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0064 raised"
+        }
+      ],
+      "work_order": "WO-2026-0064"
+    },
+    {
+      "id": "REC-2026-0130",
+      "created": "2026-10-19",
+      "tail": "FX-312",
+      "position": "R",
+      "serial": "TY-0286",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0286 on FX-312 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-01",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-11-01 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-10-19",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-10-20",
+          "by": "A. Fernandes",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0065 raised"
+        }
+      ],
+      "work_order": "WO-2026-0065"
+    },
+    {
+      "id": "REC-2026-0131",
+      "created": "2026-10-24",
+      "tail": "FX-312",
+      "position": "R",
+      "serial": "MG-0024",
+      "part_number": "32-1120-05",
+      "ata": "32",
+      "action": "Replace",
+      "title": "Replace Main landing gear assembly MG-0024 on FX-312 (hard-time limit approaching)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-02",
+        "governing": "Rule"
+      },
+      "basis": "Rule",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Hard-time rule flagged this unit ahead of its 2026-11-02 removal (Scheduled (hard time))"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-10-24",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-10-28",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0066 raised"
+        }
+      ],
+      "work_order": "WO-2026-0066"
+    },
+    {
+      "id": "REC-2026-0132",
+      "created": "2026-10-31",
+      "tail": "FX-301",
+      "position": "R",
+      "serial": "TY-0302",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0302 on FX-301 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-11-05",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-11-05 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "status": "Approved",
+      "audit": [
+        {
+          "at": "2026-10-31",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-11-03",
+          "by": "V. Nair",
+          "role": "approver",
+          "action": "Approved",
+          "remarks": "Work order WO-2026-0067 raised"
+        }
+      ],
+      "work_order": "WO-2026-0067"
+    }
+  ]
+}

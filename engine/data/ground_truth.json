@@ -1,0 +1,77 @@
+{
+  "P1_lot_defect": {
+    "title": "Defective hydraulic pump lot",
+    "part_number": "29-1140-03",
+    "defective_lot": "L-2207",
+    "other_lots": [
+      "L-2105",
+      "L-2301",
+      "L-2312"
+    ],
+    "eta_multiplier": 0.22,
+    "currently_installed_defective_serials": [
+      "HP-0001",
+      "HP-0006",
+      "HP-0004",
+      "HP-0003",
+      "HP-0007",
+      "HP-0008",
+      "HP-0005",
+      "HP-0002"
+    ]
+  },
+  "P2_hot_climate": {
+    "title": "Hot-climate acceleration",
+    "hot_threshold_c": 35.0,
+    "ecs_cool_factor": 2.2,
+    "fuel_boost_factor": 1.8
+  },
+  "P3_mission_fatigue": {
+    "title": "Mission-mix fatigue",
+    "acm_heavy_tails": [
+      "FX-304",
+      "FX-309",
+      "FX-312"
+    ],
+    "acm_share": 0.45,
+    "at_risk_tail": "FX-309",
+    "planned_withdrawal_year": 2036
+  },
+  "P4_repeat_snag": {
+    "title": "Recurring snag with a wrong fix",
+    "tail": "FX-307",
+    "component": "RADALT",
+    "window_months": 9,
+    "true_cause": "Wiring harness chafe (not recorded in maintenance data)",
+    "still_active_at_asof": true
+  },
+  "P5_engine_deterioration": {
+    "title": "Engine deterioration",
+    "tail": "FX-311",
+    "window_efh": 300.0,
+    "egt_margin_limit_c": 10.0,
+    "expected_crossing_efh_after_asof_range": [
+      40,
+      80
+    ]
+  },
+  "P6_oil_precursor": {
+    "title": "Oil system precursor",
+    "part_number": "79-1310-02",
+    "cooccurrence_rate": 0.7,
+    "window_fh": 50.0,
+    "scripted_tail": "FX-302",
+    "scripted_days_before_asof_fh": 18.0
+  },
+  "P7_ht_approaching": {
+    "title": "Hard-time items approaching",
+    "items": {
+      "cadpad_tail": "FX-305",
+      "cadpad_days": 20,
+      "engine_tail": "FX-314",
+      "engine_efh_remaining": 40,
+      "mlg_tail": "FX-301",
+      "mlg_landings": 3880
+    }
+  }
+}

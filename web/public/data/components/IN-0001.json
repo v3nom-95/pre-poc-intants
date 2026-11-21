@@ -1,0 +1,116 @@
+{
+  "serial": "IN-0001",
+  "part_number": "34-1810-01",
+  "name": "Inertial navigation unit",
+  "ata": "34",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "mission",
+  "current_tail": "FX-301",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 937.3,
+  "fh_to_tau": 1437.0,
+  "fh_to_tau_p10": 370.5,
+  "fh_to_tau_p90": 3718.0,
+  "prob_fail_before_next_phase": 0.027,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 20,
+  "fleet_confirmed_failures": 4,
+  "install_history": [
+    {
+      "tail": "FX-301",
+      "event_type": "Install",
+      "date": "2016-03-21",
+      "reason": null,
+      "serial": "IN-0001"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 5.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 14.2,
+      "survival": 0.9474
+    },
+    {
+      "fh": 73.5,
+      "survival": 0.8947
+    },
+    {
+      "fh": 241.5,
+      "survival": 0.8421
+    },
+    {
+      "fh": 505.9,
+      "survival": 0.8421
+    },
+    {
+      "fh": 625.8,
+      "survival": 0.8421
+    },
+    {
+      "fh": 646.0,
+      "survival": 0.8421
+    },
+    {
+      "fh": 696.7,
+      "survival": 0.8421
+    },
+    {
+      "fh": 701.3,
+      "survival": 0.8421
+    },
+    {
+      "fh": 702.2,
+      "survival": 0.8421
+    },
+    {
+      "fh": 728.2,
+      "survival": 0.8421
+    },
+    {
+      "fh": 740.3,
+      "survival": 0.7485
+    },
+    {
+      "fh": 764.0,
+      "survival": 0.7485
+    },
+    {
+      "fh": 807.0,
+      "survival": 0.7485
+    },
+    {
+      "fh": 815.4,
+      "survival": 0.7485
+    },
+    {
+      "fh": 884.1,
+      "survival": 0.7485
+    },
+    {
+      "fh": 916.4,
+      "survival": 0.7485
+    },
+    {
+      "fh": 929.9,
+      "survival": 0.7485
+    },
+    {
+      "fh": 937.3,
+      "survival": 0.7485
+    },
+    {
+      "fh": 939.4,
+      "survival": 0.7485
+    }
+  ]
+}

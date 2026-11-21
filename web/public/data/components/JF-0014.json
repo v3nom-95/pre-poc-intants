@@ -1,0 +1,144 @@
+{
+  "serial": "JF-0014",
+  "part_number": "49-1210-01",
+  "name": "Jet fuel starter",
+  "ata": "49",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "mission",
+  "current_tail": "FX-314",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 884.1,
+  "fh_to_tau": 190.7,
+  "fh_to_tau_p10": 61.1,
+  "fh_to_tau_p90": 483.0,
+  "prob_fail_before_next_phase": 0.158,
+  "explanation": "Expected life x3.19 (hot-climate share 44%); Expected life x1.37 (ACM share 20%)",
+  "fleet_units": 27,
+  "fleet_confirmed_failures": 10,
+  "install_history": [
+    {
+      "tail": "FX-314",
+      "event_type": "Install",
+      "date": "2019-03-08",
+      "reason": null,
+      "serial": "JF-0014"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 22.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 28.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 57.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 145.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 214.9,
+      "survival": 0.9565
+    },
+    {
+      "fh": 243.1,
+      "survival": 0.913
+    },
+    {
+      "fh": 279.0,
+      "survival": 0.8696
+    },
+    {
+      "fh": 295.2,
+      "survival": 0.8261
+    },
+    {
+      "fh": 305.8,
+      "survival": 0.8261
+    },
+    {
+      "fh": 324.8,
+      "survival": 0.8261
+    },
+    {
+      "fh": 351.8,
+      "survival": 0.7775
+    },
+    {
+      "fh": 423.2,
+      "survival": 0.7289
+    },
+    {
+      "fh": 456.7,
+      "survival": 0.7289
+    },
+    {
+      "fh": 501.6,
+      "survival": 0.6768
+    },
+    {
+      "fh": 514.4,
+      "survival": 0.6768
+    },
+    {
+      "fh": 516.0,
+      "survival": 0.6768
+    },
+    {
+      "fh": 593.1,
+      "survival": 0.6153
+    },
+    {
+      "fh": 625.2,
+      "survival": 0.5538
+    },
+    {
+      "fh": 661.4,
+      "survival": 0.5538
+    },
+    {
+      "fh": 674.4,
+      "survival": 0.5538
+    },
+    {
+      "fh": 675.2,
+      "survival": 0.4747
+    },
+    {
+      "fh": 745.3,
+      "survival": 0.4747
+    },
+    {
+      "fh": 746.6,
+      "survival": 0.4747
+    },
+    {
+      "fh": 764.0,
+      "survival": 0.4747
+    },
+    {
+      "fh": 807.0,
+      "survival": 0.4747
+    },
+    {
+      "fh": 828.6,
+      "survival": 0.4747
+    },
+    {
+      "fh": 884.1,
+      "survival": 0.4747
+    }
+  ]
+}

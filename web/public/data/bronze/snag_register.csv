@@ -1,0 +1,87 @@
+snag_id,tail,date,ata,component_key_or_desc,description,rectification,status,repeat_flag
+SNG-000001,FX-303,2021-11-28,73,FCU,"Engine fuel control unit unserviceable, failed functional check during post-flight inspection","Engine fuel control unit replaced, serial FU-0003 removed",Closed,False
+SNG-000002,FX-304,2021-12-12,34,INU,"Inertial navigation unit unserviceable, failed functional check during post-flight inspection","Inertial navigation unit replaced, serial IN-0004 removed",Closed,False
+SNG-000003,FX-311,2022-05-09,29,HYD-PUMP,"Engine-driven hydraulic pump seized, no response during BITE check","Engine-driven hydraulic pump replaced, serial HP-0011 removed",Closed,False
+SNG-000004,FX-307,2022-05-10,29,HYD-PUMP,"Engine-driven hydraulic pump failed in flight, crew reported loss of function","Engine-driven hydraulic pump replaced, serial HP-0007 removed",Closed,False
+SNG-000005,FX-308,2022-05-11,34,INU,"Inertial navigation unit seized, no response during BITE check","Inertial navigation unit replaced, serial IN-0008 removed",Closed,False
+SNG-000006,FX-312,2022-06-01,27,STAB-ACT,"Horizontal stabilator actuator failure confirmed, abnormal readings during ground run","Horizontal stabilator actuator replaced, serial SA-0023 removed",Closed,False
+SNG-000007,FX-312,2022-06-26,29,HYD-PUMP,"Engine-driven hydraulic pump failed in flight, crew reported loss of function","Engine-driven hydraulic pump replaced, serial HP-0012 removed",Closed,False
+SNG-000008,FX-302,2022-08-24,27,FCC,"Flight control computer failed in flight, crew reported loss of function","Flight control computer replaced, serial FC-0002 removed",Closed,False
+SNG-000009,FX-310,2022-08-26,21,ECS-COOL,"ECS cooling turbine failed in flight, crew reported loss of function","ECS cooling turbine replaced, serial EC-0010 removed",Closed,False
+SNG-000010,FX-315,2022-09-04,21,ECS-COOL,"ECS cooling turbine failed in flight, crew reported loss of function","ECS cooling turbine replaced, serial EC-0015 removed",Closed,False
+SNG-000011,FX-306,2022-10-28,27,FCC,"Flight control computer seized, no response during BITE check","Flight control computer replaced, serial FC-0006 removed",Closed,False
+SNG-000012,FX-316,2022-11-10,29,HYD-PUMP,"Engine-driven hydraulic pump failure confirmed, abnormal readings during ground run","Engine-driven hydraulic pump replaced, serial HP-0016 removed",Closed,False
+SNG-000013,FX-310,2022-12-23,29,HYD-PUMP,"Engine-driven hydraulic pump failure confirmed, abnormal readings during ground run","Engine-driven hydraulic pump replaced, serial HP-0010 removed",Closed,False
+SNG-000014,FX-309,2023-02-01,29,HYD-PUMP,"Engine-driven hydraulic pump failure confirmed, abnormal readings during ground run","Engine-driven hydraulic pump replaced, serial HP-0009 removed",Closed,False
+SNG-000015,FX-301,2023-03-03,29,HYD-PUMP,"Engine-driven hydraulic pump unserviceable, failed functional check during post-flight inspection","Engine-driven hydraulic pump replaced, serial HP-0001 removed",Closed,False
+SNG-000016,FX-305,2023-04-03,29,HYD-PUMP,"Engine-driven hydraulic pump seized, no response during BITE check","Engine-driven hydraulic pump replaced, serial HP-0005 removed",Closed,False
+SNG-000017,FX-302,2023-04-12,29,HYD-PUMP,"Engine-driven hydraulic pump failed in flight, crew reported loss of function","Engine-driven hydraulic pump replaced, serial HP-0002 removed",Closed,False
+SNG-000018,FX-309,2023-04-28,49,JFS,"Jet fuel starter failed in flight, crew reported loss of function","Jet fuel starter replaced, serial JF-0009 removed",Closed,False
+SNG-000019,FX-302,2023-05-23,49,JFS,"Jet fuel starter failed in flight, crew reported loss of function","Jet fuel starter replaced, serial JF-0002 removed",Closed,False
+SNG-000020,FX-308,2023-06-20,49,JFS,"Jet fuel starter failed in flight, crew reported loss of function","Jet fuel starter replaced, serial JF-0008 removed",Closed,False
+SNG-000021,FX-314,2023-07-13,21,ECS-COOL,"ECS cooling turbine seized, no response during BITE check","ECS cooling turbine replaced, serial EC-0014 removed",Closed,False
+SNG-000022,FX-310,2023-07-23,29,HYD-PUMP,"Engine-driven hydraulic pump failure confirmed, abnormal readings during ground run","Engine-driven hydraulic pump replaced, serial HP-0007 removed",Closed,False
+SNG-000023,FX-305,2023-08-03,21,ECS-COOL,"ECS cooling turbine unserviceable, failed functional check during post-flight inspection","ECS cooling turbine replaced, serial EC-0005 removed",Closed,False
+SNG-000024,FX-312,2023-08-25,34,INU,"Inertial navigation unit seized, no response during BITE check","Inertial navigation unit replaced, serial IN-0012 removed",Closed,False
+SNG-000025,FX-311,2023-10-10,28,FUEL-BOOST,"Fuel boost pump unserviceable, failed functional check during post-flight inspection","Fuel boost pump replaced, serial FB-0011 removed",Closed,False
+SNG-000026,FX-311,2023-11-10,79,OIL-PUMP,"Engine lube oil pump unserviceable, failed functional check during post-flight inspection","Engine lube oil pump replaced, serial OP-0011 removed",Closed,False
+SNG-000027,FX-301,2023-11-18,29,HYD-PUMP,"Engine-driven hydraulic pump seized, no response during BITE check","Engine-driven hydraulic pump replaced, serial HP-0012 removed",Closed,False
+SNG-000028,FX-309,2024-02-08,28,FUEL-BOOST,"Fuel boost pump failure confirmed, abnormal readings during ground run","Fuel boost pump replaced, serial FB-0009 removed",Closed,False
+SNG-000029,FX-301,2024-03-17,49,JFS,"Jet fuel starter failed in flight, crew reported loss of function","Jet fuel starter replaced, serial JF-0001 removed",Closed,False
+SNG-000030,FX-307,2024-05-03,,JFS,"Jet fuel starter failed in flight, crew reported loss of function","Jet fuel starter replaced, serial JF-0007 removed",Closed,False
+SNG-000031,FX-315,2024-05-21,29,HYD-PUMP,"Engine-driven hydraulic pump seized, no response during BITE check","Engine-driven hydraulic pump replaced, serial HP-0015 removed",Closed,False
+SNG-000032,FX-309,2024-05-30,29,HYD-PUMP,"Engine-driven hydraulic pump failure confirmed, abnormal readings during ground run","Engine-driven hydraulic pump replaced, serial HP-0011 removed",Closed,False
+SNG-000033,FX-308,2024-06-10,29,HYD-PUMP,"Engine-driven hydraulic pump failure confirmed, abnormal readings during ground run","Engine-driven hydraulic pump replaced, serial HP-0008 removed",Closed,False
+SNG-000034,FX-304,2024-06-12,24,GEN-MAIN,"Main generator seized, no response during BITE check","Main generator replaced, serial GN-0004 removed",Closed,False
+SNG-000035,FX-311,2024-06-14,24,GEN-MAIN,"Main generator unserviceable, failed functional check during post-flight inspection","Main generator replaced, serial GN-0011 removed",Closed,False
+SNG-000036,FX-316,2024-06-27,34,RADALT,"Radar altimeter failed in flight, crew reported loss of function","Radar altimeter replaced, serial RA-0016 removed",Closed,False
+SNG-000037,FX-313,2024-07-02,21,ECS-COOL,"ECS cooling turbine failed in flight, crew reported loss of function","ECS cooling turbine replaced, serial EC-0013 removed",Closed,False
+SNG-000038,FX-315,2024-07-08,34,RADALT,"Radar altimeter seized, no response during BITE check","Radar altimeter replaced, serial RA-0015 removed",Closed,False
+SNG-000039,FX-309,2024-09-02,21,ECS-COOL,"ECS cooling turbine failure confirmed, abnormal readings during ground run","ECS cooling turbine replaced, serial EC-0009 removed",Closed,False
+SNG-000040,FX-304,2024-09-14,29,HYD-PUMP,"Engine-driven hydraulic pump failed in flight, crew reported loss of function","Engine-driven hydraulic pump replaced, serial HP-0004 removed",Closed,False
+SNG-000041,FX-301,2024-10-23,27,STAB-ACT,"Horizontal stabilator actuator unserviceable, failed functional check during post-flight inspection","Horizontal stabilator actuator replaced, serial SA-0002 removed",Closed,False
+SNG-000042,FX-307,2024-11-14,21,ECS-COOL,"ECS cooling turbine seized, no response during BITE check","ECS cooling turbine replaced, serial EC-0007 removed",Closed,False
+SNG-000043,FX-313,2024-11-25,27,STAB-ACT,"Horizontal stabilator actuator failed in flight, crew reported loss of function","Horizontal stabilator actuator replaced, serial SA-0025 removed",Closed,False
+SNG-000044,FX-310,2024-12-27,28,FUEL-BOOST,"Fuel boost pump failed in flight, crew reported loss of function","Fuel boost pump replaced, serial FB-0010 removed",Closed,False
+SNG-000045,FX-302,2025-01-04,27,STAB-ACT,"Horizontal stabilator actuator flagged during flight, ground checks and BITE test satisfactory","Horizontal stabilator actuator replaced, serial SA-0004 removed",Closed,False
+SNG-000046,FX-316,2025-01-29,49,JFS,"Jet fuel starter failure confirmed, abnormal readings during ground run","Jet fuel starter replaced, serial JF-0016 removed",Closed,False
+SNG-000047,FX-311,2025-03-01,21,ECS-COOL,"ECS cooling turbine failure confirmed, abnormal readings during ground run","ECS cooling turbine replaced, serial EC-0011 removed",Closed,False
+SNG-000048,FX-306,2025-03-17,29,HYD-PUMP,"Engine-driven hydraulic pump seized, no response during BITE check","Engine-driven hydraulic pump replaced, serial HP-0006 removed",Closed,False
+SNG-000049,FX-307,2025-03-18,29,HYD-PUMP,"Engine-driven hydraulic pump failed in flight, crew reported loss of function","Engine-driven hydraulic pump replaced, serial HP-0018 removed",Closed,False
+SNG-000050,FX-311,2025-03-29,49,JFS,"Jet fuel starter unserviceable, failed functional check during post-flight inspection","Jet fuel starter replaced, serial JF-0011 removed",Closed,False
+SNG-000051,FX-314,2025-04-04,28,FUEL-BOOST,"Fuel boost pump failed in flight, crew reported loss of function","Fuel boost pump replaced, serial FB-0014 removed",Closed,False
+SNG-000052,FX-308,2025-04-08,29,HYD-PUMP,"Engine-driven hydraulic pump failure confirmed, abnormal readings during ground run","Engine-driven hydraulic pump replaced, serial HP-0007 removed",Closed,False
+SNG-000053,FX-303,2025-04-20,29,HYD-PUMP,"Engine-driven hydraulic pump failed in flight, crew reported loss of function","Engine-driven hydraulic pump replaced, serial HP-0003 removed",Closed,False
+SNG-000054,FX-302,2025-04-21,29,HYD-PUMP,"Engine-driven hydraulic pump failure confirmed, abnormal readings during ground run","Engine-driven hydraulic pump replaced, serial HP-0010 removed",Closed,False
+SNG-000055,FX-304,2025-05-07,29,HYD-PUMP,"Engine-driven hydraulic pump seized, no response during BITE check","Engine-driven hydraulic pump replaced, serial HP-0012 removed",Closed,False
+SNG-000056,FX-306,2025-05-07,21,ECS-COOL,"ECS cooling turbine failed in flight, crew reported loss of function","ECS cooling turbine replaced, serial EC-0006 removed",Closed,False
+SNG-000057,FX-307,2025-05-21,28,FUEL-BOOST,"Fuel boost pump seized, no response during BITE check","Fuel boost pump replaced, serial FB-0007 removed",Closed,False
+SNG-000058,FX-304,2025-06-08,21,ECS-COOL,"ECS cooling turbine flagged during flight, ground checks and BITE test satisfactory","ECS cooling turbine replaced, serial EC-0004 removed",Closed,False
+SNG-000059,FX-310,2025-07-20,29,HYD-PUMP,"Engine-driven hydraulic pump intermittent fault reported by crew, no fault found on bench test","Engine-driven hydraulic pump replaced, serial HP-0009 removed",Closed,False
+SNG-000060,FX-302,2025-08-20,28,FUEL-BOOST,"Fuel boost pump failed in flight, crew reported loss of function","Fuel boost pump replaced, serial FB-0002 removed",Closed,False
+SNG-000061,FX-304,2025-09-09,27,STAB-ACT,"Horizontal stabilator actuator failed in flight, crew reported loss of function","Horizontal stabilator actuator replaced, serial SA-0008 removed",Closed,False
+SNG-000062,FX-302,2025-09-18,21,ECS-COOL,"ECS cooling turbine failure confirmed, abnormal readings during ground run","ECS cooling turbine replaced, serial EC-0002 removed",Closed,False
+SNG-000063,FX-313,2025-10-18,21,ECS-COOL,"ECS cooling turbine failed in flight, crew reported loss of function","ECS cooling turbine replaced, serial EC-0015 removed",Closed,False
+SNG-000064,FX-313,2025-10-18,49,JFS,"Jet fuel starter failure confirmed, abnormal readings during ground run","Jet fuel starter replaced, serial JF-0013 removed",Closed,False
+SNG-000065,FX-303,2025-12-15,27,STAB-ACT,"Horizontal stabilator actuator failed in flight, crew reported loss of function","Horizontal stabilator actuator replaced, serial SA-0006 removed",Closed,False
+SNG-000066,FX-314,2025-12-17,24,GEN-MAIN,"Main generator failure confirmed, abnormal readings during ground run","Main generator replaced, serial GN-0014 removed",Closed,False
+SNG-000067,FX-305,2026-02-03,29,HYD-PUMP,"Engine-driven hydraulic pump failed in flight, crew reported loss of function","Engine-driven hydraulic pump replaced, serial HP-0016 removed",Closed,False
+SNG-000068,FX-307,2026-03-10,34,RADALT,Radar altimeter flag intermittent in flight,"Connector reseated, ground run satisfactory",Open,True
+SNG-000069,FX-307,2026-04-08,34,RADALT,Radar altimeter flag intermittent in flight,"Connector reseated, ground run satisfactory",Open,True
+SNG-000070,FX-311,2026-04-14,73,FCU,"Engine fuel control unit failure confirmed, abnormal readings during ground run","Engine fuel control unit replaced, serial FU-0011 removed",Closed,False
+SNG-000071,FX-307,2026-04-20,34,RADALT,Radar altimeter flag intermittent in flight,"Radar altimeter removed, bench tested serviceable (NFF), reinstalled",Closed,True
+SNG-000072,FX-307,2026-05-02,34,RADALT,Radar altimeter flag intermittent in flight,"Connector reseated, ground run satisfactory",Open,True
+SNG-000073,FX-306,2026-05-05,79,OIL-PUMP,"Engine lube oil pump failed in flight, crew reported loss of function","Engine lube oil pump replaced, serial OP-0006 removed",Closed,False
+SNG-000074,FX-307,2026-05-15,34,RADALT,Radar altimeter flag intermittent in flight,"Connector reseated, ground run satisfactory",Open,True
+SNG-000075,FX-315,2026-05-20,28,FUEL-BOOST,"Fuel boost pump failure confirmed, abnormal readings during ground run","Fuel boost pump replaced, serial FB-0015 removed",Closed,False
+SNG-000076,FX-309,2026-06-07,27,STAB-ACT,"Horizontal stabilator actuator failure confirmed, abnormal readings during ground run","Horizontal stabilator actuator replaced, serial SA-0018 removed",Closed,False
+SNG-000077,FX-307,2026-06-08,49,JFS,"Jet fuel starter seized, no response during BITE check","Jet fuel starter replaced, serial JF-0009 removed",Closed,False
+SNG-000078,FX-307,2026-06-25,34,RADALT,Radar altimeter flag intermittent in flight,"Radar altimeter removed, bench tested serviceable (NFF), reinstalled",Closed,True
+SNG-000079,FX-307,2026-07-09,34,RADALT,Radar altimeter flag intermittent in flight,"Connector reseated, ground run satisfactory",Open,True
+SNG-000080,FX-306,2026-07-23,28,FUEL-BOOST,"Fuel boost pump unserviceable, failed functional check during post-flight inspection","Fuel boost pump replaced, serial FB-0006 removed",Closed,False
+SNG-000081,FX-305,2026-08-04,49,JFS,"Jet fuel starter flagged during flight, ground checks and BITE test satisfactory","Jet fuel starter replaced, serial JF-0005 removed",Closed,False
+SNG-000082,FX-307,2026-08-13,29,HYD-PUMP,"Engine-driven hydraulic pump failed in flight, crew reported loss of function","Engine-driven hydraulic pump replaced, serial HP-0011 removed",Closed,False
+SNG-000083,FX-306,2026-09-02,49,JFS,"Jet fuel starter seized, no response during BITE check","Jet fuel starter replaced, serial JF-0006 removed",Closed,False
+SNG-000084,FX-307,2026-09-15,34,RADALT,Radar altimeter flag intermittent in flight,"Connector reseated, ground run satisfactory",Open,True
+SNG-000085,FX-315,2026-10-19,34,INU,"Inertial navigation unit failure confirmed, abnormal readings during ground run","Inertial navigation unit replaced, serial IN-0015 removed",Closed,False
+SNG-000086,FX-307,2026-11-15,34,RADALT,Radar altimeter flag intermittent in flight,"Connector reseated, ground run satisfactory",Open,True
