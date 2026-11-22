@@ -1,0 +1,8 @@
+{
+  "name": "pre-poc",
+  "private": true,
+  "description": "Deploy shim: the app lives in web/. Pins the Node version Vercel uses.",
+  "engines": {
+    "node": "22.x"
+  }
+}
