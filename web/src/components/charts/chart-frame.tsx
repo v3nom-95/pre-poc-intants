@@ -38,7 +38,7 @@ export function ChartFrame({
                 className={cn(
                   "rounded-[4px] px-2 py-[3px] capitalize transition-colors",
                   view === v
-                    ? "bg-(--accent) text-white"
+                    ? "bg-(--accent) text-(--on-accent)"
                     : "text-(--ink-2) hover:text-(--ink)"
                 )}
               >

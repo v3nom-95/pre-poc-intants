@@ -54,7 +54,7 @@ export function ReportsView({
                 onClick={() => setFilter(k)}
                 className={cn(
                   "rounded-[4px] px-2.5 py-1 transition-colors",
-                  filter === k ? "bg-(--accent) text-white" : "text-(--ink-2) hover:text-(--ink)"
+                  filter === k ? "bg-(--accent) text-(--on-accent)" : "text-(--ink-2) hover:text-(--ink)"
                 )}
               >
                 {k === "all" ? "All types" : typeName[k]}

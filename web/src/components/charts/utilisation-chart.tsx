@@ -62,7 +62,7 @@ export function UtilisationChart({
               onClick={() => setGrouping(g)}
               className={cn(
                 "rounded-[4px] px-2 py-[3px] transition-colors",
-                grouping === g ? "bg-(--accent) text-white" : "text-(--ink-2) hover:text-(--ink)"
+                grouping === g ? "bg-(--accent) text-(--on-accent)" : "text-(--ink-2) hover:text-(--ink)"
               )}
             >
               By {g}

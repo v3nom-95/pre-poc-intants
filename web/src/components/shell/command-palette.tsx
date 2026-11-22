@@ -110,7 +110,7 @@ export function CommandPalette() {
           <Search className="size-[14px]" strokeWidth={1.75} />
           Search tails, serials, recs
         </span>
-        <kbd className="rounded border border-(--rule) px-1 text-[10px] text-(--ink-3)">
+        <kbd className="rounded border border-(--rule) px-1 text-[10px] text-(--ink-2)">
           &#8984;K
         </kbd>
       </Button>

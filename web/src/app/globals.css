@@ -43,6 +43,7 @@
   --ink-3: #606b76; /* SPEC 7.1 says #7D8893; darkened to meet WCAG AA 4.5:1 on sheet and paper (axe, SPEC 10) */
   --rule: #d3d9df;
   --accent: #2d4fd6;
+  --on-accent: #ffffff; /* text on accent fills (active toggles) */
 
   /* status palette - reserved, always paired with icon + label */
   --status-serviceable: #0ca30c;
@@ -78,6 +79,7 @@
   --ink-3: #7d8893;
   --rule: #2a3138;
   --accent: #7c93f2;
+  --on-accent: #101418; /* the dark-theme accent is light, so text on it is dark (white would be 2.9:1) */
 
   --status-serviceable: #0ca30c;
   --status-monitor: #fab219;

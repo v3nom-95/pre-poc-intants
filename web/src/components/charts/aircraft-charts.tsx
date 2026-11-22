@@ -208,12 +208,12 @@ export function EnginePanel({ engines }: { engines: InstalledEngine[] }) {
               onClick={() => setSelected(i)}
               className={cn(
                 "flex items-center gap-1.5 rounded-[4px] px-2.5 py-1 transition-colors",
-                i === selected ? "bg-(--accent) text-white" : "text-(--ink-2) hover:text-(--ink)"
+                i === selected ? "bg-(--accent) text-(--on-accent)" : "text-(--ink-2) hover:text-(--ink)"
               )}
             >
               Engine {e.position}
               {e.trend_info?.flagged && (
-                <span className={cn("text-[10px] font-semibold", i === selected ? "text-white" : "text-(--status-critical)")}>
+                <span className={cn("text-[10px] font-semibold", i === selected ? "text-(--on-accent)" : "text-(--status-critical)")}>
                   flagged
                 </span>
               )}
