@@ -52,3 +52,13 @@ cd web && node check-console.cjs     # console error sweep (needs the server on 
 - What-if on `/planning` computed from exported survival parameters, with a TypeScript and Python parity test.
 - Per-aircraft printable report at `/aircraft/{tail}/report`.
 - Review decisions stay in this browser's local storage (single-browser POC).
+
+## Deploy (Vercel, static)
+
+`vercel.json` at the repo root builds only the web app (the exported data in `web/public/data` is committed, so no Python runs on Vercel) and serves the static export from `web/out` with clean URLs.
+
+1. Import the GitHub repo in Vercel, keep the root directory as the repo root, framework "Other" (the config sets it).
+2. Deploy. Node 20 or later is required (Next.js 16).
+3. After changing data, re-run the pipeline locally, commit `web/public/data`, and push; Vercel rebuilds.
+
+Local equivalent of the deployed site: `cd web && npm run build && npx serve out -p 4173`.

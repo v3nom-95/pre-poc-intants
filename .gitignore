@@ -13,3 +13,4 @@ web/.next/
 web/out/
 web/tests/screenshots/
 .DS_Store
+.vercel/
