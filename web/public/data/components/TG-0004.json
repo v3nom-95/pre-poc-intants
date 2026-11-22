@@ -1,0 +1,207 @@
+{
+  "serial": "TG-0004",
+  "part_number": "24-3110-11",
+  "name": "Engine-driven generator",
+  "ata": "24",
+  "type": "transport",
+  "type_name": "Twin-engine transport",
+  "key": "TR-GEN",
+  "zone": "engine-2",
+  "task_card": "TC-24-03-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "TX-402",
+  "current_position": "2",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 3993.9,
+  "fh_to_tau": 366.2,
+  "fh_to_tau_p10": 176.7,
+  "fh_to_tau_p90": 743.7,
+  "prob_fail_before_next_phase": 0.042,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 25,
+  "fleet_confirmed_failures": 9,
+  "install_history": [
+    {
+      "tail": "TX-402",
+      "event_type": "Install",
+      "date": "2015-04-13",
+      "reason": null,
+      "serial": "TG-0004"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 146.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 216.3,
+      "survival": 0.9
+    },
+    {
+      "fh": 219.1,
+      "survival": 0.8
+    },
+    {
+      "fh": 269.1,
+      "survival": 0.8
+    },
+    {
+      "fh": 348.7,
+      "survival": 0.8
+    },
+    {
+      "fh": 436.6,
+      "survival": 0.8
+    },
+    {
+      "fh": 441.9,
+      "survival": 0.8
+    },
+    {
+      "fh": 471.9,
+      "survival": 0.8
+    },
+    {
+      "fh": 481.4,
+      "survival": 0.8
+    },
+    {
+      "fh": 645.8,
+      "survival": 0.8
+    },
+    {
+      "fh": 698.6,
+      "survival": 0.8
+    },
+    {
+      "fh": 732.0,
+      "survival": 0.8
+    },
+    {
+      "fh": 741.7,
+      "survival": 0.8
+    },
+    {
+      "fh": 756.3,
+      "survival": 0.8
+    },
+    {
+      "fh": 820.6,
+      "survival": 0.8
+    },
+    {
+      "fh": 912.0,
+      "survival": 0.8
+    },
+    {
+      "fh": 933.1,
+      "survival": 0.8
+    },
+    {
+      "fh": 1100.8,
+      "survival": 0.72
+    },
+    {
+      "fh": 1146.4,
+      "survival": 0.72
+    },
+    {
+      "fh": 1175.7,
+      "survival": 0.63
+    },
+    {
+      "fh": 1225.0,
+      "survival": 0.54
+    },
+    {
+      "fh": 1408.2,
+      "survival": 0.45
+    },
+    {
+      "fh": 1532.3,
+      "survival": 0.45
+    },
+    {
+      "fh": 1743.8,
+      "survival": 0.3375
+    },
+    {
+      "fh": 1858.2,
+      "survival": 0.3375
+    },
+    {
+      "fh": 1870.1,
+      "survival": 0.3375
+    },
+    {
+      "fh": 2089.9,
+      "survival": 0.3375
+    },
+    {
+      "fh": 2185.7,
+      "survival": 0.3375
+    },
+    {
+      "fh": 2329.7,
+      "survival": 0.3375
+    },
+    {
+      "fh": 2463.9,
+      "survival": 0.3375
+    },
+    {
+      "fh": 2479.2,
+      "survival": 0.3375
+    },
+    {
+      "fh": 2532.1,
+      "survival": 0.3375
+    },
+    {
+      "fh": 3113.1,
+      "survival": 0.3375
+    },
+    {
+      "fh": 3218.1,
+      "survival": 0.3375
+    },
+    {
+      "fh": 3463.4,
+      "survival": 0.2893
+    },
+    {
+      "fh": 3651.3,
+      "survival": 0.2411
+    },
+    {
+      "fh": 3729.6,
+      "survival": 0.2411
+    },
+    {
+      "fh": 3993.9,
+      "survival": 0.2411
+    },
+    {
+      "fh": 4076.5,
+      "survival": 0.2411
+    },
+    {
+      "fh": 4984.6,
+      "survival": 0.2411
+    },
+    {
+      "fh": 5125.8,
+      "survival": 0.2411
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

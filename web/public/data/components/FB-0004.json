@@ -3,6 +3,12 @@
   "part_number": "28-2210-02",
   "name": "Fuel boost pump",
   "ata": "28",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "FUEL-BOOST",
+  "zone": "centre-fuselage",
+  "task_card": "TC-28-01-02",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "OC",
   "criticality": "flight_safety",
@@ -10,14 +16,14 @@
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 828.6,
-  "fh_to_tau": 40.0,
-  "fh_to_tau_p10": 10.3,
-  "fh_to_tau_p90": 130.9,
-  "prob_fail_before_next_phase": 0.363,
-  "explanation": "Expected life x1.06 (hot-climate share 21%); Expected life x1.19 (ACM share 37%)",
+  "fh_exposure": 1098.5,
+  "fh_to_tau": 184.1,
+  "fh_to_tau_p10": 33.2,
+  "fh_to_tau_p90": 601.3,
+  "prob_fail_before_next_phase": 0.082,
+  "explanation": "Expected life x1.04 (hot-climate share 10%); Expected life x1.16 (ACM share 38%)",
   "fleet_units": 24,
-  "fleet_confirmed_failures": 8,
+  "fleet_confirmed_failures": 7,
   "install_history": [
     {
       "tail": "FX-304",
@@ -33,100 +39,165 @@
       "survival": 1.0
     },
     {
-      "fh": 30.7,
+      "fh": 34.1,
       "survival": 1.0
     },
     {
-      "fh": 77.1,
+      "fh": 46.9,
       "survival": 1.0
     },
     {
-      "fh": 213.7,
+      "fh": 81.5,
       "survival": 1.0
     },
     {
-      "fh": 232.3,
+      "fh": 157.0,
       "survival": 1.0
     },
     {
-      "fh": 241.6,
+      "fh": 182.8,
       "survival": 1.0
     },
     {
-      "fh": 307.8,
+      "fh": 196.8,
       "survival": 1.0
     },
     {
-      "fh": 337.8,
-      "survival": 0.9444
+      "fh": 214.2,
+      "survival": 1.0
     },
     {
-      "fh": 368.6,
-      "survival": 0.8889
+      "fh": 236.6,
+      "survival": 1.0
     },
     {
-      "fh": 391.9,
-      "survival": 0.8889
+      "fh": 258.0,
+      "survival": 1.0
     },
     {
-      "fh": 489.5,
-      "survival": 0.8296
+      "fh": 286.8,
+      "survival": 1.0
     },
     {
-      "fh": 500.9,
-      "survival": 0.7704
+      "fh": 292.7,
+      "survival": 1.0
     },
     {
-      "fh": 562.4,
-      "survival": 0.7704
+      "fh": 301.1,
+      "survival": 1.0
     },
     {
-      "fh": 643.6,
-      "survival": 0.7062
+      "fh": 374.2,
+      "survival": 1.0
     },
     {
-      "fh": 646.0,
-      "survival": 0.7062
+      "fh": 451.0,
+      "survival": 1.0
     },
     {
-      "fh": 667.5,
-      "survival": 0.6356
+      "fh": 533.1,
+      "survival": 1.0
     },
     {
-      "fh": 669.4,
-      "survival": 0.5649
+      "fh": 539.3,
+      "survival": 0.8571
     },
     {
-      "fh": 698.1,
-      "survival": 0.5649
+      "fh": 600.0,
+      "survival": 0.8571
     },
     {
-      "fh": 701.3,
-      "survival": 0.5649
+      "fh": 641.9,
+      "survival": 0.8571
     },
     {
-      "fh": 709.3,
-      "survival": 0.4708
+      "fh": 694.4,
+      "survival": 0.75
     },
     {
-      "fh": 746.6,
-      "survival": 0.4708
+      "fh": 709.5,
+      "survival": 0.6429
     },
     {
-      "fh": 764.0,
-      "survival": 0.4708
+      "fh": 726.9,
+      "survival": 0.5357
     },
     {
-      "fh": 828.6,
-      "survival": 0.4708
+      "fh": 788.1,
+      "survival": 0.5357
     },
     {
-      "fh": 916.4,
-      "survival": 0.4708
+      "fh": 942.6,
+      "survival": 0.5357
     },
     {
-      "fh": 937.3,
-      "survival": 0.4708
+      "fh": 980.7,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1098.5,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1179.9,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1290.5,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1305.4,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1329.0,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1344.8,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1458.7,
+      "survival": 0.4018
+    },
+    {
+      "fh": 1596.3,
+      "survival": 0.4018
+    },
+    {
+      "fh": 1617.0,
+      "survival": 0.4018
+    },
+    {
+      "fh": 1642.3,
+      "survival": 0.4018
+    },
+    {
+      "fh": 2022.5,
+      "survival": 0.2009
+    },
+    {
+      "fh": 2412.8,
+      "survival": 0.0
+    },
+    {
+      "fh": 2836.2,
+      "survival": 0.0
+    },
+    {
+      "fh": 3067.5,
+      "survival": 0.0
+    },
+    {
+      "fh": 3625.0,
+      "survival": 0.0
+    },
+    {
+      "fh": 3829.0,
+      "survival": 0.0
     }
-  ]
+  ],
+  "survival_curve_method": "Kaplan-Meier"
 }

@@ -1,0 +1,259 @@
+{
+  "serial": "XZ-0001",
+  "part_number": "73-2120-21",
+  "name": "Engine fuel control unit",
+  "ata": "73",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-FCU",
+  "zone": "engine-1",
+  "task_card": "TC-73-03-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "flight_safety",
+  "current_tail": "CX-501",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 5012.8,
+  "fh_to_tau": 1444.7,
+  "fh_to_tau_p10": 458.3,
+  "fh_to_tau_p90": 3561.4,
+  "prob_fail_before_next_phase": 0.011,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 30,
+  "fleet_confirmed_failures": 6,
+  "install_history": [
+    {
+      "tail": "CX-501",
+      "event_type": "Install",
+      "date": "1998-11-30",
+      "reason": null,
+      "serial": "XZ-0001"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 33.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 73.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 201.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 339.8,
+      "survival": 0.8571
+    },
+    {
+      "fh": 440.6,
+      "survival": 0.8571
+    },
+    {
+      "fh": 504.7,
+      "survival": 0.8571
+    },
+    {
+      "fh": 566.5,
+      "survival": 0.8571
+    },
+    {
+      "fh": 804.2,
+      "survival": 0.8571
+    },
+    {
+      "fh": 838.3,
+      "survival": 0.8571
+    },
+    {
+      "fh": 846.2,
+      "survival": 0.8571
+    },
+    {
+      "fh": 1124.2,
+      "survival": 0.75
+    },
+    {
+      "fh": 1138.5,
+      "survival": 0.75
+    },
+    {
+      "fh": 1143.5,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1232.9,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1346.1,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1476.5,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1530.2,
+      "survival": 0.5742
+    },
+    {
+      "fh": 1547.8,
+      "survival": 0.5742
+    },
+    {
+      "fh": 1671.9,
+      "survival": 0.5024
+    },
+    {
+      "fh": 1732.3,
+      "survival": 0.5024
+    },
+    {
+      "fh": 1812.2,
+      "survival": 0.4187
+    },
+    {
+      "fh": 1890.3,
+      "survival": 0.4187
+    },
+    {
+      "fh": 2159.1,
+      "survival": 0.4187
+    },
+    {
+      "fh": 2253.6,
+      "survival": 0.4187
+    },
+    {
+      "fh": 2383.2,
+      "survival": 0.4187
+    },
+    {
+      "fh": 2494.3,
+      "survival": 0.4187
+    },
+    {
+      "fh": 2718.1,
+      "survival": 0.4187
+    },
+    {
+      "fh": 2835.6,
+      "survival": 0.4187
+    },
+    {
+      "fh": 2936.3,
+      "survival": 0.4187
+    },
+    {
+      "fh": 3015.6,
+      "survival": 0.4187
+    },
+    {
+      "fh": 3109.9,
+      "survival": 0.4187
+    },
+    {
+      "fh": 3327.4,
+      "survival": 0.4187
+    },
+    {
+      "fh": 3398.7,
+      "survival": 0.4187
+    },
+    {
+      "fh": 3887.5,
+      "survival": 0.4187
+    },
+    {
+      "fh": 4189.1,
+      "survival": 0.4187
+    },
+    {
+      "fh": 4234.1,
+      "survival": 0.4187
+    },
+    {
+      "fh": 4352.7,
+      "survival": 0.4187
+    },
+    {
+      "fh": 4589.3,
+      "survival": 0.4187
+    },
+    {
+      "fh": 4590.7,
+      "survival": 0.4187
+    },
+    {
+      "fh": 4653.6,
+      "survival": 0.4187
+    },
+    {
+      "fh": 4929.2,
+      "survival": 0.4187
+    },
+    {
+      "fh": 5012.8,
+      "survival": 0.4187
+    },
+    {
+      "fh": 6288.2,
+      "survival": 0.4187
+    },
+    {
+      "fh": 6411.9,
+      "survival": 0.4187
+    },
+    {
+      "fh": 7024.1,
+      "survival": 0.4187
+    },
+    {
+      "fh": 7335.9,
+      "survival": 0.4187
+    },
+    {
+      "fh": 7559.7,
+      "survival": 0.4187
+    },
+    {
+      "fh": 8031.8,
+      "survival": 0.4187
+    },
+    {
+      "fh": 8506.9,
+      "survival": 0.4187
+    },
+    {
+      "fh": 9213.0,
+      "survival": 0.4187
+    },
+    {
+      "fh": 9436.7,
+      "survival": 0.4187
+    },
+    {
+      "fh": 9967.3,
+      "survival": 0.4187
+    },
+    {
+      "fh": 14039.9,
+      "survival": 0.4187
+    },
+    {
+      "fh": 15694.3,
+      "survival": 0.4187
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

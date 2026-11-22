@@ -26,8 +26,12 @@ interface ReviewState {
   reset: () => void;
 }
 
+// The POC never reads the system clock (CLAUDE.md, SPEC 0): review actions
+// are stamped with the fixed as-of date of the data.
+export const AS_OF_ISO = "2026-11-15";
+
 function nowIso() {
-  return new Date().toISOString().slice(0, 10);
+  return AS_OF_ISO;
 }
 
 export const useReviewStore = create<ReviewState>()(

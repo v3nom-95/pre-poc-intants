@@ -3,13 +3,19 @@
   "part_number": "72-0001-10",
   "name": "Engine",
   "ata": "72",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "ENGINE",
+  "zone": "engine-bay",
+  "task_card": "TC-72-01-01",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "FX-301",
+  "current_tail": "FX-311",
   "current_position": "1",
   "governing_limit": "Cycles",
-  "remaining": 464.0,
+  "remaining": 393.0,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -20,12 +26,13 @@
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "FX-301",
+      "tail": "FX-311",
       "event_type": "Install",
-      "date": "2023-04-13",
+      "date": "2023-04-18",
       "reason": null,
       "serial": "EN-0020"
     }
   ],
-  "survival_curve": []
+  "survival_curve": [],
+  "survival_curve_method": null
 }

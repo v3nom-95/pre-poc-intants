@@ -11,20 +11,29 @@
     "eta_multiplier": 0.22,
     "currently_installed_defective_serials": [
       "HP-0001",
-      "HP-0006",
       "HP-0004",
       "HP-0003",
-      "HP-0007",
+      "HP-0012",
       "HP-0008",
       "HP-0005",
-      "HP-0002"
+      "HP-0002",
+      "HP-0006",
+      "HP-0009"
     ]
   },
   "P2_hot_climate": {
     "title": "Hot-climate acceleration",
     "hot_threshold_c": 35.0,
     "ecs_cool_factor": 2.2,
-    "fuel_boost_factor": 1.8
+    "fuel_boost_factor": 1.8,
+    "part_numbers": [
+      "21-1005-01",
+      "28-2210-02",
+      "21-5110-11",
+      "28-2310-11",
+      "21-5110-21",
+      "28-2310-21"
+    ]
   },
   "P3_mission_fatigue": {
     "title": "Mission-mix fatigue",
@@ -73,5 +82,27 @@
       "mlg_tail": "FX-301",
       "mlg_landings": 3880
     }
+  },
+  "P8_pressurisation_snag": {
+    "title": "Recurring pressurisation snag with a wrong fix",
+    "tail": "TX-404",
+    "ata": "21",
+    "component": "TR-OFV",
+    "part_number": "21-3120-11",
+    "window_months": 8,
+    "true_cause": "Pressurisation duct leak (not recorded in maintenance data)",
+    "still_active_at_asof": true
+  },
+  "P9_turboprop_deterioration": {
+    "title": "Turboprop deterioration",
+    "tail": "CX-502",
+    "engine_position": "3",
+    "metric": "ITT margin",
+    "window_efh": 300.0,
+    "itt_margin_limit_c": 15.0,
+    "expected_crossing_efh_after_asof_range": [
+      40,
+      90
+    ]
   }
 }

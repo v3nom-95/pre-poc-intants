@@ -1,26 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useUiStore } from "@/lib/ui-store";
 
-function timeOfDayGreeting(): string {
-  const h = new Date().getHours();
-  if (h < 12) return "Good morning";
-  if (h < 18) return "Good afternoon";
-  return "Good evening";
-}
-
+// No time-of-day greeting: the POC never reads the system clock (SPEC 0,
+// CLAUDE.md). The greeting only reflects the simulated role.
 export function Greeting() {
   const role = useUiStore((s) => s.role);
-  const [greeting, setGreeting] = useState("Welcome");
-
-  useEffect(() => {
-    setGreeting(timeOfDayGreeting());
-  }, []);
 
   return (
     <span className="hidden text-[13px] text-(--ink-2) lg:inline">
-      {greeting}, <span className="font-medium text-(--ink)">{role.toLowerCase()}</span>
+      Signed in as <span className="font-medium text-(--ink)">{role.toLowerCase()}</span>
     </span>
   );
 }

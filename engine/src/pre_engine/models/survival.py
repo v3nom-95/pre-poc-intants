@@ -1,6 +1,8 @@
 """Weibull AFT survival model for OC/CM components (SPEC section 5.2).
 
-Fits one lifelines WeibullAFTFitter per part number on engine/data/gold/unit_exposure.csv.
+Fits one lifelines WeibullAFTFitter per part number on engine/data/gold/unit_exposure.csv,
+with delayed entry (left truncation) for units already fitted when the data
+window opens (column entry_exposure).
 Exposes closed-form Weibull-AFT math (conditional failure probability, FH-to-tau
 with a parametric-bootstrap interval, covariate effects as time ratios) so the
 same formulas can be re-derived in TypeScript for the what-if module from the
@@ -31,16 +33,32 @@ EVENT_THRESHOLD = 6  # minimum confirmed-failure events to fit a covariate, else
 # lifelines' penalized fit converge reliably at this sample size; see
 # docs/model-notes.md.
 BOOTSTRAP_DRAWS = 200
+COVARIATE_MIN_SD = 0.02
+MIN_EVENTS_TO_FIT = 2  # confirmed failures needed before any Weibull fit (plain or AFT)  # a covariate needs at least this spread across a part's units to enter its model
 DEFAULT_PHASE_HORIZON_FH = cfg.PHASE_INSPECTION_INTERVAL_FH
+# Gold unit_exposure.csv column with each leg's entry time (age at the start of
+# the data window, in the life basis; 0 for units installed inside the window).
+ENTRY_COL = "entry_exposure"
+ENTRY_MARGIN = 0.005  # entry must be strictly below the duration for lifelines
 
 PART_INFO = {
-    comp["part_number"]: dict(key=key, name=comp["name"], criticality=comp["criticality"], concept=comp["concept"])
+    comp["part_number"]: dict(key=key, name=comp["name"], criticality=comp["criticality"], concept=comp["concept"],
+                              type=comp["type"],
+                              exposure_unit="APU hours" if comp.get("life_basis") == "apu_hours" else "FH")
     for key, comp in cfg.COMPONENTS.items()
 }
+
+_FIT_CACHE: dict = {}
 
 
 def _load_unit_exposure() -> pd.DataFrame:
     return pd.read_csv(os.path.join(GOLD_DIR, "unit_exposure.csv"))
+
+
+def _exposure_col(ue: pd.DataFrame) -> str:
+    """Life basis exposure (APU hours for APUs, FH otherwise) when the gold
+    table carries it; plain FH exposure for older or hand-built tables."""
+    return "life_exposure" if "life_exposure" in ue.columns else "fh_exposure"
 
 
 def tau_for(part_number: str) -> float:
@@ -138,6 +156,8 @@ class PartSurvivalModel:
             covariates=self.covariate_cols,
             lot_reference=self.lot_reference,
             tau=tau_for(self.part_number),
+            exposure_unit=PART_INFO[self.part_number]["exposure_unit"],
+            type=PART_INFO[self.part_number]["type"],
         )
 
 
@@ -145,17 +165,39 @@ def fit_part(ue: pd.DataFrame, part_number: str) -> PartSurvivalModel | None:
     sub = ue[ue["part_number"] == part_number].copy()
     n_units = len(sub)
     n_events = int(sub["event"].sum())
-    if n_units < 5:
+    if n_units < 5 or n_events < MIN_EVENTS_TO_FIT:
+        # A Weibull fit with no (or one) confirmed failure is undefined or
+        # meaningless: such parts get no model risk rather than a made-up one.
         return None
 
-    design = sub[["fh_exposure", "event"]].rename(columns={"fh_exposure": "duration"})
+    col = _exposure_col(sub)
+    design = sub[[col, "event"]].rename(columns={col: "duration"})
+    # Delayed entry (left truncation). Units already fitted when the data window
+    # opens are observed only because they survived to their age at that date,
+    # so the likelihood is conditioned on surviving to it: S(t) / S(entry). Fitting
+    # them as if watched from new inflates the fitted lives (docs/model-notes.md).
+    # Entry is kept strictly below the duration, as lifelines requires.
+    fixed = ["duration", "event"]
+    entry_kwargs = {}
+    if ENTRY_COL in sub.columns and col == "life_exposure":
+        entry = sub[ENTRY_COL].fillna(0.0).clip(lower=0.0).to_numpy(dtype=float)
+        dur = design["duration"].to_numpy(dtype=float)
+        design["entry"] = np.minimum(entry, np.maximum(dur - ENTRY_MARGIN, 0.0))
+        fixed.append("entry")
+        entry_kwargs = dict(entry_col="entry")
     covariate_cols = []
     lot_reference = None
 
     if n_events >= EVENT_THRESHOLD:
-        design["hot_share"] = sub["hot_climate_fh_share"].fillna(0.0)
-        design["acm_share"] = sub["acm_fh_share"].fillna(0.0)
-        covariate_cols += ["hot_share", "acm_share"]
+        # A covariate that is constant across this part's units (for example
+        # hot-climate share on a part only flown from the temperate base, or
+        # ACM share on a non-fighter part) carries no information and makes
+        # the design singular, so it is left out of that part's model.
+        for name, source in (("hot_share", "hot_climate_fh_share"), ("acm_share", "acm_fh_share")):
+            values = sub[source].fillna(0.0)
+            if values.std() > COVARIATE_MIN_SD:
+                design[name] = values
+                covariate_cols.append(name)
 
         if sub["lot"].notna().any():
             lot_counts = sub["lot"].value_counts()
@@ -169,12 +211,12 @@ def fit_part(ue: pd.DataFrame, part_number: str) -> PartSurvivalModel | None:
 
     aft = WeibullAFTFitter(penalizer=0.001)
     try:
-        aft.fit(design, duration_col="duration", event_col="event")
+        aft.fit(design, duration_col="duration", event_col="event", **entry_kwargs)
     except Exception:
         # Fall back to a plain (no-covariate) Weibull fit if the richer model
         # fails to converge (small-sample / near-singular covariate combos).
         aft = WeibullAFTFitter(penalizer=0.001)
-        aft.fit(design[["duration", "event"]], duration_col="duration", event_col="event")
+        aft.fit(design[fixed], duration_col="duration", event_col="event", **entry_kwargs)
         covariate_cols, lot_reference = [], None
 
     return PartSurvivalModel(part_number, aft, covariate_cols, lot_reference, n_events, n_units)
@@ -182,7 +224,15 @@ def fit_part(ue: pd.DataFrame, part_number: str) -> PartSurvivalModel | None:
 
 def fit_all_parts(ue: pd.DataFrame | None = None) -> dict[str, PartSurvivalModel]:
     if ue is None:
-        ue = _load_unit_exposure()
+        # Cache fits of the gold table (export, recommendations and pattern
+        # detectors all ask for them); keyed on the file's size and mtime.
+        path = os.path.join(GOLD_DIR, "unit_exposure.csv")
+        st = os.stat(path)
+        cache_key = (path, st.st_size, st.st_mtime_ns)
+        if cache_key not in _FIT_CACHE:
+            _FIT_CACHE.clear()
+            _FIT_CACHE[cache_key] = fit_all_parts(_load_unit_exposure())
+        return _FIT_CACHE[cache_key]
     oc_cm_parts = [pn for pn, info in PART_INFO.items() if info["concept"] in ("OC", "CM")]
     models = {}
     for pn in oc_cm_parts:
@@ -214,20 +264,23 @@ def score_in_service_units(models: dict[str, PartSurvivalModel], ue: pd.DataFram
                     if c.startswith("lot_"):
                         covariates[c] = 1.0 if f"lot_{unit.get('lot')}" == c else 0.0
 
-            t = float(unit["fh_exposure"])
+            exposure_unit = PART_INFO[pn]["exposure_unit"]
+            t = float(unit[_exposure_col(ue)])
+            # Horizon to the next phase inspection in this part's own life
+            # basis: FH, or APU hours at the unit's own APU hours per FH.
+            horizon = horizon_fh
+            if exposure_unit != "FH":
+                fh = float(unit["fh_exposure"]) or 1.0
+                horizon = horizon_fh * (t / fh)
             lam = model.lambda_for(covariates)
-            prob_next_phase = float(conditional_failure_prob(t, lam, model.rho, horizon_fh))
+            prob_next_phase = float(conditional_failure_prob(t, lam, model.rho, horizon))
             point_fh_to_tau = float(fh_to_tau(t, lam, model.rho, tau))
 
-            x_vec = np.array([1.0] + [covariates.get(c, 0.0) for c in model.covariate_cols])
-            draws = []
-            for b in range(boot.shape[0]):
-                lam_intercept_b = boot[b, 0]
-                coef_b = boot[b, 1:1 + n_cov]
-                rho_b = float(np.exp(boot[b, 1 + n_cov]))
-                lam_b = float(np.exp(lam_intercept_b + np.dot(coef_b, x_vec[1:])))
-                draws.append(fh_to_tau(t, lam_b, rho_b, tau))
-            draws = np.array(draws)
+            x_vec = np.array([covariates.get(c, 0.0) for c in model.covariate_cols])
+            lam_b = np.exp(boot[:, 0] + (boot[:, 1:1 + n_cov] @ x_vec if n_cov else 0.0))
+            rho_b = np.exp(boot[:, 1 + n_cov])
+            with np.errstate(over="ignore", invalid="ignore"):
+                draws = fh_to_tau(t, lam_b, rho_b, tau)
             lo, hi = np.percentile(draws, [10, 90])
 
             explain = []
@@ -244,7 +297,7 @@ def score_in_service_units(models: dict[str, PartSurvivalModel], ue: pd.DataFram
 
             rows.append(dict(
                 tail=unit["tail"], position=unit["position"], part_number=pn, serial=unit["serial"],
-                fh_exposure=round(t, 1), tau=tau,
+                fh_exposure=round(t, 1), exposure_unit=exposure_unit, tau=tau,
                 prob_fail_before_next_phase=round(prob_next_phase, 4),
                 fh_to_tau=round(point_fh_to_tau, 1),
                 fh_to_tau_p10=round(float(lo), 1), fh_to_tau_p90=round(float(hi), 1),

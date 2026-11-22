@@ -1,6 +1,6 @@
 "use client";
 
-import { formatFH } from "@/lib/format";
+import { formatNumber } from "@/lib/format";
 
 /**
  * Horizontal axis in FH since install. Solid segment = hours used.
@@ -13,12 +13,16 @@ export function LifeStrip({
   fhToTau,
   fhToTauP10,
   fhToTauP90,
+  unit = "FH",
 }: {
   fhExposure: number;
   fhToTau: number;
   fhToTauP10: number;
   fhToTauP90: number;
+  /** Exposure unit of this part: FH, or APU hours for the APU. */
+  unit?: string;
 }) {
+  const fmt = (v: number) => `${formatNumber(v, 0)} ${unit}`;
   const totalSpan = fhExposure + fhToTauP90 * 1.15;
   const pct = (v: number) => `${Math.max(0, Math.min(100, (v / totalSpan) * 100))}%`;
 
@@ -37,9 +41,9 @@ export function LifeStrip({
         <div className="absolute inset-y-0 w-[2px] bg-(--ink)" style={{ left: pct(fhExposure) }} />
       </div>
       <div className="flex justify-between text-[11px] text-(--ink-2)">
-        <span>0 FH</span>
-        <span>Now: {formatFH(fhExposure)}</span>
-        <span>Risk threshold: {formatFH(fhExposure + fhToTau)} (80% interval {formatFH(fhExposure + fhToTauP10)} to {formatFH(fhExposure + fhToTauP90)})</span>
+        <span>0 {unit}</span>
+        <span>Now: {fmt(fhExposure)}</span>
+        <span>Risk threshold: {fmt(fhExposure + fhToTau)} (80% interval {fmt(fhExposure + fhToTauP10)} to {fmt(fhExposure + fhToTauP90)})</span>
       </div>
     </div>
   );

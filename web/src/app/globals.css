@@ -40,7 +40,7 @@
   --sheet: #fafbfb;
   --ink: #16202a;
   --ink-2: #4e5a66;
-  --ink-3: #7d8893;
+  --ink-3: #606b76; /* SPEC 7.1 says #7D8893; darkened to meet WCAG AA 4.5:1 on sheet and paper (axe, SPEC 10) */
   --rule: #d3d9df;
   --accent: #2d4fd6;
 
@@ -160,7 +160,7 @@
 
 @media print {
   nav[aria-label="Primary"],
-  header,
+  .app-topbar,
   footer,
   .no-print {
     display: none !important;

@@ -16,11 +16,13 @@ import { Button } from "@/components/ui/button";
 const ROUTES = [
   { label: "Fleet overview", href: "/" },
   { label: "Recommendations", href: "/recommendations" },
+  { label: "Action plan", href: "/plan" },
   { label: "Reliability", href: "/reliability" },
   { label: "Planning", href: "/planning" },
   { label: "Models and validation", href: "/models" },
   { label: "Data and integration", href: "/data" },
   { label: "Reports", href: "/reports" },
+  { label: "Ask PRE (query assistant)", href: "/assistant" },
 ];
 
 interface SearchEntry {
@@ -30,9 +32,18 @@ interface SearchEntry {
   href: string;
 }
 
+interface TypeEntry {
+  key: string;
+  name: string;
+  tails: string[];
+}
+
+const TAIL_RE = /\b([A-Z]{2}-\d{3})\b/;
+
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState<SearchEntry[] | null>(null);
+  const [tailType, setTailType] = useState<Record<string, string>>({});
   const router = useRouter();
 
   useEffect(() => {
@@ -52,10 +63,41 @@ export function CommandPalette() {
         .then((r) => r.json())
         .then(setIndex)
         .catch(() => setIndex([]));
+      fetch("/data/types.json")
+        .then((r) => r.json())
+        .then((types: TypeEntry[]) => {
+          const map: Record<string, string> = {};
+          for (const t of types) for (const tail of t.tails) map[tail] = t.name;
+          setTailType(map);
+        })
+        .catch(() => setTailType({}));
     }
   }, [open, index]);
 
   const byType = (t: SearchEntry["type"]) => (index ?? []).filter((e) => e.type === t);
+  /** Aircraft type of an entry, from the tail it names (aircraft id or a tail in its label). */
+  const typeOf = (e: SearchEntry) => {
+    const tail = e.type === "Aircraft" ? e.id : TAIL_RE.exec(e.label)?.[1];
+    return tail ? tailType[tail] : undefined;
+  };
+  const item = (e: SearchEntry, key: string) => {
+    const typeName = typeOf(e);
+    // The aircraft label already names its type; do not repeat it.
+    const showType = typeName && e.type !== "Aircraft";
+    return (
+      <CommandItem
+        key={key}
+        value={`${e.id} ${e.label} ${typeName ?? ""}`}
+        onSelect={() => {
+          setOpen(false);
+          router.push(e.href);
+        }}
+      >
+        <span className="min-w-0 flex-1 truncate">{e.label}</span>
+        {showType && <span className="shrink-0 text-[11px] text-(--ink-2)">{typeName}</span>}
+      </CommandItem>
+    );
+  };
 
   return (
     <>
@@ -73,7 +115,7 @@ export function CommandPalette() {
         </kbd>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search tails, serials, part numbers, recommendation IDs" />
+        <CommandInput placeholder="Search tails, types, serials, part numbers, recommendation IDs" />
         <CommandList>
           <CommandEmpty>{index === null ? "Loading…" : "No results."}</CommandEmpty>
           <CommandGroup heading="Go to">
@@ -92,29 +134,17 @@ export function CommandPalette() {
           </CommandGroup>
           {index && byType("Aircraft").length > 0 && (
             <CommandGroup heading="Aircraft">
-              {byType("Aircraft").map((e) => (
-                <CommandItem key={e.href} value={`${e.id} ${e.label}`} onSelect={() => { setOpen(false); router.push(e.href); }}>
-                  {e.label}
-                </CommandItem>
-              ))}
+              {byType("Aircraft").map((e) => item(e, e.href))}
             </CommandGroup>
           )}
           {index && byType("Recommendation").length > 0 && (
             <CommandGroup heading="Recommendations">
-              {byType("Recommendation").map((e) => (
-                <CommandItem key={e.id} value={`${e.id} ${e.label}`} onSelect={() => { setOpen(false); router.push(e.href); }}>
-                  {e.label}
-                </CommandItem>
-              ))}
+              {byType("Recommendation").map((e) => item(e, e.id))}
             </CommandGroup>
           )}
           {index && byType("Component").length > 0 && (
             <CommandGroup heading="Components">
-              {byType("Component").map((e) => (
-                <CommandItem key={e.href} value={`${e.id} ${e.label}`} onSelect={() => { setOpen(false); router.push(e.href); }}>
-                  {e.label}
-                </CommandItem>
-              ))}
+              {byType("Component").map((e) => item(e, e.href))}
             </CommandGroup>
           )}
         </CommandList>

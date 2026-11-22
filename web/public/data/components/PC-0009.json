@@ -1,0 +1,123 @@
+{
+  "serial": "PC-0009",
+  "part_number": "21-3110-11",
+  "name": "Cabin pressure controller",
+  "ata": "21",
+  "type": "transport",
+  "type_name": "Twin-engine transport",
+  "key": "TR-CPC",
+  "zone": "cabin",
+  "task_card": "TC-21-03-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "flight_safety",
+  "current_tail": "TX-401",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 1522.5,
+  "fh_to_tau": 374.1,
+  "fh_to_tau_p10": 181.9,
+  "fh_to_tau_p90": 892.6,
+  "prob_fail_before_next_phase": 0.043,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 12,
+  "fleet_confirmed_failures": 4,
+  "install_history": [
+    {
+      "tail": "TX-401",
+      "event_type": "Install",
+      "date": "2022-01-19",
+      "reason": null,
+      "serial": "PC-0009"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 2.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 112.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 188.9,
+      "survival": 0.75
+    },
+    {
+      "fh": 189.6,
+      "survival": 0.5
+    },
+    {
+      "fh": 438.9,
+      "survival": 0.5
+    },
+    {
+      "fh": 972.6,
+      "survival": 0.5
+    },
+    {
+      "fh": 1235.2,
+      "survival": 0.5
+    },
+    {
+      "fh": 1522.5,
+      "survival": 0.5
+    },
+    {
+      "fh": 1690.8,
+      "survival": 0.5
+    },
+    {
+      "fh": 2383.3,
+      "survival": 0.5
+    },
+    {
+      "fh": 2458.8,
+      "survival": 0.5
+    },
+    {
+      "fh": 2880.3,
+      "survival": 0.5
+    },
+    {
+      "fh": 3011.1,
+      "survival": 0.5
+    },
+    {
+      "fh": 3229.4,
+      "survival": 0.5
+    },
+    {
+      "fh": 3294.9,
+      "survival": 0.5
+    },
+    {
+      "fh": 3610.0,
+      "survival": 0.5
+    },
+    {
+      "fh": 3622.0,
+      "survival": 0.375
+    },
+    {
+      "fh": 4191.5,
+      "survival": 0.375
+    },
+    {
+      "fh": 4912.2,
+      "survival": 0.1875
+    },
+    {
+      "fh": 5253.3,
+      "survival": 0.1875
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

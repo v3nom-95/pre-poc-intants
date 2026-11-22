@@ -1,17 +1,31 @@
-tail,base,induction_date,start_fh,start_fi,ttl_fh,planned_withdrawal_year
-FX-301,Base A,2013-07-04,2484.59,27.0,6000.0,2036
-FX-302,Base A,2012-09-21,2603.24,31.95,6000.0,2036
-FX-303,Base A,2009-08-21,2633.58,28.02,6000.0,2036
-FX-304,Base A,2018-01-19,972.19,38.41,6000.0,2036
-FX-305,Base A,2009-08-11,1214.02,30.84,6000.0,2036
-FX-306,Base A,2010-06-05,1420.23,36.39,6000.0,2036
-FX-307,Base A,2014-11-15,1619.84,34.12,6000.0,2036
-FX-308,Base A,2010-02-04,3085.54,19.11,6000.0,2036
-FX-309,Base A,2009-10-26,1812.35,55.0,6000.0,2036
-FX-310,Base A,2013-08-10,2531.77,45.86,6000.0,2036
-FX-311,Base B,2017-12-18,2102.18,49.99,6000.0,2036
-FX-312,Base B,2011-11-27,3311.62,22.9,6000.0,2036
-FX-313,Base B,2015-05-07,1821.25,18.54,6000.0,2036
-FX-314,Base B,2009-08-17,2863.6,54.27,6000.0,2036
-FX-315,Base B,2009-10-15,3389.08,29.15,6000.0,2036
-FX-316,Base B,2013-01-26,1450.07,27.96,6000.0,2036
+tail,base,induction_date,start_fh,start_fi,ttl_fh,planned_withdrawal_year,type,type_name,engines
+FX-301,Base A,2013-07-04,2484.59,27.0,6000.0,2036,fighter,Multirole fighter,1
+FX-302,Base A,2012-09-21,2603.24,31.95,6000.0,2036,fighter,Multirole fighter,1
+FX-303,Base A,2009-08-21,2633.58,28.02,6000.0,2036,fighter,Multirole fighter,1
+FX-304,Base A,2018-01-19,972.19,38.41,6000.0,2036,fighter,Multirole fighter,1
+FX-305,Base A,2009-08-11,1214.02,30.84,6000.0,2036,fighter,Multirole fighter,1
+FX-306,Base A,2010-06-05,1420.23,36.39,6000.0,2036,fighter,Multirole fighter,1
+FX-307,Base A,2014-11-15,1619.84,34.12,6000.0,2036,fighter,Multirole fighter,1
+FX-308,Base A,2010-02-04,3085.54,19.11,6000.0,2036,fighter,Multirole fighter,1
+FX-309,Base A,2009-10-26,1812.35,55.0,6000.0,2036,fighter,Multirole fighter,1
+FX-310,Base A,2013-08-10,2531.77,45.86,6000.0,2036,fighter,Multirole fighter,1
+FX-311,Base B,2017-12-18,2102.18,49.99,6000.0,2036,fighter,Multirole fighter,1
+FX-312,Base B,2011-11-27,3311.62,22.9,6000.0,2036,fighter,Multirole fighter,1
+FX-313,Base B,2015-05-07,1821.25,18.54,6000.0,2036,fighter,Multirole fighter,1
+FX-314,Base B,2009-08-17,2863.6,54.27,6000.0,2036,fighter,Multirole fighter,1
+FX-315,Base B,2009-10-15,3389.08,29.15,6000.0,2036,fighter,Multirole fighter,1
+FX-316,Base B,2013-01-26,1450.07,27.96,6000.0,2036,fighter,Multirole fighter,1
+TX-401,Base A,2015-08-27,5428.66,43.29,20000.0,2040,transport,Twin-engine transport,2
+TX-402,Base A,2014-07-10,6643.11,47.24,20000.0,2040,transport,Twin-engine transport,2
+TX-403,Base A,2018-07-17,4455.33,43.6,20000.0,2040,transport,Twin-engine transport,2
+TX-404,Base A,2015-07-12,4719.51,32.93,20000.0,2040,transport,Twin-engine transport,2
+TX-405,Base A,2016-10-22,7616.52,46.39,20000.0,2040,transport,Twin-engine transport,2
+TX-406,Base A,2010-10-24,6721.38,41.16,20000.0,2040,transport,Twin-engine transport,2
+TX-407,Base A,2014-04-18,6907.13,30.72,20000.0,2040,transport,Twin-engine transport,2
+TX-408,Base A,2014-01-15,4208.25,24.97,20000.0,2040,transport,Twin-engine transport,2
+CX-501,Base A,2015-02-03,7452.15,37.6,25000.0,2042,airlifter,Four-engine airlifter,4
+CX-502,Base A,2010-08-23,4063.86,30.61,25000.0,2042,airlifter,Four-engine airlifter,4
+CX-503,Base A,2009-10-15,8485.01,36.5,25000.0,2042,airlifter,Four-engine airlifter,4
+CX-504,Base B,2015-01-01,3847.54,25.26,25000.0,2042,airlifter,Four-engine airlifter,4
+CX-505,Base B,2016-05-27,7362.41,19.42,25000.0,2042,airlifter,Four-engine airlifter,4
+CX-506,Base B,2007-07-03,5261.51,38.02,25000.0,2042,airlifter,Four-engine airlifter,4

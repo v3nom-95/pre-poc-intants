@@ -3,6 +3,12 @@
   "part_number": "21-1005-01",
   "name": "ECS cooling turbine",
   "ata": "21",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "ECS-COOL",
+  "zone": "centre-fuselage",
+  "task_card": "TC-21-01-02",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "OC",
   "criticality": "mission",
@@ -10,14 +16,14 @@
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 329.3,
-  "fh_to_tau": 295.3,
-  "fh_to_tau_p10": 108.5,
-  "fh_to_tau_p90": 727.5,
-  "prob_fail_before_next_phase": 0.098,
-  "explanation": "Expected life x0.86 (hot-climate share 15%); Expected life x1.41 (ACM share 37%)",
+  "fh_exposure": 283.9,
+  "fh_to_tau": 335.5,
+  "fh_to_tau_p10": 155.4,
+  "fh_to_tau_p90": 654.7,
+  "prob_fail_before_next_phase": 0.087,
+  "explanation": "Expected life x0.88 (ACM share 33%)",
   "fleet_units": 28,
-  "fleet_confirmed_failures": 11,
+  "fleet_confirmed_failures": 10,
   "install_history": [
     {
       "tail": "FX-310",
@@ -29,14 +35,14 @@
     {
       "tail": "FX-310",
       "event_type": "Removal",
-      "date": "2022-08-26",
+      "date": "2022-10-23",
       "reason": "Unscheduled: confirmed failure",
       "serial": "EC-0010"
     },
     {
       "tail": "FX-309",
       "event_type": "Install",
-      "date": "2024-09-02",
+      "date": "2024-11-29",
       "reason": null,
       "serial": "EC-0010"
     }
@@ -47,116 +53,181 @@
       "survival": 1.0
     },
     {
-      "fh": 120.5,
-      "survival": 0.9643
+      "fh": 17.4,
+      "survival": 1.0
     },
     {
-      "fh": 134.5,
-      "survival": 0.9286
+      "fh": 39.0,
+      "survival": 1.0
     },
     {
-      "fh": 145.1,
-      "survival": 0.9286
+      "fh": 106.5,
+      "survival": 1.0
     },
     {
-      "fh": 151.7,
-      "survival": 0.8914
+      "fh": 132.3,
+      "survival": 1.0
     },
     {
-      "fh": 184.5,
-      "survival": 0.8914
+      "fh": 174.2,
+      "survival": 0.9167
     },
     {
-      "fh": 222.7,
-      "survival": 0.8914
+      "fh": 182.2,
+      "survival": 0.9167
     },
     {
-      "fh": 232.0,
-      "survival": 0.8914
+      "fh": 184.6,
+      "survival": 0.825
     },
     {
-      "fh": 248.0,
-      "survival": 0.849
+      "fh": 199.1,
+      "survival": 0.825
     },
     {
-      "fh": 285.6,
-      "survival": 0.849
+      "fh": 228.7,
+      "survival": 0.825
     },
     {
-      "fh": 321.3,
-      "survival": 0.849
+      "fh": 265.5,
+      "survival": 0.825
     },
     {
-      "fh": 329.3,
-      "survival": 0.849
+      "fh": 265.8,
+      "survival": 0.825
     },
     {
-      "fh": 338.3,
-      "survival": 0.799
+      "fh": 268.6,
+      "survival": 0.825
     },
     {
-      "fh": 352.1,
-      "survival": 0.7491
+      "fh": 276.4,
+      "survival": 0.825
     },
     {
-      "fh": 400.0,
-      "survival": 0.6992
+      "fh": 283.9,
+      "survival": 0.825
     },
     {
-      "fh": 417.9,
-      "survival": 0.6492
+      "fh": 363.0,
+      "survival": 0.825
     },
     {
-      "fh": 454.6,
-      "survival": 0.6492
+      "fh": 373.7,
+      "survival": 0.825
     },
     {
-      "fh": 513.3,
-      "survival": 0.5951
+      "fh": 381.7,
+      "survival": 0.825
     },
     {
-      "fh": 547.5,
-      "survival": 0.5951
+      "fh": 391.1,
+      "survival": 0.825
     },
     {
-      "fh": 597.7,
-      "survival": 0.5951
+      "fh": 412.9,
+      "survival": 0.7425
     },
     {
-      "fh": 610.1,
-      "survival": 0.529
+      "fh": 441.1,
+      "survival": 0.7425
     },
     {
-      "fh": 611.8,
-      "survival": 0.529
+      "fh": 467.6,
+      "survival": 0.7425
     },
     {
-      "fh": 687.5,
-      "survival": 0.529
+      "fh": 474.8,
+      "survival": 0.7425
     },
     {
-      "fh": 698.1,
-      "survival": 0.529
+      "fh": 479.1,
+      "survival": 0.6806
     },
     {
-      "fh": 717.7,
-      "survival": 0.4232
+      "fh": 493.6,
+      "survival": 0.6806
     },
     {
-      "fh": 746.6,
-      "survival": 0.4232
+      "fh": 569.4,
+      "survival": 0.6806
     },
     {
-      "fh": 764.0,
-      "survival": 0.4232
+      "fh": 601.8,
+      "survival": 0.6806
     },
     {
-      "fh": 916.4,
-      "survival": 0.4232
+      "fh": 647.4,
+      "survival": 0.6126
     },
     {
-      "fh": 937.3,
-      "survival": 0.4232
+      "fh": 658.1,
+      "survival": 0.6126
+    },
+    {
+      "fh": 663.2,
+      "survival": 0.6126
+    },
+    {
+      "fh": 681.3,
+      "survival": 0.6126
+    },
+    {
+      "fh": 696.9,
+      "survival": 0.6126
+    },
+    {
+      "fh": 849.6,
+      "survival": 0.6126
+    },
+    {
+      "fh": 852.6,
+      "survival": 0.5513
+    },
+    {
+      "fh": 887.5,
+      "survival": 0.49
+    },
+    {
+      "fh": 894.8,
+      "survival": 0.49
+    },
+    {
+      "fh": 1015.7,
+      "survival": 0.4356
+    },
+    {
+      "fh": 1041.5,
+      "survival": 0.4356
+    },
+    {
+      "fh": 1092.9,
+      "survival": 0.4356
+    },
+    {
+      "fh": 1255.1,
+      "survival": 0.4356
+    },
+    {
+      "fh": 1256.4,
+      "survival": 0.4356
+    },
+    {
+      "fh": 1347.4,
+      "survival": 0.3267
+    },
+    {
+      "fh": 1362.0,
+      "survival": 0.3267
+    },
+    {
+      "fh": 1387.1,
+      "survival": 0.3267
+    },
+    {
+      "fh": 1775.0,
+      "survival": 0.0
     }
-  ]
+  ],
+  "survival_curve_method": "Kaplan-Meier"
 }

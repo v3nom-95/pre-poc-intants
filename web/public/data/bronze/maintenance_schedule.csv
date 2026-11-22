@@ -1,21 +1,72 @@
-part_number,component,concept,task,interval_value,interval_unit,notes
-21-1005-01,ECS cooling turbine,OC,On-condition inspection,150.0,FH,Checked at phase inspection
-24-2110-01,Main generator,OC,On-condition inspection,150.0,FH,Checked at phase inspection
-24-2240-02,Main battery,HT,Hard time replacement,24.0,Calendar months,
-25-6410-01,Ejection seat CAD/PAD set,HT,Hard time replacement,36.0,Calendar months,
-27-3310-04,Horizontal stabilator actuator,OC,On-condition inspection,150.0,FH,Checked at phase inspection
-27-3550-01,Flight control computer,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
-28-2210-02,Fuel boost pump,OC,On-condition inspection,150.0,FH,Checked at phase inspection
-29-1140-03,Engine-driven hydraulic pump,OC,On-condition inspection,150.0,FH,Checked at phase inspection
-32-1120-05,Main landing gear assembly,HT,Hard time replacement,4000.0,Landings,
-32-1120-05,Main landing gear assembly,HT,Hard time replacement,144.0,Calendar months,
-32-4210-02,Main wheel brake,OC,On-condition inspection,150.0,FH,Checked at phase inspection
-32-4310-01,Main wheel tyre,OC,On-condition inspection,150.0,FH,Checked at phase inspection
-34-4410-02,Radar altimeter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
-34-1810-01,Inertial navigation unit,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
-49-1210-01,Jet fuel starter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
-72-0001-10,Engine,HT,Hard time replacement,1200.0,EFH,
-72-0001-10,Engine,HT,Hard time replacement,2400.0,Cycles,
-72-5120-01,HPT module (turbine disc LLP),HT,Hard time replacement,3000.0,Cycles,
-73-2110-01,Engine fuel control unit,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
-79-1310-02,Engine lube oil pump,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+part_number,component,aircraft_type,concept,task,interval_value,interval_unit,notes
+21-1005-01,ECS cooling turbine,fighter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+24-2110-01,Main generator,fighter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+24-2240-02,Main battery,fighter,HT,Hard time replacement,24.0,Calendar months,
+25-6410-01,Ejection seat CAD/PAD set,fighter,HT,Hard time replacement,36.0,Calendar months,
+27-3310-04,Horizontal stabilator actuator,fighter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+27-3550-01,Flight control computer,fighter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+28-2210-02,Fuel boost pump,fighter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+29-1140-03,Engine-driven hydraulic pump,fighter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+32-1120-05,Main landing gear assembly,fighter,HT,Hard time replacement,4000.0,Landings,
+32-1120-05,Main landing gear assembly,fighter,HT,Hard time replacement,144.0,Calendar months,
+32-4210-02,Main wheel brake,fighter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+32-4310-01,Main wheel tyre,fighter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+34-4410-02,Radar altimeter,fighter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+34-1810-01,Inertial navigation unit,fighter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+49-1210-01,Jet fuel starter,fighter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+72-0001-10,Engine,fighter,HT,Hard time replacement,1200.0,EFH,
+72-0001-10,Engine,fighter,HT,Hard time replacement,2400.0,Cycles,
+72-5120-01,HPT module (turbine disc LLP),fighter,HT,Hard time replacement,3000.0,Cycles,
+73-2110-01,Engine fuel control unit,fighter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+79-1310-02,Engine lube oil pump,fighter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+21-5110-11,ECS pack (air cycle machine),transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+21-3110-11,Cabin pressure controller,transport,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+21-3120-11,Cabin outflow valve,transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+24-3110-11,Engine-driven generator,transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+24-3240-11,Main battery,transport,HT,Hard time replacement,24.0,Calendar months,
+25-6210-11,Emergency locator transmitter battery,transport,HT,Hard time replacement,48.0,Calendar months,
+28-2310-11,Fuel boost pump,transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+29-1210-11,Engine-driven hydraulic pump,transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+31-3110-11,Flight data recorder,transport,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+32-1130-11,Main landing gear assembly,transport,HT,Hard time replacement,12000.0,Landings,
+32-1130-11,Main landing gear assembly,transport,HT,Hard time replacement,120.0,Calendar months,
+32-2110-11,Nose landing gear assembly,transport,HT,Hard time replacement,12000.0,Landings,
+32-2110-11,Nose landing gear assembly,transport,HT,Hard time replacement,120.0,Calendar months,
+32-4220-11,Main wheel brake,transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+32-4320-11,Main wheel tyre,transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+34-4110-11,Weather radar,transport,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+34-4420-11,Radio altimeter,transport,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+49-1110-11,Auxiliary power unit,transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+61-1010-11,Propeller assembly,transport,HT,Hard time replacement,4000.0,FH,
+61-1010-11,Propeller assembly,transport,HT,Hard time replacement,96.0,Calendar months,
+61-2210-11,Propeller control unit,transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+72-0002-11,Engine (turboprop),transport,HT,Hard time replacement,3600.0,EFH,
+72-0002-11,Engine (turboprop),transport,HT,Hard time replacement,7000.0,Cycles,
+73-2120-11,Engine fuel control unit,transport,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+79-1320-11,Engine lube oil pump,transport,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+21-5110-21,ECS pack (air cycle machine),airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+21-3110-21,Cabin pressure controller,airlifter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+21-3120-21,Cabin outflow valve,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+24-3110-21,Engine-driven generator,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+24-3240-21,Main battery,airlifter,HT,Hard time replacement,24.0,Calendar months,
+25-6210-21,Emergency locator transmitter battery,airlifter,HT,Hard time replacement,48.0,Calendar months,
+28-2310-21,Fuel boost pump,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+29-1210-21,Engine-driven hydraulic pump,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+31-3110-21,Flight data recorder,airlifter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+32-1130-21,Main landing gear assembly,airlifter,HT,Hard time replacement,12000.0,Landings,
+32-1130-21,Main landing gear assembly,airlifter,HT,Hard time replacement,120.0,Calendar months,
+32-2110-21,Nose landing gear assembly,airlifter,HT,Hard time replacement,12000.0,Landings,
+32-2110-21,Nose landing gear assembly,airlifter,HT,Hard time replacement,120.0,Calendar months,
+32-4220-21,Main wheel brake,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+32-4320-21,Main wheel tyre,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+34-4110-21,Weather radar,airlifter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+34-4420-21,Radio altimeter,airlifter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+49-1110-21,Auxiliary power unit,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+61-1010-21,Propeller assembly,airlifter,HT,Hard time replacement,4000.0,FH,
+61-1010-21,Propeller assembly,airlifter,HT,Hard time replacement,96.0,Calendar months,
+61-2210-21,Propeller control unit,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+72-0002-21,Engine (turboprop),airlifter,HT,Hard time replacement,3600.0,EFH,
+72-0002-21,Engine (turboprop),airlifter,HT,Hard time replacement,7000.0,Cycles,
+73-2120-21,Engine fuel control unit,airlifter,CM,Condition monitoring,150.0,FH,"No scheduled task, monitored statistically"
+79-1320-21,Engine lube oil pump,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection
+52-3410-21,Cargo ramp actuator,airlifter,OC,On-condition inspection,150.0,FH,Checked at phase inspection

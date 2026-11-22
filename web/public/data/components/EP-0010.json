@@ -1,0 +1,241 @@
+{
+  "serial": "EP-0010",
+  "part_number": "21-5110-11",
+  "name": "ECS pack (air cycle machine)",
+  "ata": "21",
+  "type": "transport",
+  "type_name": "Twin-engine transport",
+  "key": "TR-ECS-PACK",
+  "zone": "centre-wing",
+  "task_card": "TC-21-02-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "mission",
+  "current_tail": "TX-407",
+  "current_position": "2",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 465.2,
+  "fh_to_tau": 533.3,
+  "fh_to_tau_p10": 388.9,
+  "fh_to_tau_p90": 840.9,
+  "prob_fail_before_next_phase": 0.055,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 30,
+  "fleet_confirmed_failures": 14,
+  "install_history": [
+    {
+      "tail": "TX-405",
+      "event_type": "Install",
+      "date": "2017-06-22",
+      "reason": null,
+      "serial": "EP-0010"
+    },
+    {
+      "tail": "TX-405",
+      "event_type": "Removal",
+      "date": "2024-12-08",
+      "reason": "Unscheduled: confirmed failure",
+      "serial": "EP-0010"
+    },
+    {
+      "tail": "TX-407",
+      "event_type": "Install",
+      "date": "2025-08-08",
+      "reason": null,
+      "serial": "EP-0010"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 52.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 126.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 202.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 213.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 224.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 244.8,
+      "survival": 1.0
+    },
+    {
+      "fh": 265.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 347.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 391.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 419.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 465.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 482.2,
+      "survival": 0.9091
+    },
+    {
+      "fh": 483.8,
+      "survival": 0.8182
+    },
+    {
+      "fh": 517.8,
+      "survival": 0.8182
+    },
+    {
+      "fh": 586.5,
+      "survival": 0.8182
+    },
+    {
+      "fh": 591.6,
+      "survival": 0.8182
+    },
+    {
+      "fh": 592.0,
+      "survival": 0.8182
+    },
+    {
+      "fh": 633.0,
+      "survival": 0.7273
+    },
+    {
+      "fh": 788.0,
+      "survival": 0.7273
+    },
+    {
+      "fh": 831.5,
+      "survival": 0.7273
+    },
+    {
+      "fh": 913.0,
+      "survival": 0.7273
+    },
+    {
+      "fh": 968.9,
+      "survival": 0.7273
+    },
+    {
+      "fh": 1100.5,
+      "survival": 0.7273
+    },
+    {
+      "fh": 1101.0,
+      "survival": 0.6465
+    },
+    {
+      "fh": 1348.1,
+      "survival": 0.6465
+    },
+    {
+      "fh": 1384.8,
+      "survival": 0.5541
+    },
+    {
+      "fh": 1451.9,
+      "survival": 0.4618
+    },
+    {
+      "fh": 1458.5,
+      "survival": 0.4618
+    },
+    {
+      "fh": 1562.5,
+      "survival": 0.4618
+    },
+    {
+      "fh": 1594.5,
+      "survival": 0.3958
+    },
+    {
+      "fh": 1601.2,
+      "survival": 0.3298
+    },
+    {
+      "fh": 1798.0,
+      "survival": 0.2639
+    },
+    {
+      "fh": 1869.0,
+      "survival": 0.2639
+    },
+    {
+      "fh": 2145.4,
+      "survival": 0.2111
+    },
+    {
+      "fh": 2259.8,
+      "survival": 0.2111
+    },
+    {
+      "fh": 2301.6,
+      "survival": 0.2111
+    },
+    {
+      "fh": 2516.8,
+      "survival": 0.2111
+    },
+    {
+      "fh": 2573.0,
+      "survival": 0.2111
+    },
+    {
+      "fh": 2701.5,
+      "survival": 0.2111
+    },
+    {
+      "fh": 2733.2,
+      "survival": 0.2111
+    },
+    {
+      "fh": 3007.3,
+      "survival": 0.1759
+    },
+    {
+      "fh": 3256.2,
+      "survival": 0.1407
+    },
+    {
+      "fh": 4080.5,
+      "survival": 0.1055
+    },
+    {
+      "fh": 4109.8,
+      "survival": 0.1055
+    },
+    {
+      "fh": 4114.5,
+      "survival": 0.0528
+    },
+    {
+      "fh": 4640.9,
+      "survival": 0.0528
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

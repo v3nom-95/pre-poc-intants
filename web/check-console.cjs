@@ -1,6 +1,6 @@
 const { chromium } = require("playwright");
 
-const routes = ["/", "/aircraft/FX-307", "/aircraft/FX-309", "/components/HP-0001", "/recommendations", "/reliability", "/planning", "/models", "/data", "/reports"];
+const routes = ["/", "/aircraft/FX-307", "/aircraft/FX-309", "/aircraft/TX-404", "/aircraft/CX-502", "/aircraft/CX-502/report", "/components/HP-0001", "/recommendations", "/plan", "/reliability", "/planning", "/models", "/data", "/reports", "/assistant"];
 
 (async () => {
   const browser = await chromium.launch();

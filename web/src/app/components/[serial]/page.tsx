@@ -3,16 +3,30 @@ import { AppShell } from "@/components/shell/app-shell";
 import { TailNumber } from "@/components/domain/tail-number";
 import { LifeStrip } from "@/components/domain/life-strip";
 import { SurvivalCurveChart } from "@/components/charts/survival-curve-chart";
-import { getComponent, getAllComponentSerials } from "@/lib/data";
-import { formatFH, formatPct, formatDate, formatNumber } from "@/lib/format";
+import { getComponent, getAllComponentSerials, getTypes } from "@/lib/data";
+import {
+  formatPct,
+  formatDate,
+  formatNumber,
+  formatRemaining,
+} from "@/lib/format";
 
 export function generateStaticParams() {
   return getAllComponentSerials().map((serial) => ({ serial }));
 }
 
-export default async function ComponentPage({ params }: { params: Promise<{ serial: string }> }) {
+export default async function ComponentPage({
+  params,
+}: {
+  params: Promise<{ serial: string }>;
+}) {
   const { serial } = await params;
   const c = getComponent(serial);
+  const typeInfo = getTypes().find((t) => t.key === c.type);
+  const zoneLabel =
+    typeInfo?.zones.find((z) => z.id === c.zone)?.label ?? c.zone;
+  const unit = c.exposure_unit ?? "FH";
+  const fmt = (v: number) => `${formatNumber(v, 0)} ${unit}`;
 
   return (
     <AppShell>
@@ -22,74 +36,126 @@ export default async function ComponentPage({ params }: { params: Promise<{ seri
           style={{ borderLeft: "3px solid var(--accent)" }}
         >
           <div>
-            <h1 className="text-[22px] font-semibold text-(--ink) page-title">{c.name}</h1>
+            <h1 className="text-[22px] font-semibold text-(--ink) page-title">
+              {c.name}
+            </h1>
             <p className="text-[12px] text-(--ink-2)">
-              {c.part_number}, serial {c.serial} {c.lot && `, lot ${c.lot}`}
+              {c.part_number}, serial {c.serial}
+              {c.lot ? `, lot ${c.lot}` : ""}, ATA {c.ata}
             </p>
           </div>
-          <Fact label="Position" value={
-            <Link href={`/aircraft/${c.current_tail}`} className="hover:text-(--accent)">
-              <TailNumber tail={c.current_tail} className="text-[13px]" /> ({c.current_position})
-            </Link>
-          } />
+          <Fact
+            label="Position"
+            value={
+              <Link
+                href={`/aircraft/${c.current_tail}`}
+                className="hover:text-(--accent)"
+              >
+                <TailNumber tail={c.current_tail} className="text-[13px]" /> (
+                {c.current_position})
+              </Link>
+            }
+          />
+          <Fact label="Aircraft type" value={c.type_name} />
+          <Fact label="Zone" value={zoneLabel} />
           <Fact label="Concept" value={c.concept} />
-          <Fact label="Criticality" value={c.criticality === "flight_safety" ? "Flight safety" : "Mission"} />
+          <Fact
+            label="Criticality"
+            value={
+              c.criticality === "flight_safety" ? "Flight safety" : "Mission"
+            }
+          />
+          <Fact label="Task card" value={c.task_card ?? "None"} />
+          <Fact
+            label="Life measured in"
+            value={c.concept === "HT" ? (c.governing_limit ?? unit) : unit}
+          />
         </header>
 
         {c.concept === "HT" ? (
           <section className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
-            <h3 className="mb-2 text-[13px] font-semibold text-(--ink)">Remaining life</h3>
+            <h3 className="mb-2 text-[13px] font-semibold text-(--ink)">
+              Remaining life
+            </h3>
             <p className="text-[13px] text-(--ink)">
-              {c.remaining !== null ? `${formatNumber(c.remaining, 0)} ${c.governing_limit} remaining` : "No limit data available."}
+              {c.remaining !== null
+                ? `${formatRemaining(c.remaining, c.governing_limit)} remaining, ${c.governing_limit === "Calendar" ? "calendar" : c.governing_limit} limit governs`
+                : "No limit data available."}
             </p>
             <p className="mt-1 text-[12px] text-(--ink-2)">
-              Hard-time item: remaining life is the minimum across all applicable limits, whichever comes first.
+              Hard-time item: remaining life is the minimum across all
+              applicable limits, whichever comes first.
             </p>
           </section>
         ) : (
           <section className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
-            <h3 className="mb-3 text-[13px] font-semibold text-(--ink)">Life strip</h3>
-            {c.fh_exposure !== null && c.fh_to_tau !== null && c.fh_to_tau_p10 !== null && c.fh_to_tau_p90 !== null ? (
+            <h3 className="mb-3 text-[13px] font-semibold text-(--ink)">
+              Life strip
+            </h3>
+            {c.fh_exposure !== null &&
+            c.fh_to_tau !== null &&
+            c.fh_to_tau_p10 !== null &&
+            c.fh_to_tau_p90 !== null ? (
               <LifeStrip
                 fhExposure={c.fh_exposure}
                 fhToTau={c.fh_to_tau}
                 fhToTauP10={c.fh_to_tau_p10}
                 fhToTauP90={c.fh_to_tau_p90}
+                unit={unit}
               />
             ) : (
-              <p className="text-[12px] text-(--ink-2)">Not enough events to fit a risk model for this unit.</p>
+              <p className="text-[12px] text-(--ink-2)">
+                Not enough events to fit a risk model for this unit.
+              </p>
             )}
             <div className="mt-4 grid grid-cols-2 gap-4">
               <Fact
                 label="Probability of failure before next phase inspection"
-                value={c.prob_fail_before_next_phase !== null ? formatPct(c.prob_fail_before_next_phase * 100, 0) : "N/A"}
+                value={
+                  c.prob_fail_before_next_phase !== null
+                    ? formatPct(c.prob_fail_before_next_phase * 100, 0)
+                    : "Not modelled"
+                }
               />
               <Fact
-                label="FH to risk threshold (80% interval)"
+                label={`${unit} to risk threshold (80% interval)`}
                 value={
                   c.fh_to_tau !== null
-                    ? `${formatFH(c.fh_to_tau)} (${formatFH(c.fh_to_tau_p10 ?? 0)} to ${formatFH(c.fh_to_tau_p90 ?? 0)})`
-                    : "N/A"
+                    ? `${fmt(c.fh_to_tau)} (${fmt(c.fh_to_tau_p10 ?? 0)} to ${fmt(c.fh_to_tau_p90 ?? 0)})`
+                    : "Not modelled"
                 }
               />
             </div>
             {c.explanation && (
-              <p className="mt-3 rounded-[6px] bg-(--paper) p-2.5 text-[12px] text-(--ink)">{c.explanation}</p>
+              <p className="mt-3 rounded-[6px] bg-(--paper) p-2.5 text-[12px] text-(--ink)">
+                {c.explanation}
+              </p>
             )}
-            <p className="mt-2 text-[11px] text-(--ink-3)">
-              Fleet units of this part number: {c.fleet_units}, confirmed failures: {c.fleet_confirmed_failures}
+            <p className="mt-2 text-[11px] text-(--ink-2)">
+              Fleet units of this part number ({c.type_name.toLowerCase()}):{" "}
+              {c.fleet_units}, confirmed failures: {c.fleet_confirmed_failures}
             </p>
           </section>
         )}
 
         {c.concept !== "HT" && (
           <section className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
-            <SurvivalCurveChart points={c.survival_curve} unitFhExposure={c.fh_exposure} />
+            {/* Width capped so the chart's tick text stays at reading size on wide screens. */}
+            <div className="max-w-[900px]">
+              <SurvivalCurveChart
+                points={c.survival_curve}
+                unitFhExposure={c.fh_exposure}
+                unit={unit}
+                method={c.survival_curve_method ?? undefined}
+              />
+            </div>
           </section>
         )}
 
         <section className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
-          <h3 className="mb-2 text-[13px] font-semibold text-(--ink)">Installation history</h3>
+          <h3 className="mb-2 text-[13px] font-semibold text-(--ink)">
+            Installation history
+          </h3>
           <div className="overflow-x-auto">
             <table className="w-full text-[12px]">
               <thead>
@@ -103,14 +169,21 @@ export default async function ComponentPage({ params }: { params: Promise<{ seri
               <tbody>
                 {c.install_history.map((h, i) => (
                   <tr key={i} className="border-t border-(--rule)">
-                    <td className="py-1.5 tabular text-(--ink-2)">{formatDate(h.date)}</td>
+                    <td className="py-1.5 tabular text-(--ink-2)">
+                      {formatDate(h.date)}
+                    </td>
                     <td className="py-1.5 text-(--ink)">{h.event_type}</td>
                     <td className="py-1.5">
-                      <Link href={`/aircraft/${h.tail}`} className="hover:text-(--accent)">
+                      <Link
+                        href={`/aircraft/${h.tail}`}
+                        className="hover:text-(--accent)"
+                      >
                         <TailNumber tail={h.tail} className="text-[12px]" />
                       </Link>
                     </td>
-                    <td className="py-1.5 text-(--ink-2)">{h.reason ?? "N/A"}</td>
+                    <td className="py-1.5 text-(--ink-2)">
+                      {h.reason ?? "Not applicable"}
+                    </td>
                   </tr>
                 ))}
               </tbody>

@@ -1,16 +1,22 @@
 import { ScrollText } from "lucide-react";
 import Link from "next/link";
-import type { FleetData } from "@/lib/data";
+import type { AircraftTypeKey, FleetData } from "@/lib/data";
 import { formatNumber } from "@/lib/format";
 
 /**
  * A proactive, assistant-voiced summary of what the pipeline found this
  * run. Every sentence here is built from the same computed fleet.json
- * fields the rest of the page renders — no live model call, just
+ * fields the rest of the page renders, no live model call, just
  * narrated instead of tabulated. Kept honest: if there's nothing notable,
  * it says so rather than inventing urgency.
  */
-export function IntelligenceBriefing({ fleet }: { fleet: FleetData }) {
+export function IntelligenceBriefing({
+  fleet,
+  typeName,
+}: {
+  fleet: FleetData;
+  typeName: Record<AircraftTypeKey, string>;
+}) {
   const critical = fleet.aircraft.filter((a) => a.status === "Critical");
   const actionDue = fleet.aircraft.filter((a) => a.status === "Action due");
   const clean = fleet.aircraft.filter((a) => a.status === "Serviceable");
@@ -20,15 +26,29 @@ export function IntelligenceBriefing({ fleet }: { fleet: FleetData }) {
 
   if (critical.length > 0) {
     lines.push(
-      `${critical.length} aircraft need a decision today${topCritical ? `, starting with ${topCritical.tail}: ${topCritical.title}` : ""}.`
+      `${critical.length} aircraft need${critical.length === 1 ? "s" : ""} a decision today${
+        topCritical ? `, starting with ${topCritical.tail}: ${topCritical.title}` : ""
+      }.`
     );
   }
   if (actionDue.length > 0) {
-    lines.push(`${actionDue.length} more have items worth reviewing this week, mostly tied to the lot and hard-time items below.`);
+    lines.push(`${actionDue.length} more ha${actionDue.length === 1 ? "s" : "ve"} high-priority items to review this week.`);
   }
   if (clean.length > 0) {
-    lines.push(`${clean.length} aircraft${clean.length === 1 ? " is" : " are"} clean, nothing open right now.`);
+    lines.push(`${clean.length} aircraft ${clean.length === 1 ? "has" : "have"} nothing open right now.`);
   }
+
+  // Per-type open workload, ordered as the fleet lists the types.
+  const typeOrder = Array.from(new Set(fleet.aircraft.map((a) => a.type)));
+  const perType = typeOrder
+    .map((t) => {
+      const k = fleet.kpis.by_type[t];
+      const open = k ? Object.values(k.open_recs_by_priority).reduce((a, b) => a + b, 0) : 0;
+      return `${typeName[t] ?? t} ${open}`;
+    })
+    .join(", ");
+  if (typeOrder.length > 1) lines.push(`Open recommendations by type: ${perType}.`);
+
   lines.push(
     `Unscheduled removals are running at ${formatNumber(fleet.kpis.unscheduled_removal_rate_per_1000fh, 1)} per 1,000 FH, ${
       fleet.kpis.unscheduled_removal_rate_delta <= 0 ? "down" : "up"
@@ -45,7 +65,7 @@ export function IntelligenceBriefing({ fleet }: { fleet: FleetData }) {
         <h2 className="text-[12px] font-semibold text-(--accent)">Fleet intelligence briefing</h2>
         <p className="text-[13px] leading-[1.5] text-(--ink)">
           {lines.join(" ")}{" "}
-          <Link href="/recommendations" className="font-medium text-(--accent) hover:underline">
+          <Link href="/recommendations" className="font-medium text-(--accent) underline underline-offset-2">
             Review the queue
           </Link>
           .

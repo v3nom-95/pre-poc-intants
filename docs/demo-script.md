@@ -101,3 +101,17 @@ engineers who know the type.
   recommendation IDs.
 - Every chart has a "Table" toggle in its top-right corner showing the same
   data as a table, if a number needs to be read exactly.
+
+## Mixed fleet additions
+
+### TX-404: the pressurisation snag (`/aircraft/TX-404`)
+"The fleet is not only fighters." Show the transport section on Fleet overview, then TX-404: repeated cabin altitude fluctuation snags (ATA 21), two outflow valve removals that came back no fault found. PRE recommends troubleshooting the ducting and door seals instead of a third valve change, and cites the task card.
+
+### CX-502 engine 3 (`/aircraft/CX-502`, Engines tab)
+Four engines, each trended on its own ITT margin. Engine 3 is deteriorating far faster than the others and is projected to reach its limit in about 61 EFH. Show the planform hotspot on the right inboard nacelle.
+
+### Ask PRE
+Ask "What is wrong with TX-404?", "Show the ITT trend for CX-502 engine 3" and "Compare utilisation by aircraft type". Every answer is computed from the records and links to its sources; there is no language model.
+
+### Honest validation (`/models`)
+The backtest shows the survival model ranks risk better than chance (concordance about 0.67) but gives early warning for only a minority of failures. Say so plainly: on real data, thresholds and covariates would be tuned with your engineers. All nine planted patterns are recovered.

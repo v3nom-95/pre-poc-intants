@@ -3,6 +3,12 @@
   "part_number": "29-1140-03",
   "name": "Engine-driven hydraulic pump",
   "ata": "29",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "HYD-PUMP",
+  "zone": "engine-bay",
+  "task_card": "TC-29-01-02",
+  "exposure_unit": "FH",
   "lot": "L-2207",
   "concept": "OC",
   "criticality": "flight_safety",
@@ -10,14 +16,14 @@
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 95.0,
-  "fh_to_tau": 65.8,
-  "fh_to_tau_p10": 44.8,
-  "fh_to_tau_p90": 98.4,
-  "prob_fail_before_next_phase": 0.259,
-  "explanation": "Expected life x2.98 (hot-climate share 25%); Expected life x0.92 (ACM share 24%); Expected life x0.66 (lot L-2207, vs best-performing lot in this part number)",
-  "fleet_units": 40,
-  "fleet_confirmed_failures": 23,
+  "fh_exposure": 104.6,
+  "fh_to_tau": 51.9,
+  "fh_to_tau_p10": 30.8,
+  "fh_to_tau_p90": 96.3,
+  "prob_fail_before_next_phase": 0.284,
+  "explanation": "Expected life x0.96 (ACM share 14%); Expected life x0.17 (lot L-2207, vs best-performing lot in this part number)",
+  "fleet_units": 41,
+  "fleet_confirmed_failures": 24,
   "install_history": [
     {
       "tail": "FX-303",
@@ -29,14 +35,14 @@
     {
       "tail": "FX-303",
       "event_type": "Removal",
-      "date": "2025-04-20",
+      "date": "2025-04-28",
       "reason": "Unscheduled: confirmed failure",
       "serial": "HP-0003"
     },
     {
       "tail": "FX-305",
       "event_type": "Install",
-      "date": "2026-02-03",
+      "date": "2026-02-09",
       "reason": null,
       "serial": "HP-0003"
     }
@@ -47,164 +53,233 @@
       "survival": 1.0
     },
     {
-      "fh": 35.6,
+      "fh": 58.3,
       "survival": 1.0
     },
     {
-      "fh": 84.1,
-      "survival": 0.9744
+      "fh": 79.8,
+      "survival": 1.0
     },
     {
-      "fh": 87.2,
-      "survival": 0.9487
+      "fh": 86.1,
+      "survival": 1.0
     },
     {
-      "fh": 95.0,
-      "survival": 0.9487
+      "fh": 101.1,
+      "survival": 0.9583
     },
     {
-      "fh": 95.8,
-      "survival": 0.9224
+      "fh": 101.2,
+      "survival": 0.9167
     },
     {
-      "fh": 100.9,
-      "survival": 0.896
+      "fh": 101.2,
+      "survival": 0.875
     },
     {
-      "fh": 101.0,
-      "survival": 0.8697
+      "fh": 104.6,
+      "survival": 0.875
     },
     {
-      "fh": 116.9,
-      "survival": 0.8433
+      "fh": 117.0,
+      "survival": 0.8312
     },
     {
-      "fh": 118.5,
-      "survival": 0.817
+      "fh": 117.3,
+      "survival": 0.7875
     },
     {
-      "fh": 173.3,
-      "survival": 0.7906
+      "fh": 145.2,
+      "survival": 0.7875
     },
     {
-      "fh": 185.5,
-      "survival": 0.7642
+      "fh": 145.5,
+      "survival": 0.7461
     },
     {
-      "fh": 187.2,
-      "survival": 0.7379
+      "fh": 154.1,
+      "survival": 0.7461
     },
     {
-      "fh": 190.3,
-      "survival": 0.7115
+      "fh": 190.6,
+      "survival": 0.7068
     },
     {
-      "fh": 191.1,
-      "survival": 0.6852
+      "fh": 190.7,
+      "survival": 0.6675
     },
     {
-      "fh": 203.7,
-      "survival": 0.6852
+      "fh": 214.7,
+      "survival": 0.6675
     },
     {
-      "fh": 203.8,
-      "survival": 0.6578
+      "fh": 217.0,
+      "survival": 0.6675
     },
     {
-      "fh": 212.9,
-      "survival": 0.6578
+      "fh": 225.7,
+      "survival": 0.6675
     },
     {
-      "fh": 225.8,
-      "survival": 0.6578
+      "fh": 229.3,
+      "survival": 0.6258
     },
     {
-      "fh": 227.1,
-      "survival": 0.6578
+      "fh": 250.6,
+      "survival": 0.6258
     },
     {
-      "fh": 236.8,
-      "survival": 0.6578
+      "fh": 265.5,
+      "survival": 0.6258
     },
     {
-      "fh": 242.3,
-      "survival": 0.6249
+      "fh": 285.7,
+      "survival": 0.6258
     },
     {
-      "fh": 269.1,
-      "survival": 0.592
+      "fh": 324.1,
+      "survival": 0.5737
     },
     {
-      "fh": 304.7,
-      "survival": 0.592
+      "fh": 328.4,
+      "survival": 0.5737
     },
     {
-      "fh": 323.8,
-      "survival": 0.592
+      "fh": 356.2,
+      "survival": 0.5737
     },
     {
-      "fh": 344.1,
-      "survival": 0.592
+      "fh": 368.9,
+      "survival": 0.5215
     },
     {
-      "fh": 355.3,
-      "survival": 0.592
+      "fh": 390.4,
+      "survival": 0.5215
     },
     {
-      "fh": 368.1,
-      "survival": 0.5497
+      "fh": 392.5,
+      "survival": 0.4636
     },
     {
-      "fh": 372.3,
-      "survival": 0.5074
+      "fh": 403.6,
+      "survival": 0.4636
     },
     {
-      "fh": 391.8,
-      "survival": 0.4651
+      "fh": 405.3,
+      "survival": 0.3973
     },
     {
-      "fh": 402.4,
-      "survival": 0.4229
+      "fh": 424.4,
+      "survival": 0.3973
     },
     {
-      "fh": 405.2,
-      "survival": 0.3806
+      "fh": 438.2,
+      "survival": 0.3973
     },
     {
-      "fh": 477.2,
-      "survival": 0.3383
+      "fh": 520.2,
+      "survival": 0.3477
     },
     {
-      "fh": 494.4,
-      "survival": 0.296
+      "fh": 530.9,
+      "survival": 0.3477
     },
     {
-      "fh": 539.9,
-      "survival": 0.2537
+      "fh": 557.5,
+      "survival": 0.2897
     },
     {
-      "fh": 580.2,
-      "survival": 0.2537
+      "fh": 587.9,
+      "survival": 0.2897
     },
     {
-      "fh": 646.0,
-      "survival": 0.2537
+      "fh": 621.4,
+      "survival": 0.2897
     },
     {
-      "fh": 664.8,
-      "survival": 0.2537
+      "fh": 647.2,
+      "survival": 0.2897
     },
     {
-      "fh": 730.0,
-      "survival": 0.2537
+      "fh": 684.5,
+      "survival": 0.2897
     },
     {
-      "fh": 834.9,
-      "survival": 0.2537
+      "fh": 707.8,
+      "survival": 0.2897
     },
     {
-      "fh": 884.1,
-      "survival": 0.2537
+      "fh": 758.9,
+      "survival": 0.2897
+    },
+    {
+      "fh": 763.0,
+      "survival": 0.2897
+    },
+    {
+      "fh": 806.8,
+      "survival": 0.2535
+    },
+    {
+      "fh": 823.2,
+      "survival": 0.2173
+    },
+    {
+      "fh": 830.5,
+      "survival": 0.2173
+    },
+    {
+      "fh": 885.8,
+      "survival": 0.2173
+    },
+    {
+      "fh": 915.5,
+      "survival": 0.1811
+    },
+    {
+      "fh": 960.1,
+      "survival": 0.1449
+    },
+    {
+      "fh": 1028.2,
+      "survival": 0.1086
+    },
+    {
+      "fh": 1058.7,
+      "survival": 0.0724
+    },
+    {
+      "fh": 1267.2,
+      "survival": 0.0724
+    },
+    {
+      "fh": 1278.1,
+      "survival": 0.0724
+    },
+    {
+      "fh": 1411.7,
+      "survival": 0.0724
+    },
+    {
+      "fh": 1470.0,
+      "survival": 0.0483
+    },
+    {
+      "fh": 1632.2,
+      "survival": 0.0483
+    },
+    {
+      "fh": 1785.2,
+      "survival": 0.0483
+    },
+    {
+      "fh": 1818.7,
+      "survival": 0.0241
+    },
+    {
+      "fh": 2026.6,
+      "survival": 0.0
     }
-  ]
+  ],
+  "survival_curve_method": "Kaplan-Meier"
 }

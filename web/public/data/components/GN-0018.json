@@ -3,6 +3,12 @@
   "part_number": "24-2110-01",
   "name": "Main generator",
   "ata": "24",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "GEN-MAIN",
+  "zone": "engine-bay",
+  "task_card": "TC-24-01-02",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "OC",
   "criticality": "flight_safety",
@@ -10,11 +16,11 @@
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 444.3,
-  "fh_to_tau": 247.5,
-  "fh_to_tau_p10": 132.0,
-  "fh_to_tau_p90": 355.4,
-  "prob_fail_before_next_phase": 0.052,
+  "fh_exposure": 439.0,
+  "fh_to_tau": 413.0,
+  "fh_to_tau_p10": 244.7,
+  "fh_to_tau_p90": 964.1,
+  "prob_fail_before_next_phase": 0.038,
   "explanation": "No significant covariate effect for this unit",
   "fleet_units": 19,
   "fleet_confirmed_failures": 3,
@@ -22,7 +28,7 @@
     {
       "tail": "FX-311",
       "event_type": "Install",
-      "date": "2024-06-14",
+      "date": "2024-06-07",
       "reason": null,
       "serial": "GN-0018"
     }
@@ -33,80 +39,145 @@
       "survival": 1.0
     },
     {
-      "fh": 140.5,
+      "fh": 101.4,
       "survival": 1.0
     },
     {
-      "fh": 380.2,
+      "fh": 205.8,
       "survival": 1.0
     },
     {
-      "fh": 444.3,
+      "fh": 214.8,
       "survival": 1.0
     },
     {
-      "fh": 450.6,
-      "survival": 0.9375
+      "fh": 271.6,
+      "survival": 1.0
     },
     {
-      "fh": 487.1,
+      "fh": 292.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 413.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 425.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 439.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 488.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 556.8,
+      "survival": 1.0
+    },
+    {
+      "fh": 746.8,
+      "survival": 1.0
+    },
+    {
+      "fh": 759.1,
       "survival": 0.875
     },
     {
-      "fh": 646.0,
+      "fh": 844.7,
       "survival": 0.875
     },
     {
-      "fh": 696.7,
+      "fh": 852.3,
       "survival": 0.875
     },
     {
-      "fh": 698.1,
-      "survival": 0.875
+      "fh": 874.9,
+      "survival": 0.75
     },
     {
-      "fh": 701.3,
-      "survival": 0.875
+      "fh": 958.6,
+      "survival": 0.625
     },
     {
-      "fh": 702.2,
-      "survival": 0.875
+      "fh": 1040.1,
+      "survival": 0.625
     },
     {
-      "fh": 728.2,
-      "survival": 0.875
+      "fh": 1075.2,
+      "survival": 0.625
     },
     {
-      "fh": 744.9,
-      "survival": 0.7656
+      "fh": 1173.0,
+      "survival": 0.625
     },
     {
-      "fh": 745.3,
-      "survival": 0.7656
+      "fh": 1188.5,
+      "survival": 0.625
     },
     {
-      "fh": 746.6,
-      "survival": 0.7656
+      "fh": 1197.3,
+      "survival": 0.625
     },
     {
-      "fh": 764.0,
-      "survival": 0.7656
+      "fh": 1250.8,
+      "survival": 0.625
     },
     {
-      "fh": 807.0,
-      "survival": 0.7656
+      "fh": 1366.2,
+      "survival": 0.625
     },
     {
-      "fh": 916.4,
-      "survival": 0.7656
+      "fh": 1432.7,
+      "survival": 0.625
     },
     {
-      "fh": 937.3,
-      "survival": 0.7656
+      "fh": 1450.1,
+      "survival": 0.625
     },
     {
-      "fh": 939.4,
-      "survival": 0.7656
+      "fh": 1526.7,
+      "survival": 0.625
+    },
+    {
+      "fh": 1801.6,
+      "survival": 0.625
+    },
+    {
+      "fh": 1804.2,
+      "survival": 0.625
+    },
+    {
+      "fh": 1846.0,
+      "survival": 0.625
+    },
+    {
+      "fh": 2060.2,
+      "survival": 0.625
+    },
+    {
+      "fh": 2297.2,
+      "survival": 0.625
+    },
+    {
+      "fh": 2326.4,
+      "survival": 0.625
+    },
+    {
+      "fh": 2614.0,
+      "survival": 0.625
+    },
+    {
+      "fh": 3086.1,
+      "survival": 0.625
+    },
+    {
+      "fh": 3343.4,
+      "survival": 0.625
     }
-  ]
+  ],
+  "survival_curve_method": "Kaplan-Meier"
 }

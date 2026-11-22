@@ -56,7 +56,7 @@ def detect_lot_effects() -> pd.DataFrame:
             rest_exposure = total_exposure - exposure
             rest_rate = (rest_events / rest_exposure * 1000) if rest_exposure > 0 else 0.0
             rows.append(dict(
-                part_number=pn, lot=lot, n_units=len(in_lot), events=events,
+                part_number=pn, type=surv.PART_INFO[pn]["type"], lot=lot, n_units=len(in_lot), events=events,
                 exposure_fh=round(exposure, 1), rate_per_1000fh=round(rate_per_1000fh, 2),
                 rest_of_fleet_rate_per_1000fh=round(rest_rate, 2),
                 p_value_bonferroni=round(p_adj, 5), flagged=bool(p_adj < 0.05 and rate_per_1000fh > rest_rate),
@@ -75,7 +75,7 @@ def detect_environmental_effects() -> pd.DataFrame:
         p_value = float(model.fitted.summary.loc[("lambda_", "hot_share"), "p"])
         ratio = model.time_ratio("hot_share", 1.0)  # full hot exposure vs none
         rows.append(dict(
-            part_number=pn, name=surv.PART_INFO[pn]["name"],
+            part_number=pn, name=surv.PART_INFO[pn]["name"], type=surv.PART_INFO[pn]["type"],
             time_ratio_full_hot_exposure=round(ratio, 3), p_value=round(p_value, 5),
             flagged=bool(p_value < 0.01 and ratio < 1.0),
         ))
@@ -95,7 +95,7 @@ def detect_repeat_snags(as_of: dt.date = cfg.AS_OF_DATE) -> pd.DataFrame:
             if (window[-1] - window[0]).days <= REPEAT_SNAG_WINDOW_DAYS:
                 still_open = bool((g["status"] == "Open").any())
                 rows.append(dict(
-                    tail=tail, ata=int(ata), detector="repeat_snag",
+                    tail=tail, type=cfg.TYPE_OF_TAIL.get(tail), ata=int(ata), detector="repeat_snag",
                     count=len(g), window_days=REPEAT_SNAG_WINDOW_DAYS,
                     first_in_window=window[0].date().isoformat(), last_in_window=window[-1].date().isoformat(),
                     still_open=still_open,
@@ -110,7 +110,7 @@ def detect_repeat_snags(as_of: dt.date = cfg.AS_OF_DATE) -> pd.DataFrame:
             window = dates[i:i + REPEAT_NFF_MIN_COUNT]
             if (window[-1] - window[0]).days <= REPEAT_NFF_WINDOW_DAYS:
                 rows.append(dict(
-                    tail=tail, part_number=pn, position=pos, detector="repeat_nff",
+                    tail=tail, type=cfg.TYPE_OF_TAIL.get(tail), part_number=pn, position=pos, detector="repeat_nff",
                     count=len(g), window_days=REPEAT_NFF_WINDOW_DAYS,
                     first_in_window=window[0].date().isoformat(), last_in_window=window[-1].date().isoformat(),
                     still_open=None,

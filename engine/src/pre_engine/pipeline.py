@@ -1,4 +1,4 @@
-"""Bronze -> silver -> gold data pipeline, plus the 9 data quality checks.
+"""Bronze -> silver -> gold data pipeline, plus the 10 data quality checks.
 
 Silver: deduplicated, imputed, date-normalised, type-enforced conformed
 tables. Gold: analytics-ready feature tables and aggregates for the models.
@@ -93,7 +93,8 @@ def build_silver() -> dict:
     issues["durations_imputed"] = int(missing_mask.sum())
 
     sl["date"] = pd.to_datetime(sl["date"])
-    for col in ("duration_h", "landings", "lcf_cycles", "peak_g", "mean_temp_c", "fi_consumed", "fi_cumulative"):
+    for col in ("duration_h", "landings", "lcf_cycles", "peak_g", "mean_temp_c", "fi_consumed", "fi_cumulative",
+                "taxi_h", "apu_h"):
         sl[col] = pd.to_numeric(sl[col])
     sl = sl.sort_values(["tail", "date", "sortie_id"]).reset_index(drop=True)
     sl.to_csv(os.path.join(SILVER_DIR, "silver_sorties.csv"), index=False)
@@ -118,7 +119,7 @@ def build_silver() -> dict:
     ch["event_date"], d3 = _normalise_date_series(ch["event_date"])
     issues["dates_normalised"] += d3
     ch["event_date"] = pd.to_datetime(ch["event_date"])
-    for col in ("hours_at_event", "cycles_at_event", "landings_at_event"):
+    for col in ("hours_at_event", "cycles_at_event", "landings_at_event", "operating_hours_at_event"):
         ch[col] = pd.to_numeric(ch[col])
     ch.to_csv(os.path.join(SILVER_DIR, "silver_component_events.csv"), index=False)
 
@@ -136,8 +137,23 @@ def build_silver() -> dict:
     issues["dates_normalised"] += d5
     et["date"] = pd.to_datetime(et["date"])
     et["efh_at_reading"] = pd.to_numeric(et["efh_at_reading"])
-    et["egt_margin_c"] = pd.to_numeric(et["egt_margin_c"])
+    et["margin_c"] = pd.to_numeric(et["margin_c"])
     et.to_csv(os.path.join(SILVER_DIR, "silver_engine_trend.csv"), index=False)
+
+    # ---- ground_runs (section 14.2) ----
+    gr = _read_bronze("ground_runs.csv")
+    gr["date"], d6 = _normalise_date_series(gr["date"])
+    issues["dates_normalised"] += d6
+    gr["date"] = pd.to_datetime(gr["date"])
+    for col in ("duration_h", "apu_h"):
+        gr[col] = pd.to_numeric(gr[col])
+    gr.to_csv(os.path.join(SILVER_DIR, "silver_ground_runs.csv"), index=False)
+
+    # ---- maintenance_procedures: approved task cards (section 14.3) ----
+    tc = _read_bronze("maintenance_procedures.csv")
+    for col in ("standard_man_hours", "elapsed_hours"):
+        tc[col] = pd.to_numeric(tc[col])
+    tc.to_csv(os.path.join(SILVER_DIR, "silver_maintenance_procedures.csv"), index=False)
 
     # ---- maintenance_schedule ----
     ms = _read_bronze("maintenance_schedule.csv")
@@ -147,7 +163,7 @@ def build_silver() -> dict:
     # ---- aircraft (pass-through dimension table, no injected issues) ----
     av = _read_bronze("aircraft.csv")
     av["induction_date"] = pd.to_datetime(av["induction_date"])
-    for col in ("start_fh", "start_fi", "ttl_fh", "planned_withdrawal_year"):
+    for col in ("start_fh", "start_fi", "ttl_fh", "planned_withdrawal_year", "engines"):
         av[col] = pd.to_numeric(av[col])
     av.to_csv(os.path.join(SILVER_DIR, "silver_aircraft.csv"), index=False)
 
@@ -164,7 +180,32 @@ def _load_silver():
     return sl, sg, ch, mr, et, ms
 
 
-def run_data_quality_checks(sl, sg, ch, mr, et, ms) -> list[dict]:
+def load_ground_runs() -> pd.DataFrame:
+    return pd.read_csv(os.path.join(SILVER_DIR, "silver_ground_runs.csv"), parse_dates=["date"],
+                       dtype={"engine_position": str})
+
+
+def engine_leg_hours(sl: pd.DataFrame, gr: pd.DataFrame, tail: str, position: str,
+                     install_date, end_date, end_inclusive: bool) -> dict:
+    """Flight, taxi and ground-run hours for one engine leg (section 14.2).
+
+    A leg runs from its install date to its removal date. Swaps happen
+    before that day's sortie, so the removal day belongs to the next unit
+    (half-open interval); an in-service leg runs to the as-of date inclusive.
+    """
+    end = pd.Timestamp(end_date)
+    in_end_s = (sl["date"] <= end) if end_inclusive else (sl["date"] < end)
+    in_end_g = (gr["date"] <= end) if end_inclusive else (gr["date"] < end)
+    s_mask = (sl["tail"] == tail) & (sl["date"] >= install_date) & in_end_s
+    g_mask = ((gr["tail"] == tail) & (gr["date"] >= install_date) & in_end_g
+              & ((gr["engine_position"] == str(position)) | (gr["engine_position"] == "All")))
+    flight = float(sl.loc[s_mask, "duration_h"].sum())
+    taxi = float(sl.loc[s_mask, "taxi_h"].fillna(0).sum())
+    ground = float(gr.loc[g_mask, "duration_h"].sum())
+    return dict(flight_h=flight, taxi_h=taxi, ground_run_h=ground)
+
+
+def run_data_quality_checks(sl, sg, ch, mr, et, ms, gr=None) -> list[dict]:
     results = []
 
     def add(check, passed, detail, count=0):
@@ -305,25 +346,63 @@ def run_data_quality_checks(sl, sg, ch, mr, et, ms) -> list[dict]:
         bad9 == 0, "Compared consecutive engine_trend readings per serial against the "
         "matching sortie's duration_h.", bad9)
 
+    # 10. engine operating hours equal EFH plus taxi and ground-run hours while installed (section 14.2)
+    if gr is not None:
+        eng = ch[ch["part_number"].isin(cfg.ENGINE_PART_NUMBERS)]
+        bad10 = checked10 = 0
+        for (tail, pos, pn), g in eng.groupby(["tail", "position", "part_number"]):
+            g = _sort_events(g)
+            install = None
+            for _, ev in g.iterrows():
+                if ev.event_type == "Install":
+                    install = ev
+                    continue
+                if install is None or pd.isna(ev.operating_hours_at_event) or pd.isna(install.operating_hours_at_event):
+                    continue
+                h = engine_leg_hours(sl, gr, tail, pos, install.event_date, ev.event_date, end_inclusive=False)
+                expected = float(install.operating_hours_at_event) + h["flight_h"] + h["taxi_h"] + h["ground_run_h"]
+                checked10 += 1
+                if abs(expected - float(ev.operating_hours_at_event)) > 0.1:
+                    bad10 += 1
+                install = None
+        add("Engine operating hours equal EFH plus taxi and ground-run hours while installed (tol 0.1 h)",
+            bad10 == 0, f"Reconciled the operating hours recorded at {checked10} engine removals against sortie "
+            "hours, taxi time and logged ground runs for that engine position.", bad10)
+
     return results
 
 
-def _build_exposure_row(tail, position, leg, tail_sorties, hot_set, acm_set) -> dict:
+def _build_exposure_row(tail, position, leg, tail_sorties, tail_runs) -> dict:
     install_date = leg["install_date"]
     removal_date = leg["removal_date"]
     end_date = removal_date if removal_date is not None else cfg.AS_OF_DATE
 
-    fh_exposure = hot_fh = acm_fh = 0.0
+    key = KEY_BY_PART_NUMBER.get(leg["part_number"])
+    comp = cfg.COMPONENTS.get(key, {})
+    fh_exposure = hot_fh = acm_fh = apu_exposure = 0.0
     if tail_sorties is not None:
         mask = (tail_sorties["date"] >= install_date) & (tail_sorties["date"] <= pd.Timestamp(end_date))
         exp = tail_sorties[mask]
         fh_exposure = float(exp["duration_h"].sum())
-        for _, srow in exp.iterrows():
-            key = (srow["tail"], srow["date"])
-            if key in hot_set:
-                hot_fh += srow.duration_h
-            if key in acm_set:
-                acm_fh += srow.duration_h
+        hot_fh = float(exp.loc[exp["_hot"], "duration_h"].sum())
+        acm_fh = float(exp.loc[exp["_acm"], "duration_h"].sum())
+        apu_exposure = float(exp["apu_h"].fillna(0).sum())
+    if comp.get("life_basis") == "apu_hours":
+        if tail_runs is not None:
+            rmask = (tail_runs["date"] >= install_date) & (tail_runs["date"] <= pd.Timestamp(end_date))
+            apu_exposure += float(tail_runs.loc[rmask, "apu_h"].sum())
+        life_exposure, exposure_unit = apu_exposure, "APU hours"
+    else:
+        life_exposure, exposure_unit = fh_exposure, "FH"
+    # Entry time (delayed entry, left truncation): a unit already fitted when
+    # the data window opens is only in the data because it survived to that
+    # age, so the survival fit must condition on it. It is the time since new
+    # on the card (the age at 16 Nov 2021), in the same life basis as
+    # life_exposure; zero for units installed inside the window.
+    entry_exposure = 0.0
+    if comp.get("life_basis") != "landings":
+        entry_exposure = float(leg.get("baseline", 0.0))
+        life_exposure += entry_exposure
 
     reason = leg["reason"]
     event = 1 if reason == "Unscheduled: confirmed failure" else 0
@@ -335,6 +414,9 @@ def _build_exposure_row(tail, position, leg, tail_sorties, hot_set, acm_set) -> 
         hot_climate_fh_share=round(hot_fh / fh_exposure, 4) if fh_exposure > 0 else 0.0,
         acm_fh_share=round(acm_fh / fh_exposure, 4) if fh_exposure > 0 else 0.0,
         event=event, removal_reason=reason,
+        type=cfg.TYPE_OF_TAIL.get(tail), life_exposure=round(life_exposure, 2), exposure_unit=exposure_unit,
+        baseline_hours=round(leg.get("baseline", 0.0), 2),
+        entry_exposure=round(entry_exposure, 2),
     )
 
 
@@ -343,14 +425,15 @@ def build_gold(sl, sg, ch, mr, et, ms) -> dict:
 
     # unit-level exposure feature table
     rows = []
-    sl_idx = sl.set_index("sortie_id")
     acm_missions = {"Air combat manoeuvring"}
-    hot_sorties = sl[sl["mean_temp_c"] >= cfg.HOT_BASE_THRESHOLD_C][["tail", "date"]]
-    hot_set = set(zip(hot_sorties["tail"], hot_sorties["date"]))
-    acm_sorties = sl[sl["mission_type"].isin(acm_missions)][["tail", "date"]]
-    acm_set = set(zip(acm_sorties["tail"], acm_sorties["date"]))
-
+    # One sortie per tail per day, so a sortie's own temperature and mission
+    # flag its hours as hot-climate or ACM (same result as a (tail, date) lookup).
+    sl = sl.copy()
+    sl["_hot"] = sl["mean_temp_c"] >= cfg.HOT_BASE_THRESHOLD_C
+    sl["_acm"] = sl["mission_type"].isin(acm_missions)
     sl_by_tail = {tail: g.sort_values("date") for tail, g in sl.groupby("tail")}
+    gr = load_ground_runs()
+    gr_by_tail = {tail: g for tail, g in gr.groupby("tail")}
 
     # One row per install-to-removal "leg" (SPEC 5.2: duration = operating FH
     # since installation or overhaul). Grouping by serial alone is wrong here:
@@ -373,20 +456,43 @@ def build_gold(sl, sg, ch, mr, et, ms) -> dict:
                     serial=ev.serial, part_number=ev.part_number,
                     lot=ev.lot if pd.notna(ev.lot) else None, concept=ev.concept,
                     install_date=ev.event_date,
+                    # Time since new carried on the history card at install
+                    # (non-zero only for units already fitted when the data window opens).
+                    baseline=float(ev.hours_at_event) if ev.concept in ("OC", "CM") and pd.notna(ev.hours_at_event) else 0.0,
                 )
                 continue
             if ev.event_type == "Removal" and open_leg is not None:
                 open_leg["removal_date"] = ev.event_date
                 open_leg["reason"] = ev.reason
-                rows.append(_build_exposure_row(tail, position, open_leg, tail_sorties, hot_set, acm_set))
+                rows.append(_build_exposure_row(tail, position, open_leg, tail_sorties, gr_by_tail.get(tail)))
                 open_leg = None
         if open_leg is not None:
             open_leg["removal_date"] = None
             open_leg["reason"] = None
-            rows.append(_build_exposure_row(tail, position, open_leg, tail_sorties, hot_set, acm_set))
+            rows.append(_build_exposure_row(tail, position, open_leg, tail_sorties, gr_by_tail.get(tail)))
 
     exposure = pd.DataFrame(rows)
     exposure.to_csv(os.path.join(GOLD_DIR, "unit_exposure.csv"), index=False)
+
+    # Engine hours per installed engine (section 14.2): EFH, operating hours
+    # (EFH plus taxi and ground running) and ground-run hours.
+    engine_rows = []
+    installed = ch.sort_values(["event_date", "event_id"], kind="stable").groupby(
+        ["tail", "position", "part_number"], as_index=False).tail(1)
+    installed = installed[(installed["event_type"] == "Install") & installed["part_number"].isin(cfg.ENGINE_PART_NUMBERS)]
+    for _, ev in installed.iterrows():
+        h = engine_leg_hours(sl, gr, ev["tail"], ev["position"], ev["event_date"], cfg.AS_OF_DATE, end_inclusive=True)
+        base_oh = float(ev["operating_hours_at_event"]) if pd.notna(ev["operating_hours_at_event"]) else float(ev["hours_at_event"])
+        engine_rows.append(dict(
+            tail=ev["tail"], position=str(ev["position"]), serial=ev["serial"], part_number=ev["part_number"],
+            install_date=ev["event_date"].date().isoformat(),
+            efh=round(float(ev["hours_at_event"]) + h["flight_h"], 1),
+            operating_hours=round(base_oh + h["flight_h"] + h["taxi_h"] + h["ground_run_h"], 1),
+            ground_run_hours_since_install=round(h["ground_run_h"], 1),
+            taxi_hours_since_install=round(h["taxi_h"], 1),
+        ))
+    pd.DataFrame(engine_rows).sort_values(["tail", "position"]).to_csv(
+        os.path.join(GOLD_DIR, "engine_hours.csv"), index=False)
 
     # monthly utilisation per aircraft
     sl2 = sl.copy()
@@ -416,7 +522,7 @@ def build_gold(sl, sg, ch, mr, et, ms) -> dict:
 def main():
     issues = build_silver()
     sl, sg, ch, mr, et, ms = _load_silver()
-    dq = run_data_quality_checks(sl, sg, ch, mr, et, ms)
+    dq = run_data_quality_checks(sl, sg, ch, mr, et, ms, load_ground_runs())
     gold_summary = build_gold(sl, sg, ch, mr, et, ms)
 
     with open(os.path.join(GOLD_DIR, "ingestion_issues.json"), "w") as f:

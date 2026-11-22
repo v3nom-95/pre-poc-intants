@@ -53,12 +53,18 @@
       "pass": true,
       "detail": "Compared consecutive engine_trend readings per serial against the matching sortie's duration_h.",
       "count": 0
+    },
+    {
+      "check": "Engine operating hours equal EFH plus taxi and ground-run hours while installed (tol 0.1 h)",
+      "pass": true,
+      "detail": "Reconciled the operating hours recorded at 38 engine removals against sortie hours, taxi time and logged ground runs for that engine position.",
+      "count": 0
     }
   ],
   "ingestion_issues": {
-    "dates_normalised": 113,
-    "duplicate_sorties_removed": 45,
-    "durations_imputed": 23,
-    "ata_inferred": 1
+    "dates_normalised": 235,
+    "duplicate_sorties_removed": 94,
+    "durations_imputed": 47,
+    "ata_inferred": 3
   }
 }

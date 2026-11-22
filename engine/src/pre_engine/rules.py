@@ -116,8 +116,10 @@ def compute_ht_due_items(as_of: dt.date = cfg.AS_OF_DATE) -> pd.DataFrame:
         governing_limit = min(limits, key=lambda x: x["days_to_due"])
         due_date = as_of + dt.timedelta(days=max(governing_limit["days_to_due"], 0))
 
+        key = next((k for k, c in cfg.COMPONENTS.items() if c["part_number"] == pn), None)
         rows.append(dict(
-            tail=tail, position=position, part_number=pn, serial=unit["serial"],
+            tail=tail, type=cfg.TYPE_OF_TAIL.get(tail), component_key=key,
+            position=position, part_number=pn, serial=unit["serial"],
             component=sched.iloc[0]["component"] if "component" in sched.columns else None,
             governing_limit=governing_limit["governing"],
             remaining=round(governing_limit["remaining"], 2),

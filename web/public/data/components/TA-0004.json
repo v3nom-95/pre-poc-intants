@@ -1,0 +1,167 @@
+{
+  "serial": "TA-0004",
+  "part_number": "34-4420-11",
+  "name": "Radio altimeter",
+  "ata": "34",
+  "type": "transport",
+  "type_name": "Twin-engine transport",
+  "key": "TR-RADALT",
+  "zone": "cockpit",
+  "task_card": "TC-34-04-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "mission",
+  "current_tail": "TX-405",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 99.5,
+  "fh_to_tau": 567.9,
+  "fh_to_tau_p10": 330.7,
+  "fh_to_tau_p90": 1034.0,
+  "prob_fail_before_next_phase": 0.049,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 16,
+  "fleet_confirmed_failures": 7,
+  "install_history": [
+    {
+      "tail": "TX-404",
+      "event_type": "Install",
+      "date": "2013-05-22",
+      "reason": null,
+      "serial": "TA-0004"
+    },
+    {
+      "tail": "TX-404",
+      "event_type": "Removal",
+      "date": "2023-03-03",
+      "reason": "Unscheduled: confirmed failure",
+      "serial": "TA-0004"
+    },
+    {
+      "tail": "TX-407",
+      "event_type": "Install",
+      "date": "2023-06-20",
+      "reason": null,
+      "serial": "TA-0004"
+    },
+    {
+      "tail": "TX-407",
+      "event_type": "Removal",
+      "date": "2025-01-22",
+      "reason": "Unscheduled: NFF",
+      "serial": "TA-0004"
+    },
+    {
+      "tail": "TX-405",
+      "event_type": "Install",
+      "date": "2026-07-02",
+      "reason": null,
+      "serial": "TA-0004"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 53.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 99.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 105.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 130.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 142.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 358.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 591.3,
+      "survival": 0.875
+    },
+    {
+      "fh": 591.8,
+      "survival": 0.875
+    },
+    {
+      "fh": 618.5,
+      "survival": 0.7292
+    },
+    {
+      "fh": 620.0,
+      "survival": 0.5833
+    },
+    {
+      "fh": 818.6,
+      "survival": 0.5833
+    },
+    {
+      "fh": 945.3,
+      "survival": 0.5833
+    },
+    {
+      "fh": 1086.9,
+      "survival": 0.5833
+    },
+    {
+      "fh": 1164.0,
+      "survival": 0.5833
+    },
+    {
+      "fh": 1317.0,
+      "survival": 0.5833
+    },
+    {
+      "fh": 1465.8,
+      "survival": 0.3889
+    },
+    {
+      "fh": 1486.4,
+      "survival": 0.3889
+    },
+    {
+      "fh": 1904.9,
+      "survival": 0.2593
+    },
+    {
+      "fh": 2147.5,
+      "survival": 0.1296
+    },
+    {
+      "fh": 2474.6,
+      "survival": 0.1296
+    },
+    {
+      "fh": 3035.4,
+      "survival": 0.1296
+    },
+    {
+      "fh": 3791.0,
+      "survival": 0.1296
+    },
+    {
+      "fh": 4075.6,
+      "survival": 0.1296
+    },
+    {
+      "fh": 5459.9,
+      "survival": 0.0
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

@@ -11,7 +11,7 @@ export function RoleSwitcher() {
 
   return (
     <Select value={role} onValueChange={(v) => setRole(v as Role)}>
-      <SelectTrigger size="sm" className="h-8 w-[112px] border-(--rule) bg-(--sheet) text-[12px]">
+      <SelectTrigger size="sm" aria-label="Role" className="h-8 w-[112px] border-(--rule) bg-(--sheet) text-[12px]">
         <SelectValue />
       </SelectTrigger>
       <SelectContent align="end">

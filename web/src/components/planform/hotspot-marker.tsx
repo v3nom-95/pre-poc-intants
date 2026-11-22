@@ -4,7 +4,7 @@ import { Check, Eye, TriangleAlert, OctagonAlert } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { STATUS_VAR, type Status } from "@/lib/domain-types";
 import { StatusTag } from "@/components/domain/status-tag";
-import type { Hotspot } from "./geometry";
+import type { ZoneHotspot } from "./type-geometry";
 
 const STATUS_ICON = { Serviceable: Check, Monitor: Eye, "Action due": TriangleAlert, Critical: OctagonAlert };
 
@@ -14,7 +14,7 @@ export function HotspotMarker({
   componentStatuses,
   onSelectComponent,
 }: {
-  hotspot: Hotspot;
+  hotspot: ZoneHotspot;
   status: Status;
   componentStatuses: { key: string; label: string; status: Status }[];
   onSelectComponent?: (key: string) => void;

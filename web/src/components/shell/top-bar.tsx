@@ -3,11 +3,12 @@ import { RoleSwitcher } from "@/components/shell/role-switcher";
 import { ThemeToggle } from "@/components/shell/theme-toggle";
 import { GlossaryDrawer } from "@/components/shell/glossary-drawer";
 import { Greeting } from "@/components/shell/greeting";
+import { AssistantSheet } from "@/components/assistant/assistant-sheet";
 import { Separator } from "@/components/ui/separator";
 
 export function TopBar({ asOfLabel }: { asOfLabel: string }) {
   return (
-    <header className="flex h-14 flex-none items-center gap-4 border-b border-(--rule) bg-(--sheet) px-5">
+    <header className="app-topbar flex h-14 flex-none items-center gap-4 border-b border-(--rule) bg-(--sheet) px-5">
       <div className="flex items-center gap-2">
         <span className="text-[15px] font-semibold text-(--ink)">
           Predictive Recommendation Engine
@@ -21,6 +22,7 @@ export function TopBar({ asOfLabel }: { asOfLabel: string }) {
       <Greeting />
       <Separator orientation="vertical" className="h-5" />
       <CommandPalette />
+      <AssistantSheet />
       <Separator orientation="vertical" className="h-5" />
       <RoleSwitcher />
       <ThemeToggle />

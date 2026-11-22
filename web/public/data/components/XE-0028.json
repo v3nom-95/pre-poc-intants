@@ -1,0 +1,38 @@
+{
+  "serial": "XE-0028",
+  "part_number": "72-0002-21",
+  "name": "Engine (turboprop)",
+  "ata": "72",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-ENGINE",
+  "zone": "engine-2",
+  "task_card": "TC-72-04-01",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "HT",
+  "criticality": "flight_safety",
+  "current_tail": "CX-501",
+  "current_position": "2",
+  "governing_limit": "EFH",
+  "remaining": 2298.7,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 39,
+  "fleet_confirmed_failures": 0,
+  "install_history": [
+    {
+      "tail": "CX-501",
+      "event_type": "Install",
+      "date": "2023-09-05",
+      "reason": null,
+      "serial": "XE-0028"
+    }
+  ],
+  "survival_curve": [],
+  "survival_curve_method": null
+}

@@ -1,0 +1,99 @@
+{
+  "serial": "XA-0002",
+  "part_number": "34-4420-21",
+  "name": "Radio altimeter",
+  "ata": "34",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-RADALT",
+  "zone": "cockpit",
+  "task_card": "TC-34-06-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "mission",
+  "current_tail": "CX-502",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 5792.9,
+  "fh_to_tau": 2203.0,
+  "fh_to_tau_p10": 674.5,
+  "fh_to_tau_p90": 8970.3,
+  "prob_fail_before_next_phase": 0.016,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 8,
+  "fleet_confirmed_failures": 2,
+  "install_history": [
+    {
+      "tail": "CX-502",
+      "event_type": "Install",
+      "date": "2006-10-01",
+      "reason": null,
+      "serial": "XA-0002"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 324.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 470.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 731.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 836.4,
+      "survival": 0.7165
+    },
+    {
+      "fh": 874.2,
+      "survival": 0.4346
+    },
+    {
+      "fh": 2728.2,
+      "survival": 0.4346
+    },
+    {
+      "fh": 3915.9,
+      "survival": 0.0695
+    },
+    {
+      "fh": 4480.2,
+      "survival": 0.0695
+    },
+    {
+      "fh": 5792.9,
+      "survival": 0.0695
+    },
+    {
+      "fh": 6415.7,
+      "survival": 0.0695
+    },
+    {
+      "fh": 6704.6,
+      "survival": 0.0111
+    },
+    {
+      "fh": 8359.0,
+      "survival": 0.0111
+    },
+    {
+      "fh": 17451.0,
+      "survival": 0.0018
+    },
+    {
+      "fh": 19546.0,
+      "survival": 0.0018
+    }
+  ],
+  "survival_curve_method": "Breslow-Fleming-Harrington"
+}

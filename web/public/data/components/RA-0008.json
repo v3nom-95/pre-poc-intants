@@ -3,6 +3,12 @@
   "part_number": "34-4410-02",
   "name": "Radar altimeter",
   "ata": "34",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "RADALT",
+  "zone": "fwd-underside",
+  "task_card": "TC-34-01-02",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "CM",
   "criticality": "mission",
@@ -10,14 +16,14 @@
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 698.1,
-  "fh_to_tau": 504.3,
-  "fh_to_tau_p10": 64.2,
-  "fh_to_tau_p90": 1338.2,
-  "prob_fail_before_next_phase": 0.052,
-  "explanation": "No significant covariate effect for this unit",
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
   "fleet_units": 20,
-  "fleet_confirmed_failures": 2,
+  "fleet_confirmed_failures": 0,
   "install_history": [
     {
       "tail": "FX-308",
@@ -33,84 +39,149 @@
       "survival": 1.0
     },
     {
-      "fh": 24.0,
+      "fh": 21.4,
       "survival": 1.0
     },
     {
-      "fh": 51.5,
+      "fh": 64.8,
       "survival": 1.0
     },
     {
-      "fh": 325.2,
+      "fh": 84.4,
       "survival": 1.0
     },
     {
-      "fh": 418.1,
+      "fh": 196.5,
       "survival": 1.0
     },
     {
-      "fh": 421.4,
-      "survival": 0.9375
+      "fh": 283.1,
+      "survival": 1.0
     },
     {
-      "fh": 499.2,
-      "survival": 0.875
+      "fh": 332.0,
+      "survival": 1.0
     },
     {
-      "fh": 629.2,
-      "survival": 0.875
+      "fh": 395.5,
+      "survival": 1.0
     },
     {
-      "fh": 646.0,
-      "survival": 0.875
+      "fh": 433.5,
+      "survival": 1.0
     },
     {
-      "fh": 696.7,
-      "survival": 0.875
+      "fh": 549.5,
+      "survival": 1.0
     },
     {
-      "fh": 698.1,
-      "survival": 0.875
+      "fh": 572.0,
+      "survival": 1.0
     },
     {
-      "fh": 701.3,
-      "survival": 0.875
+      "fh": 583.6,
+      "survival": 1.0
     },
     {
-      "fh": 728.2,
-      "survival": 0.875
+      "fh": 618.7,
+      "survival": 1.0
     },
     {
-      "fh": 746.6,
-      "survival": 0.875
+      "fh": 649.3,
+      "survival": 1.0
     },
     {
-      "fh": 764.0,
-      "survival": 0.875
+      "fh": 1035.2,
+      "survival": 1.0
     },
     {
-      "fh": 807.0,
-      "survival": 0.875
+      "fh": 1094.1,
+      "survival": 1.0
     },
     {
-      "fh": 828.6,
-      "survival": 0.875
+      "fh": 1113.3,
+      "survival": 1.0
     },
     {
-      "fh": 884.1,
-      "survival": 0.875
+      "fh": 1285.5,
+      "survival": 1.0
     },
     {
-      "fh": 929.9,
-      "survival": 0.875
+      "fh": 1298.0,
+      "survival": 1.0
     },
     {
-      "fh": 937.3,
-      "survival": 0.875
+      "fh": 1358.9,
+      "survival": 1.0
     },
     {
-      "fh": 939.4,
-      "survival": 0.875
+      "fh": 1401.8,
+      "survival": 1.0
+    },
+    {
+      "fh": 1436.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 1469.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 1519.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 1679.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 1824.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 2009.8,
+      "survival": 1.0
+    },
+    {
+      "fh": 2060.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 2094.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 2144.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 2541.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 2608.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 2629.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 2845.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 3338.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 3358.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 3606.5,
+      "survival": 1.0
     }
-  ]
+  ],
+  "survival_curve_method": "Kaplan-Meier"
 }

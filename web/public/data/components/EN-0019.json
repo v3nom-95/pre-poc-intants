@@ -3,6 +3,12 @@
   "part_number": "72-0001-10",
   "name": "Engine",
   "ata": "72",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "ENGINE",
+  "zone": "engine-bay",
+  "task_card": "TC-72-01-01",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
@@ -22,10 +28,11 @@
     {
       "tail": "FX-316",
       "event_type": "Install",
-      "date": "2023-03-07",
+      "date": "2023-03-08",
       "reason": null,
       "serial": "EN-0019"
     }
   ],
-  "survival_curve": []
+  "survival_curve": [],
+  "survival_curve_method": null
 }

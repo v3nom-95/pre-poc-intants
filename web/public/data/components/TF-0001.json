@@ -1,0 +1,199 @@
+{
+  "serial": "TF-0001",
+  "part_number": "28-2310-11",
+  "name": "Fuel boost pump",
+  "ata": "28",
+  "type": "transport",
+  "type_name": "Twin-engine transport",
+  "key": "TR-FUEL-BOOST",
+  "zone": "centre-wing",
+  "task_card": "TC-28-02-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "TX-401",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 3868.9,
+  "fh_to_tau": 421.0,
+  "fh_to_tau_p10": 217.2,
+  "fh_to_tau_p90": 784.6,
+  "prob_fail_before_next_phase": 0.037,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 23,
+  "fleet_confirmed_failures": 7,
+  "install_history": [
+    {
+      "tail": "TX-401",
+      "event_type": "Install",
+      "date": "2012-09-25",
+      "reason": null,
+      "serial": "TF-0001"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 104.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 258.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 329.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 384.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 490.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 647.8,
+      "survival": 1.0
+    },
+    {
+      "fh": 764.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 784.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 812.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 940.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 985.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 986.4,
+      "survival": 0.875
+    },
+    {
+      "fh": 1049.6,
+      "survival": 0.75
+    },
+    {
+      "fh": 1127.7,
+      "survival": 0.75
+    },
+    {
+      "fh": 1135.1,
+      "survival": 0.6429
+    },
+    {
+      "fh": 1147.9,
+      "survival": 0.6429
+    },
+    {
+      "fh": 1408.0,
+      "survival": 0.6429
+    },
+    {
+      "fh": 1430.4,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1461.8,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1514.7,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1648.6,
+      "survival": 0.5357
+    },
+    {
+      "fh": 1684.5,
+      "survival": 0.4688
+    },
+    {
+      "fh": 1737.8,
+      "survival": 0.4018
+    },
+    {
+      "fh": 1840.4,
+      "survival": 0.4018
+    },
+    {
+      "fh": 2099.3,
+      "survival": 0.4018
+    },
+    {
+      "fh": 2271.6,
+      "survival": 0.4018
+    },
+    {
+      "fh": 2544.6,
+      "survival": 0.4018
+    },
+    {
+      "fh": 2679.4,
+      "survival": 0.4018
+    },
+    {
+      "fh": 2791.2,
+      "survival": 0.4018
+    },
+    {
+      "fh": 3035.4,
+      "survival": 0.4018
+    },
+    {
+      "fh": 3105.1,
+      "survival": 0.4018
+    },
+    {
+      "fh": 3118.8,
+      "survival": 0.4018
+    },
+    {
+      "fh": 3424.4,
+      "survival": 0.4018
+    },
+    {
+      "fh": 3547.7,
+      "survival": 0.3013
+    },
+    {
+      "fh": 3700.4,
+      "survival": 0.3013
+    },
+    {
+      "fh": 3868.9,
+      "survival": 0.3013
+    },
+    {
+      "fh": 4587.1,
+      "survival": 0.3013
+    },
+    {
+      "fh": 7044.0,
+      "survival": 0.3013
+    },
+    {
+      "fh": 8641.4,
+      "survival": 0.3013
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

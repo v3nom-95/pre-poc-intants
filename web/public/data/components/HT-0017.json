@@ -3,29 +3,36 @@
   "part_number": "72-5120-01",
   "name": "HPT module (turbine disc LLP)",
   "ata": "72",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "HPT",
+  "zone": "engine-bay",
+  "task_card": "TC-72-02-01",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "FX-303",
+  "current_tail": "FX-311",
   "current_position": "1",
   "governing_limit": "Cycles",
-  "remaining": 1508.0,
+  "remaining": 1076.0,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
   "fh_to_tau_p90": null,
   "prob_fail_before_next_phase": null,
   "explanation": null,
-  "fleet_units": 28,
+  "fleet_units": 29,
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "FX-303",
+      "tail": "FX-311",
       "event_type": "Install",
-      "date": "2023-05-13",
+      "date": "2023-05-28",
       "reason": null,
       "serial": "HT-0017"
     }
   ],
-  "survival_curve": []
+  "survival_curve": [],
+  "survival_curve_method": null
 }

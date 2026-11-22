@@ -1,0 +1,155 @@
+{
+  "serial": "XK-0029",
+  "part_number": "32-4220-21",
+  "name": "Main wheel brake",
+  "ata": "32",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-BRAKE",
+  "zone": "mlg-right",
+  "task_card": "TC-32-10-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "CX-501",
+  "current_position": "R",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 242.2,
+  "fh_to_tau": 116.7,
+  "fh_to_tau_p10": 79.0,
+  "fh_to_tau_p90": 183.5,
+  "prob_fail_before_next_phase": 0.127,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 28,
+  "fleet_confirmed_failures": 16,
+  "install_history": [
+    {
+      "tail": "CX-501",
+      "event_type": "Install",
+      "date": "2026-03-27",
+      "reason": null,
+      "serial": "XK-0029"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 49.3,
+      "survival": 0.9643
+    },
+    {
+      "fh": 58.0,
+      "survival": 0.9286
+    },
+    {
+      "fh": 81.0,
+      "survival": 0.8929
+    },
+    {
+      "fh": 113.8,
+      "survival": 0.8929
+    },
+    {
+      "fh": 146.2,
+      "survival": 0.8557
+    },
+    {
+      "fh": 146.2,
+      "survival": 0.8185
+    },
+    {
+      "fh": 201.9,
+      "survival": 0.8185
+    },
+    {
+      "fh": 230.8,
+      "survival": 0.8185
+    },
+    {
+      "fh": 233.4,
+      "survival": 0.8185
+    },
+    {
+      "fh": 242.2,
+      "survival": 0.8185
+    },
+    {
+      "fh": 245.5,
+      "survival": 0.773
+    },
+    {
+      "fh": 302.9,
+      "survival": 0.773
+    },
+    {
+      "fh": 364.6,
+      "survival": 0.7247
+    },
+    {
+      "fh": 500.5,
+      "survival": 0.6764
+    },
+    {
+      "fh": 514.2,
+      "survival": 0.6764
+    },
+    {
+      "fh": 772.9,
+      "survival": 0.6243
+    },
+    {
+      "fh": 987.0,
+      "survival": 0.5723
+    },
+    {
+      "fh": 1290.3,
+      "survival": 0.5203
+    },
+    {
+      "fh": 1339.3,
+      "survival": 0.4682
+    },
+    {
+      "fh": 1405.7,
+      "survival": 0.4162
+    },
+    {
+      "fh": 1595.0,
+      "survival": 0.3642
+    },
+    {
+      "fh": 1595.5,
+      "survival": 0.3642
+    },
+    {
+      "fh": 1634.9,
+      "survival": 0.3035
+    },
+    {
+      "fh": 1691.4,
+      "survival": 0.3035
+    },
+    {
+      "fh": 1731.8,
+      "survival": 0.3035
+    },
+    {
+      "fh": 1732.6,
+      "survival": 0.3035
+    },
+    {
+      "fh": 1764.9,
+      "survival": 0.1517
+    },
+    {
+      "fh": 1877.0,
+      "survival": 0.1517
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

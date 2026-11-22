@@ -1,0 +1,155 @@
+task_card,title,ata,applicable_types,task_type,part_number,component_key,standard_man_hours,elapsed_hours,interval,manual_reference
+TC-21-01-01,ECS cooling turbine: removal and installation,21,fighter,Replace,21-1005-01,ECS-COOL,6.0,3.6,On condition,MM 21-01-00 task 401
+TC-21-01-02,ECS cooling turbine: on-condition inspection and functional check,21,fighter,Inspect,21-1005-01,ECS-COOL,2.5,1.5,150 FH (phase inspection),MM 21-01-00 task 201
+TC-21-01-03,ECS cooling turbine: system troubleshooting (wiring and connectors),21,fighter,Troubleshoot,21-1005-01,ECS-COOL,10.0,6.0,On condition,MM 21-01-00 task 101
+TC-24-01-01,Main generator: removal and installation,24,fighter,Replace,24-2110-01,GEN-MAIN,5.0,3.0,On condition,MM 24-01-00 task 401
+TC-24-01-02,Main generator: on-condition inspection and functional check,24,fighter,Inspect,24-2110-01,GEN-MAIN,2.5,1.5,150 FH (phase inspection),MM 24-01-00 task 201
+TC-24-01-03,Main generator: system troubleshooting (wiring and connectors),24,fighter,Troubleshoot,24-2110-01,GEN-MAIN,10.0,6.0,On condition,MM 24-01-00 task 101
+TC-24-02-01,Main battery: removal and installation,24,fighter,Replace,24-2240-02,BATT-MAIN,1.5,0.9,Hard time,MM 24-02-00 task 401
+TC-25-01-01,Ejection seat CAD/PAD set: removal and installation,25,fighter,Replace,25-6410-01,CADPAD,3.0,1.8,Hard time,MM 25-01-00 task 401
+TC-27-01-01,Horizontal stabilator actuator: removal and installation,27,fighter,Replace,27-3310-04,STAB-ACT,8.0,4.8,On condition,MM 27-01-00 task 401
+TC-27-01-02,Horizontal stabilator actuator: on-condition inspection and functional check,27,fighter,Inspect,27-3310-04,STAB-ACT,2.5,1.5,150 FH (phase inspection),MM 27-01-00 task 201
+TC-27-01-03,Horizontal stabilator actuator: system troubleshooting (wiring and connectors),27,fighter,Troubleshoot,27-3310-04,STAB-ACT,10.0,6.0,On condition,MM 27-01-00 task 101
+TC-27-02-01,Flight control computer: removal and installation,27,fighter,Replace,27-3550-01,FCC,4.0,2.4,On condition,MM 27-02-00 task 401
+TC-27-02-02,Flight control computer: on-condition inspection and functional check,27,fighter,Inspect,27-3550-01,FCC,2.5,1.5,150 FH (phase inspection),MM 27-02-00 task 201
+TC-27-02-03,Flight control computer: system troubleshooting (wiring and connectors),27,fighter,Troubleshoot,27-3550-01,FCC,10.0,6.0,On condition,MM 27-02-00 task 101
+TC-28-01-01,Fuel boost pump: removal and installation,28,fighter,Replace,28-2210-02,FUEL-BOOST,5.0,3.0,On condition,MM 28-01-00 task 401
+TC-28-01-02,Fuel boost pump: on-condition inspection and functional check,28,fighter,Inspect,28-2210-02,FUEL-BOOST,2.5,1.5,150 FH (phase inspection),MM 28-01-00 task 201
+TC-28-01-03,Fuel boost pump: system troubleshooting (wiring and connectors),28,fighter,Troubleshoot,28-2210-02,FUEL-BOOST,10.0,6.0,On condition,MM 28-01-00 task 101
+TC-29-01-01,Engine-driven hydraulic pump: removal and installation,29,fighter,Replace,29-1140-03,HYD-PUMP,7.0,4.2,On condition,MM 29-01-00 task 401
+TC-29-01-02,Engine-driven hydraulic pump: on-condition inspection and functional check,29,fighter,Inspect,29-1140-03,HYD-PUMP,2.5,1.5,150 FH (phase inspection),MM 29-01-00 task 201
+TC-29-01-03,Engine-driven hydraulic pump: system troubleshooting (wiring and connectors),29,fighter,Troubleshoot,29-1140-03,HYD-PUMP,10.0,6.0,On condition,MM 29-01-00 task 101
+TC-32-01-01,Main landing gear assembly: removal and installation,32,fighter,Replace,32-1120-05,MLG,14.0,8.4,Hard time,MM 32-01-00 task 401
+TC-32-02-01,Main wheel brake: removal and installation,32,fighter,Replace,32-4210-02,BRAKE,4.0,2.4,On condition,MM 32-02-00 task 401
+TC-32-02-02,Main wheel brake: on-condition inspection and functional check,32,fighter,Inspect,32-4210-02,BRAKE,2.5,1.5,150 FH (phase inspection),MM 32-02-00 task 201
+TC-32-02-03,Main wheel brake: system troubleshooting (wiring and connectors),32,fighter,Troubleshoot,32-4210-02,BRAKE,10.0,6.0,On condition,MM 32-02-00 task 101
+TC-32-03-01,Main wheel tyre: removal and installation,32,fighter,Replace,32-4310-01,TYRE,1.5,0.9,On condition,MM 32-03-00 task 401
+TC-32-03-02,Main wheel tyre: on-condition inspection and functional check,32,fighter,Inspect,32-4310-01,TYRE,2.5,1.5,150 FH (phase inspection),MM 32-03-00 task 201
+TC-32-03-03,Main wheel tyre: system troubleshooting (wiring and connectors),32,fighter,Troubleshoot,32-4310-01,TYRE,10.0,6.0,On condition,MM 32-03-00 task 101
+TC-34-01-01,Radar altimeter: removal and installation,34,fighter,Replace,34-4410-02,RADALT,3.0,1.8,On condition,MM 34-01-00 task 401
+TC-34-01-02,Radar altimeter: on-condition inspection and functional check,34,fighter,Inspect,34-4410-02,RADALT,2.5,1.5,150 FH (phase inspection),MM 34-01-00 task 201
+TC-34-01-03,Radar altimeter: system troubleshooting (wiring and connectors),34,fighter,Troubleshoot,34-4410-02,RADALT,10.0,6.0,On condition,MM 34-01-00 task 101
+TC-34-02-01,Inertial navigation unit: removal and installation,34,fighter,Replace,34-1810-01,INU,4.0,2.4,On condition,MM 34-02-00 task 401
+TC-34-02-02,Inertial navigation unit: on-condition inspection and functional check,34,fighter,Inspect,34-1810-01,INU,2.5,1.5,150 FH (phase inspection),MM 34-02-00 task 201
+TC-34-02-03,Inertial navigation unit: system troubleshooting (wiring and connectors),34,fighter,Troubleshoot,34-1810-01,INU,10.0,6.0,On condition,MM 34-02-00 task 101
+TC-49-01-01,Jet fuel starter: removal and installation,49,fighter,Replace,49-1210-01,JFS,6.0,3.6,On condition,MM 49-01-00 task 401
+TC-49-01-02,Jet fuel starter: on-condition inspection and functional check,49,fighter,Inspect,49-1210-01,JFS,2.5,1.5,150 FH (phase inspection),MM 49-01-00 task 201
+TC-49-01-03,Jet fuel starter: system troubleshooting (wiring and connectors),49,fighter,Troubleshoot,49-1210-01,JFS,10.0,6.0,On condition,MM 49-01-00 task 101
+TC-72-01-01,Engine: removal and installation (engine change),72,fighter,Replace,72-0001-10,ENGINE,40.0,24.0,Hard time,MM 72-01-00 task 401
+TC-72-01-04,Engine: borescope inspection of hot section,72,fighter,Borescope,72-0001-10,ENGINE,6.0,3.6,On condition,MM 72-01-00 task 601
+TC-72-02-01,HPT module (turbine disc LLP): removal and installation,72,fighter,Replace,72-5120-01,HPT,60.0,36.0,Hard time,MM 72-02-00 task 401
+TC-73-01-01,Engine fuel control unit: removal and installation,73,fighter,Replace,73-2110-01,FCU,5.0,3.0,On condition,MM 73-01-00 task 401
+TC-73-01-02,Engine fuel control unit: on-condition inspection and functional check,73,fighter,Inspect,73-2110-01,FCU,2.5,1.5,150 FH (phase inspection),MM 73-01-00 task 201
+TC-73-01-03,Engine fuel control unit: system troubleshooting (wiring and connectors),73,fighter,Troubleshoot,73-2110-01,FCU,10.0,6.0,On condition,MM 73-01-00 task 101
+TC-79-01-01,Engine lube oil pump: removal and installation,79,fighter,Replace,79-1310-02,OIL-PUMP,5.0,3.0,On condition,MM 79-01-00 task 401
+TC-79-01-02,Engine lube oil pump: on-condition inspection and functional check,79,fighter,Inspect,79-1310-02,OIL-PUMP,2.5,1.5,150 FH (phase inspection),MM 79-01-00 task 201
+TC-79-01-03,Engine lube oil pump: system troubleshooting (wiring and connectors),79,fighter,Troubleshoot,79-1310-02,OIL-PUMP,10.0,6.0,On condition,MM 79-01-00 task 101
+TC-79-01-05,"Engine lube oil pump: oil filter and chip detector inspection, SOAP sample",79,fighter,Sample,79-1310-02,OIL-PUMP,2.0,1.2,On condition,MM 79-01-00 task 301
+TC-21-02-01,ECS pack (air cycle machine): removal and installation,21,transport,Replace,21-5110-11,TR-ECS-PACK,8.0,4.8,On condition,MM 21-02-00 task 401
+TC-21-02-02,ECS pack (air cycle machine): on-condition inspection and functional check,21,transport,Inspect,21-5110-11,TR-ECS-PACK,2.5,1.5,150 FH (phase inspection),MM 21-02-00 task 201
+TC-21-02-03,ECS pack (air cycle machine): system troubleshooting (wiring and connectors),21,transport,Troubleshoot,21-5110-11,TR-ECS-PACK,10.0,6.0,On condition,MM 21-02-00 task 101
+TC-21-03-01,Cabin pressure controller: removal and installation,21,transport,Replace,21-3110-11,TR-CPC,3.0,1.8,On condition,MM 21-03-00 task 401
+TC-21-03-02,Cabin pressure controller: on-condition inspection and functional check,21,transport,Inspect,21-3110-11,TR-CPC,2.5,1.5,150 FH (phase inspection),MM 21-03-00 task 201
+TC-21-03-03,Cabin pressure controller: system troubleshooting (wiring and connectors),21,transport,Troubleshoot,21-3110-11,TR-CPC,10.0,6.0,On condition,MM 21-03-00 task 101
+TC-21-04-01,Cabin outflow valve: removal and installation,21,transport,Replace,21-3120-11,TR-OFV,5.0,3.0,On condition,MM 21-04-00 task 401
+TC-21-04-02,Cabin outflow valve: on-condition inspection and functional check,21,transport,Inspect,21-3120-11,TR-OFV,2.5,1.5,150 FH (phase inspection),MM 21-04-00 task 201
+TC-21-04-03,Cabin outflow valve: system troubleshooting (pressurisation ducting and door seals (cabin leak check)),21,transport,Troubleshoot,21-3120-11,TR-OFV,10.0,6.0,On condition,MM 21-04-00 task 101
+TC-24-03-01,Engine-driven generator: removal and installation,24,transport,Replace,24-3110-11,TR-GEN,5.0,3.0,On condition,MM 24-03-00 task 401
+TC-24-03-02,Engine-driven generator: on-condition inspection and functional check,24,transport,Inspect,24-3110-11,TR-GEN,2.5,1.5,150 FH (phase inspection),MM 24-03-00 task 201
+TC-24-03-03,Engine-driven generator: system troubleshooting (wiring and connectors),24,transport,Troubleshoot,24-3110-11,TR-GEN,10.0,6.0,On condition,MM 24-03-00 task 101
+TC-24-04-01,Main battery: removal and installation,24,transport,Replace,24-3240-11,TR-BATT,1.5,0.9,Hard time,MM 24-04-00 task 401
+TC-25-02-01,Emergency locator transmitter battery: removal and installation,25,transport,Replace,25-6210-11,TR-ELT,1.5,0.9,Hard time,MM 25-02-00 task 401
+TC-28-02-01,Fuel boost pump: removal and installation,28,transport,Replace,28-2310-11,TR-FUEL-BOOST,6.0,3.6,On condition,MM 28-02-00 task 401
+TC-28-02-02,Fuel boost pump: on-condition inspection and functional check,28,transport,Inspect,28-2310-11,TR-FUEL-BOOST,2.5,1.5,150 FH (phase inspection),MM 28-02-00 task 201
+TC-28-02-03,Fuel boost pump: system troubleshooting (wiring and connectors),28,transport,Troubleshoot,28-2310-11,TR-FUEL-BOOST,10.0,6.0,On condition,MM 28-02-00 task 101
+TC-29-02-01,Engine-driven hydraulic pump: removal and installation,29,transport,Replace,29-1210-11,TR-HYD-PUMP,7.0,4.2,On condition,MM 29-02-00 task 401
+TC-29-02-02,Engine-driven hydraulic pump: on-condition inspection and functional check,29,transport,Inspect,29-1210-11,TR-HYD-PUMP,2.5,1.5,150 FH (phase inspection),MM 29-02-00 task 201
+TC-29-02-03,Engine-driven hydraulic pump: system troubleshooting (wiring and connectors),29,transport,Troubleshoot,29-1210-11,TR-HYD-PUMP,10.0,6.0,On condition,MM 29-02-00 task 101
+TC-31-01-01,Flight data recorder: removal and installation,31,transport,Replace,31-3110-11,TR-FDR,2.0,1.2,On condition,MM 31-01-00 task 401
+TC-31-01-02,Flight data recorder: on-condition inspection and functional check,31,transport,Inspect,31-3110-11,TR-FDR,2.5,1.5,150 FH (phase inspection),MM 31-01-00 task 201
+TC-31-01-03,Flight data recorder: system troubleshooting (wiring and connectors),31,transport,Troubleshoot,31-3110-11,TR-FDR,10.0,6.0,On condition,MM 31-01-00 task 101
+TC-32-04-01,Main landing gear assembly: removal and installation,32,transport,Replace,32-1130-11,TR-MLG,24.0,14.4,Hard time,MM 32-04-00 task 401
+TC-32-05-01,Nose landing gear assembly: removal and installation,32,transport,Replace,32-2110-11,TR-NLG,16.0,9.6,Hard time,MM 32-05-00 task 401
+TC-32-06-01,Main wheel brake: removal and installation,32,transport,Replace,32-4220-11,TR-BRAKE,4.0,2.4,On condition,MM 32-06-00 task 401
+TC-32-06-02,Main wheel brake: on-condition inspection and functional check,32,transport,Inspect,32-4220-11,TR-BRAKE,2.5,1.5,150 FH (phase inspection),MM 32-06-00 task 201
+TC-32-06-03,Main wheel brake: system troubleshooting (wiring and connectors),32,transport,Troubleshoot,32-4220-11,TR-BRAKE,10.0,6.0,On condition,MM 32-06-00 task 101
+TC-32-07-01,Main wheel tyre: removal and installation,32,transport,Replace,32-4320-11,TR-TYRE,2.0,1.2,On condition,MM 32-07-00 task 401
+TC-32-07-02,Main wheel tyre: on-condition inspection and functional check,32,transport,Inspect,32-4320-11,TR-TYRE,2.5,1.5,150 FH (phase inspection),MM 32-07-00 task 201
+TC-32-07-03,Main wheel tyre: system troubleshooting (wiring and connectors),32,transport,Troubleshoot,32-4320-11,TR-TYRE,10.0,6.0,On condition,MM 32-07-00 task 101
+TC-34-03-01,Weather radar: removal and installation,34,transport,Replace,34-4110-11,TR-WXR,4.0,2.4,On condition,MM 34-03-00 task 401
+TC-34-03-02,Weather radar: on-condition inspection and functional check,34,transport,Inspect,34-4110-11,TR-WXR,2.5,1.5,150 FH (phase inspection),MM 34-03-00 task 201
+TC-34-03-03,Weather radar: system troubleshooting (wiring and connectors),34,transport,Troubleshoot,34-4110-11,TR-WXR,10.0,6.0,On condition,MM 34-03-00 task 101
+TC-34-04-01,Radio altimeter: removal and installation,34,transport,Replace,34-4420-11,TR-RADALT,3.0,1.8,On condition,MM 34-04-00 task 401
+TC-34-04-02,Radio altimeter: on-condition inspection and functional check,34,transport,Inspect,34-4420-11,TR-RADALT,2.5,1.5,150 FH (phase inspection),MM 34-04-00 task 201
+TC-34-04-03,Radio altimeter: system troubleshooting (wiring and connectors),34,transport,Troubleshoot,34-4420-11,TR-RADALT,10.0,6.0,On condition,MM 34-04-00 task 101
+TC-49-02-01,Auxiliary power unit: removal and installation,49,transport,Replace,49-1110-11,TR-APU,18.0,10.8,On condition,MM 49-02-00 task 401
+TC-49-02-02,Auxiliary power unit: on-condition inspection and functional check,49,transport,Inspect,49-1110-11,TR-APU,2.5,1.5,150 FH (phase inspection),MM 49-02-00 task 201
+TC-49-02-03,Auxiliary power unit: system troubleshooting (wiring and connectors),49,transport,Troubleshoot,49-1110-11,TR-APU,10.0,6.0,On condition,MM 49-02-00 task 101
+TC-61-01-01,Propeller assembly: removal and installation,61,transport,Replace,61-1010-11,TR-PROP,16.0,9.6,Hard time,MM 61-01-00 task 401
+TC-61-02-01,Propeller control unit: removal and installation,61,transport,Replace,61-2210-11,TR-PCU,8.0,4.8,On condition,MM 61-02-00 task 401
+TC-61-02-02,Propeller control unit: on-condition inspection and functional check,61,transport,Inspect,61-2210-11,TR-PCU,2.5,1.5,150 FH (phase inspection),MM 61-02-00 task 201
+TC-61-02-03,Propeller control unit: system troubleshooting (wiring and connectors),61,transport,Troubleshoot,61-2210-11,TR-PCU,10.0,6.0,On condition,MM 61-02-00 task 101
+TC-72-03-01,Engine (turboprop): removal and installation (engine change),72,transport,Replace,72-0002-11,TR-ENGINE,60.0,36.0,Hard time,MM 72-03-00 task 401
+TC-72-03-04,Engine (turboprop): borescope inspection of hot section,72,transport,Borescope,72-0002-11,TR-ENGINE,6.0,3.6,On condition,MM 72-03-00 task 601
+TC-73-02-01,Engine fuel control unit: removal and installation,73,transport,Replace,73-2120-11,TR-FCU,6.0,3.6,On condition,MM 73-02-00 task 401
+TC-73-02-02,Engine fuel control unit: on-condition inspection and functional check,73,transport,Inspect,73-2120-11,TR-FCU,2.5,1.5,150 FH (phase inspection),MM 73-02-00 task 201
+TC-73-02-03,Engine fuel control unit: system troubleshooting (wiring and connectors),73,transport,Troubleshoot,73-2120-11,TR-FCU,10.0,6.0,On condition,MM 73-02-00 task 101
+TC-79-02-01,Engine lube oil pump: removal and installation,79,transport,Replace,79-1320-11,TR-OIL-PUMP,6.0,3.6,On condition,MM 79-02-00 task 401
+TC-79-02-02,Engine lube oil pump: on-condition inspection and functional check,79,transport,Inspect,79-1320-11,TR-OIL-PUMP,2.5,1.5,150 FH (phase inspection),MM 79-02-00 task 201
+TC-79-02-03,Engine lube oil pump: system troubleshooting (wiring and connectors),79,transport,Troubleshoot,79-1320-11,TR-OIL-PUMP,10.0,6.0,On condition,MM 79-02-00 task 101
+TC-21-05-01,ECS pack (air cycle machine): removal and installation,21,airlifter,Replace,21-5110-21,AL-ECS-PACK,8.0,4.8,On condition,MM 21-05-00 task 401
+TC-21-05-02,ECS pack (air cycle machine): on-condition inspection and functional check,21,airlifter,Inspect,21-5110-21,AL-ECS-PACK,2.5,1.5,150 FH (phase inspection),MM 21-05-00 task 201
+TC-21-05-03,ECS pack (air cycle machine): system troubleshooting (wiring and connectors),21,airlifter,Troubleshoot,21-5110-21,AL-ECS-PACK,10.0,6.0,On condition,MM 21-05-00 task 101
+TC-21-06-01,Cabin pressure controller: removal and installation,21,airlifter,Replace,21-3110-21,AL-CPC,3.0,1.8,On condition,MM 21-06-00 task 401
+TC-21-06-02,Cabin pressure controller: on-condition inspection and functional check,21,airlifter,Inspect,21-3110-21,AL-CPC,2.5,1.5,150 FH (phase inspection),MM 21-06-00 task 201
+TC-21-06-03,Cabin pressure controller: system troubleshooting (wiring and connectors),21,airlifter,Troubleshoot,21-3110-21,AL-CPC,10.0,6.0,On condition,MM 21-06-00 task 101
+TC-21-07-01,Cabin outflow valve: removal and installation,21,airlifter,Replace,21-3120-21,AL-OFV,5.0,3.0,On condition,MM 21-07-00 task 401
+TC-21-07-02,Cabin outflow valve: on-condition inspection and functional check,21,airlifter,Inspect,21-3120-21,AL-OFV,2.5,1.5,150 FH (phase inspection),MM 21-07-00 task 201
+TC-21-07-03,Cabin outflow valve: system troubleshooting (pressurisation ducting and door seals (cabin leak check)),21,airlifter,Troubleshoot,21-3120-21,AL-OFV,10.0,6.0,On condition,MM 21-07-00 task 101
+TC-24-05-01,Engine-driven generator: removal and installation,24,airlifter,Replace,24-3110-21,AL-GEN,5.0,3.0,On condition,MM 24-05-00 task 401
+TC-24-05-02,Engine-driven generator: on-condition inspection and functional check,24,airlifter,Inspect,24-3110-21,AL-GEN,2.5,1.5,150 FH (phase inspection),MM 24-05-00 task 201
+TC-24-05-03,Engine-driven generator: system troubleshooting (wiring and connectors),24,airlifter,Troubleshoot,24-3110-21,AL-GEN,10.0,6.0,On condition,MM 24-05-00 task 101
+TC-24-06-01,Main battery: removal and installation,24,airlifter,Replace,24-3240-21,AL-BATT,1.5,0.9,Hard time,MM 24-06-00 task 401
+TC-25-03-01,Emergency locator transmitter battery: removal and installation,25,airlifter,Replace,25-6210-21,AL-ELT,1.5,0.9,Hard time,MM 25-03-00 task 401
+TC-28-03-01,Fuel boost pump: removal and installation,28,airlifter,Replace,28-2310-21,AL-FUEL-BOOST,6.0,3.6,On condition,MM 28-03-00 task 401
+TC-28-03-02,Fuel boost pump: on-condition inspection and functional check,28,airlifter,Inspect,28-2310-21,AL-FUEL-BOOST,2.5,1.5,150 FH (phase inspection),MM 28-03-00 task 201
+TC-28-03-03,Fuel boost pump: system troubleshooting (wiring and connectors),28,airlifter,Troubleshoot,28-2310-21,AL-FUEL-BOOST,10.0,6.0,On condition,MM 28-03-00 task 101
+TC-29-03-01,Engine-driven hydraulic pump: removal and installation,29,airlifter,Replace,29-1210-21,AL-HYD-PUMP,7.0,4.2,On condition,MM 29-03-00 task 401
+TC-29-03-02,Engine-driven hydraulic pump: on-condition inspection and functional check,29,airlifter,Inspect,29-1210-21,AL-HYD-PUMP,2.5,1.5,150 FH (phase inspection),MM 29-03-00 task 201
+TC-29-03-03,Engine-driven hydraulic pump: system troubleshooting (wiring and connectors),29,airlifter,Troubleshoot,29-1210-21,AL-HYD-PUMP,10.0,6.0,On condition,MM 29-03-00 task 101
+TC-31-02-01,Flight data recorder: removal and installation,31,airlifter,Replace,31-3110-21,AL-FDR,2.0,1.2,On condition,MM 31-02-00 task 401
+TC-31-02-02,Flight data recorder: on-condition inspection and functional check,31,airlifter,Inspect,31-3110-21,AL-FDR,2.5,1.5,150 FH (phase inspection),MM 31-02-00 task 201
+TC-31-02-03,Flight data recorder: system troubleshooting (wiring and connectors),31,airlifter,Troubleshoot,31-3110-21,AL-FDR,10.0,6.0,On condition,MM 31-02-00 task 101
+TC-32-08-01,Main landing gear assembly: removal and installation,32,airlifter,Replace,32-1130-21,AL-MLG,24.0,14.4,Hard time,MM 32-08-00 task 401
+TC-32-09-01,Nose landing gear assembly: removal and installation,32,airlifter,Replace,32-2110-21,AL-NLG,16.0,9.6,Hard time,MM 32-09-00 task 401
+TC-32-10-01,Main wheel brake: removal and installation,32,airlifter,Replace,32-4220-21,AL-BRAKE,4.0,2.4,On condition,MM 32-10-00 task 401
+TC-32-10-02,Main wheel brake: on-condition inspection and functional check,32,airlifter,Inspect,32-4220-21,AL-BRAKE,2.5,1.5,150 FH (phase inspection),MM 32-10-00 task 201
+TC-32-10-03,Main wheel brake: system troubleshooting (wiring and connectors),32,airlifter,Troubleshoot,32-4220-21,AL-BRAKE,10.0,6.0,On condition,MM 32-10-00 task 101
+TC-32-11-01,Main wheel tyre: removal and installation,32,airlifter,Replace,32-4320-21,AL-TYRE,2.0,1.2,On condition,MM 32-11-00 task 401
+TC-32-11-02,Main wheel tyre: on-condition inspection and functional check,32,airlifter,Inspect,32-4320-21,AL-TYRE,2.5,1.5,150 FH (phase inspection),MM 32-11-00 task 201
+TC-32-11-03,Main wheel tyre: system troubleshooting (wiring and connectors),32,airlifter,Troubleshoot,32-4320-21,AL-TYRE,10.0,6.0,On condition,MM 32-11-00 task 101
+TC-34-05-01,Weather radar: removal and installation,34,airlifter,Replace,34-4110-21,AL-WXR,4.0,2.4,On condition,MM 34-05-00 task 401
+TC-34-05-02,Weather radar: on-condition inspection and functional check,34,airlifter,Inspect,34-4110-21,AL-WXR,2.5,1.5,150 FH (phase inspection),MM 34-05-00 task 201
+TC-34-05-03,Weather radar: system troubleshooting (wiring and connectors),34,airlifter,Troubleshoot,34-4110-21,AL-WXR,10.0,6.0,On condition,MM 34-05-00 task 101
+TC-34-06-01,Radio altimeter: removal and installation,34,airlifter,Replace,34-4420-21,AL-RADALT,3.0,1.8,On condition,MM 34-06-00 task 401
+TC-34-06-02,Radio altimeter: on-condition inspection and functional check,34,airlifter,Inspect,34-4420-21,AL-RADALT,2.5,1.5,150 FH (phase inspection),MM 34-06-00 task 201
+TC-34-06-03,Radio altimeter: system troubleshooting (wiring and connectors),34,airlifter,Troubleshoot,34-4420-21,AL-RADALT,10.0,6.0,On condition,MM 34-06-00 task 101
+TC-49-03-01,Auxiliary power unit: removal and installation,49,airlifter,Replace,49-1110-21,AL-APU,18.0,10.8,On condition,MM 49-03-00 task 401
+TC-49-03-02,Auxiliary power unit: on-condition inspection and functional check,49,airlifter,Inspect,49-1110-21,AL-APU,2.5,1.5,150 FH (phase inspection),MM 49-03-00 task 201
+TC-49-03-03,Auxiliary power unit: system troubleshooting (wiring and connectors),49,airlifter,Troubleshoot,49-1110-21,AL-APU,10.0,6.0,On condition,MM 49-03-00 task 101
+TC-61-03-01,Propeller assembly: removal and installation,61,airlifter,Replace,61-1010-21,AL-PROP,16.0,9.6,Hard time,MM 61-03-00 task 401
+TC-61-04-01,Propeller control unit: removal and installation,61,airlifter,Replace,61-2210-21,AL-PCU,8.0,4.8,On condition,MM 61-04-00 task 401
+TC-61-04-02,Propeller control unit: on-condition inspection and functional check,61,airlifter,Inspect,61-2210-21,AL-PCU,2.5,1.5,150 FH (phase inspection),MM 61-04-00 task 201
+TC-61-04-03,Propeller control unit: system troubleshooting (wiring and connectors),61,airlifter,Troubleshoot,61-2210-21,AL-PCU,10.0,6.0,On condition,MM 61-04-00 task 101
+TC-72-04-01,Engine (turboprop): removal and installation (engine change),72,airlifter,Replace,72-0002-21,AL-ENGINE,60.0,36.0,Hard time,MM 72-04-00 task 401
+TC-72-04-04,Engine (turboprop): borescope inspection of hot section,72,airlifter,Borescope,72-0002-21,AL-ENGINE,6.0,3.6,On condition,MM 72-04-00 task 601
+TC-73-03-01,Engine fuel control unit: removal and installation,73,airlifter,Replace,73-2120-21,AL-FCU,6.0,3.6,On condition,MM 73-03-00 task 401
+TC-73-03-02,Engine fuel control unit: on-condition inspection and functional check,73,airlifter,Inspect,73-2120-21,AL-FCU,2.5,1.5,150 FH (phase inspection),MM 73-03-00 task 201
+TC-73-03-03,Engine fuel control unit: system troubleshooting (wiring and connectors),73,airlifter,Troubleshoot,73-2120-21,AL-FCU,10.0,6.0,On condition,MM 73-03-00 task 101
+TC-79-03-01,Engine lube oil pump: removal and installation,79,airlifter,Replace,79-1320-21,AL-OIL-PUMP,6.0,3.6,On condition,MM 79-03-00 task 401
+TC-79-03-02,Engine lube oil pump: on-condition inspection and functional check,79,airlifter,Inspect,79-1320-21,AL-OIL-PUMP,2.5,1.5,150 FH (phase inspection),MM 79-03-00 task 201
+TC-79-03-03,Engine lube oil pump: system troubleshooting (wiring and connectors),79,airlifter,Troubleshoot,79-1320-21,AL-OIL-PUMP,10.0,6.0,On condition,MM 79-03-00 task 101
+TC-52-01-01,Cargo ramp actuator: removal and installation,52,airlifter,Replace,52-3410-21,AL-RAMP-ACT,12.0,7.2,On condition,MM 52-01-00 task 401
+TC-52-01-02,Cargo ramp actuator: on-condition inspection and functional check,52,airlifter,Inspect,52-3410-21,AL-RAMP-ACT,2.5,1.5,150 FH (phase inspection),MM 52-01-00 task 201
+TC-52-01-03,Cargo ramp actuator: system troubleshooting (wiring and connectors),52,airlifter,Troubleshoot,52-3410-21,AL-RAMP-ACT,10.0,6.0,On condition,MM 52-01-00 task 101
+TC-05-51-01,Structural fatigue usage review and tasking allocation,05,fighter;transport;airlifter,Inspect,,,0.0,0.0,Quarterly,MM 05-51-00 task 001

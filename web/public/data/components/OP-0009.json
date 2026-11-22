@@ -3,6 +3,12 @@
   "part_number": "79-1310-02",
   "name": "Engine lube oil pump",
   "ata": "79",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "OIL-PUMP",
+  "zone": "engine-bay",
+  "task_card": "TC-79-01-02",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "OC",
   "criticality": "flight_safety",
@@ -10,13 +16,13 @@
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 728.2,
-  "fh_to_tau": 250.7,
-  "fh_to_tau_p10": 70.4,
-  "fh_to_tau_p90": 528.0,
-  "prob_fail_before_next_phase": 0.057,
+  "fh_exposure": 1549.5,
+  "fh_to_tau": 739.4,
+  "fh_to_tau_p10": 192.3,
+  "fh_to_tau_p90": 2895.8,
+  "prob_fail_before_next_phase": 0.022,
   "explanation": "No significant covariate effect for this unit",
-  "fleet_units": 18,
+  "fleet_units": 19,
   "fleet_confirmed_failures": 2,
   "install_history": [
     {
@@ -33,76 +39,145 @@
       "survival": 1.0
     },
     {
-      "fh": 56.5,
+      "fh": 3.0,
       "survival": 1.0
     },
     {
-      "fh": 377.9,
-      "survival": 0.9412
+      "fh": 61.0,
+      "survival": 1.0
     },
     {
-      "fh": 552.9,
-      "survival": 0.9412
+      "fh": 120.8,
+      "survival": 1.0
     },
     {
-      "fh": 642.3,
-      "survival": 0.8784
+      "fh": 200.9,
+      "survival": 1.0
     },
     {
-      "fh": 646.0,
-      "survival": 0.8784
+      "fh": 437.1,
+      "survival": 1.0
     },
     {
-      "fh": 698.1,
-      "survival": 0.8784
+      "fh": 439.5,
+      "survival": 0.75
     },
     {
-      "fh": 701.3,
-      "survival": 0.8784
+      "fh": 548.0,
+      "survival": 0.75
     },
     {
-      "fh": 702.2,
-      "survival": 0.8784
+      "fh": 563.0,
+      "survival": 0.75
     },
     {
-      "fh": 728.2,
-      "survival": 0.8784
+      "fh": 573.8,
+      "survival": 0.75
     },
     {
-      "fh": 745.3,
-      "survival": 0.8784
+      "fh": 788.2,
+      "survival": 0.75
     },
     {
-      "fh": 746.6,
-      "survival": 0.8784
+      "fh": 820.2,
+      "survival": 0.75
     },
     {
-      "fh": 764.0,
-      "survival": 0.8784
+      "fh": 1010.2,
+      "survival": 0.75
     },
     {
-      "fh": 807.0,
-      "survival": 0.8784
+      "fh": 1144.7,
+      "survival": 0.75
     },
     {
-      "fh": 828.6,
-      "survival": 0.8784
+      "fh": 1159.7,
+      "survival": 0.75
     },
     {
-      "fh": 884.1,
-      "survival": 0.8784
+      "fh": 1225.9,
+      "survival": 0.75
     },
     {
-      "fh": 916.4,
-      "survival": 0.8784
+      "fh": 1273.7,
+      "survival": 0.75
     },
     {
-      "fh": 937.3,
-      "survival": 0.8784
+      "fh": 1319.2,
+      "survival": 0.75
     },
     {
-      "fh": 939.4,
-      "survival": 0.8784
+      "fh": 1333.3,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1450.2,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1462.2,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1462.6,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1549.5,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1605.0,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1787.0,
+      "survival": 0.6563
+    },
+    {
+      "fh": 1823.0,
+      "survival": 0.6563
+    },
+    {
+      "fh": 2021.6,
+      "survival": 0.6563
+    },
+    {
+      "fh": 2062.5,
+      "survival": 0.6563
+    },
+    {
+      "fh": 2110.9,
+      "survival": 0.6563
+    },
+    {
+      "fh": 2146.9,
+      "survival": 0.6563
+    },
+    {
+      "fh": 2167.4,
+      "survival": 0.6563
+    },
+    {
+      "fh": 2308.3,
+      "survival": 0.6563
+    },
+    {
+      "fh": 2400.9,
+      "survival": 0.6563
+    },
+    {
+      "fh": 2552.0,
+      "survival": 0.6563
+    },
+    {
+      "fh": 3094.6,
+      "survival": 0.6563
+    },
+    {
+      "fh": 3297.4,
+      "survival": 0.6563
     }
-  ]
+  ],
+  "survival_curve_method": "Kaplan-Meier"
 }

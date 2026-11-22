@@ -1,0 +1,259 @@
+{
+  "serial": "XO-0010",
+  "part_number": "79-1320-21",
+  "name": "Engine lube oil pump",
+  "ata": "79",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-OIL-PUMP",
+  "zone": "engine-2",
+  "task_card": "TC-79-03-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "CX-503",
+  "current_position": "2",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 5005.6,
+  "fh_to_tau": 356.4,
+  "fh_to_tau_p10": 123.4,
+  "fh_to_tau_p90": 786.0,
+  "prob_fail_before_next_phase": 0.043,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 30,
+  "fleet_confirmed_failures": 6,
+  "install_history": [
+    {
+      "tail": "CX-503",
+      "event_type": "Install",
+      "date": "2000-04-13",
+      "reason": null,
+      "serial": "XO-0010"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 233.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 236.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 415.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 567.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 700.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 732.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 762.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 927.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 1013.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 1032.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 1152.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 1215.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 1359.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 1373.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 1386.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 1448.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 1713.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 1842.1,
+      "survival": 0.9091
+    },
+    {
+      "fh": 1865.8,
+      "survival": 0.9091
+    },
+    {
+      "fh": 2113.1,
+      "survival": 0.9091
+    },
+    {
+      "fh": 2326.6,
+      "survival": 0.8333
+    },
+    {
+      "fh": 2334.2,
+      "survival": 0.8333
+    },
+    {
+      "fh": 2386.7,
+      "survival": 0.8333
+    },
+    {
+      "fh": 2438.3,
+      "survival": 0.7576
+    },
+    {
+      "fh": 2567.0,
+      "survival": 0.7576
+    },
+    {
+      "fh": 2636.1,
+      "survival": 0.7576
+    },
+    {
+      "fh": 2661.3,
+      "survival": 0.7576
+    },
+    {
+      "fh": 2697.7,
+      "survival": 0.7576
+    },
+    {
+      "fh": 2797.0,
+      "survival": 0.7576
+    },
+    {
+      "fh": 2804.5,
+      "survival": 0.7576
+    },
+    {
+      "fh": 3010.5,
+      "survival": 0.7576
+    },
+    {
+      "fh": 3026.8,
+      "survival": 0.7576
+    },
+    {
+      "fh": 3325.9,
+      "survival": 0.7576
+    },
+    {
+      "fh": 3351.2,
+      "survival": 0.7576
+    },
+    {
+      "fh": 3459.5,
+      "survival": 0.7576
+    },
+    {
+      "fh": 3480.9,
+      "survival": 0.7576
+    },
+    {
+      "fh": 3512.0,
+      "survival": 0.6818
+    },
+    {
+      "fh": 3564.3,
+      "survival": 0.6818
+    },
+    {
+      "fh": 3810.2,
+      "survival": 0.5966
+    },
+    {
+      "fh": 3904.5,
+      "survival": 0.5966
+    },
+    {
+      "fh": 3964.0,
+      "survival": 0.5966
+    },
+    {
+      "fh": 4269.8,
+      "survival": 0.5966
+    },
+    {
+      "fh": 4451.4,
+      "survival": 0.5966
+    },
+    {
+      "fh": 4538.3,
+      "survival": 0.5966
+    },
+    {
+      "fh": 4603.1,
+      "survival": 0.5966
+    },
+    {
+      "fh": 4877.8,
+      "survival": 0.5966
+    },
+    {
+      "fh": 5005.6,
+      "survival": 0.5966
+    },
+    {
+      "fh": 5162.3,
+      "survival": 0.3977
+    },
+    {
+      "fh": 5725.0,
+      "survival": 0.3977
+    },
+    {
+      "fh": 5901.7,
+      "survival": 0.3977
+    },
+    {
+      "fh": 6698.1,
+      "survival": 0.3977
+    },
+    {
+      "fh": 7142.1,
+      "survival": 0.3977
+    },
+    {
+      "fh": 7820.0,
+      "survival": 0.3977
+    },
+    {
+      "fh": 9237.1,
+      "survival": 0.3977
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

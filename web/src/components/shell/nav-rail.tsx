@@ -10,17 +10,21 @@ import {
   FlaskConical,
   Database,
   FileText,
+  CalendarClock,
+  MessagesSquare,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
   { href: "/", label: "Fleet overview", Icon: LayoutGrid },
-  { href: "/recommendations", label: "Recommendations", Icon: ClipboardList },
+  { href: "/recommendations", label: "Recommen­dations", Icon: ClipboardList },
+  { href: "/plan", label: "Action plan", Icon: CalendarClock },
   { href: "/reliability", label: "Reliability", Icon: Activity },
   { href: "/planning", label: "Planning", Icon: SlidersHorizontal },
   { href: "/models", label: "Models", Icon: FlaskConical },
   { href: "/data", label: "Data", Icon: Database },
   { href: "/reports", label: "Reports", Icon: FileText },
+  { href: "/assistant", label: "Ask PRE", Icon: MessagesSquare },
 ] as const;
 
 export function NavRail() {
@@ -32,7 +36,9 @@ export function NavRail() {
       className="hidden h-full w-[88px] flex-none flex-col items-stretch gap-1 border-r border-(--rule) bg-(--sheet) py-3 md:flex"
     >
       {ITEMS.map(({ href, label, Icon }) => {
-        const active = href === "/" ? pathname === "/" : pathname?.startsWith(href);
+        // Match the route or a sub-path only, so "/plan" does not light up on "/planning".
+        const active =
+          href === "/" ? pathname === "/" : pathname === href || !!pathname?.startsWith(`${href}/`);
         return (
           <Link
             key={href}

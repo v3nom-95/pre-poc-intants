@@ -1,0 +1,99 @@
+{
+  "serial": "XV-0006",
+  "part_number": "21-3120-21",
+  "name": "Cabin outflow valve",
+  "ata": "21",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-OFV",
+  "zone": "cabin",
+  "task_card": "TC-21-07-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "flight_safety",
+  "current_tail": "CX-506",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 3172.3,
+  "fh_to_tau": 548.7,
+  "fh_to_tau_p10": 210.6,
+  "fh_to_tau_p90": 1903.6,
+  "prob_fail_before_next_phase": 0.028,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 8,
+  "fleet_confirmed_failures": 2,
+  "install_history": [
+    {
+      "tail": "CX-506",
+      "event_type": "Install",
+      "date": "2018-03-06",
+      "reason": null,
+      "serial": "XV-0006"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 327.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 455.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 701.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 1321.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 1625.7,
+      "survival": 0.5
+    },
+    {
+      "fh": 1893.8,
+      "survival": 0.5
+    },
+    {
+      "fh": 2425.1,
+      "survival": 0.5
+    },
+    {
+      "fh": 2955.2,
+      "survival": 0.5
+    },
+    {
+      "fh": 3172.3,
+      "survival": 0.5
+    },
+    {
+      "fh": 3536.9,
+      "survival": 0.3333
+    },
+    {
+      "fh": 3907.6,
+      "survival": 0.3333
+    },
+    {
+      "fh": 4360.6,
+      "survival": 0.3333
+    },
+    {
+      "fh": 4832.2,
+      "survival": 0.3333
+    },
+    {
+      "fh": 5562.0,
+      "survival": 0.3333
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

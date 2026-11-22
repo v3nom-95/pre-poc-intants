@@ -49,6 +49,44 @@ def _rng():
     return np.random.default_rng(cfg.SEED + 7)
 
 
+# ---------------------------------------------------------------------------
+# Approved task cards (section 14.3): every recommendation cites one.
+# ---------------------------------------------------------------------------
+_ACTION_TASK_TYPE = {
+    "Replace": "Replace", "Remove for overhaul": "Replace", "Inspect": "Inspect",
+    "Troubleshoot": "Troubleshoot", "Monitor": "Borescope", "Service": "Service",
+}
+FLEET_REVIEW_TASK_CARD = "TC-05-51-01"
+
+
+def load_task_cards() -> pd.DataFrame:
+    path = os.path.join(SILVER_DIR, "silver_maintenance_procedures.csv")
+    return pd.read_csv(path, dtype={"ata": str, "component_key": str}, keep_default_na=False)
+
+
+_TASK_CARD_CACHE: dict = {}
+
+
+def task_card_for(key: str | None, action: str, oil_sample: bool = False) -> str | None:
+    """Task card id for a component key and recommended action."""
+    if "index" not in _TASK_CARD_CACHE:
+        tc = load_task_cards()
+        _TASK_CARD_CACHE["index"] = {(r["component_key"], r["task_type"]): r["task_card"] for _, r in tc.iterrows()}
+    index = _TASK_CARD_CACHE["index"]
+    if action == "Review allocation" or key is None:
+        return FLEET_REVIEW_TASK_CARD
+    task_type = "Sample" if oil_sample else _ACTION_TASK_TYPE.get(action, "Inspect")
+    return index.get((key, task_type)) or index.get((key, "Inspect")) or index.get((key, "Replace"))
+
+
+def _key_for_pn(pn):
+    return next((k for k, c in cfg.COMPONENTS.items() if c["part_number"] == pn), None)
+
+
+def _is_overhaul_item(key: str) -> bool:
+    return bool(cfg.COMPONENTS[key].get("is_engine")) or key.endswith("-PROP")
+
+
 def _urgency_band(fh_remaining: float | None, days_to_due: float, fh_based: bool) -> str | None:
     for band in ("U1", "U2", "U3"):
         th = cfg.URGENCY_BANDS[band]
@@ -59,18 +97,22 @@ def _urgency_band(fh_remaining: float | None, days_to_due: float, fh_based: bool
     return None
 
 
-def _trailing_fh_per_day(sorties: pd.DataFrame, tail: str, as_of: dt.date, window: int = 90) -> float:
+def _trailing_fh_per_day(sorties: pd.DataFrame, tail: str, as_of: dt.date, window: int = 90,
+                         column: str = "duration_h") -> float:
     start = as_of - dt.timedelta(days=window)
     mask = (sorties["tail"] == tail) & (sorties["date"].dt.date > start) & (sorties["date"].dt.date <= as_of)
-    return float(sorties.loc[mask, "duration_h"].sum()) / window
+    return float(sorties.loc[mask, column].fillna(0).sum()) / window
 
 
 def _new_rec(tail, position, serial, part_number, ata, action, title, priority, due, basis,
-             evidence, confidence=None, created=cfg.AS_OF_DATE):
+             evidence, confidence=None, created=cfg.AS_OF_DATE, task_card=None):
+    if task_card is None:
+        task_card = task_card_for(_key_for_pn(part_number) if part_number else None, action)
     return dict(
-        id=_rec_id(), created=created.isoformat(), tail=tail, position=position, serial=serial,
+        id=_rec_id(), created=created.isoformat(), tail=tail, type=cfg.TYPE_OF_TAIL.get(tail) if tail else None,
+        position=position, serial=serial,
         part_number=part_number, ata=ata, action=action, title=title, priority=priority, due=due,
-        basis=basis, evidence=evidence, confidence=confidence, status="Open",
+        basis=basis, evidence=evidence, confidence=confidence, task_card=task_card, status="Open",
         audit=[dict(at=created.isoformat(), by="PRE engine", role="system", action="Created", remarks="")],
         work_order=None,
     )
@@ -89,7 +131,7 @@ def build_ht_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list[dict]:
         if band is None:
             continue
         priority = PRIORITY_MATRIX[(comp["criticality"], band)]
-        action = "Remove for overhaul" if key == "ENGINE" else "Replace"
+        action = "Remove for overhaul" if _is_overhaul_item(key) else "Replace"
         # rules.py reports "remaining" in the limit's own native unit (months
         # for Calendar, not days), so Calendar items show days_to_due instead
         # of the raw month count mislabelled as days.
@@ -114,7 +156,7 @@ def build_ht_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list[dict]:
 # documented simplification). Routine OC items tracked on the Components
 # tab's life strip; surfacing every one in the recommendation queue would
 # just be noise, not a finding, so they're excluded here.
-_CONSUMABLE_KEYS = {"TYRE", "BRAKE"}
+_CONSUMABLE_KEYS = {k for k, c in cfg.COMPONENTS.items() if c.get("consumable")}
 
 
 def build_survival_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list[dict]:
@@ -127,15 +169,22 @@ def build_survival_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list[dict
         if key is None or key in _CONSUMABLE_KEYS:
             continue
         comp = cfg.COMPONENTS[key]
-        rate = _trailing_fh_per_day(sorties, u["tail"], as_of)
+        unit_label = u.get("exposure_unit", "FH") or "FH"
+        fh_rate = _trailing_fh_per_day(sorties, u["tail"], as_of)
+        if unit_label == "FH":
+            rate = fh_rate
+            fh_to_tau_fh = u["fh_to_tau"]
+        else:
+            # APU hours: convert to days, then to the FH the aircraft flies in that time.
+            rate = _trailing_fh_per_day(sorties, u["tail"], as_of, column="apu_h")
         days_to_tau = (u["fh_to_tau"] / rate) if rate > 0 else float("inf")
-        band = _urgency_band(u["fh_to_tau"], days_to_tau, fh_based=True)
-        # U3 (out to 150 FH / 90 days) is a long radar window that would put
-        # a model-based item in almost every unit's queue at some point.
-        # That's genuinely still useful to see on the component's life
-        # strip, but it isn't something an engineer needs to action today,
-        # so it's excluded from the active recommendation queue (U1/U2 only).
-        if band not in ("U1", "U2"):
+        if unit_label != "FH":
+            fh_to_tau_fh = days_to_tau * fh_rate if days_to_tau != float("inf") else float("inf")
+        band = _urgency_band(fh_to_tau_fh, days_to_tau, fh_based=True)
+        # All three urgency bands of section 6 enter the queue; U3 maps to
+        # Medium (flight safety) or Low (mission) through the priority matrix,
+        # so long-horizon items are visible without crowding the top of the list.
+        if band is None:
             continue
         priority = PRIORITY_MATRIX[(comp["criticality"], band)]
         has_inspection_task = comp["concept"] == "OC"
@@ -148,10 +197,10 @@ def build_survival_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list[dict
         title = (f"{action} {comp['name']} {u['serial']} on {u['tail']} "
                  f"(failure risk {u['prob_fail_before_next_phase']*100:.0f}% before next phase inspection)")
         evidence = [dict(type="model_output",
-                          text=f"Weibull AFT survival model: {u['fh_to_tau']:.0f} FH to {u['tau']*100:.0f}% failure probability "
-                               f"(80% interval {u['fh_to_tau_p10']:.0f} to {u['fh_to_tau_p90']:.0f} FH). {u['explanation']}")]
+                          text=f"Weibull AFT survival model: {u['fh_to_tau']:.0f} {unit_label} to {u['tau']*100:.0f}% failure probability "
+                               f"(80% interval {u['fh_to_tau_p10']:.0f} to {u['fh_to_tau_p90']:.0f} {unit_label}). {u['explanation']}")]
         confidence = dict(probability=u["prob_fail_before_next_phase"], interval=[u["fh_to_tau_p10"], u["fh_to_tau_p90"]])
-        due_obj = dict(fh_remaining=round(u["fh_to_tau"], 1), date=due_date.isoformat(), governing="Model")
+        due_obj = dict(fh_remaining=round(fh_to_tau_fh, 1), date=due_date.isoformat(), governing="Model")
         recs.append(_new_rec(u["tail"], u["position"], u["serial"], u["part_number"],
                               comp["ata"], action, title, priority, due_obj, "Model", evidence, confidence))
     return recs
@@ -240,11 +289,13 @@ def build_repeat_snag_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list[d
         priority = "High" if comp["criticality"] == "flight_safety" else "Medium"
         if has_nff:
             action = "Troubleshoot"
-            title = (f"Troubleshoot {comp['name']} wiring and connectors on {tail} instead of a further replacement "
+            subject = comp.get("troubleshoot_subject", f"{comp['name']} {comp.get('troubleshoot_focus', 'wiring and connectors')}")
+            cause = comp.get("probable_cause", "wiring or connector chafe")
+            title = (f"Troubleshoot {subject} on {tail} instead of a further replacement "
                      f"({row['count']} snags in the last {row['window_days']} days, repeat NFF removals on this position)")
             text = (f"{row['count']} snags between {row['first_in_window']} and {row['last_in_window']}, with repeat "
                      f"'no fault found' removals of this position: the LRU keeps testing serviceable, pointing to "
-                     f"wiring or connector chafe rather than the component itself")
+                     f"{cause} rather than the component itself")
         else:
             action = "Inspect"
             title = f"Inspect {comp['name']} on {tail} ({row['count']} snags in the last {row['window_days']} days, recurring defect)"
@@ -260,22 +311,28 @@ def build_engine_trend_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list[
     flagged = trend_df[trend_df["flagged"]] if not trend_df.empty else trend_df
     recs = []
     for _, row in flagged.iterrows():
-        comp = cfg.COMPONENTS["ENGINE"]
+        type_key = cfg.TYPE_OF_TAIL[row["tail"]]
+        engine_key = cfg.AIRCRAFT_TYPES[type_key]["engine_key"]
+        comp = cfg.COMPONENTS[engine_key]
+        metric = row.get("metric", "EGT margin")
+        limit_c = row.get("limit_c", cfg.EGT_MARGIN_LIMIT_C)
+        position = str(row.get("engine_position", "1"))
+        engine_label = f"{row['tail']} engine" if type_key == "fighter" else f"{row['tail']} engine {position}"
         crossing = row["projected_efh_to_limit"]
         band = "U1" if crossing is not None and crossing <= cfg.URGENCY_BANDS["U1"]["fh"] else \
                "U2" if crossing is not None and crossing <= cfg.URGENCY_BANDS["U2"]["fh"] else "U3"
         priority = PRIORITY_MATRIX[(comp["criticality"], band)]
-        title = (f"Borescope inspection of {row['tail']} engine hot section "
-                 f"(EGT margin trending at {row['slope_c_per_efh']:.3f} °C/EFH, "
-                 f"projected to cross the {cfg.EGT_MARGIN_LIMIT_C:.0f} °C limit in "
+        title = (f"Borescope inspection of {engine_label} hot section "
+                 f"({metric} trending at {row['slope_c_per_efh']:.3f} °C/EFH, "
+                 f"projected to cross the {limit_c:.0f} °C limit in "
                  f"{crossing:.0f} EFH)" if crossing else
-                 f"Borescope inspection of {row['tail']} engine hot section (EGT margin deteriorating faster than fleet norm)")
+                 f"Borescope inspection of {engine_label} hot section ({metric} deteriorating faster than fleet norm)")
         evidence = [dict(type="trend",
-                         text=f"Robust trend (Theil-Sen) over the last 150 EFH: {row['slope_c_per_efh']:.3f} °C/EFH "
-                              f"(80% CI {row['slope_ci_lo']:.3f} to {row['slope_ci_hi']:.3f}), current margin "
+                         text=f"Robust trend (Theil-Sen) of {metric} over the last 150 EFH: {row['slope_c_per_efh']:.3f} °C/EFH "
+                              f"(95% CI {row['slope_ci_lo']:.3f} to {row['slope_ci_hi']:.3f}), current margin "
                               f"{row['current_margin_c']:.1f} °C at {row['current_efh']:.0f} EFH since install")]
         due_obj = dict(fh_remaining=crossing, date=None, governing="Model")
-        recs.append(_new_rec(row["tail"], "1", row["engine_serial"], comp["part_number"], comp["ata"],
+        recs.append(_new_rec(row["tail"], position, row["engine_serial"], comp["part_number"], comp["ata"],
                               "Monitor", title, priority, due_obj, "Trend", evidence))
     return recs
 
@@ -297,7 +354,8 @@ def build_oil_precursor_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list
                                                f"the as-of date; across the fleet, chip detector events precede confirmed oil pump "
                                                f"failures within 50 FH in a meaningful share of cases")]
         due_obj = dict(fh_remaining=None, date=as_of.isoformat(), governing="Model")
-        recs.append(_new_rec(tail, "1", serial, comp["part_number"], comp["ata"], "Inspect", title, "High", due_obj, "Hybrid", evidence))
+        recs.append(_new_rec(tail, "1", serial, comp["part_number"], comp["ata"], "Inspect", title, "High", due_obj, "Hybrid", evidence,
+                              task_card=task_card_for("OIL-PUMP", "Inspect", oil_sample=True)))
     return recs
 
 
@@ -308,13 +366,18 @@ def build_fatigue_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list[dict]
     for _, row in flagged.iterrows():
         years_to_limit = (dt.date.fromisoformat(row["projected_fi100_date"]) - as_of).days / 365.0
         priority = "High" if years_to_limit < 3 else "Medium"
-        title = (f"Review mission allocation for {row['tail']} (rotate away from ACM-heavy tasking): "
+        heavy = row.get("heavy_mission", "Air combat manoeuvring")
+        relief = row.get("relief_mission", "General flying")
+        heavy_label = "ACM" if heavy == "Air combat manoeuvring" else heavy.lower()
+        title = (f"Review mission allocation for {row['tail']} (rotate away from {heavy_label}-heavy tasking): "
                  f"projected to reach fatigue index 100 by {row['projected_fi100_date']}, "
                  f"before the planned withdrawal year {row['planned_withdrawal_year']}")
+        gain = row.get("life_gain_days_if_shifted")
+        gain_text = (f" Shifting 15 points of {heavy_label} share to {relief.lower()} is estimated to extend life by about "
+                     f"{gain:.0f} days" if gain is not None and pd.notna(gain) else "")
         evidence = [dict(type="model_output",
                          text=f"Fatigue projection: FI {row['fi_now']:.1f} now, {row['fi_per_fh']:.4f}/FH over trailing 12 months "
-                              f"({row['acm_share_trailing']*100:.0f}% ACM share). Shifting 15 points of ACM share to general "
-                              f"flying is estimated to extend life by about {row['life_gain_days_if_acm_shifted']:.0f} days")]
+                              f"({row['heavy_mission_share_trailing']*100:.0f}% {heavy_label} share).{gain_text}")]
         due_obj = dict(fh_remaining=None, date=row["projected_fi100_date"], governing="Model")
         recs.append(_new_rec(row["tail"], None, None, None, None, "Review allocation", title, priority, due_obj, "Model", evidence))
     return recs
@@ -362,7 +425,7 @@ def build_history(as_of: dt.date = cfg.AS_OF_DATE, months: int = 12) -> list[dic
             continue
         comp = cfg.COMPONENTS[key]
         scheduled = ev["reason"].startswith("Scheduled")
-        action = ("Remove for overhaul" if key == "ENGINE" else "Replace") if scheduled else "Inspect"
+        action = ("Remove for overhaul" if _is_overhaul_item(key) else "Replace") if scheduled else "Inspect"
         rec_date = ev["event_date"].date() - dt.timedelta(days=int(rng.integers(5, 30)))
         title = (f"{action} {comp['name']} {ev['serial']} on {ev['tail']} "
                  f"({'hard-time limit approaching' if scheduled else 'elevated failure risk flagged'})")

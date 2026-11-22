@@ -1,0 +1,143 @@
+{
+  "serial": "XD-0002",
+  "part_number": "31-3110-21",
+  "name": "Flight data recorder",
+  "ata": "31",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-FDR",
+  "zone": "tail",
+  "task_card": "TC-31-02-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "mission",
+  "current_tail": "CX-505",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": 30.6,
+  "fh_to_tau": 181.3,
+  "fh_to_tau_p10": 59.2,
+  "fh_to_tau_p90": 678.0,
+  "prob_fail_before_next_phase": 0.176,
+  "explanation": "No significant covariate effect for this unit",
+  "fleet_units": 12,
+  "fleet_confirmed_failures": 6,
+  "install_history": [
+    {
+      "tail": "CX-502",
+      "event_type": "Install",
+      "date": "1979-01-22",
+      "reason": null,
+      "serial": "XD-0002"
+    },
+    {
+      "tail": "CX-502",
+      "event_type": "Removal",
+      "date": "2022-01-02",
+      "reason": "Unscheduled: confirmed failure",
+      "serial": "XD-0002"
+    },
+    {
+      "tail": "CX-505",
+      "event_type": "Install",
+      "date": "2022-12-22",
+      "reason": null,
+      "serial": "XD-0002"
+    },
+    {
+      "tail": "CX-505",
+      "event_type": "Removal",
+      "date": "2023-04-30",
+      "reason": "Unscheduled: confirmed failure",
+      "serial": "XD-0002"
+    },
+    {
+      "tail": "CX-505",
+      "event_type": "Install",
+      "date": "2026-10-14",
+      "reason": null,
+      "serial": "XD-0002"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 30.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 101.8,
+      "survival": 1.0
+    },
+    {
+      "fh": 157.5,
+      "survival": 0.8333
+    },
+    {
+      "fh": 160.2,
+      "survival": 0.6667
+    },
+    {
+      "fh": 293.4,
+      "survival": 0.6667
+    },
+    {
+      "fh": 334.9,
+      "survival": 0.6667
+    },
+    {
+      "fh": 478.9,
+      "survival": 0.5556
+    },
+    {
+      "fh": 481.2,
+      "survival": 0.4444
+    },
+    {
+      "fh": 802.9,
+      "survival": 0.3333
+    },
+    {
+      "fh": 806.5,
+      "survival": 0.2222
+    },
+    {
+      "fh": 1257.1,
+      "survival": 0.2222
+    },
+    {
+      "fh": 1822.7,
+      "survival": 0.2222
+    },
+    {
+      "fh": 1911.9,
+      "survival": 0.2222
+    },
+    {
+      "fh": 2774.2,
+      "survival": 0.2222
+    },
+    {
+      "fh": 3108.0,
+      "survival": 0.2222
+    },
+    {
+      "fh": 3935.8,
+      "survival": 0.2222
+    },
+    {
+      "fh": 4428.7,
+      "survival": 0.2222
+    },
+    {
+      "fh": 5933.1,
+      "survival": 0.2222
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier"
+}

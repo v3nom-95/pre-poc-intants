@@ -3,6 +3,12 @@
   "part_number": "27-3550-01",
   "name": "Flight control computer",
   "ata": "27",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "FCC",
+  "zone": "cockpit",
+  "task_card": "TC-27-02-02",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "CM",
   "criticality": "flight_safety",
@@ -10,11 +16,11 @@
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 884.1,
-  "fh_to_tau": 901.1,
-  "fh_to_tau_p10": 79.0,
-  "fh_to_tau_p90": 2738.3,
-  "prob_fail_before_next_phase": 0.019,
+  "fh_exposure": 2570.6,
+  "fh_to_tau": 1239.3,
+  "fh_to_tau_p10": 381.2,
+  "fh_to_tau_p90": 6684.1,
+  "prob_fail_before_next_phase": 0.014,
   "explanation": "No significant covariate effect for this unit",
   "fleet_units": 18,
   "fleet_confirmed_failures": 2,
@@ -33,76 +39,141 @@
       "survival": 1.0
     },
     {
-      "fh": 141.9,
-      "survival": 0.9444
+      "fh": 110.1,
+      "survival": 1.0
     },
     {
-      "fh": 152.5,
-      "survival": 0.8889
+      "fh": 220.2,
+      "survival": 1.0
     },
     {
-      "fh": 556.4,
-      "survival": 0.8889
+      "fh": 262.5,
+      "survival": 0.75
     },
     {
-      "fh": 646.0,
-      "survival": 0.8889
+      "fh": 282.5,
+      "survival": 0.75
     },
     {
-      "fh": 698.1,
-      "survival": 0.8889
+      "fh": 424.0,
+      "survival": 0.5625
     },
     {
-      "fh": 701.3,
-      "survival": 0.8889
+      "fh": 621.7,
+      "survival": 0.5625
     },
     {
-      "fh": 702.2,
-      "survival": 0.8889
+      "fh": 637.4,
+      "survival": 0.5625
     },
     {
-      "fh": 728.2,
-      "survival": 0.8889
+      "fh": 728.8,
+      "survival": 0.5625
     },
     {
-      "fh": 745.3,
-      "survival": 0.8889
+      "fh": 745.2,
+      "survival": 0.5625
     },
     {
-      "fh": 746.6,
-      "survival": 0.8889
+      "fh": 936.4,
+      "survival": 0.5625
     },
     {
-      "fh": 764.0,
-      "survival": 0.8889
+      "fh": 1103.2,
+      "survival": 0.5625
     },
     {
-      "fh": 788.1,
-      "survival": 0.8889
+      "fh": 1107.5,
+      "survival": 0.5625
     },
     {
-      "fh": 807.0,
-      "survival": 0.8889
+      "fh": 1499.3,
+      "survival": 0.5625
     },
     {
-      "fh": 828.6,
-      "survival": 0.8889
+      "fh": 1517.6,
+      "survival": 0.5625
     },
     {
-      "fh": 884.1,
-      "survival": 0.8889
+      "fh": 1622.9,
+      "survival": 0.5625
     },
     {
-      "fh": 916.4,
-      "survival": 0.8889
+      "fh": 1672.9,
+      "survival": 0.5625
     },
     {
-      "fh": 929.9,
-      "survival": 0.8889
+      "fh": 1679.7,
+      "survival": 0.5625
     },
     {
-      "fh": 937.3,
-      "survival": 0.8889
+      "fh": 1996.9,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2040.5,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2215.2,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2353.0,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2462.3,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2482.2,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2570.6,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2743.9,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2833.1,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2907.1,
+      "survival": 0.5625
+    },
+    {
+      "fh": 2944.6,
+      "survival": 0.5625
+    },
+    {
+      "fh": 3136.8,
+      "survival": 0.5625
+    },
+    {
+      "fh": 3278.4,
+      "survival": 0.5625
+    },
+    {
+      "fh": 3481.8,
+      "survival": 0.5625
+    },
+    {
+      "fh": 3668.6,
+      "survival": 0.5625
+    },
+    {
+      "fh": 3936.7,
+      "survival": 0.5625
+    },
+    {
+      "fh": 4665.7,
+      "survival": 0.5625
     }
-  ]
+  ],
+  "survival_curve_method": "Kaplan-Meier"
 }

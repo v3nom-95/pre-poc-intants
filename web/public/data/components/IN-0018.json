@@ -3,6 +3,12 @@
   "part_number": "34-1810-01",
   "name": "Inertial navigation unit",
   "ata": "34",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "INU",
+  "zone": "cockpit",
+  "task_card": "TC-34-02-02",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "CM",
   "criticality": "mission",
@@ -10,14 +16,14 @@
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 625.8,
-  "fh_to_tau": 1289.1,
-  "fh_to_tau_p10": 371.0,
-  "fh_to_tau_p90": 3265.4,
-  "prob_fail_before_next_phase": 0.031,
+  "fh_exposure": 689.1,
+  "fh_to_tau": 1211.6,
+  "fh_to_tau_p10": 473.2,
+  "fh_to_tau_p90": 5187.6,
+  "prob_fail_before_next_phase": 0.036,
   "explanation": "No significant covariate effect for this unit",
   "fleet_units": 20,
-  "fleet_confirmed_failures": 4,
+  "fleet_confirmed_failures": 3,
   "install_history": [
     {
       "tail": "FX-308",
@@ -33,84 +39,149 @@
       "survival": 1.0
     },
     {
-      "fh": 5.9,
+      "fh": 21.6,
       "survival": 1.0
     },
     {
-      "fh": 14.2,
-      "survival": 0.9474
+      "fh": 34.6,
+      "survival": 1.0
     },
     {
-      "fh": 73.5,
-      "survival": 0.8947
+      "fh": 35.8,
+      "survival": 0.75
     },
     {
-      "fh": 241.5,
-      "survival": 0.8421
+      "fh": 140.9,
+      "survival": 0.75
     },
     {
-      "fh": 505.9,
-      "survival": 0.8421
+      "fh": 214.5,
+      "survival": 0.5625
     },
     {
-      "fh": 625.8,
-      "survival": 0.8421
+      "fh": 263.8,
+      "survival": 0.5625
     },
     {
-      "fh": 646.0,
-      "survival": 0.8421
+      "fh": 300.3,
+      "survival": 0.5625
     },
     {
-      "fh": 696.7,
-      "survival": 0.8421
+      "fh": 319.0,
+      "survival": 0.5625
     },
     {
-      "fh": 701.3,
-      "survival": 0.8421
+      "fh": 459.9,
+      "survival": 0.5625
     },
     {
-      "fh": 702.2,
-      "survival": 0.8421
+      "fh": 488.8,
+      "survival": 0.5625
     },
     {
-      "fh": 728.2,
-      "survival": 0.8421
+      "fh": 529.9,
+      "survival": 0.5625
     },
     {
-      "fh": 740.3,
-      "survival": 0.7485
+      "fh": 673.0,
+      "survival": 0.5625
     },
     {
-      "fh": 764.0,
-      "survival": 0.7485
+      "fh": 689.1,
+      "survival": 0.5625
     },
     {
-      "fh": 807.0,
-      "survival": 0.7485
+      "fh": 771.2,
+      "survival": 0.5625
     },
     {
-      "fh": 815.4,
-      "survival": 0.7485
+      "fh": 848.7,
+      "survival": 0.5625
     },
     {
-      "fh": 884.1,
-      "survival": 0.7485
+      "fh": 882.8,
+      "survival": 0.5625
     },
     {
-      "fh": 916.4,
-      "survival": 0.7485
+      "fh": 967.2,
+      "survival": 0.5625
     },
     {
-      "fh": 929.9,
-      "survival": 0.7485
+      "fh": 1089.1,
+      "survival": 0.5625
     },
     {
-      "fh": 937.3,
-      "survival": 0.7485
+      "fh": 1128.3,
+      "survival": 0.5625
     },
     {
-      "fh": 939.4,
-      "survival": 0.7485
+      "fh": 1189.4,
+      "survival": 0.375
+    },
+    {
+      "fh": 1226.7,
+      "survival": 0.375
+    },
+    {
+      "fh": 1416.3,
+      "survival": 0.375
+    },
+    {
+      "fh": 1460.6,
+      "survival": 0.375
+    },
+    {
+      "fh": 1535.7,
+      "survival": 0.375
+    },
+    {
+      "fh": 1808.3,
+      "survival": 0.375
+    },
+    {
+      "fh": 1882.2,
+      "survival": 0.375
+    },
+    {
+      "fh": 1956.1,
+      "survival": 0.375
+    },
+    {
+      "fh": 2135.1,
+      "survival": 0.375
+    },
+    {
+      "fh": 2483.4,
+      "survival": 0.375
+    },
+    {
+      "fh": 2677.2,
+      "survival": 0.375
+    },
+    {
+      "fh": 2769.5,
+      "survival": 0.375
+    },
+    {
+      "fh": 3325.9,
+      "survival": 0.375
+    },
+    {
+      "fh": 7113.4,
+      "survival": 0.375
+    },
+    {
+      "fh": 8009.9,
+      "survival": 0.375
+    },
+    {
+      "fh": 8644.0,
+      "survival": 0.375
+    },
+    {
+      "fh": 9537.8,
+      "survival": 0.375
     }
-  ]
+  ],
+  "survival_curve_method": "Kaplan-Meier"
 }

@@ -1,0 +1,1304 @@
+[
+  {
+    "key": "fighter",
+    "name": "Multirole fighter",
+    "role": "Combat",
+    "engines": 1,
+    "metric": "EGT margin",
+    "metric_threshold_c": 10.0,
+    "tail_prefix": "FX",
+    "tails": [
+      "FX-301",
+      "FX-302",
+      "FX-303",
+      "FX-304",
+      "FX-305",
+      "FX-306",
+      "FX-307",
+      "FX-308",
+      "FX-309",
+      "FX-310",
+      "FX-311",
+      "FX-312",
+      "FX-313",
+      "FX-314",
+      "FX-315",
+      "FX-316"
+    ],
+    "missions": [
+      {
+        "name": "Air combat manoeuvring",
+        "code": "ACM",
+        "slot": 1
+      },
+      {
+        "name": "Ground attack",
+        "code": "GAT",
+        "slot": 2
+      },
+      {
+        "name": "Air defence",
+        "code": "ADF",
+        "slot": 3
+      },
+      {
+        "name": "General flying",
+        "code": "GEN",
+        "slot": 4
+      },
+      {
+        "name": "Navigation / ferry",
+        "code": "NAV",
+        "slot": 5
+      },
+      {
+        "name": "Functional test flight",
+        "code": "FTF",
+        "slot": 6
+      }
+    ],
+    "components": [
+      {
+        "key": "ECS-COOL",
+        "name": "ECS cooling turbine",
+        "ata": "21",
+        "part_number": "21-1005-01",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "centre-fuselage"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "GEN-MAIN",
+        "name": "Main generator",
+        "ata": "24",
+        "part_number": "24-2110-01",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "engine-bay"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "BATT-MAIN",
+        "name": "Main battery",
+        "ata": "24",
+        "part_number": "24-2240-02",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "CADPAD",
+        "name": "Ejection seat CAD/PAD set",
+        "ata": "25",
+        "part_number": "25-6410-01",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "STAB-ACT",
+        "name": "Horizontal stabilator actuator",
+        "ata": "27",
+        "part_number": "27-3310-04",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "stab-left",
+          "R": "stab-right"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "FCC",
+        "name": "Flight control computer",
+        "ata": "27",
+        "part_number": "27-3550-01",
+        "concept": "CM",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "FUEL-BOOST",
+        "name": "Fuel boost pump",
+        "ata": "28",
+        "part_number": "28-2210-02",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "centre-fuselage"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "HYD-PUMP",
+        "name": "Engine-driven hydraulic pump",
+        "ata": "29",
+        "part_number": "29-1140-03",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "engine-bay"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "MLG",
+        "name": "Main landing gear assembly",
+        "ata": "32",
+        "part_number": "32-1120-05",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "mlg-left",
+          "R": "mlg-right"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "BRAKE",
+        "name": "Main wheel brake",
+        "ata": "32",
+        "part_number": "32-4210-02",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "mlg-left",
+          "R": "mlg-right"
+        },
+        "life_basis": "landings"
+      },
+      {
+        "key": "TYRE",
+        "name": "Main wheel tyre",
+        "ata": "32",
+        "part_number": "32-4310-01",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "mlg-left",
+          "R": "mlg-right"
+        },
+        "life_basis": "landings"
+      },
+      {
+        "key": "RADALT",
+        "name": "Radar altimeter",
+        "ata": "34",
+        "part_number": "34-4410-02",
+        "concept": "CM",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "fwd-underside"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "INU",
+        "name": "Inertial navigation unit",
+        "ata": "34",
+        "part_number": "34-1810-01",
+        "concept": "CM",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "JFS",
+        "name": "Jet fuel starter",
+        "ata": "49",
+        "part_number": "49-1210-01",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "engine-bay"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "ENGINE",
+        "name": "Engine",
+        "ata": "72",
+        "part_number": "72-0001-10",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "engine-bay"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "HPT",
+        "name": "HPT module (turbine disc LLP)",
+        "ata": "72",
+        "part_number": "72-5120-01",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "engine-bay"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "FCU",
+        "name": "Engine fuel control unit",
+        "ata": "73",
+        "part_number": "73-2110-01",
+        "concept": "CM",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "engine-bay"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "OIL-PUMP",
+        "name": "Engine lube oil pump",
+        "ata": "79",
+        "part_number": "79-1310-02",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "engine-bay"
+        },
+        "life_basis": "FH"
+      }
+    ],
+    "zones": [
+      {
+        "id": "cockpit",
+        "label": "Cockpit and avionics bay"
+      },
+      {
+        "id": "fwd-underside",
+        "label": "Forward fuselage underside"
+      },
+      {
+        "id": "centre-fuselage",
+        "label": "Centre fuselage"
+      },
+      {
+        "id": "mlg-left",
+        "label": "Left main gear"
+      },
+      {
+        "id": "mlg-right",
+        "label": "Right main gear"
+      },
+      {
+        "id": "engine-bay",
+        "label": "Engine bay"
+      },
+      {
+        "id": "stab-left",
+        "label": "Left stabilator"
+      },
+      {
+        "id": "stab-right",
+        "label": "Right stabilator"
+      }
+    ],
+    "ttl_fh": 6000.0,
+    "planned_withdrawal_year": 2036,
+    "fatigue_model": "g-loading per FH by mission",
+    "apu": false
+  },
+  {
+    "key": "transport",
+    "name": "Twin-engine transport",
+    "role": "Passenger and utility",
+    "engines": 2,
+    "metric": "ITT margin",
+    "metric_threshold_c": 15.0,
+    "tail_prefix": "TX",
+    "tails": [
+      "TX-401",
+      "TX-402",
+      "TX-403",
+      "TX-404",
+      "TX-405",
+      "TX-406",
+      "TX-407",
+      "TX-408"
+    ],
+    "missions": [
+      {
+        "name": "Passenger transport",
+        "code": "PAX",
+        "slot": 1
+      },
+      {
+        "name": "Troop and logistics",
+        "code": "TRP",
+        "slot": 2
+      },
+      {
+        "name": "VIP and communications",
+        "code": "VIP",
+        "slot": 3
+      },
+      {
+        "name": "Route and circuit training",
+        "code": "RCT",
+        "slot": 4
+      },
+      {
+        "name": "Medical evacuation",
+        "code": "MED",
+        "slot": 5
+      },
+      {
+        "name": "Functional test flight",
+        "code": "FTF",
+        "slot": 6
+      }
+    ],
+    "components": [
+      {
+        "key": "TR-ECS-PACK",
+        "name": "ECS pack (air cycle machine)",
+        "ata": "21",
+        "part_number": "21-5110-11",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "centre-wing",
+          "2": "centre-wing"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-CPC",
+        "name": "Cabin pressure controller",
+        "ata": "21",
+        "part_number": "21-3110-11",
+        "concept": "CM",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cabin"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-OFV",
+        "name": "Cabin outflow valve",
+        "ata": "21",
+        "part_number": "21-3120-11",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cabin"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-GEN",
+        "name": "Engine-driven generator",
+        "ata": "24",
+        "part_number": "24-3110-11",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-BATT",
+        "name": "Main battery",
+        "ata": "24",
+        "part_number": "24-3240-11",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-ELT",
+        "name": "Emergency locator transmitter battery",
+        "ata": "25",
+        "part_number": "25-6210-11",
+        "concept": "HT",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "tail"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-FUEL-BOOST",
+        "name": "Fuel boost pump",
+        "ata": "28",
+        "part_number": "28-2310-11",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "centre-wing",
+          "2": "centre-wing"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-HYD-PUMP",
+        "name": "Engine-driven hydraulic pump",
+        "ata": "29",
+        "part_number": "29-1210-11",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-FDR",
+        "name": "Flight data recorder",
+        "ata": "31",
+        "part_number": "31-3110-11",
+        "concept": "CM",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "tail"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-MLG",
+        "name": "Main landing gear assembly",
+        "ata": "32",
+        "part_number": "32-1130-11",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "mlg-left",
+          "R": "mlg-right"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-NLG",
+        "name": "Nose landing gear assembly",
+        "ata": "32",
+        "part_number": "32-2110-11",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "nose-gear"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-BRAKE",
+        "name": "Main wheel brake",
+        "ata": "32",
+        "part_number": "32-4220-11",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "mlg-left",
+          "R": "mlg-right"
+        },
+        "life_basis": "landings"
+      },
+      {
+        "key": "TR-TYRE",
+        "name": "Main wheel tyre",
+        "ata": "32",
+        "part_number": "32-4320-11",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "mlg-left",
+          "R": "mlg-right"
+        },
+        "life_basis": "landings"
+      },
+      {
+        "key": "TR-WXR",
+        "name": "Weather radar",
+        "ata": "34",
+        "part_number": "34-4110-11",
+        "concept": "CM",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-RADALT",
+        "name": "Radio altimeter",
+        "ata": "34",
+        "part_number": "34-4420-11",
+        "concept": "CM",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-APU",
+        "name": "Auxiliary power unit",
+        "ata": "49",
+        "part_number": "49-1110-11",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "tail"
+        },
+        "life_basis": "apu_hours"
+      },
+      {
+        "key": "TR-PROP",
+        "name": "Propeller assembly",
+        "ata": "61",
+        "part_number": "61-1010-11",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-PCU",
+        "name": "Propeller control unit",
+        "ata": "61",
+        "part_number": "61-2210-11",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-ENGINE",
+        "name": "Engine (turboprop)",
+        "ata": "72",
+        "part_number": "72-0002-11",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-FCU",
+        "name": "Engine fuel control unit",
+        "ata": "73",
+        "part_number": "73-2120-11",
+        "concept": "CM",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "TR-OIL-PUMP",
+        "name": "Engine lube oil pump",
+        "ata": "79",
+        "part_number": "79-1320-11",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2"
+        },
+        "life_basis": "FH"
+      }
+    ],
+    "zones": [
+      {
+        "id": "cockpit",
+        "label": "Cockpit and avionics bay"
+      },
+      {
+        "id": "cabin",
+        "label": "Cabin and pressurisation"
+      },
+      {
+        "id": "centre-wing",
+        "label": "Centre wing and fuel system"
+      },
+      {
+        "id": "engine-1",
+        "label": "Engine 1"
+      },
+      {
+        "id": "engine-2",
+        "label": "Engine 2"
+      },
+      {
+        "id": "nose-gear",
+        "label": "Nose gear"
+      },
+      {
+        "id": "mlg-left",
+        "label": "Left main gear"
+      },
+      {
+        "id": "mlg-right",
+        "label": "Right main gear"
+      },
+      {
+        "id": "tail",
+        "label": "Tail and aft fuselage"
+      }
+    ],
+    "ttl_fh": 20000.0,
+    "planned_withdrawal_year": 2040,
+    "fatigue_model": "pressurisation cycles, landings and gust exposure",
+    "apu": true
+  },
+  {
+    "key": "airlifter",
+    "name": "Four-engine airlifter",
+    "role": "Cargo",
+    "engines": 4,
+    "metric": "ITT margin",
+    "metric_threshold_c": 15.0,
+    "tail_prefix": "CX",
+    "tails": [
+      "CX-501",
+      "CX-502",
+      "CX-503",
+      "CX-504",
+      "CX-505",
+      "CX-506"
+    ],
+    "missions": [
+      {
+        "name": "Cargo airlift",
+        "code": "CGO",
+        "slot": 1
+      },
+      {
+        "name": "Air drop",
+        "code": "ADR",
+        "slot": 2
+      },
+      {
+        "name": "Tactical low level",
+        "code": "TLL",
+        "slot": 3
+      },
+      {
+        "name": "Troop and aeromedical",
+        "code": "TAM",
+        "slot": 4
+      },
+      {
+        "name": "Route and circuit training",
+        "code": "RCT",
+        "slot": 5
+      },
+      {
+        "name": "Functional test flight",
+        "code": "FTF",
+        "slot": 6
+      }
+    ],
+    "components": [
+      {
+        "key": "AL-ECS-PACK",
+        "name": "ECS pack (air cycle machine)",
+        "ata": "21",
+        "part_number": "21-5110-21",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "1",
+          "2"
+        ],
+        "zones": {
+          "1": "centre-wing",
+          "2": "centre-wing"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-CPC",
+        "name": "Cabin pressure controller",
+        "ata": "21",
+        "part_number": "21-3110-21",
+        "concept": "CM",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cabin"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-OFV",
+        "name": "Cabin outflow valve",
+        "ata": "21",
+        "part_number": "21-3120-21",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cabin"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-GEN",
+        "name": "Engine-driven generator",
+        "ata": "24",
+        "part_number": "24-3110-21",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2",
+          "3": "engine-3",
+          "4": "engine-4"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-BATT",
+        "name": "Main battery",
+        "ata": "24",
+        "part_number": "24-3240-21",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-ELT",
+        "name": "Emergency locator transmitter battery",
+        "ata": "25",
+        "part_number": "25-6210-21",
+        "concept": "HT",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "tail"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-FUEL-BOOST",
+        "name": "Fuel boost pump",
+        "ata": "28",
+        "part_number": "28-2310-21",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "zones": {
+          "1": "centre-wing",
+          "2": "centre-wing",
+          "3": "centre-wing",
+          "4": "centre-wing"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-HYD-PUMP",
+        "name": "Engine-driven hydraulic pump",
+        "ata": "29",
+        "part_number": "29-1210-21",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2",
+          "3": "engine-3",
+          "4": "engine-4"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-FDR",
+        "name": "Flight data recorder",
+        "ata": "31",
+        "part_number": "31-3110-21",
+        "concept": "CM",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "tail"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-MLG",
+        "name": "Main landing gear assembly",
+        "ata": "32",
+        "part_number": "32-1130-21",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "mlg-left",
+          "R": "mlg-right"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-NLG",
+        "name": "Nose landing gear assembly",
+        "ata": "32",
+        "part_number": "32-2110-21",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "nose-gear"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-BRAKE",
+        "name": "Main wheel brake",
+        "ata": "32",
+        "part_number": "32-4220-21",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "mlg-left",
+          "R": "mlg-right"
+        },
+        "life_basis": "landings"
+      },
+      {
+        "key": "AL-TYRE",
+        "name": "Main wheel tyre",
+        "ata": "32",
+        "part_number": "32-4320-21",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "L",
+          "R"
+        ],
+        "zones": {
+          "L": "mlg-left",
+          "R": "mlg-right"
+        },
+        "life_basis": "landings"
+      },
+      {
+        "key": "AL-WXR",
+        "name": "Weather radar",
+        "ata": "34",
+        "part_number": "34-4110-21",
+        "concept": "CM",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-RADALT",
+        "name": "Radio altimeter",
+        "ata": "34",
+        "part_number": "34-4420-21",
+        "concept": "CM",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "cockpit"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-APU",
+        "name": "Auxiliary power unit",
+        "ata": "49",
+        "part_number": "49-1110-21",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "tail"
+        },
+        "life_basis": "apu_hours"
+      },
+      {
+        "key": "AL-PROP",
+        "name": "Propeller assembly",
+        "ata": "61",
+        "part_number": "61-1010-21",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2",
+          "3": "engine-3",
+          "4": "engine-4"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-PCU",
+        "name": "Propeller control unit",
+        "ata": "61",
+        "part_number": "61-2210-21",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2",
+          "3": "engine-3",
+          "4": "engine-4"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-ENGINE",
+        "name": "Engine (turboprop)",
+        "ata": "72",
+        "part_number": "72-0002-21",
+        "concept": "HT",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2",
+          "3": "engine-3",
+          "4": "engine-4"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-FCU",
+        "name": "Engine fuel control unit",
+        "ata": "73",
+        "part_number": "73-2120-21",
+        "concept": "CM",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2",
+          "3": "engine-3",
+          "4": "engine-4"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-OIL-PUMP",
+        "name": "Engine lube oil pump",
+        "ata": "79",
+        "part_number": "79-1320-21",
+        "concept": "OC",
+        "criticality": "flight_safety",
+        "positions": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "zones": {
+          "1": "engine-1",
+          "2": "engine-2",
+          "3": "engine-3",
+          "4": "engine-4"
+        },
+        "life_basis": "FH"
+      },
+      {
+        "key": "AL-RAMP-ACT",
+        "name": "Cargo ramp actuator",
+        "ata": "52",
+        "part_number": "52-3410-21",
+        "concept": "OC",
+        "criticality": "mission",
+        "positions": [
+          "1"
+        ],
+        "zones": {
+          "1": "ramp"
+        },
+        "life_basis": "FH"
+      }
+    ],
+    "zones": [
+      {
+        "id": "cockpit",
+        "label": "Cockpit and avionics bay"
+      },
+      {
+        "id": "cabin",
+        "label": "Cabin and pressurisation"
+      },
+      {
+        "id": "centre-wing",
+        "label": "Centre wing and fuel system"
+      },
+      {
+        "id": "engine-1",
+        "label": "Engine 1"
+      },
+      {
+        "id": "engine-2",
+        "label": "Engine 2"
+      },
+      {
+        "id": "engine-3",
+        "label": "Engine 3"
+      },
+      {
+        "id": "engine-4",
+        "label": "Engine 4"
+      },
+      {
+        "id": "nose-gear",
+        "label": "Nose gear"
+      },
+      {
+        "id": "mlg-left",
+        "label": "Left main gear"
+      },
+      {
+        "id": "mlg-right",
+        "label": "Right main gear"
+      },
+      {
+        "id": "ramp",
+        "label": "Cargo ramp"
+      },
+      {
+        "id": "tail",
+        "label": "Tail and aft fuselage"
+      }
+    ],
+    "ttl_fh": 25000.0,
+    "planned_withdrawal_year": 2042,
+    "fatigue_model": "pressurisation cycles, landings and gust exposure (air drop and tactical low level weigh more)",
+    "apu": true
+  }
+]

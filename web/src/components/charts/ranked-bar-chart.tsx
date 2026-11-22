@@ -17,9 +17,13 @@ export function RankedBarChart({
   valueFormat?: (v: number) => string;
   showCumulativeShare?: boolean;
 }) {
-  const width = 640;
+  // Label column grows with the longest label (about 6.8 px per character at
+  // 12 px), never below the original 160 px, so short labels render as before.
+  const longest = data.reduce((m, d) => Math.max(m, d.label.length), 0);
+  const left = Math.max(MARGIN.left, Math.min(340, Math.ceil(longest * 6.8) + 16));
+  const width = 640 + (left - MARGIN.left);
   const height = data.length * rowHeight + MARGIN.top + MARGIN.bottom;
-  const innerW = width - MARGIN.left - MARGIN.right;
+  const innerW = width - left - MARGIN.right;
   const innerH = height - MARGIN.top - MARGIN.bottom;
 
   const total = data.reduce((a, d) => a + d.value, 0);
@@ -31,15 +35,19 @@ export function RankedBarChart({
   );
   const xScale = useMemo(() => scaleLinear().domain([0, max * 1.05]).range([0, innerW]), [max, innerW]);
 
-  let cum = 0;
+  // Cumulative share per row, computed up front (no mutation during render).
+  const shares = data.reduce<number[]>((acc, d) => {
+    const prev = acc.length ? acc[acc.length - 1] : 0;
+    acc.push(prev + (total ? (d.value / total) * 100 : 0));
+    return acc;
+  }, []);
 
   return (
     <div className="w-full overflow-x-auto">
       <svg viewBox={`0 0 ${width} ${height}`} className="w-full" role="img" aria-label="Ranked bar chart" style={{ minWidth: 480 }}>
-        <g transform={`translate(${MARGIN.left},${MARGIN.top})`}>
-          {data.map((d) => {
-            cum += d.value;
-            const share = total ? (cum / total) * 100 : 0;
+        <g transform={`translate(${left},${MARGIN.top})`}>
+          {data.map((d, i) => {
+            const share = shares[i];
             const bh = yScale.bandwidth();
             const y = yScale(d.label) ?? 0;
             const w = xScale(d.value);

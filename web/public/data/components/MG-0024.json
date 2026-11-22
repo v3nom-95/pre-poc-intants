@@ -1,0 +1,38 @@
+{
+  "serial": "MG-0024",
+  "part_number": "32-1120-05",
+  "name": "Main landing gear assembly",
+  "ata": "32",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "MLG",
+  "zone": "mlg-right",
+  "task_card": "TC-32-01-01",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "HT",
+  "criticality": "flight_safety",
+  "current_tail": "FX-312",
+  "current_position": "R",
+  "governing_limit": "Landings",
+  "remaining": 44.2,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 46,
+  "fleet_confirmed_failures": 0,
+  "install_history": [
+    {
+      "tail": "FX-312",
+      "event_type": "Install",
+      "date": "2019-03-25",
+      "reason": null,
+      "serial": "MG-0024"
+    }
+  ],
+  "survival_curve": [],
+  "survival_curve_method": null
+}

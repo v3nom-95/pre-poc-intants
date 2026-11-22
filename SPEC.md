@@ -519,3 +519,78 @@ Six to seven minutes:
 6. **Approve a recommendation** as approver, see the work order and audit trail.
 7. **What-if:** raise utilisation 25% for an exercise; watch due items, workload and serviceability move.
 8. **Validation:** honest backtest numbers and the planted-pattern recovery table. Close with "what changes with your real data".
+
+---
+
+## 13. Extensions (added 22 Nov 2026 at the product owner's request)
+
+These extend the POC beyond the original phases. Every rule in section 0 still applies: offline, deterministic, no LLM or external API calls, nothing hardcoded that should be computed, copy rules.
+
+### 13.1 Action plan (`/plan`)
+A predictive, dated plan of action over the next 90 days, built by `engine/src/pre_engine/action_plan.py` and exported to `plan.json`.
+- Projects each aircraft's next periodic servicing (50 FH) and phase inspection (150 FH) from its trailing 90-day utilisation.
+- Slots every open recommendation into the earliest maintenance opportunity that lands before its deadline (deadline-aware bundling), otherwise a dedicated input or "before next flight". Fatigue items go to a fleet tasking review.
+- Per task: planned date, slot, man-hours, downtime, spares, rationale (template text) and, for model-based items, the survival model's probability of failure if deferred.
+- Fleet outputs: ordered next actions, 13-week workload (scheduled vs recommended man-hours), projected availability per week, spares demand.
+
+### 13.2 Ask PRE: offline query assistant (`/assistant`, also a top-bar drawer)
+A retrieval-based query bot over the pipeline's own records. No LLM: retrieval plus template-composed answers.
+- `engine/src/pre_engine/knowledge.py` exports a grounded corpus (`knowledge/corpus.json`) covering aircraft, components, part numbers, snags, removals, maintenance records, monthly utilisation, recommendations, pattern detections, KPIs, data quality, glossary and the action plan, plus every sortie per aircraft (`knowledge/sorties/{tail}.json`).
+- In the browser: entity extraction (tails, serials, part numbers, ATA, components, missions, dates relative to the fixed as-of date), rule-based intent detection, exact structured answers computed from the records, BM25 retrieval for supporting passages. Every answer cites its sources with links. When the records do not hold the answer, it says so.
+- The corpus is lazy-loaded when the assistant first opens, never on initial page load.
+
+---
+
+## 14. Mixed fleet and POC completion (added 22 Nov 2026 at the product owner's request)
+
+The fleet is no longer fighters only. It adds passenger and utility transports and cargo airlifters. All types are generic and fictional: no real aircraft type, manufacturer or marking. Section 0 rules still apply. Where this section differs from sections 2, 3, 7.4 and 8, this section wins.
+
+### 14.1 Aircraft types
+
+| Type key | Display name | Role | Tails | Engines | Notes |
+|---|---|---|---|---|---|
+| `fighter` | Multirole fighter | Combat | `FX-301` to `FX-316` (16) | 1 turbofan | Unchanged from section 2. P1 to P7 stay on this type. |
+| `transport` | Twin-engine transport | Passenger and utility | `TX-401` to `TX-408` (8) | 2 turboprops | Pressurised cabin, low wing, retractable nose and main gear. |
+| `airlifter` | Four-engine airlifter | Cargo | `CX-501` to `CX-506` (6) | 4 turboprops | High wing, rear cargo ramp, pressurised. |
+
+Fleet total 30 aircraft. Bases A and B as in section 2; transports home at Base A, airlifters split 3 and 3. Utilisation: transport about 30 FH per aircraft per month, airlifter about 35 FH, same seasonal dip.
+
+**Missions** (each type has at most 6, shown in this order, mapped to chart slots 1 to 6 within that type):
+- Transport: Passenger transport, Troop and logistics, VIP and communications, Route and circuit training, Medical evacuation, Functional test flight.
+- Airlifter: Cargo airlift, Air drop, Tactical low level, Troop and aeromedical, Route and circuit training, Functional test flight.
+Durations, landings and cycles per sortie are set in `config.py` and must be realistic for the type (transports and airlifters fly longer sorties with fewer engine cycles than fighters; circuit training has many landings).
+
+**Engine terms:** the fighter uses EGT margin (°C). Turboprops use ITT margin (inter-turbine temperature, °C) with their own threshold set in config. Engine trend outputs carry a `metric` field (`EGT margin` or `ITT margin`). Engine positions are `1` to `4`, numbered left outboard to right outboard.
+
+**Structural fatigue:** the fatigue index (FI, 0 to 100) applies to every type, with a type-specific accumulation model documented in `docs/model-notes.md`: g-loading per FH for the fighter (unchanged); pressurisation cycles, landings and gust exposure (tactical low level and air drop weigh more) for transports and airlifters. Planned withdrawal years are per type.
+
+**Components:** each type has its own component list in `config.py` (about 18 to 24 entries, fictional part numbers `CC-NNNN-NN` by ATA chapter, HT, OC and CM concepts mixed realistically). Transports and airlifters include at least: engines per position, propellers and propeller control units per position, generators per engine, APU (ATA 49, tracked in APU hours), ECS packs, cabin pressure controller and outflow valve (ATA 21), fuel boost pumps, hydraulic pumps, nose and main landing gear, brakes, tyres, weather radar, radio altimeter, flight data recorder, emergency locator transmitter battery (calendar HT), and for the airlifter the cargo ramp actuator (ATA 52). No ejection seat on transports or airlifters.
+
+**Planform zones** (each component carries a zone, resolved per installed position; the web hotspot drawing is keyed by zone id):
+- Fighter: `cockpit`, `fwd-underside`, `centre-fuselage`, `mlg-left`, `mlg-right`, `engine-bay`, `stab-left`, `stab-right` (as section 7.4).
+- Transport: `cockpit`, `cabin`, `centre-wing`, `engine-1`, `engine-2`, `nose-gear`, `mlg-left`, `mlg-right`, `tail`.
+- Airlifter: `cockpit`, `cabin`, `centre-wing`, `engine-1`, `engine-2`, `engine-3`, `engine-4`, `nose-gear`, `mlg-left`, `mlg-right`, `ramp`, `tail`.
+Each type has its own original schematic planform (top view, same drawing style as 7.4). Small flight-line planforms use the type's own outline.
+
+### 14.2 Operating hours
+Engine operating hours are flight hours plus ground running (engine ground runs after maintenance, plus taxi and pre-flight running). A `ground_runs.csv` bronze source records ground runs per tail and engine position. Transports and airlifters also log APU hours per sortie and per ground run. Analytics show FH, EFH and engine operating hours separately, and APU hours where fitted. Add a data quality check that engine operating hours equal EFH plus ground-run hours while installed.
+
+### 14.3 Approved procedures
+A `maintenance_procedures.csv` bronze source holds the approved task cards (fictional): task card id (for example `TC-29-11-01`), title, ATA, applicable types, task type (Inspect, Service, Replace, Troubleshoot, Borescope, Sample), standard man-hours, elapsed hours, interval where scheduled, and a fictional manual reference. Every recommendation cites its task card. The action plan takes man-hours from task cards, not from constants in code.
+
+### 14.4 Planted patterns for the new types
+| ID | Pattern | How to plant it |
+|---|---|---|
+| P8 | Recurring pressurisation snag with a wrong fix | `TX-404`: "cabin altitude fluctuation" snags (ATA 21) every 8 to 15 sorties over the last 8 months; rectification "outflow valve controller replaced" or "ground pressurisation test satisfactory"; two outflow valve removals NFF. True cause (not in data): duct leak. Still active at the as-of date. Ground truth fields: `tail`, `ata`. |
+| P9 | Turboprop deterioration | `CX-502` engine position 3: ITT margin deteriorates about 3x faster than fleet normal over the last 300 EFH, projected to cross its threshold within about 40 to 90 EFH. Ground truth fields: `tail`, `engine_position`. |
+
+All P1 to P9 must be recovered. P2 (hot-climate acceleration) may be strengthened in config to become detectable, noted in `docs/model-notes.md`.
+
+### 14.5 POC completion items
+1. Temporal backtest as in 5.6 (train to 15 Nov 2025, test to 15 Nov 2026): concordance, calibration by decile, recommendation recall and lead time, alert rate, honestly reported on `/models`.
+2. What-if (8.6) computed from exported survival parameters and the HT due list, with a TypeScript and Python parity test (tolerance 1e-6). Scenario controls apply per type where relevant (ACM share and detachment apply to fighters only).
+3. Per-aircraft printable report (8.9).
+4. Tests from section 10 that are missing: axe checks, approve, reject and defer flows, role restrictions, reset demo state, print view, priority matrix, HT whichever-comes-first, and an offline check that the built site makes no request to any non-local host.
+5. No system clock anywhere: the greeting and the audit trail use the as-of date.
+6. Every screen is type-aware: fleet overview grouped by type with per-type figures, type filters on recommendations, action plan, reliability and reports, type-specific aircraft and component pages, and the query assistant knows types, tails and missions of all three.
+Review decisions stay in the browser's local storage (single-browser POC; a shared backend is listed under "what changes with real data").

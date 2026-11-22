@@ -1,10 +1,16 @@
 """Fleet simulation. Writes bronze CSVs and ground_truth.json.
 
-Deterministic: all randomness flows from a single numpy Generator seeded
-with config.SEED. Never reads the system clock. ground_truth.json is
-written FROM the same parameters that drove the simulation (that is the
-point of a POC with planted, recoverable patterns) but no downstream
-model or recommendation code may read it back.
+Deterministic: every random draw comes from numpy Generators seeded from
+config.SEED. Each aircraft type is simulated in its own pass with its own
+generator; the fighter pass consumes the main generator in exactly the same
+order as the original single-type simulation, and all operating-hours draws
+(taxi, ground runs, APU) use separate auxiliary generators, so adding the
+transport and airlifter fleets does not disturb the fighter data or the
+planted patterns P1 to P7. Never reads the system clock.
+
+ground_truth.json is written FROM the same parameters that drove the
+simulation (that is the point of a POC with planted, recoverable patterns)
+but no downstream model or recommendation code may read it back.
 """
 from __future__ import annotations
 
@@ -24,18 +30,14 @@ BRONZE_DIR = os.path.abspath(BRONZE_DIR)
 GT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "ground_truth.json")
 GT_PATH = os.path.abspath(GT_PATH)
 
-SERIAL_PREFIX = {
-    "ECS-COOL": "EC", "GEN-MAIN": "GN", "BATT-MAIN": "BT", "CADPAD": "CP",
-    "STAB-ACT": "SA", "FCC": "FC", "FUEL-BOOST": "FB", "HYD-PUMP": "HP",
-    "MLG": "MG", "BRAKE": "BR", "TYRE": "TY", "RADALT": "RA", "INU": "IN",
-    "JFS": "JF", "ENGINE": "EN", "HPT": "HT", "FCU": "FU", "OIL-PUMP": "OP",
-}
-
 FI_TAIL_MULTIPLIER = {"FX-309": 1.30}
 FORCED_START_FI = {"FX-309": 55.0}
 
-MONTHS_IN_YEAR = 12
 DAY = dt.timedelta(days=1)
+
+# Seeds per type: the fighter keeps cfg.SEED itself (unchanged behaviour).
+TYPE_SEED_OFFSET = {"fighter": 0, "transport": 1000, "airlifter": 2000}
+AUX_SEED_OFFSET = 101
 
 
 # ---------------------------------------------------------------------------
@@ -45,22 +47,18 @@ def days_in_month(year: int, month: int) -> int:
     return calendar.monthrange(year, month)[1]
 
 
-def month_iter(start: dt.date, end: dt.date):
-    y, m = start.year, start.month
-    while (y, m) <= (end.year, end.month):
-        yield y, m
-        m += 1
-        if m > 12:
-            m = 1
-            y += 1
-
-
 def mean_temp_c(base: str, month: int) -> float:
+    """Monthly mean temperature (section 2): sinusoidal, minimum in January,
+    maximum at the base's peak month, never above the stated peak. A
+    half-cosine rise from January to the peak, then a half-cosine fall back
+    to the next January. (An earlier single-cosine form overshot the peak,
+    putting Base A near 37 °C in July; see docs/model-notes.md.)"""
     b = cfg.BASES[base]
     jan, peak, pm = b["temp_jan"], b["temp_peak"], b["temp_peak_month"]
-    num = 1 - math.cos(2 * math.pi * (month - 1) / 12)
-    den = 1 - math.cos(2 * math.pi * (pm - 1) / 12)
-    frac = num / den if den else 0.0
+    if month <= pm:
+        frac = (1 - math.cos(math.pi * (month - 1) / (pm - 1))) / 2
+    else:
+        frac = (1 + math.cos(math.pi * (month - pm) / (13 - pm))) / 2
     return jan + (peak - jan) * frac
 
 
@@ -71,7 +69,7 @@ class SerialCounter:
     def next(self, key: str) -> str:
         n = self.counts.get(key, 0) + 1
         self.counts[key] = n
-        return f"{SERIAL_PREFIX[key]}-{n:04d}"
+        return f"{cfg.SERIAL_PREFIX[key]}-{n:04d}"
 
 
 class IdCounter:
@@ -100,20 +98,59 @@ SNAG_TEMPLATES = {
 REPEAT_SNAG_DESC = "Radar altimeter flag intermittent in flight"
 REPEAT_SNAG_RECT = "Connector reseated, ground run satisfactory"
 
+PRESSURISATION_SNAG_DESC = "Cabin altitude fluctuation in cruise, cabin rate of climb unsteady"
+PRESSURISATION_SNAG_RECT = "Ground pressurisation test satisfactory"
+PRESSURISATION_NFF_RECT = "Outflow valve replaced, removed unit bench tested serviceable (NFF)"
+
+
+def type_components(type_key: str) -> list[str]:
+    """Component keys of one aircraft type, in config order."""
+    return [k for k, c in cfg.COMPONENTS.items() if c["type"] == type_key]
+
+
+def is_engine_key(key: str) -> bool:
+    return bool(cfg.COMPONENTS[key].get("is_engine"))
+
+
+_FIGHTER_ENGINE_ACCESSORIES = {"GEN-MAIN", "HYD-PUMP", "FCU", "OIL-PUMP", "JFS"}
+
+
+def is_engine_accessory(key: str) -> bool:
+    """Engine-mounted or engine-fed items whose replacement is followed by a
+    ground run of that engine (section 14.2)."""
+    comp = cfg.COMPONENTS[key]
+    if comp["type"] == "fighter":
+        return key in _FIGHTER_ENGINE_ACCESSORIES
+    return key.split("-", 1)[1] in cfg.ENGINE_ACCESSORY_SUFFIXES
+
+
+def component_label(key: str, pos: str) -> str:
+    """Component name with its position for multi-position items on the
+    transport and airlifter (the fighter keeps its original wording)."""
+    comp = cfg.COMPONENTS[key]
+    if comp["type"] == "fighter" or len(comp["positions"]) == 1:
+        return comp["name"]
+    if pos in ("L", "R"):
+        return f"{comp['name']} ({'left' if pos == 'L' else 'right'})"
+    if any(z.startswith("engine-") for z in comp["zones"].values()) or comp.get("is_engine"):
+        return f"{comp['name']} (engine {pos})"
+    return f"{comp['name']} (no. {pos})"
+
 
 # ---------------------------------------------------------------------------
 # Aircraft and unit state
 # ---------------------------------------------------------------------------
 class Aircraft:
     __slots__ = (
-        "tail", "home_base", "induction_date", "fh", "fi", "landings",
+        "tail", "type_key", "home_base", "induction_date", "fh", "fi", "landings",
         "monthly_rate", "mission_probs", "fh_since_phase", "fh_since_periodic",
         "downtime_until", "pending_ftf", "units", "start_fh", "start_fi",
     )
 
-    def __init__(self, tail, home_base, induction_date, fh, fi, monthly_rate,
+    def __init__(self, tail, type_key, home_base, induction_date, fh, fi, monthly_rate,
                  mission_probs, fh_since_phase, fh_since_periodic):
         self.tail = tail
+        self.type_key = type_key
         self.home_base = home_base
         self.induction_date = induction_date
         self.fh = fh
@@ -130,28 +167,27 @@ class Aircraft:
         self.units = {}  # (key, position) -> unit dict
 
 
-def build_mission_probs(rng, tail):
-    names = list(cfg.MISSIONS.keys())
+def build_mission_probs(rng, tail, missions: dict):
     if tail in cfg.ACM_HEAVY_TAILS:
         base = {}
         remaining = 1.0 - cfg.ACM_HEAVY_SHARE
-        other_total = sum(v["share"] for k, v in cfg.MISSIONS.items() if k != "Air combat manoeuvring")
-        for k, v in cfg.MISSIONS.items():
+        other_total = sum(v["share"] for k, v in missions.items() if k != "Air combat manoeuvring")
+        for k, v in missions.items():
             if k == "Air combat manoeuvring":
                 base[k] = cfg.ACM_HEAVY_SHARE
             else:
                 base[k] = v["share"] * (remaining / other_total)
         return base
     shares = {}
-    for k, v in cfg.MISSIONS.items():
+    for k, v in missions.items():
         delta = rng.uniform(-cfg.MISSION_SHARE_VARIATION_POINTS, cfg.MISSION_SHARE_VARIATION_POINTS)
         shares[k] = max(0.01, v["share"] + delta)
     total = sum(shares.values())
     return {k: v / total for k, v in shares.items()}
 
 
-def avg_duration_h(mission_probs):
-    return sum(p * cfg.MISSIONS[m]["duration_h"] for m, p in mission_probs.items())
+def avg_duration_h(mission_probs, missions):
+    return sum(p * missions[m]["duration_h"] for m, p in mission_probs.items())
 
 
 def detachment_tails_for_year(year: int) -> set[str]:
@@ -162,6 +198,8 @@ def detachment_tails_for_year(year: int) -> set[str]:
 
 
 def current_base(tail: str, date: dt.date, detach_cache: dict) -> str:
+    if tail not in cfg.FIGHTER_TAILS:
+        return cfg.HOME_BASE[tail]
     if tail in cfg.BASE_B_TAILS:
         return "Base B"
     if date.month in cfg.DETACHMENT_MONTHS:
@@ -177,6 +215,7 @@ def make_unit(rng, serials: SerialCounter, key, lot=None):
         "key": key, "part_number": comp["part_number"], "serial": serials.next(key),
         "lot": lot, "install_date": None,
         "consumed_efh": 0.0, "consumed_cycles": 0.0, "consumed_landings": 0.0,
+        "consumed_oh": 0.0,
     }
     if comp["concept"] in ("OC", "CM"):
         unit["E"] = rng.exponential(1.0)
@@ -186,29 +225,36 @@ def make_unit(rng, serials: SerialCounter, key, lot=None):
     return unit
 
 
-def init_units_for_aircraft(rng, serials: SerialCounter, hyd_pump_counter: list,
-                             tail: str, window_start: dt.date):
+def _lot_for_new_hyd_pump(rng, hyd_pump_counter):
+    hyd_pump_counter[0] += 1
+    if hyd_pump_counter[0] <= cfg.LOT_DEFECT["n_defective_units"]:
+        return cfg.LOT_DEFECT["defective_lot"]
+    return rng.choice(cfg.LOT_DEFECT["other_lots"])
+
+
+def init_units_for_aircraft(rng, aux, serials: SerialCounter, hyd_pump_counter: list,
+                             comp_keys: list[str], window_start: dt.date):
     units = {}
-    for key, comp in cfg.COMPONENTS.items():
+    for key in comp_keys:
+        comp = cfg.COMPONENTS[key]
         for pos in comp["positions"]:
             lot = None
-            if key == "HYD-PUMP":
-                hyd_pump_counter[0] += 1
-                if hyd_pump_counter[0] <= cfg.LOT_DEFECT["n_defective_units"]:
-                    lot = cfg.LOT_DEFECT["defective_lot"]
-                else:
-                    lot = rng.choice(cfg.LOT_DEFECT["other_lots"])
+            if comp.get("has_lots"):
+                lot = _lot_for_new_hyd_pump(rng, hyd_pump_counter)
             unit = make_unit(rng, serials, key, lot)
             if comp["concept"] in ("OC", "CM"):
                 frac = rng.uniform(0.10, 0.70)
                 threshold_age = unit["eta"] * (unit["E"] ** (1.0 / unit["beta"]))
                 unit["age"] = frac * threshold_age
-                life_days = unit["eta"] * (30.0 / 15.0)  # rough days-equivalent, flavor only
+                life_days = unit["eta"] * (30.0 / 15.0)  # rough days-equivalent, flavour only
                 unit["install_date"] = window_start - dt.timedelta(days=int(frac * life_days))
             else:  # HT
                 if "ht_efh" in comp:
                     frac = rng.uniform(0.05, 0.85)
                     unit["consumed_efh"] = frac * comp["ht_efh"]
+                if "ht_fh" in comp:
+                    frac = rng.uniform(0.05, 0.85)
+                    unit["consumed_efh"] = frac * comp["ht_fh"]
                 if "ht_lcf_cycles" in comp:
                     frac = rng.uniform(0.05, 0.85)
                     unit["consumed_cycles"] = frac * comp["ht_lcf_cycles"]
@@ -221,16 +267,19 @@ def init_units_for_aircraft(rng, serials: SerialCounter, hyd_pump_counter: list,
                     unit["install_date"] = window_start - dt.timedelta(days=days_elapsed)
                 if unit["install_date"] is None:
                     unit["install_date"] = window_start - dt.timedelta(days=int(rng.uniform(30, 1500)))
+            if comp.get("is_engine"):
+                # Operating-hours baseline (section 14.2): ground running before
+                # the data window. Auxiliary generator, so fighter draws are untouched.
+                unit["consumed_oh"] = unit["consumed_efh"] * float(aux.uniform(*cfg.ENGINE_BASELINE_OH_RATIO))
             units[(key, pos)] = unit
     return units
 
 
 def compute_accel(unit, key, mission_code, temp_c):
     accel = 1.0
-    if key == "ECS-COOL" and temp_c >= cfg.HOT_BASE_THRESHOLD_C:
-        accel *= cfg.HOT_CLIMATE_ACCEL["ecs_cool_factor"]
-    if key == "FUEL-BOOST" and temp_c >= cfg.HOT_BASE_THRESHOLD_C:
-        accel *= cfg.HOT_CLIMATE_ACCEL["fuel_boost_factor"]
+    hot_factor = cfg.COMPONENTS[key].get("hot_accel")
+    if hot_factor and temp_c >= cfg.HOT_BASE_THRESHOLD_C:
+        accel *= cfg.HOT_CLIMATE_ACCEL[hot_factor]  # P2, ECS units and fuel boost pumps of every type
     if key == "STAB-ACT" and mission_code == "ACM":
         accel *= cfg.COMPONENTS["STAB-ACT"]["acm_accel"]
     if key == "HYD-PUMP" and unit["lot"] == cfg.LOT_DEFECT["defective_lot"]:
@@ -242,24 +291,19 @@ def compute_accel(unit, key, mission_code, temp_c):
 # Pools
 # ---------------------------------------------------------------------------
 class Pools:
-    def __init__(self, rng, serials, hyd_pump_counter):
+    def __init__(self, rng, serials, hyd_pump_counter, comp_keys, n_tails):
         self.rng = rng
         self.serials = serials
         self.hyd_pump_counter = hyd_pump_counter
         self.available: dict[str, list] = {}
         self.repair_queue: list = []  # (ready_date, key, unit)
-        for key, comp in cfg.COMPONENTS.items():
-            n_positions_fleet = len(comp["positions"]) * len(cfg.TAILS)
+        for key in comp_keys:
+            comp = cfg.COMPONENTS[key]
+            n_positions_fleet = len(comp["positions"]) * n_tails
             n_spares = max(1, round(cfg.SPARES_POOL_FRACTION * n_positions_fleet))
             pool = []
             for _ in range(n_spares):
-                lot = None
-                if key == "HYD-PUMP":
-                    hyd_pump_counter[0] += 1
-                    if hyd_pump_counter[0] <= cfg.LOT_DEFECT["n_defective_units"]:
-                        lot = cfg.LOT_DEFECT["defective_lot"]
-                    else:
-                        lot = rng.choice(cfg.LOT_DEFECT["other_lots"])
+                lot = _lot_for_new_hyd_pump(rng, hyd_pump_counter) if comp.get("has_lots") else None
                 pool.append(make_unit(rng, serials, key, lot))
             self.available[key] = pool
 
@@ -284,434 +328,467 @@ class Pools:
         self.repair_queue.append((ready, key, unit))
 
     def fresh_unit(self, key) -> dict:
-        lot = None
-        if key == "HYD-PUMP":
-            self.hyd_pump_counter[0] += 1
-            if self.hyd_pump_counter[0] <= cfg.LOT_DEFECT["n_defective_units"]:
-                lot = cfg.LOT_DEFECT["defective_lot"]
-            else:
-                lot = self.rng.choice(cfg.LOT_DEFECT["other_lots"])
+        lot = _lot_for_new_hyd_pump(self.rng, self.hyd_pump_counter) if cfg.COMPONENTS[key].get("has_lots") else None
         return make_unit(self.rng, self.serials, key, lot)
 
 
 # ---------------------------------------------------------------------------
-# Main simulation
+# Simulation context: shared id counters and output rows across type passes
 # ---------------------------------------------------------------------------
-def simulate(rng):
-    serials = SerialCounter()
-    hyd_pump_counter = [0]
-    aircraft: dict[str, Aircraft] = {}
+class Sim:
+    def __init__(self):
+        self.serials = SerialCounter()
+        self.sortie_id = IdCounter("SRT")
+        self.snag_id = IdCounter("SNG")
+        self.event_id = IdCounter("EVT")
+        self.record_id = IdCounter("REC")
+        self.reading_id = IdCounter("RDG")
+        self.run_id = IdCounter("GRN")
+        self.rows = {k: [] for k in ("sortie", "snag", "hist", "maint", "trend", "ground")}
 
-    for i, tail in enumerate(cfg.TAILS):
-        home_base = "Base A" if tail in cfg.BASE_A_TAILS else "Base B"
-        induction_year = int(rng.integers(cfg.INDUCTION_YEAR_RANGE[0], cfg.INDUCTION_YEAR_RANGE[1] + 1))
-        induction_date = dt.date(induction_year, int(rng.integers(1, 13)), int(rng.integers(1, 28)))
-        start_fh = float(rng.uniform(*cfg.START_FH_RANGE))
-        start_fi = FORCED_START_FI.get(tail, float(rng.uniform(*cfg.START_FI_RANGE)))
-        monthly_rate = float(rng.uniform(*cfg.AC_FH_PER_MONTH_RANGE))
-        mission_probs = build_mission_probs(rng, tail)
-        fh_since_phase = float(rng.uniform(0, cfg.PHASE_INSPECTION_INTERVAL_FH))
-        fh_since_periodic = float(rng.uniform(0, cfg.PERIODIC_SERVICING_INTERVAL_FH))
-        ac = Aircraft(tail, home_base, induction_date, start_fh, start_fi,
-                      monthly_rate, mission_probs, fh_since_phase, fh_since_periodic)
-        ac.units = init_units_for_aircraft(rng, serials, hyd_pump_counter, tail, cfg.WINDOW_START)
-        for u in ac.units.values():
-            if u["key"] == "ENGINE":
-                pass
-        aircraft[tail] = ac
-
-    pools = Pools(rng, serials, hyd_pump_counter)
-
-    sortie_rows, snag_rows, hist_rows, maint_rows, trend_rows = [], [], [], [], []
-    sortie_id = IdCounter("SRT")
-    snag_id = IdCounter("SNG")
-    event_id = IdCounter("EVT")
-    record_id = IdCounter("REC")
-    reading_id = IdCounter("RDG")
-
-    # log initial installs. hours/cycles/landings_at_event carry the
-    # unit's prior-life baseline (TSN at the point the data window
-    # begins) so that "consumed since install" = baseline + sortie
-    # accumulation reproduces the simulator's internal state exactly.
-    for tail, ac in aircraft.items():
-        for (key, pos), u in ac.units.items():
-            hist_rows.append(dict(
-                event_id=event_id.next(), tail=tail, position=pos,
-                part_number=u["part_number"], serial=u["serial"], lot=u["lot"] or "",
-                concept=cfg.COMPONENTS[key]["concept"], event_type="Install",
-                event_date=u["install_date"].isoformat(), reason="",
-                hours_at_event=round(u["consumed_efh"], 2),
-                cycles_at_event=round(u["consumed_cycles"], 2),
-                landings_at_event=round(u["consumed_landings"], 2),
-            ))
-
-    detach_cache: dict = {}
-    repeat_snag_window_start = cfg.AS_OF_DATE - dt.timedelta(days=30 * cfg.REPEAT_SNAG_WINDOW_MONTHS)
-    next_repeat_snag_sortie_count = {}
-
-    current = cfg.WINDOW_START
-    while current <= cfg.WINDOW_END:
-        pools.release_repaired(current)
-        year, month = current.year, current.month
-        for tail, ac in aircraft.items():
-            # calendar-based HT check (ticks even while grounded)
-            check_ht_due_calendar(ac, current, pools, hist_rows, maint_rows, event_id, record_id)
-
-            if ac.downtime_until and current < ac.downtime_until:
-                continue
-
-            base_today = current_base(tail, current, detach_cache)
-
-            # scheduled maintenance triggers
-            if ac.fh_since_phase >= cfg.PHASE_INSPECTION_INTERVAL_FH:
-                lo, hi = cfg.PHASE_INSPECTION_DURATION_DAYS
-                dur = int(rng.integers(lo, hi + 1))
-                ac.downtime_until = current + dt.timedelta(days=dur)
-                ac.fh_since_phase = 0.0
-                ac.pending_ftf = True
-                maint_rows.append(dict(
-                    record_id=record_id.next(), tail=tail, date=current.isoformat(),
-                    record_type="Phase inspection", description="Scheduled phase inspection",
-                    man_hours=cfg.MAN_HOURS_PHASE_INSPECTION, linked_snag_id="",
-                ))
-                continue
-            if ac.fh_since_periodic >= cfg.PERIODIC_SERVICING_INTERVAL_FH:
-                lo, hi = cfg.PERIODIC_SERVICING_DURATION_DAYS
-                dur = int(rng.integers(lo, hi + 1))
-                ac.downtime_until = current + dt.timedelta(days=dur)
-                ac.fh_since_periodic = 0.0
-                maint_rows.append(dict(
-                    record_id=record_id.next(), tail=tail, date=current.isoformat(),
-                    record_type="Periodic servicing", description="Scheduled periodic servicing",
-                    man_hours=cfg.MAN_HOURS_PERIODIC_SERVICING, linked_snag_id="",
-                ))
-                continue
-
-            mission_probs = ac.mission_probs
-            avg_dur = avg_duration_h(mission_probs)
-            target_fh_month = ac.monthly_rate * (1 - cfg.MONSOON_REDUCTION if month in cfg.MONSOON_MONTHS else 1.0)
-            dim = days_in_month(year, month)
-            p_fly = min(0.95, target_fh_month / (dim * avg_dur))
-
-            if rng.random() < p_fly:
-                fly_sortie(rng, ac, tail, current, base_today, mission_probs,
-                           sortie_rows, snag_rows, hist_rows, maint_rows, trend_rows,
-                           sortie_id, snag_id, event_id, record_id, reading_id,
-                           pools, repeat_snag_window_start, next_repeat_snag_sortie_count)
-
-        current += DAY
-
-    data = dict(sortie=sortie_rows, snag=snag_rows, hist=hist_rows, maint=maint_rows, trend=trend_rows)
-    return aircraft, data, (sortie_id, snag_id, event_id, record_id, reading_id), pools
-
-
-def check_ht_due_calendar(ac, today, pools, hist_rows, maint_rows, event_id, record_id):
-    for (key, pos), unit in list(ac.units.items()):
-        comp = cfg.COMPONENTS[key]
-        if comp["concept"] != "HT" or "ht_calendar_months" not in comp:
-            continue
-        limit_days = comp["ht_calendar_months"] * 30
-        elapsed = (today - unit["install_date"]).days
-        if elapsed >= limit_days:
-            replace_ht_unit(ac, key, pos, today, pools, hist_rows, maint_rows, event_id, record_id, unit)
-
-
-def replace_ht_unit(ac, key, pos, today, pools, hist_rows, maint_rows, event_id, record_id, old_unit):
-    comp = cfg.COMPONENTS[key]
-    reason = "Scheduled (engine change)" if key == "ENGINE" else "Scheduled (hard time)"
-    hist_rows.append(dict(
-        event_id=event_id.next(), tail=ac.tail, position=pos,
-        part_number=old_unit["part_number"], serial=old_unit["serial"], lot=old_unit["lot"] or "",
-        concept=comp["concept"], event_type="Removal", event_date=today.isoformat(), reason=reason,
-        hours_at_event=old_unit["consumed_efh"], cycles_at_event=old_unit["consumed_cycles"],
-        landings_at_event=old_unit["consumed_landings"],
-    ))
-    new_unit = pools.take(key) or pools.fresh_unit(key)
-    new_unit["install_date"] = today
-    new_unit["consumed_efh"] = 0.0
-    new_unit["consumed_cycles"] = 0.0
-    new_unit["consumed_landings"] = 0.0
-    ac.units[(key, pos)] = new_unit
-    hist_rows.append(dict(
-        event_id=event_id.next(), tail=ac.tail, position=pos,
-        part_number=new_unit["part_number"], serial=new_unit["serial"], lot=new_unit["lot"] or "",
-        concept=comp["concept"], event_type="Install", event_date=today.isoformat(), reason="",
-        hours_at_event=0.0, cycles_at_event=0.0, landings_at_event=0.0,
-    ))
-    maint_rows.append(dict(
-        record_id=record_id.next(), tail=ac.tail, date=today.isoformat(),
-        record_type="Work order",
-        description=f"{comp['name']} removed at hard time limit, replaced",
-        man_hours=cfg.MAN_HOURS_REMOVE_INSTALL[key], linked_snag_id="",
-    ))
-
-
-def fly_sortie(rng, ac, tail, date, base, mission_probs, sortie_rows, snag_rows, hist_rows,
-               maint_rows, trend_rows, sortie_id, snag_id, event_id, record_id, reading_id,
-               pools, repeat_snag_window_start, next_repeat_snag_sortie_count):
-    names = list(mission_probs.keys())
-    probs = list(mission_probs.values())
-    if ac.pending_ftf and rng.random() < 0.75:
-        mission_name = "Functional test flight"
-    else:
-        mission_name = rng.choice(names, p=probs)
-    ac.pending_ftf = False
-    mcfg = cfg.MISSIONS[mission_name]
-
-    duration = max(0.3, float(rng.normal(mcfg["duration_h"], mcfg["duration_h"] * 0.15)))
-    landings = int(rng.integers(mcfg["landings"][0], mcfg["landings"][1] + 1))
-    lcf = int(rng.integers(mcfg["lcf"][0], mcfg["lcf"][1] + 1))
-    peak_g = float(rng.uniform(*mcfg["peak_g"]))
-    temp = mean_temp_c(base, date.month) + float(rng.normal(0, 1.5))
-
-    ac.fh += duration
-    fi_delta = cfg.FI_BASE_RATE_PER_FH * mcfg["fi_factor"] * duration * FI_TAIL_MULTIPLIER.get(tail, 1.0)
-    ac.fi += fi_delta
-    ac.landings += landings
-    ac.fh_since_phase += duration
-    ac.fh_since_periodic += duration
-
-    takeoff_h = int(rng.integers(6, 16))
-    takeoff_min = int(rng.integers(0, 60))
-    landing_total_min = takeoff_h * 60 + takeoff_min + round(duration * 60)
-    landing_h = (landing_total_min // 60) % 24
-    landing_min = landing_total_min % 60
-    sid = sortie_id.next()
-    sortie_rows.append(dict(
-        sortie_id=sid, tail=tail, date=date.isoformat(), mission_type=mission_name,
-        duration_h=round(duration, 2), landings=landings, lcf_cycles=lcf,
-        peak_g=round(peak_g, 1), base=base, mean_temp_c=round(temp, 1),
-        takeoff_time=f"{takeoff_h:02d}:{takeoff_min:02d}",
-        landing_time=f"{landing_h:02d}:{landing_min:02d}",
-        fi_consumed=round(fi_delta, 4), fi_cumulative=round(ac.fi, 4),
-    ))
-
-    for (key, pos), unit in list(ac.units.items()):
-        comp = cfg.COMPONENTS[key]
-        if key == "ENGINE":
-            # Check BEFORE applying this sortie's consumption: a hard-time
-            # item must never go overdue, so if this sortie would push it
-            # past its limit, swap it first and credit the sortie to the
-            # fresh unit instead (whichever-comes-first across EFH/cycles).
-            if (unit["consumed_efh"] + duration >= comp["ht_efh"]
-                    or unit["consumed_cycles"] + lcf >= comp["ht_lcf_cycles"]):
-                replace_ht_unit(ac, key, pos, date, pools, hist_rows, maint_rows, event_id, record_id, unit)
-                unit = ac.units[(key, pos)]
-            unit["consumed_efh"] += duration
-            unit["consumed_cycles"] += lcf
-            reading_id_val = reading_id.next()
-            trend_rows.append(dict(
-                reading_id=reading_id_val, engine_serial=unit["serial"], tail=tail,
-                sortie_id=sid, date=date.isoformat(), efh_at_reading=round(unit["consumed_efh"], 2),
-                egt_margin_c=round(cfg.EGT_MARGIN_START_C - 0.01 * unit["consumed_efh"] + float(rng.normal(0, cfg.EGT_SENSOR_NOISE_SD)), 2),
-            ))
-            continue
-        if key == "HPT":
-            if unit["consumed_cycles"] + lcf >= comp["ht_lcf_cycles"]:
-                replace_ht_unit(ac, key, pos, date, pools, hist_rows, maint_rows, event_id, record_id, unit)
-                unit = ac.units[(key, pos)]
-            unit["consumed_cycles"] += lcf
-            continue
-        if key == "MLG":
-            if unit["consumed_landings"] + landings >= comp["ht_landings"]:
-                replace_ht_unit(ac, key, pos, date, pools, hist_rows, maint_rows, event_id, record_id, unit)
-                unit = ac.units[(key, pos)]
-            unit["consumed_landings"] += landings
-            continue
-        if comp["concept"] == "HT":
-            continue  # BATT-MAIN, CADPAD: calendar only, handled daily
-
-        # OC / CM Weibull units
-        exposure = landings if comp.get("life_basis") == "landings" else duration
-        accel = compute_accel(unit, key, mcfg["code"], temp)
-        unit["age"] += exposure * accel
-        test = (unit["age"] / unit["eta"]) ** unit["beta"]
-        if test >= unit["E"]:
-            fail_unit(rng, ac, key, pos, date, unit, comp, pools, snag_rows, hist_rows,
-                      maint_rows, snag_id, event_id, record_id,
-                      repeat_snag_window_start, next_repeat_snag_sortie_count)
-
-    # repeat-snag pattern: inject independently of failure model, FX-307 RADALT
-    if tail == cfg.REPEAT_SNAG_TAIL and date >= repeat_snag_window_start:
-        n = next_repeat_snag_sortie_count.get(tail, 0) + 1
-        next_repeat_snag_sortie_count[tail] = n
-        interval = int(rng.integers(*cfg.REPEAT_SNAG_INTERVAL_SORTIES))
-        if n % max(interval, 1) == 0:
-            occ = next_repeat_snag_sortie_count.get("_repeat_occ", 0) + 1
-            next_repeat_snag_sortie_count["_repeat_occ"] = occ
-            # SPEC P4: two of these occurrences escalate to an actual radar
-            # altimeter removal that comes back "no fault found", which is
-            # the whole point of the pattern (replacing the LRU doesn't fix
-            # it). Fixed, mid-sequence occurrence numbers so the most recent
-            # snag stays Open (the defect is still active at the as-of date).
-            is_nff_removal = occ in (3, 6)
-            rectification = ("Radar altimeter removed, bench tested serviceable (NFF), reinstalled"
-                              if is_nff_removal else REPEAT_SNAG_RECT)
-            status = "Closed" if is_nff_removal else "Open"
-            snag_rows.append(dict(
-                snag_id=snag_id.next(), tail=tail, date=date.isoformat(), ata="34",
-                component_key_or_desc="RADALT", description=REPEAT_SNAG_DESC,
-                rectification=rectification, status=status, repeat_flag=True,
-            ))
-            if is_nff_removal:
-                unit = ac.units.get(("RADALT", "1"))
-                comp = cfg.COMPONENTS["RADALT"]
-                if unit is not None:
-                    hist_rows.append(dict(
-                        event_id=event_id.next(), tail=tail, position="1",
-                        part_number=unit["part_number"], serial=unit["serial"], lot=unit["lot"] or "",
-                        concept=comp["concept"], event_type="Removal", event_date=date.isoformat(),
-                        reason="Unscheduled: NFF", hours_at_event=round(unit["age"], 2),
-                        cycles_at_event=0.0, landings_at_event=0.0,
-                    ))
-                    new_unit = pools.take("RADALT") or pools.fresh_unit("RADALT")
-                    new_unit["install_date"] = date
-                    new_unit["age"] = 0.0
-                    ac.units[("RADALT", "1")] = new_unit
-                    hist_rows.append(dict(
-                        event_id=event_id.next(), tail=tail, position="1",
-                        part_number=new_unit["part_number"], serial=new_unit["serial"], lot=new_unit["lot"] or "",
-                        concept=comp["concept"], event_type="Install", event_date=date.isoformat(),
-                        reason="", hours_at_event=0.0, cycles_at_event=0.0, landings_at_event=0.0,
-                    ))
-                    pools.return_for_repair("RADALT", unit, date)
-
-    # oil precursor pattern: scripted single event for OIL_PRECURSOR_TAIL
-    if tail == cfg.OIL_PRECURSOR_TAIL:
-        days_to_asof = (cfg.AS_OF_DATE - date).days
-        target_days = int(cfg.OIL_PRECURSOR_DAYS_BEFORE_ASOF_FH / max(ac.monthly_rate / 30.0, 0.1))
-        if abs(days_to_asof - target_days) <= 1 and not next_repeat_snag_sortie_count.get("_oil_done"):
-            next_repeat_snag_sortie_count["_oil_done"] = True
-            maint_rows.append(dict(
-                record_id=record_id.next(), tail=tail, date=date.isoformat(),
-                record_type="Chip detector", description="Chip detector indication, oil sample sent for SOAP analysis",
-                man_hours=1.0, linked_snag_id="",
-            ))
-
-
-def fail_unit(rng, ac, key, pos, date, unit, comp, pools, snag_rows, hist_rows, maint_rows,
-              snag_id, event_id, record_id, repeat_snag_window_start, next_repeat_snag_sortie_count):
-    # Tyres and brakes wear out on a predictable, frequent schedule (wear-pin
-    # check), not a reportable defect: they do not get a snag register entry,
-    # only the maintenance/history records below. Logging every wear-limit
-    # swap as a "snag" would flood the ATA-32 repeat-snag detector with
-    # hundreds of routine entries on every aircraft, burying the one genuine
-    # repeat-snag pattern (FX-307 radar altimeter, SPEC P4) in noise.
-    is_consumable = key in ("TYRE", "BRAKE")
-    nff_rate = cfg.NFF_RATE_RADALT if key == "RADALT" else cfg.NFF_RATE_DEFAULT
-    is_nff = rng.random() < nff_rate
-    reason = "Unscheduled: NFF" if is_nff else "Unscheduled: confirmed failure"
-    sid = None
-    if not is_consumable:
-        templates = SNAG_TEMPLATES["nff" if is_nff else "confirmed"]
-        desc = str(rng.choice(templates)).format(name=comp["name"])
-        sid = snag_id.next()
-        snag_rows.append(dict(
-            snag_id=sid, tail=ac.tail, date=date.isoformat(), ata=comp["ata"],
-            component_key_or_desc=key, description=desc,
-            rectification=f"{comp['name']} replaced, serial {unit['serial']} removed",
-            status="Closed", repeat_flag=False,
+    def hist(self, ac_tail, pos, unit, concept, event_type, date, reason, hours, cycles, landings, oh=None):
+        self.rows["hist"].append(dict(
+            event_id=self.event_id.next(), tail=ac_tail, position=pos,
+            part_number=unit["part_number"], serial=unit["serial"], lot=unit["lot"] or "",
+            concept=concept, event_type=event_type, event_date=date.isoformat(), reason=reason,
+            hours_at_event=hours, cycles_at_event=cycles, landings_at_event=landings,
+            operating_hours_at_event="" if oh is None else oh,
         ))
 
-    # oil precursor cooccurrence for confirmed OIL-PUMP failures, fleet-wide
-    if key == "OIL-PUMP" and not is_nff and rng.random() < cfg.OIL_PRECURSOR_COOCCURRENCE:
-        lead_days = int(cfg.OIL_PRECURSOR_WINDOW_FH / max(ac.monthly_rate / 30.0, 0.1))
-        maint_rows.append(dict(
-            record_id=record_id.next(), tail=ac.tail,
-            date=(date - dt.timedelta(days=max(lead_days, 1))).isoformat(),
-            record_type="Chip detector", description="Chip detector indication, oil sample sent for SOAP analysis",
-            man_hours=1.0, linked_snag_id=sid,
+
+class TypeRun:
+    """One aircraft type's simulation pass."""
+
+    def __init__(self, sim: Sim, type_key: str):
+        self.sim = sim
+        self.type_key = type_key
+        self.tcfg = cfg.AIRCRAFT_TYPES[type_key]
+        self.missions = self.tcfg["missions"]
+        self.comp_keys = type_components(type_key)
+        seed = cfg.SEED + TYPE_SEED_OFFSET[type_key]
+        self.rng = np.random.default_rng(seed)
+        self.aux = np.random.default_rng(seed + AUX_SEED_OFFSET)
+        self.hyd_pump_counter = [0]
+        self.aircraft: dict[str, Aircraft] = {}
+        self.pools: Pools | None = None
+        self.counters: dict = {}
+
+    # -- setup -------------------------------------------------------------
+    def setup(self):
+        rng, t = self.rng, self.tcfg
+        for tail in t["tails"]:
+            home_base = cfg.HOME_BASE[tail]
+            induction_year = int(rng.integers(t["induction_year_range"][0], t["induction_year_range"][1] + 1))
+            induction_date = dt.date(induction_year, int(rng.integers(1, 13)), int(rng.integers(1, 28)))
+            start_fh = float(rng.uniform(*t["start_fh_range"]))
+            start_fi = FORCED_START_FI.get(tail, float(rng.uniform(*t["start_fi_range"])))
+            monthly_rate = float(rng.uniform(*t["fh_per_month_range"]))
+            mission_probs = build_mission_probs(rng, tail, self.missions)
+            fh_since_phase = float(rng.uniform(0, cfg.PHASE_INSPECTION_INTERVAL_FH))
+            fh_since_periodic = float(rng.uniform(0, cfg.PERIODIC_SERVICING_INTERVAL_FH))
+            ac = Aircraft(tail, self.type_key, home_base, induction_date, start_fh, start_fi,
+                          monthly_rate, mission_probs, fh_since_phase, fh_since_periodic)
+            ac.units = init_units_for_aircraft(rng, self.aux, self.sim.serials, self.hyd_pump_counter,
+                                               self.comp_keys, cfg.WINDOW_START)
+            self.aircraft[tail] = ac
+        self.pools = Pools(rng, self.sim.serials, self.hyd_pump_counter, self.comp_keys, len(t["tails"]))
+
+        # Initial installs carry the unit's prior-life baseline (TSN at the
+        # start of the data window), so "consumed since install" = baseline +
+        # sortie accumulation reproduces the simulator's internal state exactly.
+        for tail, ac in self.aircraft.items():
+            for (key, pos), u in ac.units.items():
+                # OC and CM units carry their time since new on the card as
+                # hours_at_event (in the part's life basis), like HT units do.
+                baseline_hours = u["consumed_efh"] if "age" not in u else u["age"]
+                self.sim.hist(tail, pos, u, cfg.COMPONENTS[key]["concept"], "Install", u["install_date"], "",
+                              round(baseline_hours, 2), round(u["consumed_cycles"], 2),
+                              round(u["consumed_landings"], 2),
+                              round(u["consumed_oh"], 2) if is_engine_key(key) else None)
+
+    # -- ground runs (section 14.2) ----------------------------------------
+    def ground_run(self, ac: Aircraft, date: dt.date, reason: str, position: str | None):
+        lo, hi = cfg.GROUND_RUN_H[reason]
+        dur = round(float(self.aux.uniform(lo, hi)), 2)
+        apu_h = round(float(self.aux.uniform(*cfg.GROUND_RUN_APU_H_RANGE)), 2) if self.tcfg["apu"] else 0.0
+        for (key, pos), unit in ac.units.items():
+            if is_engine_key(key) and (position is None or pos == position):
+                unit["consumed_oh"] += dur
+            if self.tcfg["apu"] and key.endswith("-APU") and apu_h > 0:
+                unit["age"] += apu_h
+        self.sim.rows["ground"].append(dict(
+            run_id=self.sim.run_id.next(), tail=ac.tail, date=date.isoformat(),
+            engine_position="All" if position is None else position,
+            duration_h=dur, apu_h=apu_h, reason=reason,
         ))
 
-    hist_rows.append(dict(
-        event_id=event_id.next(), tail=ac.tail, position=pos,
-        part_number=unit["part_number"], serial=unit["serial"], lot=unit["lot"] or "",
-        concept=comp["concept"], event_type="Removal", event_date=date.isoformat(), reason=reason,
-        hours_at_event=round(unit["age"], 2), cycles_at_event=0.0, landings_at_event=0.0,
-    ))
+    # -- main loop ----------------------------------------------------------
+    def run(self):
+        rng = self.rng
+        sim = self.sim
+        detach_cache: dict = {}
+        repeat_window_start = cfg.AS_OF_DATE - dt.timedelta(days=30 * cfg.REPEAT_SNAG_WINDOW_MONTHS)
+        press_window_start = cfg.AS_OF_DATE - dt.timedelta(days=30 * cfg.PRESSURISATION_SNAG_WINDOW_MONTHS)
 
-    # Tyres and brakes are also high-turnover consumables with abundant
-    # local stock in real fleets: they do not go through the scarce-LRU
-    # spares pool and do not ground the aircraft (same-day swap).
-    cannibalised = False
-    if is_consumable:
-        new_unit = pools.fresh_unit(key)
-    else:
-        new_unit = pools.take(key)
-        if new_unit is None:
-            if rng.random() < cfg.CANNIBALISATION_SHARE_OF_REMOVALS * 10:
-                new_unit = pools.fresh_unit(key)
-                cannibalised = True
-            else:
-                new_unit = pools.fresh_unit(key)
-                lo, hi = cfg.UNSCHEDULED_AOG_DAYS_RANGE
-                aog_days = int(rng.uniform(lo, hi)) + int(rng.uniform(5, 20))
-                ac.downtime_until = date + dt.timedelta(days=aog_days)
+        current = cfg.WINDOW_START
+        while current <= cfg.WINDOW_END:
+            self.pools.release_repaired(current)
+            year, month = current.year, current.month
+            for tail, ac in self.aircraft.items():
+                self.check_ht_due_calendar(ac, current)
+
+                if ac.downtime_until and current < ac.downtime_until:
+                    continue
+
+                base_today = current_base(tail, current, detach_cache)
+
+                if ac.fh_since_phase >= cfg.PHASE_INSPECTION_INTERVAL_FH:
+                    lo, hi = cfg.PHASE_INSPECTION_DURATION_DAYS
+                    dur = int(rng.integers(lo, hi + 1))
+                    ac.downtime_until = current + dt.timedelta(days=dur)
+                    ac.fh_since_phase = 0.0
+                    ac.pending_ftf = True
+                    sim.rows["maint"].append(dict(
+                        record_id=sim.record_id.next(), tail=tail, date=current.isoformat(),
+                        record_type="Phase inspection", description="Scheduled phase inspection",
+                        man_hours=cfg.MAN_HOURS_PHASE_INSPECTION, linked_snag_id="",
+                    ))
+                    self.ground_run(ac, current, "After phase inspection", None)
+                    continue
+                if ac.fh_since_periodic >= cfg.PERIODIC_SERVICING_INTERVAL_FH:
+                    lo, hi = cfg.PERIODIC_SERVICING_DURATION_DAYS
+                    dur = int(rng.integers(lo, hi + 1))
+                    ac.downtime_until = current + dt.timedelta(days=dur)
+                    ac.fh_since_periodic = 0.0
+                    sim.rows["maint"].append(dict(
+                        record_id=sim.record_id.next(), tail=tail, date=current.isoformat(),
+                        record_type="Periodic servicing", description="Scheduled periodic servicing",
+                        man_hours=cfg.MAN_HOURS_PERIODIC_SERVICING, linked_snag_id="",
+                    ))
+                    continue
+
+                avg_dur = avg_duration_h(ac.mission_probs, self.missions)
+                target_fh_month = ac.monthly_rate * (1 - cfg.MONSOON_REDUCTION if month in cfg.MONSOON_MONTHS else 1.0)
+                dim = days_in_month(year, month)
+                p_fly = min(0.95, target_fh_month / (dim * avg_dur))
+
+                if rng.random() < p_fly:
+                    self.fly_sortie(ac, current, base_today, repeat_window_start, press_window_start)
+
+            current += DAY
+
+    def check_ht_due_calendar(self, ac, today):
+        for (key, pos), unit in list(ac.units.items()):
+            comp = cfg.COMPONENTS[key]
+            if comp["concept"] != "HT" or "ht_calendar_months" not in comp:
+                continue
+            limit_days = comp["ht_calendar_months"] * 30
+            elapsed = (today - unit["install_date"]).days
+            if elapsed >= limit_days:
+                self.replace_ht_unit(ac, key, pos, today, unit)
+
+    def replace_ht_unit(self, ac, key, pos, today, old_unit):
+        sim = self.sim
+        comp = cfg.COMPONENTS[key]
+        engine = is_engine_key(key)
+        reason = "Scheduled (engine change)" if engine else "Scheduled (hard time)"
+        sim.hist(ac.tail, pos, old_unit, comp["concept"], "Removal", today, reason,
+                 old_unit["consumed_efh"], old_unit["consumed_cycles"], old_unit["consumed_landings"],
+                 round(old_unit["consumed_oh"], 2) if engine else None)
+        new_unit = self.pools.take(key) or self.pools.fresh_unit(key)
+        new_unit["install_date"] = today
+        new_unit["consumed_efh"] = 0.0
+        new_unit["consumed_cycles"] = 0.0
+        new_unit["consumed_landings"] = 0.0
+        new_unit["consumed_oh"] = 0.0
+        ac.units[(key, pos)] = new_unit
+        sim.hist(ac.tail, pos, new_unit, comp["concept"], "Install", today, "", 0.0, 0.0, 0.0,
+                 0.0 if engine else None)
+        sim.rows["maint"].append(dict(
+            record_id=sim.record_id.next(), tail=ac.tail, date=today.isoformat(),
+            record_type="Work order",
+            description=f"{component_label(key, pos)} removed at hard time limit, replaced",
+            man_hours=cfg.MAN_HOURS_REMOVE_INSTALL[key], linked_snag_id="",
+        ))
+        if engine:
+            self.ground_run(ac, today, "After engine change", pos)
+
+    def _fi_delta(self, ac, mcfg, duration, landings):
+        if self.type_key == "fighter":
+            return cfg.FI_BASE_RATE_PER_FH * mcfg["fi_factor"] * duration * FI_TAIL_MULTIPLIER.get(ac.tail, 1.0)
+        p = cfg.PRESSURISED_FI
+        return p["base_per_fh"] * mcfg["fi_factor"] * duration + p["per_pressurisation_cycle"] + p["per_landing"] * landings
+
+    def _margin(self, unit):
+        if self.type_key == "fighter":
+            return cfg.EGT_MARGIN_START_C - 0.01 * unit["consumed_efh"] + float(self.rng.normal(0, cfg.EGT_SENSOR_NOISE_SD))
+        return cfg.ITT_MARGIN_START_C - cfg.ITT_MARGIN_DECAY_PER_EFH * unit["consumed_efh"] + float(self.rng.normal(0, cfg.ITT_SENSOR_NOISE_SD))
+
+    def fly_sortie(self, ac, date, base, repeat_window_start, press_window_start):
+        rng, aux, sim = self.rng, self.aux, self.sim
+        tail = ac.tail
+        names = list(ac.mission_probs.keys())
+        probs = list(ac.mission_probs.values())
+        if ac.pending_ftf and rng.random() < 0.75:
+            mission_name = "Functional test flight"
         else:
-            lo, hi = cfg.UNSCHEDULED_AOG_DAYS_RANGE
-            aog_days = int(rng.uniform(lo, hi))
-            ac.downtime_until = date + dt.timedelta(days=aog_days)
-        pools.return_for_repair(key, unit, date)
+            mission_name = rng.choice(names, p=probs)
+        ac.pending_ftf = False
+        mcfg = self.missions[mission_name]
 
-    new_unit["install_date"] = date
-    new_unit["age"] = 0.0
-    ac.units[(key, pos)] = new_unit
-    hist_rows.append(dict(
-        event_id=event_id.next(), tail=ac.tail, position=pos,
-        part_number=new_unit["part_number"], serial=new_unit["serial"], lot=new_unit["lot"] or "",
-        concept=comp["concept"], event_type="Install", event_date=date.isoformat(),
-        reason="Cannibalisation" if cannibalised else "",
-        hours_at_event=0.0, cycles_at_event=0.0, landings_at_event=0.0,
-    ))
-    maint_rows.append(dict(
-        record_id=record_id.next(), tail=ac.tail, date=date.isoformat(),
-        record_type="Rectification", description=f"{comp['name']} replaced",
-        man_hours=cfg.MAN_HOURS_REMOVE_INSTALL[key], linked_snag_id=sid,
-    ))
+        duration = max(0.3, float(rng.normal(mcfg["duration_h"], mcfg["duration_h"] * 0.15)))
+        landings = int(rng.integers(mcfg["landings"][0], mcfg["landings"][1] + 1))
+        lcf = int(rng.integers(mcfg["lcf"][0], mcfg["lcf"][1] + 1))
+        peak_g = float(rng.uniform(*mcfg["peak_g"]))
+        temp = mean_temp_c(base, date.month) + float(rng.normal(0, 1.5))
+        # Operating hours (auxiliary generator: never perturbs the main stream)
+        taxi_h = round(float(aux.uniform(*self.tcfg["taxi_h_range"])), 2)
+        apu_h = round(float(aux.uniform(*self.tcfg["apu_h_per_sortie_range"])), 2) if self.tcfg["apu"] else 0.0
+
+        ac.fh += duration
+        fi_delta = self._fi_delta(ac, mcfg, duration, landings)
+        ac.fi += fi_delta
+        ac.landings += landings
+        ac.fh_since_phase += duration
+        ac.fh_since_periodic += duration
+
+        takeoff_h = int(rng.integers(6, 16))
+        takeoff_min = int(rng.integers(0, 60))
+        landing_total_min = takeoff_h * 60 + takeoff_min + round(duration * 60)
+        landing_h = (landing_total_min // 60) % 24
+        landing_min = landing_total_min % 60
+        sid = sim.sortie_id.next()
+        sim.rows["sortie"].append(dict(
+            sortie_id=sid, tail=tail, date=date.isoformat(), mission_type=mission_name,
+            duration_h=round(duration, 2), landings=landings, lcf_cycles=lcf,
+            peak_g=round(peak_g, 1), base=base, mean_temp_c=round(temp, 1),
+            takeoff_time=f"{takeoff_h:02d}:{takeoff_min:02d}",
+            landing_time=f"{landing_h:02d}:{landing_min:02d}",
+            fi_consumed=round(fi_delta, 4), fi_cumulative=round(ac.fi, 4),
+            taxi_h=taxi_h, apu_h=apu_h,
+        ))
+
+        for (key, pos), unit in list(ac.units.items()):
+            comp = cfg.COMPONENTS[key]
+            if comp.get("is_engine"):
+                # Check BEFORE applying this sortie's consumption: a hard-time
+                # item must never go overdue, so if this sortie would push it
+                # past its limit, swap it first and credit the sortie to the
+                # fresh unit instead (whichever-comes-first across EFH/cycles).
+                if (unit["consumed_efh"] + duration >= comp["ht_efh"]
+                        or unit["consumed_cycles"] + lcf >= comp["ht_lcf_cycles"]):
+                    self.replace_ht_unit(ac, key, pos, date, unit)
+                    unit = ac.units[(key, pos)]
+                unit["consumed_efh"] += duration
+                unit["consumed_cycles"] += lcf
+                # Operating-hours ledger uses the logged (2 decimal) sortie time, like an engine log book.
+                unit["consumed_oh"] += round(duration, 2) + taxi_h
+                sim.rows["trend"].append(dict(
+                    reading_id=sim.reading_id.next(), engine_serial=unit["serial"], tail=tail,
+                    engine_position=pos, sortie_id=sid, date=date.isoformat(),
+                    efh_at_reading=round(unit["consumed_efh"], 2),
+                    metric=self.tcfg["metric"], margin_c=round(self._margin(unit), 2),
+                ))
+                continue
+            if key == "HPT":
+                if unit["consumed_cycles"] + lcf >= comp["ht_lcf_cycles"]:
+                    self.replace_ht_unit(ac, key, pos, date, unit)
+                    unit = ac.units[(key, pos)]
+                unit["consumed_cycles"] += lcf
+                continue
+            if "ht_landings" in comp:
+                if unit["consumed_landings"] + landings >= comp["ht_landings"]:
+                    self.replace_ht_unit(ac, key, pos, date, unit)
+                    unit = ac.units[(key, pos)]
+                unit["consumed_landings"] += landings
+                continue
+            if "ht_fh" in comp:
+                if unit["consumed_efh"] + duration >= comp["ht_fh"]:
+                    self.replace_ht_unit(ac, key, pos, date, unit)
+                    unit = ac.units[(key, pos)]
+                unit["consumed_efh"] += duration
+                continue
+            if comp["concept"] == "HT":
+                continue  # calendar only, handled daily
+
+            # OC / CM Weibull units
+            basis = comp.get("life_basis")
+            exposure = landings if basis == "landings" else apu_h if basis == "apu_hours" else duration
+            accel = compute_accel(unit, key, mcfg["code"], temp)
+            unit["age"] += exposure * accel
+            test = (unit["age"] / unit["eta"]) ** unit["beta"]
+            if test >= unit["E"]:
+                self.fail_unit(ac, key, pos, date, unit, comp)
+
+        # P4: FX-307 radar altimeter repeat snag with NFF removals
+        if tail == cfg.REPEAT_SNAG_TAIL and date >= repeat_window_start:
+            self._planted_repeat_snag(ac, date, "RADALT", "34", REPEAT_SNAG_DESC, REPEAT_SNAG_RECT,
+                                      "Radar altimeter removed, bench tested serviceable (NFF), reinstalled",
+                                      cfg.REPEAT_SNAG_INTERVAL_SORTIES)
+        # P8: TX-404 pressurisation repeat snag with NFF outflow valve removals
+        if tail == cfg.PRESSURISATION_SNAG_TAIL and date >= press_window_start:
+            self._planted_repeat_snag(ac, date, cfg.PRESSURISATION_SNAG_COMPONENT, "21",
+                                      PRESSURISATION_SNAG_DESC, PRESSURISATION_SNAG_RECT, PRESSURISATION_NFF_RECT,
+                                      cfg.PRESSURISATION_SNAG_INTERVAL_SORTIES)
+
+        # P6: scripted chip detector event for OIL_PRECURSOR_TAIL
+        if tail == cfg.OIL_PRECURSOR_TAIL:
+            days_to_asof = (cfg.AS_OF_DATE - date).days
+            target_days = int(cfg.OIL_PRECURSOR_DAYS_BEFORE_ASOF_FH / max(ac.monthly_rate / 30.0, 0.1))
+            # First sortie at or after the target day (robust to the aircraft
+            # being in maintenance on the exact day).
+            if days_to_asof <= target_days + 1 and not self.counters.get("_oil_done"):
+                self.counters["_oil_done"] = True
+                sim.rows["maint"].append(dict(
+                    record_id=sim.record_id.next(), tail=tail, date=date.isoformat(),
+                    record_type="Chip detector", description="Chip detector indication, oil sample sent for SOAP analysis",
+                    man_hours=1.0, linked_snag_id="",
+                ))
+
+    def _planted_repeat_snag(self, ac, date, comp_key, ata, desc, rect, nff_rect, interval_range):
+        rng, sim = self.rng, self.sim
+        tail = ac.tail
+        n = self.counters.get(tail, 0) + 1
+        self.counters[tail] = n
+        interval = int(rng.integers(*interval_range))
+        if n % max(interval, 1) != 0:
+            return
+        occ = self.counters.get(f"_occ_{tail}", 0) + 1
+        self.counters[f"_occ_{tail}"] = occ
+        # Two of the occurrences escalate to an LRU removal that comes back
+        # "no fault found" (replacing the LRU does not fix it). Fixed,
+        # mid-sequence occurrence numbers so the most recent snag stays Open
+        # (the defect is still active at the as-of date).
+        is_nff_removal = occ in (3, 6)
+        sim.rows["snag"].append(dict(
+            snag_id=sim.snag_id.next(), tail=tail, date=date.isoformat(), ata=ata,
+            component_key_or_desc=comp_key, description=desc,
+            rectification=nff_rect if is_nff_removal else rect,
+            status="Closed" if is_nff_removal else "Open", repeat_flag=True,
+        ))
+        if not is_nff_removal:
+            return
+        unit = ac.units.get((comp_key, "1"))
+        comp = cfg.COMPONENTS[comp_key]
+        if unit is None:
+            return
+        sim.hist(tail, "1", unit, comp["concept"], "Removal", date, "Unscheduled: NFF",
+                 round(unit["age"], 2), 0.0, 0.0)
+        new_unit = self.pools.take(comp_key) or self.pools.fresh_unit(comp_key)
+        new_unit["install_date"] = date
+        new_unit["age"] = 0.0
+        ac.units[(comp_key, "1")] = new_unit
+        sim.hist(tail, "1", new_unit, comp["concept"], "Install", date, "", 0.0, 0.0, 0.0)
+        self.pools.return_for_repair(comp_key, unit, date)
+
+    def fail_unit(self, ac, key, pos, date, unit, comp):
+        rng, sim = self.rng, self.sim
+        # Tyres and brakes wear out on a predictable, frequent schedule (wear-pin
+        # check), not a reportable defect: no snag register entry, only the
+        # maintenance and history records below (otherwise they would flood the
+        # repeat-snag detector and bury the genuine repeat-snag patterns).
+        is_consumable = comp["consumable"]
+        nff_rate = cfg.NFF_RATE_RADALT if comp.get("nff_prone") else cfg.NFF_RATE_DEFAULT
+        is_nff = rng.random() < nff_rate
+        reason = "Unscheduled: NFF" if is_nff else "Unscheduled: confirmed failure"
+        label = component_label(key, pos)
+        sid = None
+        if not is_consumable:
+            templates = SNAG_TEMPLATES["nff" if is_nff else "confirmed"]
+            desc = str(rng.choice(templates)).format(name=label)
+            sid = sim.snag_id.next()
+            sim.rows["snag"].append(dict(
+                snag_id=sid, tail=ac.tail, date=date.isoformat(), ata=comp["ata"],
+                component_key_or_desc=key, description=desc,
+                rectification=f"{label} replaced, serial {unit['serial']} removed",
+                status="Closed", repeat_flag=False,
+            ))
+
+        # P6 oil precursor co-occurrence for confirmed fighter oil pump failures
+        if comp.get("oil_precursor") and not is_nff and rng.random() < cfg.OIL_PRECURSOR_COOCCURRENCE:
+            lead_days = int(cfg.OIL_PRECURSOR_WINDOW_FH / max(ac.monthly_rate / 30.0, 0.1))
+            sim.rows["maint"].append(dict(
+                record_id=sim.record_id.next(), tail=ac.tail,
+                date=(date - dt.timedelta(days=max(lead_days, 1))).isoformat(),
+                record_type="Chip detector", description="Chip detector indication, oil sample sent for SOAP analysis",
+                man_hours=1.0, linked_snag_id=sid,
+            ))
+
+        sim.hist(ac.tail, pos, unit, comp["concept"], "Removal", date, reason, round(unit["age"], 2), 0.0, 0.0)
+
+        # Tyres and brakes are high-turnover consumables with abundant local
+        # stock: they do not go through the scarce-LRU spares pool and do not
+        # ground the aircraft (same-day swap).
+        cannibalised = False
+        if is_consumable:
+            new_unit = self.pools.fresh_unit(key)
+        else:
+            new_unit = self.pools.take(key)
+            if new_unit is None:
+                if rng.random() < cfg.CANNIBALISATION_SHARE_OF_REMOVALS * 10:
+                    new_unit = self.pools.fresh_unit(key)
+                    cannibalised = True
+                else:
+                    new_unit = self.pools.fresh_unit(key)
+                    lo, hi = cfg.UNSCHEDULED_AOG_DAYS_RANGE
+                    aog_days = int(rng.uniform(lo, hi)) + int(rng.uniform(5, 20))
+                    ac.downtime_until = date + dt.timedelta(days=aog_days)
+            else:
+                lo, hi = cfg.UNSCHEDULED_AOG_DAYS_RANGE
+                aog_days = int(rng.uniform(lo, hi))
+                ac.downtime_until = date + dt.timedelta(days=aog_days)
+            self.pools.return_for_repair(key, unit, date)
+
+        new_unit["install_date"] = date
+        new_unit["age"] = 0.0
+        ac.units[(key, pos)] = new_unit
+        sim.hist(ac.tail, pos, new_unit, comp["concept"], "Install", date,
+                 "Cannibalisation" if cannibalised else "", 0.0, 0.0, 0.0)
+        sim.rows["maint"].append(dict(
+            record_id=sim.record_id.next(), tail=ac.tail, date=date.isoformat(),
+            record_type="Rectification", description=f"{label} replaced",
+            man_hours=cfg.MAN_HOURS_REMOVE_INSTALL[key], linked_snag_id=sid,
+        ))
+        if is_engine_accessory(key):
+            # Accessory changed on an engine: ground run that engine position
+            # (the fighter's single engine is position "1").
+            self.ground_run(ac, date, "After component replacement", pos if pos.isdigit() else "1")
 
 
 # ---------------------------------------------------------------------------
-# Post-simulation nudges: pull specific HT-approaching units and the
-# FX-311 engine trend to the exact targets in config.HT_APPROACHING /
-# config.ENGINE_DETERIORATION_*. Nudging is done by rewriting the install
-# date (so component_history and sortie_log/engine_trend stay consistent
-# with each other) rather than mutating an internal-only counter.
+# Post-simulation nudges: pull specific HT-approaching units and the planted
+# engine trends to the exact targets in config. Nudging rewrites baselines on
+# the history card or trend readings so component_history, sortie_log and
+# engine_trend stay consistent with each other.
 # ---------------------------------------------------------------------------
+def _key_for_pn(pn):
+    for k, comp in cfg.COMPONENTS.items():
+        if comp["part_number"] == pn:
+            return k
+    return None
+
+
 def nudge_ht_approaching(sortie_df: pd.DataFrame, hist_rows: list):
-    """Pull the three named HT items to their target remaining life.
-
-    Rather than moving install dates (which would desynchronise
-    component_history from sortie_log/engine_trend), this sets the
-    baseline odometer field on the unit's current Install row so that
-    baseline + sortie accumulation since install_date lands on target.
-    This mirrors how a real component history card would carry a TSN
-    baseline from before the data window began.
-    """
+    """Pull the three named HT items (P7) to their target remaining life by
+    setting the baseline odometer on the unit's current Install row, the way
+    a real component history card carries a TSN baseline from before the
+    data window began."""
     targets = cfg.HT_APPROACHING
-
-    def hist_row_key(row):
-        for k, comp in cfg.COMPONENTS.items():
-            if comp["part_number"] == row["part_number"]:
-                return k
-        return None
 
     def latest_install_idx(tail, key, pos):
         matches = [i for i, r in enumerate(hist_rows)
                    if r["tail"] == tail and r["event_type"] == "Install"
                    and r["event_date"] <= cfg.AS_OF_DATE.isoformat()
-                   and hist_row_key(r) == key and r["position"] == pos]
+                   and _key_for_pn(r["part_number"]) == key and r["position"] == pos]
         return max(matches, key=lambda i: hist_rows[i]["event_date"]) if matches else None
 
     def exposure_since(tail, install_date_str, metric_col):
         sub = sortie_df[(sortie_df["tail"] == tail) & (sortie_df["date"] >= install_date_str)]
         return float(sub[metric_col].fillna(0).sum())
 
-    # CAD/PAD, FX-305: calendar-based, pure date arithmetic (no sortie
-    # dependency, so a date shift is the correct mechanism). replace_ht_unit
-    # always writes the superseded unit's Removal and the new unit's
-    # Install on the same day (one atomic swap), so when we shift the
-    # Install date, we must shift that same-day paired Removal with it,
-    # or the old serial is left "installed" past the new one's install date.
+    # CAD/PAD, FX-305: calendar based. replace_ht_unit writes the superseded
+    # unit's Removal and the new unit's Install on the same day, so the paired
+    # Removal moves with the Install.
     tail = targets["cadpad_tail"]
     idx = latest_install_idx(tail, "CADPAD", "1")
     if idx is not None:
@@ -720,21 +797,24 @@ def nudge_ht_approaching(sortie_df: pd.DataFrame, hist_rows: list):
         original_date = hist_rows[idx]["event_date"]
         for r in hist_rows:
             if (r["tail"] == tail and r["position"] == "1" and r["event_type"] == "Removal"
-                    and hist_row_key(r) == "CADPAD" and r["event_date"] == original_date):
+                    and _key_for_pn(r["part_number"]) == "CADPAD" and r["event_date"] == original_date):
                 r["event_date"] = new_install.isoformat()
         hist_rows[idx]["event_date"] = new_install.isoformat()
 
-    # Engine, FX-314: EFH-based. target_consumed = limit - remaining.
+    # Engine, FX-314: EFH based. Operating-hours baseline moves by the same amount.
     tail = targets["engine_tail"]
     idx = latest_install_idx(tail, "ENGINE", "1")
     if idx is not None:
         target_consumed = cfg.COMPONENTS["ENGINE"]["ht_efh"] - targets["engine_efh_remaining"]
         since_install = exposure_since(tail, hist_rows[idx]["event_date"], "duration_h")
-        hist_rows[idx]["hours_at_event"] = round(max(0.0, target_consumed - since_install), 2)
+        new_hours = round(max(0.0, target_consumed - since_install), 2)
+        old_hours = float(hist_rows[idx]["hours_at_event"])
+        hist_rows[idx]["hours_at_event"] = new_hours
+        if hist_rows[idx]["operating_hours_at_event"] != "":
+            hist_rows[idx]["operating_hours_at_event"] = round(
+                float(hist_rows[idx]["operating_hours_at_event"]) + (new_hours - old_hours), 2)
 
-    # Main landing gear, FX-301 left side: landings-based. mlg_landings
-    # in config is landings already accumulated ("at about 3,880
-    # landings"), i.e. the absolute target, not remaining.
+    # Main landing gear, FX-301 left side: landings based (absolute target).
     tail = targets["mlg_tail"]
     idx = latest_install_idx(tail, "MLG", "L")
     if idx is not None:
@@ -743,12 +823,12 @@ def nudge_ht_approaching(sortie_df: pd.DataFrame, hist_rows: list):
         hist_rows[idx]["landings_at_event"] = round(max(0.0, target_consumed - since_install), 2)
 
 
-def nudge_engine_deterioration(trend_rows: list, hist_rows: list):
-    tail = cfg.ENGINE_DETERIORATION_TAIL
+def _nudge_trend(trend_rows, hist_rows, tail, engine_key, position, window_efh, target_after_efh,
+                 start_c, decay, limit_c, noise_sd, seed):
+    pn = cfg.COMPONENTS[engine_key]["part_number"]
     installs = [r for r in hist_rows
-                if r["tail"] == tail and r["event_type"] == "Install"
-                and r["part_number"] == cfg.COMPONENTS["ENGINE"]["part_number"]
-                and r["event_date"] <= cfg.AS_OF_DATE.isoformat()]
+                if r["tail"] == tail and r["event_type"] == "Install" and r["part_number"] == pn
+                and r["position"] == position and r["event_date"] <= cfg.AS_OF_DATE.isoformat()]
     if not installs:
         return
     current_serial = max(installs, key=lambda r: r["event_date"])["serial"]
@@ -757,18 +837,28 @@ def nudge_engine_deterioration(trend_rows: list, hist_rows: list):
         return
     rows.sort(key=lambda r: r["efh_at_reading"])
     max_efh = rows[-1]["efh_at_reading"]
-    window_start_efh = max_efh - cfg.ENGINE_DETERIORATION_WINDOW_EFH
+    window_start_efh = max_efh - window_efh
     window_rows = [r for r in rows if r["efh_at_reading"] >= window_start_efh]
     if len(window_rows) < 5:
         return
-    margin_at_window_start = cfg.EGT_MARGIN_START_C - 0.01 * window_start_efh
-    target_crossing_efh_after = 60.0
-    needed_slope = (margin_at_window_start - cfg.EGT_MARGIN_LIMIT_C) / (
-        cfg.ENGINE_DETERIORATION_WINDOW_EFH + target_crossing_efh_after)
-    rng = np.random.default_rng(cfg.SEED + 311)
+    margin_at_window_start = start_c - decay * window_start_efh
+    needed_slope = (margin_at_window_start - limit_c) / (window_efh + target_after_efh)
+    rng = np.random.default_rng(seed)
     for r in window_rows:
         delta = r["efh_at_reading"] - window_start_efh
-        r["egt_margin_c"] = round(margin_at_window_start - needed_slope * delta + float(rng.normal(0, cfg.EGT_SENSOR_NOISE_SD)), 2)
+        r["margin_c"] = round(margin_at_window_start - needed_slope * delta + float(rng.normal(0, noise_sd)), 2)
+
+
+def nudge_engine_deterioration(trend_rows: list, hist_rows: list):
+    # P5: FX-311 (fighter, EGT margin)
+    _nudge_trend(trend_rows, hist_rows, cfg.ENGINE_DETERIORATION_TAIL, "ENGINE", "1",
+                 cfg.ENGINE_DETERIORATION_WINDOW_EFH, 60.0, cfg.EGT_MARGIN_START_C, 0.01,
+                 cfg.EGT_MARGIN_LIMIT_C, cfg.EGT_SENSOR_NOISE_SD, cfg.SEED + 311)
+    # P9: CX-502 engine 3 (turboprop, ITT margin)
+    _nudge_trend(trend_rows, hist_rows, cfg.TURBOPROP_DETERIORATION_TAIL, "AL-ENGINE",
+                 cfg.TURBOPROP_DETERIORATION_POSITION, cfg.TURBOPROP_DETERIORATION_WINDOW_EFH,
+                 cfg.TURBOPROP_DETERIORATION_TARGET_EFH, cfg.ITT_MARGIN_START_C, cfg.ITT_MARGIN_DECAY_PER_EFH,
+                 cfg.ITT_MARGIN_LIMIT_C, cfg.ITT_SENSOR_NOISE_SD, cfg.SEED + 502)
 
 
 # ---------------------------------------------------------------------------
@@ -809,11 +899,88 @@ def inject_bronze_issues(rng, sortie_df: pd.DataFrame, snag_df: pd.DataFrame):
 
 
 # ---------------------------------------------------------------------------
+# Approved maintenance schedule and task cards (sections 4 and 14.3)
+# ---------------------------------------------------------------------------
+def build_schedule_rows():
+    rows = []
+    for key, comp in cfg.COMPONENTS.items():
+        if comp["concept"] == "HT":
+            for limit_key, unit_label in (
+                ("ht_efh", "EFH"), ("ht_fh", "FH"), ("ht_lcf_cycles", "Cycles"),
+                ("ht_landings", "Landings"), ("ht_calendar_months", "Calendar months"),
+            ):
+                if limit_key in comp:
+                    rows.append(dict(
+                        part_number=comp["part_number"], component=comp["name"], aircraft_type=comp["type"],
+                        concept=comp["concept"], task="Hard time replacement",
+                        interval_value=comp[limit_key], interval_unit=unit_label, notes="",
+                    ))
+        else:
+            rows.append(dict(
+                part_number=comp["part_number"], component=comp["name"], aircraft_type=comp["type"],
+                concept=comp["concept"],
+                task="On-condition inspection" if comp["concept"] == "OC" else "Condition monitoring",
+                interval_value=cfg.PHASE_INSPECTION_INTERVAL_FH, interval_unit="FH",
+                notes="Checked at phase inspection" if comp["concept"] == "OC" else "No scheduled task, monitored statistically",
+            ))
+    return rows
+
+
+def build_task_card_rows():
+    """Fictional approved task cards (section 14.3). Id format TC-{ATA}-{NN}-{SS}:
+    NN numbers the component within its ATA chapter, SS the task."""
+    rows = []
+    std = cfg.TASK_CARD_STANDARD_MAN_HOURS
+    ata_counter: dict[str, int] = {}
+
+    def add(tc_id, title, ata, applicability, task_type, part_number, component_key, man_hours, interval, ref):
+        rows.append(dict(
+            task_card=tc_id, title=title, ata=ata, applicable_types=applicability, task_type=task_type,
+            part_number=part_number or "", component_key=component_key or "",
+            standard_man_hours=man_hours, elapsed_hours=round(man_hours * cfg.TASK_CARD_ELAPSED_FACTOR, 1),
+            interval=interval, manual_reference=ref,
+        ))
+
+    for key, comp in cfg.COMPONENTS.items():
+        ata = comp["ata"]
+        ata_counter[ata] = ata_counter.get(ata, 0) + 1
+        nn = ata_counter[ata]
+        base = f"TC-{ata}-{nn:02d}"
+        ref = f"MM {ata}-{nn:02d}-00"
+        name = comp["name"]
+        t = comp["type"]
+        if comp.get("is_engine"):
+            add(f"{base}-01", f"{name}: removal and installation (engine change)", ata, t, "Replace",
+                comp["part_number"], key, float(cfg.MAN_HOURS_REMOVE_INSTALL[key]),
+                "Hard time" if comp["concept"] == "HT" else "On condition", f"{ref} task 401")
+            add(f"{base}-04", f"{name}: borescope inspection of hot section", ata, t, "Borescope",
+                comp["part_number"], key, std["Borescope"], "On condition", f"{ref} task 601")
+            continue
+        add(f"{base}-01", f"{name}: removal and installation", ata, t, "Replace",
+            comp["part_number"], key, float(cfg.MAN_HOURS_REMOVE_INSTALL[key]),
+            "Hard time" if comp["concept"] == "HT" else "On condition", f"{ref} task 401")
+        if comp["concept"] in ("OC", "CM"):
+            add(f"{base}-02", f"{name}: on-condition inspection and functional check", ata, t, "Inspect",
+                comp["part_number"], key, std["Inspect"], f"{cfg.PHASE_INSPECTION_INTERVAL_FH:.0f} FH (phase inspection)",
+                f"{ref} task 201")
+            focus = comp.get("troubleshoot_focus", "wiring and connectors")
+            add(f"{base}-03", f"{name}: system troubleshooting ({focus})", ata, t, "Troubleshoot",
+                comp["part_number"], key, std["Troubleshoot"], "On condition", f"{ref} task 101")
+        if comp.get("oil_precursor"):
+            add(f"{base}-05", f"{name}: oil filter and chip detector inspection, SOAP sample", ata, t, "Sample",
+                comp["part_number"], key, std["Sample"], "On condition", f"{ref} task 301")
+    # Fleet-level structural usage review (fatigue allocation), every type
+    add("TC-05-51-01", "Structural fatigue usage review and tasking allocation", "05", "fighter;transport;airlifter",
+        "Inspect", None, None, 0.0, "Quarterly", "MM 05-51-00 task 001")
+    return rows
+
+
+# ---------------------------------------------------------------------------
 # ground_truth.json
 # ---------------------------------------------------------------------------
-def write_ground_truth(aircraft):
+def write_ground_truth(runs: dict):
     lot_serials = []
-    for ac in aircraft.values():
+    for ac in runs["fighter"].aircraft.values():
         for (key, pos), u in ac.units.items():
             if key == "HYD-PUMP" and u["lot"] == cfg.LOT_DEFECT["defective_lot"]:
                 lot_serials.append(u["serial"])
@@ -832,6 +999,8 @@ def write_ground_truth(aircraft):
             "hot_threshold_c": cfg.HOT_BASE_THRESHOLD_C,
             "ecs_cool_factor": cfg.HOT_CLIMATE_ACCEL["ecs_cool_factor"],
             "fuel_boost_factor": cfg.HOT_CLIMATE_ACCEL["fuel_boost_factor"],
+            # Section 14: planted on the ECS units and fuel boost pumps of every type.
+            "part_numbers": [c["part_number"] for c in cfg.COMPONENTS.values() if c.get("hot_accel")],
         },
         "P3_mission_fatigue": {
             "title": "Mission-mix fatigue",
@@ -867,6 +1036,25 @@ def write_ground_truth(aircraft):
             "title": "Hard-time items approaching",
             "items": cfg.HT_APPROACHING,
         },
+        "P8_pressurisation_snag": {
+            "title": "Recurring pressurisation snag with a wrong fix",
+            "tail": cfg.PRESSURISATION_SNAG_TAIL,
+            "ata": "21",
+            "component": cfg.PRESSURISATION_SNAG_COMPONENT,
+            "part_number": cfg.COMPONENTS[cfg.PRESSURISATION_SNAG_COMPONENT]["part_number"],
+            "window_months": cfg.PRESSURISATION_SNAG_WINDOW_MONTHS,
+            "true_cause": "Pressurisation duct leak (not recorded in maintenance data)",
+            "still_active_at_asof": True,
+        },
+        "P9_turboprop_deterioration": {
+            "title": "Turboprop deterioration",
+            "tail": cfg.TURBOPROP_DETERIORATION_TAIL,
+            "engine_position": cfg.TURBOPROP_DETERIORATION_POSITION,
+            "metric": "ITT margin",
+            "window_efh": cfg.TURBOPROP_DETERIORATION_WINDOW_EFH,
+            "itt_margin_limit_c": cfg.ITT_MARGIN_LIMIT_C,
+            "expected_crossing_efh_after_asof_range": [40, 90],
+        },
     }
     with open(GT_PATH, "w") as f:
         json.dump(gt, f, indent=2, default=str)
@@ -877,47 +1065,44 @@ def write_ground_truth(aircraft):
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(BRONZE_DIR, exist_ok=True)
-    rng = np.random.default_rng(cfg.SEED)
+    sim = Sim()
+    runs: dict[str, TypeRun] = {}
+    type_rows: dict[str, dict] = {}
 
-    aircraft, data, counters, pools = simulate(rng)
+    for type_key in cfg.AIRCRAFT_TYPES:
+        start = {k: len(v) for k, v in sim.rows.items()}
+        run = TypeRun(sim, type_key)
+        run.setup()
+        run.run()
+        runs[type_key] = run
+        type_rows[type_key] = {k: v[start[k]:] for k, v in sim.rows.items()}
 
-    sortie_df = pd.DataFrame(data["sortie"])
-    snag_df = pd.DataFrame(data["snag"])
-    trend_rows = data["trend"]
-    hist_rows = data["hist"]
-    maint_rows = data["maint"]
+    hist_rows = sim.rows["hist"]
+    trend_rows = sim.rows["trend"]
 
-    nudge_ht_approaching(sortie_df, hist_rows)
+    sortie_frames, snag_frames, issue_counts = [], [], {}
+    for type_key, run in runs.items():
+        s_df = pd.DataFrame(type_rows[type_key]["sortie"])
+        g_df = pd.DataFrame(type_rows[type_key]["snag"])
+        if type_key == "fighter":
+            nudge_ht_approaching(s_df, hist_rows)
+        # Each type's bronze issues are injected with that type's own generator
+        # (the fighter's main generator continues exactly as before).
+        s_df, g_df, issues = inject_bronze_issues(run.rng, s_df, g_df)
+        for k, v in issues.items():
+            issue_counts[k] = issue_counts.get(k, 0) + v
+        sortie_frames.append(s_df)
+        snag_frames.append(g_df)
     nudge_engine_deterioration(trend_rows, hist_rows)
 
-    sortie_df, snag_df, issue_counts = inject_bronze_issues(rng, sortie_df, snag_df)
-
+    sortie_df = pd.concat(sortie_frames, ignore_index=True)
+    snag_df = pd.concat(snag_frames, ignore_index=True)
     hist_df = pd.DataFrame(hist_rows)
-    maint_df = pd.DataFrame(maint_rows)
+    maint_df = pd.DataFrame(sim.rows["maint"])
     trend_df = pd.DataFrame(trend_rows)
-
-    sched_rows = []
-    for key, comp in cfg.COMPONENTS.items():
-        if comp["concept"] == "HT":
-            for limit_key, unit_label in (
-                ("ht_efh", "EFH"), ("ht_lcf_cycles", "Cycles"),
-                ("ht_landings", "Landings"), ("ht_calendar_months", "Calendar months"),
-            ):
-                if limit_key in comp:
-                    sched_rows.append(dict(
-                        part_number=comp["part_number"], component=comp["name"],
-                        concept=comp["concept"], task="Hard time replacement",
-                        interval_value=comp[limit_key], interval_unit=unit_label, notes="",
-                    ))
-        else:
-            sched_rows.append(dict(
-                part_number=comp["part_number"], component=comp["name"],
-                concept=comp["concept"],
-                task="On-condition inspection" if comp["concept"] == "OC" else "Condition monitoring",
-                interval_value=cfg.PHASE_INSPECTION_INTERVAL_FH, interval_unit="FH",
-                notes="Checked at phase inspection" if comp["concept"] == "OC" else "No scheduled task, monitored statistically",
-            ))
-    sched_df = pd.DataFrame(sched_rows)
+    ground_df = pd.DataFrame(sim.rows["ground"])
+    sched_df = pd.DataFrame(build_schedule_rows())
+    procedures_df = pd.DataFrame(build_task_card_rows())
 
     sortie_df.to_csv(os.path.join(BRONZE_DIR, "sortie_log.csv"), index=False)
     snag_df.to_csv(os.path.join(BRONZE_DIR, "snag_register.csv"), index=False)
@@ -925,18 +1110,22 @@ def main():
     maint_df.to_csv(os.path.join(BRONZE_DIR, "maintenance_records.csv"), index=False)
     trend_df.to_csv(os.path.join(BRONZE_DIR, "engine_trend.csv"), index=False)
     sched_df.to_csv(os.path.join(BRONZE_DIR, "maintenance_schedule.csv"), index=False)
+    ground_df.to_csv(os.path.join(BRONZE_DIR, "ground_runs.csv"), index=False)
+    procedures_df.to_csv(os.path.join(BRONZE_DIR, "maintenance_procedures.csv"), index=False)
 
-    aircraft_rows = [
-        dict(
-            tail=ac.tail, base=ac.home_base, induction_date=ac.induction_date.isoformat(),
-            start_fh=round(ac.start_fh, 2), start_fi=round(ac.start_fi, 2),
-            ttl_fh=cfg.AIRFRAME_TTL_FH, planned_withdrawal_year=cfg.PLANNED_WITHDRAWAL_YEAR,
-        )
-        for ac in aircraft.values()
-    ]
+    aircraft_rows = []
+    for type_key, run in runs.items():
+        t = cfg.AIRCRAFT_TYPES[type_key]
+        for ac in run.aircraft.values():
+            aircraft_rows.append(dict(
+                tail=ac.tail, base=ac.home_base, induction_date=ac.induction_date.isoformat(),
+                start_fh=round(ac.start_fh, 2), start_fi=round(ac.start_fi, 2),
+                ttl_fh=t["ttl_fh"], planned_withdrawal_year=t["planned_withdrawal_year"],
+                type=type_key, type_name=t["name"], engines=t["engines"],
+            ))
     pd.DataFrame(aircraft_rows).to_csv(os.path.join(BRONZE_DIR, "aircraft.csv"), index=False)
 
-    write_ground_truth(aircraft)
+    write_ground_truth(runs)
 
     print("Bronze issue counts:", issue_counts)
     print(f"sortie_log: {len(sortie_df)} rows")
@@ -944,7 +1133,9 @@ def main():
     print(f"component_history: {len(hist_df)} rows")
     print(f"maintenance_records: {len(maint_df)} rows")
     print(f"engine_trend: {len(trend_df)} rows")
+    print(f"ground_runs: {len(ground_df)} rows")
     print(f"maintenance_schedule: {len(sched_df)} rows")
+    print(f"maintenance_procedures: {len(procedures_df)} rows")
 
 
 if __name__ == "__main__":

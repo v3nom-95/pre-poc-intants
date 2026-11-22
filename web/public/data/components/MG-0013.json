@@ -3,6 +3,12 @@
   "part_number": "32-1120-05",
   "name": "Main landing gear assembly",
   "ata": "32",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "MLG",
+  "zone": "mlg-left",
+  "task_card": "TC-32-01-01",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
@@ -16,7 +22,7 @@
   "fh_to_tau_p90": null,
   "prob_fail_before_next_phase": null,
   "explanation": null,
-  "fleet_units": 45,
+  "fleet_units": 46,
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
@@ -27,5 +33,6 @@
       "serial": "MG-0013"
     }
   ],
-  "survival_curve": []
+  "survival_curve": [],
+  "survival_curve_method": null
 }

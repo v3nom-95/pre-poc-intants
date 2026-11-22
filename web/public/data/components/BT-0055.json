@@ -3,6 +3,12 @@
   "part_number": "24-2240-02",
   "name": "Main battery",
   "ata": "24",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "BATT-MAIN",
+  "zone": "cockpit",
+  "task_card": "TC-24-02-01",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
@@ -27,5 +33,6 @@
       "serial": "BT-0055"
     }
   ],
-  "survival_curve": []
+  "survival_curve": [],
+  "survival_curve_method": null
 }

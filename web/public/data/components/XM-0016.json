@@ -1,0 +1,38 @@
+{
+  "serial": "XM-0016",
+  "part_number": "32-1130-21",
+  "name": "Main landing gear assembly",
+  "ata": "32",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-MLG",
+  "zone": "mlg-right",
+  "task_card": "TC-32-08-01",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "HT",
+  "criticality": "flight_safety",
+  "current_tail": "CX-504",
+  "current_position": "R",
+  "governing_limit": "Calendar",
+  "remaining": 110.4,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 16,
+  "fleet_confirmed_failures": 0,
+  "install_history": [
+    {
+      "tail": "CX-504",
+      "event_type": "Install",
+      "date": "2026-02-01",
+      "reason": null,
+      "serial": "XM-0016"
+    }
+  ],
+  "survival_curve": [],
+  "survival_curve_method": null
+}

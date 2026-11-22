@@ -6,7 +6,7 @@ const VIEWPORTS = [
   { name: "1920x1080", width: 1920, height: 1080 },
 ];
 
-const ROUTES = ["/dev/chart-kit", "/", "/recommendations"];
+const ROUTES = ["/dev/chart-kit", "/", "/recommendations", "/plan", "/assistant"];
 
 for (const route of ROUTES) {
   for (const theme of ["light", "dark"] as const) {

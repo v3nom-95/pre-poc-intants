@@ -3,6 +3,12 @@
   "part_number": "73-2110-01",
   "name": "Engine fuel control unit",
   "ata": "73",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "FCU",
+  "zone": "engine-bay",
+  "task_card": "TC-73-01-02",
+  "exposure_unit": "FH",
   "lot": null,
   "concept": "CM",
   "criticality": "flight_safety",
@@ -10,11 +16,11 @@
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 746.6,
-  "fh_to_tau": 1301.8,
-  "fh_to_tau_p10": 172.2,
-  "fh_to_tau_p90": 4467.1,
-  "prob_fail_before_next_phase": 0.015,
+  "fh_exposure": 988.5,
+  "fh_to_tau": 694.6,
+  "fh_to_tau_p10": 240.5,
+  "fh_to_tau_p90": 3913.2,
+  "prob_fail_before_next_phase": 0.026,
   "explanation": "No significant covariate effect for this unit",
   "fleet_units": 18,
   "fleet_confirmed_failures": 2,
@@ -33,76 +39,141 @@
       "survival": 1.0
     },
     {
-      "fh": 5.8,
-      "survival": 0.9444
+      "fh": 1.0,
+      "survival": 1.0
     },
     {
-      "fh": 101.3,
-      "survival": 0.9444
+      "fh": 6.9,
+      "survival": 0.6667
     },
     {
-      "fh": 646.0,
-      "survival": 0.9444
+      "fh": 96.7,
+      "survival": 0.6667
     },
     {
-      "fh": 696.7,
-      "survival": 0.9444
+      "fh": 259.5,
+      "survival": 0.6667
     },
     {
-      "fh": 698.1,
-      "survival": 0.9444
+      "fh": 341.7,
+      "survival": 0.6667
     },
     {
-      "fh": 701.3,
-      "survival": 0.9444
+      "fh": 784.0,
+      "survival": 0.6667
     },
     {
-      "fh": 702.2,
-      "survival": 0.9444
+      "fh": 830.8,
+      "survival": 0.6667
     },
     {
-      "fh": 728.2,
-      "survival": 0.9444
+      "fh": 988.5,
+      "survival": 0.6667
     },
     {
-      "fh": 745.3,
-      "survival": 0.9444
+      "fh": 1013.7,
+      "survival": 0.6667
     },
     {
-      "fh": 746.6,
-      "survival": 0.9444
+      "fh": 1158.1,
+      "survival": 0.6667
     },
     {
-      "fh": 759.3,
-      "survival": 0.9444
+      "fh": 1238.2,
+      "survival": 0.6667
     },
     {
-      "fh": 807.0,
-      "survival": 0.9444
+      "fh": 1688.2,
+      "survival": 0.6667
     },
     {
-      "fh": 828.6,
-      "survival": 0.9444
+      "fh": 1778.5,
+      "survival": 0.6667
     },
     {
-      "fh": 829.8,
-      "survival": 0.7556
+      "fh": 1919.0,
+      "survival": 0.6667
     },
     {
-      "fh": 884.1,
-      "survival": 0.7556
+      "fh": 1963.1,
+      "survival": 0.6667
     },
     {
-      "fh": 916.4,
-      "survival": 0.7556
+      "fh": 1988.3,
+      "survival": 0.4444
     },
     {
-      "fh": 937.3,
-      "survival": 0.7556
+      "fh": 2344.5,
+      "survival": 0.4444
     },
     {
-      "fh": 939.4,
-      "survival": 0.7556
+      "fh": 2666.5,
+      "survival": 0.4444
+    },
+    {
+      "fh": 2780.8,
+      "survival": 0.4444
+    },
+    {
+      "fh": 2892.5,
+      "survival": 0.4444
+    },
+    {
+      "fh": 2979.9,
+      "survival": 0.4444
+    },
+    {
+      "fh": 3155.4,
+      "survival": 0.4444
+    },
+    {
+      "fh": 3231.7,
+      "survival": 0.4444
+    },
+    {
+      "fh": 3439.2,
+      "survival": 0.4444
+    },
+    {
+      "fh": 3628.6,
+      "survival": 0.4444
+    },
+    {
+      "fh": 3635.8,
+      "survival": 0.4444
+    },
+    {
+      "fh": 3964.8,
+      "survival": 0.4444
+    },
+    {
+      "fh": 4332.9,
+      "survival": 0.4444
+    },
+    {
+      "fh": 5204.0,
+      "survival": 0.4444
+    },
+    {
+      "fh": 5551.5,
+      "survival": 0.4444
+    },
+    {
+      "fh": 5933.4,
+      "survival": 0.4444
+    },
+    {
+      "fh": 6313.7,
+      "survival": 0.4444
+    },
+    {
+      "fh": 10355.3,
+      "survival": 0.4444
+    },
+    {
+      "fh": 11116.8,
+      "survival": 0.4444
     }
-  ]
+  ],
+  "survival_curve_method": "Kaplan-Meier"
 }

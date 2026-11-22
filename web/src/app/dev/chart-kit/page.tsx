@@ -11,6 +11,8 @@ import { DotPlot } from "@/components/charts/dot-plot";
 import { ChartTable } from "@/components/charts/chart-table";
 import { JetPlanform } from "@/components/planform/jet-planform";
 import { FlightLinePlanform } from "@/components/planform/flight-line-planform";
+import { PlanformDrawing, type ZoneComponentMap } from "@/components/planform/planform-drawing";
+import { PLANFORM_GEOMETRY, PLANFORM_TYPE_NAME } from "@/components/planform/type-geometry";
 import { CHART_CATEGORICAL, type Priority, type Status } from "@/lib/domain-types";
 import { formatFH, formatPct } from "@/lib/format";
 
@@ -98,6 +100,24 @@ const FLEET_STATUSES: Status[] = Array.from({ length: 16 }, (_, i) =>
   STATUSES[i % STATUSES.length]
 );
 
+// Mock zone statuses for every planform type: cycle the four statuses over
+// the type's zones so each marker color appears in the demo.
+const MOCK_STATUS_CYCLE: Status[] = ["Serviceable", "Monitor", "Serviceable", "Action due", "Serviceable", "Critical"];
+
+function mockZones(type: "fighter" | "transport" | "airlifter"): ZoneComponentMap {
+  const zones: ZoneComponentMap = {};
+  PLANFORM_GEOMETRY[type].hotspots.forEach((h, i) => {
+    zones[h.id] = [{ key: `${type}-${h.id}`, label: `${h.label} unit`, status: MOCK_STATUS_CYCLE[i % MOCK_STATUS_CYCLE.length] }];
+  });
+  return zones;
+}
+
+const FLIGHT_LINE_GROUPS = [
+  { type: "fighter" as const, tails: Array.from({ length: 8 }, (_, i) => `FX-${301 + i}`) },
+  { type: "transport" as const, tails: Array.from({ length: 8 }, (_, i) => `TX-${401 + i}`) },
+  { type: "airlifter" as const, tails: Array.from({ length: 6 }, (_, i) => `CX-${501 + i}`) },
+];
+
 export default function ChartKitDevPage() {
   return (
     <AppShell>
@@ -142,12 +162,37 @@ export default function ChartKitDevPage() {
         </section>
 
         <section>
-          <h2 className="mb-3 text-[15px] font-semibold text-(--ink)">Flight line, 16 aircraft</h2>
-          <div className="grid grid-cols-8 gap-3 rounded-[8px] border border-(--rule) bg-(--sheet) p-5">
-            {FLEET_STATUSES.map((status, i) => (
-              <div key={i} className="flex flex-col items-center gap-1">
-                <FlightLinePlanform status={status} animate delayMs={i * 30} className="h-20" />
-                <TailNumber tail={`FX-${301 + i}`} className="text-[11px] text-(--ink-2)" />
+          <h2 className="mb-3 text-[15px] font-semibold text-(--ink)">Planforms by aircraft type</h2>
+          <div className="grid grid-cols-3 gap-4 rounded-[8px] border border-(--rule) bg-(--sheet) p-5">
+            {(["fighter", "transport", "airlifter"] as const).map((type) => (
+              <figure key={type} className="flex flex-col items-center gap-2">
+                <PlanformDrawing type={type} zones={mockZones(type)} className="h-[440px] w-full" />
+                <figcaption className="text-[13px] text-(--ink-2)">{PLANFORM_TYPE_NAME[type]}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mb-3 text-[15px] font-semibold text-(--ink)">Flight line by type</h2>
+          <div className="flex flex-col gap-4 rounded-[8px] border border-(--rule) bg-(--sheet) p-5">
+            {FLIGHT_LINE_GROUPS.map((group) => (
+              <div key={group.type}>
+                <p className="mb-2 text-[13px] font-semibold text-(--ink)">{PLANFORM_TYPE_NAME[group.type]}</p>
+                <div className="grid grid-cols-8 gap-3">
+                  {group.tails.map((tail, i) => (
+                    <div key={tail} className="flex flex-col items-center gap-1">
+                      <FlightLinePlanform
+                        type={group.type}
+                        status={FLEET_STATUSES[i % FLEET_STATUSES.length]}
+                        animate
+                        delayMs={i * 30}
+                        className="h-20"
+                      />
+                      <TailNumber tail={tail} className="text-[11px] text-(--ink-2)" />
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
