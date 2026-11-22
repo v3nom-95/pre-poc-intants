@@ -24,6 +24,28 @@ export interface BacktestFailure {
   alert_basis: string | null;
 }
 
+export interface BacktestSourceRow {
+  source: string;
+  can_cover: boolean;
+  covered: number;
+  recall: number | null;
+  first_alert_for: number;
+  alerts_raised: number;
+  alert_rate_per_1000fh: number | null;
+}
+
+export interface TauTradeoffRow {
+  tau_multiplier: number;
+  model_covered: number;
+  model_recall: number | null;
+  all_sources_covered: number;
+  all_sources_recall: number | null;
+  model_alerts: number;
+  model_alert_rate_per_1000fh: number | null;
+  all_alerts: number;
+  all_alert_rate_per_1000fh: number | null;
+}
+
 export interface Backtest {
   cutoff: string;
   test_start: string;
@@ -69,6 +91,14 @@ export interface Backtest {
       observed_failures: number;
     }[];
     by_type: { type: string; n_units: number; expected: number; observed: number }[];
+    by_entry?: { entered_with_history: boolean; n_units: number; expected: number; observed: number }[];
+    in_window_fit?: {
+      parts: number;
+      n_units: number;
+      expected_production_fit: number;
+      expected_in_window_fit: number;
+      observed: number;
+    } | null;
   };
   recall: {
     as_of_points: string[];
@@ -85,6 +115,9 @@ export interface Backtest {
     alert_rate_per_1000fh: number | null;
     open_alerts_by_month: { as_of: string; open_alerts: number }[];
     by_type: { type: string; failures: number; covered: number; recall: number | null }[];
+    by_source?: BacktestSourceRow[];
+    rules_and_model_only?: { covered: number; recall: number | null };
+    tau_tradeoff?: TauTradeoffRow[];
     failures: BacktestFailure[];
   };
   simplifications: string[];

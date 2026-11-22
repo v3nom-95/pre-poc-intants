@@ -28,7 +28,7 @@
     {
       "tail": "TX-402",
       "event_type": "Install",
-      "date": "2015-02-21",
+      "date": "2020-04-15",
       "reason": null,
       "serial": "AP-0002"
     }
@@ -39,73 +39,74 @@
       "survival": 1.0
     },
     {
-      "fh": 150.9,
+      "fh": 236.7,
       "survival": 1.0
     },
     {
-      "fh": 155.7,
+      "fh": 260.6,
       "survival": 1.0
     },
     {
-      "fh": 298.4,
-      "survival": 0.6667
+      "fh": 738.2,
+      "survival": 1.0
     },
     {
-      "fh": 381.0,
-      "survival": 0.6667
+      "fh": 839.5,
+      "survival": 1.0
     },
     {
-      "fh": 442.7,
-      "survival": 0.6667
+      "fh": 871.4,
+      "survival": 1.0
     },
     {
-      "fh": 570.5,
-      "survival": 0.6667
+      "fh": 952.9,
+      "survival": 1.0
     },
     {
-      "fh": 714.0,
-      "survival": 0.6667
+      "fh": 1229.3,
+      "survival": 1.0
     },
     {
-      "fh": 896.0,
-      "survival": 0.6667
+      "fh": 1324.3,
+      "survival": 1.0
     },
     {
-      "fh": 1078.2,
-      "survival": 0.6667
+      "fh": 1392.1,
+      "survival": 1.0
     },
     {
-      "fh": 1199.3,
-      "survival": 0.6667
+      "fh": 1403.4,
+      "survival": 1.0
     },
     {
-      "fh": 1442.1,
-      "survival": 0.6667
+      "fh": 1415.5,
+      "survival": 1.0
     },
     {
-      "fh": 1551.1,
-      "survival": 0.6667
+      "fh": 1563.0,
+      "survival": 1.0
     },
     {
-      "fh": 1695.9,
-      "survival": 0.6667
+      "fh": 1822.3,
+      "survival": 1.0
     },
     {
-      "fh": 1852.9,
-      "survival": 0.6667
+      "fh": 1904.9,
+      "survival": 1.0
     },
     {
-      "fh": 2019.4,
-      "survival": 0.6667
+      "fh": 1956.2,
+      "survival": 1.0
     },
     {
-      "fh": 2112.6,
-      "survival": 0.6667
+      "fh": 2549.1,
+      "survival": 1.0
     },
     {
-      "fh": 2347.7,
-      "survival": 0.6667
+      "fh": 2855.0,
+      "survival": 0.0
     }
   ],
-  "survival_curve_method": "Kaplan-Meier"
+  "survival_curve_method": "Kaplan-Meier",
+  "weibull_curve": []
 }

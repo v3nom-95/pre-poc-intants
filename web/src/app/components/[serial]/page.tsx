@@ -144,6 +144,7 @@ export default async function ComponentPage({
             <div className="max-w-[900px]">
               <SurvivalCurveChart
                 points={c.survival_curve}
+                weibull={c.weibull_curve ?? []}
                 unitFhExposure={c.fh_exposure}
                 unit={unit}
                 method={c.survival_curve_method ?? undefined}

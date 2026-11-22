@@ -430,7 +430,7 @@ PRESSURISED_FI = dict(base_per_fh=100.0 / 40000.0, per_pressurisation_cycle=0.00
 ITT_MARGIN_START_C = 62.0
 ITT_MARGIN_LIMIT_C = 15.0
 ITT_MARGIN_DECAY_PER_EFH = 0.010
-ITT_SENSOR_NOISE_SD = 2.0
+ITT_SENSOR_NOISE_SD = 1.5  # SPEC 4: engine trend sensor noise sd 1.5 °C, same source type as EGT
 
 # ---------------------------------------------------------------------------
 # Operating hours (section 14.2): engine ground running and APU hours.
@@ -527,8 +527,13 @@ REPEAT_SNAG_INTERVAL_SORTIES = (6, 12)
 REPEAT_SNAG_WINDOW_MONTHS = 9
 
 ENGINE_DETERIORATION_TAIL = "FX-311"
+# P5: 3x the fleet-normal EGT margin decay over the last 300 EFH (SPEC 3),
+# with the engine's margin set so the projected crossing of the limit lands
+# about 60 EFH after the as-of date (target 40 to 80 EFH).
 ENGINE_DETERIORATION_FACTOR = 3.0
 ENGINE_DETERIORATION_WINDOW_EFH = 300.0
+ENGINE_DETERIORATION_TARGET_EFH = 60.0
+EGT_MARGIN_DECAY_PER_EFH = 0.010
 EGT_MARGIN_LIMIT_C = 10.0
 EGT_MARGIN_START_C = 55.0
 EGT_SENSOR_NOISE_SD = 1.5
@@ -549,6 +554,7 @@ TURBOPROP_DETERIORATION_TAIL = "CX-502"
 TURBOPROP_DETERIORATION_POSITION = "3"
 TURBOPROP_DETERIORATION_WINDOW_EFH = 300.0
 TURBOPROP_DETERIORATION_TARGET_EFH = 65.0   # planted crossing about 40 to 90 EFH after the as-of date
+TURBOPROP_DETERIORATION_FACTOR = 3.0        # 3x the fleet-normal ITT margin decay (SPEC 14.4)
 
 HT_APPROACHING = dict(
     cadpad_tail="FX-305", cadpad_days=20,

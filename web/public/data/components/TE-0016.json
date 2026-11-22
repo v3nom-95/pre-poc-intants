@@ -1,0 +1,39 @@
+{
+  "serial": "TE-0016",
+  "part_number": "72-0002-11",
+  "name": "Engine (turboprop)",
+  "ata": "72",
+  "type": "transport",
+  "type_name": "Twin-engine transport",
+  "key": "TR-ENGINE",
+  "zone": "engine-2",
+  "task_card": "TC-72-03-01",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "HT",
+  "criticality": "flight_safety",
+  "current_tail": "TX-408",
+  "current_position": "2",
+  "governing_limit": "EFH",
+  "remaining": 1005.4,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 21,
+  "fleet_confirmed_failures": 0,
+  "install_history": [
+    {
+      "tail": "TX-408",
+      "event_type": "Install",
+      "date": "2019-03-22",
+      "reason": null,
+      "serial": "TE-0016"
+    }
+  ],
+  "survival_curve": [],
+  "survival_curve_method": null,
+  "weibull_curve": []
+}

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { scaleLinear } from "d3-scale";
-import { line as d3line, area as d3area, curveMonotoneX } from "d3-shape";
+import { line as d3line, area as d3area, curveLinear, curveMonotoneX, curveStepAfter } from "d3-shape";
 import type { Series } from "./chart-types";
 
 interface LineChartProps {
@@ -13,6 +13,14 @@ interface LineChartProps {
   yMin?: number;
   yMax?: number;
   markers?: { x: number; label: string; color?: string }[];
+  /** Straight segments between points instead of a smoothed curve (use when points are sparse measurements). */
+  linear?: boolean;
+  /** Draw a dot at each data point. */
+  showPoints?: boolean;
+  /** Unit written after the last x tick only (keeps dense tick labels from colliding). */
+  xUnit?: string;
+  /** Series ids drawn as steps (for example a Kaplan-Meier estimate). */
+  stepSeries?: string[];
 }
 
 const MARGIN = { top: 12, right: 16, bottom: 28, left: 44 };
@@ -25,7 +33,12 @@ export function LineChart({
   yMin,
   yMax,
   markers = [],
+  linear = false,
+  showPoints = false,
+  xUnit,
+  stepSeries = [],
 }: LineChartProps) {
+  const curve = linear ? curveLinear : curveMonotoneX;
   const width = 640;
   const innerW = width - MARGIN.left - MARGIN.right;
   const innerH = height - MARGIN.top - MARGIN.bottom;
@@ -94,31 +107,38 @@ export function LineChart({
               </text>
             </g>
           ))}
-          {xTicks.map((t) => (
-            <text
-              key={t}
-              x={xScale(t)}
-              y={innerH + 20}
-              textAnchor="middle"
-              className="tabular"
-              fontSize={11}
-              fill="var(--ink-2)"
-            >
-              {xTickFormat(t)}
-            </text>
-          ))}
+          {(() => {
+            // With an x unit, the unit is an axis title at the right end of the
+            // axis; ticks that would run into it are skipped.
+            const unitWidth = xUnit ? xUnit.length * 6 + 24 : 0;
+            const shown = xUnit ? xTicks.filter((t) => xScale(t) < innerW - unitWidth) : xTicks;
+            return (
+              <>
+                {shown.map((t) => (
+                  <text key={t} x={xScale(t)} y={innerH + 20} textAnchor="middle" className="tabular" fontSize={11} fill="var(--ink-2)">
+                    {xTickFormat(t)}
+                  </text>
+                ))}
+                {xUnit && (
+                  <text x={innerW} y={innerH + 20} textAnchor="end" fontSize={11} fill="var(--ink-2)">
+                    {xUnit}
+                  </text>
+                )}
+              </>
+            );
+          })()}
 
           {series.map((s) => {
             const hasBand = s.points.some((p) => p.yLow !== undefined && p.yHigh !== undefined);
             const lineGen = d3line<typeof s.points[number]>()
               .x((p) => xScale(Number(p.x)))
               .y((p) => yScale(p.y))
-              .curve(curveMonotoneX);
+              .curve(stepSeries.includes(s.id) ? curveStepAfter : curve);
             const areaGen = d3area<typeof s.points[number]>()
               .x((p) => xScale(Number(p.x)))
               .y0((p) => yScale(p.yLow ?? p.y))
               .y1((p) => yScale(p.yHigh ?? p.y))
-              .curve(curveMonotoneX);
+              .curve(curve);
 
             return (
               <g key={s.id}>
@@ -133,6 +153,10 @@ export function LineChart({
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
+                {showPoints &&
+                  s.points.map((p, i) => (
+                    <circle key={i} cx={xScale(Number(p.x))} cy={yScale(p.y)} r={3.5} fill={s.color} stroke="var(--sheet)" strokeWidth={1.5} />
+                  ))}
               </g>
             );
           })}
@@ -147,9 +171,9 @@ export function LineChart({
                   x2={mx}
                   y1={0}
                   y2={innerH}
-                  stroke={m.color ?? "var(--ink-3)"}
+                  stroke={m.color ?? "var(--ink-2)"}
                   strokeWidth={1.5}
-                  strokeDasharray="3 3"
+                  strokeOpacity={0.7}
                 />
                 <text x={mx} y={-2} fontSize={10} fill={m.color ?? "var(--ink-3)"} textAnchor={anchor}>
                   {m.label}

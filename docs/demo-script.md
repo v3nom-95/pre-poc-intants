@@ -108,10 +108,10 @@ engineers who know the type.
 "The fleet is not only fighters." Show the transport section on Fleet overview, then TX-404: repeated cabin altitude fluctuation snags (ATA 21), two outflow valve removals that came back no fault found. PRE recommends troubleshooting the ducting and door seals instead of a third valve change, and cites the task card.
 
 ### CX-502 engine 3 (`/aircraft/CX-502`, Engines tab)
-Four engines, each trended on its own ITT margin. Engine 3 is deteriorating far faster than the others and is projected to reach its limit in about 61 EFH. Show the planform hotspot on the right inboard nacelle.
+Four engines, each trended on its own ITT margin. Engine 3 is deteriorating about three times faster than the fleet norm and is projected to reach its limit in about 49 EFH. Show the planform hotspot on the right inboard nacelle.
 
 ### Ask PRE
 Ask "What is wrong with TX-404?", "Show the ITT trend for CX-502 engine 3" and "Compare utilisation by aircraft type". Every answer is computed from the records and links to its sources; there is no language model.
 
 ### Honest validation (`/models`)
-The backtest shows the survival model ranks risk better than chance (concordance about 0.67) but gives early warning for only a minority of failures. Say so plainly: on real data, thresholds and covariates would be tuned with your engineers. All nine planted patterns are recovered.
+The backtest replays every recommendation source month by month using only the data available at the time. Across all sources PRE warned ahead of about 1 in 5 test-year failures (18%), with a median 141 FH of notice; the survival model ranks risk well (concordance about 0.71) and its expected failure count is close to what happened (44 expected, 40 observed). Show the trade-off chart: halving the thresholds roughly doubles early warning at about 2.6 times the alerts. Say plainly that the thresholds are a choice for your engineers on real data. All nine planted patterns are recovered.

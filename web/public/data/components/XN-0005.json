@@ -1,0 +1,39 @@
+{
+  "serial": "XN-0005",
+  "part_number": "32-2110-21",
+  "name": "Nose landing gear assembly",
+  "ata": "32",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-NLG",
+  "zone": "nose-gear",
+  "task_card": "TC-32-09-01",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "HT",
+  "criticality": "flight_safety",
+  "current_tail": "CX-505",
+  "current_position": "1",
+  "governing_limit": "Calendar",
+  "remaining": 44.1,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 9,
+  "fleet_confirmed_failures": 0,
+  "install_history": [
+    {
+      "tail": "CX-505",
+      "event_type": "Install",
+      "date": "2020-08-20",
+      "reason": null,
+      "serial": "XN-0005"
+    }
+  ],
+  "survival_curve": [],
+  "survival_curve_method": null,
+  "weibull_curve": []
+}

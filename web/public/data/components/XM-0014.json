@@ -12,27 +12,28 @@
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "CX-502",
+  "current_tail": "CX-505",
   "current_position": "R",
   "governing_limit": "Calendar",
-  "remaining": 102.7,
+  "remaining": 81.5,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
   "fh_to_tau_p90": null,
   "prob_fail_before_next_phase": null,
   "explanation": null,
-  "fleet_units": 16,
+  "fleet_units": 17,
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "CX-502",
+      "tail": "CX-505",
       "event_type": "Install",
-      "date": "2025-06-13",
+      "date": "2023-09-17",
       "reason": null,
       "serial": "XM-0014"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

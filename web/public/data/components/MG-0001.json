@@ -28,11 +28,12 @@
     {
       "tail": "FX-301",
       "event_type": "Install",
-      "date": "2020-01-19",
+      "date": "2017-10-25",
       "reason": null,
       "serial": "MG-0001"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

@@ -15,7 +15,7 @@
   "current_tail": "FX-310",
   "current_position": "R",
   "governing_limit": "Calendar",
-  "remaining": 21.1,
+  "remaining": 49.1,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "FX-310",
       "event_type": "Install",
-      "date": "2016-10-10",
+      "date": "2019-01-28",
       "reason": null,
       "serial": "MG-0020"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

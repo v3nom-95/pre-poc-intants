@@ -15,24 +15,25 @@
   "current_tail": "TX-406",
   "current_position": "2",
   "governing_limit": "EFH",
-  "remaining": 1363.9,
+  "remaining": 150.1,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
   "fh_to_tau_p90": null,
   "prob_fail_before_next_phase": null,
   "explanation": null,
-  "fleet_units": 24,
+  "fleet_units": 21,
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
       "tail": "TX-406",
       "event_type": "Install",
-      "date": "2020-06-10",
+      "date": "2019-01-09",
       "reason": null,
       "serial": "TE-0012"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

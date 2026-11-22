@@ -7,11 +7,11 @@
       "type_name": "Multirole fighter",
       "base": "Base A",
       "status": "Action due",
-      "airframe_fh": 3371.8,
-      "fi": 41.8,
-      "induction_date": "2013-07-04",
+      "airframe_fh": 2854.8,
+      "fi": 51.0,
+      "induction_date": "2017-09-02",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 1
+      "open_recs_count": 5
     },
     {
       "tail": "FX-302",
@@ -19,35 +19,35 @@
       "type_name": "Multirole fighter",
       "base": "Base A",
       "status": "Action due",
-      "airframe_fh": 3499.8,
-      "fi": 46.4,
-      "induction_date": "2012-09-21",
+      "airframe_fh": 2751.5,
+      "fi": 68.4,
+      "induction_date": "2011-08-12",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 2
+      "open_recs_count": 7
     },
     {
       "tail": "FX-303",
       "type": "fighter",
       "type_name": "Multirole fighter",
       "base": "Base A",
-      "status": "Monitor",
-      "airframe_fh": 3422.4,
-      "fi": 41.1,
-      "induction_date": "2009-08-21",
+      "status": "Action due",
+      "airframe_fh": 2460.8,
+      "fi": 49.6,
+      "induction_date": "2012-03-05",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 2
+      "open_recs_count": 3
     },
     {
       "tail": "FX-304",
       "type": "fighter",
       "type_name": "Multirole fighter",
       "base": "Base A",
-      "status": "Action due",
-      "airframe_fh": 1834.1,
-      "fi": 55.5,
-      "induction_date": "2018-01-19",
+      "status": "Monitor",
+      "airframe_fh": 3794.4,
+      "fi": 52.4,
+      "induction_date": "2013-04-01",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 3
+      "open_recs_count": 1
     },
     {
       "tail": "FX-305",
@@ -55,11 +55,11 @@
       "type_name": "Multirole fighter",
       "base": "Base A",
       "status": "Action due",
-      "airframe_fh": 1888.4,
-      "fi": 42.1,
-      "induction_date": "2009-08-11",
+      "airframe_fh": 4441.9,
+      "fi": 63.8,
+      "induction_date": "2014-12-22",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 2
+      "open_recs_count": 4
     },
     {
       "tail": "FX-306",
@@ -67,11 +67,11 @@
       "type_name": "Multirole fighter",
       "base": "Base A",
       "status": "Action due",
-      "airframe_fh": 2182.4,
-      "fi": 48.1,
-      "induction_date": "2010-06-05",
+      "airframe_fh": 3275.2,
+      "fi": 60.6,
+      "induction_date": "2016-02-06",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 1
+      "open_recs_count": 4
     },
     {
       "tail": "FX-307",
@@ -79,11 +79,11 @@
       "type_name": "Multirole fighter",
       "base": "Base A",
       "status": "Action due",
-      "airframe_fh": 2363.1,
-      "fi": 47.3,
-      "induction_date": "2014-11-15",
+      "airframe_fh": 3668.0,
+      "fi": 54.1,
+      "induction_date": "2014-12-15",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 2
+      "open_recs_count": 4
     },
     {
       "tail": "FX-308",
@@ -91,33 +91,33 @@
       "type_name": "Multirole fighter",
       "base": "Base A",
       "status": "Action due",
-      "airframe_fh": 3847.1,
-      "fi": 31.9,
-      "induction_date": "2010-02-04",
+      "airframe_fh": 3981.3,
+      "fi": 30.9,
+      "induction_date": "2017-06-21",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 2
+      "open_recs_count": 4
     },
     {
       "tail": "FX-309",
       "type": "fighter",
       "type_name": "Multirole fighter",
       "base": "Base A",
-      "status": "Action due",
-      "airframe_fh": 2541.7,
-      "fi": 73.1,
-      "induction_date": "2009-10-26",
+      "status": "Monitor",
+      "airframe_fh": 2191.3,
+      "fi": 79.9,
+      "induction_date": "2012-02-05",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 5
+      "open_recs_count": 3
     },
     {
       "tail": "FX-310",
       "type": "fighter",
       "type_name": "Multirole fighter",
       "base": "Base A",
-      "status": "Critical",
-      "airframe_fh": 3341.1,
-      "fi": 59.6,
-      "induction_date": "2013-08-10",
+      "status": "Monitor",
+      "airframe_fh": 3502.6,
+      "fi": 58.7,
+      "induction_date": "2012-11-27",
       "planned_withdrawal_year": 2036,
       "open_recs_count": 3
     },
@@ -127,9 +127,9 @@
       "type_name": "Multirole fighter",
       "base": "Base B",
       "status": "Action due",
-      "airframe_fh": 3027.6,
-      "fi": 66.5,
-      "induction_date": "2017-12-18",
+      "airframe_fh": 4576.7,
+      "fi": 41.3,
+      "induction_date": "2011-06-26",
       "planned_withdrawal_year": 2036,
       "open_recs_count": 3
     },
@@ -139,23 +139,23 @@
       "type_name": "Multirole fighter",
       "base": "Base B",
       "status": "Action due",
-      "airframe_fh": 4040.6,
-      "fi": 37.4,
-      "induction_date": "2011-11-27",
+      "airframe_fh": 3241.5,
+      "fi": 33.9,
+      "induction_date": "2017-11-19",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 2
+      "open_recs_count": 1
     },
     {
       "tail": "FX-313",
       "type": "fighter",
       "type_name": "Multirole fighter",
       "base": "Base B",
-      "status": "Serviceable",
-      "airframe_fh": 2469.9,
-      "fi": 29.8,
-      "induction_date": "2015-05-07",
+      "status": "Monitor",
+      "airframe_fh": 3081.6,
+      "fi": 46.7,
+      "induction_date": "2013-07-15",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 0
+      "open_recs_count": 2
     },
     {
       "tail": "FX-314",
@@ -163,11 +163,11 @@
       "type_name": "Multirole fighter",
       "base": "Base B",
       "status": "Action due",
-      "airframe_fh": 3811.3,
-      "fi": 70.4,
-      "induction_date": "2009-08-17",
+      "airframe_fh": 1726.3,
+      "fi": 47.2,
+      "induction_date": "2017-07-23",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 4
+      "open_recs_count": 5
     },
     {
       "tail": "FX-315",
@@ -175,59 +175,59 @@
       "type_name": "Multirole fighter",
       "base": "Base B",
       "status": "Action due",
-      "airframe_fh": 4092.5,
-      "fi": 40.3,
-      "induction_date": "2009-10-15",
+      "airframe_fh": 1658.5,
+      "fi": 61.3,
+      "induction_date": "2017-06-03",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 2
+      "open_recs_count": 5
     },
     {
       "tail": "FX-316",
       "type": "fighter",
       "type_name": "Multirole fighter",
       "base": "Base B",
-      "status": "Serviceable",
-      "airframe_fh": 2343.8,
-      "fi": 42.2,
-      "induction_date": "2013-01-26",
+      "status": "Monitor",
+      "airframe_fh": 3360.5,
+      "fi": 36.8,
+      "induction_date": "2014-04-23",
       "planned_withdrawal_year": 2036,
-      "open_recs_count": 0
+      "open_recs_count": 2
     },
     {
       "tail": "TX-401",
       "type": "transport",
       "type_name": "Twin-engine transport",
       "base": "Base A",
-      "status": "Serviceable",
-      "airframe_fh": 7026.0,
-      "fi": 56.5,
-      "induction_date": "2015-08-27",
+      "status": "Monitor",
+      "airframe_fh": 4438.3,
+      "fi": 51.5,
+      "induction_date": "2016-08-24",
       "planned_withdrawal_year": 2040,
-      "open_recs_count": 0
+      "open_recs_count": 1
     },
     {
       "tail": "TX-402",
       "type": "transport",
       "type_name": "Twin-engine transport",
       "base": "Base A",
-      "status": "Serviceable",
-      "airframe_fh": 8451.3,
-      "fi": 61.4,
-      "induction_date": "2014-07-10",
+      "status": "Monitor",
+      "airframe_fh": 9113.9,
+      "fi": 51.7,
+      "induction_date": "2011-11-10",
       "planned_withdrawal_year": 2040,
-      "open_recs_count": 0
+      "open_recs_count": 1
     },
     {
       "tail": "TX-403",
       "type": "transport",
       "type_name": "Twin-engine transport",
       "base": "Base A",
-      "status": "Serviceable",
-      "airframe_fh": 6059.4,
-      "fi": 56.7,
-      "induction_date": "2018-07-17",
+      "status": "Critical",
+      "airframe_fh": 9627.0,
+      "fi": 48.4,
+      "induction_date": "2014-06-08",
       "planned_withdrawal_year": 2040,
-      "open_recs_count": 0
+      "open_recs_count": 2
     },
     {
       "tail": "TX-404",
@@ -235,35 +235,35 @@
       "type_name": "Twin-engine transport",
       "base": "Base A",
       "status": "Action due",
-      "airframe_fh": 6495.4,
-      "fi": 47.2,
-      "induction_date": "2015-07-12",
+      "airframe_fh": 8029.9,
+      "fi": 57.0,
+      "induction_date": "2009-12-10",
       "planned_withdrawal_year": 2040,
-      "open_recs_count": 1
+      "open_recs_count": 2
     },
     {
       "tail": "TX-405",
       "type": "transport",
       "type_name": "Twin-engine transport",
       "base": "Base A",
-      "status": "Serviceable",
-      "airframe_fh": 9259.8,
-      "fi": 59.3,
-      "induction_date": "2016-10-22",
+      "status": "Monitor",
+      "airframe_fh": 8079.8,
+      "fi": 49.0,
+      "induction_date": "2011-03-12",
       "planned_withdrawal_year": 2040,
-      "open_recs_count": 0
+      "open_recs_count": 1
     },
     {
       "tail": "TX-406",
       "type": "transport",
       "type_name": "Twin-engine transport",
       "base": "Base A",
-      "status": "Serviceable",
-      "airframe_fh": 8322.4,
-      "fi": 54.6,
-      "induction_date": "2010-10-24",
+      "status": "Monitor",
+      "airframe_fh": 6383.1,
+      "fi": 43.5,
+      "induction_date": "2016-06-20",
       "planned_withdrawal_year": 2040,
-      "open_recs_count": 0
+      "open_recs_count": 1
     },
     {
       "tail": "TX-407",
@@ -271,9 +271,9 @@
       "type_name": "Twin-engine transport",
       "base": "Base A",
       "status": "Serviceable",
-      "airframe_fh": 8814.8,
-      "fi": 46.0,
-      "induction_date": "2014-04-18",
+      "airframe_fh": 5486.0,
+      "fi": 33.5,
+      "induction_date": "2018-10-01",
       "planned_withdrawal_year": 2040,
       "open_recs_count": 0
     },
@@ -282,22 +282,22 @@
       "type": "transport",
       "type_name": "Twin-engine transport",
       "base": "Base A",
-      "status": "Action due",
-      "airframe_fh": 6079.7,
-      "fi": 40.3,
-      "induction_date": "2014-01-15",
+      "status": "Serviceable",
+      "airframe_fh": 9132.2,
+      "fi": 42.5,
+      "induction_date": "2009-10-21",
       "planned_withdrawal_year": 2040,
-      "open_recs_count": 1
+      "open_recs_count": 0
     },
     {
       "tail": "CX-501",
       "type": "airlifter",
       "type_name": "Four-engine airlifter",
       "base": "Base A",
-      "status": "Action due",
-      "airframe_fh": 9449.4,
-      "fi": 51.8,
-      "induction_date": "2015-02-03",
+      "status": "Monitor",
+      "airframe_fh": 5099.6,
+      "fi": 49.4,
+      "induction_date": "2011-12-13",
       "planned_withdrawal_year": 2042,
       "open_recs_count": 3
     },
@@ -307,21 +307,21 @@
       "type_name": "Four-engine airlifter",
       "base": "Base A",
       "status": "Action due",
-      "airframe_fh": 5940.9,
-      "fi": 43.6,
-      "induction_date": "2010-08-23",
+      "airframe_fh": 12618.2,
+      "fi": 51.5,
+      "induction_date": "2006-02-19",
       "planned_withdrawal_year": 2042,
-      "open_recs_count": 2
+      "open_recs_count": 3
     },
     {
       "tail": "CX-503",
       "type": "airlifter",
       "type_name": "Four-engine airlifter",
       "base": "Base A",
-      "status": "Critical",
-      "airframe_fh": 10139.4,
-      "fi": 49.6,
-      "induction_date": "2009-10-15",
+      "status": "Action due",
+      "airframe_fh": 12152.0,
+      "fi": 54.6,
+      "induction_date": "2006-07-01",
       "planned_withdrawal_year": 2042,
       "open_recs_count": 3
     },
@@ -330,317 +330,303 @@
       "type": "airlifter",
       "type_name": "Four-engine airlifter",
       "base": "Base B",
-      "status": "Action due",
-      "airframe_fh": 5942.5,
-      "fi": 40.3,
-      "induction_date": "2015-01-01",
+      "status": "Monitor",
+      "airframe_fh": 9320.5,
+      "fi": 38.6,
+      "induction_date": "2016-01-25",
       "planned_withdrawal_year": 2042,
-      "open_recs_count": 11
+      "open_recs_count": 3
     },
     {
       "tail": "CX-505",
       "type": "airlifter",
       "type_name": "Four-engine airlifter",
       "base": "Base B",
-      "status": "Monitor",
-      "airframe_fh": 9297.9,
-      "fi": 33.3,
-      "induction_date": "2016-05-27",
+      "status": "Action due",
+      "airframe_fh": 6922.4,
+      "fi": 40.0,
+      "induction_date": "2008-09-11",
       "planned_withdrawal_year": 2042,
-      "open_recs_count": 6
+      "open_recs_count": 3
     },
     {
       "tail": "CX-506",
       "type": "airlifter",
       "type_name": "Four-engine airlifter",
       "base": "Base B",
-      "status": "Monitor",
-      "airframe_fh": 7112.4,
-      "fi": 52.0,
-      "induction_date": "2007-07-03",
+      "status": "Critical",
+      "airframe_fh": 9456.5,
+      "fi": 48.5,
+      "induction_date": "2009-07-02",
       "planned_withdrawal_year": 2042,
-      "open_recs_count": 6
+      "open_recs_count": 2
     }
   ],
   "kpis": {
-    "fleet_fh_12mo": 7446.0,
+    "fleet_fh_12mo": 7832.0,
     "serviceability_pct": 93.3,
     "open_recs_by_priority": {
       "Critical": 2,
       "High": 24,
-      "Medium": 35,
-      "Low": 6
+      "Medium": 51,
+      "Low": 4
     },
-    "due_30_days_count": 8,
-    "unscheduled_removal_rate_per_1000fh": 8.86,
-    "unscheduled_removal_rate_delta": -0.81,
+    "due_30_days_count": 5,
+    "unscheduled_removal_rate_per_1000fh": 5.62,
+    "unscheduled_removal_rate_delta": -1.53,
     "by_type": {
       "fighter": {
         "aircraft": 16,
-        "fleet_fh_12mo": 2620.0,
-        "serviceability_pct": 93.8,
-        "open_recs_by_priority": {
-          "Critical": 1,
-          "High": 18,
-          "Medium": 13,
-          "Low": 2
-        },
-        "due_30_days_count": 4,
-        "unscheduled_removal_rate_per_1000fh": 6.49,
-        "unscheduled_removal_rate_delta": -1.15
-      },
-      "transport": {
-        "aircraft": 8,
-        "fleet_fh_12mo": 2652.0,
+        "fleet_fh_12mo": 2744.0,
         "serviceability_pct": 100.0,
         "open_recs_by_priority": {
           "Critical": 0,
-          "High": 2,
-          "Medium": 0,
-          "Low": 0
+          "High": 19,
+          "Medium": 35,
+          "Low": 2
         },
-        "due_30_days_count": 0,
-        "unscheduled_removal_rate_per_1000fh": 7.92,
-        "unscheduled_removal_rate_delta": 2.26
+        "due_30_days_count": 2,
+        "unscheduled_removal_rate_per_1000fh": 6.56,
+        "unscheduled_removal_rate_delta": 0.73
+      },
+      "transport": {
+        "aircraft": 8,
+        "fleet_fh_12mo": 2809.0,
+        "serviceability_pct": 87.5,
+        "open_recs_by_priority": {
+          "Critical": 1,
+          "High": 2,
+          "Medium": 4,
+          "Low": 1
+        },
+        "due_30_days_count": 1,
+        "unscheduled_removal_rate_per_1000fh": 1.78,
+        "unscheduled_removal_rate_delta": -5.7
       },
       "airlifter": {
         "aircraft": 6,
-        "fleet_fh_12mo": 2175.0,
+        "fleet_fh_12mo": 2279.0,
         "serviceability_pct": 83.3,
         "open_recs_by_priority": {
           "Critical": 1,
-          "High": 4,
-          "Medium": 22,
-          "Low": 4
+          "High": 3,
+          "Medium": 12,
+          "Low": 1
         },
-        "due_30_days_count": 4,
-        "unscheduled_removal_rate_per_1000fh": 12.88,
-        "unscheduled_removal_rate_delta": -4.14
+        "due_30_days_count": 2,
+        "unscheduled_removal_rate_per_1000fh": 9.22,
+        "unscheduled_removal_rate_delta": 0.88
       }
     }
   },
   "utilisation_monthly": [
     {
       "month": "2024-12",
-      "base_a_fh": 487.4,
-      "base_b_fh": 196.3,
-      "fighter_fh": 220.7,
-      "transport_fh": 267.4,
-      "airlifter_fh": 195.6
+      "base_a_fh": 463.7,
+      "base_b_fh": 170.5,
+      "fighter_fh": 228.4,
+      "transport_fh": 233.1,
+      "airlifter_fh": 172.7
     },
     {
       "month": "2025-01",
-      "base_a_fh": 466.5,
-      "base_b_fh": 181.5,
-      "fighter_fh": 224.6,
-      "transport_fh": 223.8,
-      "airlifter_fh": 199.6
+      "base_a_fh": 551.6,
+      "base_b_fh": 218.6,
+      "fighter_fh": 241.7,
+      "transport_fh": 287.1,
+      "airlifter_fh": 241.5
     },
     {
       "month": "2025-02",
-      "base_a_fh": 455.7,
-      "base_b_fh": 196.2,
-      "fighter_fh": 210.7,
-      "transport_fh": 221.0,
-      "airlifter_fh": 220.2
+      "base_a_fh": 466.2,
+      "base_b_fh": 169.8,
+      "fighter_fh": 221.0,
+      "transport_fh": 201.7,
+      "airlifter_fh": 213.4
     },
     {
       "month": "2025-03",
-      "base_a_fh": 417.4,
-      "base_b_fh": 162.1,
-      "fighter_fh": 216.2,
-      "transport_fh": 207.3,
-      "airlifter_fh": 156.0
-    },
-    {
-      "month": "2025-04",
-      "base_a_fh": 481.0,
-      "base_b_fh": 194.3,
-      "fighter_fh": 226.0,
-      "transport_fh": 239.1,
-      "airlifter_fh": 210.2
-    },
-    {
-      "month": "2025-05",
-      "base_a_fh": 493.4,
-      "base_b_fh": 185.8,
-      "fighter_fh": 210.9,
-      "transport_fh": 252.4,
-      "airlifter_fh": 215.9
-    },
-    {
-      "month": "2025-06",
-      "base_a_fh": 464.0,
-      "base_b_fh": 176.1,
-      "fighter_fh": 235.6,
-      "transport_fh": 198.7,
-      "airlifter_fh": 205.9
-    },
-    {
-      "month": "2025-07",
-      "base_a_fh": 395.1,
-      "base_b_fh": 152.9,
-      "fighter_fh": 179.3,
-      "transport_fh": 224.2,
-      "airlifter_fh": 144.6
-    },
-    {
-      "month": "2025-08",
-      "base_a_fh": 403.8,
-      "base_b_fh": 181.7,
-      "fighter_fh": 195.0,
-      "transport_fh": 180.4,
-      "airlifter_fh": 210.1
-    },
-    {
-      "month": "2025-09",
-      "base_a_fh": 408.2,
-      "base_b_fh": 172.0,
-      "fighter_fh": 186.9,
-      "transport_fh": 227.2,
-      "airlifter_fh": 166.1
-    },
-    {
-      "month": "2025-10",
-      "base_a_fh": 481.9,
-      "base_b_fh": 192.9,
-      "fighter_fh": 222.1,
-      "transport_fh": 235.5,
-      "airlifter_fh": 217.2
-    },
-    {
-      "month": "2025-11",
-      "base_a_fh": 462.3,
-      "base_b_fh": 169.3,
-      "fighter_fh": 241.0,
-      "transport_fh": 232.2,
-      "airlifter_fh": 158.4
-    },
-    {
-      "month": "2025-12",
-      "base_a_fh": 454.9,
-      "base_b_fh": 174.6,
-      "fighter_fh": 230.7,
-      "transport_fh": 220.9,
-      "airlifter_fh": 177.7
-    },
-    {
-      "month": "2026-01",
-      "base_a_fh": 448.8,
-      "base_b_fh": 181.8,
-      "fighter_fh": 226.8,
-      "transport_fh": 205.9,
-      "airlifter_fh": 197.9
-    },
-    {
-      "month": "2026-02",
-      "base_a_fh": 498.5,
-      "base_b_fh": 182.4,
-      "fighter_fh": 237.8,
-      "transport_fh": 255.9,
-      "airlifter_fh": 187.2
-    },
-    {
-      "month": "2026-03",
-      "base_a_fh": 474.8,
-      "base_b_fh": 194.4,
-      "fighter_fh": 233.1,
-      "transport_fh": 247.5,
-      "airlifter_fh": 188.7
-    },
-    {
-      "month": "2026-04",
-      "base_a_fh": 458.3,
-      "base_b_fh": 162.9,
-      "fighter_fh": 211.7,
-      "transport_fh": 244.2,
-      "airlifter_fh": 165.3
-    },
-    {
-      "month": "2026-05",
-      "base_a_fh": 497.0,
-      "base_b_fh": 197.8,
-      "fighter_fh": 250.9,
-      "transport_fh": 241.6,
-      "airlifter_fh": 202.3
-    },
-    {
-      "month": "2026-06",
-      "base_a_fh": 429.8,
-      "base_b_fh": 165.4,
-      "fighter_fh": 225.4,
-      "transport_fh": 196.7,
+      "base_a_fh": 451.9,
+      "base_b_fh": 197.0,
+      "fighter_fh": 247.1,
+      "transport_fh": 228.8,
       "airlifter_fh": 173.1
     },
     {
+      "month": "2025-04",
+      "base_a_fh": 530.7,
+      "base_b_fh": 181.9,
+      "fighter_fh": 245.8,
+      "transport_fh": 260.2,
+      "airlifter_fh": 206.5
+    },
+    {
+      "month": "2025-05",
+      "base_a_fh": 491.1,
+      "base_b_fh": 170.0,
+      "fighter_fh": 195.0,
+      "transport_fh": 275.4,
+      "airlifter_fh": 190.8
+    },
+    {
+      "month": "2025-06",
+      "base_a_fh": 525.4,
+      "base_b_fh": 185.3,
+      "fighter_fh": 225.5,
+      "transport_fh": 274.2,
+      "airlifter_fh": 211.1
+    },
+    {
+      "month": "2025-07",
+      "base_a_fh": 345.1,
+      "base_b_fh": 164.2,
+      "fighter_fh": 204.8,
+      "transport_fh": 168.4,
+      "airlifter_fh": 136.1
+    },
+    {
+      "month": "2025-08",
+      "base_a_fh": 375.6,
+      "base_b_fh": 151.1,
+      "fighter_fh": 168.3,
+      "transport_fh": 205.4,
+      "airlifter_fh": 152.9
+    },
+    {
+      "month": "2025-09",
+      "base_a_fh": 389.6,
+      "base_b_fh": 130.9,
+      "fighter_fh": 188.6,
+      "transport_fh": 194.8,
+      "airlifter_fh": 137.1
+    },
+    {
+      "month": "2025-10",
+      "base_a_fh": 486.0,
+      "base_b_fh": 188.0,
+      "fighter_fh": 255.8,
+      "transport_fh": 228.8,
+      "airlifter_fh": 189.4
+    },
+    {
+      "month": "2025-11",
+      "base_a_fh": 505.3,
+      "base_b_fh": 195.4,
+      "fighter_fh": 215.2,
+      "transport_fh": 253.4,
+      "airlifter_fh": 232.2
+    },
+    {
+      "month": "2025-12",
+      "base_a_fh": 483.4,
+      "base_b_fh": 196.1,
+      "fighter_fh": 241.7,
+      "transport_fh": 237.8,
+      "airlifter_fh": 200.0
+    },
+    {
+      "month": "2026-01",
+      "base_a_fh": 455.8,
+      "base_b_fh": 206.4,
+      "fighter_fh": 243.6,
+      "transport_fh": 238.6,
+      "airlifter_fh": 179.9
+    },
+    {
+      "month": "2026-02",
+      "base_a_fh": 467.0,
+      "base_b_fh": 184.5,
+      "fighter_fh": 225.4,
+      "transport_fh": 239.6,
+      "airlifter_fh": 186.5
+    },
+    {
+      "month": "2026-03",
+      "base_a_fh": 519.4,
+      "base_b_fh": 155.6,
+      "fighter_fh": 238.1,
+      "transport_fh": 269.0,
+      "airlifter_fh": 167.9
+    },
+    {
+      "month": "2026-04",
+      "base_a_fh": 523.1,
+      "base_b_fh": 182.3,
+      "fighter_fh": 241.1,
+      "transport_fh": 248.6,
+      "airlifter_fh": 215.7
+    },
+    {
+      "month": "2026-05",
+      "base_a_fh": 522.2,
+      "base_b_fh": 199.2,
+      "fighter_fh": 244.7,
+      "transport_fh": 251.8,
+      "airlifter_fh": 224.9
+    },
+    {
+      "month": "2026-06",
+      "base_a_fh": 390.9,
+      "base_b_fh": 168.1,
+      "fighter_fh": 236.4,
+      "transport_fh": 216.4,
+      "airlifter_fh": 106.1
+    },
+    {
       "month": "2026-07",
-      "base_a_fh": 391.7,
-      "base_b_fh": 176.4,
-      "fighter_fh": 194.0,
-      "transport_fh": 196.5,
-      "airlifter_fh": 177.6
+      "base_a_fh": 419.4,
+      "base_b_fh": 166.0,
+      "fighter_fh": 167.2,
+      "transport_fh": 201.3,
+      "airlifter_fh": 216.9
     },
     {
       "month": "2026-08",
-      "base_a_fh": 382.1,
-      "base_b_fh": 147.2,
-      "fighter_fh": 176.5,
-      "transport_fh": 197.0,
-      "airlifter_fh": 155.8
+      "base_a_fh": 448.1,
+      "base_b_fh": 146.6,
+      "fighter_fh": 198.7,
+      "transport_fh": 216.4,
+      "airlifter_fh": 179.5
     },
     {
       "month": "2026-09",
-      "base_a_fh": 379.1,
-      "base_b_fh": 139.2,
-      "fighter_fh": 169.8,
-      "transport_fh": 181.2,
-      "airlifter_fh": 167.2
+      "base_a_fh": 400.3,
+      "base_b_fh": 157.7,
+      "fighter_fh": 213.3,
+      "transport_fh": 175.3,
+      "airlifter_fh": 169.4
     },
     {
       "month": "2026-10",
-      "base_a_fh": 495.0,
-      "base_b_fh": 186.0,
-      "fighter_fh": 239.2,
-      "transport_fh": 258.6,
-      "airlifter_fh": 183.3
+      "base_a_fh": 520.6,
+      "base_b_fh": 220.0,
+      "fighter_fh": 260.5,
+      "transport_fh": 258.2,
+      "airlifter_fh": 221.9
     },
     {
       "month": "2026-11",
-      "base_a_fh": 207.3,
-      "base_b_fh": 111.0,
-      "fighter_fh": 109.5,
-      "transport_fh": 98.3,
-      "airlifter_fh": 110.5
+      "base_a_fh": 222.2,
+      "base_b_fh": 96.3,
+      "fighter_fh": 107.8,
+      "transport_fh": 122.7,
+      "airlifter_fh": 87.9
     }
   ],
   "due_90_days": [
     {
-      "tail": "CX-503",
+      "tail": "TX-403",
+      "type": "transport",
+      "item": "Nose landing gear assembly",
+      "date": "2026-11-22",
+      "days_to_due": 7.0
+    },
+    {
+      "tail": "CX-506",
       "type": "airlifter",
-      "item": "Propeller assembly",
-      "date": "2026-11-23",
-      "days_to_due": 8.0
-    },
-    {
-      "tail": "FX-310",
-      "type": "fighter",
-      "item": "Engine",
-      "date": "2026-11-23",
-      "days_to_due": 8.0
-    },
-    {
-      "tail": "FX-312",
-      "type": "fighter",
-      "item": "Main battery",
-      "date": "2026-12-01",
-      "days_to_due": 16.0
-    },
-    {
-      "tail": "CX-503",
-      "type": "airlifter",
-      "item": "Emergency locator transmitter battery",
-      "date": "2026-12-02",
-      "days_to_due": 17.0
+      "item": "Main landing gear assembly",
+      "date": "2026-11-29",
+      "days_to_due": 14.0
     },
     {
       "tail": "FX-305",
@@ -650,137 +636,172 @@
       "days_to_due": 20.0
     },
     {
-      "tail": "CX-501",
-      "type": "airlifter",
-      "item": "Nose landing gear assembly",
-      "date": "2026-12-07",
-      "days_to_due": 22.0
-    },
-    {
-      "tail": "CX-502",
+      "tail": "CX-503",
       "type": "airlifter",
       "item": "Main battery",
-      "date": "2026-12-10",
-      "days_to_due": 25.0
+      "date": "2026-12-06",
+      "days_to_due": 21.0
     },
     {
-      "tail": "FX-311",
+      "tail": "FX-302",
+      "type": "fighter",
+      "item": "Main battery",
+      "date": "2026-12-12",
+      "days_to_due": 27.0
+    },
+    {
+      "tail": "TX-406",
+      "type": "transport",
+      "item": "Emergency locator transmitter battery",
+      "date": "2026-12-19",
+      "days_to_due": 34.0
+    },
+    {
+      "tail": "FX-302",
       "type": "fighter",
       "item": "Ejection seat CAD/PAD set",
-      "date": "2026-12-10",
-      "days_to_due": 25.0
+      "date": "2026-12-28",
+      "days_to_due": 43.0
     },
     {
       "tail": "FX-315",
       "type": "fighter",
-      "item": "Ejection seat CAD/PAD set",
-      "date": "2026-12-18",
-      "days_to_due": 33.0
+      "item": "Main landing gear assembly",
+      "date": "2026-12-28",
+      "days_to_due": 43.0
     },
     {
-      "tail": "FX-309",
-      "type": "fighter",
+      "tail": "TX-403",
+      "type": "transport",
       "item": "Main landing gear assembly",
-      "date": "2026-12-29",
-      "days_to_due": 44.0
+      "date": "2026-12-30",
+      "days_to_due": 45.0
+    },
+    {
+      "tail": "FX-307",
+      "type": "fighter",
+      "item": "Main battery",
+      "date": "2027-01-04",
+      "days_to_due": 50.0
+    },
+    {
+      "tail": "FX-311",
+      "type": "fighter",
+      "item": "Engine",
+      "date": "2027-01-11",
+      "days_to_due": 57.0
     },
     {
       "tail": "FX-314",
       "type": "fighter",
       "item": "Main battery",
-      "date": "2027-01-15",
-      "days_to_due": 61.0
+      "date": "2027-01-17",
+      "days_to_due": 63.0
     },
     {
-      "tail": "FX-312",
+      "tail": "FX-306",
       "type": "fighter",
-      "item": "Main landing gear assembly",
-      "date": "2027-01-18",
-      "days_to_due": 64.0
+      "item": "Main battery",
+      "date": "2027-01-21",
+      "days_to_due": 67.0
     },
     {
-      "tail": "FX-314",
+      "tail": "FX-316",
       "type": "fighter",
-      "item": "Main landing gear assembly",
-      "date": "2027-01-24",
+      "item": "Main battery",
+      "date": "2027-01-23",
+      "days_to_due": 69.0
+    },
+    {
+      "tail": "TX-405",
+      "type": "transport",
+      "item": "Main battery",
+      "date": "2027-01-25",
       "days_to_due": 71.0
     },
     {
-      "tail": "CX-501",
-      "type": "airlifter",
-      "item": "Main landing gear assembly",
-      "date": "2027-01-26",
-      "days_to_due": 72.0
+      "tail": "FX-315",
+      "type": "fighter",
+      "item": "Main battery",
+      "date": "2027-01-28",
+      "days_to_due": 74.0
     },
     {
-      "tail": "FX-314",
+      "tail": "CX-504",
+      "type": "airlifter",
+      "item": "Engine (turboprop)",
+      "date": "2027-01-30",
+      "days_to_due": 77.0
+    },
+    {
+      "tail": "FX-315",
       "type": "fighter",
       "item": "Ejection seat CAD/PAD set",
       "date": "2027-02-01",
       "days_to_due": 78.0
     },
     {
-      "tail": "CX-504",
-      "type": "airlifter",
-      "item": "Main battery",
-      "date": "2027-02-07",
-      "days_to_due": 84.0
+      "tail": "FX-314",
+      "type": "fighter",
+      "item": "Engine",
+      "date": "2027-02-08",
+      "days_to_due": 85.0
     },
     {
       "tail": "CX-501",
       "type": "airlifter",
-      "item": "Propeller control unit",
+      "item": "Fuel boost pump",
       "date": null,
       "days_to_due": null,
-      "fh_to_tau": 107.0
+      "fh_to_tau": 146.0
     },
     {
-      "tail": "CX-503",
+      "tail": "CX-501",
       "type": "airlifter",
-      "item": "Propeller control unit",
+      "item": "Fuel boost pump",
       "date": null,
       "days_to_due": null,
-      "fh_to_tau": 147.0
+      "fh_to_tau": 130.0
     },
     {
-      "tail": "CX-504",
+      "tail": "CX-501",
       "type": "airlifter",
-      "item": "ECS pack (air cycle machine)",
+      "item": "Engine lube oil pump",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 146.0
+    },
+    {
+      "tail": "CX-502",
+      "type": "airlifter",
+      "item": "Fuel boost pump",
       "date": null,
       "days_to_due": null,
       "fh_to_tau": 131.0
     },
     {
-      "tail": "CX-504",
+      "tail": "CX-502",
       "type": "airlifter",
-      "item": "ECS pack (air cycle machine)",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 124.0
-    },
-    {
-      "tail": "CX-504",
-      "type": "airlifter",
-      "item": "Engine-driven generator",
+      "item": "Engine lube oil pump",
       "date": null,
       "days_to_due": null,
       "fh_to_tau": 144.0
     },
     {
-      "tail": "CX-504",
+      "tail": "CX-503",
       "type": "airlifter",
-      "item": "Engine-driven generator",
+      "item": "Fuel boost pump",
       "date": null,
       "days_to_due": null,
-      "fh_to_tau": 103.0
+      "fh_to_tau": 108.0
     },
     {
-      "tail": "CX-504",
+      "tail": "CX-503",
       "type": "airlifter",
-      "item": "Engine-driven generator",
+      "item": "Fuel boost pump",
       "date": null,
       "days_to_due": null,
-      "fh_to_tau": 141.0
+      "fh_to_tau": 122.0
     },
     {
       "tail": "CX-504",
@@ -788,171 +809,147 @@
       "item": "Fuel boost pump",
       "date": null,
       "days_to_due": null,
-      "fh_to_tau": 136.0
+      "fh_to_tau": 138.0
     },
     {
       "tail": "CX-504",
       "type": "airlifter",
-      "item": "Fuel boost pump",
+      "item": "Engine lube oil pump",
       "date": null,
       "days_to_due": null,
-      "fh_to_tau": 133.0
-    },
-    {
-      "tail": "CX-504",
-      "type": "airlifter",
-      "item": "Fuel boost pump",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 83.0
-    },
-    {
-      "tail": "CX-504",
-      "type": "airlifter",
-      "item": "Fuel boost pump",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 110.0
+      "fh_to_tau": 120.0
     },
     {
       "tail": "CX-505",
       "type": "airlifter",
-      "item": "ECS pack (air cycle machine)",
+      "item": "Fuel boost pump",
       "date": null,
       "days_to_due": null,
-      "fh_to_tau": 104.0
+      "fh_to_tau": 70.0
     },
     {
       "tail": "CX-505",
       "type": "airlifter",
-      "item": "Engine-driven generator",
+      "item": "Fuel boost pump",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 100.0
+    },
+    {
+      "tail": "CX-505",
+      "type": "airlifter",
+      "item": "Cargo ramp actuator",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 102.0
+    },
+    {
+      "tail": "CX-506",
+      "type": "airlifter",
+      "item": "Fuel boost pump",
       "date": null,
       "days_to_due": null,
       "fh_to_tau": 144.0
     },
     {
-      "tail": "CX-505",
-      "type": "airlifter",
+      "tail": "FX-301",
+      "type": "fighter",
+      "item": "Horizontal stabilator actuator",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 147.0
+    },
+    {
+      "tail": "FX-301",
+      "type": "fighter",
+      "item": "Horizontal stabilator actuator",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 114.0
+    },
+    {
+      "tail": "FX-301",
+      "type": "fighter",
       "item": "Fuel boost pump",
       "date": null,
       "days_to_due": null,
-      "fh_to_tau": 126.0
+      "fh_to_tau": 147.0
     },
     {
-      "tail": "CX-505",
-      "type": "airlifter",
-      "item": "Fuel boost pump",
+      "tail": "FX-301",
+      "type": "fighter",
+      "item": "Engine lube oil pump",
       "date": null,
       "days_to_due": null,
       "fh_to_tau": 85.0
     },
     {
-      "tail": "CX-505",
-      "type": "airlifter",
-      "item": "Fuel boost pump",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 114.0
-    },
-    {
-      "tail": "CX-505",
-      "type": "airlifter",
-      "item": "Fuel boost pump",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 98.0
-    },
-    {
-      "tail": "CX-506",
-      "type": "airlifter",
-      "item": "ECS pack (air cycle machine)",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 139.0
-    },
-    {
-      "tail": "CX-506",
-      "type": "airlifter",
-      "item": "Engine-driven generator",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 114.0
-    },
-    {
-      "tail": "CX-506",
-      "type": "airlifter",
-      "item": "Fuel boost pump",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 142.0
-    },
-    {
-      "tail": "CX-506",
-      "type": "airlifter",
-      "item": "Fuel boost pump",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 141.0
-    },
-    {
-      "tail": "CX-506",
-      "type": "airlifter",
-      "item": "Fuel boost pump",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 77.0
-    },
-    {
-      "tail": "CX-506",
-      "type": "airlifter",
-      "item": "Fuel boost pump",
-      "date": null,
-      "days_to_due": null,
-      "fh_to_tau": 145.0
-    },
-    {
-      "tail": "FX-301",
+      "tail": "FX-302",
       "type": "fighter",
-      "item": "Engine-driven hydraulic pump",
+      "item": "Main generator",
       "date": null,
       "days_to_due": null,
-      "fh_to_tau": 31.0
+      "fh_to_tau": 136.0
+    },
+    {
+      "tail": "FX-302",
+      "type": "fighter",
+      "item": "Fuel boost pump",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 56.0
+    },
+    {
+      "tail": "FX-302",
+      "type": "fighter",
+      "item": "Engine fuel control unit",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 144.0
+    },
+    {
+      "tail": "FX-303",
+      "type": "fighter",
+      "item": "Horizontal stabilator actuator",
+      "date": null,
+      "days_to_due": null,
+      "fh_to_tau": 120.0
     }
   ],
   "top_recommendations": [
     {
-      "id": "REC-2026-0005",
-      "title": "Remove for overhaul Propeller assembly XR-0012 on CX-503 before Calendar limit (8 days remaining)",
+      "id": "REC-2026-0002",
+      "title": "Replace Nose landing gear assembly TN-0003 on TX-403 before Calendar limit (7 days remaining)",
       "priority": "Critical",
-      "tail": "CX-503",
+      "tail": "TX-403",
+      "type": "transport"
+    },
+    {
+      "id": "REC-2026-0006",
+      "title": "Replace Main landing gear assembly XM-0012 on CX-506 before Landings limit (14 landings remaining)",
+      "priority": "Critical",
+      "tail": "CX-506",
       "type": "airlifter"
     },
     {
-      "id": "REC-2026-0007",
-      "title": "Remove for overhaul Engine EN-0010 on FX-310 before Cycles limit (9 cycles remaining)",
-      "priority": "Critical",
-      "tail": "FX-310",
-      "type": "fighter"
-    },
-    {
       "id": "REC-2026-0001",
-      "title": "Replace Main landing gear assembly MG-0017 on FX-309 before Calendar limit (44 days remaining)",
+      "title": "Replace Main landing gear assembly MG-0029 on FX-315 before Calendar limit (43 days remaining)",
       "priority": "High",
-      "tail": "FX-309",
+      "tail": "FX-315",
       "type": "fighter"
     },
     {
       "id": "REC-2026-0003",
-      "title": "Replace Nose landing gear assembly XN-0001 on CX-501 before Calendar limit (22 days remaining)",
+      "title": "Replace Main landing gear assembly TM-0005 on TX-403 before Calendar limit (45 days remaining)",
       "priority": "High",
-      "tail": "CX-501",
-      "type": "airlifter"
+      "tail": "TX-403",
+      "type": "transport"
     },
     {
-      "id": "REC-2026-0009",
-      "title": "Remove for overhaul Engine EN-0024 on FX-314 before EFH limit (40 EFH remaining)",
+      "id": "REC-2026-0005",
+      "title": "Remove for overhaul Engine EN-0008 on FX-308 before EFH limit (65 EFH remaining)",
       "priority": "High",
-      "tail": "FX-314",
+      "tail": "FX-308",
       "type": "fighter"
     }
   ]

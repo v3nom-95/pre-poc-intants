@@ -14,8 +14,8 @@
   "criticality": "flight_safety",
   "current_tail": "FX-315",
   "current_position": "L",
-  "governing_limit": "Landings",
-  "remaining": 470.7,
+  "governing_limit": "Calendar",
+  "remaining": 1.4,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "FX-315",
       "event_type": "Install",
-      "date": "2018-11-12",
+      "date": "2015-03-01",
       "reason": null,
       "serial": "MG-0029"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

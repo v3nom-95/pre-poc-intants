@@ -12,10 +12,10 @@
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "TX-403",
+  "current_tail": "TX-401",
   "current_position": "1",
   "governing_limit": "Calendar",
-  "remaining": 65.7,
+  "remaining": 74.3,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -26,13 +26,14 @@
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "TX-403",
+      "tail": "TX-401",
       "event_type": "Install",
-      "date": "2024-05-20",
+      "date": "2025-02-02",
       "reason": null,
       "serial": "PR-0024"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

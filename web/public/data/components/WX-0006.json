@@ -12,37 +12,23 @@
   "lot": null,
   "concept": "CM",
   "criticality": "mission",
-  "current_tail": "TX-407",
+  "current_tail": "TX-406",
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 410.9,
-  "fh_to_tau": 839.6,
-  "fh_to_tau_p10": 415.3,
-  "fh_to_tau_p90": 1918.9,
-  "prob_fail_before_next_phase": 0.045,
-  "explanation": "No significant covariate effect for this unit",
-  "fleet_units": 12,
-  "fleet_confirmed_failures": 3,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 9,
+  "fleet_confirmed_failures": 1,
   "install_history": [
     {
       "tail": "TX-406",
       "event_type": "Install",
-      "date": "2007-06-01",
-      "reason": null,
-      "serial": "WX-0006"
-    },
-    {
-      "tail": "TX-406",
-      "event_type": "Removal",
-      "date": "2025-02-23",
-      "reason": "Unscheduled: NFF",
-      "serial": "WX-0006"
-    },
-    {
-      "tail": "TX-407",
-      "event_type": "Install",
-      "date": "2025-09-30",
+      "date": "2016-06-20",
       "reason": null,
       "serial": "WX-0006"
     }
@@ -53,85 +39,74 @@
       "survival": 1.0
     },
     {
-      "fh": 234.5,
+      "fh": 495.1,
       "survival": 1.0
     },
     {
-      "fh": 410.9,
+      "fh": 508.8,
       "survival": 1.0
     },
     {
-      "fh": 442.2,
-      "survival": 0.75
+      "fh": 1558.7,
+      "survival": 1.0
     },
     {
-      "fh": 467.6,
-      "survival": 0.75
+      "fh": 1873.5,
+      "survival": 0.5
     },
     {
-      "fh": 484.1,
-      "survival": 0.75
+      "fh": 2435.2,
+      "survival": 0.5
     },
     {
-      "fh": 617.7,
-      "survival": 0.75
+      "fh": 2457.1,
+      "survival": 0.5
     },
     {
-      "fh": 1139.6,
-      "survival": 0.75
+      "fh": 3329.9,
+      "survival": 0.5
     },
     {
-      "fh": 1252.3,
-      "survival": 0.75
+      "fh": 3385.7,
+      "survival": 0.5
     },
     {
-      "fh": 1292.5,
-      "survival": 0.5625
+      "fh": 3766.5,
+      "survival": 0.5
     },
     {
-      "fh": 1627.2,
-      "survival": 0.375
+      "fh": 4013.6,
+      "survival": 0.5
     },
     {
-      "fh": 2305.5,
-      "survival": 0.375
+      "fh": 4054.9,
+      "survival": 0.5
     },
     {
-      "fh": 2370.8,
-      "survival": 0.375
+      "fh": 4055.9,
+      "survival": 0.5
     },
     {
-      "fh": 2430.0,
-      "survival": 0.375
+      "fh": 4127.7,
+      "survival": 0.5
     },
     {
-      "fh": 2743.7,
-      "survival": 0.375
+      "fh": 4931.9,
+      "survival": 0.5
     },
     {
-      "fh": 3472.7,
-      "survival": 0.375
+      "fh": 5554.6,
+      "survival": 0.5
     },
     {
-      "fh": 3902.9,
-      "survival": 0.375
+      "fh": 5792.9,
+      "survival": 0.5
     },
     {
-      "fh": 4161.3,
-      "survival": 0.375
-    },
-    {
-      "fh": 4301.5,
-      "survival": 0.375
-    },
-    {
-      "fh": 5116.1,
-      "survival": 0.375
-    },
-    {
-      "fh": 5969.5,
-      "survival": 0.375
+      "fh": 5925.6,
+      "survival": 0.5
     }
   ],
-  "survival_curve_method": "Kaplan-Meier"
+  "survival_curve_method": "Kaplan-Meier",
+  "weibull_curve": []
 }

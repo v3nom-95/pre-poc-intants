@@ -299,6 +299,7 @@ export interface ComponentData {
   install_history: { tail: string; event_type: string; date: string; reason: string | null; serial: string }[];
   survival_curve: { fh: number; survival: number }[];
   survival_curve_method?: string | null;
+  weibull_curve?: { fh: number; survival: number }[];
 }
 
 export interface ReliabilityData {

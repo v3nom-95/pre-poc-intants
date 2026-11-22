@@ -1,0 +1,176 @@
+{
+  "serial": "FC-0002",
+  "part_number": "27-3550-01",
+  "name": "Flight control computer",
+  "ata": "27",
+  "type": "fighter",
+  "type_name": "Multirole fighter",
+  "key": "FCC",
+  "zone": "cockpit",
+  "task_card": "TC-27-02-02",
+  "exposure_unit": "FH",
+  "lot": null,
+  "concept": "CM",
+  "criticality": "flight_safety",
+  "current_tail": "FX-302",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 17,
+  "fleet_confirmed_failures": 1,
+  "install_history": [
+    {
+      "tail": "FX-302",
+      "event_type": "Install",
+      "date": "2011-08-12",
+      "reason": null,
+      "serial": "FC-0002"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 39.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 111.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 753.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 985.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 1339.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 1588.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 1855.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 1870.8,
+      "survival": 1.0
+    },
+    {
+      "fh": 2074.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 2163.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 2221.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 2648.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 2684.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 2737.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 2843.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 2843.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 2869.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 3014.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 3438.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 3477.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 3505.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 3702.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 3791.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 3874.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 3974.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 4148.9,
+      "survival": 0.75
+    },
+    {
+      "fh": 4308.8,
+      "survival": 0.75
+    },
+    {
+      "fh": 4512.4,
+      "survival": 0.75
+    },
+    {
+      "fh": 4666.0,
+      "survival": 0.75
+    },
+    {
+      "fh": 4730.5,
+      "survival": 0.75
+    },
+    {
+      "fh": 5010.9,
+      "survival": 0.75
+    },
+    {
+      "fh": 5204.3,
+      "survival": 0.75
+    },
+    {
+      "fh": 5899.1,
+      "survival": 0.75
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier",
+  "weibull_curve": []
+}

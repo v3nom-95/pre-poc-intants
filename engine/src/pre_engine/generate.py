@@ -1,12 +1,12 @@
 """Fleet simulation. Writes bronze CSVs and ground_truth.json.
 
-Deterministic: every random draw comes from numpy Generators seeded from
-config.SEED. Each aircraft type is simulated in its own pass with its own
-generator; the fighter pass consumes the main generator in exactly the same
-order as the original single-type simulation, and all operating-hours draws
-(taxi, ground runs, APU) use separate auxiliary generators, so adding the
-transport and airlifter fleets does not disturb the fighter data or the
-planted patterns P1 to P7. Never reads the system clock.
+Deterministic: every random draw comes from a numpy Generator seeded from
+config.SEED plus a key naming its purpose and the entity it belongs to (for
+example the tail and date of a sortie, or the serial of a unit). Streams are
+therefore decoupled: changing one planted factor (say the hot-climate factor
+of the ECS units) only changes what that factor actually touches (those units'
+failure timing and the knock-on downtime), instead of reshuffling every later
+draw in the run. Never reads the system clock.
 
 ground_truth.json is written FROM the same parameters that drove the
 simulation (that is the point of a POC with planted, recoverable patterns)
@@ -19,6 +19,7 @@ import datetime as dt
 import json
 import math
 import os
+import zlib
 
 import numpy as np
 import pandas as pd
@@ -35,9 +36,25 @@ FORCED_START_FI = {"FX-309": 55.0}
 
 DAY = dt.timedelta(days=1)
 
-# Seeds per type: the fighter keeps cfg.SEED itself (unchanged behaviour).
-TYPE_SEED_OFFSET = {"fighter": 0, "transport": 1000, "airlifter": 2000}
-AUX_SEED_OFFSET = 101
+# Purposes of the keyed random streams (see krng).
+_PURPOSE = {
+    "aircraft": 1, "unit": 2, "init": 3, "day": 4, "sortie": 5, "trend": 6, "fail": 7,
+    "repair": 8, "ground": 9, "repeat": 10, "bronze": 11,
+}
+
+
+def _key_int(x) -> int:
+    if isinstance(x, (int, np.integer)):
+        return int(x)
+    if isinstance(x, dt.date):
+        return x.toordinal()
+    return zlib.crc32(str(x).encode("utf-8"))
+
+
+def krng(purpose: str, *keys) -> np.random.Generator:
+    """A generator dedicated to one purpose and one entity (tail, serial,
+    date...). Seeded from cfg.SEED, so the whole run stays reproducible."""
+    return np.random.default_rng([cfg.SEED, _PURPOSE[purpose], *(_key_int(k) for k in keys)])
 
 
 # ---------------------------------------------------------------------------
@@ -209,16 +226,21 @@ def current_base(tail: str, date: dt.date, detach_cache: dict) -> str:
     return "Base A"
 
 
-def make_unit(rng, serials: SerialCounter, key, lot=None):
+def make_unit(serials: SerialCounter, key, hyd_pump_counter: list | None = None):
+    """A new unit. Its damage threshold E and (for hydraulic pumps) its lot
+    come from the unit's own stream, keyed by serial."""
     comp = cfg.COMPONENTS[key]
+    serial = serials.next(key)
+    r = krng("unit", serial)
+    lot = _lot_for_new_hyd_pump(r, hyd_pump_counter) if comp.get("has_lots") else None
     unit = {
-        "key": key, "part_number": comp["part_number"], "serial": serials.next(key),
+        "key": key, "part_number": comp["part_number"], "serial": serial,
         "lot": lot, "install_date": None,
         "consumed_efh": 0.0, "consumed_cycles": 0.0, "consumed_landings": 0.0,
-        "consumed_oh": 0.0,
+        "consumed_oh": 0.0, "repairs": 0,
     }
     if comp["concept"] in ("OC", "CM"):
-        unit["E"] = rng.exponential(1.0)
+        unit["E"] = r.exponential(1.0)
         unit["eta"] = comp["weibull_eta"]
         unit["beta"] = comp["weibull_beta"]
         unit["age"] = 0.0
@@ -232,22 +254,31 @@ def _lot_for_new_hyd_pump(rng, hyd_pump_counter):
     return rng.choice(cfg.LOT_DEFECT["other_lots"])
 
 
-def init_units_for_aircraft(rng, aux, serials: SerialCounter, hyd_pump_counter: list,
-                             comp_keys: list[str], window_start: dt.date):
+def init_units_for_aircraft(serials: SerialCounter, hyd_pump_counter: list,
+                            comp_keys: list[str], window_start: dt.date, fh_per_day: float,
+                            induction_date: dt.date):
     units = {}
     for key in comp_keys:
         comp = cfg.COMPONENTS[key]
         for pos in comp["positions"]:
-            lot = None
-            if comp.get("has_lots"):
-                lot = _lot_for_new_hyd_pump(rng, hyd_pump_counter)
-            unit = make_unit(rng, serials, key, lot)
+            unit = make_unit(serials, key, hyd_pump_counter)
+            rng = krng("init", unit["serial"])
             if comp["concept"] in ("OC", "CM"):
-                frac = rng.uniform(0.10, 0.70)
-                threshold_age = unit["eta"] * (unit["E"] ** (1.0 / unit["beta"]))
-                unit["age"] = frac * threshold_age
-                life_days = unit["eta"] * (30.0 / 15.0)  # rough days-equivalent, flavour only
-                unit["install_date"] = window_start - dt.timedelta(days=int(frac * life_days))
+                # Age at the start of the data window is drawn independently
+                # of the unit's own (hidden) damage threshold, then the
+                # threshold is conditioned on the unit having survived to that
+                # age. E is Exponential(1), so E given E > c is c + E (memoryless):
+                # exact, and no extra draw. An earlier version set the age as a
+                # fraction of the unit's own threshold, which correlated age
+                # with remaining life and biased fitted Weibull shapes below 1
+                # (see docs/model-notes.md).
+                unit["age"] = float(rng.uniform(0.0, 1.0)) * unit["eta"]
+                unit["E"] = (unit["age"] / unit["eta"]) ** unit["beta"] + unit["E"]
+                basis = comp.get("life_basis")
+                per_day = (fh_per_day * 1.5 if basis == "landings"
+                           else fh_per_day * 0.3 if basis == "apu_hours" else fh_per_day)
+                unit["install_date"] = max(induction_date,
+                                           window_start - dt.timedelta(days=max(1, int(unit["age"] / max(per_day, 0.05)))))
             else:  # HT
                 if "ht_efh" in comp:
                     frac = rng.uniform(0.05, 0.85)
@@ -270,7 +301,7 @@ def init_units_for_aircraft(rng, aux, serials: SerialCounter, hyd_pump_counter: 
             if comp.get("is_engine"):
                 # Operating-hours baseline (section 14.2): ground running before
                 # the data window. Auxiliary generator, so fighter draws are untouched.
-                unit["consumed_oh"] = unit["consumed_efh"] * float(aux.uniform(*cfg.ENGINE_BASELINE_OH_RATIO))
+                unit["consumed_oh"] = unit["consumed_efh"] * float(rng.uniform(*cfg.ENGINE_BASELINE_OH_RATIO))
             units[(key, pos)] = unit
     return units
 
@@ -291,8 +322,7 @@ def compute_accel(unit, key, mission_code, temp_c):
 # Pools
 # ---------------------------------------------------------------------------
 class Pools:
-    def __init__(self, rng, serials, hyd_pump_counter, comp_keys, n_tails):
-        self.rng = rng
+    def __init__(self, serials, hyd_pump_counter, comp_keys, n_tails):
         self.serials = serials
         self.hyd_pump_counter = hyd_pump_counter
         self.available: dict[str, list] = {}
@@ -303,8 +333,7 @@ class Pools:
             n_spares = max(1, round(cfg.SPARES_POOL_FRACTION * n_positions_fleet))
             pool = []
             for _ in range(n_spares):
-                lot = _lot_for_new_hyd_pump(rng, hyd_pump_counter) if comp.get("has_lots") else None
-                pool.append(make_unit(rng, serials, key, lot))
+                pool.append(make_unit(serials, key, hyd_pump_counter))
             self.available[key] = pool
 
     def release_repaired(self, today: dt.date):
@@ -322,14 +351,20 @@ class Pools:
             return pool.pop(0)
         return None
 
-    def return_for_repair(self, key, unit, today: dt.date):
+    def return_for_repair(self, key, unit, today: dt.date, renew: bool = True):
         lo, hi = cfg.REPAIR_TURNAROUND_DAYS_RANGE
-        ready = today + dt.timedelta(days=int(self.rng.uniform(lo, hi)))
+        r = krng("repair", unit["serial"], today)
+        ready = today + dt.timedelta(days=int(r.uniform(lo, hi)))
+        if renew and "E" in unit:
+            # Shop repair restores the unit to as good as new: a fresh damage
+            # threshold. (Keeping the old one made an early-failing unit fail
+            # again at the same short age after every repair.)
+            unit["E"] = float(r.exponential(1.0))
+        unit["repairs"] = unit.get("repairs", 0) + 1
         self.repair_queue.append((ready, key, unit))
 
     def fresh_unit(self, key) -> dict:
-        lot = _lot_for_new_hyd_pump(self.rng, self.hyd_pump_counter) if cfg.COMPONENTS[key].get("has_lots") else None
-        return make_unit(self.rng, self.serials, key, lot)
+        return make_unit(self.serials, key, self.hyd_pump_counter)
 
 
 # ---------------------------------------------------------------------------
@@ -365,9 +400,6 @@ class TypeRun:
         self.tcfg = cfg.AIRCRAFT_TYPES[type_key]
         self.missions = self.tcfg["missions"]
         self.comp_keys = type_components(type_key)
-        seed = cfg.SEED + TYPE_SEED_OFFSET[type_key]
-        self.rng = np.random.default_rng(seed)
-        self.aux = np.random.default_rng(seed + AUX_SEED_OFFSET)
         self.hyd_pump_counter = [0]
         self.aircraft: dict[str, Aircraft] = {}
         self.pools: Pools | None = None
@@ -375,8 +407,9 @@ class TypeRun:
 
     # -- setup -------------------------------------------------------------
     def setup(self):
-        rng, t = self.rng, self.tcfg
+        t = self.tcfg
         for tail in t["tails"]:
+            rng = krng("aircraft", tail)
             home_base = cfg.HOME_BASE[tail]
             induction_year = int(rng.integers(t["induction_year_range"][0], t["induction_year_range"][1] + 1))
             induction_date = dt.date(induction_year, int(rng.integers(1, 13)), int(rng.integers(1, 28)))
@@ -388,10 +421,10 @@ class TypeRun:
             fh_since_periodic = float(rng.uniform(0, cfg.PERIODIC_SERVICING_INTERVAL_FH))
             ac = Aircraft(tail, self.type_key, home_base, induction_date, start_fh, start_fi,
                           monthly_rate, mission_probs, fh_since_phase, fh_since_periodic)
-            ac.units = init_units_for_aircraft(rng, self.aux, self.sim.serials, self.hyd_pump_counter,
-                                               self.comp_keys, cfg.WINDOW_START)
+            ac.units = init_units_for_aircraft(self.sim.serials, self.hyd_pump_counter, self.comp_keys,
+                                               cfg.WINDOW_START, monthly_rate / 30.0, induction_date)
             self.aircraft[tail] = ac
-        self.pools = Pools(rng, self.sim.serials, self.hyd_pump_counter, self.comp_keys, len(t["tails"]))
+        self.pools = Pools(self.sim.serials, self.hyd_pump_counter, self.comp_keys, len(t["tails"]))
 
         # Initial installs carry the unit's prior-life baseline (TSN at the
         # start of the data window), so "consumed since install" = baseline +
@@ -409,8 +442,9 @@ class TypeRun:
     # -- ground runs (section 14.2) ----------------------------------------
     def ground_run(self, ac: Aircraft, date: dt.date, reason: str, position: str | None):
         lo, hi = cfg.GROUND_RUN_H[reason]
-        dur = round(float(self.aux.uniform(lo, hi)), 2)
-        apu_h = round(float(self.aux.uniform(*cfg.GROUND_RUN_APU_H_RANGE)), 2) if self.tcfg["apu"] else 0.0
+        r = krng("ground", ac.tail, date, reason, position or "All")
+        dur = round(float(r.uniform(lo, hi)), 2)
+        apu_h = round(float(r.uniform(*cfg.GROUND_RUN_APU_H_RANGE)), 2) if self.tcfg["apu"] else 0.0
         for (key, pos), unit in ac.units.items():
             if is_engine_key(key) and (position is None or pos == position):
                 unit["consumed_oh"] += dur
@@ -424,7 +458,6 @@ class TypeRun:
 
     # -- main loop ----------------------------------------------------------
     def run(self):
-        rng = self.rng
         sim = self.sim
         detach_cache: dict = {}
         repeat_window_start = cfg.AS_OF_DATE - dt.timedelta(days=30 * cfg.REPEAT_SNAG_WINDOW_MONTHS)
@@ -441,6 +474,7 @@ class TypeRun:
                     continue
 
                 base_today = current_base(tail, current, detach_cache)
+                rng = krng("day", tail, current)
 
                 if ac.fh_since_phase >= cfg.PHASE_INSPECTION_INTERVAL_FH:
                     lo, hi = cfg.PHASE_INSPECTION_DURATION_DAYS
@@ -519,14 +553,17 @@ class TypeRun:
         p = cfg.PRESSURISED_FI
         return p["base_per_fh"] * mcfg["fi_factor"] * duration + p["per_pressurisation_cycle"] + p["per_landing"] * landings
 
-    def _margin(self, unit):
+    def _margin(self, unit, date):
+        r = krng("trend", unit["serial"], date)
         if self.type_key == "fighter":
-            return cfg.EGT_MARGIN_START_C - 0.01 * unit["consumed_efh"] + float(self.rng.normal(0, cfg.EGT_SENSOR_NOISE_SD))
-        return cfg.ITT_MARGIN_START_C - cfg.ITT_MARGIN_DECAY_PER_EFH * unit["consumed_efh"] + float(self.rng.normal(0, cfg.ITT_SENSOR_NOISE_SD))
+            return cfg.EGT_MARGIN_START_C - cfg.EGT_MARGIN_DECAY_PER_EFH * unit["consumed_efh"] + float(r.normal(0, cfg.EGT_SENSOR_NOISE_SD))
+        return cfg.ITT_MARGIN_START_C - cfg.ITT_MARGIN_DECAY_PER_EFH * unit["consumed_efh"] + float(r.normal(0, cfg.ITT_SENSOR_NOISE_SD))
 
     def fly_sortie(self, ac, date, base, repeat_window_start, press_window_start):
-        rng, aux, sim = self.rng, self.aux, self.sim
+        sim = self.sim
         tail = ac.tail
+        rng = krng("sortie", tail, date)
+        aux = rng
         names = list(ac.mission_probs.keys())
         probs = list(ac.mission_probs.values())
         if ac.pending_ftf and rng.random() < 0.75:
@@ -541,7 +578,7 @@ class TypeRun:
         lcf = int(rng.integers(mcfg["lcf"][0], mcfg["lcf"][1] + 1))
         peak_g = float(rng.uniform(*mcfg["peak_g"]))
         temp = mean_temp_c(base, date.month) + float(rng.normal(0, 1.5))
-        # Operating hours (auxiliary generator: never perturbs the main stream)
+        # Operating hours (same per-sortie stream, drawn after the flight values)
         taxi_h = round(float(aux.uniform(*self.tcfg["taxi_h_range"])), 2)
         apu_h = round(float(aux.uniform(*self.tcfg["apu_h_per_sortie_range"])), 2) if self.tcfg["apu"] else 0.0
 
@@ -587,7 +624,7 @@ class TypeRun:
                     reading_id=sim.reading_id.next(), engine_serial=unit["serial"], tail=tail,
                     engine_position=pos, sortie_id=sid, date=date.isoformat(),
                     efh_at_reading=round(unit["consumed_efh"], 2),
-                    metric=self.tcfg["metric"], margin_c=round(self._margin(unit), 2),
+                    metric=self.tcfg["metric"], margin_c=round(self._margin(unit, date), 2),
                 ))
                 continue
             if key == "HPT":
@@ -646,8 +683,9 @@ class TypeRun:
                 ))
 
     def _planted_repeat_snag(self, ac, date, comp_key, ata, desc, rect, nff_rect, interval_range):
-        rng, sim = self.rng, self.sim
+        sim = self.sim
         tail = ac.tail
+        rng = krng("repeat", tail, date)
         n = self.counters.get(tail, 0) + 1
         self.counters[tail] = n
         interval = int(rng.integers(*interval_range))
@@ -679,17 +717,20 @@ class TypeRun:
         new_unit["age"] = 0.0
         ac.units[(comp_key, "1")] = new_unit
         sim.hist(tail, "1", new_unit, comp["concept"], "Install", date, "", 0.0, 0.0, 0.0)
-        self.pools.return_for_repair(comp_key, unit, date)
+        self.pools.return_for_repair(comp_key, unit, date, renew=False)
 
     def fail_unit(self, ac, key, pos, date, unit, comp):
-        rng, sim = self.rng, self.sim
+        sim = self.sim
+        rng = krng("fail", unit["serial"], date)
         # Tyres and brakes wear out on a predictable, frequent schedule (wear-pin
         # check), not a reportable defect: no snag register entry, only the
         # maintenance and history records below (otherwise they would flood the
         # repeat-snag detector and bury the genuine repeat-snag patterns).
         is_consumable = comp["consumable"]
         nff_rate = cfg.NFF_RATE_RADALT if comp.get("nff_prone") else cfg.NFF_RATE_DEFAULT
-        is_nff = rng.random() < nff_rate
+        # A tyre or brake removed at its wear limit is not a "no fault found"
+        # removal: NFF applies to LRUs only.
+        is_nff = (not is_consumable) and rng.random() < nff_rate
         reason = "Unscheduled: NFF" if is_nff else "Unscheduled: confirmed failure"
         label = component_label(key, pos)
         sid = None
@@ -706,7 +747,11 @@ class TypeRun:
 
         # P6 oil precursor co-occurrence for confirmed fighter oil pump failures
         if comp.get("oil_precursor") and not is_nff and rng.random() < cfg.OIL_PRECURSOR_COOCCURRENCE:
-            lead_days = int(cfg.OIL_PRECURSOR_WINDOW_FH / max(ac.monthly_rate / 30.0, 0.1))
+            # The chip detector event falls inside the precursor window (5 to
+            # 45 FH before the failure), not on its edge, so ordinary
+            # variation in flying does not push it outside the window.
+            lead_fh = float(rng.uniform(5.0, cfg.OIL_PRECURSOR_WINDOW_FH - 5.0))
+            lead_days = int(lead_fh / max(ac.monthly_rate / 30.0, 0.1))
             sim.rows["maint"].append(dict(
                 record_id=sim.record_id.next(), tail=ac.tail,
                 date=(date - dt.timedelta(days=max(lead_days, 1))).isoformat(),
@@ -824,7 +869,16 @@ def nudge_ht_approaching(sortie_df: pd.DataFrame, hist_rows: list):
 
 
 def _nudge_trend(trend_rows, hist_rows, tail, engine_key, position, window_efh, target_after_efh,
-                 start_c, decay, limit_c, noise_sd, seed):
+                 factor, decay, limit_c, start_c):
+    """Plant an engine that deteriorates at `factor` times the fleet-normal
+    margin decay over its last `window_efh`, and whose projected crossing of
+    `limit_c` lands `target_after_efh` after the as-of date. The whole trend of
+    the currently installed engine is rewritten so it stays continuous: normal
+    decay before the window, from a margin set by those two targets (this
+    engine came back from its last shop visit with a low margin), then the
+    faster decay inside the window. Each reading keeps the sensor noise it was
+    simulated with (its residual from the normal decay line); only the
+    underlying margin changes."""
     pn = cfg.COMPONENTS[engine_key]["part_number"]
     installs = [r for r in hist_rows
                 if r["tail"] == tail and r["event_type"] == "Install" and r["part_number"] == pn
@@ -838,27 +892,29 @@ def _nudge_trend(trend_rows, hist_rows, tail, engine_key, position, window_efh, 
     rows.sort(key=lambda r: r["efh_at_reading"])
     max_efh = rows[-1]["efh_at_reading"]
     window_start_efh = max_efh - window_efh
-    window_rows = [r for r in rows if r["efh_at_reading"] >= window_start_efh]
-    if len(window_rows) < 5:
-        return
-    margin_at_window_start = start_c - decay * window_start_efh
-    needed_slope = (margin_at_window_start - limit_c) / (window_efh + target_after_efh)
-    rng = np.random.default_rng(seed)
-    for r in window_rows:
-        delta = r["efh_at_reading"] - window_start_efh
-        r["margin_c"] = round(margin_at_window_start - needed_slope * delta + float(rng.normal(0, noise_sd)), 2)
+    fast = factor * decay
+    margin_at_window_start = limit_c + fast * (window_efh + target_after_efh)
+    for r in rows:
+        e = r["efh_at_reading"]
+        residual = r["margin_c"] - (start_c - decay * e)
+        if e < window_start_efh:
+            m = margin_at_window_start + decay * (window_start_efh - e)
+        else:
+            m = margin_at_window_start - fast * (e - window_start_efh)
+        r["margin_c"] = round(m + residual, 2)
 
 
 def nudge_engine_deterioration(trend_rows: list, hist_rows: list):
     # P5: FX-311 (fighter, EGT margin)
     _nudge_trend(trend_rows, hist_rows, cfg.ENGINE_DETERIORATION_TAIL, "ENGINE", "1",
-                 cfg.ENGINE_DETERIORATION_WINDOW_EFH, 60.0, cfg.EGT_MARGIN_START_C, 0.01,
-                 cfg.EGT_MARGIN_LIMIT_C, cfg.EGT_SENSOR_NOISE_SD, cfg.SEED + 311)
+                 cfg.ENGINE_DETERIORATION_WINDOW_EFH, cfg.ENGINE_DETERIORATION_TARGET_EFH,
+                 cfg.ENGINE_DETERIORATION_FACTOR, cfg.EGT_MARGIN_DECAY_PER_EFH,
+                 cfg.EGT_MARGIN_LIMIT_C, cfg.EGT_MARGIN_START_C)
     # P9: CX-502 engine 3 (turboprop, ITT margin)
     _nudge_trend(trend_rows, hist_rows, cfg.TURBOPROP_DETERIORATION_TAIL, "AL-ENGINE",
                  cfg.TURBOPROP_DETERIORATION_POSITION, cfg.TURBOPROP_DETERIORATION_WINDOW_EFH,
-                 cfg.TURBOPROP_DETERIORATION_TARGET_EFH, cfg.ITT_MARGIN_START_C, cfg.ITT_MARGIN_DECAY_PER_EFH,
-                 cfg.ITT_MARGIN_LIMIT_C, cfg.ITT_SENSOR_NOISE_SD, cfg.SEED + 502)
+                 cfg.TURBOPROP_DETERIORATION_TARGET_EFH, cfg.TURBOPROP_DETERIORATION_FACTOR,
+                 cfg.ITT_MARGIN_DECAY_PER_EFH, cfg.ITT_MARGIN_LIMIT_C, cfg.ITT_MARGIN_START_C)
 
 
 # ---------------------------------------------------------------------------
@@ -1088,7 +1144,7 @@ def main():
             nudge_ht_approaching(s_df, hist_rows)
         # Each type's bronze issues are injected with that type's own generator
         # (the fighter's main generator continues exactly as before).
-        s_df, g_df, issues = inject_bronze_issues(run.rng, s_df, g_df)
+        s_df, g_df, issues = inject_bronze_issues(krng("bronze", run.type_key), s_df, g_df)
         for k, v in issues.items():
             issue_counts[k] = issue_counts.get(k, 0) + v
         sortie_frames.append(s_df)

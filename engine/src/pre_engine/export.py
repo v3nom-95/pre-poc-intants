@@ -358,11 +358,44 @@ def build_aircraft_files(data, open_recs, history, ht_due, scored, trend_df, fat
         ))
 
 
+def _weibull_population_curve(params, pn_units, km_points, cache):
+    """Weibull AFT survival S(t) = exp(-(t / lambda)^rho) for the overlay on the
+    Kaplan-Meier curve (SPEC 8.3). Uses the part number's fitted parameters at
+    its fleet-average covariates (mean hot-climate share, mean ACM share, lot
+    shares), so it compares like with like against the fleet-wide estimate.
+    """
+    if not params or not km_points:
+        return []
+    pn = params["part_number"]
+    if pn in cache:
+        return cache[pn]
+    means = {
+        "hot_share": float(pn_units["hot_climate_fh_share"].fillna(0).mean()),
+        "acm_share": float(pn_units["acm_fh_share"].fillna(0).mean()),
+    }
+    lin = float(params["lambda_intercept"])
+    for name, coef in (params.get("lambda_coefficients") or {}).items():
+        if name.startswith("lot_"):
+            x = float((pn_units["lot"] == name[len("lot_"):]).mean())
+        else:
+            x = means.get(name, 0.0)
+        lin += float(coef) * x
+    lam, rho = float(np.exp(lin)), float(params["rho"])
+    t_max = max(p["fh"] for p in km_points)
+    grid = np.linspace(0.0, t_max, 61)
+    curve = [dict(fh=round(float(t), 1), survival=round(float(np.exp(-(t / lam) ** rho)), 4)) for t in grid]
+    cache[pn] = curve
+    return curve
+
+
 def build_component_files(data, scored, ht_due):
     tc_index = _task_card_index(data["task_cards"])
     events = data["events"]
     installed = _currently_installed(events)
     ue = pd.read_csv(os.path.join(GOLD_DIR, "unit_exposure.csv"))
+    params_path = os.path.join(GOLD_DIR, "survival_params.json")
+    survival_params = json.load(open(params_path)) if os.path.exists(params_path) else {}
+    weibull_cache: dict[str, list] = {}
 
     for _, u in installed.iterrows():
         key = _key_for_pn(u["part_number"])
@@ -422,6 +455,8 @@ def build_component_files(data, scored, ht_due):
             explanation=scored_row.iloc[0]["explanation"] if not scored_row.empty else None,
             fleet_units=len(pn_units), fleet_confirmed_failures=int(pn_units["event"].sum()),
             install_history=inst_rows, survival_curve=km_points, survival_curve_method=km_method,
+            weibull_curve=(_weibull_population_curve(survival_params.get(u["part_number"]), pn_units, km_points, weibull_cache)
+                           if km_points else []),
         ))
 
 

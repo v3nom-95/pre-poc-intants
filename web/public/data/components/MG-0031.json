@@ -14,8 +14,8 @@
   "criticality": "flight_safety",
   "current_tail": "FX-316",
   "current_position": "L",
-  "governing_limit": "Calendar",
-  "remaining": 53.5,
+  "governing_limit": "Landings",
+  "remaining": 748.6,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "FX-316",
       "event_type": "Install",
-      "date": "2019-06-09",
+      "date": "2020-12-30",
       "reason": null,
       "serial": "MG-0031"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

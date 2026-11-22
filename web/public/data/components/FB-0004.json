@@ -12,23 +12,37 @@
   "lot": null,
   "concept": "OC",
   "criticality": "flight_safety",
-  "current_tail": "FX-304",
+  "current_tail": "FX-310",
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 1098.5,
-  "fh_to_tau": 184.1,
-  "fh_to_tau_p10": 33.2,
-  "fh_to_tau_p90": 601.3,
-  "prob_fail_before_next_phase": 0.082,
-  "explanation": "Expected life x1.04 (hot-climate share 10%); Expected life x1.16 (ACM share 38%)",
-  "fleet_units": 24,
+  "fh_exposure": 164.3,
+  "fh_to_tau": 581.8,
+  "fh_to_tau_p10": 301.3,
+  "fh_to_tau_p90": 1079.2,
+  "prob_fail_before_next_phase": 0.009,
+  "explanation": "Expected life x1.03 (ACM share 13%)",
+  "fleet_units": 23,
   "fleet_confirmed_failures": 7,
   "install_history": [
     {
       "tail": "FX-304",
       "event_type": "Install",
-      "date": "2020-02-08",
+      "date": "2013-04-01",
+      "reason": null,
+      "serial": "FB-0004"
+    },
+    {
+      "tail": "FX-304",
+      "event_type": "Removal",
+      "date": "2023-01-09",
+      "reason": "Unscheduled: confirmed failure",
+      "serial": "FB-0004"
+    },
+    {
+      "tail": "FX-310",
+      "event_type": "Install",
+      "date": "2025-12-09",
       "reason": null,
       "serial": "FB-0004"
     }
@@ -39,165 +53,407 @@
       "survival": 1.0
     },
     {
-      "fh": 34.1,
+      "fh": 57.1,
       "survival": 1.0
     },
     {
-      "fh": 46.9,
+      "fh": 65.7,
       "survival": 1.0
     },
     {
-      "fh": 81.5,
+      "fh": 134.4,
       "survival": 1.0
     },
     {
-      "fh": 157.0,
+      "fh": 164.3,
       "survival": 1.0
     },
     {
-      "fh": 182.8,
+      "fh": 169.7,
       "survival": 1.0
     },
     {
-      "fh": 196.8,
+      "fh": 188.6,
       "survival": 1.0
     },
     {
-      "fh": 214.2,
+      "fh": 197.9,
       "survival": 1.0
     },
     {
-      "fh": 236.6,
+      "fh": 211.6,
       "survival": 1.0
     },
     {
-      "fh": 258.0,
+      "fh": 300.7,
       "survival": 1.0
     },
     {
-      "fh": 286.8,
+      "fh": 329.6,
       "survival": 1.0
     },
     {
-      "fh": 292.7,
+      "fh": 547.4,
       "survival": 1.0
     },
     {
-      "fh": 301.1,
+      "fh": 583.2,
       "survival": 1.0
     },
     {
-      "fh": 374.2,
+      "fh": 711.4,
       "survival": 1.0
     },
     {
-      "fh": 451.0,
+      "fh": 734.1,
       "survival": 1.0
     },
     {
-      "fh": 533.1,
-      "survival": 1.0
-    },
-    {
-      "fh": 539.3,
+      "fh": 748.8,
       "survival": 0.8571
     },
     {
-      "fh": 600.0,
+      "fh": 819.5,
       "survival": 0.8571
     },
     {
-      "fh": 641.9,
+      "fh": 888.5,
       "survival": 0.8571
     },
     {
-      "fh": 694.4,
-      "survival": 0.75
+      "fh": 1001.4,
+      "survival": 0.7143
     },
     {
-      "fh": 709.5,
-      "survival": 0.6429
+      "fh": 1016.8,
+      "survival": 0.7143
     },
     {
-      "fh": 726.9,
-      "survival": 0.5357
+      "fh": 1054.0,
+      "survival": 0.7143
     },
     {
-      "fh": 788.1,
-      "survival": 0.5357
+      "fh": 1163.4,
+      "survival": 0.7143
     },
     {
-      "fh": 942.6,
-      "survival": 0.5357
+      "fh": 1273.5,
+      "survival": 0.7143
     },
     {
-      "fh": 980.7,
-      "survival": 0.5357
+      "fh": 1528.8,
+      "survival": 0.7143
     },
     {
-      "fh": 1098.5,
-      "survival": 0.5357
+      "fh": 1538.0,
+      "survival": 0.7143
     },
     {
-      "fh": 1179.9,
-      "survival": 0.5357
+      "fh": 1550.5,
+      "survival": 0.7143
     },
     {
-      "fh": 1290.5,
-      "survival": 0.5357
+      "fh": 1709.1,
+      "survival": 0.7143
     },
     {
-      "fh": 1305.4,
-      "survival": 0.5357
+      "fh": 1723.3,
+      "survival": 0.7143
     },
     {
-      "fh": 1329.0,
-      "survival": 0.5357
+      "fh": 1766.3,
+      "survival": 0.7143
     },
     {
-      "fh": 1344.8,
-      "survival": 0.5357
+      "fh": 1814.1,
+      "survival": 0.7143
     },
     {
-      "fh": 1458.7,
-      "survival": 0.4018
+      "fh": 1857.5,
+      "survival": 0.5952
     },
     {
-      "fh": 1596.3,
-      "survival": 0.4018
+      "fh": 1897.4,
+      "survival": 0.4762
     },
     {
-      "fh": 1617.0,
-      "survival": 0.4018
+      "fh": 1983.1,
+      "survival": 0.4762
     },
     {
-      "fh": 1642.3,
-      "survival": 0.4018
+      "fh": 2122.8,
+      "survival": 0.4762
     },
     {
-      "fh": 2022.5,
-      "survival": 0.2009
+      "fh": 2161.7,
+      "survival": 0.4762
     },
     {
-      "fh": 2412.8,
-      "survival": 0.0
+      "fh": 2172.3,
+      "survival": 0.381
     },
     {
-      "fh": 2836.2,
-      "survival": 0.0
+      "fh": 2190.5,
+      "survival": 0.2857
     },
     {
-      "fh": 3067.5,
-      "survival": 0.0
+      "fh": 2256.2,
+      "survival": 0.1905
     },
     {
-      "fh": 3625.0,
-      "survival": 0.0
+      "fh": 2351.3,
+      "survival": 0.1905
     },
     {
-      "fh": 3829.0,
-      "survival": 0.0
+      "fh": 2857.2,
+      "survival": 0.1905
     }
   ],
-  "survival_curve_method": "Kaplan-Meier"
+  "survival_curve_method": "Kaplan-Meier",
+  "weibull_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 47.6,
+      "survival": 0.9999
+    },
+    {
+      "fh": 95.2,
+      "survival": 0.9996
+    },
+    {
+      "fh": 142.9,
+      "survival": 0.999
+    },
+    {
+      "fh": 190.5,
+      "survival": 0.9979
+    },
+    {
+      "fh": 238.1,
+      "survival": 0.9962
+    },
+    {
+      "fh": 285.7,
+      "survival": 0.994
+    },
+    {
+      "fh": 333.3,
+      "survival": 0.991
+    },
+    {
+      "fh": 381.0,
+      "survival": 0.9874
+    },
+    {
+      "fh": 428.6,
+      "survival": 0.9829
+    },
+    {
+      "fh": 476.2,
+      "survival": 0.9776
+    },
+    {
+      "fh": 523.8,
+      "survival": 0.9714
+    },
+    {
+      "fh": 571.4,
+      "survival": 0.9644
+    },
+    {
+      "fh": 619.1,
+      "survival": 0.9563
+    },
+    {
+      "fh": 666.7,
+      "survival": 0.9474
+    },
+    {
+      "fh": 714.3,
+      "survival": 0.9374
+    },
+    {
+      "fh": 761.9,
+      "survival": 0.9265
+    },
+    {
+      "fh": 809.5,
+      "survival": 0.9145
+    },
+    {
+      "fh": 857.2,
+      "survival": 0.9016
+    },
+    {
+      "fh": 904.8,
+      "survival": 0.8877
+    },
+    {
+      "fh": 952.4,
+      "survival": 0.8728
+    },
+    {
+      "fh": 1000.0,
+      "survival": 0.857
+    },
+    {
+      "fh": 1047.6,
+      "survival": 0.8403
+    },
+    {
+      "fh": 1095.3,
+      "survival": 0.8226
+    },
+    {
+      "fh": 1142.9,
+      "survival": 0.8042
+    },
+    {
+      "fh": 1190.5,
+      "survival": 0.7849
+    },
+    {
+      "fh": 1238.1,
+      "survival": 0.7648
+    },
+    {
+      "fh": 1285.7,
+      "survival": 0.7441
+    },
+    {
+      "fh": 1333.4,
+      "survival": 0.7227
+    },
+    {
+      "fh": 1381.0,
+      "survival": 0.7008
+    },
+    {
+      "fh": 1428.6,
+      "survival": 0.6783
+    },
+    {
+      "fh": 1476.2,
+      "survival": 0.6554
+    },
+    {
+      "fh": 1523.8,
+      "survival": 0.6321
+    },
+    {
+      "fh": 1571.5,
+      "survival": 0.6085
+    },
+    {
+      "fh": 1619.1,
+      "survival": 0.5848
+    },
+    {
+      "fh": 1666.7,
+      "survival": 0.5608
+    },
+    {
+      "fh": 1714.3,
+      "survival": 0.5369
+    },
+    {
+      "fh": 1761.9,
+      "survival": 0.5129
+    },
+    {
+      "fh": 1809.6,
+      "survival": 0.489
+    },
+    {
+      "fh": 1857.2,
+      "survival": 0.4653
+    },
+    {
+      "fh": 1904.8,
+      "survival": 0.4418
+    },
+    {
+      "fh": 1952.4,
+      "survival": 0.4186
+    },
+    {
+      "fh": 2000.0,
+      "survival": 0.3958
+    },
+    {
+      "fh": 2047.7,
+      "survival": 0.3735
+    },
+    {
+      "fh": 2095.3,
+      "survival": 0.3516
+    },
+    {
+      "fh": 2142.9,
+      "survival": 0.3303
+    },
+    {
+      "fh": 2190.5,
+      "survival": 0.3096
+    },
+    {
+      "fh": 2238.1,
+      "survival": 0.2895
+    },
+    {
+      "fh": 2285.8,
+      "survival": 0.2701
+    },
+    {
+      "fh": 2333.4,
+      "survival": 0.2514
+    },
+    {
+      "fh": 2381.0,
+      "survival": 0.2335
+    },
+    {
+      "fh": 2428.6,
+      "survival": 0.2163
+    },
+    {
+      "fh": 2476.2,
+      "survival": 0.1999
+    },
+    {
+      "fh": 2523.9,
+      "survival": 0.1843
+    },
+    {
+      "fh": 2571.5,
+      "survival": 0.1695
+    },
+    {
+      "fh": 2619.1,
+      "survival": 0.1554
+    },
+    {
+      "fh": 2666.7,
+      "survival": 0.1422
+    },
+    {
+      "fh": 2714.3,
+      "survival": 0.1298
+    },
+    {
+      "fh": 2762.0,
+      "survival": 0.1182
+    },
+    {
+      "fh": 2809.6,
+      "survival": 0.1073
+    },
+    {
+      "fh": 2857.2,
+      "survival": 0.0972
+    }
+  ]
 }

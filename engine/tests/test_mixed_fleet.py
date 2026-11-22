@@ -149,6 +149,58 @@ def test_p5_p9_engine_trends_flag_only_planted_engines():
     assert p9["metric"] == "ITT margin" and 40 <= p9["projected_efh_to_limit"] <= 90
 
 
+def test_p5_p9_slope_about_3x_fleet_and_crossing_in_target():
+    """Planted at 3x the fleet-normal decay (SPEC 3, 14.4), not an extreme
+    outlier: the measured slope is 2x to 4x the fleet median for its metric,
+    and the projected crossing lands in the planted target window."""
+    tr = trends.compute_engine_trends()
+    tr["engine_position"] = tr["engine_position"].astype(str)
+    for tail, pos, lo, hi in ((cfg.ENGINE_DETERIORATION_TAIL, "1", 40, 80),
+                              (cfg.TURBOPROP_DETERIORATION_TAIL, cfg.TURBOPROP_DETERIORATION_POSITION, 40, 90)):
+        r = tr[(tr["tail"] == tail) & (tr["engine_position"] == pos)].iloc[0]
+        ratio = r["slope_c_per_efh"] / r["fleet_median_slope"]
+        assert 2.0 <= ratio <= 4.0, (tail, ratio)
+        assert lo <= r["projected_efh_to_limit"] <= hi, (tail, r["projected_efh_to_limit"])
+
+
+def test_keyed_random_streams_are_order_independent():
+    """A unit's damage threshold and lot depend only on its serial, not on how
+    many other units were created before it, so changing one planted factor
+    cannot reshuffle unrelated units (the coupling that once made a P2 change
+    alter P1)."""
+    def thresholds(order):
+        serials = generate.SerialCounter()
+        counter = [cfg.LOT_DEFECT["n_defective_units"]]
+        out = {}
+        for key in order:
+            u = generate.make_unit(serials, key, counter)
+            out[u["serial"]] = (u.get("E"), u["lot"])
+        return out
+    a = thresholds(["HYD-PUMP", "HYD-PUMP", "ECS-COOL", "HYD-PUMP"])
+    b = thresholds(["ECS-COOL", "ECS-COOL", "ECS-COOL", "HYD-PUMP", "HYD-PUMP", "HYD-PUMP"])
+    for serial in ("HP-0001", "HP-0002", "HP-0003", "EC-0001"):
+        key = serial
+        if key in a and key in b:
+            assert a[key] == b[key], serial
+    assert generate.krng("sortie", "FX-301", 5).random() == generate.krng("sortie", "FX-301", 5).random()
+    assert generate.krng("sortie", "FX-301", 5).random() != generate.krng("sortie", "FX-302", 5).random()
+
+
+def test_fitted_weibull_shape_recovers_planted_shape():
+    """Units in service at the window start get an age drawn independently of
+    their damage threshold (then conditioned on survival), so delayed-entry
+    fits recover the planted Weibull shape on average. Informative entry ages
+    once biased the median fitted shape to about 0.66x the planted one."""
+    with open(os.path.join(DATA, "gold", "survival_params.json"), encoding="utf-8") as f:
+        params = json.load(f)
+    planted = {c["part_number"]: c.get("weibull_beta") for c in cfg.COMPONENTS.values()}
+    ratios = [v["rho"] / planted[v.get("part_number", k)] for k, v in params.items()
+              if isinstance(v, dict) and "rho" in v and planted.get(v.get("part_number", k))]
+    assert len(ratios) >= 20
+    median = sorted(ratios)[len(ratios) // 2]
+    assert 0.8 <= median <= 1.25, median
+
+
 def test_p6_oil_precursor_active():
     df, _ = patterns.detect_oil_precursors()
     assert not df[(df["tail"] == cfg.OIL_PRECURSOR_TAIL) & (df["detector"] == "oil_precursor_active")].empty

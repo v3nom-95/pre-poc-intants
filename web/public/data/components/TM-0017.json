@@ -6,33 +6,34 @@
   "type": "transport",
   "type_name": "Twin-engine transport",
   "key": "TR-MLG",
-  "zone": "mlg-right",
+  "zone": "mlg-left",
   "task_card": "TC-32-04-01",
   "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "TX-404",
-  "current_position": "R",
+  "current_tail": "TX-408",
+  "current_position": "L",
   "governing_limit": "Calendar",
-  "remaining": 80.9,
+  "remaining": 101.3,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
   "fh_to_tau_p90": null,
   "prob_fail_before_next_phase": null,
   "explanation": null,
-  "fleet_units": 25,
+  "fleet_units": 23,
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "TX-404",
+      "tail": "TX-408",
       "event_type": "Install",
-      "date": "2023-08-31",
+      "date": "2025-05-02",
       "reason": null,
       "serial": "TM-0017"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

@@ -6,16 +6,16 @@
   "type": "fighter",
   "type_name": "Multirole fighter",
   "key": "MLG",
-  "zone": "mlg-left",
+  "zone": "mlg-right",
   "task_card": "TC-32-01-01",
   "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
   "current_tail": "FX-312",
-  "current_position": "L",
+  "current_position": "R",
   "governing_limit": "Calendar",
-  "remaining": 132.2,
+  "remaining": 118.3,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "FX-312",
       "event_type": "Install",
-      "date": "2025-11-26",
+      "date": "2024-10-04",
       "reason": null,
       "serial": "MG-0039"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

@@ -6,16 +6,16 @@
   "type": "transport",
   "type_name": "Twin-engine transport",
   "key": "TR-PROP",
-  "zone": "engine-2",
+  "zone": "engine-1",
   "task_card": "TC-61-01-01",
   "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "TX-407",
-  "current_position": "2",
+  "current_tail": "TX-402",
+  "current_position": "1",
   "governing_limit": "Calendar",
-  "remaining": 86.9,
+  "remaining": 89.0,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -26,13 +26,14 @@
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "TX-407",
+      "tail": "TX-402",
       "event_type": "Install",
-      "date": "2026-02-14",
+      "date": "2026-04-18",
       "reason": null,
       "serial": "PR-0027"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

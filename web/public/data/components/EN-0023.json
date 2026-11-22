@@ -15,7 +15,7 @@
   "current_tail": "FX-312",
   "current_position": "1",
   "governing_limit": "Cycles",
-  "remaining": 608.0,
+  "remaining": 1008.0,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "FX-312",
       "event_type": "Install",
-      "date": "2023-05-30",
+      "date": "2024-03-02",
       "reason": null,
       "serial": "EN-0023"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

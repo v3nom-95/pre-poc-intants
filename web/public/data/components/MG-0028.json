@@ -15,7 +15,7 @@
   "current_tail": "FX-314",
   "current_position": "R",
   "governing_limit": "Landings",
-  "remaining": 42.5,
+  "remaining": 89.4,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "FX-314",
       "event_type": "Install",
-      "date": "2016-04-29",
+      "date": "2019-07-29",
       "reason": null,
       "serial": "MG-0028"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

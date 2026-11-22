@@ -48,42 +48,42 @@
       "test_start": "2025-11-16",
       "test_end": "2026-11-15",
       "training": {
-        "n_legs": 1789,
-        "n_events": 638,
-        "max_install_date": "2025-11-10",
-        "max_removal_date": "2025-11-10",
-        "parts_fitted": 39
+        "n_legs": 1759,
+        "n_events": 652,
+        "max_install_date": "2025-11-15",
+        "max_removal_date": "2025-11-15",
+        "parts_fitted": 35
       },
       "concordance": {
         "summary": {
-          "pooled": 0.671,
-          "event_weighted_mean_of_parts": 0.658,
-          "parts_evaluated": 3,
-          "parts_total": 33,
+          "pooled": 0.705,
+          "event_weighted_mean_of_parts": 0.649,
+          "parts_evaluated": 2,
+          "parts_total": 29,
           "min_test_events": 5,
-          "n_units": 561,
-          "n_test_events": 64
+          "n_units": 515,
+          "n_test_events": 40
         },
         "per_part": [
           {
             "part_number": "21-1005-01",
             "name": "ECS cooling turbine",
-            "n_units": 18,
-            "n_test_events": 2,
+            "n_units": 20,
+            "n_test_events": 4,
             "concordance": null
           },
           {
             "part_number": "21-3110-11",
             "name": "Cabin pressure controller",
-            "n_units": 10,
-            "n_test_events": 2,
+            "n_units": 8,
+            "n_test_events": 0,
             "concordance": null
           },
           {
             "part_number": "21-3120-11",
             "name": "Cabin outflow valve",
-            "n_units": 11,
-            "n_test_events": 1,
+            "n_units": 10,
+            "n_test_events": 0,
             "concordance": null
           },
           {
@@ -96,16 +96,16 @@
           {
             "part_number": "21-5110-11",
             "name": "ECS pack (air cycle machine)",
-            "n_units": 20,
-            "n_test_events": 4,
+            "n_units": 19,
+            "n_test_events": 3,
             "concordance": null
           },
           {
             "part_number": "21-5110-21",
             "name": "ECS pack (air cycle machine)",
-            "n_units": 21,
-            "n_test_events": 8,
-            "concordance": 0.574
+            "n_units": 16,
+            "n_test_events": 4,
+            "concordance": null
           },
           {
             "part_number": "24-2110-01",
@@ -124,64 +124,57 @@
           {
             "part_number": "24-3110-21",
             "name": "Engine-driven generator",
-            "n_units": 29,
-            "n_test_events": 5,
-            "concordance": 0.777
+            "n_units": 25,
+            "n_test_events": 1,
+            "concordance": null
           },
           {
             "part_number": "27-3310-04",
             "name": "Horizontal stabilator actuator",
-            "n_units": 34,
-            "n_test_events": 2,
-            "concordance": null
-          },
-          {
-            "part_number": "27-3550-01",
-            "name": "Flight control computer",
-            "n_units": 16,
-            "n_test_events": 0,
+            "n_units": 33,
+            "n_test_events": 1,
             "concordance": null
           },
           {
             "part_number": "28-2210-02",
             "name": "Fuel boost pump",
-            "n_units": 19,
-            "n_test_events": 3,
+            "n_units": 17,
+            "n_test_events": 1,
             "concordance": null
           },
           {
             "part_number": "28-2310-11",
             "name": "Fuel boost pump",
-            "n_units": 18,
-            "n_test_events": 2,
+            "n_units": 16,
+            "n_test_events": 0,
             "concordance": null
           },
           {
             "part_number": "28-2310-21",
             "name": "Fuel boost pump",
-            "n_units": 31,
-            "n_test_events": 3,
-            "concordance": null
+            "n_units": 29,
+            "n_test_events": 5,
+            "concordance": 0.524
           },
           {
             "part_number": "29-1140-03",
             "name": "Engine-driven hydraulic pump",
-            "n_units": 19,
-            "n_test_events": 3,
-            "concordance": null
+            "n_units": 23,
+            "n_test_events": 7,
+            "concordance": 0.738
           },
           {
             "part_number": "29-1210-11",
             "name": "Engine-driven hydraulic pump",
-            "n_units": 18,
-            "n_test_events": 2,
+            "n_units": 17,
+            "n_test_events": 1,
             "concordance": null
           },
           {
             "part_number": "29-1210-21",
             "name": "Engine-driven hydraulic pump",
-            "n_units": 26,
-            "n_test_events": 1,
+            "n_units": 27,
+            "n_test_events": 3,
             "concordance": null
           },
           {
@@ -192,212 +185,212 @@
             "concordance": null
           },
           {
-            "part_number": "31-3110-21",
-            "name": "Flight data recorder",
-            "n_units": 7,
-            "n_test_events": 1,
-            "concordance": null
-          },
-          {
             "part_number": "34-1810-01",
             "name": "Inertial navigation unit",
-            "n_units": 17,
-            "n_test_events": 1,
-            "concordance": null
-          },
-          {
-            "part_number": "34-4110-11",
-            "name": "Weather radar",
-            "n_units": 8,
+            "n_units": 16,
             "n_test_events": 0,
-            "concordance": null
-          },
-          {
-            "part_number": "34-4110-21",
-            "name": "Weather radar",
-            "n_units": 7,
-            "n_test_events": 1,
             "concordance": null
           },
           {
             "part_number": "34-4420-11",
             "name": "Radio altimeter",
-            "n_units": 11,
-            "n_test_events": 3,
-            "concordance": null
-          },
-          {
-            "part_number": "34-4420-21",
-            "name": "Radio altimeter",
-            "n_units": 6,
-            "n_test_events": 0,
-            "concordance": null
-          },
-          {
-            "part_number": "49-1110-21",
-            "name": "Auxiliary power unit",
-            "n_units": 6,
+            "n_units": 8,
             "n_test_events": 0,
             "concordance": null
           },
           {
             "part_number": "49-1210-01",
             "name": "Jet fuel starter",
-            "n_units": 20,
-            "n_test_events": 4,
+            "n_units": 17,
+            "n_test_events": 1,
             "concordance": null
           },
           {
             "part_number": "52-3410-21",
             "name": "Cargo ramp actuator",
-            "n_units": 7,
-            "n_test_events": 1,
+            "n_units": 6,
+            "n_test_events": 0,
             "concordance": null
           },
           {
             "part_number": "61-2210-11",
             "name": "Propeller control unit",
-            "n_units": 20,
-            "n_test_events": 4,
+            "n_units": 16,
+            "n_test_events": 0,
             "concordance": null
           },
           {
             "part_number": "61-2210-21",
             "name": "Propeller control unit",
-            "n_units": 30,
-            "n_test_events": 5,
-            "concordance": 0.674
+            "n_units": 26,
+            "n_test_events": 2,
+            "concordance": null
+          },
+          {
+            "part_number": "73-2110-01",
+            "name": "Engine fuel control unit",
+            "n_units": 18,
+            "n_test_events": 2,
+            "concordance": null
           },
           {
             "part_number": "73-2120-11",
             "name": "Engine fuel control unit",
-            "n_units": 17,
-            "n_test_events": 1,
+            "n_units": 16,
+            "n_test_events": 0,
             "concordance": null
           },
           {
             "part_number": "73-2120-21",
             "name": "Engine fuel control unit",
-            "n_units": 25,
+            "n_units": 26,
             "n_test_events": 1,
+            "concordance": null
+          },
+          {
+            "part_number": "79-1310-02",
+            "name": "Engine lube oil pump",
+            "n_units": 16,
+            "n_test_events": 0,
             "concordance": null
           },
           {
             "part_number": "79-1320-11",
             "name": "Engine lube oil pump",
-            "n_units": 17,
-            "n_test_events": 1,
+            "n_units": 16,
+            "n_test_events": 0,
             "concordance": null
           },
           {
             "part_number": "79-1320-21",
             "name": "Engine lube oil pump",
-            "n_units": 26,
-            "n_test_events": 2,
+            "n_units": 27,
+            "n_test_events": 3,
             "concordance": null
           }
         ]
       },
       "calibration": {
         "summary": {
-          "expected_total": 46.11,
-          "observed_total": 64,
-          "observed_to_expected": 1.388,
-          "top_decile_share_of_failures": 0.109,
-          "brier_score": 0.1092
+          "expected_total": 43.93,
+          "observed_total": 40,
+          "observed_to_expected": 0.911,
+          "top_decile_share_of_failures": 0.125,
+          "brier_score": 0.0786
         },
         "deciles": [
           {
             "decile": 1,
-            "n_units": 57,
-            "mean_predicted_prob": 0.0134,
-            "expected_failures": 0.77,
-            "observed_failures": 14
+            "n_units": 52,
+            "mean_predicted_prob": 0.0004,
+            "expected_failures": 0.02,
+            "observed_failures": 4
           },
           {
             "decile": 2,
-            "n_units": 56,
-            "mean_predicted_prob": 0.0275,
-            "expected_failures": 1.54,
-            "observed_failures": 7
+            "n_units": 52,
+            "mean_predicted_prob": 0.0058,
+            "expected_failures": 0.3,
+            "observed_failures": 5
           },
           {
             "decile": 3,
-            "n_units": 56,
-            "mean_predicted_prob": 0.036,
-            "expected_failures": 2.02,
-            "observed_failures": 6
+            "n_units": 52,
+            "mean_predicted_prob": 0.0233,
+            "expected_failures": 1.21,
+            "observed_failures": 7
           },
           {
             "decile": 4,
-            "n_units": 56,
-            "mean_predicted_prob": 0.0443,
-            "expected_failures": 2.48,
+            "n_units": 52,
+            "mean_predicted_prob": 0.0452,
+            "expected_failures": 2.35,
             "observed_failures": 3
           },
           {
             "decile": 5,
-            "n_units": 56,
-            "mean_predicted_prob": 0.0529,
-            "expected_failures": 2.96,
+            "n_units": 52,
+            "mean_predicted_prob": 0.0609,
+            "expected_failures": 3.17,
             "observed_failures": 1
           },
           {
             "decile": 6,
-            "n_units": 56,
-            "mean_predicted_prob": 0.065,
-            "expected_failures": 3.64,
-            "observed_failures": 8
-          },
-          {
-            "decile": 7,
-            "n_units": 56,
-            "mean_predicted_prob": 0.0828,
-            "expected_failures": 4.64,
-            "observed_failures": 6
-          },
-          {
-            "decile": 8,
-            "n_units": 56,
-            "mean_predicted_prob": 0.106,
-            "expected_failures": 5.93,
-            "observed_failures": 9
-          },
-          {
-            "decile": 9,
-            "n_units": 56,
-            "mean_predicted_prob": 0.1357,
-            "expected_failures": 7.6,
+            "n_units": 51,
+            "mean_predicted_prob": 0.0755,
+            "expected_failures": 3.85,
             "observed_failures": 3
           },
           {
+            "decile": 7,
+            "n_units": 51,
+            "mean_predicted_prob": 0.0955,
+            "expected_failures": 4.87,
+            "observed_failures": 5
+          },
+          {
+            "decile": 8,
+            "n_units": 51,
+            "mean_predicted_prob": 0.1222,
+            "expected_failures": 6.23,
+            "observed_failures": 2
+          },
+          {
+            "decile": 9,
+            "n_units": 51,
+            "mean_predicted_prob": 0.1596,
+            "expected_failures": 8.14,
+            "observed_failures": 5
+          },
+          {
             "decile": 10,
-            "n_units": 56,
-            "mean_predicted_prob": 0.2595,
-            "expected_failures": 14.53,
-            "observed_failures": 7
+            "n_units": 51,
+            "mean_predicted_prob": 0.2703,
+            "expected_failures": 13.78,
+            "observed_failures": 5
           }
         ],
         "by_type": [
           {
             "type": "airlifter",
-            "n_units": 227,
-            "expected": 21.72,
-            "observed": 28
+            "n_units": 188,
+            "expected": 19.04,
+            "observed": 19
           },
           {
             "type": "fighter",
-            "n_units": 159,
-            "expected": 11.4,
-            "observed": 15
+            "n_units": 176,
+            "expected": 14.01,
+            "observed": 16
           },
           {
             "type": "transport",
-            "n_units": 175,
-            "expected": 12.99,
+            "n_units": 151,
+            "expected": 10.87,
+            "observed": 5
+          }
+        ],
+        "by_entry": [
+          {
+            "entered_with_history": false,
+            "n_units": 230,
+            "expected": 13.09,
+            "observed": 19
+          },
+          {
+            "entered_with_history": true,
+            "n_units": 285,
+            "expected": 30.84,
             "observed": 21
           }
-        ]
+        ],
+        "in_window_fit": {
+          "parts": 11,
+          "n_units": 108,
+          "expected_production_fit": 13.84,
+          "expected_in_window_fit": 19.99,
+          "observed": 16
+        }
       },
       "recall": {
         "as_of_points": [
@@ -414,49 +407,49 @@
           "2026-09-15",
           "2026-10-15"
         ],
-        "failures_in_test_window": 66,
-        "covered": 6,
-        "recall": 0.091,
-        "alerted_any_lead": 7,
+        "failures_in_test_window": 44,
+        "covered": 8,
+        "recall": 0.182,
+        "alerted_any_lead": 9,
         "lead_min_fh": 25.0,
         "lead_time_fh": {
-          "min": 34.1,
-          "p25": 56.7,
-          "median": 92.1,
-          "p75": 148.4,
-          "max": 169.9
+          "min": 77.9,
+          "p25": 118.0,
+          "median": 140.9,
+          "p75": 168.7,
+          "max": 268.6
         },
         "lead_time_days": {
-          "min": 86.0,
-          "p25": 116.5,
-          "median": 142.5,
-          "p75": 160.2,
-          "max": 174.0
+          "min": 151.0,
+          "p25": 192.0,
+          "median": 213.5,
+          "p75": 243.0,
+          "max": 281.0
         },
         "lead_time_histogram": [
           {
             "label": "25 to 50 FH",
             "lo": 25,
             "hi": 50,
-            "count": 1
+            "count": 0
           },
           {
             "label": "50 to 100 FH",
             "lo": 50,
             "hi": 100,
-            "count": 2
+            "count": 1
           },
           {
             "label": "100 to 200 FH",
             "lo": 100,
             "hi": 200,
-            "count": 3
+            "count": 5
           },
           {
             "label": "200 to 400 FH",
             "lo": 200,
             "hi": 400,
-            "count": 0
+            "count": 2
           },
           {
             "label": "400 FH or more",
@@ -465,87 +458,213 @@
             "count": 0
           }
         ],
-        "alerts_raised": 99,
-        "test_window_fh": 7446.1,
-        "alert_rate_per_1000fh": 13.3,
+        "alerts_raised": 156,
+        "test_window_fh": 7831.9,
+        "alert_rate_per_1000fh": 19.92,
         "open_alerts_by_month": [
           {
             "as_of": "2025-11-15",
-            "open_alerts": 41
+            "open_alerts": 61
           },
           {
             "as_of": "2025-12-15",
-            "open_alerts": 42
+            "open_alerts": 64
           },
           {
             "as_of": "2026-01-15",
-            "open_alerts": 42
+            "open_alerts": 66
           },
           {
             "as_of": "2026-02-15",
-            "open_alerts": 38
+            "open_alerts": 62
           },
           {
             "as_of": "2026-03-15",
-            "open_alerts": 33
+            "open_alerts": 66
           },
           {
             "as_of": "2026-04-15",
-            "open_alerts": 33
+            "open_alerts": 64
           },
           {
             "as_of": "2026-05-15",
-            "open_alerts": 38
+            "open_alerts": 70
           },
           {
             "as_of": "2026-06-15",
-            "open_alerts": 44
+            "open_alerts": 68
           },
           {
             "as_of": "2026-07-15",
-            "open_alerts": 46
+            "open_alerts": 73
           },
           {
             "as_of": "2026-08-15",
-            "open_alerts": 43
+            "open_alerts": 75
           },
           {
             "as_of": "2026-09-15",
-            "open_alerts": 42
+            "open_alerts": 74
           },
           {
             "as_of": "2026-10-15",
-            "open_alerts": 41
+            "open_alerts": 75
           }
         ],
         "by_type": [
           {
             "type": "airlifter",
-            "failures": 28,
+            "failures": 21,
             "covered": 2,
-            "recall": 0.071
+            "recall": 0.095
           },
           {
             "type": "fighter",
-            "failures": 17,
-            "covered": 3,
-            "recall": 0.176
+            "failures": 18,
+            "covered": 5,
+            "recall": 0.278
           },
           {
             "type": "transport",
-            "failures": 21,
+            "failures": 5,
             "covered": 1,
-            "recall": 0.048
+            "recall": 0.2
+          }
+        ],
+        "by_source": [
+          {
+            "source": "Hard-time rule",
+            "can_cover": true,
+            "covered": 0,
+            "recall": 0.0,
+            "first_alert_for": 0,
+            "alerts_raised": 63,
+            "alert_rate_per_1000fh": 8.04
+          },
+          {
+            "source": "Survival model",
+            "can_cover": true,
+            "covered": 6,
+            "recall": 0.136,
+            "first_alert_for": 3,
+            "alerts_raised": 59,
+            "alert_rate_per_1000fh": 7.53
+          },
+          {
+            "source": "Lot defect",
+            "can_cover": true,
+            "covered": 5,
+            "recall": 0.114,
+            "first_alert_for": 5,
+            "alerts_raised": 21,
+            "alert_rate_per_1000fh": 2.68
+          },
+          {
+            "source": "Repeat snag",
+            "can_cover": true,
+            "covered": 0,
+            "recall": 0.0,
+            "first_alert_for": 0,
+            "alerts_raised": 2,
+            "alert_rate_per_1000fh": 0.26
+          },
+          {
+            "source": "Engine trend",
+            "can_cover": true,
+            "covered": 0,
+            "recall": 0.0,
+            "first_alert_for": 0,
+            "alerts_raised": 9,
+            "alert_rate_per_1000fh": 1.15
+          },
+          {
+            "source": "Oil precursor",
+            "can_cover": true,
+            "covered": 0,
+            "recall": 0.0,
+            "first_alert_for": 0,
+            "alerts_raised": 1,
+            "alert_rate_per_1000fh": 0.13
+          },
+          {
+            "source": "Fatigue",
+            "can_cover": false,
+            "covered": 0,
+            "recall": 0.0,
+            "first_alert_for": 0,
+            "alerts_raised": 1,
+            "alert_rate_per_1000fh": 0.13
+          }
+        ],
+        "rules_and_model_only": {
+          "covered": 6,
+          "recall": 0.136
+        },
+        "tau_tradeoff": [
+          {
+            "tau_multiplier": 0.5,
+            "model_covered": 14,
+            "model_recall": 0.318,
+            "all_sources_covered": 16,
+            "all_sources_recall": 0.364,
+            "model_alerts": 154,
+            "model_alert_rate_per_1000fh": 19.66,
+            "all_alerts": 251,
+            "all_alert_rate_per_1000fh": 32.05
+          },
+          {
+            "tau_multiplier": 1.0,
+            "model_covered": 6,
+            "model_recall": 0.136,
+            "all_sources_covered": 8,
+            "all_sources_recall": 0.182,
+            "model_alerts": 59,
+            "model_alert_rate_per_1000fh": 7.53,
+            "all_alerts": 156,
+            "all_alert_rate_per_1000fh": 19.92
+          },
+          {
+            "tau_multiplier": 1.5,
+            "model_covered": 4,
+            "model_recall": 0.091,
+            "all_sources_covered": 7,
+            "all_sources_recall": 0.159,
+            "model_alerts": 26,
+            "model_alert_rate_per_1000fh": 3.32,
+            "all_alerts": 123,
+            "all_alert_rate_per_1000fh": 15.7
+          },
+          {
+            "tau_multiplier": 2.0,
+            "model_covered": 2,
+            "model_recall": 0.045,
+            "all_sources_covered": 5,
+            "all_sources_recall": 0.114,
+            "model_alerts": 11,
+            "model_alert_rate_per_1000fh": 1.4,
+            "all_alerts": 108,
+            "all_alert_rate_per_1000fh": 13.79
+          },
+          {
+            "tau_multiplier": 3.0,
+            "model_covered": 2,
+            "model_recall": 0.045,
+            "all_sources_covered": 5,
+            "all_sources_recall": 0.114,
+            "model_alerts": 5,
+            "model_alert_rate_per_1000fh": 0.64,
+            "all_alerts": 102,
+            "all_alert_rate_per_1000fh": 13.02
           }
         ],
         "failures": [
           {
-            "tail": "TX-408",
-            "type": "transport",
-            "part_number": "28-2310-11",
+            "tail": "FX-310",
+            "type": "fighter",
+            "part_number": "28-2210-02",
             "name": "Fuel boost pump",
-            "serial": "TF-0018",
-            "failure_date": "2025-11-27",
+            "serial": "FB-0010",
+            "failure_date": "2025-12-09",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -553,64 +672,12 @@
             "alert_basis": null
           },
           {
-            "tail": "TX-407",
-            "type": "transport",
-            "part_number": "24-3110-11",
-            "name": "Engine-driven generator",
-            "serial": "TG-0014",
-            "failure_date": "2025-12-14",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-504",
-            "type": "airlifter",
-            "part_number": "21-5110-21",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "XP-0011",
-            "failure_date": "2025-12-15",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-404",
-            "type": "transport",
-            "part_number": "73-2120-11",
-            "name": "Engine fuel control unit",
-            "serial": "TC-0007",
-            "failure_date": "2025-12-27",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-303",
+            "tail": "FX-312",
             "type": "fighter",
             "part_number": "27-3310-04",
             "name": "Horizontal stabilator actuator",
-            "serial": "SA-0006",
-            "failure_date": "2025-12-31",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-504",
-            "type": "airlifter",
-            "part_number": "24-3110-21",
-            "name": "Engine-driven generator",
-            "serial": "XG-0004",
-            "failure_date": "2026-01-01",
+            "serial": "SA-0023",
+            "failure_date": "2025-12-11",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -622,8 +689,8 @@
             "type": "transport",
             "part_number": "21-5110-11",
             "name": "ECS pack (air cycle machine)",
-            "serial": "EP-0017",
-            "failure_date": "2026-01-04",
+            "serial": "EP-0011",
+            "failure_date": "2025-12-13",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -631,12 +698,12 @@
             "alert_basis": null
           },
           {
-            "tail": "TX-405",
-            "type": "transport",
-            "part_number": "61-2210-11",
-            "name": "Propeller control unit",
-            "serial": "PU-0009",
-            "failure_date": "2026-01-09",
+            "tail": "CX-501",
+            "type": "airlifter",
+            "part_number": "29-1210-21",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "XH-0029",
+            "failure_date": "2025-12-21",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -644,12 +711,51 @@
             "alert_basis": null
           },
           {
-            "tail": "TX-401",
-            "type": "transport",
-            "part_number": "61-2210-11",
-            "name": "Propeller control unit",
-            "serial": "PU-0017",
-            "failure_date": "2026-01-14",
+            "tail": "FX-312",
+            "type": "fighter",
+            "part_number": "29-1140-03",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "HP-0006",
+            "failure_date": "2026-01-01",
+            "alerted": true,
+            "covered": false,
+            "lead_fh": 17.9,
+            "lead_days": 47,
+            "alert_basis": "Lot defect"
+          },
+          {
+            "tail": "FX-301",
+            "type": "fighter",
+            "part_number": "29-1140-03",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "HP-0018",
+            "failure_date": "2026-01-31",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-306",
+            "type": "fighter",
+            "part_number": "27-3550-01",
+            "name": "Flight control computer",
+            "serial": "FC-0006",
+            "failure_date": "2026-01-31",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "CX-502",
+            "type": "airlifter",
+            "part_number": "79-1320-21",
+            "name": "Engine lube oil pump",
+            "serial": "XO-0007",
+            "failure_date": "2026-02-12",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -659,10 +765,10 @@
           {
             "tail": "CX-506",
             "type": "airlifter",
-            "part_number": "21-5110-21",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "XP-0015",
-            "failure_date": "2026-01-17",
+            "part_number": "79-1320-21",
+            "name": "Engine lube oil pump",
+            "serial": "XO-0022",
+            "failure_date": "2026-02-25",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -670,12 +776,25 @@
             "alert_basis": null
           },
           {
-            "tail": "CX-502",
+            "tail": "TX-405",
+            "type": "transport",
+            "part_number": "21-5110-11",
+            "name": "ECS pack (air cycle machine)",
+            "serial": "EP-0010",
+            "failure_date": "2026-02-27",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "CX-505",
             "type": "airlifter",
             "part_number": "21-5110-21",
             "name": "ECS pack (air cycle machine)",
-            "serial": "XP-0002",
-            "failure_date": "2026-02-01",
+            "serial": "XP-0010",
+            "failure_date": "2026-02-28",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -683,12 +802,25 @@
             "alert_basis": null
           },
           {
-            "tail": "FX-313",
-            "type": "fighter",
-            "part_number": "21-1005-01",
-            "name": "ECS cooling turbine",
-            "serial": "EC-0015",
-            "failure_date": "2026-02-03",
+            "tail": "CX-506",
+            "type": "airlifter",
+            "part_number": "24-3110-21",
+            "name": "Engine-driven generator",
+            "serial": "XG-0024",
+            "failure_date": "2026-03-17",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "CX-504",
+            "type": "airlifter",
+            "part_number": "29-1210-21",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "XH-0026",
+            "failure_date": "2026-03-24",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -700,125 +832,8 @@
             "type": "airlifter",
             "part_number": "79-1320-21",
             "name": "Engine lube oil pump",
-            "serial": "XO-0017",
-            "failure_date": "2026-02-05",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-305",
-            "type": "fighter",
-            "part_number": "29-1140-03",
-            "name": "Engine-driven hydraulic pump",
-            "serial": "HP-0010",
-            "failure_date": "2026-02-09",
-            "alerted": true,
-            "covered": true,
-            "lead_fh": 34.1,
-            "lead_days": 86,
-            "alert_basis": "Model"
-          },
-          {
-            "tail": "TX-407",
-            "type": "transport",
-            "part_number": "29-1210-11",
-            "name": "Engine-driven hydraulic pump",
-            "serial": "TH-0005",
-            "failure_date": "2026-02-23",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-505",
-            "type": "airlifter",
-            "part_number": "52-3410-21",
-            "name": "Cargo ramp actuator",
-            "serial": "RM-0005",
-            "failure_date": "2026-02-26",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-403",
-            "type": "transport",
-            "part_number": "61-2210-11",
-            "name": "Propeller control unit",
-            "serial": "PU-0005",
-            "failure_date": "2026-02-26",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-402",
-            "type": "transport",
-            "part_number": "21-5110-11",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "EP-0004",
-            "failure_date": "2026-02-28",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-505",
-            "type": "airlifter",
-            "part_number": "24-3110-21",
-            "name": "Engine-driven generator",
-            "serial": "XG-0018",
-            "failure_date": "2026-03-07",
-            "alerted": true,
-            "covered": true,
-            "lead_fh": 122.9,
-            "lead_days": 112,
-            "alert_basis": "Model"
-          },
-          {
-            "tail": "CX-504",
-            "type": "airlifter",
-            "part_number": "28-2310-21",
-            "name": "Fuel boost pump",
-            "serial": "XF-0001",
-            "failure_date": "2026-03-13",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-307",
-            "type": "fighter",
-            "part_number": "49-1210-01",
-            "name": "Jet fuel starter",
-            "serial": "JF-0009",
-            "failure_date": "2026-03-17",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-503",
-            "type": "airlifter",
-            "part_number": "21-5110-21",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "XP-0006",
-            "failure_date": "2026-03-18",
+            "serial": "XO-0018",
+            "failure_date": "2026-03-25",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -828,23 +843,296 @@
           {
             "tail": "FX-315",
             "type": "fighter",
-            "part_number": "29-1140-03",
+            "part_number": "73-2110-01",
+            "name": "Engine fuel control unit",
+            "serial": "FU-0018",
+            "failure_date": "2026-03-31",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "TX-408",
+            "type": "transport",
+            "part_number": "21-5110-11",
+            "name": "ECS pack (air cycle machine)",
+            "serial": "EP-0016",
+            "failure_date": "2026-04-04",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "TX-408",
+            "type": "transport",
+            "part_number": "29-1210-11",
             "name": "Engine-driven hydraulic pump",
-            "serial": "HP-0007",
-            "failure_date": "2026-03-25",
+            "serial": "TH-0016",
+            "failure_date": "2026-04-15",
             "alerted": true,
             "covered": true,
-            "lead_fh": 55.2,
-            "lead_days": 130,
-            "alert_basis": "Model"
+            "lead_fh": 152.3,
+            "lead_days": 151,
+            "alert_basis": "Survival model"
+          },
+          {
+            "tail": "CX-505",
+            "type": "airlifter",
+            "part_number": "21-5110-21",
+            "name": "ECS pack (air cycle machine)",
+            "serial": "XP-0015",
+            "failure_date": "2026-05-04",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-308",
+            "type": "fighter",
+            "part_number": "29-1140-03",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "HP-0008",
+            "failure_date": "2026-05-08",
+            "alerted": true,
+            "covered": true,
+            "lead_fh": 77.9,
+            "lead_days": 174,
+            "alert_basis": "Lot defect"
+          },
+          {
+            "tail": "TX-408",
+            "type": "transport",
+            "part_number": "24-3110-11",
+            "name": "Engine-driven generator",
+            "serial": "TG-0015",
+            "failure_date": "2026-05-14",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
           },
           {
             "tail": "CX-502",
             "type": "airlifter",
-            "part_number": "79-1320-21",
-            "name": "Engine lube oil pump",
-            "serial": "XO-0006",
-            "failure_date": "2026-03-30",
+            "part_number": "28-2310-21",
+            "name": "Fuel boost pump",
+            "serial": "XF-0021",
+            "failure_date": "2026-05-22",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-303",
+            "type": "fighter",
+            "part_number": "21-1005-01",
+            "name": "ECS cooling turbine",
+            "serial": "EC-0003",
+            "failure_date": "2026-05-26",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-307",
+            "type": "fighter",
+            "part_number": "29-1140-03",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "HP-0003",
+            "failure_date": "2026-06-01",
+            "alerted": true,
+            "covered": true,
+            "lead_fh": 103.6,
+            "lead_days": 198,
+            "alert_basis": "Lot defect"
+          },
+          {
+            "tail": "CX-506",
+            "type": "airlifter",
+            "part_number": "28-2310-21",
+            "name": "Fuel boost pump",
+            "serial": "XF-0027",
+            "failure_date": "2026-06-02",
+            "alerted": true,
+            "covered": true,
+            "lead_fh": 217.7,
+            "lead_days": 199,
+            "alert_basis": "Survival model"
+          },
+          {
+            "tail": "CX-505",
+            "type": "airlifter",
+            "part_number": "61-2210-21",
+            "name": "Propeller control unit",
+            "serial": "XQ-0019",
+            "failure_date": "2026-06-08",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-302",
+            "type": "fighter",
+            "part_number": "21-1005-01",
+            "name": "ECS cooling turbine",
+            "serial": "EC-0006",
+            "failure_date": "2026-06-08",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "CX-506",
+            "type": "airlifter",
+            "part_number": "29-1210-21",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "XH-0023",
+            "failure_date": "2026-06-15",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "CX-502",
+            "type": "airlifter",
+            "part_number": "73-2120-21",
+            "name": "Engine fuel control unit",
+            "serial": "XZ-0004",
+            "failure_date": "2026-06-21",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-308",
+            "type": "fighter",
+            "part_number": "21-1005-01",
+            "name": "ECS cooling turbine",
+            "serial": "EC-0008",
+            "failure_date": "2026-06-21",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-310",
+            "type": "fighter",
+            "part_number": "29-1140-03",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "HP-0009",
+            "failure_date": "2026-07-01",
+            "alerted": true,
+            "covered": true,
+            "lead_fh": 122.8,
+            "lead_days": 228,
+            "alert_basis": "Lot defect"
+          },
+          {
+            "tail": "CX-504",
+            "type": "airlifter",
+            "part_number": "34-4110-21",
+            "name": "Weather radar",
+            "serial": "XW-0004",
+            "failure_date": "2026-07-04",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-302",
+            "type": "fighter",
+            "part_number": "29-1140-03",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "HP-0002",
+            "failure_date": "2026-07-14",
+            "alerted": true,
+            "covered": true,
+            "lead_fh": 137.6,
+            "lead_days": 241,
+            "alert_basis": "Lot defect"
+          },
+          {
+            "tail": "FX-311",
+            "type": "fighter",
+            "part_number": "29-1140-03",
+            "name": "Engine-driven hydraulic pump",
+            "serial": "HP-0005",
+            "failure_date": "2026-07-22",
+            "alerted": true,
+            "covered": true,
+            "lead_fh": 144.3,
+            "lead_days": 249,
+            "alert_basis": "Lot defect"
+          },
+          {
+            "tail": "CX-505",
+            "type": "airlifter",
+            "part_number": "61-2210-21",
+            "name": "Propeller control unit",
+            "serial": "XQ-0017",
+            "failure_date": "2026-07-27",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "CX-504",
+            "type": "airlifter",
+            "part_number": "21-5110-21",
+            "name": "ECS pack (air cycle machine)",
+            "serial": "XP-0009",
+            "failure_date": "2026-08-02",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-304",
+            "type": "fighter",
+            "part_number": "34-4410-02",
+            "name": "Radar altimeter",
+            "serial": "RA-0004",
+            "failure_date": "2026-08-02",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "FX-303",
+            "type": "fighter",
+            "part_number": "73-2110-01",
+            "name": "Engine fuel control unit",
+            "serial": "FU-0019",
+            "failure_date": "2026-08-15",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -854,10 +1142,49 @@
           {
             "tail": "CX-505",
             "type": "airlifter",
-            "part_number": "24-3110-21",
-            "name": "Engine-driven generator",
-            "serial": "XG-0027",
-            "failure_date": "2026-04-03",
+            "part_number": "28-2310-21",
+            "name": "Fuel boost pump",
+            "serial": "XF-0019",
+            "failure_date": "2026-08-23",
+            "alerted": true,
+            "covered": true,
+            "lead_fh": 268.6,
+            "lead_days": 281,
+            "alert_basis": "Survival model"
+          },
+          {
+            "tail": "CX-506",
+            "type": "airlifter",
+            "part_number": "21-5110-21",
+            "name": "ECS pack (air cycle machine)",
+            "serial": "XP-0008",
+            "failure_date": "2026-08-26",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "CX-503",
+            "type": "airlifter",
+            "part_number": "28-2310-21",
+            "name": "Fuel boost pump",
+            "serial": "XF-0024",
+            "failure_date": "2026-09-22",
+            "alerted": false,
+            "covered": false,
+            "lead_fh": null,
+            "lead_days": null,
+            "alert_basis": null
+          },
+          {
+            "tail": "CX-501",
+            "type": "airlifter",
+            "part_number": "28-2310-21",
+            "name": "Fuel boost pump",
+            "serial": "XF-0022",
+            "failure_date": "2026-09-29",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -870,7 +1197,7 @@
             "part_number": "49-1210-01",
             "name": "Jet fuel starter",
             "serial": "JF-0006",
-            "failure_date": "2026-04-10",
+            "failure_date": "2026-10-07",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -878,428 +1205,12 @@
             "alert_basis": null
           },
           {
-            "tail": "CX-506",
-            "type": "airlifter",
-            "part_number": "28-2310-21",
-            "name": "Fuel boost pump",
-            "serial": "XF-0014",
-            "failure_date": "2026-04-19",
-            "alerted": true,
-            "covered": true,
-            "lead_fh": 156.9,
-            "lead_days": 155,
-            "alert_basis": "Model"
-          },
-          {
-            "tail": "CX-503",
-            "type": "airlifter",
-            "part_number": "61-2210-21",
-            "name": "Propeller control unit",
-            "serial": "XQ-0029",
-            "failure_date": "2026-04-23",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-501",
-            "type": "airlifter",
-            "part_number": "61-2210-21",
-            "name": "Propeller control unit",
-            "serial": "XQ-0002",
-            "failure_date": "2026-04-24",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-408",
-            "type": "transport",
-            "part_number": "21-3110-11",
-            "name": "Cabin pressure controller",
-            "serial": "PC-0008",
-            "failure_date": "2026-04-25",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-306",
-            "type": "fighter",
-            "part_number": "29-1140-03",
-            "name": "Engine-driven hydraulic pump",
-            "serial": "HP-0011",
-            "failure_date": "2026-04-26",
-            "alerted": true,
-            "covered": true,
-            "lead_fh": 61.2,
-            "lead_days": 162,
-            "alert_basis": "Model"
-          },
-          {
-            "tail": "TX-406",
-            "type": "transport",
-            "part_number": "21-3120-11",
-            "name": "Cabin outflow valve",
-            "serial": "OV-0006",
-            "failure_date": "2026-05-04",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-311",
-            "type": "fighter",
-            "part_number": "73-2110-01",
-            "name": "Engine fuel control unit",
-            "serial": "FU-0011",
-            "failure_date": "2026-05-14",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-501",
-            "type": "airlifter",
-            "part_number": "24-3110-21",
-            "name": "Engine-driven generator",
-            "serial": "XG-0003",
-            "failure_date": "2026-05-16",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-302",
-            "type": "fighter",
-            "part_number": "28-2210-02",
-            "name": "Fuel boost pump",
-            "serial": "FB-0002",
-            "failure_date": "2026-05-23",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-402",
-            "type": "transport",
-            "part_number": "34-4420-11",
-            "name": "Radio altimeter",
-            "serial": "TA-0002",
-            "failure_date": "2026-05-25",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-406",
-            "type": "transport",
-            "part_number": "29-1210-11",
-            "name": "Engine-driven hydraulic pump",
-            "serial": "TH-0011",
-            "failure_date": "2026-05-25",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-504",
-            "type": "airlifter",
-            "part_number": "21-5110-21",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "XP-0014",
-            "failure_date": "2026-05-29",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-405",
-            "type": "transport",
-            "part_number": "21-5110-11",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "EP-0011",
-            "failure_date": "2026-06-03",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-505",
-            "type": "airlifter",
-            "part_number": "21-5110-21",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "XP-0009",
-            "failure_date": "2026-06-07",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-501",
-            "type": "airlifter",
-            "part_number": "34-4110-21",
-            "name": "Weather radar",
-            "serial": "XW-0001",
-            "failure_date": "2026-06-14",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-309",
-            "type": "fighter",
-            "part_number": "27-3310-04",
-            "name": "Horizontal stabilator actuator",
-            "serial": "SA-0018",
-            "failure_date": "2026-06-17",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-505",
-            "type": "airlifter",
-            "part_number": "28-2310-21",
-            "name": "Fuel boost pump",
-            "serial": "XF-0024",
-            "failure_date": "2026-06-24",
-            "alerted": true,
-            "covered": false,
-            "lead_fh": 13.0,
-            "lead_days": 9,
-            "alert_basis": "Model"
-          },
-          {
-            "tail": "TX-402",
-            "type": "transport",
-            "part_number": "61-2210-11",
-            "name": "Propeller control unit",
-            "serial": "PU-0002",
-            "failure_date": "2026-06-25",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-306",
-            "type": "fighter",
-            "part_number": "28-2210-02",
-            "name": "Fuel boost pump",
-            "serial": "FB-0006",
-            "failure_date": "2026-07-01",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-405",
-            "type": "transport",
-            "part_number": "34-4420-11",
-            "name": "Radio altimeter",
-            "serial": "TA-0005",
-            "failure_date": "2026-07-02",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-402",
-            "type": "transport",
-            "part_number": "28-2310-11",
-            "name": "Fuel boost pump",
-            "serial": "TF-0004",
-            "failure_date": "2026-07-11",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-506",
-            "type": "airlifter",
-            "part_number": "24-3110-21",
-            "name": "Engine-driven generator",
-            "serial": "XG-0014",
-            "failure_date": "2026-07-18",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-501",
-            "type": "airlifter",
-            "part_number": "29-1210-21",
-            "name": "Engine-driven hydraulic pump",
-            "serial": "XH-0004",
-            "failure_date": "2026-07-24",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-506",
-            "type": "airlifter",
-            "part_number": "21-5110-21",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "XP-0008",
-            "failure_date": "2026-08-01",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-404",
-            "type": "transport",
-            "part_number": "79-1320-11",
-            "name": "Engine lube oil pump",
-            "serial": "TO-0008",
-            "failure_date": "2026-08-07",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-503",
-            "type": "airlifter",
-            "part_number": "61-2210-21",
-            "name": "Propeller control unit",
-            "serial": "XQ-0010",
-            "failure_date": "2026-08-09",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-315",
-            "type": "fighter",
-            "part_number": "28-2210-02",
-            "name": "Fuel boost pump",
-            "serial": "FB-0015",
-            "failure_date": "2026-08-12",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-501",
-            "type": "airlifter",
-            "part_number": "61-2210-21",
-            "name": "Propeller control unit",
-            "serial": "XQ-0030",
-            "failure_date": "2026-08-17",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-306",
-            "type": "fighter",
-            "part_number": "34-1810-01",
-            "name": "Inertial navigation unit",
-            "serial": "IN-0006",
-            "failure_date": "2026-08-18",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-505",
-            "type": "airlifter",
-            "part_number": "21-5110-21",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "XP-0012",
-            "failure_date": "2026-08-29",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-408",
-            "type": "transport",
-            "part_number": "21-5110-11",
-            "name": "ECS pack (air cycle machine)",
-            "serial": "EP-0015",
-            "failure_date": "2026-09-12",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-407",
-            "type": "transport",
-            "part_number": "34-4420-11",
-            "name": "Radio altimeter",
-            "serial": "TA-0001",
-            "failure_date": "2026-09-25",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-302",
+            "tail": "FX-313",
             "type": "fighter",
             "part_number": "21-1005-01",
             "name": "ECS cooling turbine",
-            "serial": "EC-0002",
-            "failure_date": "2026-10-02",
+            "serial": "EC-0011",
+            "failure_date": "2026-10-19",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -1307,90 +1218,12 @@
             "alert_basis": null
           },
           {
-            "tail": "CX-505",
+            "tail": "CX-502",
             "type": "airlifter",
-            "part_number": "31-3110-21",
-            "name": "Flight data recorder",
-            "serial": "XD-0005",
-            "failure_date": "2026-10-14",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-501",
-            "type": "airlifter",
-            "part_number": "61-2210-21",
-            "name": "Propeller control unit",
-            "serial": "XQ-0008",
-            "failure_date": "2026-10-18",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "CX-504",
-            "type": "airlifter",
-            "part_number": "73-2120-21",
-            "name": "Engine fuel control unit",
-            "serial": "XZ-0027",
-            "failure_date": "2026-10-24",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "TX-408",
-            "type": "transport",
-            "part_number": "21-3110-11",
-            "name": "Cabin pressure controller",
-            "serial": "PC-0001",
-            "failure_date": "2026-11-05",
-            "alerted": true,
-            "covered": true,
-            "lead_fh": 169.9,
-            "lead_days": 174,
-            "alert_basis": "Model"
-          },
-          {
-            "tail": "FX-305",
-            "type": "fighter",
-            "part_number": "49-1210-01",
-            "name": "Jet fuel starter",
-            "serial": "JF-0005",
-            "failure_date": "2026-11-10",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-308",
-            "type": "fighter",
-            "part_number": "79-1310-02",
-            "name": "Engine lube oil pump",
-            "serial": "OP-0008",
-            "failure_date": "2026-11-12",
-            "alerted": false,
-            "covered": false,
-            "lead_fh": null,
-            "lead_days": null,
-            "alert_basis": null
-          },
-          {
-            "tail": "FX-314",
-            "type": "fighter",
-            "part_number": "49-1210-01",
-            "name": "Jet fuel starter",
-            "serial": "JF-0014",
-            "failure_date": "2026-11-13",
+            "part_number": "49-1110-21",
+            "name": "Auxiliary power unit",
+            "serial": "XU-0002",
+            "failure_date": "2026-11-09",
             "alerted": false,
             "covered": false,
             "lead_fh": null,
@@ -1400,8 +1233,11 @@
         ]
       },
       "simplifications": [
-        "Recall counts alerts from the hard-time rules and the survival model only. Pattern-based recommendations (lot, repeat snag, oil precursor, engine trend, fatigue) are not replayed at past as-of points, so recall is a lower bound for the full engine.",
-        "Alerts are evaluated at monthly as-of points (the 15th of each month from 15 Nov 2025 to 15 Oct 2026). An alert stays open until the unit is removed.",
+        "Every recommendation source in the live engine is replayed at each as-of point using only data dated on or before that point: hard-time rules, the survival model, lot defects, repeat snags and repeat NFF, engine trend flags, the oil precursor and fatigue. The pattern detectors are mirrored in backtest.py (the production detectors read the whole data set) and a test checks each mirror reproduces the production detector exactly at 15 Nov 2026.",
+        "Coverage: a unit-level recommendation covers a failure of that same unit. A repeat-snag recommendation covers a failure of the recommended component's part number on that aircraft (any position), because it directs engineers at that system rather than at one serial. Fatigue recommendations are aircraft tasking reviews: they count towards the alert rate but cannot cover a component failure.",
+        "As in production, a repeat-snag cluster stays a trigger once it has occurred (the detector looks at the full snag history up to the as-of date), and the oil precursor rule covers the fighter's lube oil pump.",
+        "Alerts are evaluated at monthly as-of points (the 15th of each month from 15 Nov 2025 to 15 Oct 2026). An alert stays open until the unit is removed. The alert rate counts distinct Medium or higher recommendation episodes per source; as in production, a unit covered by a lot recommendation does not also get a survival recommendation.",
+        "The tau trade-off table is analysis only: it re-runs the survival source at multiples of the section 6 thresholds. Production thresholds are unchanged.",
         "Model alerts follow the live queue: urgency bands U1 to U3, priority from the section 6 matrix, so a U3 flight-safety item is Medium and a U3 mission item is Low. Hard-time alerts use bands U1 to U3. Only Medium or higher counts.",
         "Tyres and brakes are excluded from every metric, as they are from the live recommendation queue (routine wear consumables, not failures to predict).",
         "Units installed during the test window start at zero FH with covariates taken from their aircraft's flying over the 365 days before installation.",
@@ -1413,7 +1249,7 @@
         "id": "P1",
         "title": "Defective hydraulic pump lot",
         "detector": "Binomial rate test (Bonferroni-corrected)",
-        "statistic": "p=0.0041, rate 2.94 vs 0.53/1,000 FH",
+        "statistic": "p=0.0035, rate 2.06 vs 0.16/1,000 FH",
         "detected": true,
         "planted": true
       },
@@ -1421,7 +1257,7 @@
         "id": "P2",
         "title": "Hot-climate acceleration",
         "detector": "AFT hot_share covariate (lifelines summary p-value)",
-        "statistic": "ECS cooling turbine (21-1005-01): ratio=0.56, p=0.7079; Fuel boost pump (28-2210-02): ratio=1.56, p=0.8384; ECS pack (air cycle machine) (21-5110-21): ratio=0.26, p=0.1090; Fuel boost pump (28-2310-21): ratio=0.08, p=0.0079 flagged",
+        "statistic": "ECS cooling turbine (21-1005-01): ratio=0.28, p=0.3982; Fuel boost pump (28-2210-02): ratio=2.18, p=0.4728; ECS pack (air cycle machine) (21-5110-21): ratio=0.14, p=0.0010 flagged; Fuel boost pump (28-2310-21): ratio=0.76, p=0.6624",
         "detected": true,
         "planted": true
       },
@@ -1429,7 +1265,7 @@
         "id": "P3",
         "title": "Mission-mix fatigue",
         "detector": "Trailing-12mo FI consumption rate projection",
-        "statistic": "projected FI 100 by 2034-03-26, withdrawal 2036",
+        "statistic": "projected FI 100 by 2030-10-17, withdrawal 2036",
         "detected": true,
         "planted": true
       },
@@ -1437,7 +1273,7 @@
         "id": "P4",
         "title": "Recurring snag with a wrong fix",
         "detector": "Repeat-snag rolling window (same tail+ATA)",
-        "statistic": "FX-307 ATA 34: 14 snags, window 2026-03-12 to 2026-04-23, still open=True",
+        "statistic": "FX-307 ATA 34: 17 snags, window 2026-03-03 to 2026-03-27, still open=True",
         "detected": true,
         "planted": true
       },
@@ -1445,7 +1281,7 @@
         "id": "P5",
         "title": "Engine deterioration",
         "detector": "Theil-Sen trend + fleet-percentile comparison",
-        "statistic": "slope=-0.115 C/EFH, projected crossing in 69 EFH (planted target 40-80 EFH)",
+        "statistic": "slope=-0.032 C/EFH, projected crossing in 61 EFH (planted target 40-80 EFH)",
         "detected": true,
         "planted": true
       },
@@ -1453,7 +1289,7 @@
         "id": "P6",
         "title": "Oil system precursor",
         "detector": "Chip-detector-to-failure window correlation",
-        "statistic": "fleet co-occurrence rate=1.00 (planted target 0.7); FX-302 active precursor found=True",
+        "statistic": "fleet co-occurrence rate=0.40 (planted target 0.7); FX-302 active precursor found=True",
         "detected": true,
         "planted": true
       },
@@ -1469,7 +1305,7 @@
         "id": "P8",
         "title": "Recurring pressurisation snag with a wrong fix",
         "detector": "Repeat-snag rolling window (same tail+ATA)",
-        "statistic": "TX-404 ATA 21: 19 snags, window 2026-04-25 to 2026-05-11, still open=True",
+        "statistic": "TX-404 ATA 21: 11 snags, window 2026-05-06 to 2026-06-08, still open=True",
         "detected": true,
         "planted": true
       },
@@ -1477,7 +1313,7 @@
         "id": "P9",
         "title": "Turboprop deterioration",
         "detector": "Theil-Sen trend + fleet-percentile comparison",
-        "statistic": "CX-502 engine 3: ITT margin slope=-0.106 C/EFH, projected crossing in 61 EFH (planted target 40-90 EFH)",
+        "statistic": "CX-502 engine 3: ITT margin slope=-0.037 C/EFH, projected crossing in 49 EFH (planted target 40-90 EFH)",
         "detected": true,
         "planted": true
       }
@@ -1487,127 +1323,127 @@
       {
         "part_number": "21-1005-01",
         "name": "ECS cooling turbine",
-        "n_events": 10,
-        "n_units": 28,
-        "in_sample_concordance": 0.573
+        "n_events": 14,
+        "n_units": 31,
+        "in_sample_concordance": 0.528
       },
       {
         "part_number": "24-2110-01",
         "name": "Main generator",
-        "n_events": 3,
-        "n_units": 19,
-        "in_sample_concordance": 0.5
+        "n_events": 6,
+        "n_units": 22,
+        "in_sample_concordance": 0.593
       },
       {
         "part_number": "27-3310-04",
         "name": "Horizontal stabilator actuator",
-        "n_events": 6,
-        "n_units": 39,
-        "in_sample_concordance": 0.7
-      },
-      {
-        "part_number": "27-3550-01",
-        "name": "Flight control computer",
-        "n_events": 2,
-        "n_units": 18,
-        "in_sample_concordance": 0.5
+        "n_events": 12,
+        "n_units": 44,
+        "in_sample_concordance": 0.56
       },
       {
         "part_number": "28-2210-02",
         "name": "Fuel boost pump",
         "n_events": 7,
-        "n_units": 24,
-        "in_sample_concordance": 0.431
+        "n_units": 23,
+        "in_sample_concordance": 0.72
       },
       {
         "part_number": "29-1140-03",
         "name": "Engine-driven hydraulic pump",
-        "n_events": 24,
-        "n_units": 41,
-        "in_sample_concordance": 0.667
+        "n_events": 16,
+        "n_units": 34,
+        "in_sample_concordance": 0.642
       },
       {
         "part_number": "32-4210-02",
         "name": "Main wheel brake",
-        "n_events": 45,
-        "n_units": 81,
-        "in_sample_concordance": 0.623
+        "n_events": 56,
+        "n_units": 88,
+        "in_sample_concordance": 0.637
       },
       {
         "part_number": "32-4310-01",
         "name": "Main wheel tyre",
-        "n_events": 266,
-        "n_units": 315,
-        "in_sample_concordance": 0.539
+        "n_events": 274,
+        "n_units": 306,
+        "in_sample_concordance": 0.573
+      },
+      {
+        "part_number": "34-4410-02",
+        "name": "Radar altimeter",
+        "n_events": 2,
+        "n_units": 24,
+        "in_sample_concordance": 0.5
       },
       {
         "part_number": "34-1810-01",
         "name": "Inertial navigation unit",
-        "n_events": 3,
+        "n_events": 4,
         "n_units": 20,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "49-1210-01",
         "name": "Jet fuel starter",
-        "n_events": 11,
-        "n_units": 28,
-        "in_sample_concordance": 0.678
+        "n_events": 9,
+        "n_units": 25,
+        "in_sample_concordance": 0.657
       },
       {
         "part_number": "73-2110-01",
         "name": "Engine fuel control unit",
-        "n_events": 2,
-        "n_units": 18,
-        "in_sample_concordance": 0.5
+        "n_events": 6,
+        "n_units": 22,
+        "in_sample_concordance": 0.765
       },
       {
         "part_number": "79-1310-02",
         "name": "Engine lube oil pump",
-        "n_events": 2,
-        "n_units": 19,
+        "n_events": 5,
+        "n_units": 22,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "21-5110-11",
         "name": "ECS pack (air cycle machine)",
-        "n_events": 14,
-        "n_units": 30,
+        "n_events": 8,
+        "n_units": 26,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "21-3110-11",
         "name": "Cabin pressure controller",
-        "n_events": 4,
-        "n_units": 12,
+        "n_events": 2,
+        "n_units": 10,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "21-3120-11",
         "name": "Cabin outflow valve",
         "n_events": 3,
-        "n_units": 14,
+        "n_units": 13,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "24-3110-11",
         "name": "Engine-driven generator",
-        "n_events": 9,
-        "n_units": 25,
+        "n_events": 6,
+        "n_units": 24,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "28-2310-11",
         "name": "Fuel boost pump",
-        "n_events": 7,
-        "n_units": 23,
+        "n_events": 8,
+        "n_units": 24,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "29-1210-11",
         "name": "Engine-driven hydraulic pump",
-        "n_events": 7,
-        "n_units": 23,
+        "n_events": 3,
+        "n_units": 19,
         "in_sample_concordance": 0.5
       },
       {
@@ -1620,155 +1456,120 @@
       {
         "part_number": "32-4220-11",
         "name": "Main wheel brake",
-        "n_events": 25,
-        "n_units": 42,
+        "n_events": 15,
+        "n_units": 31,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "32-4320-11",
         "name": "Main wheel tyre",
-        "n_events": 117,
-        "n_units": 141,
-        "in_sample_concordance": 0.5
-      },
-      {
-        "part_number": "34-4110-11",
-        "name": "Weather radar",
-        "n_events": 3,
-        "n_units": 12,
+        "n_events": 132,
+        "n_units": 148,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "34-4420-11",
         "name": "Radio altimeter",
-        "n_events": 7,
-        "n_units": 16,
+        "n_events": 3,
+        "n_units": 11,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "61-2210-11",
         "name": "Propeller control unit",
-        "n_events": 11,
-        "n_units": 27,
+        "n_events": 7,
+        "n_units": 23,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "73-2120-11",
         "name": "Engine fuel control unit",
-        "n_events": 8,
-        "n_units": 24,
+        "n_events": 4,
+        "n_units": 20,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "79-1320-11",
         "name": "Engine lube oil pump",
-        "n_events": 5,
-        "n_units": 21,
+        "n_events": 4,
+        "n_units": 20,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "21-5110-21",
         "name": "ECS pack (air cycle machine)",
-        "n_events": 29,
-        "n_units": 43,
-        "in_sample_concordance": 0.576
+        "n_events": 14,
+        "n_units": 26,
+        "in_sample_concordance": 0.679
       },
       {
         "part_number": "21-3120-21",
         "name": "Cabin outflow valve",
         "n_events": 2,
-        "n_units": 8,
+        "n_units": 9,
         "in_sample_concordance": 0.5
       },
       {
         "part_number": "24-3110-21",
         "name": "Engine-driven generator",
-        "n_events": 22,
-        "n_units": 46,
-        "in_sample_concordance": 0.598
+        "n_events": 13,
+        "n_units": 37,
+        "in_sample_concordance": 0.471
       },
       {
         "part_number": "28-2310-21",
         "name": "Fuel boost pump",
-        "n_events": 27,
-        "n_units": 60,
-        "in_sample_concordance": 0.573
+        "n_events": 25,
+        "n_units": 50,
+        "in_sample_concordance": 0.553
       },
       {
         "part_number": "29-1210-21",
         "name": "Engine-driven hydraulic pump",
-        "n_events": 8,
-        "n_units": 34,
-        "in_sample_concordance": 0.708
-      },
-      {
-        "part_number": "31-3110-21",
-        "name": "Flight data recorder",
-        "n_events": 6,
-        "n_units": 12,
-        "in_sample_concordance": 0.5
+        "n_events": 17,
+        "n_units": 41,
+        "in_sample_concordance": 0.442
       },
       {
         "part_number": "32-4220-21",
         "name": "Main wheel brake",
-        "n_events": 16,
-        "n_units": 28,
-        "in_sample_concordance": 0.634
+        "n_events": 11,
+        "n_units": 23,
+        "in_sample_concordance": 0.453
       },
       {
         "part_number": "32-4320-21",
         "name": "Main wheel tyre",
-        "n_events": 71,
-        "n_units": 87,
-        "in_sample_concordance": 0.561
-      },
-      {
-        "part_number": "34-4110-21",
-        "name": "Weather radar",
-        "n_events": 3,
-        "n_units": 9,
-        "in_sample_concordance": 0.5
-      },
-      {
-        "part_number": "34-4420-21",
-        "name": "Radio altimeter",
-        "n_events": 2,
-        "n_units": 8,
-        "in_sample_concordance": 0.5
-      },
-      {
-        "part_number": "49-1110-21",
-        "name": "Auxiliary power unit",
-        "n_events": 2,
-        "n_units": 8,
-        "in_sample_concordance": 0.5
+        "n_events": 73,
+        "n_units": 85,
+        "in_sample_concordance": 0.596
       },
       {
         "part_number": "61-2210-21",
         "name": "Propeller control unit",
-        "n_events": 12,
-        "n_units": 39,
-        "in_sample_concordance": 0.665
+        "n_events": 11,
+        "n_units": 35,
+        "in_sample_concordance": 0.552
       },
       {
         "part_number": "73-2120-21",
         "name": "Engine fuel control unit",
-        "n_events": 6,
-        "n_units": 30,
-        "in_sample_concordance": 0.514
+        "n_events": 5,
+        "n_units": 33,
+        "in_sample_concordance": 0.5
       },
       {
         "part_number": "79-1320-21",
         "name": "Engine lube oil pump",
-        "n_events": 6,
-        "n_units": 30,
-        "in_sample_concordance": 0.731
+        "n_events": 9,
+        "n_units": 34,
+        "in_sample_concordance": 0.556
       },
       {
         "part_number": "52-3410-21",
         "name": "Cargo ramp actuator",
-        "n_events": 3,
-        "n_units": 9,
+        "n_events": 5,
+        "n_units": 11,
         "in_sample_concordance": 0.5
       }
     ]

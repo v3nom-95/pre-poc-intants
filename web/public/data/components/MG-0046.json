@@ -12,10 +12,10 @@
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "FX-306",
+  "current_tail": "FX-303",
   "current_position": "L",
   "governing_limit": "Calendar",
-  "remaining": 144.0,
+  "remaining": 141.8,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -26,13 +26,14 @@
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "FX-306",
+      "tail": "FX-303",
       "event_type": "Install",
-      "date": "2026-11-14",
+      "date": "2026-09-10",
       "reason": null,
       "serial": "MG-0046"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

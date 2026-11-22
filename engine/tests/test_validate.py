@@ -132,6 +132,105 @@ def test_deterministic_and_never_reads_ground_truth(result, monkeypatch):
     assert a == b
 
 
+# ---------------------------------------------------------------------------
+# Mirrors of the production detectors must reproduce production exactly at the
+# real as-of date (they only differ by being able to cut data at earlier dates).
+# ---------------------------------------------------------------------------
+AS_OF = backtest.TEST_END
+
+
+def test_lot_mirror_matches_production(silver):
+    from pre_engine.models import patterns
+    prod = patterns.detect_lot_effects()
+    ue = backtest.build_training_exposure(silver["sorties"], silver["events"], AS_OF, silver.get("ground_runs"))
+    mine = backtest.lot_effects(ue)
+    key = ["part_number", "lot"]
+    merged = prod[key + ["events", "p_value_bonferroni", "flagged"]].merge(
+        mine[key + ["events", "p_value_bonferroni", "flagged"]], on=key, suffixes=("_prod", "_mirror"))
+    assert len(merged) == len(prod) == len(mine)
+    assert (merged["events_prod"] == merged["events_mirror"]).all()
+    assert (merged["flagged_prod"] == merged["flagged_mirror"]).all()
+    assert (merged["p_value_bonferroni_prod"] - merged["p_value_bonferroni_mirror"]).abs().max() < 1e-4
+
+
+def test_repeat_snag_mirror_matches_production(silver):
+    from pre_engine.models import patterns
+    prod = patterns.detect_repeat_snags().drop(columns=["type"], errors="ignore")
+    mine = backtest.repeat_snag_table(silver["snags"], silver["events"], AS_OF)
+    cols = ["tail", "detector", "count", "first_in_window", "last_in_window"]
+
+    def norm(df):
+        return sorted(tuple(str(r[c]) for c in cols) for _, r in df.iterrows())
+
+    assert norm(prod) == norm(mine)
+
+
+def test_engine_trend_mirror_matches_production(silver):
+    from pre_engine.models import trends
+    prod = trends.compute_engine_trends()
+    mine = backtest.engine_trend_table(silver["trend"], silver["events"], AS_OF)
+    key = ["tail", "engine_position", "engine_serial"]
+    merged = prod[key + ["slope_c_per_efh", "flagged"]].merge(
+        mine[key + ["slope_c_per_efh", "flagged"]], on=key, suffixes=("_prod", "_mirror"))
+    assert len(merged) == len(prod) == len(mine)
+    assert (merged["flagged_prod"] == merged["flagged_mirror"]).all()
+    assert (merged["slope_c_per_efh_prod"] - merged["slope_c_per_efh_mirror"]).abs().max() < 1e-9
+
+
+def test_oil_precursor_mirror_matches_production(silver):
+    from pre_engine.models import patterns
+    df, _rate = patterns.detect_oil_precursors(AS_OF)
+    prod = df[df["detector"] == "oil_precursor_active"] if not df.empty else df
+    mine = backtest.oil_precursor_active(silver, AS_OF)
+    assert sorted((r["tail"], r["event_date"], r["fh_since_chip_event"]) for _, r in prod.iterrows()) == \
+        sorted((r["tail"], r["event_date"], r["fh_since_chip_event"]) for r in mine)
+
+
+def test_fatigue_mirror_matches_production(silver):
+    from pre_engine.models import fatigue
+    prod = fatigue.compute_fatigue_projection(AS_OF)
+    prod_flagged = sorted(prod.loc[prod["flagged_before_withdrawal"], "tail"])
+    assert prod_flagged == sorted(f["tail"] for f in backtest.fatigue_flags(silver, AS_OF))
+
+
+def test_mirrors_never_see_future_rows(silver):
+    """Cutting the input at an earlier date must give the same detector output
+    as running the mirror at that date on the full data."""
+    d = backtest.as_of_points()[3]
+    snags_cut = silver["snags"][silver["snags"]["date"].dt.date <= d]
+    events_cut = silver["events"][silver["events"]["event_date"].dt.date <= d]
+    a = backtest.repeat_snag_table(silver["snags"], silver["events"], d)
+    b = backtest.repeat_snag_table(snags_cut, events_cut, d)
+    pd.testing.assert_frame_equal(a.reset_index(drop=True), b.reset_index(drop=True))
+    trend_cut = silver["trend"][silver["trend"]["date"] <= d.isoformat()]
+    ta = backtest.engine_trend_table(silver["trend"], silver["events"], d)
+    tb = backtest.engine_trend_table(trend_cut, events_cut, d)
+    pd.testing.assert_frame_equal(ta.reset_index(drop=True), tb.reset_index(drop=True))
+
+
+def test_sources_consistent(result):
+    r = result["recall"]
+    by = {b["source"]: b for b in r["by_source"]}
+    assert set(by) == set(backtest.SOURCES)
+    assert by["Fatigue"]["covered"] == 0 and not by["Fatigue"]["can_cover"]
+    for b in r["by_source"]:
+        assert b["covered"] <= r["covered"]
+    assert sum(b["first_alert_for"] for b in r["by_source"]) == r["covered"]
+    assert r["rules_and_model_only"]["covered"] <= r["covered"]
+    t1 = next(t for t in r["tau_tradeoff"] if t["tau_multiplier"] == 1.0)
+    assert t1["model_covered"] == by["Survival model"]["covered"]
+    assert t1["all_sources_covered"] == r["covered"]
+    assert t1["all_alerts"] == r["alerts_raised"]
+
+
+def test_tradeoff_model_coverage_falls_as_threshold_rises(result):
+    """A higher probability threshold alerts later, never earlier, so the
+    survival source cannot cover more failures."""
+    rows = sorted(result["recall"]["tau_tradeoff"], key=lambda t: t["tau_multiplier"])
+    covered = [t["model_covered"] for t in rows]
+    assert covered == sorted(covered, reverse=True)
+
+
 def test_as_of_points_monthly_inside_window():
     pts = backtest.as_of_points()
     assert pts[0] == backtest.CUTOFF

@@ -12,10 +12,10 @@
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "FX-311",
+  "current_tail": "FX-315",
   "current_position": "1",
   "governing_limit": "Cycles",
-  "remaining": 393.0,
+  "remaining": 1087.0,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -26,13 +26,14 @@
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "FX-311",
+      "tail": "FX-315",
       "event_type": "Install",
-      "date": "2023-04-18",
+      "date": "2023-05-12",
       "reason": null,
       "serial": "EN-0020"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

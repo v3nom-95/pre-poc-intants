@@ -12,10 +12,10 @@
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "FX-304",
+  "current_tail": "FX-307",
   "current_position": "1",
   "governing_limit": "Cycles",
-  "remaining": 844.0,
+  "remaining": 1549.0,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -26,13 +26,14 @@
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "FX-304",
+      "tail": "FX-307",
       "event_type": "Install",
-      "date": "2024-02-24",
+      "date": "2025-02-28",
       "reason": null,
       "serial": "EN-0026"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

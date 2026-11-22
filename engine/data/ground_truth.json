@@ -10,15 +10,14 @@
     ],
     "eta_multiplier": 0.22,
     "currently_installed_defective_serials": [
-      "HP-0001",
-      "HP-0004",
-      "HP-0003",
       "HP-0012",
-      "HP-0008",
-      "HP-0005",
-      "HP-0002",
       "HP-0006",
-      "HP-0009"
+      "HP-0004",
+      "HP-0001",
+      "HP-0007",
+      "HP-0010",
+      "HP-0008",
+      "HP-0011"
     ]
   },
   "P2_hot_climate": {

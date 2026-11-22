@@ -15,24 +15,25 @@
   "current_tail": "CX-502",
   "current_position": "1",
   "governing_limit": "EFH",
-  "remaining": 1132.5,
+  "remaining": 560.3,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
   "fh_to_tau_p90": null,
   "prob_fail_before_next_phase": null,
   "explanation": null,
-  "fleet_units": 39,
+  "fleet_units": 35,
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
       "tail": "CX-502",
       "event_type": "Install",
-      "date": "2021-03-21",
+      "date": "2018-03-22",
       "reason": null,
       "serial": "XE-0005"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

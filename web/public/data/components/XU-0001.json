@@ -1,0 +1,100 @@
+{
+  "serial": "XU-0001",
+  "part_number": "49-1110-21",
+  "name": "Auxiliary power unit",
+  "ata": "49",
+  "type": "airlifter",
+  "type_name": "Four-engine airlifter",
+  "key": "AL-APU",
+  "zone": "tail",
+  "task_card": "TC-49-03-02",
+  "exposure_unit": "APU hours",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "mission",
+  "current_tail": "CX-501",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 8,
+  "fleet_confirmed_failures": 1,
+  "install_history": [
+    {
+      "tail": "CX-501",
+      "event_type": "Install",
+      "date": "2020-12-08",
+      "reason": null,
+      "serial": "XU-0001"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 1.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 40.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 82.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 139.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 146.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 671.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 705.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 743.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 1053.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 1062.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 1527.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 1665.3,
+      "survival": 0.0
+    },
+    {
+      "fh": 1713.7,
+      "survival": 0.0
+    },
+    {
+      "fh": 2418.4,
+      "survival": 0.0
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier",
+  "weibull_curve": []
+}

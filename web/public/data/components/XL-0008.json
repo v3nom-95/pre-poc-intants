@@ -15,7 +15,7 @@
   "current_tail": "CX-504",
   "current_position": "1",
   "governing_limit": "Calendar",
-  "remaining": 8.8,
+  "remaining": 11.3,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "CX-504",
       "event_type": "Install",
-      "date": "2023-08-28",
+      "date": "2023-11-09",
       "reason": null,
       "serial": "XL-0008"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

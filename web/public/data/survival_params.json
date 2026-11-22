@@ -1,13 +1,13 @@
 {
   "21-1005-01": {
     "part_number": "21-1005-01",
-    "n_events": 10,
-    "n_units": 28,
-    "rho": 1.393528634410523,
-    "lambda_intercept": 7.344400740574519,
+    "n_events": 14,
+    "n_units": 31,
+    "rho": 1.1891368512791132,
+    "lambda_intercept": 5.983579919493836,
     "lambda_coefficients": {
-      "hot_share": -0.5869012076982235,
-      "acm_share": -0.3955735552361795
+      "hot_share": -1.2674641067532728,
+      "acm_share": 5.934955194199678
     },
     "covariates": [
       "hot_share",
@@ -20,26 +20,13 @@
   },
   "24-2110-01": {
     "part_number": "24-2110-01",
-    "n_events": 3,
-    "n_units": 19,
-    "rho": 0.9265259162638974,
-    "lambda_intercept": 8.335958287744864,
-    "lambda_coefficients": {},
-    "covariates": [],
-    "lot_reference": null,
-    "tau": 0.1,
-    "exposure_unit": "FH",
-    "type": "fighter"
-  },
-  "27-3310-04": {
-    "part_number": "27-3310-04",
     "n_events": 6,
-    "n_units": 39,
-    "rho": 0.9542399008016067,
-    "lambda_intercept": 9.905153992455968,
+    "n_units": 22,
+    "rho": 1.818380304142854,
+    "lambda_intercept": 6.13783147987503,
     "lambda_coefficients": {
-      "hot_share": 5.118200157466791,
-      "acm_share": -8.981936821456955
+      "hot_share": -1.1299046348626034,
+      "acm_share": 9.127447210296193
     },
     "covariates": [
       "hot_share",
@@ -50,14 +37,20 @@
     "exposure_unit": "FH",
     "type": "fighter"
   },
-  "27-3550-01": {
-    "part_number": "27-3550-01",
-    "n_events": 2,
-    "n_units": 18,
-    "rho": 0.34710771910196114,
-    "lambda_intercept": 8.798417204836896,
-    "lambda_coefficients": {},
-    "covariates": [],
+  "27-3310-04": {
+    "part_number": "27-3310-04",
+    "n_events": 12,
+    "n_units": 44,
+    "rho": 1.9525481644888072,
+    "lambda_intercept": 7.7907418983729775,
+    "lambda_coefficients": {
+      "hot_share": 1.042844935286945,
+      "acm_share": -0.23544444153251304
+    },
+    "covariates": [
+      "hot_share",
+      "acm_share"
+    ],
     "lot_reference": null,
     "tau": 0.1,
     "exposure_unit": "FH",
@@ -66,12 +59,12 @@
   "28-2210-02": {
     "part_number": "28-2210-02",
     "n_events": 7,
-    "n_units": 24,
-    "rho": 1.2854418829232537,
-    "lambda_intercept": 7.388066702377655,
+    "n_units": 23,
+    "rho": 2.5863243462632415,
+    "lambda_intercept": 7.446405215967488,
     "lambda_coefficients": {
-      "hot_share": 0.44249638306887923,
-      "acm_share": 0.3771949171949387
+      "hot_share": 0.7780459539082598,
+      "acm_share": 0.23451478207979057
     },
     "covariates": [
       "hot_share",
@@ -84,23 +77,23 @@
   },
   "29-1140-03": {
     "part_number": "29-1140-03",
-    "n_events": 24,
-    "n_units": 41,
-    "rho": 1.3068011911251156,
-    "lambda_intercept": 6.13641723532844,
+    "n_events": 16,
+    "n_units": 34,
+    "rho": 2.0444592488513917,
+    "lambda_intercept": 6.729457328383514,
     "lambda_coefficients": {
-      "hot_share": -0.4859606811001285,
-      "acm_share": -0.3225452585990698,
-      "lot_L-2312": 1.7795400701383632,
-      "lot_L-2301": 1.68436674090048,
-      "lot_L-2105": 0.24190148578928192
+      "hot_share": -0.28366839938290345,
+      "acm_share": -0.20886334698551492,
+      "lot_L-2312": 0.6766555450177529,
+      "lot_L-2105": 3.7310445220668518,
+      "lot_L-2301": 3.557502762397054
     },
     "covariates": [
       "hot_share",
       "acm_share",
       "lot_L-2312",
-      "lot_L-2301",
-      "lot_L-2105"
+      "lot_L-2105",
+      "lot_L-2301"
     ],
     "lot_reference": "L-2207",
     "tau": 0.1,
@@ -109,13 +102,13 @@
   },
   "32-4210-02": {
     "part_number": "32-4210-02",
-    "n_events": 45,
-    "n_units": 81,
-    "rho": 1.7088437664783669,
-    "lambda_intercept": 5.693962339788648,
+    "n_events": 56,
+    "n_units": 88,
+    "rho": 1.6452902318684424,
+    "lambda_intercept": 5.911526919393131,
     "lambda_coefficients": {
-      "hot_share": 0.5597077178046119,
-      "acm_share": 1.9051542941948112
+      "hot_share": 0.6933716197909066,
+      "acm_share": 0.3145693731676903
     },
     "covariates": [
       "hot_share",
@@ -128,13 +121,13 @@
   },
   "32-4310-01": {
     "part_number": "32-4310-01",
-    "n_events": 266,
-    "n_units": 315,
-    "rho": 2.7548510630443555,
-    "lambda_intercept": 4.451125162254317,
+    "n_events": 274,
+    "n_units": 306,
+    "rho": 2.578464990956172,
+    "lambda_intercept": 4.515494442678341,
     "lambda_coefficients": {
-      "hot_share": 0.002216304605457349,
-      "acm_share": 0.712139165103519
+      "hot_share": 0.22921713558202206,
+      "acm_share": 0.4680272487173465
     },
     "covariates": [
       "hot_share",
@@ -145,12 +138,25 @@
     "exposure_unit": "FH",
     "type": "fighter"
   },
+  "34-4410-02": {
+    "part_number": "34-4410-02",
+    "n_events": 2,
+    "n_units": 24,
+    "rho": 3.275138848831261,
+    "lambda_intercept": 8.519883999962982,
+    "lambda_coefficients": {},
+    "covariates": [],
+    "lot_reference": null,
+    "tau": 0.2,
+    "exposure_unit": "FH",
+    "type": "fighter"
+  },
   "34-1810-01": {
     "part_number": "34-1810-01",
-    "n_events": 3,
+    "n_events": 4,
     "n_units": 20,
-    "rho": 0.38154345098347453,
-    "lambda_intercept": 8.502845246543774,
+    "rho": 0.8652358493605392,
+    "lambda_intercept": 8.052569163384984,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -160,13 +166,13 @@
   },
   "49-1210-01": {
     "part_number": "49-1210-01",
-    "n_events": 11,
-    "n_units": 28,
-    "rho": 1.651913349778503,
-    "lambda_intercept": 6.994142966047454,
+    "n_events": 9,
+    "n_units": 25,
+    "rho": 1.4174007209610908,
+    "lambda_intercept": 7.905558104861564,
     "lambda_coefficients": {
-      "hot_share": 0.7983172115207686,
-      "acm_share": 0.16734995088211962
+      "hot_share": -1.3537046779722175,
+      "acm_share": -1.240397904742992
     },
     "covariates": [
       "hot_share",
@@ -179,12 +185,18 @@
   },
   "73-2110-01": {
     "part_number": "73-2110-01",
-    "n_events": 2,
-    "n_units": 18,
-    "rho": 0.24044790938994762,
-    "lambda_intercept": 7.973829152462708,
-    "lambda_coefficients": {},
-    "covariates": [],
+    "n_events": 6,
+    "n_units": 22,
+    "rho": 1.4049698392170358,
+    "lambda_intercept": 4.131757564758821,
+    "lambda_coefficients": {
+      "hot_share": 1.799123044585538,
+      "acm_share": 18.894345013862107
+    },
+    "covariates": [
+      "hot_share",
+      "acm_share"
+    ],
     "lot_reference": null,
     "tau": 0.1,
     "exposure_unit": "FH",
@@ -192,10 +204,10 @@
   },
   "79-1310-02": {
     "part_number": "79-1310-02",
-    "n_events": 2,
-    "n_units": 19,
-    "rho": 0.6446594474639276,
-    "lambda_intercept": 8.894454337284861,
+    "n_events": 5,
+    "n_units": 22,
+    "rho": 3.086916471065723,
+    "lambda_intercept": 7.830275983424717,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -205,10 +217,10 @@
   },
   "21-5110-11": {
     "part_number": "21-5110-11",
-    "n_events": 14,
-    "n_units": 30,
-    "rho": 1.3407928270873077,
-    "lambda_intercept": 7.69318143960548,
+    "n_events": 8,
+    "n_units": 26,
+    "rho": 3.5860982815407034,
+    "lambda_intercept": 8.19866698436105,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -218,10 +230,10 @@
   },
   "21-3110-11": {
     "part_number": "21-3110-11",
-    "n_events": 4,
-    "n_units": 12,
-    "rho": 0.5671005347323143,
-    "lambda_intercept": 7.734862265610114,
+    "n_events": 2,
+    "n_units": 10,
+    "rho": 2.097209893443519,
+    "lambda_intercept": 9.116087553941764,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -232,9 +244,9 @@
   "21-3120-11": {
     "part_number": "21-3120-11",
     "n_events": 3,
-    "n_units": 14,
-    "rho": 0.9877574929898825,
-    "lambda_intercept": 8.397643373878154,
+    "n_units": 13,
+    "rho": 1.4557262521207628,
+    "lambda_intercept": 8.427662443544339,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -244,10 +256,10 @@
   },
   "24-3110-11": {
     "part_number": "24-3110-11",
-    "n_events": 9,
-    "n_units": 25,
-    "rho": 0.8813296554717621,
-    "lambda_intercept": 7.985391550466688,
+    "n_events": 6,
+    "n_units": 24,
+    "rho": 2.9077055983560496,
+    "lambda_intercept": 8.4054364021931,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -257,10 +269,10 @@
   },
   "28-2310-11": {
     "part_number": "28-2310-11",
-    "n_events": 7,
-    "n_units": 23,
-    "rho": 0.9591380862931815,
-    "lambda_intercept": 8.248657760807163,
+    "n_events": 8,
+    "n_units": 24,
+    "rho": 0.7492246246781925,
+    "lambda_intercept": 7.978473809163257,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -270,10 +282,10 @@
   },
   "29-1210-11": {
     "part_number": "29-1210-11",
-    "n_events": 7,
-    "n_units": 23,
-    "rho": 0.6875702727814705,
-    "lambda_intercept": 8.222158832989981,
+    "n_events": 3,
+    "n_units": 19,
+    "rho": 6.3168557769765465,
+    "lambda_intercept": 8.465345542029691,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -285,8 +297,8 @@
     "part_number": "31-3110-11",
     "n_events": 2,
     "n_units": 10,
-    "rho": 0.34979209187286814,
-    "lambda_intercept": 8.591097561149045,
+    "rho": 0.8135985477199352,
+    "lambda_intercept": 8.7627668963807,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -296,10 +308,10 @@
   },
   "32-4220-11": {
     "part_number": "32-4220-11",
-    "n_events": 25,
-    "n_units": 42,
-    "rho": 1.8126525544073926,
-    "lambda_intercept": 6.902902770150281,
+    "n_events": 15,
+    "n_units": 31,
+    "rho": 0.9594553139513871,
+    "lambda_intercept": 7.534540047836597,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -309,23 +321,10 @@
   },
   "32-4320-11": {
     "part_number": "32-4320-11",
-    "n_events": 117,
-    "n_units": 141,
-    "rho": 2.3077202638299035,
-    "lambda_intercept": 5.492124819102014,
-    "lambda_coefficients": {},
-    "covariates": [],
-    "lot_reference": null,
-    "tau": 0.2,
-    "exposure_unit": "FH",
-    "type": "transport"
-  },
-  "34-4110-11": {
-    "part_number": "34-4110-11",
-    "n_events": 3,
-    "n_units": 12,
-    "rho": 0.7062988459287551,
-    "lambda_intercept": 8.393952599768388,
+    "n_events": 132,
+    "n_units": 148,
+    "rho": 2.328418060627167,
+    "lambda_intercept": 5.436618092035277,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -335,10 +334,10 @@
   },
   "34-4420-11": {
     "part_number": "34-4420-11",
-    "n_events": 7,
-    "n_units": 16,
-    "rho": 1.2283617204820882,
-    "lambda_intercept": 7.641811394510026,
+    "n_events": 3,
+    "n_units": 11,
+    "rho": 1.51396135456782,
+    "lambda_intercept": 8.625581283770927,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -348,10 +347,10 @@
   },
   "61-2210-11": {
     "part_number": "61-2210-11",
-    "n_events": 11,
-    "n_units": 27,
-    "rho": 1.1177604900509226,
-    "lambda_intercept": 7.847893064035924,
+    "n_events": 7,
+    "n_units": 23,
+    "rho": 2.192955662039619,
+    "lambda_intercept": 8.365440406917324,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -361,10 +360,10 @@
   },
   "73-2120-11": {
     "part_number": "73-2120-11",
-    "n_events": 8,
-    "n_units": 24,
-    "rho": 0.3928848002094325,
-    "lambda_intercept": 7.6457062727736895,
+    "n_events": 4,
+    "n_units": 20,
+    "rho": 0.8955748793944187,
+    "lambda_intercept": 8.777440734612492,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -374,10 +373,10 @@
   },
   "79-1320-11": {
     "part_number": "79-1320-11",
-    "n_events": 5,
-    "n_units": 21,
-    "rho": 0.9096167314008082,
-    "lambda_intercept": 8.571649817086385,
+    "n_events": 4,
+    "n_units": 20,
+    "rho": 2.288950794149429,
+    "lambda_intercept": 8.740026302599171,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -387,12 +386,12 @@
   },
   "21-5110-21": {
     "part_number": "21-5110-21",
-    "n_events": 29,
-    "n_units": 43,
-    "rho": 1.0221845539512084,
-    "lambda_intercept": 6.967961848893337,
+    "n_events": 14,
+    "n_units": 26,
+    "rho": 2.720078476387904,
+    "lambda_intercept": 7.9583681004611595,
     "lambda_coefficients": {
-      "hot_share": -1.3550497418250589
+      "hot_share": -1.9872096672113992
     },
     "covariates": [
       "hot_share"
@@ -405,9 +404,9 @@
   "21-3120-21": {
     "part_number": "21-3120-21",
     "n_events": 2,
-    "n_units": 8,
-    "rho": 1.1477211877264002,
-    "lambda_intercept": 8.624660228071644,
+    "n_units": 9,
+    "rho": 1.6543193130238503,
+    "lambda_intercept": 8.555257898943738,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,
@@ -417,12 +416,12 @@
   },
   "24-3110-21": {
     "part_number": "24-3110-21",
-    "n_events": 22,
-    "n_units": 46,
-    "rho": 1.3397701821474306,
-    "lambda_intercept": 7.965325408417924,
+    "n_events": 13,
+    "n_units": 37,
+    "rho": 1.3288866648618722,
+    "lambda_intercept": 8.24028269095136,
     "lambda_coefficients": {
-      "hot_share": -1.3518676032086916
+      "hot_share": -0.23698537717854107
     },
     "covariates": [
       "hot_share"
@@ -434,12 +433,12 @@
   },
   "28-2310-21": {
     "part_number": "28-2310-21",
-    "n_events": 27,
-    "n_units": 60,
-    "rho": 0.954508850265913,
-    "lambda_intercept": 8.007542995915637,
+    "n_events": 25,
+    "n_units": 50,
+    "rho": 1.74457501911163,
+    "lambda_intercept": 7.64557793409042,
     "lambda_coefficients": {
-      "hot_share": -2.4965153783247187
+      "hot_share": -0.2796173780820425
     },
     "covariates": [
       "hot_share"
@@ -451,12 +450,12 @@
   },
   "29-1210-21": {
     "part_number": "29-1210-21",
-    "n_events": 8,
-    "n_units": 34,
-    "rho": 1.6077695451155483,
-    "lambda_intercept": 8.24432487030983,
+    "n_events": 17,
+    "n_units": 41,
+    "rho": 1.3067570903257724,
+    "lambda_intercept": 8.046742394270941,
     "lambda_coefficients": {
-      "hot_share": 2.507480947349277
+      "hot_share": -0.237499359791716
     },
     "covariates": [
       "hot_share"
@@ -466,31 +465,14 @@
     "exposure_unit": "FH",
     "type": "airlifter"
   },
-  "31-3110-21": {
-    "part_number": "31-3110-21",
-    "n_events": 6,
-    "n_units": 12,
-    "rho": 0.5741436862658302,
-    "lambda_intercept": 7.273657370268178,
-    "lambda_coefficients": {
-      "hot_share": -0.016263633427211505
-    },
-    "covariates": [
-      "hot_share"
-    ],
-    "lot_reference": null,
-    "tau": 0.2,
-    "exposure_unit": "FH",
-    "type": "airlifter"
-  },
   "32-4220-21": {
     "part_number": "32-4220-21",
-    "n_events": 16,
-    "n_units": 28,
-    "rho": 1.0161512899592846,
-    "lambda_intercept": 7.005085120171869,
+    "n_events": 11,
+    "n_units": 23,
+    "rho": 1.7302800187432799,
+    "lambda_intercept": 7.139014145327901,
     "lambda_coefficients": {
-      "hot_share": 1.6444876390975982
+      "hot_share": 1.517834604316927
     },
     "covariates": [
       "hot_share"
@@ -502,12 +484,12 @@
   },
   "32-4320-21": {
     "part_number": "32-4320-21",
-    "n_events": 71,
-    "n_units": 87,
-    "rho": 2.774739295645112,
-    "lambda_intercept": 5.767405947626704,
+    "n_events": 73,
+    "n_units": 85,
+    "rho": 2.574932257479436,
+    "lambda_intercept": 5.689906030375749,
     "lambda_coefficients": {
-      "hot_share": 0.13541692979739323
+      "hot_share": 0.5064620435049525
     },
     "covariates": [
       "hot_share"
@@ -517,53 +499,14 @@
     "exposure_unit": "FH",
     "type": "airlifter"
   },
-  "34-4110-21": {
-    "part_number": "34-4110-21",
-    "n_events": 3,
-    "n_units": 9,
-    "rho": 0.8860729973408481,
-    "lambda_intercept": 8.178323028723801,
-    "lambda_coefficients": {},
-    "covariates": [],
-    "lot_reference": null,
-    "tau": 0.2,
-    "exposure_unit": "FH",
-    "type": "airlifter"
-  },
-  "34-4420-21": {
-    "part_number": "34-4420-21",
-    "n_events": 2,
-    "n_units": 8,
-    "rho": 0.5159212668611175,
-    "lambda_intercept": 8.257606205725251,
-    "lambda_coefficients": {},
-    "covariates": [],
-    "lot_reference": null,
-    "tau": 0.2,
-    "exposure_unit": "FH",
-    "type": "airlifter"
-  },
-  "49-1110-21": {
-    "part_number": "49-1110-21",
-    "n_events": 2,
-    "n_units": 8,
-    "rho": 2.2220390497525635,
-    "lambda_intercept": 7.53612700217761,
-    "lambda_coefficients": {},
-    "covariates": [],
-    "lot_reference": null,
-    "tau": 0.2,
-    "exposure_unit": "APU hours",
-    "type": "airlifter"
-  },
   "61-2210-21": {
     "part_number": "61-2210-21",
-    "n_events": 12,
-    "n_units": 39,
-    "rho": 0.6185947602468734,
-    "lambda_intercept": 7.7745856335889,
+    "n_events": 11,
+    "n_units": 35,
+    "rho": 0.9802245478167546,
+    "lambda_intercept": 8.188081032533484,
     "lambda_coefficients": {
-      "hot_share": 3.115908242654586
+      "hot_share": 0.710849249470276
     },
     "covariates": [
       "hot_share"
@@ -575,16 +518,12 @@
   },
   "73-2120-21": {
     "part_number": "73-2120-21",
-    "n_events": 6,
-    "n_units": 30,
-    "rho": 0.5351080880052458,
-    "lambda_intercept": 9.118175504952276,
-    "lambda_coefficients": {
-      "hot_share": -0.7480778782592429
-    },
-    "covariates": [
-      "hot_share"
-    ],
+    "n_events": 5,
+    "n_units": 33,
+    "rho": 0.9186790661868681,
+    "lambda_intercept": 9.048461367171772,
+    "lambda_coefficients": {},
+    "covariates": [],
     "lot_reference": null,
     "tau": 0.1,
     "exposure_unit": "FH",
@@ -592,12 +531,12 @@
   },
   "79-1320-21": {
     "part_number": "79-1320-21",
-    "n_events": 6,
-    "n_units": 30,
-    "rho": 1.5632083623663393,
-    "lambda_intercept": 8.566032914746156,
+    "n_events": 9,
+    "n_units": 34,
+    "rho": 3.1027237945677295,
+    "lambda_intercept": 8.703520466087985,
     "lambda_coefficients": {
-      "hot_share": 2.0467926429071652
+      "hot_share": -0.12657402906964388
     },
     "covariates": [
       "hot_share"
@@ -609,10 +548,10 @@
   },
   "52-3410-21": {
     "part_number": "52-3410-21",
-    "n_events": 3,
-    "n_units": 9,
-    "rho": 2.0864241587927577,
-    "lambda_intercept": 8.191185107776692,
+    "n_events": 5,
+    "n_units": 11,
+    "rho": 3.0397325340976495,
+    "lambda_intercept": 7.770674506800492,
     "lambda_coefficients": {},
     "covariates": [],
     "lot_reference": null,

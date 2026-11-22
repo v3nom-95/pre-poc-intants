@@ -122,6 +122,7 @@ export default function ChartKitDevPage() {
   return (
     <AppShell>
       <div className="flex flex-col gap-10 pb-16">
+        <h1 className="text-[28px] font-semibold text-(--ink)">Chart kit (developer reference)</h1>
         <section>
           <h2 className="mb-3 text-[15px] font-semibold text-(--ink)">Typography scale</h2>
           <div className="flex flex-col gap-2 rounded-[8px] border border-(--rule) bg-(--sheet) p-5">

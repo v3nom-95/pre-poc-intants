@@ -15,7 +15,7 @@
   "current_tail": "FX-301",
   "current_position": "1",
   "governing_limit": "Cycles",
-  "remaining": 630.0,
+  "remaining": 703.0,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "FX-301",
       "event_type": "Install",
-      "date": "2023-04-28",
+      "date": "2023-08-31",
       "reason": null,
       "serial": "EN-0021"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

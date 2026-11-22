@@ -71,7 +71,7 @@ export function BacktestSection({ bt, typeNames = {} }: { bt: Backtest; typeName
         <Figure
           label="Recommendation recall"
           value={recallPct === null ? "Not computed" : formatPct(recallPct)}
-          sub={`${formatNumber(r.covered)} of ${formatNumber(r.failures_in_test_window)} failures alerted ${formatNumber(r.lead_min_fh)} FH or more ahead`}
+          sub={`${formatNumber(r.covered)} of ${formatNumber(r.failures_in_test_window)} failures alerted ${formatNumber(r.lead_min_fh)} FH or more ahead, all sources`}
         />
         <Figure
           label="Median lead time"
@@ -130,6 +130,7 @@ export function BacktestSection({ bt, typeNames = {} }: { bt: Backtest; typeName
               ? `; the highest-risk decile held ${formatPct(cal.top_decile_share_of_failures * 100)} of the failures.`
               : "."}
           </p>
+          <EntryDiagnostics bt={bt} />
         </div>
 
         <div className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
@@ -160,6 +161,9 @@ export function BacktestSection({ bt, typeNames = {} }: { bt: Backtest; typeName
           </p>
         </div>
       </div>
+
+      {r.by_source && r.by_source.length > 0 && <SourcesPanel bt={bt} />}
+      {r.tau_tradeoff && r.tau_tradeoff.length > 0 && <TradeoffPanel bt={bt} />}
 
       <div className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
         <h3 className="mb-1 text-[13px] font-semibold text-(--ink)">Concordance by part number</h3>
@@ -206,8 +210,9 @@ export function BacktestSection({ bt, typeNames = {} }: { bt: Backtest; typeName
       <div className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
         <h3 className="mb-1 text-[13px] font-semibold text-(--ink)">Test-window failures and their alerts</h3>
         <p className="mb-3 text-[12px] text-(--ink-2)">
-          Every unscheduled confirmed failure from {formatDate(bt.test_start)} to {formatDate(bt.test_end)}, and whether a
-          Medium or higher alert was open on that unit at least {formatNumber(r.lead_min_fh)} FH before it.
+          Every unscheduled confirmed failure from {formatDate(bt.test_start)} to {formatDate(bt.test_end)}, whether a Medium or
+          higher recommendation from any source was open on it at least {formatNumber(r.lead_min_fh)} FH before, and which source
+          raised it first.
         </p>
         <div className="max-h-[360px] overflow-auto" tabIndex={0} role="region" aria-label="Test-window failures and their alerts">
           <table className="w-full text-[12px]">
@@ -217,7 +222,7 @@ export function BacktestSection({ bt, typeNames = {} }: { bt: Backtest; typeName
                 <th className="pb-1.5 font-semibold">Aircraft</th>
                 <th className="pb-1.5 font-semibold">Component</th>
                 <th className="pb-1.5 font-semibold">Serial</th>
-                <th className="pb-1.5 font-semibold">Alert basis</th>
+                <th className="pb-1.5 font-semibold">First alert source</th>
                 <th className="pb-1.5 text-right font-semibold">Lead time</th>
                 <th className="pb-1.5 font-semibold">Covered</th>
               </tr>
@@ -285,9 +290,9 @@ export function BacktestSection({ bt, typeNames = {} }: { bt: Backtest; typeName
             </tbody>
           </table>
           <p className="mt-3 text-[11px] text-(--ink-2)">
-            Shown as computed on synthetic data, not tuned per type. Covered means a Medium or higher alert was open on that unit
-            at least {formatNumber(r.lead_min_fh)} FH before the failure; a type with no covered failures had no such alert ahead
-            of any of its test-window failures. Pattern-based alerts are not replayed, so recall is a lower bound.
+            Shown as computed on synthetic data, not tuned per type. Covered means a Medium or higher recommendation from any
+            source was open on that unit at least {formatNumber(r.lead_min_fh)} FH before the failure; a type with no covered
+            failures had no such recommendation ahead of any of its test-window failures.
           </p>
         </div>
       )}
@@ -305,6 +310,181 @@ export function BacktestSection({ bt, typeNames = {} }: { bt: Backtest; typeName
         </ul>
       </div>
     </section>
+  );
+}
+
+function EntryDiagnostics({ bt }: { bt: Backtest }) {
+  const entry = bt.calibration.by_entry ?? [];
+  const hist = entry.find((e) => e.entered_with_history);
+  const fresh = entry.find((e) => !e.entered_with_history);
+  const fit = bt.calibration.in_window_fit;
+  if (!hist && !fresh) return null;
+  const ratio = (o: number, e: number) => (e > 0 ? o / e : null);
+  const histRatio = hist ? ratio(hist.observed, hist.expected) : null;
+  const fitRatio = fit ? ratio(fit.observed, fit.expected_in_window_fit) : null;
+  // Interpretation only when the data shows it: the shortfall sits in units
+  // that entered the window with history, and a fit without them is close.
+  const pointsToEntry = histRatio !== null && histRatio > 1.25 && fitRatio !== null && Math.abs(fitRatio - 1) <= 0.2;
+  return (
+    <div className="mt-3 border-t border-(--rule) pt-3 text-[12px] text-(--ink-2)">
+      <p>
+        {hist
+          ? `Units already fitted when the data window opened: ${formatNumber(hist.observed)} failures observed against ${formatNumber(hist.expected, 1)} expected (${formatNumber(hist.n_units)} units). `
+          : ""}
+        {fresh
+          ? `Units installed inside the window: ${formatNumber(fresh.observed)} against ${formatNumber(fresh.expected, 1)} (${formatNumber(fresh.n_units)} units).`
+          : ""}
+      </p>
+      {fit && (
+        <p className="mt-1">
+          Diagnostic: the same {formatNumber(fit.n_units)} test units ({formatNumber(fit.parts)} part numbers) scored by a fit on
+          legs installed inside the window only expect {formatNumber(fit.expected_in_window_fit, 1)} failures against{" "}
+          {formatNumber(fit.observed)} observed (production fit: {formatNumber(fit.expected_production_fit, 1)}).
+        </p>
+      )}
+      {pointsToEntry && (
+        <p className="mt-1">
+          The shortfall sits in units that entered the window with history. That pattern fits entry ages that are not
+          independent of failure time, which the delayed-entry fit assumes; see the validation notes.
+        </p>
+      )}
+    </div>
+  );
+}
+
+function SourcesPanel({ bt }: { bt: Backtest }) {
+  const r = bt.recall;
+  const rows = r.by_source ?? [];
+  return (
+    <div className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
+      <h3 className="mb-1 text-[13px] font-semibold text-(--ink)">Recall by recommendation source</h3>
+      <p className="mb-3 text-[12px] text-(--ink-2)">
+        Every source in the live engine replayed at monthly points with only the data available at the time. Alone counts the
+        failures that source would have covered by itself; first alert credits each covered failure to the source that flagged
+        it earliest.
+        {r.rules_and_model_only
+          ? ` Hard-time rules and the survival model together cover ${formatNumber(r.rules_and_model_only.covered)} of ${formatNumber(r.failures_in_test_window)}.`
+          : ""}
+      </p>
+      <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Recall by recommendation source">
+        <table className="w-full text-[12px]">
+          <thead>
+            <tr className="text-left text-(--ink-2)">
+              <th className="pb-1.5 font-semibold">Source</th>
+              <th className="pb-1.5 text-right font-semibold">Covered alone</th>
+              <th className="pb-1.5 text-right font-semibold">Recall alone</th>
+              <th className="pb-1.5 text-right font-semibold">First alert for</th>
+              <th className="pb-1.5 text-right font-semibold">Alerts raised</th>
+              <th className="pb-1.5 text-right font-semibold">Alerts per 1,000 FH</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((b) => (
+              <tr key={b.source} className="border-t border-(--rule)">
+                <td className="py-1.5 text-(--ink)">{b.source}</td>
+                <td className="py-1.5 text-right tabular text-(--ink-2)">
+                  {b.can_cover ? formatNumber(b.covered) : "Not applicable"}
+                </td>
+                <td className="py-1.5 text-right tabular text-(--ink-2)">
+                  {b.can_cover && b.recall !== null ? formatPct(b.recall * 100, 1) : "Not applicable"}
+                </td>
+                <td className="py-1.5 text-right tabular text-(--ink-2)">
+                  {b.can_cover ? formatNumber(b.first_alert_for) : "Not applicable"}
+                </td>
+                <td className="py-1.5 text-right tabular text-(--ink-2)">{formatNumber(b.alerts_raised)}</td>
+                <td className="py-1.5 text-right tabular text-(--ink-2)">
+                  {b.alert_rate_per_1000fh === null ? "Not computed" : formatNumber(b.alert_rate_per_1000fh, 2)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-3 text-[11px] text-(--ink-2)">
+        Fatigue recommendations are aircraft tasking reviews: they add to the alert rate but cannot cover a component failure.
+      </p>
+    </div>
+  );
+}
+
+const MODEL_ONLY_COLOR = "var(--chart-cat-1)";
+const ALL_SOURCES_COLOR = "var(--chart-cat-2)";
+
+function TradeoffPanel({ bt }: { bt: Backtest }) {
+  const rows = [...(bt.recall.tau_tradeoff ?? [])].sort(
+    (a, b) => (a.model_alert_rate_per_1000fh ?? 0) - (b.model_alert_rate_per_1000fh ?? 0)
+  );
+  const prod = rows.find((t) => t.tau_multiplier === 1);
+  const series = [
+    {
+      id: "model",
+      label: "Survival model alone",
+      color: MODEL_ONLY_COLOR,
+      points: rows.map((t) => ({ x: t.model_alert_rate_per_1000fh ?? 0, y: (t.model_recall ?? 0) * 100 })),
+    },
+    {
+      id: "all",
+      label: "All sources",
+      color: ALL_SOURCES_COLOR,
+      points: rows.map((t) => ({ x: t.model_alert_rate_per_1000fh ?? 0, y: (t.all_sources_recall ?? 0) * 100 })),
+    },
+  ];
+  const tableRows = [...rows]
+    .sort((a, b) => a.tau_multiplier - b.tau_multiplier)
+    .map((t) => [
+      `${formatNumber(t.tau_multiplier, 1)}x${t.tau_multiplier === 1 ? " (production)" : ""}`,
+      t.model_alert_rate_per_1000fh === null ? "Not computed" : formatNumber(t.model_alert_rate_per_1000fh, 2),
+      t.model_recall === null ? "Not computed" : formatPct(t.model_recall * 100, 1),
+      t.all_sources_recall === null ? "Not computed" : formatPct(t.all_sources_recall * 100, 1),
+      t.all_alert_rate_per_1000fh === null ? "Not computed" : formatNumber(t.all_alert_rate_per_1000fh, 2),
+    ]);
+  return (
+    <div className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
+      <ChartFrame
+        title="Trade-off: recall against survival alerts per 1,000 FH (analysis only)"
+        legend={
+          <ChartLegend
+            items={[
+              { label: "Survival model alone", color: MODEL_ONLY_COLOR },
+              { label: "All sources", color: ALL_SOURCES_COLOR },
+            ]}
+          />
+        }
+        chart={
+          <LineChart
+            series={series}
+            xTickFormat={(x) => formatNumber(x, 0)}
+            xUnit="alerts per 1,000 FH"
+            yTickFormat={(y) => formatPct(y)}
+            yMin={0}
+            linear
+            showPoints
+            markers={
+              prod && prod.model_alert_rate_per_1000fh !== null
+                ? [{ x: prod.model_alert_rate_per_1000fh, label: "Production threshold" }]
+                : []
+            }
+          />
+        }
+        table={
+          <ChartTable
+            columns={[
+              "Threshold (times section 6 tau)",
+              "Survival alerts per 1,000 FH",
+              "Survival recall",
+              "All-source recall",
+              "All alerts per 1,000 FH",
+            ]}
+            rows={tableRows}
+          />
+        }
+      />
+      <p className="mt-3 text-[12px] text-(--ink-2)">
+        The survival source re-run at multiples of the section 6 probability thresholds (lower thresholds alert earlier and more
+        often). Every other source is unchanged. Horizontal axis: survival alerts per 1,000 FH. This shows the cost of earlier
+        warning; production keeps the section 6 thresholds.
+      </p>
+    </div>
   );
 }
 

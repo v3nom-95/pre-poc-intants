@@ -2,61 +2,61 @@
   "snags_by_ata": [
     {
       "ata": 21,
-      "count": 84,
-      "cumulative_share": 0.248
+      "count": 57,
+      "cumulative_share": 0.2
     },
     {
       "ata": 28,
-      "count": 51,
-      "cumulative_share": 0.398
+      "count": 41,
+      "cumulative_share": 0.344
     },
     {
       "ata": 29,
-      "count": 42,
-      "cumulative_share": 0.522
+      "count": 38,
+      "cumulative_share": 0.477
     },
     {
       "ata": 34,
-      "count": 37,
-      "cumulative_share": 0.631
+      "count": 32,
+      "cumulative_share": 0.589
     },
     {
       "ata": 24,
-      "count": 34,
-      "cumulative_share": 0.732
-    },
-    {
-      "ata": 61,
-      "count": 26,
-      "cumulative_share": 0.808
-    },
-    {
-      "ata": 73,
-      "count": 16,
-      "cumulative_share": 0.855
-    },
-    {
-      "ata": 49,
-      "count": 15,
-      "cumulative_share": 0.9
+      "count": 27,
+      "cumulative_share": 0.684
     },
     {
       "ata": 79,
-      "count": 14,
-      "cumulative_share": 0.941
+      "count": 20,
+      "cumulative_share": 0.754
+    },
+    {
+      "ata": 73,
+      "count": 19,
+      "cumulative_share": 0.821
+    },
+    {
+      "ata": 61,
+      "count": 18,
+      "cumulative_share": 0.884
     },
     {
       "ata": 27,
-      "count": 9,
-      "cumulative_share": 0.968
+      "count": 13,
+      "cumulative_share": 0.93
     },
     {
-      "ata": 31,
-      "count": 8,
-      "cumulative_share": 0.991
+      "ata": 49,
+      "count": 12,
+      "cumulative_share": 0.972
     },
     {
       "ata": 52,
+      "count": 5,
+      "cumulative_share": 0.989
+    },
+    {
+      "ata": 31,
       "count": 3,
       "cumulative_share": 1.0
     }
@@ -65,152 +65,152 @@
     "airlifter": [
       {
         "ata": 28,
-        "count": 36,
-        "cumulative_share": 0.248
+        "count": 26,
+        "cumulative_share": 0.232
       },
       {
         "ata": 21,
-        "count": 34,
-        "cumulative_share": 0.483
-      },
-      {
-        "ata": 24,
-        "count": 22,
-        "cumulative_share": 0.634
-      },
-      {
-        "ata": 61,
-        "count": 15,
-        "cumulative_share": 0.738
+        "count": 17,
+        "cumulative_share": 0.384
       },
       {
         "ata": 29,
-        "count": 10,
-        "cumulative_share": 0.807
+        "count": 17,
+        "cumulative_share": 0.536
       },
       {
-        "ata": 31,
-        "count": 6,
-        "cumulative_share": 0.848
+        "ata": 24,
+        "count": 13,
+        "cumulative_share": 0.652
       },
       {
-        "ata": 73,
-        "count": 6,
-        "cumulative_share": 0.89
+        "ata": 61,
+        "count": 11,
+        "cumulative_share": 0.75
       },
       {
         "ata": 79,
-        "count": 6,
-        "cumulative_share": 0.931
+        "count": 10,
+        "cumulative_share": 0.839
       },
       {
-        "ata": 34,
-        "count": 5,
-        "cumulative_share": 0.966
+        "ata": 73,
+        "count": 9,
+        "cumulative_share": 0.92
       },
       {
         "ata": 52,
-        "count": 3,
-        "cumulative_share": 0.986
+        "count": 5,
+        "cumulative_share": 0.964
       },
       {
         "ata": 49,
         "count": 2,
+        "cumulative_share": 0.982
+      },
+      {
+        "ata": 31,
+        "count": 1,
+        "cumulative_share": 0.991
+      },
+      {
+        "ata": 34,
+        "count": 1,
         "cumulative_share": 1.0
       }
     ],
     "fighter": [
       {
-        "ata": 29,
-        "count": 25,
-        "cumulative_share": 0.266
+        "ata": 34,
+        "count": 27,
+        "cumulative_share": 0.252
       },
       {
-        "ata": 34,
-        "count": 20,
-        "cumulative_share": 0.479
+        "ata": 29,
+        "count": 18,
+        "cumulative_share": 0.421
       },
       {
         "ata": 21,
-        "count": 12,
-        "cumulative_share": 0.606
-      },
-      {
-        "ata": 49,
-        "count": 12,
-        "cumulative_share": 0.734
+        "count": 15,
+        "cumulative_share": 0.561
       },
       {
         "ata": 27,
+        "count": 13,
+        "cumulative_share": 0.682
+      },
+      {
+        "ata": 49,
         "count": 9,
-        "cumulative_share": 0.83
+        "cumulative_share": 0.766
       },
       {
         "ata": 28,
-        "count": 8,
-        "cumulative_share": 0.915
+        "count": 7,
+        "cumulative_share": 0.832
       },
       {
         "ata": 24,
-        "count": 3,
-        "cumulative_share": 0.947
-      },
-      {
-        "ata": 79,
-        "count": 3,
-        "cumulative_share": 0.979
+        "count": 6,
+        "cumulative_share": 0.888
       },
       {
         "ata": 73,
-        "count": 2,
+        "count": 6,
+        "cumulative_share": 0.944
+      },
+      {
+        "ata": 79,
+        "count": 6,
         "cumulative_share": 1.0
       }
     ],
     "transport": [
       {
         "ata": 21,
-        "count": 38,
-        "cumulative_share": 0.38
-      },
-      {
-        "ata": 34,
-        "count": 12,
-        "cumulative_share": 0.5
-      },
-      {
-        "ata": 61,
-        "count": 11,
-        "cumulative_share": 0.61
+        "count": 25,
+        "cumulative_share": 0.379
       },
       {
         "ata": 24,
-        "count": 9,
-        "cumulative_share": 0.7
-      },
-      {
-        "ata": 73,
         "count": 8,
-        "cumulative_share": 0.78
+        "cumulative_share": 0.5
       },
       {
         "ata": 28,
-        "count": 7,
-        "cumulative_share": 0.85
+        "count": 8,
+        "cumulative_share": 0.621
       },
       {
-        "ata": 29,
+        "ata": 61,
         "count": 7,
-        "cumulative_share": 0.92
+        "cumulative_share": 0.727
+      },
+      {
+        "ata": 34,
+        "count": 4,
+        "cumulative_share": 0.788
+      },
+      {
+        "ata": 73,
+        "count": 4,
+        "cumulative_share": 0.848
       },
       {
         "ata": 79,
-        "count": 5,
-        "cumulative_share": 0.97
+        "count": 4,
+        "cumulative_share": 0.909
+      },
+      {
+        "ata": 29,
+        "count": 3,
+        "cumulative_share": 0.955
       },
       {
         "ata": 31,
         "count": 2,
-        "cumulative_share": 0.99
+        "cumulative_share": 0.985
       },
       {
         "ata": 49,
@@ -224,64 +224,64 @@
       "part_number": "21-1005-01",
       "name": "ECS cooling turbine",
       "type": "fighter",
-      "mtbf_fh": 1278.0,
-      "mtbur_fh": 1065.0,
-      "nff_rate": 0.167
+      "mtbf_fh": 955.0,
+      "mtbur_fh": 891.0,
+      "nff_rate": 0.067
     },
     {
       "part_number": "21-3110-11",
       "name": "Cabin pressure controller",
       "type": "transport",
-      "mtbf_fh": 3454.0,
-      "mtbur_fh": 3454.0,
+      "mtbf_fh": 6981.0,
+      "mtbur_fh": 6981.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "21-3110-21",
       "name": "Cabin pressure controller",
       "type": "airlifter",
-      "mtbf_fh": 11413.0,
-      "mtbur_fh": 11413.0,
-      "nff_rate": 0.0
+      "mtbf_fh": null,
+      "mtbur_fh": null,
+      "nff_rate": 0
     },
     {
       "part_number": "21-3120-11",
       "name": "Cabin outflow valve",
       "type": "transport",
-      "mtbf_fh": 4607.0,
-      "mtbur_fh": 2304.0,
-      "nff_rate": 0.5
+      "mtbf_fh": 4656.0,
+      "mtbur_fh": 2794.0,
+      "nff_rate": 0.4
     },
     {
       "part_number": "21-3120-21",
       "name": "Cabin outflow valve",
       "type": "airlifter",
-      "mtbf_fh": 5708.0,
-      "mtbur_fh": 5708.0,
-      "nff_rate": 0.0
+      "mtbf_fh": 5627.0,
+      "mtbur_fh": 3751.0,
+      "nff_rate": 0.333
     },
     {
       "part_number": "21-5110-11",
       "name": "ECS pack (air cycle machine)",
       "type": "transport",
-      "mtbf_fh": 1975.0,
-      "mtbur_fh": 1975.0,
-      "nff_rate": 0.0
+      "mtbf_fh": 3492.0,
+      "mtbur_fh": 2794.0,
+      "nff_rate": 0.2
     },
     {
       "part_number": "21-5110-21",
       "name": "ECS pack (air cycle machine)",
       "type": "airlifter",
-      "mtbf_fh": 790.0,
-      "mtbur_fh": 739.0,
-      "nff_rate": 0.065
+      "mtbf_fh": 1609.0,
+      "mtbur_fh": 1609.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "24-2110-01",
       "name": "Main generator",
       "type": "fighter",
-      "mtbf_fh": 4256.0,
-      "mtbur_fh": 4256.0,
+      "mtbf_fh": 2226.0,
+      "mtbur_fh": 2226.0,
       "nff_rate": 0.0
     },
     {
@@ -296,16 +296,16 @@
       "part_number": "24-3110-11",
       "name": "Engine-driven generator",
       "type": "transport",
-      "mtbf_fh": 3071.0,
-      "mtbur_fh": 3071.0,
-      "nff_rate": 0.0
+      "mtbf_fh": 4656.0,
+      "mtbur_fh": 3492.0,
+      "nff_rate": 0.25
     },
     {
       "part_number": "24-3110-21",
       "name": "Engine-driven generator",
       "type": "airlifter",
-      "mtbf_fh": 2077.0,
-      "mtbur_fh": 2077.0,
+      "mtbf_fh": 3463.0,
+      "mtbur_fh": 3463.0,
       "nff_rate": 0.0
     },
     {
@@ -352,80 +352,80 @@
       "part_number": "27-3310-04",
       "name": "Horizontal stabilator actuator",
       "type": "fighter",
-      "mtbf_fh": 4256.0,
-      "mtbur_fh": 3648.0,
-      "nff_rate": 0.143
+      "mtbf_fh": 2226.0,
+      "mtbur_fh": 2226.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "27-3550-01",
       "name": "Flight control computer",
       "type": "fighter",
-      "mtbf_fh": 6382.0,
-      "mtbur_fh": 6382.0,
+      "mtbf_fh": 13352.0,
+      "mtbur_fh": 13352.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "28-2210-02",
       "name": "Fuel boost pump",
       "type": "fighter",
-      "mtbf_fh": 1825.0,
-      "mtbur_fh": 1597.0,
-      "nff_rate": 0.125
+      "mtbf_fh": 1908.0,
+      "mtbur_fh": 1908.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "28-2310-11",
       "name": "Fuel boost pump",
       "type": "transport",
-      "mtbf_fh": 3948.0,
-      "mtbur_fh": 3948.0,
+      "mtbf_fh": 3492.0,
+      "mtbur_fh": 3492.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "28-2310-21",
       "name": "Fuel boost pump",
       "type": "airlifter",
-      "mtbf_fh": 1694.0,
-      "mtbur_fh": 1270.0,
-      "nff_rate": 0.25
+      "mtbf_fh": 1802.0,
+      "mtbur_fh": 1733.0,
+      "nff_rate": 0.038
     },
     {
       "part_number": "29-1140-03",
       "name": "Engine-driven hydraulic pump",
       "type": "fighter",
-      "mtbf_fh": 533.0,
-      "mtbur_fh": 512.0,
-      "nff_rate": 0.04
+      "mtbf_fh": 836.0,
+      "mtbur_fh": 743.0,
+      "nff_rate": 0.111
     },
     {
       "part_number": "29-1210-11",
       "name": "Engine-driven hydraulic pump",
       "type": "transport",
-      "mtbf_fh": 3947.0,
-      "mtbur_fh": 3947.0,
+      "mtbf_fh": 9308.0,
+      "mtbur_fh": 9308.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "29-1210-21",
       "name": "Engine-driven hydraulic pump",
       "type": "airlifter",
-      "mtbf_fh": 5708.0,
-      "mtbur_fh": 4567.0,
-      "nff_rate": 0.2
+      "mtbf_fh": 2649.0,
+      "mtbur_fh": 2649.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "31-3110-11",
       "name": "Flight data recorder",
       "type": "transport",
-      "mtbf_fh": 6906.0,
-      "mtbur_fh": 6906.0,
+      "mtbf_fh": 6981.0,
+      "mtbur_fh": 6981.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "31-3110-21",
       "name": "Flight data recorder",
       "type": "airlifter",
-      "mtbf_fh": 1904.0,
-      "mtbur_fh": 1904.0,
+      "mtbf_fh": 11250.0,
+      "mtbur_fh": 11250.0,
       "nff_rate": 0.0
     },
     {
@@ -472,128 +472,128 @@
       "part_number": "32-4210-02",
       "name": "Main wheel brake",
       "type": "fighter",
-      "mtbf_fh": 568.0,
-      "mtbur_fh": 522.0,
-      "nff_rate": 0.082
+      "mtbf_fh": 478.0,
+      "mtbur_fh": 478.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "32-4220-11",
       "name": "Main wheel brake",
       "type": "transport",
-      "mtbf_fh": 1107.0,
-      "mtbur_fh": 1064.0,
-      "nff_rate": 0.038
+      "mtbf_fh": 1863.0,
+      "mtbur_fh": 1863.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "32-4220-21",
       "name": "Main wheel brake",
       "type": "airlifter",
-      "mtbf_fh": 1428.0,
-      "mtbur_fh": 1428.0,
+      "mtbf_fh": 2047.0,
+      "mtbur_fh": 2047.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "32-4310-01",
       "name": "Main wheel tyre",
       "type": "fighter",
-      "mtbf_fh": 97.0,
-      "mtbur_fh": 91.0,
-      "nff_rate": 0.06
+      "mtbf_fh": 99.0,
+      "mtbur_fh": 99.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "32-4320-11",
       "name": "Main wheel tyre",
       "type": "transport",
-      "mtbf_fh": 238.0,
-      "mtbur_fh": 223.0,
-      "nff_rate": 0.064
+      "mtbf_fh": 213.0,
+      "mtbur_fh": 213.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "32-4320-21",
       "name": "Main wheel tyre",
       "type": "airlifter",
-      "mtbf_fh": 324.0,
-      "mtbur_fh": 306.0,
-      "nff_rate": 0.053
+      "mtbf_fh": 310.0,
+      "mtbur_fh": 310.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "34-1810-01",
       "name": "Inertial navigation unit",
       "type": "fighter",
-      "mtbf_fh": 4256.0,
-      "mtbur_fh": 3192.0,
-      "nff_rate": 0.25
+      "mtbf_fh": 3339.0,
+      "mtbur_fh": 3339.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "34-4110-11",
       "name": "Weather radar",
       "type": "transport",
-      "mtbf_fh": 4605.0,
-      "mtbur_fh": 3454.0,
-      "nff_rate": 0.25
+      "mtbf_fh": 13961.0,
+      "mtbur_fh": 13961.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "34-4110-21",
       "name": "Weather radar",
       "type": "airlifter",
-      "mtbf_fh": 3806.0,
-      "mtbur_fh": 3806.0,
+      "mtbf_fh": 11251.0,
+      "mtbur_fh": 11251.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "34-4410-02",
       "name": "Radar altimeter",
       "type": "fighter",
-      "mtbf_fh": null,
-      "mtbur_fh": 3192.0,
-      "nff_rate": 1.0
+      "mtbf_fh": 6680.0,
+      "mtbur_fh": 1670.0,
+      "nff_rate": 0.75
     },
     {
       "part_number": "34-4420-11",
       "name": "Radio altimeter",
       "type": "transport",
-      "mtbf_fh": 1975.0,
-      "mtbur_fh": 1728.0,
-      "nff_rate": 0.125
+      "mtbf_fh": 4655.0,
+      "mtbur_fh": 4655.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "34-4420-21",
       "name": "Radio altimeter",
       "type": "airlifter",
-      "mtbf_fh": 5708.0,
-      "mtbur_fh": 5708.0,
-      "nff_rate": 0.0
+      "mtbf_fh": null,
+      "mtbur_fh": null,
+      "nff_rate": 0
     },
     {
       "part_number": "49-1110-11",
       "name": "Auxiliary power unit",
       "type": "transport",
-      "mtbf_fh": 13810.0,
-      "mtbur_fh": 13810.0,
+      "mtbf_fh": 13961.0,
+      "mtbur_fh": 13961.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "49-1110-21",
       "name": "Auxiliary power unit",
       "type": "airlifter",
-      "mtbf_fh": 5707.0,
-      "mtbur_fh": 5707.0,
-      "nff_rate": 0.0
+      "mtbf_fh": 11254.0,
+      "mtbur_fh": 5627.0,
+      "nff_rate": 0.5
     },
     {
       "part_number": "49-1210-01",
       "name": "Jet fuel starter",
       "type": "fighter",
-      "mtbf_fh": 1162.0,
-      "mtbur_fh": 1065.0,
-      "nff_rate": 0.083
+      "mtbf_fh": 1485.0,
+      "mtbur_fh": 1485.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "52-3410-21",
       "name": "Cargo ramp actuator",
       "type": "airlifter",
-      "mtbf_fh": 3806.0,
-      "mtbur_fh": 3806.0,
+      "mtbf_fh": 2252.0,
+      "mtbur_fh": 2252.0,
       "nff_rate": 0.0
     },
     {
@@ -616,17 +616,17 @@
       "part_number": "61-2210-11",
       "name": "Propeller control unit",
       "type": "transport",
-      "mtbf_fh": 2513.0,
-      "mtbur_fh": 2513.0,
+      "mtbf_fh": 3990.0,
+      "mtbur_fh": 3990.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "61-2210-21",
       "name": "Propeller control unit",
       "type": "airlifter",
-      "mtbf_fh": 3806.0,
-      "mtbur_fh": 3045.0,
-      "nff_rate": 0.2
+      "mtbf_fh": 4093.0,
+      "mtbur_fh": 4093.0,
+      "nff_rate": 0.0
     },
     {
       "part_number": "72-0001-10",
@@ -664,390 +664,390 @@
       "part_number": "73-2110-01",
       "name": "Engine fuel control unit",
       "type": "fighter",
-      "mtbf_fh": 6383.0,
-      "mtbur_fh": 6383.0,
+      "mtbf_fh": 2227.0,
+      "mtbur_fh": 2227.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "73-2120-11",
       "name": "Engine fuel control unit",
       "type": "transport",
-      "mtbf_fh": 3454.0,
-      "mtbur_fh": 3454.0,
+      "mtbf_fh": 6982.0,
+      "mtbur_fh": 6982.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "73-2120-21",
       "name": "Engine fuel control unit",
       "type": "airlifter",
-      "mtbf_fh": 7609.0,
-      "mtbur_fh": 7609.0,
-      "nff_rate": 0.0
+      "mtbf_fh": 9004.0,
+      "mtbur_fh": 5002.0,
+      "nff_rate": 0.444
     },
     {
       "part_number": "79-1310-02",
       "name": "Engine lube oil pump",
       "type": "fighter",
-      "mtbf_fh": 6383.0,
-      "mtbur_fh": 4255.0,
-      "nff_rate": 0.333
+      "mtbf_fh": 2671.0,
+      "mtbur_fh": 2226.0,
+      "nff_rate": 0.167
     },
     {
       "part_number": "79-1320-11",
       "name": "Engine lube oil pump",
       "type": "transport",
-      "mtbf_fh": 5525.0,
-      "mtbur_fh": 5525.0,
+      "mtbf_fh": 6982.0,
+      "mtbur_fh": 6982.0,
       "nff_rate": 0.0
     },
     {
       "part_number": "79-1320-21",
       "name": "Engine lube oil pump",
       "type": "airlifter",
-      "mtbf_fh": 7610.0,
-      "mtbur_fh": 7610.0,
-      "nff_rate": 0.0
+      "mtbf_fh": 5002.0,
+      "mtbur_fh": 4502.0,
+      "nff_rate": 0.1
     }
   ],
   "removal_rate_monthly": [
     {
       "month": "2021-11",
-      "rate_per_1000fh": 2.62
+      "rate_per_1000fh": 8.54
     },
     {
       "month": "2021-12",
-      "rate_per_1000fh": 7.56
+      "rate_per_1000fh": 4.49
     },
     {
       "month": "2022-01",
-      "rate_per_1000fh": 7.77
+      "rate_per_1000fh": 1.38
     },
     {
       "month": "2022-02",
-      "rate_per_1000fh": 2.97
+      "rate_per_1000fh": 4.34
     },
     {
       "month": "2022-03",
-      "rate_per_1000fh": 1.44
+      "rate_per_1000fh": 6.2
     },
     {
       "month": "2022-04",
-      "rate_per_1000fh": 2.97
-    },
-    {
-      "month": "2022-05",
-      "rate_per_1000fh": 4.32
-    },
-    {
-      "month": "2022-06",
-      "rate_per_1000fh": 5.78
-    },
-    {
-      "month": "2022-07",
-      "rate_per_1000fh": 5.59
-    },
-    {
-      "month": "2022-08",
-      "rate_per_1000fh": 7.47
-    },
-    {
-      "month": "2022-09",
-      "rate_per_1000fh": 5.24
-    },
-    {
-      "month": "2022-10",
-      "rate_per_1000fh": 4.45
-    },
-    {
-      "month": "2022-11",
-      "rate_per_1000fh": 4.42
-    },
-    {
-      "month": "2022-12",
-      "rate_per_1000fh": 4.4
-    },
-    {
-      "month": "2023-01",
-      "rate_per_1000fh": 4.37
-    },
-    {
-      "month": "2023-02",
-      "rate_per_1000fh": 5.73
-    },
-    {
-      "month": "2023-03",
-      "rate_per_1000fh": 4.4
-    },
-    {
-      "month": "2023-04",
-      "rate_per_1000fh": 9.84
-    },
-    {
-      "month": "2023-05",
-      "rate_per_1000fh": 10.14
-    },
-    {
-      "month": "2023-06",
-      "rate_per_1000fh": 8.82
-    },
-    {
-      "month": "2023-07",
-      "rate_per_1000fh": 7.21
-    },
-    {
-      "month": "2023-08",
-      "rate_per_1000fh": 10.44
-    },
-    {
-      "month": "2023-09",
       "rate_per_1000fh": 3.3
     },
     {
+      "month": "2022-05",
+      "rate_per_1000fh": 5.75
+    },
+    {
+      "month": "2022-06",
+      "rate_per_1000fh": 5.77
+    },
+    {
+      "month": "2022-07",
+      "rate_per_1000fh": 9.35
+    },
+    {
+      "month": "2022-08",
+      "rate_per_1000fh": 11.25
+    },
+    {
+      "month": "2022-09",
+      "rate_per_1000fh": 3.63
+    },
+    {
+      "month": "2022-10",
+      "rate_per_1000fh": 4.32
+    },
+    {
+      "month": "2022-11",
+      "rate_per_1000fh": 6.08
+    },
+    {
+      "month": "2022-12",
+      "rate_per_1000fh": 6.3
+    },
+    {
+      "month": "2023-01",
+      "rate_per_1000fh": 7.45
+    },
+    {
+      "month": "2023-02",
+      "rate_per_1000fh": 1.47
+    },
+    {
+      "month": "2023-03",
+      "rate_per_1000fh": 2.78
+    },
+    {
+      "month": "2023-04",
+      "rate_per_1000fh": 8.14
+    },
+    {
+      "month": "2023-05",
+      "rate_per_1000fh": 8.94
+    },
+    {
+      "month": "2023-06",
+      "rate_per_1000fh": 7.78
+    },
+    {
+      "month": "2023-07",
+      "rate_per_1000fh": 7.05
+    },
+    {
+      "month": "2023-08",
+      "rate_per_1000fh": 5.42
+    },
+    {
+      "month": "2023-09",
+      "rate_per_1000fh": 5.41
+    },
+    {
       "month": "2023-10",
-      "rate_per_1000fh": 5.83
+      "rate_per_1000fh": 8.59
     },
     {
       "month": "2023-11",
-      "rate_per_1000fh": 6.09
+      "rate_per_1000fh": 4.43
     },
     {
       "month": "2023-12",
-      "rate_per_1000fh": 13.84
+      "rate_per_1000fh": 5.69
     },
     {
       "month": "2024-01",
-      "rate_per_1000fh": 4.67
+      "rate_per_1000fh": 6.07
     },
     {
       "month": "2024-02",
-      "rate_per_1000fh": 4.18
+      "rate_per_1000fh": 4.57
     },
     {
       "month": "2024-03",
-      "rate_per_1000fh": 10.96
+      "rate_per_1000fh": 2.94
     },
     {
       "month": "2024-04",
-      "rate_per_1000fh": 6.15
+      "rate_per_1000fh": 4.58
     },
     {
       "month": "2024-05",
-      "rate_per_1000fh": 8.42
+      "rate_per_1000fh": 7.35
     },
     {
       "month": "2024-06",
-      "rate_per_1000fh": 9.88
+      "rate_per_1000fh": 5.66
     },
     {
       "month": "2024-07",
-      "rate_per_1000fh": 8.39
+      "rate_per_1000fh": 10.95
     },
     {
       "month": "2024-08",
-      "rate_per_1000fh": 7.41
+      "rate_per_1000fh": 6.97
     },
     {
       "month": "2024-09",
-      "rate_per_1000fh": 5.23
+      "rate_per_1000fh": 6.02
     },
     {
       "month": "2024-10",
-      "rate_per_1000fh": 1.6
+      "rate_per_1000fh": 9.02
     },
     {
       "month": "2024-11",
-      "rate_per_1000fh": 6.27
+      "rate_per_1000fh": 9.27
     },
     {
       "month": "2024-12",
-      "rate_per_1000fh": 7.31
+      "rate_per_1000fh": 7.88
     },
     {
       "month": "2025-01",
-      "rate_per_1000fh": 7.72
+      "rate_per_1000fh": 10.39
     },
     {
       "month": "2025-02",
-      "rate_per_1000fh": 15.34
+      "rate_per_1000fh": 4.72
     },
     {
       "month": "2025-03",
-      "rate_per_1000fh": 6.9
+      "rate_per_1000fh": 3.08
     },
     {
       "month": "2025-04",
-      "rate_per_1000fh": 11.85
+      "rate_per_1000fh": 2.81
     },
     {
       "month": "2025-05",
-      "rate_per_1000fh": 10.31
+      "rate_per_1000fh": 15.13
     },
     {
       "month": "2025-06",
-      "rate_per_1000fh": 4.69
+      "rate_per_1000fh": 5.63
     },
     {
       "month": "2025-07",
-      "rate_per_1000fh": 20.07
+      "rate_per_1000fh": 11.78
     },
     {
       "month": "2025-08",
-      "rate_per_1000fh": 5.12
+      "rate_per_1000fh": 11.39
     },
     {
       "month": "2025-09",
-      "rate_per_1000fh": 10.34
+      "rate_per_1000fh": 0.0
     },
     {
       "month": "2025-10",
-      "rate_per_1000fh": 8.89
+      "rate_per_1000fh": 7.42
     },
     {
       "month": "2025-11",
-      "rate_per_1000fh": 4.75
+      "rate_per_1000fh": 2.85
     },
     {
       "month": "2025-12",
-      "rate_per_1000fh": 6.36
+      "rate_per_1000fh": 5.89
     },
     {
       "month": "2026-01",
-      "rate_per_1000fh": 7.93
+      "rate_per_1000fh": 4.53
     },
     {
       "month": "2026-02",
-      "rate_per_1000fh": 11.75
+      "rate_per_1000fh": 6.14
     },
     {
       "month": "2026-03",
-      "rate_per_1000fh": 8.97
+      "rate_per_1000fh": 5.93
     },
     {
       "month": "2026-04",
-      "rate_per_1000fh": 11.27
+      "rate_per_1000fh": 2.84
     },
     {
       "month": "2026-05",
-      "rate_per_1000fh": 10.07
+      "rate_per_1000fh": 6.93
     },
     {
       "month": "2026-06",
-      "rate_per_1000fh": 10.08
+      "rate_per_1000fh": 12.52
     },
     {
       "month": "2026-07",
-      "rate_per_1000fh": 8.8
+      "rate_per_1000fh": 8.54
     },
     {
       "month": "2026-08",
-      "rate_per_1000fh": 13.22
+      "rate_per_1000fh": 8.41
     },
     {
       "month": "2026-09",
-      "rate_per_1000fh": 3.86
+      "rate_per_1000fh": 3.58
     },
     {
       "month": "2026-10",
-      "rate_per_1000fh": 5.87
+      "rate_per_1000fh": 2.7
     },
     {
       "month": "2026-11",
-      "rate_per_1000fh": 12.57
+      "rate_per_1000fh": 3.14
     }
   ],
   "removal_rate_per_part": [
     {
       "part_number": "21-1005-01",
-      "confirmed_failures": 10,
-      "fh_exposure": 12775.8,
-      "removal_rate_per_1000fh": 0.783,
+      "confirmed_failures": 14,
+      "fh_exposure": 13369.5,
+      "removal_rate_per_1000fh": 1.047,
       "type": "fighter",
       "name": "ECS cooling turbine"
     },
     {
       "part_number": "21-3110-11",
-      "confirmed_failures": 4,
-      "fh_exposure": 13815.2,
-      "removal_rate_per_1000fh": 0.29,
+      "confirmed_failures": 2,
+      "fh_exposure": 13962.9,
+      "removal_rate_per_1000fh": 0.143,
       "type": "transport",
       "name": "Cabin pressure controller"
     },
     {
       "part_number": "21-3110-21",
-      "confirmed_failures": 1,
-      "fh_exposure": 11412.9,
-      "removal_rate_per_1000fh": 0.088,
+      "confirmed_failures": 0,
+      "fh_exposure": 11248.2,
+      "removal_rate_per_1000fh": 0.0,
       "type": "airlifter",
       "name": "Cabin pressure controller"
     },
     {
       "part_number": "21-3120-11",
       "confirmed_failures": 3,
-      "fh_exposure": 13821.8,
-      "removal_rate_per_1000fh": 0.217,
+      "fh_exposure": 13968.5,
+      "removal_rate_per_1000fh": 0.215,
       "type": "transport",
       "name": "Cabin outflow valve"
     },
     {
       "part_number": "21-3120-21",
       "confirmed_failures": 2,
-      "fh_exposure": 11415.7,
-      "removal_rate_per_1000fh": 0.175,
+      "fh_exposure": 11253.1,
+      "removal_rate_per_1000fh": 0.178,
       "type": "airlifter",
       "name": "Cabin outflow valve"
     },
     {
       "part_number": "21-5110-11",
-      "confirmed_failures": 14,
-      "fh_exposure": 27647.1,
-      "removal_rate_per_1000fh": 0.506,
+      "confirmed_failures": 8,
+      "fh_exposure": 27938.8,
+      "removal_rate_per_1000fh": 0.286,
       "type": "transport",
       "name": "ECS pack (air cycle machine)"
     },
     {
       "part_number": "21-5110-21",
-      "confirmed_failures": 29,
-      "fh_exposure": 22895.6,
-      "removal_rate_per_1000fh": 1.267,
+      "confirmed_failures": 14,
+      "fh_exposure": 22529.9,
+      "removal_rate_per_1000fh": 0.621,
       "type": "airlifter",
       "name": "ECS pack (air cycle machine)"
     },
     {
       "part_number": "24-2110-01",
-      "confirmed_failures": 3,
-      "fh_exposure": 12766.8,
-      "removal_rate_per_1000fh": 0.235,
+      "confirmed_failures": 6,
+      "fh_exposure": 13356.7,
+      "removal_rate_per_1000fh": 0.449,
       "type": "fighter",
       "name": "Main generator"
     },
     {
       "part_number": "24-2240-02",
       "confirmed_failures": 0,
-      "fh_exposure": 12781.0,
+      "fh_exposure": 13363.2,
       "removal_rate_per_1000fh": 0.0,
       "type": "fighter",
       "name": "Main battery"
     },
     {
       "part_number": "24-3110-11",
-      "confirmed_failures": 9,
-      "fh_exposure": 27636.4,
-      "removal_rate_per_1000fh": 0.326,
+      "confirmed_failures": 6,
+      "fh_exposure": 27934.8,
+      "removal_rate_per_1000fh": 0.215,
       "type": "transport",
       "name": "Engine-driven generator"
     },
     {
       "part_number": "24-3110-21",
-      "confirmed_failures": 22,
-      "fh_exposure": 45690.0,
-      "removal_rate_per_1000fh": 0.482,
+      "confirmed_failures": 13,
+      "fh_exposure": 45024.7,
+      "removal_rate_per_1000fh": 0.289,
       "type": "airlifter",
       "name": "Engine-driven generator"
     },
     {
       "part_number": "24-3240-11",
       "confirmed_failures": 0,
-      "fh_exposure": 13824.2,
+      "fh_exposure": 13977.3,
       "removal_rate_per_1000fh": 0.0,
       "type": "transport",
       "name": "Main battery"
@@ -1055,7 +1055,7 @@
     {
       "part_number": "24-3240-21",
       "confirmed_failures": 0,
-      "fh_exposure": 11428.5,
+      "fh_exposure": 11263.7,
       "removal_rate_per_1000fh": 0.0,
       "type": "airlifter",
       "name": "Main battery"
@@ -1063,7 +1063,7 @@
     {
       "part_number": "25-6210-11",
       "confirmed_failures": 0,
-      "fh_exposure": 13818.7,
+      "fh_exposure": 13963.7,
       "removal_rate_per_1000fh": 0.0,
       "type": "transport",
       "name": "Emergency locator transmitter battery"
@@ -1071,7 +1071,7 @@
     {
       "part_number": "25-6210-21",
       "confirmed_failures": 0,
-      "fh_exposure": 11418.0,
+      "fh_exposure": 11251.7,
       "removal_rate_per_1000fh": 0.0,
       "type": "airlifter",
       "name": "Emergency locator transmitter battery"
@@ -1079,95 +1079,95 @@
     {
       "part_number": "25-6410-01",
       "confirmed_failures": 0,
-      "fh_exposure": 12772.0,
+      "fh_exposure": 13364.3,
       "removal_rate_per_1000fh": 0.0,
       "type": "fighter",
       "name": "Ejection seat CAD/PAD set"
     },
     {
       "part_number": "27-3310-04",
-      "confirmed_failures": 6,
-      "fh_exposure": 25534.3,
-      "removal_rate_per_1000fh": 0.235,
+      "confirmed_failures": 12,
+      "fh_exposure": 26716.3,
+      "removal_rate_per_1000fh": 0.449,
       "type": "fighter",
       "name": "Horizontal stabilator actuator"
     },
     {
       "part_number": "27-3550-01",
-      "confirmed_failures": 2,
-      "fh_exposure": 12764.7,
-      "removal_rate_per_1000fh": 0.157,
+      "confirmed_failures": 1,
+      "fh_exposure": 13352.1,
+      "removal_rate_per_1000fh": 0.075,
       "type": "fighter",
       "name": "Flight control computer"
     },
     {
       "part_number": "28-2210-02",
       "confirmed_failures": 7,
-      "fh_exposure": 12772.4,
-      "removal_rate_per_1000fh": 0.548,
+      "fh_exposure": 13359.2,
+      "removal_rate_per_1000fh": 0.524,
       "type": "fighter",
       "name": "Fuel boost pump"
     },
     {
       "part_number": "28-2310-11",
-      "confirmed_failures": 7,
-      "fh_exposure": 27636.1,
-      "removal_rate_per_1000fh": 0.253,
+      "confirmed_failures": 8,
+      "fh_exposure": 27935.4,
+      "removal_rate_per_1000fh": 0.286,
       "type": "transport",
       "name": "Fuel boost pump"
     },
     {
       "part_number": "28-2310-21",
-      "confirmed_failures": 27,
-      "fh_exposure": 45736.5,
-      "removal_rate_per_1000fh": 0.59,
+      "confirmed_failures": 25,
+      "fh_exposure": 45058.0,
+      "removal_rate_per_1000fh": 0.555,
       "type": "airlifter",
       "name": "Fuel boost pump"
     },
     {
       "part_number": "29-1140-03",
-      "confirmed_failures": 24,
-      "fh_exposure": 12795.8,
-      "removal_rate_per_1000fh": 1.876,
+      "confirmed_failures": 16,
+      "fh_exposure": 13369.1,
+      "removal_rate_per_1000fh": 1.197,
       "type": "fighter",
       "name": "Engine-driven hydraulic pump"
     },
     {
       "part_number": "29-1210-11",
-      "confirmed_failures": 7,
-      "fh_exposure": 27632.0,
-      "removal_rate_per_1000fh": 0.253,
+      "confirmed_failures": 3,
+      "fh_exposure": 27922.5,
+      "removal_rate_per_1000fh": 0.107,
       "type": "transport",
       "name": "Engine-driven hydraulic pump"
     },
     {
       "part_number": "29-1210-21",
-      "confirmed_failures": 8,
-      "fh_exposure": 45665.8,
-      "removal_rate_per_1000fh": 0.175,
+      "confirmed_failures": 17,
+      "fh_exposure": 45036.1,
+      "removal_rate_per_1000fh": 0.377,
       "type": "airlifter",
       "name": "Engine-driven hydraulic pump"
     },
     {
       "part_number": "31-3110-11",
       "confirmed_failures": 2,
-      "fh_exposure": 13812.7,
-      "removal_rate_per_1000fh": 0.145,
+      "fh_exposure": 13962.9,
+      "removal_rate_per_1000fh": 0.143,
       "type": "transport",
       "name": "Flight data recorder"
     },
     {
       "part_number": "31-3110-21",
-      "confirmed_failures": 6,
-      "fh_exposure": 11424.9,
-      "removal_rate_per_1000fh": 0.525,
+      "confirmed_failures": 1,
+      "fh_exposure": 11249.7,
+      "removal_rate_per_1000fh": 0.089,
       "type": "airlifter",
       "name": "Flight data recorder"
     },
     {
       "part_number": "32-1120-05",
       "confirmed_failures": 0,
-      "fh_exposure": 25536.5,
+      "fh_exposure": 26711.2,
       "removal_rate_per_1000fh": 0.0,
       "type": "fighter",
       "name": "Main landing gear assembly"
@@ -1175,7 +1175,7 @@
     {
       "part_number": "32-1130-11",
       "confirmed_failures": 0,
-      "fh_exposure": 27622.8,
+      "fh_exposure": 27923.9,
       "removal_rate_per_1000fh": 0.0,
       "type": "transport",
       "name": "Main landing gear assembly"
@@ -1183,7 +1183,7 @@
     {
       "part_number": "32-1130-21",
       "confirmed_failures": 0,
-      "fh_exposure": 22830.9,
+      "fh_exposure": 22497.3,
       "removal_rate_per_1000fh": 0.0,
       "type": "airlifter",
       "name": "Main landing gear assembly"
@@ -1191,7 +1191,7 @@
     {
       "part_number": "32-2110-11",
       "confirmed_failures": 0,
-      "fh_exposure": 13813.2,
+      "fh_exposure": 13965.6,
       "removal_rate_per_1000fh": 0.0,
       "type": "transport",
       "name": "Nose landing gear assembly"
@@ -1199,143 +1199,143 @@
     {
       "part_number": "32-2110-21",
       "confirmed_failures": 0,
-      "fh_exposure": 11411.9,
+      "fh_exposure": 11253.9,
       "removal_rate_per_1000fh": 0.0,
       "type": "airlifter",
       "name": "Nose landing gear assembly"
     },
     {
       "part_number": "32-4210-02",
-      "confirmed_failures": 45,
-      "fh_exposure": 25576.1,
-      "removal_rate_per_1000fh": 1.759,
+      "confirmed_failures": 56,
+      "fh_exposure": 26759.3,
+      "removal_rate_per_1000fh": 2.093,
       "type": "fighter",
       "name": "Main wheel brake"
     },
     {
       "part_number": "32-4220-11",
-      "confirmed_failures": 25,
-      "fh_exposure": 27663.8,
-      "removal_rate_per_1000fh": 0.904,
+      "confirmed_failures": 15,
+      "fh_exposure": 27940.2,
+      "removal_rate_per_1000fh": 0.537,
       "type": "transport",
       "name": "Main wheel brake"
     },
     {
       "part_number": "32-4220-21",
-      "confirmed_failures": 16,
-      "fh_exposure": 22849.0,
-      "removal_rate_per_1000fh": 0.7,
+      "confirmed_failures": 11,
+      "fh_exposure": 22517.2,
+      "removal_rate_per_1000fh": 0.489,
       "type": "airlifter",
       "name": "Main wheel brake"
     },
     {
       "part_number": "32-4310-01",
-      "confirmed_failures": 266,
-      "fh_exposure": 25831.4,
-      "removal_rate_per_1000fh": 10.298,
+      "confirmed_failures": 274,
+      "fh_exposure": 27001.0,
+      "removal_rate_per_1000fh": 10.148,
       "type": "fighter",
       "name": "Main wheel tyre"
     },
     {
       "part_number": "32-4320-11",
-      "confirmed_failures": 117,
-      "fh_exposure": 27839.2,
-      "removal_rate_per_1000fh": 4.203,
+      "confirmed_failures": 132,
+      "fh_exposure": 28150.2,
+      "removal_rate_per_1000fh": 4.689,
       "type": "transport",
       "name": "Main wheel tyre"
     },
     {
       "part_number": "32-4320-21",
-      "confirmed_failures": 71,
-      "fh_exposure": 22976.2,
-      "removal_rate_per_1000fh": 3.09,
+      "confirmed_failures": 73,
+      "fh_exposure": 22638.3,
+      "removal_rate_per_1000fh": 3.225,
       "type": "airlifter",
       "name": "Main wheel tyre"
     },
     {
       "part_number": "34-1810-01",
-      "confirmed_failures": 3,
-      "fh_exposure": 12767.8,
-      "removal_rate_per_1000fh": 0.235,
+      "confirmed_failures": 4,
+      "fh_exposure": 13355.6,
+      "removal_rate_per_1000fh": 0.299,
       "type": "fighter",
       "name": "Inertial navigation unit"
     },
     {
       "part_number": "34-4110-11",
-      "confirmed_failures": 3,
-      "fh_exposure": 13815.5,
-      "removal_rate_per_1000fh": 0.217,
+      "confirmed_failures": 1,
+      "fh_exposure": 13960.8,
+      "removal_rate_per_1000fh": 0.072,
       "type": "transport",
       "name": "Weather radar"
     },
     {
       "part_number": "34-4110-21",
-      "confirmed_failures": 3,
-      "fh_exposure": 11418.3,
-      "removal_rate_per_1000fh": 0.263,
+      "confirmed_failures": 1,
+      "fh_exposure": 11251.1,
+      "removal_rate_per_1000fh": 0.089,
       "type": "airlifter",
       "name": "Weather radar"
     },
     {
       "part_number": "34-4410-02",
-      "confirmed_failures": 0,
-      "fh_exposure": 12767.0,
-      "removal_rate_per_1000fh": 0.0,
+      "confirmed_failures": 2,
+      "fh_exposure": 13360.7,
+      "removal_rate_per_1000fh": 0.15,
       "type": "fighter",
       "name": "Radar altimeter"
     },
     {
       "part_number": "34-4420-11",
-      "confirmed_failures": 7,
-      "fh_exposure": 13825.5,
-      "removal_rate_per_1000fh": 0.506,
+      "confirmed_failures": 3,
+      "fh_exposure": 13964.5,
+      "removal_rate_per_1000fh": 0.215,
       "type": "transport",
       "name": "Radio altimeter"
     },
     {
       "part_number": "34-4420-21",
-      "confirmed_failures": 2,
-      "fh_exposure": 11416.1,
-      "removal_rate_per_1000fh": 0.175,
+      "confirmed_failures": 0,
+      "fh_exposure": 11248.2,
+      "removal_rate_per_1000fh": 0.0,
       "type": "airlifter",
       "name": "Radio altimeter"
     },
     {
       "part_number": "49-1110-11",
       "confirmed_failures": 1,
-      "fh_exposure": 13810.5,
+      "fh_exposure": 13960.8,
       "removal_rate_per_1000fh": 0.072,
       "type": "transport",
       "name": "Auxiliary power unit"
     },
     {
       "part_number": "49-1110-21",
-      "confirmed_failures": 2,
-      "fh_exposure": 11414.8,
-      "removal_rate_per_1000fh": 0.175,
+      "confirmed_failures": 1,
+      "fh_exposure": 11253.9,
+      "removal_rate_per_1000fh": 0.089,
       "type": "airlifter",
       "name": "Auxiliary power unit"
     },
     {
       "part_number": "49-1210-01",
-      "confirmed_failures": 11,
-      "fh_exposure": 12777.3,
-      "removal_rate_per_1000fh": 0.861,
+      "confirmed_failures": 9,
+      "fh_exposure": 13361.1,
+      "removal_rate_per_1000fh": 0.674,
       "type": "fighter",
       "name": "Jet fuel starter"
     },
     {
       "part_number": "52-3410-21",
-      "confirmed_failures": 3,
-      "fh_exposure": 11418.9,
-      "removal_rate_per_1000fh": 0.263,
+      "confirmed_failures": 5,
+      "fh_exposure": 11261.1,
+      "removal_rate_per_1000fh": 0.444,
       "type": "airlifter",
       "name": "Cargo ramp actuator"
     },
     {
       "part_number": "61-1010-11",
       "confirmed_failures": 0,
-      "fh_exposure": 27630.2,
+      "fh_exposure": 27938.9,
       "removal_rate_per_1000fh": 0.0,
       "type": "transport",
       "name": "Propeller assembly"
@@ -1343,31 +1343,31 @@
     {
       "part_number": "61-1010-21",
       "confirmed_failures": 0,
-      "fh_exposure": 45674.9,
+      "fh_exposure": 45022.1,
       "removal_rate_per_1000fh": 0.0,
       "type": "airlifter",
       "name": "Propeller assembly"
     },
     {
       "part_number": "61-2210-11",
-      "confirmed_failures": 11,
-      "fh_exposure": 27641.6,
-      "removal_rate_per_1000fh": 0.398,
+      "confirmed_failures": 7,
+      "fh_exposure": 27931.9,
+      "removal_rate_per_1000fh": 0.251,
       "type": "transport",
       "name": "Propeller control unit"
     },
     {
       "part_number": "61-2210-21",
-      "confirmed_failures": 12,
-      "fh_exposure": 45674.4,
-      "removal_rate_per_1000fh": 0.263,
+      "confirmed_failures": 11,
+      "fh_exposure": 45022.4,
+      "removal_rate_per_1000fh": 0.244,
       "type": "airlifter",
       "name": "Propeller control unit"
     },
     {
       "part_number": "72-0001-10",
       "confirmed_failures": 0,
-      "fh_exposure": 12780.2,
+      "fh_exposure": 13366.6,
       "removal_rate_per_1000fh": 0.0,
       "type": "fighter",
       "name": "Engine"
@@ -1375,7 +1375,7 @@
     {
       "part_number": "72-0002-11",
       "confirmed_failures": 0,
-      "fh_exposure": 27633.8,
+      "fh_exposure": 27928.5,
       "removal_rate_per_1000fh": 0.0,
       "type": "transport",
       "name": "Engine (turboprop)"
@@ -1383,7 +1383,7 @@
     {
       "part_number": "72-0002-21",
       "confirmed_failures": 0,
-      "fh_exposure": 45675.3,
+      "fh_exposure": 45027.5,
       "removal_rate_per_1000fh": 0.0,
       "type": "airlifter",
       "name": "Engine (turboprop)"
@@ -1391,56 +1391,56 @@
     {
       "part_number": "72-5120-01",
       "confirmed_failures": 0,
-      "fh_exposure": 12776.4,
+      "fh_exposure": 13363.3,
       "removal_rate_per_1000fh": 0.0,
       "type": "fighter",
       "name": "HPT module (turbine disc LLP)"
     },
     {
       "part_number": "73-2110-01",
-      "confirmed_failures": 2,
-      "fh_exposure": 12765.1,
-      "removal_rate_per_1000fh": 0.157,
+      "confirmed_failures": 6,
+      "fh_exposure": 13359.0,
+      "removal_rate_per_1000fh": 0.449,
       "type": "fighter",
       "name": "Engine fuel control unit"
     },
     {
       "part_number": "73-2120-11",
-      "confirmed_failures": 8,
-      "fh_exposure": 27634.8,
-      "removal_rate_per_1000fh": 0.289,
+      "confirmed_failures": 4,
+      "fh_exposure": 27927.6,
+      "removal_rate_per_1000fh": 0.143,
       "type": "transport",
       "name": "Engine fuel control unit"
     },
     {
       "part_number": "73-2120-21",
-      "confirmed_failures": 6,
-      "fh_exposure": 45653.0,
-      "removal_rate_per_1000fh": 0.131,
+      "confirmed_failures": 5,
+      "fh_exposure": 45018.8,
+      "removal_rate_per_1000fh": 0.111,
       "type": "airlifter",
       "name": "Engine fuel control unit"
     },
     {
       "part_number": "79-1310-02",
-      "confirmed_failures": 2,
-      "fh_exposure": 12765.5,
-      "removal_rate_per_1000fh": 0.157,
+      "confirmed_failures": 5,
+      "fh_exposure": 13356.8,
+      "removal_rate_per_1000fh": 0.374,
       "type": "fighter",
       "name": "Engine lube oil pump"
     },
     {
       "part_number": "79-1320-11",
-      "confirmed_failures": 5,
-      "fh_exposure": 27627.1,
-      "removal_rate_per_1000fh": 0.181,
+      "confirmed_failures": 4,
+      "fh_exposure": 27926.3,
+      "removal_rate_per_1000fh": 0.143,
       "type": "transport",
       "name": "Engine lube oil pump"
     },
     {
       "part_number": "79-1320-21",
-      "confirmed_failures": 6,
-      "fh_exposure": 45658.0,
-      "removal_rate_per_1000fh": 0.131,
+      "confirmed_failures": 9,
+      "fh_exposure": 45020.2,
+      "removal_rate_per_1000fh": 0.2,
       "type": "airlifter",
       "name": "Engine lube oil pump"
     }
@@ -1450,23 +1450,23 @@
       "part_number": "29-1140-03",
       "type": "fighter",
       "lot": "L-2207",
-      "n_units": 30,
-      "events": 21,
-      "exposure_fh": 7149.8,
-      "rate_per_1000fh": 2.94,
-      "rest_of_fleet_rate_per_1000fh": 0.53,
-      "p_value_bonferroni": 0.00408,
+      "n_units": 24,
+      "events": 15,
+      "exposure_fh": 7285.5,
+      "rate_per_1000fh": 2.06,
+      "rest_of_fleet_rate_per_1000fh": 0.16,
+      "p_value_bonferroni": 0.00347,
       "flagged": true
     },
     {
       "part_number": "29-1140-03",
       "type": "fighter",
       "lot": "L-2312",
-      "n_units": 5,
+      "n_units": 6,
       "events": 1,
-      "exposure_fh": 2778.9,
-      "rate_per_1000fh": 0.36,
-      "rest_of_fleet_rate_per_1000fh": 2.3,
+      "exposure_fh": 3076.2,
+      "rate_per_1000fh": 0.33,
+      "rest_of_fleet_rate_per_1000fh": 1.46,
       "p_value_bonferroni": 1.0,
       "flagged": false
     },
@@ -1475,10 +1475,10 @@
       "type": "fighter",
       "lot": "L-2105",
       "n_units": 2,
-      "events": 1,
-      "exposure_fh": 618.2,
-      "rate_per_1000fh": 1.62,
-      "rest_of_fleet_rate_per_1000fh": 1.89,
+      "events": 0,
+      "exposure_fh": 1502.1,
+      "rate_per_1000fh": 0.0,
+      "rest_of_fleet_rate_per_1000fh": 1.35,
       "p_value_bonferroni": 1.0,
       "flagged": false
     },
@@ -1486,11 +1486,11 @@
       "part_number": "29-1140-03",
       "type": "fighter",
       "lot": "L-2301",
-      "n_units": 4,
-      "events": 1,
-      "exposure_fh": 2248.9,
-      "rate_per_1000fh": 0.44,
-      "rest_of_fleet_rate_per_1000fh": 2.18,
+      "n_units": 2,
+      "events": 0,
+      "exposure_fh": 1505.2,
+      "rate_per_1000fh": 0.0,
+      "rest_of_fleet_rate_per_1000fh": 1.35,
       "p_value_bonferroni": 1.0,
       "flagged": false
     }
@@ -1500,136 +1500,136 @@
       "part_number": "21-1005-01",
       "name": "ECS cooling turbine",
       "type": "fighter",
-      "time_ratio_full_hot_exposure": 0.556,
-      "p_value": 0.70792,
+      "time_ratio_full_hot_exposure": 0.282,
+      "p_value": 0.39824,
+      "flagged": false
+    },
+    {
+      "part_number": "24-2110-01",
+      "name": "Main generator",
+      "type": "fighter",
+      "time_ratio_full_hot_exposure": 0.323,
+      "p_value": 0.41504,
       "flagged": false
     },
     {
       "part_number": "27-3310-04",
       "name": "Horizontal stabilator actuator",
       "type": "fighter",
-      "time_ratio_full_hot_exposure": 167.034,
-      "p_value": 0.26782,
+      "time_ratio_full_hot_exposure": 2.837,
+      "p_value": 0.35574,
       "flagged": false
     },
     {
       "part_number": "28-2210-02",
       "name": "Fuel boost pump",
       "type": "fighter",
-      "time_ratio_full_hot_exposure": 1.557,
-      "p_value": 0.83837,
+      "time_ratio_full_hot_exposure": 2.177,
+      "p_value": 0.47281,
       "flagged": false
     },
     {
       "part_number": "29-1140-03",
       "name": "Engine-driven hydraulic pump",
       "type": "fighter",
-      "time_ratio_full_hot_exposure": 0.615,
-      "p_value": 0.80007,
+      "time_ratio_full_hot_exposure": 0.753,
+      "p_value": 0.78606,
       "flagged": false
     },
     {
       "part_number": "32-4210-02",
       "name": "Main wheel brake",
       "type": "fighter",
-      "time_ratio_full_hot_exposure": 1.75,
-      "p_value": 0.35695,
+      "time_ratio_full_hot_exposure": 2.0,
+      "p_value": 0.19919,
       "flagged": false
     },
     {
       "part_number": "32-4310-01",
       "name": "Main wheel tyre",
       "type": "fighter",
-      "time_ratio_full_hot_exposure": 1.002,
-      "p_value": 0.98341,
+      "time_ratio_full_hot_exposure": 1.258,
+      "p_value": 0.04934,
       "flagged": false
     },
     {
       "part_number": "49-1210-01",
       "name": "Jet fuel starter",
       "type": "fighter",
-      "time_ratio_full_hot_exposure": 2.222,
-      "p_value": 0.5255,
+      "time_ratio_full_hot_exposure": 0.258,
+      "p_value": 0.37802,
+      "flagged": false
+    },
+    {
+      "part_number": "73-2110-01",
+      "name": "Engine fuel control unit",
+      "type": "fighter",
+      "time_ratio_full_hot_exposure": 6.044,
+      "p_value": 0.43357,
       "flagged": false
     },
     {
       "part_number": "21-5110-21",
       "name": "ECS pack (air cycle machine)",
       "type": "airlifter",
-      "time_ratio_full_hot_exposure": 0.258,
-      "p_value": 0.10903,
-      "flagged": false
+      "time_ratio_full_hot_exposure": 0.137,
+      "p_value": 0.00105,
+      "flagged": true
     },
     {
       "part_number": "24-3110-21",
       "name": "Engine-driven generator",
       "type": "airlifter",
-      "time_ratio_full_hot_exposure": 0.259,
-      "p_value": 0.13593,
+      "time_ratio_full_hot_exposure": 0.789,
+      "p_value": 0.83853,
       "flagged": false
     },
     {
       "part_number": "28-2310-21",
       "name": "Fuel boost pump",
       "type": "airlifter",
-      "time_ratio_full_hot_exposure": 0.082,
-      "p_value": 0.00794,
-      "flagged": true
+      "time_ratio_full_hot_exposure": 0.756,
+      "p_value": 0.66245,
+      "flagged": false
     },
     {
       "part_number": "29-1210-21",
       "name": "Engine-driven hydraulic pump",
       "type": "airlifter",
-      "time_ratio_full_hot_exposure": 12.274,
-      "p_value": 0.1053,
-      "flagged": false
-    },
-    {
-      "part_number": "31-3110-21",
-      "name": "Flight data recorder",
-      "type": "airlifter",
-      "time_ratio_full_hot_exposure": 0.984,
-      "p_value": 0.99662,
+      "time_ratio_full_hot_exposure": 0.789,
+      "p_value": 0.81793,
       "flagged": false
     },
     {
       "part_number": "32-4220-21",
       "name": "Main wheel brake",
       "type": "airlifter",
-      "time_ratio_full_hot_exposure": 5.178,
-      "p_value": 0.25629,
+      "time_ratio_full_hot_exposure": 4.562,
+      "p_value": 0.12806,
       "flagged": false
     },
     {
       "part_number": "32-4320-21",
       "name": "Main wheel tyre",
       "type": "airlifter",
-      "time_ratio_full_hot_exposure": 1.145,
-      "p_value": 0.53443,
+      "time_ratio_full_hot_exposure": 1.659,
+      "p_value": 0.03431,
       "flagged": false
     },
     {
       "part_number": "61-2210-21",
       "name": "Propeller control unit",
       "type": "airlifter",
-      "time_ratio_full_hot_exposure": 22.554,
-      "p_value": 0.27578,
-      "flagged": false
-    },
-    {
-      "part_number": "73-2120-21",
-      "name": "Engine fuel control unit",
-      "type": "airlifter",
-      "time_ratio_full_hot_exposure": 0.473,
-      "p_value": 0.86315,
+      "time_ratio_full_hot_exposure": 2.036,
+      "p_value": 0.67914,
       "flagged": false
     },
     {
       "part_number": "79-1320-21",
       "name": "Engine lube oil pump",
       "type": "airlifter",
-      "time_ratio_full_hot_exposure": 7.743,
-      "p_value": 0.22032,
+      "time_ratio_full_hot_exposure": 0.881,
+      "p_value": 0.83734,
       "flagged": false
     }
   ],
@@ -1641,8 +1641,21 @@
       "detector": "repeat_nff",
       "count": 2,
       "window_days": 120,
-      "first_in_window": "2026-04-23",
-      "last_in_window": "2026-05-26",
+      "first_in_window": "2026-03-27",
+      "last_in_window": "2026-04-28",
+      "still_open": null,
+      "part_number": "34-4410-02",
+      "position": "1"
+    },
+    {
+      "tail": "FX-313",
+      "type": "fighter",
+      "ata": null,
+      "detector": "repeat_nff",
+      "count": 2,
+      "window_days": 120,
+      "first_in_window": "2021-12-27",
+      "last_in_window": "2022-02-22",
       "still_open": null,
       "part_number": "34-4410-02",
       "position": "1"
@@ -1654,8 +1667,8 @@
       "detector": "repeat_nff",
       "count": 2,
       "window_days": 120,
-      "first_in_window": "2026-05-11",
-      "last_in_window": "2026-07-03",
+      "first_in_window": "2026-06-08",
+      "last_in_window": "2026-06-29",
       "still_open": null,
       "part_number": "21-3120-11",
       "position": "1"

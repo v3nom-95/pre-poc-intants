@@ -327,3 +327,63 @@ ground truth or test outcomes.
 against 64). The Kaplan-Meier curve on the component page (`export.py`) is
 still drawn without delayed entry, so its steps sit above the
 truncation-aware Weibull overlay for parts with many pre-window units.
+
+## Simulator realism fixes, 22 Nov 2026 (second pass)
+
+Four generator problems were found while investigating a weak backtest, a
+near-empty transport queue and planted signals that were stronger than the
+spec. None of them is detector tuning; all of them are corrections to how the
+synthetic fleet is simulated.
+
+1. **Informative entry ages (left truncation).** Every on-condition and
+   condition-monitored unit already fitted at the start of the data window was
+   given an age equal to a fraction of its own hidden failure age. Entry age
+   was therefore proportional to remaining life, which violates the delayed
+   entry assumption and made fitted Weibull shapes look like a decreasing
+   hazard. The age is now drawn independently (uniform, 0 to 1 times the
+   part's characteristic life), and the damage threshold is conditioned on
+   survival to that age with the memoryless property of the exponential
+   threshold: `E = (age / eta)^beta + E`. Median fitted shape over planted
+   shape across part numbers moved from 0.66x (range 0.24 to 1.23) to about
+   1.0x. Test: `test_fitted_weibull_shape_recovers_planted_shape`.
+2. **Repaired units kept their old threshold.** A unit that failed early went
+   to the shop, came back with its age reset but the same threshold, and failed
+   again at the same short age. Shop repair now restores the unit to as good as
+   new with a fresh threshold. (Units returned after a no-fault-found removal
+   in the planted P4 and P8 sequences keep theirs: they were serviceable.)
+3. **One shared random stream per type.** Every draw (missions, durations,
+   thresholds, lots, repair times) came from a single sequence, so a change in
+   one component's failure timing shifted every later draw. That is why an
+   earlier attempt to strengthen P2 appeared to "break" P1: it produced a
+   different random fleet, not a causal effect. Every draw now comes from a
+   stream keyed by its purpose and its entity (tail and date for flying and
+   sorties, serial for unit thresholds and lots, serial and date for failures
+   and repairs). Test: `test_keyed_random_streams_are_order_independent`.
+4. **Oil precursor on the window edge.** P6 chip detector events were placed
+   exactly 50 FH before the failure, the edge of the detector's "within 50 FH"
+   window, so ordinary variation pushed them out. They now fall 5 to 45 FH
+   before the failure.
+
+**P5 and P9 at 3x.** The planted engines now deteriorate at 3x the fleet
+normal margin decay over their last 300 EFH (SPEC 3 and 14.4), instead of the
+roughly 10x previously needed to reach the limit from a normal margin. To make
+both targets hold at once, each planted engine came back from its last shop
+visit with a low margin: its whole trend since installation is rewritten
+continuously (normal decay, then 3x in the window), and each reading keeps the
+sensor noise it was simulated with. The turboprop ITT sensor noise is now
+sd 1.5 °C, the value SPEC section 4 gives for engine trend readings.
+
+**Trend projection fix (models/trends.py).** The projected EFH to the margin
+limit was computed from the last single reading, which carries the full sensor
+noise and moved the projection by tens of EFH between sorties. It now uses the
+Theil-Sen trend line at the latest EFH. Flagging thresholds are unchanged.
+
+**P2 power limit.** The hot-climate factors stay at 2.2x (ECS) and 1.8x (fuel
+boost pumps). An approximate power calculation from the actual event counts and
+the spread of hot-climate exposure (standard error of the AFT coefficient about
+1 / (shape x sd(hot share) x sqrt(events))) says the fighter ECS cooling
+turbine would need about a 10x factor and the fighter fuel boost pump about
+50x for even a 50% chance of p < 0.01. Those are not realistic. Transports
+are based at Base A only and have no hot exposure. P2 is recovered on the
+airlifter parts, which have more events and a wider spread of exposure; the
+fighter parts are reported honestly as under-powered at this fleet size.

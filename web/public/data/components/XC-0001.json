@@ -22,74 +22,67 @@
   "fh_to_tau_p90": null,
   "prob_fail_before_next_phase": null,
   "explanation": null,
-  "fleet_units": 7,
-  "fleet_confirmed_failures": 1,
+  "fleet_units": 6,
+  "fleet_confirmed_failures": 0,
   "install_history": [
     {
       "tail": "CX-501",
       "event_type": "Install",
-      "date": "1988-05-06",
+      "date": "2014-03-20",
       "reason": null,
       "serial": "XC-0001"
     }
   ],
   "survival_curve": [
     {
-      "fh": 0.0,
+      "fh": 1076.2,
       "survival": 1.0
     },
     {
-      "fh": 474.8,
+      "fh": 2766.7,
       "survival": 1.0
     },
     {
-      "fh": 592.5,
-      "survival": 0.1599
+      "fh": 2884.4,
+      "survival": 1.0
     },
     {
-      "fh": 1933.2,
-      "survival": 0.1599
+      "fh": 3776.8,
+      "survival": 1.0
     },
     {
-      "fh": 2215.6,
-      "survival": 0.097
+      "fh": 4554.4,
+      "survival": 1.0
     },
     {
-      "fh": 2526.1,
-      "survival": 0.097
+      "fh": 5500.8,
+      "survival": 1.0
     },
     {
-      "fh": 3681.0,
-      "survival": 0.097
+      "fh": 5537.9,
+      "survival": 1.0
     },
     {
-      "fh": 3810.2,
-      "survival": 0.097
+      "fh": 5879.3,
+      "survival": 1.0
     },
     {
-      "fh": 4461.6,
-      "survival": 0.097
+      "fh": 7295.2,
+      "survival": 1.0
     },
     {
-      "fh": 5531.9,
-      "survival": 0.097
+      "fh": 7969.7,
+      "survival": 1.0
     },
     {
-      "fh": 8149.4,
-      "survival": 0.0155
+      "fh": 8113.8,
+      "survival": 1.0
     },
     {
-      "fh": 9803.9,
-      "survival": 0.0155
-    },
-    {
-      "fh": 10165.5,
-      "survival": 0.0025
-    },
-    {
-      "fh": 12162.8,
-      "survival": 0.0025
+      "fh": 10120.2,
+      "survival": 1.0
     }
   ],
-  "survival_curve_method": "Breslow-Fleming-Harrington"
+  "survival_curve_method": "Kaplan-Meier",
+  "weibull_curve": []
 }

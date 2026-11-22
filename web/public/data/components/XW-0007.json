@@ -12,23 +12,23 @@
   "lot": null,
   "concept": "CM",
   "criticality": "mission",
-  "current_tail": "CX-502",
+  "current_tail": "CX-504",
   "current_position": "1",
   "governing_limit": null,
   "remaining": null,
-  "fh_exposure": 1589.6,
-  "fh_to_tau": 839.8,
-  "fh_to_tau_p10": 432.3,
-  "fh_to_tau_p90": 2277.0,
-  "prob_fail_before_next_phase": 0.04,
-  "explanation": "No significant covariate effect for this unit",
-  "fleet_units": 9,
-  "fleet_confirmed_failures": 3,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 7,
+  "fleet_confirmed_failures": 1,
   "install_history": [
     {
-      "tail": "CX-502",
+      "tail": "CX-504",
       "event_type": "Install",
-      "date": "2022-09-05",
+      "date": "2026-07-04",
       "reason": null,
       "serial": "XW-0007"
     }
@@ -39,65 +39,58 @@
       "survival": 1.0
     },
     {
-      "fh": 85.7,
+      "fh": 145.3,
       "survival": 1.0
     },
     {
-      "fh": 139.3,
-      "survival": 1.0
+      "fh": 329.1,
+      "survival": 0.1599
     },
     {
-      "fh": 375.1,
-      "survival": 0.6667
+      "fh": 643.1,
+      "survival": 0.1599
     },
     {
-      "fh": 1227.8,
-      "survival": 0.6667
+      "fh": 2193.1,
+      "survival": 0.097
     },
     {
-      "fh": 1420.1,
-      "survival": 0.6667
+      "fh": 2352.3,
+      "survival": 0.097
     },
     {
-      "fh": 1432.6,
-      "survival": 0.6667
+      "fh": 2430.8,
+      "survival": 0.097
     },
     {
-      "fh": 1589.6,
-      "survival": 0.6667
+      "fh": 3466.2,
+      "survival": 0.097
     },
     {
-      "fh": 2130.9,
-      "survival": 0.3333
+      "fh": 4113.5,
+      "survival": 0.097
     },
     {
-      "fh": 2450.5,
-      "survival": 0.3333
+      "fh": 4130.4,
+      "survival": 0.097
     },
     {
-      "fh": 3087.0,
-      "survival": 0.3333
+      "fh": 4604.0,
+      "survival": 0.097
     },
     {
-      "fh": 3275.3,
-      "survival": 0.3333
+      "fh": 5556.5,
+      "survival": 0.097
     },
     {
-      "fh": 3893.4,
-      "survival": 0.3333
+      "fh": 5938.6,
+      "survival": 0.097
     },
     {
-      "fh": 4545.5,
-      "survival": 0.3333
-    },
-    {
-      "fh": 5136.4,
-      "survival": 0.1667
-    },
-    {
-      "fh": 5744.4,
-      "survival": 0.1667
+      "fh": 6398.5,
+      "survival": 0.097
     }
   ],
-  "survival_curve_method": "Kaplan-Meier"
+  "survival_curve_method": "Breslow-Fleming-Harrington",
+  "weibull_curve": []
 }

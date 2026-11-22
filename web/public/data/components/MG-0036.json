@@ -6,16 +6,16 @@
   "type": "fighter",
   "type_name": "Multirole fighter",
   "key": "MLG",
-  "zone": "mlg-right",
+  "zone": "mlg-left",
   "task_card": "TC-32-01-01",
   "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "FX-309",
-  "current_position": "R",
+  "current_tail": "FX-310",
+  "current_position": "L",
   "governing_limit": "Calendar",
-  "remaining": 127.3,
+  "remaining": 114.3,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -26,13 +26,14 @@
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "FX-309",
+      "tail": "FX-310",
       "event_type": "Install",
-      "date": "2025-07-01",
+      "date": "2024-06-07",
       "reason": null,
       "serial": "MG-0036"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

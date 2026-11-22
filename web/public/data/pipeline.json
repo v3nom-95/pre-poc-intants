@@ -57,14 +57,14 @@
     {
       "check": "Engine operating hours equal EFH plus taxi and ground-run hours while installed (tol 0.1 h)",
       "pass": true,
-      "detail": "Reconciled the operating hours recorded at 38 engine removals against sortie hours, taxi time and logged ground runs for that engine position.",
+      "detail": "Reconciled the operating hours recorded at 31 engine removals against sortie hours, taxi time and logged ground runs for that engine position.",
       "count": 0
     }
   ],
   "ingestion_issues": {
-    "dates_normalised": 235,
-    "duplicate_sorties_removed": 94,
-    "durations_imputed": 47,
+    "dates_normalised": 240,
+    "duplicate_sorties_removed": 96,
+    "durations_imputed": 48,
     "ata_inferred": 3
   }
 }

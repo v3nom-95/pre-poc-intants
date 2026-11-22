@@ -15,7 +15,7 @@
   "current_tail": "FX-306",
   "current_position": "R",
   "governing_limit": "Calendar",
-  "remaining": 11.5,
+  "remaining": 50.5,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "FX-306",
       "event_type": "Install",
-      "date": "2015-12-27",
+      "date": "2019-03-11",
       "reason": null,
       "serial": "MG-0012"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

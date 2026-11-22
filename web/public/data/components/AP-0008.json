@@ -1,0 +1,112 @@
+{
+  "serial": "AP-0008",
+  "part_number": "49-1110-11",
+  "name": "Auxiliary power unit",
+  "ata": "49",
+  "type": "transport",
+  "type_name": "Twin-engine transport",
+  "key": "TR-APU",
+  "zone": "tail",
+  "task_card": "TC-49-02-02",
+  "exposure_unit": "APU hours",
+  "lot": null,
+  "concept": "OC",
+  "criticality": "mission",
+  "current_tail": "TX-408",
+  "current_position": "1",
+  "governing_limit": null,
+  "remaining": null,
+  "fh_exposure": null,
+  "fh_to_tau": null,
+  "fh_to_tau_p10": null,
+  "fh_to_tau_p90": null,
+  "prob_fail_before_next_phase": null,
+  "explanation": null,
+  "fleet_units": 9,
+  "fleet_confirmed_failures": 1,
+  "install_history": [
+    {
+      "tail": "TX-408",
+      "event_type": "Install",
+      "date": "2015-11-10",
+      "reason": null,
+      "serial": "AP-0008"
+    }
+  ],
+  "survival_curve": [
+    {
+      "fh": 0.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 236.7,
+      "survival": 1.0
+    },
+    {
+      "fh": 260.6,
+      "survival": 1.0
+    },
+    {
+      "fh": 738.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 839.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 871.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 952.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 1229.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 1324.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 1392.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 1403.4,
+      "survival": 1.0
+    },
+    {
+      "fh": 1415.5,
+      "survival": 1.0
+    },
+    {
+      "fh": 1563.0,
+      "survival": 1.0
+    },
+    {
+      "fh": 1822.3,
+      "survival": 1.0
+    },
+    {
+      "fh": 1904.9,
+      "survival": 1.0
+    },
+    {
+      "fh": 1956.2,
+      "survival": 1.0
+    },
+    {
+      "fh": 2549.1,
+      "survival": 1.0
+    },
+    {
+      "fh": 2855.0,
+      "survival": 0.0
+    }
+  ],
+  "survival_curve_method": "Kaplan-Meier",
+  "weibull_curve": []
+}

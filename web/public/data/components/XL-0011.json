@@ -12,10 +12,10 @@
   "lot": null,
   "concept": "HT",
   "criticality": "mission",
-  "current_tail": "CX-502",
+  "current_tail": "CX-501",
   "current_position": "1",
   "governing_limit": "Calendar",
-  "remaining": 18.5,
+  "remaining": 29.7,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -26,13 +26,14 @@
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "CX-502",
+      "tail": "CX-501",
       "event_type": "Install",
-      "date": "2024-06-14",
+      "date": "2025-05-14",
       "reason": null,
       "serial": "XL-0011"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

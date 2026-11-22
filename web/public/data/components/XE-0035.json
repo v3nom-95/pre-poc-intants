@@ -6,33 +6,34 @@
   "type": "airlifter",
   "type_name": "Four-engine airlifter",
   "key": "AL-ENGINE",
-  "zone": "engine-2",
+  "zone": "engine-4",
   "task_card": "TC-72-04-01",
   "exposure_unit": "FH",
   "lot": null,
   "concept": "HT",
   "criticality": "flight_safety",
-  "current_tail": "CX-506",
-  "current_position": "2",
+  "current_tail": "CX-505",
+  "current_position": "4",
   "governing_limit": "EFH",
-  "remaining": 3147.0,
+  "remaining": 3432.7,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
   "fh_to_tau_p90": null,
   "prob_fail_before_next_phase": null,
   "explanation": null,
-  "fleet_units": 39,
+  "fleet_units": 35,
   "fleet_confirmed_failures": 0,
   "install_history": [
     {
-      "tail": "CX-506",
+      "tail": "CX-505",
       "event_type": "Install",
-      "date": "2025-08-21",
+      "date": "2026-05-19",
       "reason": null,
       "serial": "XE-0035"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

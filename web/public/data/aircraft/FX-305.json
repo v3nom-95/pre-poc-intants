@@ -5,36 +5,14 @@
   "role": "Combat",
   "engines_fitted": 1,
   "base": "Base A",
-  "induction_date": "2009-08-11",
+  "induction_date": "2014-12-22",
   "ttl_fh": 6000.0,
   "planned_withdrawal_year": 2036,
-  "airframe_fh": 1888.4,
-  "landings": 1094,
-  "fi": 42.1,
-  "engine_serial": "EN-0027",
+  "airframe_fh": 4441.9,
+  "landings": 1566,
+  "fi": 63.8,
+  "engine_serial": "EN-0024",
   "components": [
-    {
-      "key": "FCC",
-      "ata": "27",
-      "component": "Flight control computer",
-      "position": "1",
-      "serial": "FC-0005",
-      "zone": "cockpit",
-      "task_card": "TC-27-02-02",
-      "criticality": "flight_safety",
-      "part_number": "27-3550-01",
-      "concept": "CM",
-      "hours_at_install": 2462.34,
-      "cycles_at_install": 0.0,
-      "landings_at_install": 0.0,
-      "install_date": "1999-08-07",
-      "governing_limit": null,
-      "remaining": null,
-      "fh_to_tau": 1399.0,
-      "prob_fail_before_next_phase": 0.013,
-      "exposure_unit": "FH",
-      "next_action": "None due"
-    },
     {
       "key": "STAB-ACT",
       "ata": "27",
@@ -46,36 +24,80 @@
       "criticality": "flight_safety",
       "part_number": "27-3310-04",
       "concept": "OC",
-      "hours_at_install": 2314.06,
+      "hours_at_install": 2444.0,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2013-01-06",
+      "install_date": "2014-12-22",
       "governing_limit": null,
       "remaining": null,
-      "fh_to_tau": 712.9,
-      "prob_fail_before_next_phase": 0.022,
+      "fh_to_tau": 103.2,
+      "prob_fail_before_next_phase": 0.143,
       "exposure_unit": "FH",
       "next_action": "None due"
     },
     {
-      "key": "GEN-MAIN",
-      "ata": "24",
-      "component": "Main generator",
+      "key": "FCC",
+      "ata": "27",
+      "component": "Flight control computer",
       "position": "1",
-      "serial": "GN-0005",
-      "zone": "engine-bay",
-      "task_card": "TC-24-01-02",
+      "serial": "FC-0005",
+      "zone": "cockpit",
+      "task_card": "TC-27-02-02",
       "criticality": "flight_safety",
-      "part_number": "24-2110-01",
-      "concept": "OC",
-      "hours_at_install": 852.3,
+      "part_number": "27-3550-01",
+      "concept": "CM",
+      "hours_at_install": 3791.87,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2015-03-01",
+      "install_date": "2014-12-22",
       "governing_limit": null,
       "remaining": null,
-      "fh_to_tau": 444.9,
-      "prob_fail_before_next_phase": 0.035,
+      "fh_to_tau": null,
+      "prob_fail_before_next_phase": null,
+      "exposure_unit": null,
+      "next_action": "None due"
+    },
+    {
+      "key": "FUEL-BOOST",
+      "ata": "28",
+      "component": "Fuel boost pump",
+      "position": "1",
+      "serial": "FB-0005",
+      "zone": "centre-fuselage",
+      "task_card": "TC-28-01-02",
+      "criticality": "flight_safety",
+      "part_number": "28-2210-02",
+      "concept": "OC",
+      "hours_at_install": 1983.12,
+      "cycles_at_install": 0.0,
+      "landings_at_install": 0.0,
+      "install_date": "2014-12-22",
+      "governing_limit": null,
+      "remaining": null,
+      "fh_to_tau": 40.1,
+      "prob_fail_before_next_phase": 0.334,
+      "exposure_unit": "FH",
+      "next_action": "Inspect (risk 33%)"
+    },
+    {
+      "key": "RADALT",
+      "ata": "34",
+      "component": "Radar altimeter",
+      "position": "1",
+      "serial": "RA-0005",
+      "zone": "fwd-underside",
+      "task_card": "TC-34-01-02",
+      "criticality": "mission",
+      "part_number": "34-4410-02",
+      "concept": "CM",
+      "hours_at_install": 3116.22,
+      "cycles_at_install": 0.0,
+      "landings_at_install": 0.0,
+      "install_date": "2014-12-22",
+      "governing_limit": null,
+      "remaining": null,
+      "fh_to_tau": 499.3,
+      "prob_fail_before_next_phase": 0.059,
       "exposure_unit": "FH",
       "next_action": "None due"
     },
@@ -90,80 +112,58 @@
       "criticality": "flight_safety",
       "part_number": "73-2110-01",
       "concept": "CM",
-      "hours_at_install": 1013.74,
+      "hours_at_install": 988.6,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2015-06-20",
+      "install_date": "2017-02-16",
       "governing_limit": null,
       "remaining": null,
-      "fh_to_tau": 1016.9,
-      "prob_fail_before_next_phase": 0.018,
-      "exposure_unit": "FH",
-      "next_action": "None due"
-    },
-    {
-      "key": "FUEL-BOOST",
-      "ata": "28",
-      "component": "Fuel boost pump",
-      "position": "1",
-      "serial": "FB-0005",
-      "zone": "centre-fuselage",
-      "task_card": "TC-28-01-02",
-      "criticality": "flight_safety",
-      "part_number": "28-2210-02",
-      "concept": "OC",
-      "hours_at_install": 942.59,
-      "cycles_at_install": 0.0,
-      "landings_at_install": 0.0,
-      "install_date": "2016-01-16",
-      "governing_limit": null,
-      "remaining": null,
-      "fh_to_tau": 150.2,
+      "fh_to_tau": 149.8,
       "prob_fail_before_next_phase": 0.1,
       "exposure_unit": "FH",
       "next_action": "None due"
     },
     {
-      "key": "RADALT",
-      "ata": "34",
-      "component": "Radar altimeter",
-      "position": "1",
-      "serial": "RA-0005",
-      "zone": "fwd-underside",
-      "task_card": "TC-34-01-02",
-      "criticality": "mission",
-      "part_number": "34-4410-02",
-      "concept": "CM",
-      "hours_at_install": 1469.7,
+      "key": "MLG",
+      "ata": "32",
+      "component": "Main landing gear assembly",
+      "position": "R",
+      "serial": "MG-0010",
+      "zone": "mlg-right",
+      "task_card": "TC-32-01-01",
+      "criticality": "flight_safety",
+      "part_number": "32-1120-05",
+      "concept": "HT",
+      "hours_at_install": 0.0,
       "cycles_at_install": 0.0,
-      "landings_at_install": 0.0,
-      "install_date": "2016-10-11",
-      "governing_limit": null,
-      "remaining": null,
+      "landings_at_install": 776.3,
+      "install_date": "2019-06-02",
+      "governing_limit": "Calendar",
+      "remaining": 53.2,
       "fh_to_tau": null,
       "prob_fail_before_next_phase": null,
       "exposure_unit": null,
-      "next_action": "None due"
+      "next_action": "Replace by 2031-03-31"
     },
     {
-      "key": "OIL-PUMP",
-      "ata": "79",
-      "component": "Engine lube oil pump",
+      "key": "GEN-MAIN",
+      "ata": "24",
+      "component": "Main generator",
       "position": "1",
-      "serial": "OP-0005",
+      "serial": "GN-0005",
       "zone": "engine-bay",
-      "task_card": "TC-79-01-02",
+      "task_card": "TC-24-01-02",
       "criticality": "flight_safety",
-      "part_number": "79-1310-02",
+      "part_number": "24-2110-01",
       "concept": "OC",
-      "hours_at_install": 788.19,
+      "hours_at_install": 500.01,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2016-10-23",
+      "install_date": "2019-06-23",
       "governing_limit": null,
       "remaining": null,
-      "fh_to_tau": 726.2,
-      "prob_fail_before_next_phase": 0.023,
+      "fh_to_tau": 164.2,
+      "prob_fail_before_next_phase": 0.091,
       "exposure_unit": "FH",
       "next_action": "None due"
     },
@@ -178,58 +178,102 @@
       "criticality": "mission",
       "part_number": "34-1810-01",
       "concept": "CM",
-      "hours_at_install": 1460.64,
+      "hours_at_install": 381.01,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2017-02-19",
+      "install_date": "2020-01-18",
       "governing_limit": null,
       "remaining": null,
-      "fh_to_tau": 2172.2,
-      "prob_fail_before_next_phase": 0.019,
+      "fh_to_tau": 740.4,
+      "prob_fail_before_next_phase": 0.045,
       "exposure_unit": "FH",
       "next_action": "None due"
     },
     {
-      "key": "MLG",
-      "ata": "32",
-      "component": "Main landing gear assembly",
-      "position": "L",
-      "serial": "MG-0009",
-      "zone": "mlg-left",
-      "task_card": "TC-32-01-01",
-      "criticality": "flight_safety",
-      "part_number": "32-1120-05",
-      "concept": "HT",
-      "hours_at_install": 0.0,
+      "key": "ECS-COOL",
+      "ata": "21",
+      "component": "ECS cooling turbine",
+      "position": "1",
+      "serial": "EC-0005",
+      "zone": "centre-fuselage",
+      "task_card": "TC-21-01-02",
+      "criticality": "mission",
+      "part_number": "21-1005-01",
+      "concept": "OC",
+      "hours_at_install": 253.32,
       "cycles_at_install": 0.0,
-      "landings_at_install": 2338.03,
-      "install_date": "2018-05-16",
-      "governing_limit": "Calendar",
-      "remaining": 40.5,
-      "fh_to_tau": null,
-      "prob_fail_before_next_phase": null,
-      "exposure_unit": null,
-      "next_action": "Replace by 2030-03-14"
+      "landings_at_install": 0.0,
+      "install_date": "2020-08-29",
+      "governing_limit": null,
+      "remaining": null,
+      "fh_to_tau": 184.4,
+      "prob_fail_before_next_phase": 0.166,
+      "exposure_unit": "FH",
+      "next_action": "None due"
+    },
+    {
+      "key": "JFS",
+      "ata": "49",
+      "component": "Jet fuel starter",
+      "position": "1",
+      "serial": "JF-0005",
+      "zone": "engine-bay",
+      "task_card": "TC-49-01-02",
+      "criticality": "mission",
+      "part_number": "49-1210-01",
+      "concept": "OC",
+      "hours_at_install": 166.15,
+      "cycles_at_install": 0.0,
+      "landings_at_install": 0.0,
+      "install_date": "2021-01-29",
+      "governing_limit": null,
+      "remaining": null,
+      "fh_to_tau": 375.2,
+      "prob_fail_before_next_phase": 0.082,
+      "exposure_unit": "FH",
+      "next_action": "None due"
     },
     {
       "key": "STAB-ACT",
       "ata": "27",
       "component": "Horizontal stabilator actuator",
       "position": "L",
-      "serial": "SA-0009",
+      "serial": "SA-0033",
       "zone": "stab-left",
       "task_card": "TC-27-01-02",
       "criticality": "flight_safety",
       "part_number": "27-3310-04",
       "concept": "OC",
-      "hours_at_install": 488.28,
+      "hours_at_install": 0.0,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2019-05-15",
+      "install_date": "2021-12-14",
       "governing_limit": null,
       "remaining": null,
-      "fh_to_tau": 687.1,
-      "prob_fail_before_next_phase": 0.023,
+      "fh_to_tau": 324.0,
+      "prob_fail_before_next_phase": 0.044,
+      "exposure_unit": "FH",
+      "next_action": "None due"
+    },
+    {
+      "key": "HYD-PUMP",
+      "ata": "29",
+      "component": "Engine-driven hydraulic pump",
+      "position": "1",
+      "serial": "HP-0020",
+      "zone": "engine-bay",
+      "task_card": "TC-29-01-02",
+      "criticality": "flight_safety",
+      "part_number": "29-1140-03",
+      "concept": "OC",
+      "hours_at_install": 0.0,
+      "cycles_at_install": 0.0,
+      "landings_at_install": 0.0,
+      "install_date": "2022-08-17",
+      "governing_limit": null,
+      "remaining": null,
+      "fh_to_tau": 159.1,
+      "prob_fail_before_next_phase": 0.094,
       "exposure_unit": "FH",
       "next_action": "None due"
     },
@@ -238,64 +282,42 @@
       "ata": "72",
       "component": "HPT module (turbine disc LLP)",
       "position": "1",
-      "serial": "HT-0005",
+      "serial": "HT-0020",
       "zone": "engine-bay",
       "task_card": "TC-72-02-01",
       "criticality": "flight_safety",
       "part_number": "72-5120-01",
       "concept": "HT",
       "hours_at_install": 0.0,
-      "cycles_at_install": 645.38,
+      "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2019-10-08",
+      "install_date": "2023-06-26",
       "governing_limit": "Cycles",
-      "remaining": 578.6,
+      "remaining": 1395.0,
       "fh_to_tau": null,
       "prob_fail_before_next_phase": null,
       "exposure_unit": null,
-      "next_action": "Replace by 2029-04-15"
+      "next_action": "Replace by 2030-05-19"
     },
     {
-      "key": "BRAKE",
-      "ata": "32",
-      "component": "Main wheel brake",
-      "position": "L",
-      "serial": "BR-0047",
-      "zone": "mlg-left",
-      "task_card": "TC-32-02-02",
-      "criticality": "flight_safety",
-      "part_number": "32-4210-02",
-      "concept": "OC",
-      "hours_at_install": 0.0,
-      "cycles_at_install": 0.0,
-      "landings_at_install": 0.0,
-      "install_date": "2023-06-04",
-      "governing_limit": null,
-      "remaining": null,
-      "fh_to_tau": 24.8,
-      "prob_fail_before_next_phase": 0.501,
-      "exposure_unit": "FH",
-      "next_action": "Inspect (risk 50%)"
-    },
-    {
-      "key": "ECS-COOL",
-      "ata": "21",
-      "component": "ECS cooling turbine",
+      "key": "OIL-PUMP",
+      "ata": "79",
+      "component": "Engine lube oil pump",
       "position": "1",
-      "serial": "EC-0020",
-      "zone": "centre-fuselage",
-      "task_card": "TC-21-01-02",
-      "criticality": "mission",
-      "part_number": "21-1005-01",
+      "serial": "OP-0019",
+      "zone": "engine-bay",
+      "task_card": "TC-79-01-02",
+      "criticality": "flight_safety",
+      "part_number": "79-1310-02",
       "concept": "OC",
       "hours_at_install": 0.0,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2023-12-18",
+      "install_date": "2023-07-01",
       "governing_limit": null,
       "remaining": null,
-      "fh_to_tau": 317.3,
-      "prob_fail_before_next_phase": 0.094,
+      "fh_to_tau": 660.4,
+      "prob_fail_before_next_phase": 0.012,
       "exposure_unit": "FH",
       "next_action": "None due"
     },
@@ -304,7 +326,7 @@
       "ata": "25",
       "component": "Ejection seat CAD/PAD set",
       "position": "1",
-      "serial": "CP-0030",
+      "serial": "CP-0036",
       "zone": "cockpit",
       "task_card": "TC-25-01-01",
       "criticality": "flight_safety",
@@ -326,7 +348,7 @@
       "ata": "72",
       "component": "Engine",
       "position": "1",
-      "serial": "EN-0027",
+      "serial": "EN-0024",
       "zone": "engine-bay",
       "task_card": "TC-72-01-01",
       "criticality": "flight_safety",
@@ -335,21 +357,43 @@
       "hours_at_install": 0.0,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2024-06-19",
+      "install_date": "2024-05-02",
       "governing_limit": "Cycles",
-      "remaining": 1527.0,
+      "remaining": 1214.0,
       "fh_to_tau": null,
       "prob_fail_before_next_phase": null,
       "exposure_unit": null,
-      "next_action": "Remove for overhaul by 2033-04-01"
+      "next_action": "Remove for overhaul by 2029-12-03"
+    },
+    {
+      "key": "BRAKE",
+      "ata": "32",
+      "component": "Main wheel brake",
+      "position": "L",
+      "serial": "BR-0068",
+      "zone": "mlg-left",
+      "task_card": "TC-32-02-02",
+      "criticality": "flight_safety",
+      "part_number": "32-4210-02",
+      "concept": "OC",
+      "hours_at_install": 0.0,
+      "cycles_at_install": 0.0,
+      "landings_at_install": 0.0,
+      "install_date": "2024-05-06",
+      "governing_limit": null,
+      "remaining": null,
+      "fh_to_tau": 24.4,
+      "prob_fail_before_next_phase": 0.505,
+      "exposure_unit": "FH",
+      "next_action": "Inspect (risk 50%)"
     },
     {
       "key": "MLG",
       "ata": "32",
       "component": "Main landing gear assembly",
-      "position": "R",
-      "serial": "MG-0033",
-      "zone": "mlg-right",
+      "position": "L",
+      "serial": "MG-0038",
+      "zone": "mlg-left",
       "task_card": "TC-32-01-01",
       "criticality": "flight_safety",
       "part_number": "32-1120-05",
@@ -357,35 +401,13 @@
       "hours_at_install": 0.0,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2024-08-15",
+      "install_date": "2024-07-21",
       "governing_limit": "Calendar",
-      "remaining": 116.6,
+      "remaining": 115.8,
       "fh_to_tau": null,
       "prob_fail_before_next_phase": null,
       "exposure_unit": null,
-      "next_action": "Replace by 2036-06-13"
-    },
-    {
-      "key": "HYD-PUMP",
-      "ata": "29",
-      "component": "Engine-driven hydraulic pump",
-      "position": "1",
-      "serial": "HP-0003",
-      "zone": "engine-bay",
-      "task_card": "TC-29-01-02",
-      "criticality": "flight_safety",
-      "part_number": "29-1140-03",
-      "concept": "OC",
-      "hours_at_install": 0.0,
-      "cycles_at_install": 0.0,
-      "landings_at_install": 0.0,
-      "install_date": "2026-02-09",
-      "governing_limit": null,
-      "remaining": null,
-      "fh_to_tau": 51.9,
-      "prob_fail_before_next_phase": 0.284,
-      "exposure_unit": "FH",
-      "next_action": "None due"
+      "next_action": "Replace by 2036-05-19"
     },
     {
       "key": "BRAKE",
@@ -401,64 +423,20 @@
       "hours_at_install": 0.0,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2026-03-03",
+      "install_date": "2025-07-31",
       "governing_limit": null,
       "remaining": null,
-      "fh_to_tau": 57.0,
-      "prob_fail_before_next_phase": 0.294,
+      "fh_to_tau": 33.9,
+      "prob_fail_before_next_phase": 0.414,
       "exposure_unit": "FH",
-      "next_action": "None due"
-    },
-    {
-      "key": "TYRE",
-      "ata": "32",
-      "component": "Main wheel tyre",
-      "position": "L",
-      "serial": "TY-0281",
-      "zone": "mlg-left",
-      "task_card": "TC-32-03-02",
-      "criticality": "mission",
-      "part_number": "32-4310-01",
-      "concept": "OC",
-      "hours_at_install": 0.0,
-      "cycles_at_install": 0.0,
-      "landings_at_install": 0.0,
-      "install_date": "2026-03-03",
-      "governing_limit": null,
-      "remaining": null,
-      "fh_to_tau": 7.8,
-      "prob_fail_before_next_phase": 1.0,
-      "exposure_unit": "FH",
-      "next_action": "Inspect (risk 100%)"
-    },
-    {
-      "key": "TYRE",
-      "ata": "32",
-      "component": "Main wheel tyre",
-      "position": "R",
-      "serial": "TY-0295",
-      "zone": "mlg-right",
-      "task_card": "TC-32-03-02",
-      "criticality": "mission",
-      "part_number": "32-4310-01",
-      "concept": "OC",
-      "hours_at_install": 0.0,
-      "cycles_at_install": 0.0,
-      "landings_at_install": 0.0,
-      "install_date": "2026-05-28",
-      "governing_limit": null,
-      "remaining": null,
-      "fh_to_tau": 16.3,
-      "prob_fail_before_next_phase": 1.0,
-      "exposure_unit": "FH",
-      "next_action": "Inspect (risk 100%)"
+      "next_action": "Inspect (risk 41%)"
     },
     {
       "key": "BATT-MAIN",
       "ata": "24",
       "component": "Main battery",
       "position": "1",
-      "serial": "BT-0054",
+      "serial": "BT-0049",
       "zone": "cockpit",
       "task_card": "TC-24-02-01",
       "criticality": "flight_safety",
@@ -467,1335 +445,1357 @@
       "hours_at_install": 0.0,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2026-08-21",
+      "install_date": "2026-03-02",
       "governing_limit": "Calendar",
-      "remaining": 21.1,
+      "remaining": 15.4,
       "fh_to_tau": null,
       "prob_fail_before_next_phase": null,
       "exposure_unit": null,
-      "next_action": "Replace by 2028-08-10"
+      "next_action": "Replace by 2028-02-20"
     },
     {
-      "key": "JFS",
-      "ata": "49",
-      "component": "Jet fuel starter",
-      "position": "1",
-      "serial": "JF-0016",
-      "zone": "engine-bay",
-      "task_card": "TC-49-01-02",
+      "key": "TYRE",
+      "ata": "32",
+      "component": "Main wheel tyre",
+      "position": "R",
+      "serial": "TY-0296",
+      "zone": "mlg-right",
+      "task_card": "TC-32-03-02",
       "criticality": "mission",
-      "part_number": "49-1210-01",
+      "part_number": "32-4310-01",
       "concept": "OC",
       "hours_at_install": 0.0,
       "cycles_at_install": 0.0,
       "landings_at_install": 0.0,
-      "install_date": "2026-11-10",
+      "install_date": "2026-07-14",
       "governing_limit": null,
       "remaining": null,
-      "fh_to_tau": 437.9,
-      "prob_fail_before_next_phase": 0.038,
+      "fh_to_tau": 16.6,
+      "prob_fail_before_next_phase": 0.998,
       "exposure_unit": "FH",
-      "next_action": "None due"
+      "next_action": "Inspect (risk 100%)"
+    },
+    {
+      "key": "TYRE",
+      "ata": "32",
+      "component": "Main wheel tyre",
+      "position": "L",
+      "serial": "TY-0297",
+      "zone": "mlg-left",
+      "task_card": "TC-32-03-02",
+      "criticality": "mission",
+      "part_number": "32-4310-01",
+      "concept": "OC",
+      "hours_at_install": 0.0,
+      "cycles_at_install": 0.0,
+      "landings_at_install": 0.0,
+      "install_date": "2026-08-01",
+      "governing_limit": null,
+      "remaining": null,
+      "fh_to_tau": 18.9,
+      "prob_fail_before_next_phase": 0.997,
+      "exposure_unit": "FH",
+      "next_action": "Inspect (risk 100%)"
     }
   ],
   "utilisation_monthly": [
     {
       "month": "2024-12",
-      "Air combat manoeuvring": 0.8,
-      "Air defence": 1.7,
+      "Air combat manoeuvring": 3.5,
+      "Air defence": 2.2,
       "Functional test flight": 0.0,
-      "General flying": 3.0,
-      "Ground attack": 2.2,
-      "Navigation / ferry": 2.1
+      "General flying": 2.8,
+      "Ground attack": 5.0,
+      "Navigation / ferry": 2.0
     },
     {
       "month": "2025-01",
-      "Air combat manoeuvring": 1.8,
+      "Air combat manoeuvring": 2.0,
       "Air defence": 0.0,
-      "Functional test flight": 0.7,
-      "General flying": 6.2,
-      "Ground attack": 1.3,
-      "Navigation / ferry": 0.0
-    },
-    {
-      "month": "2025-02",
-      "Air combat manoeuvring": 4.0,
-      "Air defence": 4.5,
-      "Functional test flight": 0.0,
-      "General flying": 2.4,
-      "Ground attack": 2.6,
-      "Navigation / ferry": 1.7
-    },
-    {
-      "month": "2025-03",
-      "Air combat manoeuvring": 4.4,
-      "Air defence": 0.0,
-      "Functional test flight": 2.8,
-      "General flying": 0.9,
-      "Ground attack": 3.9,
-      "Navigation / ferry": 0.0
-    },
-    {
-      "month": "2025-04",
-      "Air combat manoeuvring": 1.6,
-      "Air defence": 3.2,
-      "Functional test flight": 0.0,
-      "General flying": 0.0,
-      "Ground attack": 1.3,
-      "Navigation / ferry": 1.6
-    },
-    {
-      "month": "2025-05",
-      "Air combat manoeuvring": 2.9,
-      "Air defence": 3.1,
-      "Functional test flight": 0.0,
-      "General flying": 0.9,
-      "Ground attack": 4.1,
-      "Navigation / ferry": 0.0
-    },
-    {
-      "month": "2025-06",
-      "Air combat manoeuvring": 2.9,
-      "Air defence": 1.0,
       "Functional test flight": 0.8,
-      "General flying": 2.2,
-      "Ground attack": 3.2,
+      "General flying": 2.8,
+      "Ground attack": 1.3,
       "Navigation / ferry": 1.8
     },
     {
-      "month": "2025-07",
-      "Air combat manoeuvring": 4.6,
-      "Air defence": 4.0,
-      "Functional test flight": 0.0,
-      "General flying": 0.9,
-      "Ground attack": 0.0,
+      "month": "2025-02",
+      "Air combat manoeuvring": 2.8,
+      "Air defence": 1.2,
+      "Functional test flight": 1.6,
+      "General flying": 3.1,
+      "Ground attack": 5.4,
       "Navigation / ferry": 0.0
     },
     {
-      "month": "2025-08",
-      "Air combat manoeuvring": 1.1,
-      "Air defence": 1.4,
-      "Functional test flight": 0.7,
-      "General flying": 0.0,
+      "month": "2025-03",
+      "Air combat manoeuvring": 3.4,
+      "Air defence": 1.3,
+      "Functional test flight": 0.0,
+      "General flying": 2.1,
+      "Ground attack": 5.9,
+      "Navigation / ferry": 1.7
+    },
+    {
+      "month": "2025-04",
+      "Air combat manoeuvring": 3.2,
+      "Air defence": 4.0,
+      "Functional test flight": 2.3,
+      "General flying": 4.5,
       "Ground attack": 0.0,
+      "Navigation / ferry": 3.6
+    },
+    {
+      "month": "2025-05",
+      "Air combat manoeuvring": 1.1,
+      "Air defence": 1.0,
+      "Functional test flight": 0.6,
+      "General flying": 1.8,
+      "Ground attack": 0.0,
+      "Navigation / ferry": 1.5
+    },
+    {
+      "month": "2025-06",
+      "Air combat manoeuvring": 0.8,
+      "Air defence": 3.2,
+      "Functional test flight": 0.0,
+      "General flying": 2.7,
+      "Ground attack": 2.4,
+      "Navigation / ferry": 5.3
+    },
+    {
+      "month": "2025-07",
+      "Air combat manoeuvring": 0.0,
+      "Air defence": 4.5,
+      "Functional test flight": 2.2,
+      "General flying": 3.7,
+      "Ground attack": 1.4,
+      "Navigation / ferry": 3.4
+    },
+    {
+      "month": "2025-08",
+      "Air combat manoeuvring": 0.0,
+      "Air defence": 0.0,
+      "Functional test flight": 0.0,
+      "General flying": 2.8,
+      "Ground attack": 2.6,
       "Navigation / ferry": 0.0
     },
     {
       "month": "2025-09",
-      "Air combat manoeuvring": 2.4,
-      "Air defence": 5.1,
-      "Functional test flight": 0.0,
-      "General flying": 2.6,
-      "Ground attack": 3.3,
-      "Navigation / ferry": 0.0
+      "Air combat manoeuvring": 1.7,
+      "Air defence": 2.9,
+      "Functional test flight": 0.8,
+      "General flying": 2.0,
+      "Ground attack": 1.2,
+      "Navigation / ferry": 4.9
     },
     {
       "month": "2025-10",
-      "Air combat manoeuvring": 4.1,
-      "Air defence": 0.0,
-      "Functional test flight": 0.7,
-      "General flying": 2.9,
-      "Ground attack": 3.7,
-      "Navigation / ferry": 2.1
+      "Air combat manoeuvring": 2.4,
+      "Air defence": 3.4,
+      "Functional test flight": 1.9,
+      "General flying": 4.9,
+      "Ground attack": 4.8,
+      "Navigation / ferry": 2.2
     },
     {
       "month": "2025-11",
-      "Air combat manoeuvring": 3.8,
-      "Air defence": 4.4,
-      "Functional test flight": 1.4,
-      "General flying": 1.8,
-      "Ground attack": 1.0,
-      "Navigation / ferry": 3.7
+      "Air combat manoeuvring": 1.8,
+      "Air defence": 2.3,
+      "Functional test flight": 0.7,
+      "General flying": 3.8,
+      "Ground attack": 2.2,
+      "Navigation / ferry": 0.0
     },
     {
       "month": "2025-12",
-      "Air combat manoeuvring": 2.5,
-      "Air defence": 3.2,
-      "Functional test flight": 0.0,
-      "General flying": 1.9,
-      "Ground attack": 4.7,
-      "Navigation / ferry": 1.7
+      "Air combat manoeuvring": 3.8,
+      "Air defence": 4.3,
+      "Functional test flight": 0.8,
+      "General flying": 2.0,
+      "Ground attack": 6.1,
+      "Navigation / ferry": 3.9
     },
     {
       "month": "2026-01",
-      "Air combat manoeuvring": 1.0,
-      "Air defence": 2.8,
-      "Functional test flight": 0.0,
-      "General flying": 3.1,
+      "Air combat manoeuvring": 0.0,
+      "Air defence": 2.9,
+      "Functional test flight": 2.9,
+      "General flying": 3.2,
       "Ground attack": 0.0,
       "Navigation / ferry": 0.0
     },
     {
       "month": "2026-02",
-      "Air combat manoeuvring": 0.9,
-      "Air defence": 3.4,
-      "Functional test flight": 1.5,
-      "General flying": 3.9,
-      "Ground attack": 2.4,
-      "Navigation / ferry": 1.8
-    },
-    {
-      "month": "2026-03",
-      "Air combat manoeuvring": 0.8,
-      "Air defence": 3.8,
-      "Functional test flight": 0.7,
-      "General flying": 4.2,
-      "Ground attack": 2.6,
-      "Navigation / ferry": 4.0
-    },
-    {
-      "month": "2026-04",
-      "Air combat manoeuvring": 1.6,
-      "Air defence": 1.5,
-      "Functional test flight": 0.6,
-      "General flying": 3.3,
-      "Ground attack": 0.9,
-      "Navigation / ferry": 4.8
-    },
-    {
-      "month": "2026-05",
-      "Air combat manoeuvring": 2.0,
-      "Air defence": 0.0,
+      "Air combat manoeuvring": 2.4,
+      "Air defence": 1.9,
       "Functional test flight": 0.0,
-      "General flying": 4.7,
-      "Ground attack": 4.4,
-      "Navigation / ferry": 1.9
-    },
-    {
-      "month": "2026-06",
-      "Air combat manoeuvring": 1.7,
-      "Air defence": 1.4,
-      "Functional test flight": 0.0,
-      "General flying": 1.1,
-      "Ground attack": 3.0,
+      "General flying": 5.1,
+      "Ground attack": 5.4,
       "Navigation / ferry": 0.0
     },
     {
+      "month": "2026-03",
+      "Air combat manoeuvring": 6.8,
+      "Air defence": 2.6,
+      "Functional test flight": 2.6,
+      "General flying": 3.5,
+      "Ground attack": 1.1,
+      "Navigation / ferry": 0.0
+    },
+    {
+      "month": "2026-04",
+      "Air combat manoeuvring": 1.8,
+      "Air defence": 2.6,
+      "Functional test flight": 0.7,
+      "General flying": 3.0,
+      "Ground attack": 2.0,
+      "Navigation / ferry": 5.5
+    },
+    {
+      "month": "2026-05",
+      "Air combat manoeuvring": 1.8,
+      "Air defence": 0.0,
+      "Functional test flight": 0.7,
+      "General flying": 8.6,
+      "Ground attack": 2.7,
+      "Navigation / ferry": 4.5
+    },
+    {
+      "month": "2026-06",
+      "Air combat manoeuvring": 3.1,
+      "Air defence": 5.5,
+      "Functional test flight": 0.7,
+      "General flying": 2.7,
+      "Ground attack": 1.0,
+      "Navigation / ferry": 5.2
+    },
+    {
       "month": "2026-07",
-      "Air combat manoeuvring": 3.2,
-      "Air defence": 5.6,
-      "Functional test flight": 0.0,
-      "General flying": 0.8,
-      "Ground attack": 4.6,
+      "Air combat manoeuvring": 2.6,
+      "Air defence": 0.0,
+      "Functional test flight": 1.5,
+      "General flying": 2.3,
+      "Ground attack": 3.7,
       "Navigation / ferry": 0.0
     },
     {
       "month": "2026-08",
-      "Air combat manoeuvring": 0.9,
-      "Air defence": 0.0,
+      "Air combat manoeuvring": 2.0,
+      "Air defence": 4.5,
       "Functional test flight": 0.0,
-      "General flying": 1.9,
-      "Ground attack": 2.1,
-      "Navigation / ferry": 2.1
+      "General flying": 7.2,
+      "Ground attack": 1.2,
+      "Navigation / ferry": 1.4
     },
     {
       "month": "2026-09",
-      "Air combat manoeuvring": 1.6,
-      "Air defence": 1.5,
-      "Functional test flight": 0.0,
-      "General flying": 1.7,
-      "Ground attack": 3.5,
-      "Navigation / ferry": 0.0
+      "Air combat manoeuvring": 5.5,
+      "Air defence": 1.2,
+      "Functional test flight": 0.7,
+      "General flying": 1.2,
+      "Ground attack": 1.4,
+      "Navigation / ferry": 2.0
     },
     {
       "month": "2026-10",
-      "Air combat manoeuvring": 1.9,
-      "Air defence": 0.0,
+      "Air combat manoeuvring": 2.0,
+      "Air defence": 2.5,
       "Functional test flight": 0.0,
-      "General flying": 2.4,
-      "Ground attack": 3.5,
-      "Navigation / ferry": 5.0
+      "General flying": 3.9,
+      "Ground attack": 1.3,
+      "Navigation / ferry": 9.3
     },
     {
       "month": "2026-11",
       "Air combat manoeuvring": 0.0,
       "Air defence": 0.0,
       "Functional test flight": 0.0,
-      "General flying": 1.0,
-      "Ground attack": 0.0,
-      "Navigation / ferry": 1.9
+      "General flying": 2.4,
+      "Ground attack": 1.2,
+      "Navigation / ferry": 0.0
     }
   ],
   "fi_series": [
     {
-      "date": "2021-11-28",
-      "fi": 30.9
+      "date": "2021-11-29",
+      "fi": 49.8
     },
     {
-      "date": "2021-12-25",
-      "fi": 31.1
+      "date": "2021-12-31",
+      "fi": 50.0
     },
     {
-      "date": "2022-01-27",
-      "fi": 31.3
+      "date": "2022-01-30",
+      "fi": 50.3
     },
     {
-      "date": "2022-02-26",
-      "fi": 31.6
+      "date": "2022-02-27",
+      "fi": 50.5
     },
     {
       "date": "2022-03-31",
-      "fi": 31.7
+      "fi": 50.8
     },
     {
-      "date": "2022-04-28",
-      "fi": 31.8
+      "date": "2022-04-30",
+      "fi": 51.0
     },
     {
-      "date": "2022-05-28",
-      "fi": 32.0
+      "date": "2022-05-29",
+      "fi": 51.3
     },
     {
-      "date": "2022-06-30",
-      "fi": 32.3
+      "date": "2022-06-27",
+      "fi": 51.6
     },
     {
       "date": "2022-07-29",
-      "fi": 32.5
+      "fi": 51.7
     },
     {
-      "date": "2022-08-30",
-      "fi": 32.6
+      "date": "2022-08-17",
+      "fi": 51.8
     },
     {
-      "date": "2022-09-29",
-      "fi": 32.8
+      "date": "2022-09-26",
+      "fi": 52.0
     },
     {
       "date": "2022-10-31",
-      "fi": 33.0
+      "fi": 52.1
     },
     {
-      "date": "2022-11-28",
-      "fi": 33.3
+      "date": "2022-11-30",
+      "fi": 52.4
     },
     {
-      "date": "2022-12-30",
-      "fi": 33.6
+      "date": "2022-12-31",
+      "fi": 52.5
     },
     {
-      "date": "2023-01-30",
-      "fi": 33.7
+      "date": "2023-01-29",
+      "fi": 52.8
     },
     {
-      "date": "2023-02-26",
-      "fi": 34.0
+      "date": "2023-02-28",
+      "fi": 53.1
     },
     {
-      "date": "2023-03-29",
-      "fi": 34.2
+      "date": "2023-03-30",
+      "fi": 53.5
     },
     {
-      "date": "2023-04-29",
-      "fi": 34.2
+      "date": "2023-04-28",
+      "fi": 53.8
     },
     {
-      "date": "2023-05-28",
-      "fi": 34.4
+      "date": "2023-05-29",
+      "fi": 54.0
     },
     {
-      "date": "2023-06-28",
-      "fi": 34.5
+      "date": "2023-06-29",
+      "fi": 54.2
     },
     {
-      "date": "2023-07-22",
-      "fi": 34.7
+      "date": "2023-07-31",
+      "fi": 54.4
     },
     {
-      "date": "2023-08-31",
-      "fi": 34.9
+      "date": "2023-08-25",
+      "fi": 54.5
     },
     {
-      "date": "2023-09-29",
-      "fi": 35.1
+      "date": "2023-09-24",
+      "fi": 54.8
     },
     {
-      "date": "2023-10-31",
-      "fi": 35.3
+      "date": "2023-10-30",
+      "fi": 55.1
     },
     {
-      "date": "2023-11-26",
-      "fi": 35.5
+      "date": "2023-11-30",
+      "fi": 55.4
     },
     {
-      "date": "2023-12-26",
-      "fi": 35.5
+      "date": "2023-12-30",
+      "fi": 55.7
     },
     {
-      "date": "2024-01-30",
-      "fi": 35.7
+      "date": "2024-01-28",
+      "fi": 56.0
     },
     {
       "date": "2024-02-29",
-      "fi": 36.0
+      "fi": 56.2
     },
     {
-      "date": "2024-03-27",
-      "fi": 36.2
+      "date": "2024-03-25",
+      "fi": 56.5
     },
     {
-      "date": "2024-04-30",
-      "fi": 36.4
+      "date": "2024-04-20",
+      "fi": 56.7
     },
     {
-      "date": "2024-05-31",
-      "fi": 36.6
+      "date": "2024-05-30",
+      "fi": 57.0
     },
     {
-      "date": "2024-06-30",
-      "fi": 37.0
+      "date": "2024-06-29",
+      "fi": 57.3
     },
     {
-      "date": "2024-07-18",
-      "fi": 37.0
+      "date": "2024-07-29",
+      "fi": 57.5
     },
     {
-      "date": "2024-08-21",
-      "fi": 37.1
+      "date": "2024-08-28",
+      "fi": 57.6
     },
     {
       "date": "2024-09-29",
-      "fi": 37.3
+      "fi": 57.9
     },
     {
-      "date": "2024-10-29",
-      "fi": 37.5
+      "date": "2024-10-31",
+      "fi": 58.2
     },
     {
-      "date": "2024-11-28",
-      "fi": 37.7
+      "date": "2024-11-30",
+      "fi": 58.6
     },
     {
-      "date": "2024-12-30",
-      "fi": 37.8
+      "date": "2024-12-31",
+      "fi": 58.9
     },
     {
-      "date": "2025-01-28",
-      "fi": 38.0
+      "date": "2025-01-20",
+      "fi": 59.0
     },
     {
       "date": "2025-02-28",
-      "fi": 38.2
+      "fi": 59.2
     },
     {
-      "date": "2025-03-31",
-      "fi": 38.5
+      "date": "2025-03-30",
+      "fi": 59.5
     },
     {
-      "date": "2025-04-24",
-      "fi": 38.6
+      "date": "2025-04-30",
+      "fi": 59.8
     },
     {
-      "date": "2025-05-31",
-      "fi": 38.8
+      "date": "2025-05-29",
+      "fi": 59.9
     },
     {
-      "date": "2025-06-26",
-      "fi": 39.1
+      "date": "2025-06-28",
+      "fi": 60.0
     },
     {
       "date": "2025-07-31",
-      "fi": 39.3
+      "fi": 60.2
     },
     {
       "date": "2025-08-31",
-      "fi": 39.3
+      "fi": 60.3
     },
     {
-      "date": "2025-09-30",
-      "fi": 39.6
+      "date": "2025-09-23",
+      "fi": 60.5
     },
     {
-      "date": "2025-10-31",
-      "fi": 39.8
+      "date": "2025-10-29",
+      "fi": 60.8
     },
     {
-      "date": "2025-11-29",
-      "fi": 40.1
+      "date": "2025-11-30",
+      "fi": 61.0
     },
     {
-      "date": "2025-12-30",
-      "fi": 40.3
+      "date": "2025-12-29",
+      "fi": 61.4
     },
     {
-      "date": "2026-01-27",
-      "fi": 40.4
+      "date": "2026-01-31",
+      "fi": 61.5
     },
     {
       "date": "2026-02-28",
-      "fi": 40.6
+      "fi": 61.7
     },
     {
-      "date": "2026-03-29",
-      "fi": 40.9
+      "date": "2026-03-31",
+      "fi": 62.1
     },
     {
       "date": "2026-04-28",
-      "fi": 41.0
+      "fi": 62.3
     },
     {
-      "date": "2026-05-30",
-      "fi": 41.2
+      "date": "2026-05-31",
+      "fi": 62.5
     },
     {
-      "date": "2026-06-27",
-      "fi": 41.4
+      "date": "2026-06-29",
+      "fi": 62.8
     },
     {
-      "date": "2026-07-31",
-      "fi": 41.7
+      "date": "2026-07-29",
+      "fi": 63.0
     },
     {
-      "date": "2026-08-14",
-      "fi": 41.8
+      "date": "2026-08-31",
+      "fi": 63.3
     },
     {
-      "date": "2026-09-29",
-      "fi": 41.9
+      "date": "2026-09-21",
+      "fi": 63.5
     },
     {
-      "date": "2026-10-31",
-      "fi": 42.1
+      "date": "2026-10-29",
+      "fi": 63.7
     },
     {
-      "date": "2026-11-10",
-      "fi": 42.1
+      "date": "2026-11-15",
+      "fi": 63.8
     }
   ],
   "fatigue": {
     "tail": "FX-305",
     "type": "fighter",
-    "fi_now": 42.1,
-    "fh_trailing_12mo": 137.6,
-    "fi_per_fh": 0.0158,
-    "acm_share_trailing": 0.146,
+    "fi_now": 63.8,
+    "fh_trailing_12mo": 183.6,
+    "fi_per_fh": 0.0159,
+    "acm_share_trailing": 0.178,
     "heavy_mission": "Air combat manoeuvring",
     "relief_mission": "General flying",
-    "heavy_mission_share_trailing": 0.146,
+    "heavy_mission_share_trailing": 0.178,
     "fatigue_model": "g-loading per FH by mission",
-    "projected_fi100_date": "2053-07-05",
+    "projected_fi100_date": "2039-04-04",
     "planned_withdrawal_year": 2036,
     "flagged_before_withdrawal": false,
-    "life_gain_days_if_shifted": 1694.0,
-    "life_gain_days_if_acm_shifted": 1694.0
+    "life_gain_days_if_shifted": 803.0,
+    "life_gain_days_if_acm_shifted": 803.0
   },
   "engine_trend_points": [
     {
-      "efh": 84.5,
-      "margin": 57.13
-    },
-    {
-      "efh": 85.2,
-      "margin": 57.19
-    },
-    {
-      "efh": 85.8,
-      "margin": 56.08
-    },
-    {
-      "efh": 87.1,
-      "margin": 55.85
-    },
-    {
-      "efh": 88.6,
-      "margin": 52.57
-    },
-    {
-      "efh": 89.5,
-      "margin": 55.85
-    },
-    {
-      "efh": 90.5,
-      "margin": 55.0
-    },
-    {
-      "efh": 91.3,
-      "margin": 56.48
-    },
-    {
-      "efh": 92.2,
-      "margin": 55.19
-    },
-    {
-      "efh": 92.8,
-      "margin": 53.43
-    },
-    {
-      "efh": 93.6,
-      "margin": 53.86
-    },
-    {
-      "efh": 94.8,
-      "margin": 52.12
-    },
-    {
-      "efh": 95.6,
-      "margin": 53.4
-    },
-    {
-      "efh": 97.2,
-      "margin": 54.68
-    },
-    {
-      "efh": 98.6,
+      "efh": 219.5,
       "margin": 53.03
     },
     {
-      "efh": 99.5,
-      "margin": 55.42
+      "efh": 220.9,
+      "margin": 52.25
     },
     {
-      "efh": 101.1,
-      "margin": 52.96
-    },
-    {
-      "efh": 101.8,
-      "margin": 55.88
-    },
-    {
-      "efh": 103.3,
-      "margin": 51.76
-    },
-    {
-      "efh": 105.0,
-      "margin": 55.45
-    },
-    {
-      "efh": 106.4,
-      "margin": 55.29
-    },
-    {
-      "efh": 107.5,
-      "margin": 53.49
-    },
-    {
-      "efh": 109.0,
-      "margin": 55.18
-    },
-    {
-      "efh": 109.9,
-      "margin": 52.69
-    },
-    {
-      "efh": 111.2,
-      "margin": 52.14
-    },
-    {
-      "efh": 112.0,
-      "margin": 55.4
-    },
-    {
-      "efh": 113.5,
-      "margin": 52.57
-    },
-    {
-      "efh": 114.4,
-      "margin": 55.82
-    },
-    {
-      "efh": 115.4,
-      "margin": 53.96
-    },
-    {
-      "efh": 116.3,
-      "margin": 54.02
-    },
-    {
-      "efh": 117.1,
-      "margin": 56.53
-    },
-    {
-      "efh": 118.2,
-      "margin": 52.93
-    },
-    {
-      "efh": 120.0,
-      "margin": 54.22
-    },
-    {
-      "efh": 121.2,
-      "margin": 51.02
-    },
-    {
-      "efh": 122.0,
-      "margin": 52.79
-    },
-    {
-      "efh": 123.2,
-      "margin": 52.21
-    },
-    {
-      "efh": 124.5,
-      "margin": 52.0
-    },
-    {
-      "efh": 125.3,
-      "margin": 53.89
-    },
-    {
-      "efh": 126.4,
-      "margin": 53.58
-    },
-    {
-      "efh": 127.8,
-      "margin": 53.07
-    },
-    {
-      "efh": 128.7,
-      "margin": 54.35
-    },
-    {
-      "efh": 129.8,
-      "margin": 54.78
-    },
-    {
-      "efh": 131.3,
-      "margin": 54.54
-    },
-    {
-      "efh": 132.2,
-      "margin": 54.08
-    },
-    {
-      "efh": 133.1,
-      "margin": 56.29
-    },
-    {
-      "efh": 134.1,
-      "margin": 55.58
-    },
-    {
-      "efh": 135.2,
-      "margin": 54.34
-    },
-    {
-      "efh": 135.9,
-      "margin": 54.49
-    },
-    {
-      "efh": 137.1,
-      "margin": 52.46
-    },
-    {
-      "efh": 137.8,
-      "margin": 53.61
-    },
-    {
-      "efh": 139.2,
-      "margin": 55.34
-    },
-    {
-      "efh": 140.1,
-      "margin": 55.02
-    },
-    {
-      "efh": 142.0,
-      "margin": 55.29
-    },
-    {
-      "efh": 142.9,
-      "margin": 52.69
-    },
-    {
-      "efh": 143.8,
-      "margin": 50.75
-    },
-    {
-      "efh": 144.6,
-      "margin": 54.54
-    },
-    {
-      "efh": 145.4,
-      "margin": 55.19
-    },
-    {
-      "efh": 146.1,
-      "margin": 55.14
-    },
-    {
-      "efh": 147.3,
-      "margin": 53.72
-    },
-    {
-      "efh": 149.3,
-      "margin": 57.36
-    },
-    {
-      "efh": 151.2,
-      "margin": 52.79
-    },
-    {
-      "efh": 152.6,
-      "margin": 55.68
-    },
-    {
-      "efh": 153.7,
-      "margin": 52.28
-    },
-    {
-      "efh": 155.8,
-      "margin": 52.94
-    },
-    {
-      "efh": 156.9,
-      "margin": 53.5
-    },
-    {
-      "efh": 158.3,
-      "margin": 52.37
-    },
-    {
-      "efh": 159.6,
-      "margin": 54.58
-    },
-    {
-      "efh": 160.4,
-      "margin": 52.63
-    },
-    {
-      "efh": 161.3,
-      "margin": 50.99
-    },
-    {
-      "efh": 162.3,
-      "margin": 54.65
-    },
-    {
-      "efh": 163.2,
-      "margin": 51.21
-    },
-    {
-      "efh": 164.2,
-      "margin": 50.64
-    },
-    {
-      "efh": 165.2,
-      "margin": 53.71
-    },
-    {
-      "efh": 166.1,
-      "margin": 50.58
-    },
-    {
-      "efh": 167.7,
-      "margin": 54.0
-    },
-    {
-      "efh": 168.6,
-      "margin": 51.79
-    },
-    {
-      "efh": 169.5,
-      "margin": 55.08
-    },
-    {
-      "efh": 170.2,
-      "margin": 54.96
-    },
-    {
-      "efh": 171.2,
-      "margin": 53.93
-    },
-    {
-      "efh": 172.0,
-      "margin": 53.64
-    },
-    {
-      "efh": 173.7,
-      "margin": 54.45
-    },
-    {
-      "efh": 174.7,
-      "margin": 54.5
-    },
-    {
-      "efh": 175.7,
-      "margin": 54.6
-    },
-    {
-      "efh": 176.8,
-      "margin": 52.81
-    },
-    {
-      "efh": 177.4,
-      "margin": 52.15
-    },
-    {
-      "efh": 179.4,
-      "margin": 53.04
-    },
-    {
-      "efh": 180.4,
-      "margin": 55.17
-    },
-    {
-      "efh": 182.2,
-      "margin": 53.19
-    },
-    {
-      "efh": 183.0,
-      "margin": 55.01
-    },
-    {
-      "efh": 184.8,
-      "margin": 54.6
-    },
-    {
-      "efh": 185.8,
-      "margin": 52.55
-    },
-    {
-      "efh": 187.0,
-      "margin": 50.88
-    },
-    {
-      "efh": 188.4,
-      "margin": 54.84
-    },
-    {
-      "efh": 189.2,
-      "margin": 50.57
-    },
-    {
-      "efh": 190.9,
-      "margin": 55.29
-    },
-    {
-      "efh": 191.8,
-      "margin": 51.51
-    },
-    {
-      "efh": 193.5,
-      "margin": 51.27
-    },
-    {
-      "efh": 194.3,
-      "margin": 52.5
-    },
-    {
-      "efh": 195.3,
-      "margin": 52.1
-    },
-    {
-      "efh": 196.2,
-      "margin": 53.63
-    },
-    {
-      "efh": 197.3,
-      "margin": 52.56
-    },
-    {
-      "efh": 198.3,
-      "margin": 52.24
-    },
-    {
-      "efh": 199.3,
-      "margin": 52.06
-    },
-    {
-      "efh": 200.3,
-      "margin": 54.2
-    },
-    {
-      "efh": 201.3,
-      "margin": 54.78
-    },
-    {
-      "efh": 203.1,
-      "margin": 53.45
-    },
-    {
-      "efh": 204.2,
-      "margin": 51.29
-    },
-    {
-      "efh": 204.8,
-      "margin": 54.43
-    },
-    {
-      "efh": 206.6,
-      "margin": 49.47
-    },
-    {
-      "efh": 207.8,
-      "margin": 55.01
-    },
-    {
-      "efh": 209.2,
-      "margin": 50.65
-    },
-    {
-      "efh": 210.2,
-      "margin": 53.16
-    },
-    {
-      "efh": 211.1,
-      "margin": 53.54
-    },
-    {
-      "efh": 213.0,
-      "margin": 54.28
-    },
-    {
-      "efh": 213.9,
-      "margin": 50.42
-    },
-    {
-      "efh": 214.7,
-      "margin": 52.93
-    },
-    {
-      "efh": 216.0,
-      "margin": 51.43
-    },
-    {
-      "efh": 216.9,
-      "margin": 50.07
-    },
-    {
-      "efh": 218.2,
-      "margin": 53.1
-    },
-    {
-      "efh": 220.1,
-      "margin": 49.86
-    },
-    {
-      "efh": 221.1,
-      "margin": 54.64
-    },
-    {
-      "efh": 222.1,
-      "margin": 53.57
-    },
-    {
-      "efh": 224.3,
-      "margin": 52.28
-    },
-    {
-      "efh": 225.5,
-      "margin": 51.66
-    },
-    {
-      "efh": 226.7,
-      "margin": 50.89
-    },
-    {
-      "efh": 227.4,
-      "margin": 52.17
-    },
-    {
-      "efh": 228.1,
-      "margin": 53.45
-    },
-    {
-      "efh": 229.1,
-      "margin": 54.38
-    },
-    {
-      "efh": 230.1,
-      "margin": 51.66
-    },
-    {
-      "efh": 231.4,
-      "margin": 52.31
-    },
-    {
-      "efh": 232.8,
-      "margin": 54.1
-    },
-    {
-      "efh": 233.8,
-      "margin": 51.06
-    },
-    {
-      "efh": 235.3,
-      "margin": 51.82
-    },
-    {
-      "efh": 236.8,
-      "margin": 52.83
-    },
-    {
-      "efh": 237.7,
-      "margin": 50.74
-    },
-    {
-      "efh": 238.9,
-      "margin": 51.04
-    },
-    {
-      "efh": 240.0,
-      "margin": 55.16
-    },
-    {
-      "efh": 241.4,
-      "margin": 52.42
-    },
-    {
-      "efh": 242.2,
-      "margin": 53.66
-    },
-    {
-      "efh": 244.1,
-      "margin": 54.98
-    },
-    {
-      "efh": 245.1,
-      "margin": 50.7
-    },
-    {
-      "efh": 245.7,
-      "margin": 54.17
-    },
-    {
-      "efh": 246.4,
-      "margin": 52.02
-    },
-    {
-      "efh": 247.6,
-      "margin": 51.46
-    },
-    {
-      "efh": 248.7,
-      "margin": 52.07
-    },
-    {
-      "efh": 249.6,
-      "margin": 50.97
-    },
-    {
-      "efh": 250.5,
-      "margin": 51.76
-    },
-    {
-      "efh": 252.0,
-      "margin": 53.64
-    },
-    {
-      "efh": 253.0,
-      "margin": 52.15
-    },
-    {
-      "efh": 254.1,
-      "margin": 52.07
-    },
-    {
-      "efh": 254.9,
-      "margin": 52.78
-    },
-    {
-      "efh": 255.8,
-      "margin": 52.13
-    },
-    {
-      "efh": 256.8,
-      "margin": 51.18
-    },
-    {
-      "efh": 258.7,
-      "margin": 53.35
-    },
-    {
-      "efh": 259.5,
-      "margin": 52.26
-    },
-    {
-      "efh": 260.4,
-      "margin": 50.19
-    },
-    {
-      "efh": 261.7,
-      "margin": 50.75
-    },
-    {
-      "efh": 262.5,
-      "margin": 53.74
-    },
-    {
-      "efh": 263.5,
-      "margin": 52.95
-    },
-    {
-      "efh": 264.4,
-      "margin": 52.8
-    },
-    {
-      "efh": 265.9,
-      "margin": 52.37
-    },
-    {
-      "efh": 267.3,
-      "margin": 49.93
-    },
-    {
-      "efh": 268.0,
-      "margin": 53.41
-    },
-    {
-      "efh": 269.0,
-      "margin": 54.04
-    },
-    {
-      "efh": 270.1,
-      "margin": 51.14
-    },
-    {
-      "efh": 271.5,
-      "margin": 54.75
-    },
-    {
-      "efh": 272.6,
-      "margin": 51.2
-    },
-    {
-      "efh": 273.8,
-      "margin": 53.06
-    },
-    {
-      "efh": 275.0,
-      "margin": 51.92
-    },
-    {
-      "efh": 275.9,
-      "margin": 51.15
-    },
-    {
-      "efh": 277.6,
-      "margin": 51.97
-    },
-    {
-      "efh": 278.1,
-      "margin": 52.71
-    },
-    {
-      "efh": 279.2,
+      "efh": 222.2,
       "margin": 54.21
     },
     {
-      "efh": 280.0,
-      "margin": 50.49
+      "efh": 223.2,
+      "margin": 52.3
     },
     {
-      "efh": 281.0,
-      "margin": 54.97
+      "efh": 224.1,
+      "margin": 54.09
     },
     {
-      "efh": 282.1,
-      "margin": 55.34
+      "efh": 224.9,
+      "margin": 52.69
     },
     {
-      "efh": 283.1,
-      "margin": 51.28
+      "efh": 226.0,
+      "margin": 51.54
     },
     {
-      "efh": 285.2,
-      "margin": 50.86
+      "efh": 226.8,
+      "margin": 51.63
     },
     {
-      "efh": 286.3,
-      "margin": 54.39
+      "efh": 227.6,
+      "margin": 50.16
     },
     {
-      "efh": 287.1,
-      "margin": 51.24
+      "efh": 229.1,
+      "margin": 52.93
     },
     {
-      "efh": 288.0,
-      "margin": 53.2
+      "efh": 230.7,
+      "margin": 50.93
     },
     {
-      "efh": 289.5,
-      "margin": 51.62
+      "efh": 231.9,
+      "margin": 55.01
     },
     {
-      "efh": 290.5,
-      "margin": 50.91
+      "efh": 233.3,
+      "margin": 49.89
     },
     {
-      "efh": 291.8,
-      "margin": 52.07
-    },
-    {
-      "efh": 292.7,
-      "margin": 52.18
-    },
-    {
-      "efh": 293.7,
-      "margin": 55.45
-    },
-    {
-      "efh": 294.4,
-      "margin": 52.63
-    },
-    {
-      "efh": 295.5,
-      "margin": 53.89
-    },
-    {
-      "efh": 296.6,
+      "efh": 234.1,
       "margin": 53.83
     },
     {
-      "efh": 297.8,
-      "margin": 49.83
+      "efh": 235.5,
+      "margin": 52.39
     },
     {
-      "efh": 299.6,
+      "efh": 236.5,
+      "margin": 55.28
+    },
+    {
+      "efh": 238.3,
+      "margin": 51.81
+    },
+    {
+      "efh": 239.2,
+      "margin": 50.69
+    },
+    {
+      "efh": 240.4,
+      "margin": 55.15
+    },
+    {
+      "efh": 241.2,
+      "margin": 54.11
+    },
+    {
+      "efh": 242.8,
+      "margin": 52.81
+    },
+    {
+      "efh": 244.0,
+      "margin": 52.84
+    },
+    {
+      "efh": 244.8,
+      "margin": 51.48
+    },
+    {
+      "efh": 246.1,
+      "margin": 51.43
+    },
+    {
+      "efh": 246.9,
+      "margin": 51.79
+    },
+    {
+      "efh": 248.2,
+      "margin": 55.78
+    },
+    {
+      "efh": 250.0,
+      "margin": 54.14
+    },
+    {
+      "efh": 250.7,
+      "margin": 51.9
+    },
+    {
+      "efh": 251.7,
+      "margin": 53.6
+    },
+    {
+      "efh": 252.4,
+      "margin": 51.72
+    },
+    {
+      "efh": 254.6,
+      "margin": 51.52
+    },
+    {
+      "efh": 255.4,
+      "margin": 53.14
+    },
+    {
+      "efh": 256.4,
+      "margin": 51.34
+    },
+    {
+      "efh": 257.8,
+      "margin": 52.53
+    },
+    {
+      "efh": 258.9,
+      "margin": 52.98
+    },
+    {
+      "efh": 259.9,
+      "margin": 51.46
+    },
+    {
+      "efh": 260.7,
+      "margin": 52.48
+    },
+    {
+      "efh": 261.9,
+      "margin": 50.31
+    },
+    {
+      "efh": 262.6,
+      "margin": 52.35
+    },
+    {
+      "efh": 263.7,
+      "margin": 55.16
+    },
+    {
+      "efh": 264.8,
       "margin": 50.54
     },
     {
-      "efh": 300.9,
-      "margin": 53.1
+      "efh": 266.0,
+      "margin": 51.75
     },
     {
-      "efh": 302.6,
-      "margin": 53.22
+      "efh": 266.7,
+      "margin": 49.91
     },
     {
-      "efh": 303.8,
-      "margin": 49.18
+      "efh": 267.8,
+      "margin": 57.21
     },
     {
-      "efh": 304.8,
+      "efh": 268.6,
+      "margin": 51.82
+    },
+    {
+      "efh": 269.7,
+      "margin": 51.36
+    },
+    {
+      "efh": 270.6,
+      "margin": 53.35
+    },
+    {
+      "efh": 271.7,
+      "margin": 50.37
+    },
+    {
+      "efh": 272.7,
+      "margin": 52.32
+    },
+    {
+      "efh": 274.1,
+      "margin": 52.71
+    },
+    {
+      "efh": 274.9,
+      "margin": 52.36
+    },
+    {
+      "efh": 276.0,
+      "margin": 51.03
+    },
+    {
+      "efh": 277.1,
+      "margin": 51.81
+    },
+    {
+      "efh": 278.5,
+      "margin": 53.87
+    },
+    {
+      "efh": 279.5,
+      "margin": 50.74
+    },
+    {
+      "efh": 280.4,
+      "margin": 52.65
+    },
+    {
+      "efh": 281.5,
+      "margin": 52.03
+    },
+    {
+      "efh": 282.3,
+      "margin": 52.45
+    },
+    {
+      "efh": 283.4,
+      "margin": 51.96
+    },
+    {
+      "efh": 284.1,
+      "margin": 51.24
+    },
+    {
+      "efh": 285.6,
+      "margin": 50.27
+    },
+    {
+      "efh": 287.6,
+      "margin": 52.35
+    },
+    {
+      "efh": 289.5,
+      "margin": 53.25
+    },
+    {
+      "efh": 290.1,
+      "margin": 52.62
+    },
+    {
+      "efh": 290.8,
+      "margin": 51.14
+    },
+    {
+      "efh": 292.2,
+      "margin": 52.74
+    },
+    {
+      "efh": 293.1,
+      "margin": 52.76
+    },
+    {
+      "efh": 294.2,
+      "margin": 50.72
+    },
+    {
+      "efh": 295.5,
+      "margin": 54.18
+    },
+    {
+      "efh": 296.9,
+      "margin": 49.88
+    },
+    {
+      "efh": 297.7,
+      "margin": 51.4
+    },
+    {
+      "efh": 298.6,
+      "margin": 54.41
+    },
+    {
+      "efh": 299.5,
+      "margin": 49.66
+    },
+    {
+      "efh": 300.6,
+      "margin": 53.55
+    },
+    {
+      "efh": 302.4,
+      "margin": 52.53
+    },
+    {
+      "efh": 303.4,
+      "margin": 52.87
+    },
+    {
+      "efh": 304.3,
+      "margin": 53.55
+    },
+    {
+      "efh": 305.3,
+      "margin": 51.61
+    },
+    {
+      "efh": 306.1,
+      "margin": 52.43
+    },
+    {
+      "efh": 307.1,
+      "margin": 52.98
+    },
+    {
+      "efh": 307.7,
+      "margin": 50.83
+    },
+    {
+      "efh": 309.0,
+      "margin": 52.44
+    },
+    {
+      "efh": 310.3,
+      "margin": 49.93
+    },
+    {
+      "efh": 311.0,
+      "margin": 52.94
+    },
+    {
+      "efh": 311.9,
+      "margin": 49.25
+    },
+    {
+      "efh": 313.3,
+      "margin": 54.04
+    },
+    {
+      "efh": 314.4,
+      "margin": 52.51
+    },
+    {
+      "efh": 315.3,
+      "margin": 50.88
+    },
+    {
+      "efh": 315.9,
+      "margin": 49.85
+    },
+    {
+      "efh": 317.2,
+      "margin": 51.45
+    },
+    {
+      "efh": 318.4,
+      "margin": 52.46
+    },
+    {
+      "efh": 319.6,
+      "margin": 50.04
+    },
+    {
+      "efh": 320.7,
+      "margin": 52.19
+    },
+    {
+      "efh": 321.4,
       "margin": 52.85
     },
     {
-      "efh": 305.7,
-      "margin": 52.06
+      "efh": 322.5,
+      "margin": 51.13
     },
     {
-      "efh": 306.8,
-      "margin": 50.22
+      "efh": 323.5,
+      "margin": 50.1
     },
     {
-      "efh": 308.3,
-      "margin": 50.67
+      "efh": 324.5,
+      "margin": 52.49
     },
     {
-      "efh": 309.4,
+      "efh": 325.3,
+      "margin": 53.68
+    },
+    {
+      "efh": 326.7,
+      "margin": 50.1
+    },
+    {
+      "efh": 327.2,
+      "margin": 47.81
+    },
+    {
+      "efh": 328.3,
+      "margin": 52.5
+    },
+    {
+      "efh": 328.9,
+      "margin": 49.7
+    },
+    {
+      "efh": 329.8,
+      "margin": 48.58
+    },
+    {
+      "efh": 330.7,
+      "margin": 52.11
+    },
+    {
+      "efh": 331.6,
+      "margin": 50.32
+    },
+    {
+      "efh": 333.4,
+      "margin": 52.57
+    },
+    {
+      "efh": 334.4,
+      "margin": 48.49
+    },
+    {
+      "efh": 335.4,
+      "margin": 49.43
+    },
+    {
+      "efh": 337.5,
+      "margin": 50.93
+    },
+    {
+      "efh": 338.6,
+      "margin": 50.99
+    },
+    {
+      "efh": 340.0,
+      "margin": 50.27
+    },
+    {
+      "efh": 341.7,
+      "margin": 51.91
+    },
+    {
+      "efh": 342.5,
+      "margin": 50.98
+    },
+    {
+      "efh": 343.2,
+      "margin": 52.19
+    },
+    {
+      "efh": 344.3,
+      "margin": 54.08
+    },
+    {
+      "efh": 345.5,
+      "margin": 53.06
+    },
+    {
+      "efh": 346.7,
+      "margin": 51.67
+    },
+    {
+      "efh": 347.9,
+      "margin": 48.03
+    },
+    {
+      "efh": 348.9,
+      "margin": 53.3
+    },
+    {
+      "efh": 350.2,
       "margin": 53.05
     },
     {
-      "efh": 311.2,
-      "margin": 51.13
+      "efh": 351.0,
+      "margin": 51.04
+    },
+    {
+      "efh": 351.8,
+      "margin": 50.55
+    },
+    {
+      "efh": 353.6,
+      "margin": 52.33
+    },
+    {
+      "efh": 355.0,
+      "margin": 49.38
+    },
+    {
+      "efh": 355.8,
+      "margin": 50.49
+    },
+    {
+      "efh": 356.9,
+      "margin": 51.89
+    },
+    {
+      "efh": 358.2,
+      "margin": 51.27
+    },
+    {
+      "efh": 359.7,
+      "margin": 50.38
+    },
+    {
+      "efh": 360.7,
+      "margin": 52.27
+    },
+    {
+      "efh": 361.9,
+      "margin": 51.78
+    },
+    {
+      "efh": 362.8,
+      "margin": 54.43
+    },
+    {
+      "efh": 363.9,
+      "margin": 51.41
+    },
+    {
+      "efh": 364.6,
+      "margin": 50.55
+    },
+    {
+      "efh": 365.3,
+      "margin": 54.06
+    },
+    {
+      "efh": 366.1,
+      "margin": 50.95
+    },
+    {
+      "efh": 367.0,
+      "margin": 48.77
+    },
+    {
+      "efh": 368.3,
+      "margin": 52.05
+    },
+    {
+      "efh": 369.8,
+      "margin": 50.01
+    },
+    {
+      "efh": 371.0,
+      "margin": 49.19
+    },
+    {
+      "efh": 372.8,
+      "margin": 50.4
+    },
+    {
+      "efh": 373.7,
+      "margin": 51.17
+    },
+    {
+      "efh": 375.2,
+      "margin": 54.07
+    },
+    {
+      "efh": 376.0,
+      "margin": 54.07
+    },
+    {
+      "efh": 377.6,
+      "margin": 52.0
+    },
+    {
+      "efh": 378.6,
+      "margin": 50.33
+    },
+    {
+      "efh": 379.3,
+      "margin": 51.17
+    },
+    {
+      "efh": 380.3,
+      "margin": 51.39
+    },
+    {
+      "efh": 382.2,
+      "margin": 49.66
+    },
+    {
+      "efh": 383.4,
+      "margin": 52.29
+    },
+    {
+      "efh": 384.2,
+      "margin": 47.27
+    },
+    {
+      "efh": 385.5,
+      "margin": 53.88
+    },
+    {
+      "efh": 386.2,
+      "margin": 49.78
+    },
+    {
+      "efh": 387.4,
+      "margin": 51.6
+    },
+    {
+      "efh": 388.5,
+      "margin": 50.73
+    },
+    {
+      "efh": 389.5,
+      "margin": 53.01
+    },
+    {
+      "efh": 390.8,
+      "margin": 53.27
+    },
+    {
+      "efh": 391.6,
+      "margin": 52.24
+    },
+    {
+      "efh": 392.3,
+      "margin": 52.09
+    },
+    {
+      "efh": 393.2,
+      "margin": 49.06
+    },
+    {
+      "efh": 394.1,
+      "margin": 50.75
+    },
+    {
+      "efh": 395.6,
+      "margin": 51.31
+    },
+    {
+      "efh": 397.6,
+      "margin": 51.43
+    },
+    {
+      "efh": 398.9,
+      "margin": 50.73
+    },
+    {
+      "efh": 400.0,
+      "margin": 50.67
+    },
+    {
+      "efh": 401.1,
+      "margin": 50.69
+    },
+    {
+      "efh": 402.2,
+      "margin": 53.06
+    },
+    {
+      "efh": 403.0,
+      "margin": 52.85
+    },
+    {
+      "efh": 403.9,
+      "margin": 53.91
+    },
+    {
+      "efh": 405.3,
+      "margin": 52.81
+    },
+    {
+      "efh": 406.5,
+      "margin": 50.75
+    },
+    {
+      "efh": 407.6,
+      "margin": 54.32
+    },
+    {
+      "efh": 408.7,
+      "margin": 51.79
+    },
+    {
+      "efh": 409.7,
+      "margin": 49.53
+    },
+    {
+      "efh": 410.6,
+      "margin": 50.42
+    },
+    {
+      "efh": 411.5,
+      "margin": 49.34
+    },
+    {
+      "efh": 412.7,
+      "margin": 48.12
+    },
+    {
+      "efh": 413.9,
+      "margin": 48.54
+    },
+    {
+      "efh": 416.0,
+      "margin": 51.47
+    },
+    {
+      "efh": 417.3,
+      "margin": 51.27
+    },
+    {
+      "efh": 418.4,
+      "margin": 49.09
+    },
+    {
+      "efh": 419.2,
+      "margin": 53.5
+    },
+    {
+      "efh": 420.0,
+      "margin": 51.76
+    },
+    {
+      "efh": 420.7,
+      "margin": 49.7
+    },
+    {
+      "efh": 421.6,
+      "margin": 53.54
+    },
+    {
+      "efh": 422.7,
+      "margin": 51.6
+    },
+    {
+      "efh": 424.2,
+      "margin": 50.12
+    },
+    {
+      "efh": 425.5,
+      "margin": 49.41
+    },
+    {
+      "efh": 426.3,
+      "margin": 50.41
+    },
+    {
+      "efh": 427.3,
+      "margin": 50.51
+    },
+    {
+      "efh": 428.2,
+      "margin": 50.63
+    },
+    {
+      "efh": 429.5,
+      "margin": 49.48
+    },
+    {
+      "efh": 431.5,
+      "margin": 48.79
+    },
+    {
+      "efh": 432.7,
+      "margin": 51.57
+    },
+    {
+      "efh": 434.3,
+      "margin": 50.2
+    },
+    {
+      "efh": 436.5,
+      "margin": 49.8
+    },
+    {
+      "efh": 438.5,
+      "margin": 51.62
+    },
+    {
+      "efh": 439.7,
+      "margin": 48.64
+    },
+    {
+      "efh": 441.1,
+      "margin": 48.9
+    },
+    {
+      "efh": 442.2,
+      "margin": 49.91
+    },
+    {
+      "efh": 443.4,
+      "margin": 51.14
     }
   ],
   "engine_trend_info": {
     "tail": "FX-305",
     "type": "fighter",
     "engine_position": "1",
-    "engine_serial": "EN-0027",
+    "engine_serial": "EN-0024",
     "metric": "EGT margin",
     "limit_c": 10.0,
-    "current_efh": 311.2,
-    "current_margin_c": 51.13,
-    "slope_c_per_efh": -0.0075,
-    "slope_ci_lo": -0.0144,
-    "slope_ci_hi": -0.0012,
-    "projected_efh_to_limit": 5462.1,
-    "fleet_p5_slope": -0.04662999999999999,
-    "fleet_median_slope": -0.0098,
+    "current_efh": 443.4,
+    "current_margin_c": 50.46,
+    "slope_c_per_efh": -0.0092,
+    "slope_ci_lo": -0.0164,
+    "slope_ci_hi": -0.0027,
+    "projected_efh_to_limit": 4418.6,
+    "fleet_p5_slope": -0.02001,
+    "fleet_median_slope": -0.0128,
     "flag_fleet_outlier": false,
     "flag_near_term": false,
     "flagged": false
@@ -1803,830 +1803,830 @@
   "engines": [
     {
       "position": "1",
-      "serial": "EN-0027",
+      "serial": "EN-0024",
       "zone": "engine-bay",
-      "efh": 311.2,
-      "operating_hours": 376.5,
-      "ground_run_hours": 2.7,
+      "efh": 443.5,
+      "operating_hours": 533.4,
+      "ground_run_hours": 2.8,
       "metric": "EGT margin",
       "threshold_c": 10.0,
       "trend_points": [
         {
-          "efh": 84.5,
-          "margin": 57.13
-        },
-        {
-          "efh": 85.2,
-          "margin": 57.19
-        },
-        {
-          "efh": 85.8,
-          "margin": 56.08
-        },
-        {
-          "efh": 87.1,
-          "margin": 55.85
-        },
-        {
-          "efh": 88.6,
-          "margin": 52.57
-        },
-        {
-          "efh": 89.5,
-          "margin": 55.85
-        },
-        {
-          "efh": 90.5,
-          "margin": 55.0
-        },
-        {
-          "efh": 91.3,
-          "margin": 56.48
-        },
-        {
-          "efh": 92.2,
-          "margin": 55.19
-        },
-        {
-          "efh": 92.8,
-          "margin": 53.43
-        },
-        {
-          "efh": 93.6,
-          "margin": 53.86
-        },
-        {
-          "efh": 94.8,
-          "margin": 52.12
-        },
-        {
-          "efh": 95.6,
-          "margin": 53.4
-        },
-        {
-          "efh": 97.2,
-          "margin": 54.68
-        },
-        {
-          "efh": 98.6,
+          "efh": 219.5,
           "margin": 53.03
         },
         {
-          "efh": 99.5,
-          "margin": 55.42
+          "efh": 220.9,
+          "margin": 52.25
         },
         {
-          "efh": 101.1,
-          "margin": 52.96
-        },
-        {
-          "efh": 101.8,
-          "margin": 55.88
-        },
-        {
-          "efh": 103.3,
-          "margin": 51.76
-        },
-        {
-          "efh": 105.0,
-          "margin": 55.45
-        },
-        {
-          "efh": 106.4,
-          "margin": 55.29
-        },
-        {
-          "efh": 107.5,
-          "margin": 53.49
-        },
-        {
-          "efh": 109.0,
-          "margin": 55.18
-        },
-        {
-          "efh": 109.9,
-          "margin": 52.69
-        },
-        {
-          "efh": 111.2,
-          "margin": 52.14
-        },
-        {
-          "efh": 112.0,
-          "margin": 55.4
-        },
-        {
-          "efh": 113.5,
-          "margin": 52.57
-        },
-        {
-          "efh": 114.4,
-          "margin": 55.82
-        },
-        {
-          "efh": 115.4,
-          "margin": 53.96
-        },
-        {
-          "efh": 116.3,
-          "margin": 54.02
-        },
-        {
-          "efh": 117.1,
-          "margin": 56.53
-        },
-        {
-          "efh": 118.2,
-          "margin": 52.93
-        },
-        {
-          "efh": 120.0,
-          "margin": 54.22
-        },
-        {
-          "efh": 121.2,
-          "margin": 51.02
-        },
-        {
-          "efh": 122.0,
-          "margin": 52.79
-        },
-        {
-          "efh": 123.2,
-          "margin": 52.21
-        },
-        {
-          "efh": 124.5,
-          "margin": 52.0
-        },
-        {
-          "efh": 125.3,
-          "margin": 53.89
-        },
-        {
-          "efh": 126.4,
-          "margin": 53.58
-        },
-        {
-          "efh": 127.8,
-          "margin": 53.07
-        },
-        {
-          "efh": 128.7,
-          "margin": 54.35
-        },
-        {
-          "efh": 129.8,
-          "margin": 54.78
-        },
-        {
-          "efh": 131.3,
-          "margin": 54.54
-        },
-        {
-          "efh": 132.2,
-          "margin": 54.08
-        },
-        {
-          "efh": 133.1,
-          "margin": 56.29
-        },
-        {
-          "efh": 134.1,
-          "margin": 55.58
-        },
-        {
-          "efh": 135.2,
-          "margin": 54.34
-        },
-        {
-          "efh": 135.9,
-          "margin": 54.49
-        },
-        {
-          "efh": 137.1,
-          "margin": 52.46
-        },
-        {
-          "efh": 137.8,
-          "margin": 53.61
-        },
-        {
-          "efh": 139.2,
-          "margin": 55.34
-        },
-        {
-          "efh": 140.1,
-          "margin": 55.02
-        },
-        {
-          "efh": 142.0,
-          "margin": 55.29
-        },
-        {
-          "efh": 142.9,
-          "margin": 52.69
-        },
-        {
-          "efh": 143.8,
-          "margin": 50.75
-        },
-        {
-          "efh": 144.6,
-          "margin": 54.54
-        },
-        {
-          "efh": 145.4,
-          "margin": 55.19
-        },
-        {
-          "efh": 146.1,
-          "margin": 55.14
-        },
-        {
-          "efh": 147.3,
-          "margin": 53.72
-        },
-        {
-          "efh": 149.3,
-          "margin": 57.36
-        },
-        {
-          "efh": 151.2,
-          "margin": 52.79
-        },
-        {
-          "efh": 152.6,
-          "margin": 55.68
-        },
-        {
-          "efh": 153.7,
-          "margin": 52.28
-        },
-        {
-          "efh": 155.8,
-          "margin": 52.94
-        },
-        {
-          "efh": 156.9,
-          "margin": 53.5
-        },
-        {
-          "efh": 158.3,
-          "margin": 52.37
-        },
-        {
-          "efh": 159.6,
-          "margin": 54.58
-        },
-        {
-          "efh": 160.4,
-          "margin": 52.63
-        },
-        {
-          "efh": 161.3,
-          "margin": 50.99
-        },
-        {
-          "efh": 162.3,
-          "margin": 54.65
-        },
-        {
-          "efh": 163.2,
-          "margin": 51.21
-        },
-        {
-          "efh": 164.2,
-          "margin": 50.64
-        },
-        {
-          "efh": 165.2,
-          "margin": 53.71
-        },
-        {
-          "efh": 166.1,
-          "margin": 50.58
-        },
-        {
-          "efh": 167.7,
-          "margin": 54.0
-        },
-        {
-          "efh": 168.6,
-          "margin": 51.79
-        },
-        {
-          "efh": 169.5,
-          "margin": 55.08
-        },
-        {
-          "efh": 170.2,
-          "margin": 54.96
-        },
-        {
-          "efh": 171.2,
-          "margin": 53.93
-        },
-        {
-          "efh": 172.0,
-          "margin": 53.64
-        },
-        {
-          "efh": 173.7,
-          "margin": 54.45
-        },
-        {
-          "efh": 174.7,
-          "margin": 54.5
-        },
-        {
-          "efh": 175.7,
-          "margin": 54.6
-        },
-        {
-          "efh": 176.8,
-          "margin": 52.81
-        },
-        {
-          "efh": 177.4,
-          "margin": 52.15
-        },
-        {
-          "efh": 179.4,
-          "margin": 53.04
-        },
-        {
-          "efh": 180.4,
-          "margin": 55.17
-        },
-        {
-          "efh": 182.2,
-          "margin": 53.19
-        },
-        {
-          "efh": 183.0,
-          "margin": 55.01
-        },
-        {
-          "efh": 184.8,
-          "margin": 54.6
-        },
-        {
-          "efh": 185.8,
-          "margin": 52.55
-        },
-        {
-          "efh": 187.0,
-          "margin": 50.88
-        },
-        {
-          "efh": 188.4,
-          "margin": 54.84
-        },
-        {
-          "efh": 189.2,
-          "margin": 50.57
-        },
-        {
-          "efh": 190.9,
-          "margin": 55.29
-        },
-        {
-          "efh": 191.8,
-          "margin": 51.51
-        },
-        {
-          "efh": 193.5,
-          "margin": 51.27
-        },
-        {
-          "efh": 194.3,
-          "margin": 52.5
-        },
-        {
-          "efh": 195.3,
-          "margin": 52.1
-        },
-        {
-          "efh": 196.2,
-          "margin": 53.63
-        },
-        {
-          "efh": 197.3,
-          "margin": 52.56
-        },
-        {
-          "efh": 198.3,
-          "margin": 52.24
-        },
-        {
-          "efh": 199.3,
-          "margin": 52.06
-        },
-        {
-          "efh": 200.3,
-          "margin": 54.2
-        },
-        {
-          "efh": 201.3,
-          "margin": 54.78
-        },
-        {
-          "efh": 203.1,
-          "margin": 53.45
-        },
-        {
-          "efh": 204.2,
-          "margin": 51.29
-        },
-        {
-          "efh": 204.8,
-          "margin": 54.43
-        },
-        {
-          "efh": 206.6,
-          "margin": 49.47
-        },
-        {
-          "efh": 207.8,
-          "margin": 55.01
-        },
-        {
-          "efh": 209.2,
-          "margin": 50.65
-        },
-        {
-          "efh": 210.2,
-          "margin": 53.16
-        },
-        {
-          "efh": 211.1,
-          "margin": 53.54
-        },
-        {
-          "efh": 213.0,
-          "margin": 54.28
-        },
-        {
-          "efh": 213.9,
-          "margin": 50.42
-        },
-        {
-          "efh": 214.7,
-          "margin": 52.93
-        },
-        {
-          "efh": 216.0,
-          "margin": 51.43
-        },
-        {
-          "efh": 216.9,
-          "margin": 50.07
-        },
-        {
-          "efh": 218.2,
-          "margin": 53.1
-        },
-        {
-          "efh": 220.1,
-          "margin": 49.86
-        },
-        {
-          "efh": 221.1,
-          "margin": 54.64
-        },
-        {
-          "efh": 222.1,
-          "margin": 53.57
-        },
-        {
-          "efh": 224.3,
-          "margin": 52.28
-        },
-        {
-          "efh": 225.5,
-          "margin": 51.66
-        },
-        {
-          "efh": 226.7,
-          "margin": 50.89
-        },
-        {
-          "efh": 227.4,
-          "margin": 52.17
-        },
-        {
-          "efh": 228.1,
-          "margin": 53.45
-        },
-        {
-          "efh": 229.1,
-          "margin": 54.38
-        },
-        {
-          "efh": 230.1,
-          "margin": 51.66
-        },
-        {
-          "efh": 231.4,
-          "margin": 52.31
-        },
-        {
-          "efh": 232.8,
-          "margin": 54.1
-        },
-        {
-          "efh": 233.8,
-          "margin": 51.06
-        },
-        {
-          "efh": 235.3,
-          "margin": 51.82
-        },
-        {
-          "efh": 236.8,
-          "margin": 52.83
-        },
-        {
-          "efh": 237.7,
-          "margin": 50.74
-        },
-        {
-          "efh": 238.9,
-          "margin": 51.04
-        },
-        {
-          "efh": 240.0,
-          "margin": 55.16
-        },
-        {
-          "efh": 241.4,
-          "margin": 52.42
-        },
-        {
-          "efh": 242.2,
-          "margin": 53.66
-        },
-        {
-          "efh": 244.1,
-          "margin": 54.98
-        },
-        {
-          "efh": 245.1,
-          "margin": 50.7
-        },
-        {
-          "efh": 245.7,
-          "margin": 54.17
-        },
-        {
-          "efh": 246.4,
-          "margin": 52.02
-        },
-        {
-          "efh": 247.6,
-          "margin": 51.46
-        },
-        {
-          "efh": 248.7,
-          "margin": 52.07
-        },
-        {
-          "efh": 249.6,
-          "margin": 50.97
-        },
-        {
-          "efh": 250.5,
-          "margin": 51.76
-        },
-        {
-          "efh": 252.0,
-          "margin": 53.64
-        },
-        {
-          "efh": 253.0,
-          "margin": 52.15
-        },
-        {
-          "efh": 254.1,
-          "margin": 52.07
-        },
-        {
-          "efh": 254.9,
-          "margin": 52.78
-        },
-        {
-          "efh": 255.8,
-          "margin": 52.13
-        },
-        {
-          "efh": 256.8,
-          "margin": 51.18
-        },
-        {
-          "efh": 258.7,
-          "margin": 53.35
-        },
-        {
-          "efh": 259.5,
-          "margin": 52.26
-        },
-        {
-          "efh": 260.4,
-          "margin": 50.19
-        },
-        {
-          "efh": 261.7,
-          "margin": 50.75
-        },
-        {
-          "efh": 262.5,
-          "margin": 53.74
-        },
-        {
-          "efh": 263.5,
-          "margin": 52.95
-        },
-        {
-          "efh": 264.4,
-          "margin": 52.8
-        },
-        {
-          "efh": 265.9,
-          "margin": 52.37
-        },
-        {
-          "efh": 267.3,
-          "margin": 49.93
-        },
-        {
-          "efh": 268.0,
-          "margin": 53.41
-        },
-        {
-          "efh": 269.0,
-          "margin": 54.04
-        },
-        {
-          "efh": 270.1,
-          "margin": 51.14
-        },
-        {
-          "efh": 271.5,
-          "margin": 54.75
-        },
-        {
-          "efh": 272.6,
-          "margin": 51.2
-        },
-        {
-          "efh": 273.8,
-          "margin": 53.06
-        },
-        {
-          "efh": 275.0,
-          "margin": 51.92
-        },
-        {
-          "efh": 275.9,
-          "margin": 51.15
-        },
-        {
-          "efh": 277.6,
-          "margin": 51.97
-        },
-        {
-          "efh": 278.1,
-          "margin": 52.71
-        },
-        {
-          "efh": 279.2,
+          "efh": 222.2,
           "margin": 54.21
         },
         {
-          "efh": 280.0,
-          "margin": 50.49
+          "efh": 223.2,
+          "margin": 52.3
         },
         {
-          "efh": 281.0,
-          "margin": 54.97
+          "efh": 224.1,
+          "margin": 54.09
         },
         {
-          "efh": 282.1,
-          "margin": 55.34
+          "efh": 224.9,
+          "margin": 52.69
         },
         {
-          "efh": 283.1,
-          "margin": 51.28
+          "efh": 226.0,
+          "margin": 51.54
         },
         {
-          "efh": 285.2,
-          "margin": 50.86
+          "efh": 226.8,
+          "margin": 51.63
         },
         {
-          "efh": 286.3,
-          "margin": 54.39
+          "efh": 227.6,
+          "margin": 50.16
         },
         {
-          "efh": 287.1,
-          "margin": 51.24
+          "efh": 229.1,
+          "margin": 52.93
         },
         {
-          "efh": 288.0,
-          "margin": 53.2
+          "efh": 230.7,
+          "margin": 50.93
         },
         {
-          "efh": 289.5,
-          "margin": 51.62
+          "efh": 231.9,
+          "margin": 55.01
         },
         {
-          "efh": 290.5,
-          "margin": 50.91
+          "efh": 233.3,
+          "margin": 49.89
         },
         {
-          "efh": 291.8,
-          "margin": 52.07
-        },
-        {
-          "efh": 292.7,
-          "margin": 52.18
-        },
-        {
-          "efh": 293.7,
-          "margin": 55.45
-        },
-        {
-          "efh": 294.4,
-          "margin": 52.63
-        },
-        {
-          "efh": 295.5,
-          "margin": 53.89
-        },
-        {
-          "efh": 296.6,
+          "efh": 234.1,
           "margin": 53.83
         },
         {
-          "efh": 297.8,
-          "margin": 49.83
+          "efh": 235.5,
+          "margin": 52.39
         },
         {
-          "efh": 299.6,
+          "efh": 236.5,
+          "margin": 55.28
+        },
+        {
+          "efh": 238.3,
+          "margin": 51.81
+        },
+        {
+          "efh": 239.2,
+          "margin": 50.69
+        },
+        {
+          "efh": 240.4,
+          "margin": 55.15
+        },
+        {
+          "efh": 241.2,
+          "margin": 54.11
+        },
+        {
+          "efh": 242.8,
+          "margin": 52.81
+        },
+        {
+          "efh": 244.0,
+          "margin": 52.84
+        },
+        {
+          "efh": 244.8,
+          "margin": 51.48
+        },
+        {
+          "efh": 246.1,
+          "margin": 51.43
+        },
+        {
+          "efh": 246.9,
+          "margin": 51.79
+        },
+        {
+          "efh": 248.2,
+          "margin": 55.78
+        },
+        {
+          "efh": 250.0,
+          "margin": 54.14
+        },
+        {
+          "efh": 250.7,
+          "margin": 51.9
+        },
+        {
+          "efh": 251.7,
+          "margin": 53.6
+        },
+        {
+          "efh": 252.4,
+          "margin": 51.72
+        },
+        {
+          "efh": 254.6,
+          "margin": 51.52
+        },
+        {
+          "efh": 255.4,
+          "margin": 53.14
+        },
+        {
+          "efh": 256.4,
+          "margin": 51.34
+        },
+        {
+          "efh": 257.8,
+          "margin": 52.53
+        },
+        {
+          "efh": 258.9,
+          "margin": 52.98
+        },
+        {
+          "efh": 259.9,
+          "margin": 51.46
+        },
+        {
+          "efh": 260.7,
+          "margin": 52.48
+        },
+        {
+          "efh": 261.9,
+          "margin": 50.31
+        },
+        {
+          "efh": 262.6,
+          "margin": 52.35
+        },
+        {
+          "efh": 263.7,
+          "margin": 55.16
+        },
+        {
+          "efh": 264.8,
           "margin": 50.54
         },
         {
-          "efh": 300.9,
-          "margin": 53.1
+          "efh": 266.0,
+          "margin": 51.75
         },
         {
-          "efh": 302.6,
-          "margin": 53.22
+          "efh": 266.7,
+          "margin": 49.91
         },
         {
-          "efh": 303.8,
-          "margin": 49.18
+          "efh": 267.8,
+          "margin": 57.21
         },
         {
-          "efh": 304.8,
+          "efh": 268.6,
+          "margin": 51.82
+        },
+        {
+          "efh": 269.7,
+          "margin": 51.36
+        },
+        {
+          "efh": 270.6,
+          "margin": 53.35
+        },
+        {
+          "efh": 271.7,
+          "margin": 50.37
+        },
+        {
+          "efh": 272.7,
+          "margin": 52.32
+        },
+        {
+          "efh": 274.1,
+          "margin": 52.71
+        },
+        {
+          "efh": 274.9,
+          "margin": 52.36
+        },
+        {
+          "efh": 276.0,
+          "margin": 51.03
+        },
+        {
+          "efh": 277.1,
+          "margin": 51.81
+        },
+        {
+          "efh": 278.5,
+          "margin": 53.87
+        },
+        {
+          "efh": 279.5,
+          "margin": 50.74
+        },
+        {
+          "efh": 280.4,
+          "margin": 52.65
+        },
+        {
+          "efh": 281.5,
+          "margin": 52.03
+        },
+        {
+          "efh": 282.3,
+          "margin": 52.45
+        },
+        {
+          "efh": 283.4,
+          "margin": 51.96
+        },
+        {
+          "efh": 284.1,
+          "margin": 51.24
+        },
+        {
+          "efh": 285.6,
+          "margin": 50.27
+        },
+        {
+          "efh": 287.6,
+          "margin": 52.35
+        },
+        {
+          "efh": 289.5,
+          "margin": 53.25
+        },
+        {
+          "efh": 290.1,
+          "margin": 52.62
+        },
+        {
+          "efh": 290.8,
+          "margin": 51.14
+        },
+        {
+          "efh": 292.2,
+          "margin": 52.74
+        },
+        {
+          "efh": 293.1,
+          "margin": 52.76
+        },
+        {
+          "efh": 294.2,
+          "margin": 50.72
+        },
+        {
+          "efh": 295.5,
+          "margin": 54.18
+        },
+        {
+          "efh": 296.9,
+          "margin": 49.88
+        },
+        {
+          "efh": 297.7,
+          "margin": 51.4
+        },
+        {
+          "efh": 298.6,
+          "margin": 54.41
+        },
+        {
+          "efh": 299.5,
+          "margin": 49.66
+        },
+        {
+          "efh": 300.6,
+          "margin": 53.55
+        },
+        {
+          "efh": 302.4,
+          "margin": 52.53
+        },
+        {
+          "efh": 303.4,
+          "margin": 52.87
+        },
+        {
+          "efh": 304.3,
+          "margin": 53.55
+        },
+        {
+          "efh": 305.3,
+          "margin": 51.61
+        },
+        {
+          "efh": 306.1,
+          "margin": 52.43
+        },
+        {
+          "efh": 307.1,
+          "margin": 52.98
+        },
+        {
+          "efh": 307.7,
+          "margin": 50.83
+        },
+        {
+          "efh": 309.0,
+          "margin": 52.44
+        },
+        {
+          "efh": 310.3,
+          "margin": 49.93
+        },
+        {
+          "efh": 311.0,
+          "margin": 52.94
+        },
+        {
+          "efh": 311.9,
+          "margin": 49.25
+        },
+        {
+          "efh": 313.3,
+          "margin": 54.04
+        },
+        {
+          "efh": 314.4,
+          "margin": 52.51
+        },
+        {
+          "efh": 315.3,
+          "margin": 50.88
+        },
+        {
+          "efh": 315.9,
+          "margin": 49.85
+        },
+        {
+          "efh": 317.2,
+          "margin": 51.45
+        },
+        {
+          "efh": 318.4,
+          "margin": 52.46
+        },
+        {
+          "efh": 319.6,
+          "margin": 50.04
+        },
+        {
+          "efh": 320.7,
+          "margin": 52.19
+        },
+        {
+          "efh": 321.4,
           "margin": 52.85
         },
         {
-          "efh": 305.7,
-          "margin": 52.06
+          "efh": 322.5,
+          "margin": 51.13
         },
         {
-          "efh": 306.8,
-          "margin": 50.22
+          "efh": 323.5,
+          "margin": 50.1
         },
         {
-          "efh": 308.3,
-          "margin": 50.67
+          "efh": 324.5,
+          "margin": 52.49
         },
         {
-          "efh": 309.4,
+          "efh": 325.3,
+          "margin": 53.68
+        },
+        {
+          "efh": 326.7,
+          "margin": 50.1
+        },
+        {
+          "efh": 327.2,
+          "margin": 47.81
+        },
+        {
+          "efh": 328.3,
+          "margin": 52.5
+        },
+        {
+          "efh": 328.9,
+          "margin": 49.7
+        },
+        {
+          "efh": 329.8,
+          "margin": 48.58
+        },
+        {
+          "efh": 330.7,
+          "margin": 52.11
+        },
+        {
+          "efh": 331.6,
+          "margin": 50.32
+        },
+        {
+          "efh": 333.4,
+          "margin": 52.57
+        },
+        {
+          "efh": 334.4,
+          "margin": 48.49
+        },
+        {
+          "efh": 335.4,
+          "margin": 49.43
+        },
+        {
+          "efh": 337.5,
+          "margin": 50.93
+        },
+        {
+          "efh": 338.6,
+          "margin": 50.99
+        },
+        {
+          "efh": 340.0,
+          "margin": 50.27
+        },
+        {
+          "efh": 341.7,
+          "margin": 51.91
+        },
+        {
+          "efh": 342.5,
+          "margin": 50.98
+        },
+        {
+          "efh": 343.2,
+          "margin": 52.19
+        },
+        {
+          "efh": 344.3,
+          "margin": 54.08
+        },
+        {
+          "efh": 345.5,
+          "margin": 53.06
+        },
+        {
+          "efh": 346.7,
+          "margin": 51.67
+        },
+        {
+          "efh": 347.9,
+          "margin": 48.03
+        },
+        {
+          "efh": 348.9,
+          "margin": 53.3
+        },
+        {
+          "efh": 350.2,
           "margin": 53.05
         },
         {
-          "efh": 311.2,
-          "margin": 51.13
+          "efh": 351.0,
+          "margin": 51.04
+        },
+        {
+          "efh": 351.8,
+          "margin": 50.55
+        },
+        {
+          "efh": 353.6,
+          "margin": 52.33
+        },
+        {
+          "efh": 355.0,
+          "margin": 49.38
+        },
+        {
+          "efh": 355.8,
+          "margin": 50.49
+        },
+        {
+          "efh": 356.9,
+          "margin": 51.89
+        },
+        {
+          "efh": 358.2,
+          "margin": 51.27
+        },
+        {
+          "efh": 359.7,
+          "margin": 50.38
+        },
+        {
+          "efh": 360.7,
+          "margin": 52.27
+        },
+        {
+          "efh": 361.9,
+          "margin": 51.78
+        },
+        {
+          "efh": 362.8,
+          "margin": 54.43
+        },
+        {
+          "efh": 363.9,
+          "margin": 51.41
+        },
+        {
+          "efh": 364.6,
+          "margin": 50.55
+        },
+        {
+          "efh": 365.3,
+          "margin": 54.06
+        },
+        {
+          "efh": 366.1,
+          "margin": 50.95
+        },
+        {
+          "efh": 367.0,
+          "margin": 48.77
+        },
+        {
+          "efh": 368.3,
+          "margin": 52.05
+        },
+        {
+          "efh": 369.8,
+          "margin": 50.01
+        },
+        {
+          "efh": 371.0,
+          "margin": 49.19
+        },
+        {
+          "efh": 372.8,
+          "margin": 50.4
+        },
+        {
+          "efh": 373.7,
+          "margin": 51.17
+        },
+        {
+          "efh": 375.2,
+          "margin": 54.07
+        },
+        {
+          "efh": 376.0,
+          "margin": 54.07
+        },
+        {
+          "efh": 377.6,
+          "margin": 52.0
+        },
+        {
+          "efh": 378.6,
+          "margin": 50.33
+        },
+        {
+          "efh": 379.3,
+          "margin": 51.17
+        },
+        {
+          "efh": 380.3,
+          "margin": 51.39
+        },
+        {
+          "efh": 382.2,
+          "margin": 49.66
+        },
+        {
+          "efh": 383.4,
+          "margin": 52.29
+        },
+        {
+          "efh": 384.2,
+          "margin": 47.27
+        },
+        {
+          "efh": 385.5,
+          "margin": 53.88
+        },
+        {
+          "efh": 386.2,
+          "margin": 49.78
+        },
+        {
+          "efh": 387.4,
+          "margin": 51.6
+        },
+        {
+          "efh": 388.5,
+          "margin": 50.73
+        },
+        {
+          "efh": 389.5,
+          "margin": 53.01
+        },
+        {
+          "efh": 390.8,
+          "margin": 53.27
+        },
+        {
+          "efh": 391.6,
+          "margin": 52.24
+        },
+        {
+          "efh": 392.3,
+          "margin": 52.09
+        },
+        {
+          "efh": 393.2,
+          "margin": 49.06
+        },
+        {
+          "efh": 394.1,
+          "margin": 50.75
+        },
+        {
+          "efh": 395.6,
+          "margin": 51.31
+        },
+        {
+          "efh": 397.6,
+          "margin": 51.43
+        },
+        {
+          "efh": 398.9,
+          "margin": 50.73
+        },
+        {
+          "efh": 400.0,
+          "margin": 50.67
+        },
+        {
+          "efh": 401.1,
+          "margin": 50.69
+        },
+        {
+          "efh": 402.2,
+          "margin": 53.06
+        },
+        {
+          "efh": 403.0,
+          "margin": 52.85
+        },
+        {
+          "efh": 403.9,
+          "margin": 53.91
+        },
+        {
+          "efh": 405.3,
+          "margin": 52.81
+        },
+        {
+          "efh": 406.5,
+          "margin": 50.75
+        },
+        {
+          "efh": 407.6,
+          "margin": 54.32
+        },
+        {
+          "efh": 408.7,
+          "margin": 51.79
+        },
+        {
+          "efh": 409.7,
+          "margin": 49.53
+        },
+        {
+          "efh": 410.6,
+          "margin": 50.42
+        },
+        {
+          "efh": 411.5,
+          "margin": 49.34
+        },
+        {
+          "efh": 412.7,
+          "margin": 48.12
+        },
+        {
+          "efh": 413.9,
+          "margin": 48.54
+        },
+        {
+          "efh": 416.0,
+          "margin": 51.47
+        },
+        {
+          "efh": 417.3,
+          "margin": 51.27
+        },
+        {
+          "efh": 418.4,
+          "margin": 49.09
+        },
+        {
+          "efh": 419.2,
+          "margin": 53.5
+        },
+        {
+          "efh": 420.0,
+          "margin": 51.76
+        },
+        {
+          "efh": 420.7,
+          "margin": 49.7
+        },
+        {
+          "efh": 421.6,
+          "margin": 53.54
+        },
+        {
+          "efh": 422.7,
+          "margin": 51.6
+        },
+        {
+          "efh": 424.2,
+          "margin": 50.12
+        },
+        {
+          "efh": 425.5,
+          "margin": 49.41
+        },
+        {
+          "efh": 426.3,
+          "margin": 50.41
+        },
+        {
+          "efh": 427.3,
+          "margin": 50.51
+        },
+        {
+          "efh": 428.2,
+          "margin": 50.63
+        },
+        {
+          "efh": 429.5,
+          "margin": 49.48
+        },
+        {
+          "efh": 431.5,
+          "margin": 48.79
+        },
+        {
+          "efh": 432.7,
+          "margin": 51.57
+        },
+        {
+          "efh": 434.3,
+          "margin": 50.2
+        },
+        {
+          "efh": 436.5,
+          "margin": 49.8
+        },
+        {
+          "efh": 438.5,
+          "margin": 51.62
+        },
+        {
+          "efh": 439.7,
+          "margin": 48.64
+        },
+        {
+          "efh": 441.1,
+          "margin": 48.9
+        },
+        {
+          "efh": 442.2,
+          "margin": 49.91
+        },
+        {
+          "efh": 443.4,
+          "margin": 51.14
         }
       ],
       "trend_info": {
         "tail": "FX-305",
         "type": "fighter",
         "engine_position": "1",
-        "engine_serial": "EN-0027",
+        "engine_serial": "EN-0024",
         "metric": "EGT margin",
         "limit_c": 10.0,
-        "current_efh": 311.2,
-        "current_margin_c": 51.13,
-        "slope_c_per_efh": -0.0075,
-        "slope_ci_lo": -0.0144,
-        "slope_ci_hi": -0.0012,
-        "projected_efh_to_limit": 5462.1,
-        "fleet_p5_slope": -0.04662999999999999,
-        "fleet_median_slope": -0.0098,
+        "current_efh": 443.4,
+        "current_margin_c": 50.46,
+        "slope_c_per_efh": -0.0092,
+        "slope_ci_lo": -0.0164,
+        "slope_ci_hi": -0.0027,
+        "projected_efh_to_limit": 4418.6,
+        "fleet_p5_slope": -0.02001,
+        "fleet_median_slope": -0.0128,
         "flag_fleet_outlier": false,
         "flag_near_term": false,
         "flagged": false
@@ -2636,344 +2636,376 @@
   "apu_hours": null,
   "operating_hours": {
     "window_start": "2021-11-16",
-    "flight_hours": 674.4,
-    "taxi_hours": 133.6,
-    "ground_run_hours": 4.8,
+    "flight_hours": 874.1,
+    "taxi_hours": 173.6,
+    "ground_run_hours": 6.0,
     "ground_runs": 9,
     "apu_hours": null
   },
   "ground_runs": [
     {
-      "run_id": "GRN-000144",
-      "date": "2026-11-10",
-      "engine_position": "1",
-      "duration_h": 0.32,
-      "apu_h": 0.0,
-      "reason": "After component replacement"
-    },
-    {
-      "run_id": "GRN-000138",
-      "date": "2026-08-15",
+      "run_id": "GRN-000148",
+      "date": "2026-10-30",
       "engine_position": "All",
-      "duration_h": 0.46,
+      "duration_h": 0.44,
       "apu_h": 0.0,
       "reason": "After phase inspection"
     },
     {
-      "run_id": "GRN-000123",
-      "date": "2026-02-09",
-      "engine_position": "1",
-      "duration_h": 0.42,
-      "apu_h": 0.0,
-      "reason": "After component replacement"
-    },
-    {
-      "run_id": "GRN-000109",
-      "date": "2025-08-06",
+      "run_id": "GRN-000122",
+      "date": "2025-12-30",
       "engine_position": "All",
-      "duration_h": 0.58,
+      "duration_h": 0.79,
       "apu_h": 0.0,
       "reason": "After phase inspection"
     },
     {
-      "run_id": "GRN-000078",
-      "date": "2024-06-19",
+      "run_id": "GRN-000098",
+      "date": "2025-01-21",
+      "engine_position": "All",
+      "duration_h": 0.47,
+      "apu_h": 0.0,
+      "reason": "After phase inspection"
+    },
+    {
+      "run_id": "GRN-000077",
+      "date": "2024-05-02",
       "engine_position": "1",
-      "duration_h": 0.92,
+      "duration_h": 1.13,
       "apu_h": 0.0,
       "reason": "After engine change"
     },
     {
-      "run_id": "GRN-000074",
-      "date": "2024-05-16",
+      "run_id": "GRN-000075",
+      "date": "2024-03-26",
       "engine_position": "All",
-      "duration_h": 0.7,
+      "duration_h": 0.63,
       "apu_h": 0.0,
       "reason": "After phase inspection"
     },
     {
-      "run_id": "GRN-000043",
-      "date": "2023-05-09",
+      "run_id": "GRN-000051",
+      "date": "2023-07-01",
       "engine_position": "1",
-      "duration_h": 0.34,
+      "duration_h": 0.5,
       "apu_h": 0.0,
       "reason": "After component replacement"
     },
     {
-      "run_id": "GRN-000038",
-      "date": "2023-04-10",
+      "run_id": "GRN-000049",
+      "date": "2023-05-30",
       "engine_position": "All",
-      "duration_h": 0.55,
+      "duration_h": 0.76,
       "apu_h": 0.0,
       "reason": "After phase inspection"
     },
     {
-      "run_id": "GRN-000008",
-      "date": "2022-04-01",
+      "run_id": "GRN-000021",
+      "date": "2022-08-17",
+      "engine_position": "1",
+      "duration_h": 0.44,
+      "apu_h": 0.0,
+      "reason": "After component replacement"
+    },
+    {
+      "run_id": "GRN-000015",
+      "date": "2022-06-28",
       "engine_position": "All",
-      "duration_h": 0.52,
+      "duration_h": 0.79,
       "apu_h": 0.0,
       "reason": "After phase inspection"
     }
   ],
   "snags": [
     {
-      "snag_id": "SNG-000092",
-      "date": "2026-11-10",
-      "ata": 49,
-      "description": "Jet fuel starter unserviceable, failed functional check during post-flight inspection",
-      "rectification": "Jet fuel starter replaced, serial JF-0005 removed",
+      "snag_id": "SNG-000031",
+      "date": "2023-07-01",
+      "ata": 79,
+      "description": "Engine lube oil pump failed in flight, crew reported loss of function",
+      "rectification": "Engine lube oil pump replaced, serial OP-0005 removed",
       "status": "Closed"
     },
     {
-      "snag_id": "SNG-000066",
-      "date": "2026-02-09",
+      "snag_id": "SNG-000015",
+      "date": "2022-08-17",
       "ata": 29,
-      "description": "Engine-driven hydraulic pump unserviceable, failed functional check during post-flight inspection",
-      "rectification": "Engine-driven hydraulic pump replaced, serial HP-0010 removed",
-      "status": "Closed"
-    },
-    {
-      "snag_id": "SNG-000027",
-      "date": "2023-12-18",
-      "ata": 21,
-      "description": "ECS cooling turbine seized, no response during BITE check",
-      "rectification": "ECS cooling turbine replaced, serial EC-0005 removed",
-      "status": "Closed"
-    },
-    {
-      "snag_id": "SNG-000018",
-      "date": "2023-05-09",
-      "ata": 29,
-      "description": "Engine-driven hydraulic pump unserviceable, failed functional check during post-flight inspection",
+      "description": "Engine-driven hydraulic pump failure confirmed, abnormal readings during ground run",
       "rectification": "Engine-driven hydraulic pump replaced, serial HP-0005 removed",
+      "status": "Closed"
+    },
+    {
+      "snag_id": "SNG-000001",
+      "date": "2021-12-14",
+      "ata": 27,
+      "description": "Horizontal stabilator actuator seized, no response during BITE check",
+      "rectification": "Horizontal stabilator actuator replaced, serial SA-0009 removed",
       "status": "Closed"
     }
   ],
   "history": [
     {
-      "date": "2026-11-10",
-      "type": "Rectification",
-      "description": "Jet fuel starter replaced"
-    },
-    {
-      "date": "2026-08-21",
-      "type": "Work order",
-      "description": "Main battery removed at hard time limit, replaced"
-    },
-    {
-      "date": "2026-08-15",
-      "type": "Phase inspection",
-      "description": "Scheduled phase inspection"
-    },
-    {
-      "date": "2026-06-20",
+      "date": "2026-11-11",
       "type": "Periodic servicing",
       "description": "Scheduled periodic servicing"
     },
     {
-      "date": "2026-05-28",
+      "date": "2026-10-30",
+      "type": "Phase inspection",
+      "description": "Scheduled phase inspection"
+    },
+    {
+      "date": "2026-08-01",
       "type": "Rectification",
       "description": "Main wheel tyre replaced"
     },
     {
-      "date": "2026-03-03",
+      "date": "2026-07-23",
+      "type": "Periodic servicing",
+      "description": "Scheduled periodic servicing"
+    },
+    {
+      "date": "2026-07-14",
       "type": "Rectification",
       "description": "Main wheel tyre replaced"
     },
     {
-      "date": "2026-03-03",
+      "date": "2026-04-24",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2026-04-16",
+      "type": "Periodic servicing",
+      "description": "Scheduled periodic servicing"
+    },
+    {
+      "date": "2026-03-02",
+      "type": "Work order",
+      "description": "Main battery removed at hard time limit, replaced"
+    },
+    {
+      "date": "2026-02-04",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2026-01-15",
+      "type": "Periodic servicing",
+      "description": "Scheduled periodic servicing"
+    },
+    {
+      "date": "2025-12-30",
+      "type": "Phase inspection",
+      "description": "Scheduled phase inspection"
+    },
+    {
+      "date": "2025-11-29",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2025-09-24",
+      "type": "Periodic servicing",
+      "description": "Scheduled periodic servicing"
+    },
+    {
+      "date": "2025-09-01",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2025-07-31",
       "type": "Rectification",
       "description": "Main wheel brake replaced"
     },
     {
-      "date": "2026-02-21",
-      "type": "Periodic servicing",
-      "description": "Scheduled periodic servicing"
-    },
-    {
-      "date": "2026-02-09",
-      "type": "Rectification",
-      "description": "Engine-driven hydraulic pump replaced"
-    },
-    {
-      "date": "2025-12-28",
-      "type": "Rectification",
-      "description": "Main wheel tyre replaced"
-    },
-    {
-      "date": "2025-10-19",
-      "type": "Periodic servicing",
-      "description": "Scheduled periodic servicing"
-    },
-    {
-      "date": "2025-08-06",
-      "type": "Phase inspection",
-      "description": "Scheduled phase inspection"
-    },
-    {
-      "date": "2025-06-19",
-      "type": "Rectification",
-      "description": "Main wheel tyre replaced"
-    },
-    {
-      "date": "2025-05-18",
-      "type": "Periodic servicing",
-      "description": "Scheduled periodic servicing"
-    },
-    {
-      "date": "2025-03-28",
-      "type": "Rectification",
-      "description": "Main wheel tyre replaced"
-    },
-    {
-      "date": "2025-01-09",
-      "type": "Periodic servicing",
-      "description": "Scheduled periodic servicing"
-    },
-    {
-      "date": "2024-08-31",
-      "type": "Work order",
-      "description": "Main battery removed at hard time limit, replaced"
-    },
-    {
-      "date": "2024-08-15",
-      "type": "Work order",
-      "description": "Main landing gear assembly removed at hard time limit, replaced"
-    },
-    {
-      "date": "2024-08-08",
+      "date": "2025-07-13",
       "type": "Work order",
       "description": "Ejection seat CAD/PAD set removed at hard time limit, replaced"
     },
     {
-      "date": "2024-07-03",
+      "date": "2025-05-13",
       "type": "Periodic servicing",
       "description": "Scheduled periodic servicing"
     },
     {
-      "date": "2024-06-28",
+      "date": "2025-05-09",
       "type": "Rectification",
       "description": "Main wheel tyre replaced"
     },
     {
-      "date": "2024-06-19",
-      "type": "Work order",
-      "description": "Engine removed at hard time limit, replaced"
+      "date": "2025-04-14",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
     },
     {
-      "date": "2024-05-16",
+      "date": "2025-01-21",
       "type": "Phase inspection",
       "description": "Scheduled phase inspection"
     },
     {
-      "date": "2024-04-04",
+      "date": "2025-01-16",
+      "type": "Periodic servicing",
+      "description": "Scheduled periodic servicing"
+    },
+    {
+      "date": "2024-11-18",
       "type": "Rectification",
       "description": "Main wheel tyre replaced"
     },
     {
-      "date": "2024-03-12",
+      "date": "2024-10-22",
       "type": "Periodic servicing",
       "description": "Scheduled periodic servicing"
     },
     {
-      "date": "2023-12-18",
-      "type": "Rectification",
-      "description": "ECS cooling turbine replaced"
-    },
-    {
-      "date": "2023-11-03",
-      "type": "Periodic servicing",
-      "description": "Scheduled periodic servicing"
-    },
-    {
-      "date": "2023-07-09",
+      "date": "2024-10-17",
       "type": "Rectification",
       "description": "Main wheel tyre replaced"
     },
     {
-      "date": "2023-07-07",
+      "date": "2024-07-21",
+      "type": "Work order",
+      "description": "Main landing gear assembly removed at hard time limit, replaced"
+    },
+    {
+      "date": "2024-06-24",
       "type": "Periodic servicing",
       "description": "Scheduled periodic servicing"
     },
     {
-      "date": "2023-06-04",
+      "date": "2024-06-03",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2024-05-06",
       "type": "Rectification",
       "description": "Main wheel brake replaced"
     },
     {
-      "date": "2023-05-09",
-      "type": "Rectification",
-      "description": "Engine-driven hydraulic pump replaced"
+      "date": "2024-05-02",
+      "type": "Work order",
+      "description": "Engine removed at hard time limit, replaced"
     },
     {
-      "date": "2023-04-10",
+      "date": "2024-04-06",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2024-03-26",
       "type": "Phase inspection",
       "description": "Scheduled phase inspection"
     },
     {
-      "date": "2023-03-26",
-      "type": "Rectification",
-      "description": "Main wheel tyre replaced"
-    },
-    {
-      "date": "2023-01-31",
+      "date": "2024-03-21",
       "type": "Periodic servicing",
       "description": "Scheduled periodic servicing"
     },
     {
-      "date": "2022-11-04",
-      "type": "Rectification",
-      "description": "Main wheel tyre replaced"
-    },
-    {
-      "date": "2022-10-18",
-      "type": "Periodic servicing",
-      "description": "Scheduled periodic servicing"
-    },
-    {
-      "date": "2022-09-11",
+      "date": "2024-03-12",
       "type": "Work order",
       "description": "Main battery removed at hard time limit, replaced"
     },
     {
-      "date": "2022-09-07",
-      "type": "Rectification",
-      "description": "Main wheel tyre replaced"
-    },
-    {
-      "date": "2022-06-09",
+      "date": "2023-12-22",
       "type": "Periodic servicing",
       "description": "Scheduled periodic servicing"
     },
     {
-      "date": "2022-04-24",
+      "date": "2023-12-13",
       "type": "Rectification",
       "description": "Main wheel tyre replaced"
     },
     {
-      "date": "2022-04-01",
+      "date": "2023-09-25",
+      "type": "Periodic servicing",
+      "description": "Scheduled periodic servicing"
+    },
+    {
+      "date": "2023-07-01",
+      "type": "Rectification",
+      "description": "Engine lube oil pump replaced"
+    },
+    {
+      "date": "2023-07-01",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2023-06-26",
+      "type": "Work order",
+      "description": "HPT module (turbine disc LLP) removed at hard time limit, replaced"
+    },
+    {
+      "date": "2023-05-30",
       "type": "Phase inspection",
       "description": "Scheduled phase inspection"
     },
     {
-      "date": "2022-01-13",
+      "date": "2023-05-25",
       "type": "Periodic servicing",
       "description": "Scheduled periodic servicing"
+    },
+    {
+      "date": "2023-04-23",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2023-04-23",
+      "type": "Rectification",
+      "description": "Main wheel brake replaced"
+    },
+    {
+      "date": "2023-03-29",
+      "type": "Rectification",
+      "description": "Main wheel brake replaced"
+    },
+    {
+      "date": "2023-03-01",
+      "type": "Periodic servicing",
+      "description": "Scheduled periodic servicing"
+    },
+    {
+      "date": "2023-01-23",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2022-12-03",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2022-11-12",
+      "type": "Periodic servicing",
+      "description": "Scheduled periodic servicing"
+    },
+    {
+      "date": "2022-09-04",
+      "type": "Rectification",
+      "description": "Main wheel tyre replaced"
+    },
+    {
+      "date": "2022-08-17",
+      "type": "Rectification",
+      "description": "Engine-driven hydraulic pump replaced"
     }
   ],
   "recommendations": [
     {
-      "id": "REC-2026-0010",
+      "id": "REC-2026-0009",
       "created": "2026-11-15",
       "tail": "FX-305",
       "type": "fighter",
       "position": "1",
-      "serial": "CP-0030",
+      "serial": "CP-0036",
       "part_number": "25-6410-01",
       "ata": "25",
       "action": "Replace",
-      "title": "Replace Ejection seat CAD/PAD set CP-0030 on FX-305 before Calendar limit (20 days remaining)",
+      "title": "Replace Ejection seat CAD/PAD set CP-0036 on FX-305 before Calendar limit (20 days remaining)",
       "priority": "High",
       "due": {
         "fh_remaining": null,
@@ -3002,31 +3034,37 @@
       "work_order": null
     },
     {
-      "id": "REC-2026-0020",
+      "id": "REC-2026-0041",
       "created": "2026-11-15",
       "tail": "FX-305",
       "type": "fighter",
-      "position": "1",
-      "serial": "HP-0003",
-      "part_number": "29-1140-03",
-      "ata": "29",
-      "action": "Replace",
-      "title": "Replace Engine-driven hydraulic pump HP-0003 on FX-305 (manufacturing lot L-2207, elevated failure rate and already due soon)",
-      "priority": "High",
+      "position": "R",
+      "serial": "SA-0010",
+      "part_number": "27-3310-04",
+      "ata": "27",
+      "action": "Inspect",
+      "title": "Inspect Horizontal stabilator actuator SA-0010 on FX-305 (failure risk 14% before next phase inspection)",
+      "priority": "Medium",
       "due": {
-        "fh_remaining": null,
-        "date": "2026-11-15",
+        "fh_remaining": 103.2,
+        "date": "2027-06-22",
         "governing": "Model"
       },
       "basis": "Model",
       "evidence": [
         {
           "type": "model_output",
-          "text": "Lot analysis: L-2207 failure rate 2.94/1,000 FH vs 0.53/1,000 FH fleet rest (p=0.004, Bonferroni-corrected)"
+          "text": "Weibull AFT survival model: 103 FH to 10% failure probability (80% interval 56 to 196 FH). Expected life x1.09 (hot-climate share 8%); Expected life x0.96 (ACM share 18%)"
         }
       ],
-      "confidence": null,
-      "task_card": "TC-29-01-01",
+      "confidence": {
+        "probability": 0.1429,
+        "interval": [
+          56.3,
+          196.4
+        ]
+      },
+      "task_card": "TC-27-01-02",
       "status": "Open",
       "audit": [
         {
@@ -3040,87 +3078,175 @@
       "work_order": null
     },
     {
-      "id": "REC-2026-0087",
-      "created": "2025-12-17",
+      "id": "REC-2026-0047",
+      "created": "2026-11-15",
       "tail": "FX-305",
       "type": "fighter",
-      "position": "R",
-      "serial": "TY-0220",
+      "position": "1",
+      "serial": "FB-0005",
+      "part_number": "28-2210-02",
+      "ata": "28",
+      "action": "Inspect",
+      "title": "Inspect Fuel boost pump FB-0005 on FX-305 (failure risk 33% before next phase inspection)",
+      "priority": "High",
+      "due": {
+        "fh_remaining": 40.1,
+        "date": "2027-02-08",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 40 FH to 10% failure probability (80% interval 17 to 91 FH). Expected life x1.06 (hot-climate share 8%); Expected life x1.04 (ACM share 18%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.3341,
+        "interval": [
+          16.9,
+          91.0
+        ]
+      },
+      "task_card": "TC-28-01-02",
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0056",
+      "created": "2026-11-15",
+      "tail": "FX-305",
+      "type": "fighter",
+      "position": "1",
+      "serial": "FU-0005",
+      "part_number": "73-2110-01",
+      "ata": "73",
+      "action": "Replace",
+      "title": "Replace Engine fuel control unit FU-0005 on FX-305 (failure risk 10% before next phase inspection)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": 149.8,
+        "date": "2027-09-29",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "model_output",
+          "text": "Weibull AFT survival model: 150 FH to 10% failure probability (80% interval 86 to 334 FH). Expected life x1.15 (hot-climate share 8%); Expected life x27.55 (ACM share 18%)"
+        }
+      ],
+      "confidence": {
+        "probability": 0.1001,
+        "interval": [
+          86.5,
+          333.8
+        ]
+      },
+      "task_card": "TC-73-01-01",
+      "status": "Open",
+      "audit": [
+        {
+          "at": "2026-11-15",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0088",
+      "created": "2025-11-12",
+      "tail": "FX-305",
+      "type": "fighter",
+      "position": "L",
+      "serial": "TY-0250",
       "part_number": "32-4310-01",
       "ata": "32",
       "action": "Inspect",
-      "title": "Inspect Main wheel tyre TY-0220 on FX-305 (elevated failure risk flagged)",
+      "title": "Inspect Main wheel tyre TY-0250 on FX-305 (elevated failure risk flagged)",
       "priority": "Medium",
       "due": {
         "fh_remaining": null,
-        "date": "2025-12-28",
+        "date": "2025-11-29",
         "governing": "Model"
       },
       "basis": "Model",
       "evidence": [
         {
           "type": "history",
-          "text": "Survival model flagged this unit ahead of its 2025-12-28 removal (Unscheduled: confirmed failure)"
+          "text": "Survival model flagged this unit ahead of its 2025-11-29 removal (Unscheduled: confirmed failure)"
         }
       ],
       "confidence": null,
       "task_card": "TC-32-03-02",
-      "status": "Approved",
+      "status": "Deferred",
       "audit": [
         {
-          "at": "2025-12-17",
+          "at": "2025-11-12",
           "by": "PRE engine",
           "role": "system",
           "action": "Created",
           "remarks": ""
         },
         {
-          "at": "2025-12-20",
-          "by": "V. Nair",
+          "at": "2025-11-15",
+          "by": "S. Iyer",
           "role": "approver",
-          "action": "Approved",
-          "remarks": "Work order WO-2026-0007 raised"
+          "action": "Deferred",
+          "remarks": "Re-review by 2025-11-29"
         }
       ],
-      "work_order": "WO-2026-0007"
+      "work_order": null
     },
     {
-      "id": "REC-2026-0099",
-      "created": "2026-01-12",
+      "id": "REC-2026-0107",
+      "created": "2026-01-07",
       "tail": "FX-305",
       "type": "fighter",
-      "position": "1",
-      "serial": "HP-0010",
-      "part_number": "29-1140-03",
-      "ata": "29",
+      "position": "R",
+      "serial": "TY-0240",
+      "part_number": "32-4310-01",
+      "ata": "32",
       "action": "Inspect",
-      "title": "Inspect Engine-driven hydraulic pump HP-0010 on FX-305 (elevated failure risk flagged)",
-      "priority": "High",
+      "title": "Inspect Main wheel tyre TY-0240 on FX-305 (elevated failure risk flagged)",
+      "priority": "Medium",
       "due": {
         "fh_remaining": null,
-        "date": "2026-02-09",
+        "date": "2026-02-04",
         "governing": "Model"
       },
       "basis": "Model",
       "evidence": [
         {
           "type": "history",
-          "text": "Survival model flagged this unit ahead of its 2026-02-09 removal (Unscheduled: confirmed failure)"
+          "text": "Survival model flagged this unit ahead of its 2026-02-04 removal (Unscheduled: confirmed failure)"
         }
       ],
       "confidence": null,
-      "task_card": "TC-29-01-02",
+      "task_card": "TC-32-03-02",
       "status": "Rejected",
       "audit": [
         {
-          "at": "2026-01-12",
+          "at": "2026-01-07",
           "by": "PRE engine",
           "role": "system",
           "action": "Created",
           "remarks": ""
         },
         {
-          "at": "2026-01-13",
+          "at": "2026-01-08",
           "by": "A. Fernandes",
           "role": "approver",
           "action": "Rejected",
@@ -3130,32 +3256,32 @@
       "work_order": null
     },
     {
-      "id": "REC-2026-0103",
+      "id": "REC-2026-0112",
       "created": "2026-02-06",
       "tail": "FX-305",
       "type": "fighter",
-      "position": "R",
-      "serial": "BR-0010",
-      "part_number": "32-4210-02",
-      "ata": "32",
-      "action": "Inspect",
-      "title": "Inspect Main wheel brake BR-0010 on FX-305 (elevated failure risk flagged)",
+      "position": "1",
+      "serial": "BT-0033",
+      "part_number": "24-2240-02",
+      "ata": "24",
+      "action": "Replace",
+      "title": "Replace Main battery BT-0033 on FX-305 (hard-time limit approaching)",
       "priority": "High",
       "due": {
         "fh_remaining": null,
-        "date": "2026-03-03",
-        "governing": "Model"
+        "date": "2026-03-02",
+        "governing": "Rule"
       },
-      "basis": "Model",
+      "basis": "Rule",
       "evidence": [
         {
           "type": "history",
-          "text": "Survival model flagged this unit ahead of its 2026-03-03 removal (Unscheduled: confirmed failure)"
+          "text": "Hard-time rule flagged this unit ahead of its 2026-03-02 removal (Scheduled (hard time))"
         }
       ],
       "confidence": null,
-      "task_card": "TC-32-02-02",
-      "status": "Approved",
+      "task_card": "TC-24-02-01",
+      "status": "Rejected",
       "audit": [
         {
           "at": "2026-02-06",
@@ -3165,52 +3291,7 @@
           "remarks": ""
         },
         {
-          "at": "2026-02-07",
-          "by": "R. Menon",
-          "role": "approver",
-          "action": "Approved",
-          "remarks": "Work order WO-2026-0020 raised"
-        }
-      ],
-      "work_order": "WO-2026-0020"
-    },
-    {
-      "id": "REC-2026-0104",
-      "created": "2026-02-07",
-      "tail": "FX-305",
-      "type": "fighter",
-      "position": "L",
-      "serial": "TY-0240",
-      "part_number": "32-4310-01",
-      "ata": "32",
-      "action": "Inspect",
-      "title": "Inspect Main wheel tyre TY-0240 on FX-305 (elevated failure risk flagged)",
-      "priority": "Medium",
-      "due": {
-        "fh_remaining": null,
-        "date": "2026-03-03",
-        "governing": "Model"
-      },
-      "basis": "Model",
-      "evidence": [
-        {
-          "type": "history",
-          "text": "Survival model flagged this unit ahead of its 2026-03-03 removal (Unscheduled: confirmed failure)"
-        }
-      ],
-      "confidence": null,
-      "task_card": "TC-32-03-02",
-      "status": "Rejected",
-      "audit": [
-        {
-          "at": "2026-02-07",
-          "by": "PRE engine",
-          "role": "system",
-          "action": "Created",
-          "remarks": ""
-        },
-        {
-          "at": "2026-02-11",
+          "at": "2026-02-10",
           "by": "A. Fernandes",
           "role": "approver",
           "action": "Rejected",
@@ -3220,27 +3301,117 @@
       "work_order": null
     },
     {
-      "id": "REC-2026-0130",
-      "created": "2026-05-16",
+      "id": "REC-2026-0123",
+      "created": "2026-04-08",
       "tail": "FX-305",
       "type": "fighter",
-      "position": "R",
-      "serial": "TY-0272",
+      "position": "L",
+      "serial": "TY-0266",
       "part_number": "32-4310-01",
       "ata": "32",
       "action": "Inspect",
-      "title": "Inspect Main wheel tyre TY-0272 on FX-305 (elevated failure risk flagged)",
+      "title": "Inspect Main wheel tyre TY-0266 on FX-305 (elevated failure risk flagged)",
       "priority": "Medium",
       "due": {
         "fh_remaining": null,
-        "date": "2026-05-28",
+        "date": "2026-04-24",
         "governing": "Model"
       },
       "basis": "Model",
       "evidence": [
         {
           "type": "history",
-          "text": "Survival model flagged this unit ahead of its 2026-05-28 removal (Unscheduled: confirmed failure)"
+          "text": "Survival model flagged this unit ahead of its 2026-04-24 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "task_card": "TC-32-03-02",
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-04-08",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-04-12",
+          "by": "R. Menon",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Inspected at phase, no findings"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0152",
+      "created": "2026-06-17",
+      "tail": "FX-305",
+      "type": "fighter",
+      "position": "R",
+      "serial": "TY-0276",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0276 on FX-305 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-07-14",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-07-14 removal (Unscheduled: confirmed failure)"
+        }
+      ],
+      "confidence": null,
+      "task_card": "TC-32-03-02",
+      "status": "Rejected",
+      "audit": [
+        {
+          "at": "2026-06-17",
+          "by": "PRE engine",
+          "role": "system",
+          "action": "Created",
+          "remarks": ""
+        },
+        {
+          "at": "2026-06-21",
+          "by": "S. Iyer",
+          "role": "approver",
+          "action": "Rejected",
+          "remarks": "Within tolerance at inspection, monitored instead"
+        }
+      ],
+      "work_order": null
+    },
+    {
+      "id": "REC-2026-0155",
+      "created": "2026-07-14",
+      "tail": "FX-305",
+      "type": "fighter",
+      "position": "L",
+      "serial": "TY-0282",
+      "part_number": "32-4310-01",
+      "ata": "32",
+      "action": "Inspect",
+      "title": "Inspect Main wheel tyre TY-0282 on FX-305 (elevated failure risk flagged)",
+      "priority": "Medium",
+      "due": {
+        "fh_remaining": null,
+        "date": "2026-08-01",
+        "governing": "Model"
+      },
+      "basis": "Model",
+      "evidence": [
+        {
+          "type": "history",
+          "text": "Survival model flagged this unit ahead of its 2026-08-01 removal (Unscheduled: confirmed failure)"
         }
       ],
       "confidence": null,
@@ -3248,111 +3419,21 @@
       "status": "Approved",
       "audit": [
         {
-          "at": "2026-05-16",
+          "at": "2026-07-14",
           "by": "PRE engine",
           "role": "system",
           "action": "Created",
           "remarks": ""
         },
         {
-          "at": "2026-05-17",
-          "by": "K. Rao",
+          "at": "2026-07-17",
+          "by": "V. Nair",
           "role": "approver",
           "action": "Approved",
-          "remarks": "Work order WO-2026-0036 raised"
+          "remarks": "Work order WO-2026-0049 raised"
         }
       ],
-      "work_order": "WO-2026-0036"
-    },
-    {
-      "id": "REC-2026-0157",
-      "created": "2026-07-25",
-      "tail": "FX-305",
-      "type": "fighter",
-      "position": "1",
-      "serial": "BT-0038",
-      "part_number": "24-2240-02",
-      "ata": "24",
-      "action": "Replace",
-      "title": "Replace Main battery BT-0038 on FX-305 (hard-time limit approaching)",
-      "priority": "High",
-      "due": {
-        "fh_remaining": null,
-        "date": "2026-08-21",
-        "governing": "Rule"
-      },
-      "basis": "Rule",
-      "evidence": [
-        {
-          "type": "history",
-          "text": "Hard-time rule flagged this unit ahead of its 2026-08-21 removal (Scheduled (hard time))"
-        }
-      ],
-      "confidence": null,
-      "task_card": "TC-24-02-01",
-      "status": "Approved",
-      "audit": [
-        {
-          "at": "2026-07-25",
-          "by": "PRE engine",
-          "role": "system",
-          "action": "Created",
-          "remarks": ""
-        },
-        {
-          "at": "2026-07-28",
-          "by": "S. Iyer",
-          "role": "approver",
-          "action": "Approved",
-          "remarks": "Work order WO-2026-0057 raised"
-        }
-      ],
-      "work_order": "WO-2026-0057"
-    },
-    {
-      "id": "REC-2026-0178",
-      "created": "2026-10-18",
-      "tail": "FX-305",
-      "type": "fighter",
-      "position": "1",
-      "serial": "JF-0005",
-      "part_number": "49-1210-01",
-      "ata": "49",
-      "action": "Inspect",
-      "title": "Inspect Jet fuel starter JF-0005 on FX-305 (elevated failure risk flagged)",
-      "priority": "Medium",
-      "due": {
-        "fh_remaining": null,
-        "date": "2026-11-10",
-        "governing": "Model"
-      },
-      "basis": "Model",
-      "evidence": [
-        {
-          "type": "history",
-          "text": "Survival model flagged this unit ahead of its 2026-11-10 removal (Unscheduled: confirmed failure)"
-        }
-      ],
-      "confidence": null,
-      "task_card": "TC-49-01-02",
-      "status": "Approved",
-      "audit": [
-        {
-          "at": "2026-10-18",
-          "by": "PRE engine",
-          "role": "system",
-          "action": "Created",
-          "remarks": ""
-        },
-        {
-          "at": "2026-10-19",
-          "by": "R. Menon",
-          "role": "approver",
-          "action": "Approved",
-          "remarks": "Work order WO-2026-0076 raised"
-        }
-      ],
-      "work_order": "WO-2026-0076"
+      "work_order": "WO-2026-0049"
     }
   ]
 }

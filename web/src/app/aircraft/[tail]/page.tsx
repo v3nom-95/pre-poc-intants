@@ -53,7 +53,9 @@ export default async function AircraftPage({ params }: { params: Promise<{ tail:
         >
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-3">
-              <TailNumber tail={aircraft.tail} className="text-[32px]" />
+              <h1 className="m-0 leading-none">
+                <TailNumber tail={aircraft.tail} className="text-[32px]" />
+              </h1>
               <StatusTag status={status} />
             </div>
             <span className="text-[13px] text-(--ink-2)">

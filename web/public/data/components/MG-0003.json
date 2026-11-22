@@ -14,8 +14,8 @@
   "criticality": "flight_safety",
   "current_tail": "FX-302",
   "current_position": "L",
-  "governing_limit": "Calendar",
-  "remaining": 40.3,
+  "governing_limit": "Landings",
+  "remaining": 1450.6,
   "fh_exposure": null,
   "fh_to_tau": null,
   "fh_to_tau_p10": null,
@@ -28,11 +28,12 @@
     {
       "tail": "FX-302",
       "event_type": "Install",
-      "date": "2018-05-11",
+      "date": "2019-03-02",
       "reason": null,
       "serial": "MG-0003"
     }
   ],
   "survival_curve": [],
-  "survival_curve_method": null
+  "survival_curve_method": null,
+  "weibull_curve": []
 }

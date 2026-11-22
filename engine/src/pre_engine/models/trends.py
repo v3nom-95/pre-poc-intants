@@ -69,7 +69,11 @@ def compute_engine_trends() -> pd.DataFrame:
             window = sub.tail(20)
 
         slope, intercept, lo, hi = theilslopes(window["margin_c"].values, window["efh_at_reading"].values)
-        current_margin = float(sub["margin_c"].iloc[-1])
+        # Current margin from the robust trend line at the latest EFH, not the
+        # last single reading: one reading carries the full sensor noise
+        # (sd 1.5 °C), which made the projected EFH to the limit swing by tens
+        # of EFH from one sortie to the next.
+        current_margin = float(intercept + slope * max_efh)
 
         if slope < 0:
             efh_to_limit = (limit_c - current_margin) / slope
