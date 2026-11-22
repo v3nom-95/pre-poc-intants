@@ -59,6 +59,17 @@ def _months_between(d1: dt.date, d2: dt.date) -> float:
     return (d2 - d1).days / 30.0
 
 
+def select_governing_limit(limits: list[dict]) -> dict:
+    """Hard-time "whichever comes first" (SPEC 1, 5.1): of all applicable
+    limits (FH, EFH, cycles, landings, calendar), the one reached soonest in
+    days at the aircraft's trailing utilisation governs. On a tie the first
+    listed limit wins (schedule order), so the result is deterministic.
+    """
+    if not limits:
+        raise ValueError("no applicable limits")
+    return min(limits, key=lambda x: x["days_to_due"])
+
+
 def compute_ht_due_items(as_of: dt.date = cfg.AS_OF_DATE) -> pd.DataFrame:
     ce, sl, ms = _load_silver()
     installed = _currently_installed_units(ce)
@@ -113,7 +124,7 @@ def compute_ht_due_items(as_of: dt.date = cfg.AS_OF_DATE) -> pd.DataFrame:
 
         if not limits:
             continue
-        governing_limit = min(limits, key=lambda x: x["days_to_due"])
+        governing_limit = select_governing_limit(limits)
         due_date = as_of + dt.timedelta(days=max(governing_limit["days_to_due"], 0))
 
         key = next((k for k, c in cfg.COMPONENTS.items() if c["part_number"] == pn), None)

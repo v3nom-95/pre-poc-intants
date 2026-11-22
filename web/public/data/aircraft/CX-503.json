@@ -6514,7 +6514,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-17",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

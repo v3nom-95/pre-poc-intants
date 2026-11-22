@@ -3225,7 +3225,7 @@
         "date": null,
         "governing": "Model"
       },
-      "basis": "Trend",
+      "basis": "Model",
       "evidence": [
         {
           "type": "trend",
@@ -3263,7 +3263,7 @@
         "date": null,
         "governing": "Model"
       },
-      "basis": "Trend",
+      "basis": "Model",
       "evidence": [
         {
           "type": "trend",
@@ -3647,7 +3647,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2025-12-06",
-        "governing": "Rule"
+        "governing": "Cycles"
       },
       "basis": "Rule",
       "evidence": [
@@ -3827,7 +3827,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2025-12-14",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -4007,7 +4007,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2025-12-25",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -4412,7 +4412,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-02-05",
-        "governing": "Rule"
+        "governing": "Cycles"
       },
       "basis": "Rule",
       "evidence": [
@@ -4547,7 +4547,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-03-01",
-        "governing": "Rule"
+        "governing": "Cycles"
       },
       "basis": "Rule",
       "evidence": [
@@ -4592,7 +4592,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-03-02",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -4772,7 +4772,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-03-21",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -5042,7 +5042,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-04-22",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -5672,7 +5672,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-28",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -5717,7 +5717,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-29",
-        "governing": "Rule"
+        "governing": "Landings"
       },
       "basis": "Rule",
       "evidence": [
@@ -5942,7 +5942,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-06-05",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -6077,7 +6077,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-06-18",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -6167,7 +6167,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-06-21",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -6887,7 +6887,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-08-25",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -6932,7 +6932,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-10",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -7022,7 +7022,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-17",
-        "governing": "Rule"
+        "governing": "EFH"
       },
       "basis": "Rule",
       "evidence": [
@@ -7202,7 +7202,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-20",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -7247,7 +7247,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-26",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -8147,7 +8147,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-01-19",
-        "governing": "Rule"
+        "governing": "Landings"
       },
       "basis": "Rule",
       "evidence": [
@@ -8327,7 +8327,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-04-01",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -8462,7 +8462,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-04-08",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -8552,7 +8552,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-04-10",
-        "governing": "Rule"
+        "governing": "Landings"
       },
       "basis": "Rule",
       "evidence": [
@@ -8732,7 +8732,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-04-18",
-        "governing": "Rule"
+        "governing": "FH"
       },
       "basis": "Rule",
       "evidence": [
@@ -8822,7 +8822,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-07",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -9002,7 +9002,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-15",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -9047,7 +9047,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-23",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -9092,7 +9092,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-06-22",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -9272,7 +9272,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-08-17",
-        "governing": "Rule"
+        "governing": "Cycles"
       },
       "basis": "Rule",
       "evidence": [
@@ -9317,7 +9317,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-08-29",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -9362,7 +9362,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-12",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -9632,7 +9632,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-10-09",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -9767,7 +9767,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-10-19",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -9857,7 +9857,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-11-15",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -9947,7 +9947,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2025-12-04",
-        "governing": "Rule"
+        "governing": "EFH"
       },
       "basis": "Rule",
       "evidence": [
@@ -9992,7 +9992,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2025-12-17",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -10082,7 +10082,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2025-12-31",
-        "governing": "Rule"
+        "governing": "FH"
       },
       "basis": "Rule",
       "evidence": [
@@ -10307,7 +10307,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-02-22",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -10397,7 +10397,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-02-28",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -10487,7 +10487,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-03-04",
-        "governing": "Rule"
+        "governing": "FH"
       },
       "basis": "Rule",
       "evidence": [
@@ -10532,7 +10532,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-03-07",
-        "governing": "Rule"
+        "governing": "EFH"
       },
       "basis": "Rule",
       "evidence": [
@@ -10802,7 +10802,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-04-10",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -10892,7 +10892,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-06",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -10937,7 +10937,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-19",
-        "governing": "Rule"
+        "governing": "EFH"
       },
       "basis": "Rule",
       "evidence": [
@@ -11027,7 +11027,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-30",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -11162,7 +11162,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-06-12",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -11387,7 +11387,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-07-23",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -11567,7 +11567,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-08-13",
-        "governing": "Rule"
+        "governing": "FH"
       },
       "basis": "Rule",
       "evidence": [
@@ -11792,7 +11792,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-17",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -12017,7 +12017,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-10-03",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -12107,7 +12107,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-10-31",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

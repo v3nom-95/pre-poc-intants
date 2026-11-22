@@ -3198,7 +3198,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-06-05",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

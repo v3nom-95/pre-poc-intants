@@ -333,7 +333,7 @@ def build_engine_trend_recommendations(as_of: dt.date = cfg.AS_OF_DATE) -> list[
                               f"{row['current_margin_c']:.1f} °C at {row['current_efh']:.0f} EFH since install")]
         due_obj = dict(fh_remaining=crossing, date=None, governing="Model")
         recs.append(_new_rec(row["tail"], position, row["engine_serial"], comp["part_number"], comp["ata"],
-                              "Monitor", title, priority, due_obj, "Trend", evidence))
+                              "Monitor", title, priority, due_obj, "Model", evidence))
     return recs
 
 
@@ -411,6 +411,42 @@ DISPOSITION_WEIGHTS = {"Approved": 0.70, "Rejected": 0.15, "Deferred": 0.15}
 REJECT_REMARKS = ["Inspected at phase, no findings", "Within tolerance at inspection, monitored instead"]
 
 
+def _history_governing_limit(ev, schedule: pd.DataFrame, install_dates: dict) -> str:
+    """Which hard-time limit triggered a past scheduled removal (SPEC 6 due.governing).
+
+    Compares what the unit had consumed at removal against each limit in the
+    approved schedule for its part number; the most fully consumed limit is
+    the one that governed (whichever comes first). Data-derived, no guessing.
+    """
+    sched = schedule[(schedule["part_number"] == ev["part_number"])
+                     & (schedule["concept"] == "HT")] if "concept" in schedule.columns else         schedule[schedule["part_number"] == ev["part_number"]]
+    best, best_frac = "Calendar", -1.0
+    for _, lim in sched.iterrows():
+        unit, value = lim["interval_unit"], float(lim["interval_value"])
+        if value <= 0:
+            continue
+        if unit in ("FH", "EFH"):
+            frac = float(ev["hours_at_event"]) / value
+            label = unit
+        elif unit == "Cycles":
+            frac = float(ev["cycles_at_event"]) / value
+            label = "Cycles"
+        elif unit == "Landings":
+            frac = float(ev["landings_at_event"]) / value
+            label = "Landings"
+        elif unit == "Calendar months":
+            installed = install_dates.get((ev["tail"], ev["position"], ev["serial"]))
+            if installed is None:
+                continue
+            frac = ((ev["event_date"].date() - installed).days / 30.0) / value
+            label = "Calendar"
+        else:
+            continue
+        if frac > best_frac:
+            best, best_frac = label, frac
+    return best
+
+
 def build_history(as_of: dt.date = cfg.AS_OF_DATE, months: int = 12) -> list[dict]:
     rng = _rng()
     events = pd.read_csv(os.path.join(SILVER_DIR, "silver_component_events.csv"), parse_dates=["event_date"])
@@ -418,8 +454,13 @@ def build_history(as_of: dt.date = cfg.AS_OF_DATE, months: int = 12) -> list[dic
     past = events[(events["event_type"] == "Removal") & (events["event_date"].dt.date > window_start)
                   & (events["event_date"].dt.date <= as_of)
                   & (events["reason"].isin(["Unscheduled: confirmed failure", "Scheduled (hard time)", "Scheduled (engine change)"]))]
+    schedule = pd.read_csv(os.path.join(SILVER_DIR, "silver_maintenance_schedule.csv"))
+    installs = events[events["event_type"] == "Install"].sort_values("event_date")
     recs = []
     for _, ev in past.iterrows():
+        prior = installs[(installs["tail"] == ev["tail"]) & (installs["position"] == ev["position"])
+                         & (installs["serial"] == ev["serial"]) & (installs["event_date"] <= ev["event_date"])]
+        install_dates = {(ev["tail"], ev["position"], ev["serial"]): prior.iloc[-1]["event_date"].date()} if not prior.empty else {}
         key = next((k for k, c in cfg.COMPONENTS.items() if c["part_number"] == ev["part_number"]), None)
         if key is None:
             continue
@@ -433,7 +474,7 @@ def build_history(as_of: dt.date = cfg.AS_OF_DATE, months: int = 12) -> list[dic
                                               f"ahead of its {ev['event_date'].date().isoformat()} removal ({ev['reason']})")]
         rec = _new_rec(ev["tail"], ev["position"], ev["serial"], ev["part_number"], comp["ata"], action, title,
                        "High" if comp["criticality"] == "flight_safety" else "Medium",
-                       dict(fh_remaining=None, date=ev["event_date"].date().isoformat(), governing="Model" if not scheduled else "Rule"),
+                       dict(fh_remaining=None, date=ev["event_date"].date().isoformat(), governing="Model" if not scheduled else _history_governing_limit(ev, schedule, install_dates)),
                        "Rule" if scheduled else "Model", evidence, created=rec_date)
 
         disposition = rng.choice(list(DISPOSITION_WEIGHTS.keys()), p=list(DISPOSITION_WEIGHTS.values()))

@@ -4308,7 +4308,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-01-19",
-        "governing": "Rule"
+        "governing": "Landings"
       },
       "basis": "Rule",
       "evidence": [
@@ -4353,7 +4353,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-04-01",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -4443,7 +4443,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-04-18",
-        "governing": "Rule"
+        "governing": "FH"
       },
       "basis": "Rule",
       "evidence": [
@@ -4533,7 +4533,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-06-22",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

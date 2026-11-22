@@ -4412,7 +4412,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-08-29",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

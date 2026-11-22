@@ -39,6 +39,10 @@ test.describe("print view", () => {
 
 for (const route of mainRoutes()) {
   test(`axe: no serious or critical violations on ${route}`, async ({ page }) => {
+    // A full axe scan of the largest pages (action plan, models) can pass 30 s
+    // on a loaded machine; allow more time so the result reflects violations,
+    // not machine load.
+    test.setTimeout(90_000);
     await page.goto(route);
     await page.waitForLoadState("networkidle");
     const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();

@@ -3162,7 +3162,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-04-22",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [
@@ -3252,7 +3252,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-28",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

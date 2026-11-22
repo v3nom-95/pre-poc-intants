@@ -3103,7 +3103,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-08-17",
-        "governing": "Rule"
+        "governing": "Cycles"
       },
       "basis": "Rule",
       "evidence": [
@@ -3148,7 +3148,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-12",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

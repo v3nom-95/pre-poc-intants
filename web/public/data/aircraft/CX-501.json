@@ -5776,7 +5776,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-03-04",
-        "governing": "Rule"
+        "governing": "FH"
       },
       "basis": "Rule",
       "evidence": [
@@ -5821,7 +5821,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-03-07",
-        "governing": "Rule"
+        "governing": "EFH"
       },
       "basis": "Rule",
       "evidence": [
@@ -5956,7 +5956,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-06-12",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

@@ -2470,7 +2470,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2025-12-06",
-        "governing": "Rule"
+        "governing": "Cycles"
       },
       "basis": "Rule",
       "evidence": [
@@ -2650,7 +2650,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-26",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

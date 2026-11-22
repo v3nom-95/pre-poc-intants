@@ -2934,7 +2934,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-05-29",
-        "governing": "Rule"
+        "governing": "Landings"
       },
       "basis": "Rule",
       "evidence": [
@@ -3114,7 +3114,7 @@
       "due": {
         "fh_remaining": null,
         "date": "2026-09-20",
-        "governing": "Rule"
+        "governing": "Calendar"
       },
       "basis": "Rule",
       "evidence": [

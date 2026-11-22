@@ -978,7 +978,7 @@
       "action": "Monitor",
       "priority": "High",
       "title": "Borescope inspection of FX-311 engine hot section (EGT margin trending at -0.032 \u00b0C/EFH, projected to cross the 10 \u00b0C limit in 61 EFH)",
-      "basis": "Trend",
+      "basis": "Model",
       "deadline": {
         "date": "2027-02-24",
         "fh_remaining": 60.6,
@@ -1686,7 +1686,7 @@
       "action": "Monitor",
       "priority": "High",
       "title": "Borescope inspection of CX-502 engine 3 hot section (ITT margin trending at -0.037 \u00b0C/EFH, projected to cross the 15 \u00b0C limit in 49 EFH)",
-      "basis": "Trend",
+      "basis": "Model",
       "deadline": {
         "date": "2027-01-01",
         "fh_remaining": 49.4,

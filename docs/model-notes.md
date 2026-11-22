@@ -387,3 +387,12 @@ turbine would need about a 10x factor and the fighter fuel boost pump about
 are based at Base A only and have no hot exposure. P2 is recovered on the
 airlifter parts, which have more events and a wider spread of exposure; the
 fighter parts are reported honestly as under-powered at this fleet size.
+
+## Recommendation vocabulary conformance (SPEC 6)
+
+The export schema test (`engine/tests/test_export_schema.py`) found two values outside the SPEC 6 vocabulary, now fixed:
+
+- Engine trend recommendations used basis "Trend". A Theil-Sen trend with a fleet-percentile comparison is a statistical model, so their basis is now "Model" (SPEC 6 allows Rule, Model or Hybrid).
+- Past scheduled removals in the recommendation history used the placeholder governing limit "Rule". The governing limit is now derived from the removal record: the hard-time limit in the approved schedule that the unit had consumed the largest share of at removal (whichever comes first). On the current data: 35 calendar, 4 cycles, 4 EFH, 4 FH and 3 landings.
+
+Related tests: `engine/tests/test_rules_priority.py` (priority matrix, urgency bands, whichever comes first on synthetic and real items, queue consistency) and `web/src/lib/ht-whichever.test.ts` (whichever comes first in the what-if, including a governing-limit switch when utilisation rises).
