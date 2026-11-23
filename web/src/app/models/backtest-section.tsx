@@ -439,47 +439,51 @@ function TradeoffPanel({ bt }: { bt: Backtest }) {
       t.all_alert_rate_per_1000fh === null ? "Not computed" : formatNumber(t.all_alert_rate_per_1000fh, 2),
     ]);
   return (
-    <div className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
-      <ChartFrame
-        title="Trade-off: recall against survival alerts per 1,000 FH (analysis only)"
-        legend={
+    <div className="grid grid-cols-1 gap-4 rounded-[8px] border border-(--rule) bg-(--sheet) p-4 xl:grid-cols-[minmax(0,640px)_minmax(0,1fr)] xl:items-start">
+      <div className="min-w-0 max-w-[640px]">
+        <ChartFrame
+          title="Trade-off: recall against survival alerts per 1,000 FH (analysis only)"
+          chart={
+            <LineChart
+              series={series}
+              xTickFormat={(x) => formatNumber(x, 0)}
+              xUnit="alerts per 1,000 FH"
+              yTickFormat={(y) => formatPct(y)}
+              height={200}
+              yMin={0}
+              linear
+              showPoints
+              markers={
+                prod && prod.model_alert_rate_per_1000fh !== null
+                  ? [{ x: prod.model_alert_rate_per_1000fh, label: "Production threshold" }]
+                  : []
+              }
+            />
+          }
+          table={
+            <ChartTable
+              columns={[
+                "Threshold (times section 6 tau)",
+                "Survival alerts per 1,000 FH",
+                "Survival recall",
+                "All-source recall",
+                "All alerts per 1,000 FH",
+              ]}
+              rows={tableRows}
+            />
+          }
+        />
+        {/* Legend on its own row: beside the title it wraps in this narrower frame. */}
+        <div className="mt-2">
           <ChartLegend
             items={[
               { label: "Survival model alone", color: MODEL_ONLY_COLOR },
               { label: "All sources", color: ALL_SOURCES_COLOR },
             ]}
           />
-        }
-        chart={
-          <LineChart
-            series={series}
-            xTickFormat={(x) => formatNumber(x, 0)}
-            xUnit="alerts per 1,000 FH"
-            yTickFormat={(y) => formatPct(y)}
-            yMin={0}
-            linear
-            showPoints
-            markers={
-              prod && prod.model_alert_rate_per_1000fh !== null
-                ? [{ x: prod.model_alert_rate_per_1000fh, label: "Production threshold" }]
-                : []
-            }
-          />
-        }
-        table={
-          <ChartTable
-            columns={[
-              "Threshold (times section 6 tau)",
-              "Survival alerts per 1,000 FH",
-              "Survival recall",
-              "All-source recall",
-              "All alerts per 1,000 FH",
-            ]}
-            rows={tableRows}
-          />
-        }
-      />
-      <p className="mt-3 text-[12px] text-(--ink-2)">
+        </div>
+      </div>
+      <p className="text-[12px] text-(--ink-2) xl:pt-8">
         The survival source re-run at multiples of the section 6 probability thresholds (lower thresholds alert earlier and more
         often). Every other source is unchanged. Horizontal axis: survival alerts per 1,000 FH. This shows the cost of earlier
         warning; production keeps the section 6 thresholds.

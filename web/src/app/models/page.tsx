@@ -5,7 +5,7 @@ import type { ValidationPayload } from "@/lib/validation-types";
 import { BacktestSection } from "./backtest-section";
 
 export default function ModelsPage() {
-  const { model_cards, validation: rawValidation } = getModels();
+  const { validation: rawValidation } = getModels();
   const typeNames = Object.fromEntries(getTypes().map((t) => [t.key, t.name]));
   const validation = rawValidation as unknown as ValidationPayload | undefined;
 
@@ -13,21 +13,6 @@ export default function ModelsPage() {
     <AppShell>
       <div className="flex flex-col gap-6">
         <h1 className="text-[28px] font-semibold text-(--ink) page-title">Models and validation</h1>
-
-        <section aria-label="Model cards" className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {model_cards.map((m) => (
-            <div key={m.name} className="rounded-[8px] border border-(--rule) bg-(--sheet) p-4">
-              <h3 className="mb-2 text-[13px] font-semibold text-(--ink)">{m.name}</h3>
-              <dl className="flex flex-col gap-1.5 text-[12px]">
-                <Row label="Purpose" value={m.purpose} />
-                <Row label="Inputs" value={m.inputs} />
-                <Row label="Method" value={m.method} />
-                <Row label="Outputs" value={m.outputs} />
-                <Row label="Known limits" value={m.limits} />
-              </dl>
-            </div>
-          ))}
-        </section>
 
         {validation ? (
           <>
@@ -132,14 +117,5 @@ export default function ModelsPage() {
         <p className="text-[11px] text-(--ink-3)">All figures on this page are computed on synthetic, fictional data.</p>
       </div>
     </AppShell>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex flex-col">
-      <dt className="text-(--ink-3)">{label}</dt>
-      <dd className="text-(--ink)">{value}</dd>
-    </div>
   );
 }
